@@ -14,6 +14,7 @@ interface StoreLinks {
 }
 
 interface SocialMedia {
+  enabled?: boolean;
   facebook?: string;
   instagram?: string;
   twitter?: string;
@@ -45,13 +46,11 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevClick = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    setCurrentIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prev) =>
-      prev < screenshots.length - 1 ? prev + 1 : prev
-    );
+    setCurrentIndex((i) => (i + 1) % screenshots.length);
   };
 
   return (
@@ -145,38 +144,40 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
       </div>
 
       {/* Social Media Links */}
-      <div className={styles.socialMediaContainer}>
-        <h3 className={styles.socialTitle}>Sign up for {title} news</h3>
-        <div className={styles.socialLinks}>
-          {socialMedia.facebook && (
-            <a
-              href={socialMedia.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-          )}
-          {socialMedia.instagram && (
-            <a
-              href={socialMedia.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          )}
-          {socialMedia.twitter && (
-            <a
-              href={socialMedia.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          )}
+      {socialMedia.enabled && (
+        <div className={styles.socialMediaContainer}>
+          <h3 className={styles.socialTitle}>Sign up for {title} news</h3>
+          <div className={styles.socialLinks}>
+            {socialMedia.facebook && (
+              <a
+                href={socialMedia.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            )}
+            {socialMedia.instagram && (
+              <a
+                href={socialMedia.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            )}
+            {socialMedia.twitter && (
+              <a
+                href={socialMedia.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Screenshots Carousel */}
       <div className={styles.screenshotsContainer}>
@@ -190,7 +191,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
           )}
 
           {/* 添加切换按钮 */}
-          {currentIndex > 0 && (
+          {screenshots.length > 1 && (
             <button
               onClick={handlePrevClick}
               className={`${styles.navButton} ${styles.prevButton}`}
@@ -214,7 +215,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
             </button>
           )}
 
-          {currentIndex < screenshots.length - 1 && (
+          {screenshots.length > 1 && (
             <button
               onClick={handleNextClick}
               className={`${styles.navButton} ${styles.nextButton}`}
