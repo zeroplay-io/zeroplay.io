@@ -18,7 +18,7 @@
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .gameInfo {
@@ -161,10 +161,6 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .videoContainer {
-    height: 300px;
-  }
-
   .title {
     font-size: 2rem;
   }
@@ -179,10 +175,6 @@
 }
 
 @media (max-width: 480px) {
-  .videoContainer {
-    height: 200px;
-  }
-
   .title {
     font-size: 1.75rem;
   }
