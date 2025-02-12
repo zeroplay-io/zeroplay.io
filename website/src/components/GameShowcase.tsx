@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressiveImage from "./ProgressiveImage";
 import styles from "./GameShowcase.module.css";
 
 interface StoreLinks {
@@ -183,7 +184,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
       <div className={styles.screenshotsContainer}>
         <div className={styles.screenshotWrapper}>
           {screenshots.length > 0 && (
-            <img
+            <ProgressiveImage
               src={screenshots[currentIndex]}
               alt={`${title} Screenshot ${currentIndex + 1}`}
               className={styles.screenshot}
