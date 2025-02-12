@@ -1,0 +1,197 @@
+.gameShowcase {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.videoContainer {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  position: relative;
+  background: #f0f0f0;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.gameInfo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--ifm-heading-color);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--ifm-font-color-base);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.storeLinksContainer {
+  margin-bottom: 32px;
+}
+
+.storeLinksRow {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.storeLinksRow a {
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.storeLinksRow a:hover {
+  opacity: 0.8;
+}
+
+.storeLinksRow img {
+  height: 64px;
+  width: auto;
+}
+
+.socialMediaContainer {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.socialTitle {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--ifm-heading-color);
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.socialLinks a {
+  color: var(--ifm-link-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.socialLinks a:hover {
+  color: var(--ifm-link-hover-color);
+}
+
+.screenshotsContainer {
+  width: 100%;
+  margin: 32px 0;
+}
+
+.screenshotWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.5); /* 更浅的背景 */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.navButton svg {
+  color: rgba(0, 0, 0, 0.75); /* 更深的箭头颜色 */
+  width: 32px;
+  height: 32px;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+.counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .videoContainer {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .storeLinksRow img {
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .videoContainer {
+    height: 200px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .storeLinksRow {
+    gap: 12px;
+  }
+
+  .storeLinksRow img {
+    height: 32px;
+  }
+}

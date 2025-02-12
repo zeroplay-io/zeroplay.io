@@ -1,0 +1,25 @@
+{
+    "games": [
+      {
+        "title": "Backgammon",
+        "description": "Experience the classic board game of strategy and luck! Play Backgammon against friends or challenge AI opponents in this beautifully crafted digital version of one of the world's oldest board games.",
+        "videoUrl": "/games/backgammon/header.mp4",
+        "stores": {
+          "appStore": "https://apps.apple.com/app/backgammon",
+          "googlePlay": "https://play.google.com/store/apps/details?id=backgammon",
+          "_": ""
+        },
+        "socialMedia": {
+          "facebook": "https://facebook.com/backgammongame",
+          "instagram": "https://instagram.com/backgammongame",
+          "twitter": "https://twitter.com/backgammongame"
+        },
+        "screenshots": [
+          "/games/backgammon/s1.jpg",
+          "/games/backgammon/s2.jpg",
+          "/games/backgammon/s3.jpg",
+          "/games/backgammon/s4.jpg"
+        ]
+      }
+    ]
+  }
