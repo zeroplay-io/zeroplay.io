@@ -69,7 +69,7 @@
 
 ## 9. Contact Us
 
-For questions about this Privacy Policy, please contact us at: [Contact Information]
+For questions about this Privacy Policy, please contact us at: [support@zeroplay.io](mailto:support@zeroplay.io)
 
 ## 10. Cookie Policy
 
