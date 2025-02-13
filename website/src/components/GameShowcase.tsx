@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProgressiveImage from "./ProgressiveImage";
 import styles from "./GameShowcase.module.css";
 
@@ -54,11 +54,43 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
     setCurrentIndex((i) => (i + 1) % screenshots.length);
   };
 
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+
+      const handleVisibilityChange = () => {
+        console.log("Visibility changed to", document.visibilityState);
+        if (document.visibilityState === "visible") {
+          video.play().catch(console.error);
+        }
+      };
+
+      // 监听页面可见性变化
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+
+      return () => {
+        document.removeEventListener(
+          "visibilitychange",
+          handleVisibilityChange
+        );
+      };
+    }
+  }, [videoUrl]);
+
   return (
     <div className={styles.gameShowcase}>
       {/* Header Video */}
       <div className={styles.videoContainer}>
-        <video autoPlay loop muted playsInline className={styles.video}>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles.video}
+        >
           <source src={videoUrl} type="video/mp4" />
         </video>
       </div>
