@@ -60,31 +60,39 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
     if (videoRef.current) {
       const video = videoRef.current;
 
+      const tryPlay = () => {
+        video
+          .play()
+          .then(() => {
+            console.log("Video resumed playing.");
+          })
+          .catch((error) => {
+            console.log("Video play failed, retrying...", error);
+            setTimeout(tryPlay, 1000);
+          });
+      };
+
       const handleVisibilityChange = () => {
         if (document.visibilityState === "visible") {
-          const tryPlay = () => {
-            video
-              .play()
-              .then(() => {
-                console.log("Video resumed playing.");
-              })
-              .catch((error: any) => {
-                console.log("Video play failed, retrying...", error);
-                setTimeout(tryPlay, 1000);
-              });
-          };
-
           tryPlay();
         }
       };
 
-      document.addEventListener("visibilitychange", handleVisibilityChange);
+      const handleFocus = () => {
+        console.log("Page has focus");
+        tryPlay();
+      };
 
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+      window.addEventListener("focus", handleFocus);
+
+      // 清理函数
       return () => {
         document.removeEventListener(
           "visibilitychange",
           handleVisibilityChange
         );
+        window.removeEventListener("focus", handleFocus);
       };
     }
   }, []);
