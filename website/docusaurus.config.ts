@@ -114,7 +114,7 @@ const config: Config = {
         src: "img/logo_banner.png",
         href: "/",
       },
-      copyright: `Copyright © ${new Date().getFullYear()} zeroplay.io, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} zeroplay.io, Inc (成都度若飞网络科技有限公司).`,
     },
   } satisfies Preset.ThemeConfig,
 };
