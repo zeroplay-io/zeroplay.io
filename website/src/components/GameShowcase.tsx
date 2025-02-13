@@ -74,9 +74,11 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
 
       const handleVisibilityChange = () => {
         if (document.visibilityState === "visible") {
-          tryPlay();
+          setTimeout(tryPlay, 1000);
         }
       };
+
+      video.oncanplaythrough = tryPlay;
 
       const handleFocus = () => {
         console.log("Page has focus");
