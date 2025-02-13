@@ -61,13 +61,23 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
       const video = videoRef.current;
 
       const handleVisibilityChange = () => {
-        console.log("Visibility changed to", document.visibilityState);
         if (document.visibilityState === "visible") {
-          video.play().catch(console.error);
+          const tryPlay = () => {
+            video
+              .play()
+              .then(() => {
+                console.log("Video resumed playing.");
+              })
+              .catch((error: any) => {
+                console.log("Video play failed, retrying...", error);
+                setTimeout(tryPlay, 1000);
+              });
+          };
+
+          tryPlay();
         }
       };
 
-      // 监听页面可见性变化
       document.addEventListener("visibilitychange", handleVisibilityChange);
 
       return () => {
@@ -77,7 +87,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
         );
       };
     }
-  }, [videoUrl]);
+  }, []);
 
   return (
     <div className={styles.gameShowcase}>
