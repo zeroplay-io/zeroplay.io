@@ -1,25 +1,26 @@
 {
-    "games": [
-      {
-        "title": "Backgammon",
-        "description": "Experience the classic board game of strategy and luck! Play Backgammon against friends or challenge online opponents in this beautifully crafted digital version of one of the world's oldest board games.",
-        "videoUrl": "/games/backgammon/header.mp4",
-        "stores": {
-          "appStore": "",
-          "googlePlay": "",
-          "_": ""
-        },
-        "socialMedia": {
-          "facebook": "https://facebook.com/backgammongame",
-          "instagram": "https://instagram.com/backgammongame",
-          "twitter": "https://twitter.com/backgammongame"
-        },
-        "screenshots": [
-          "/games/backgammon/s1.jpg",
-          "/games/backgammon/s2.jpg",
-          "/games/backgammon/s3.jpg",
-          "/games/backgammon/s4.jpg"
-        ]
-      }
-    ]
-  }
+	"games": [
+		{
+			"title": "Backgammon",
+			"description": "Experience the classic board game of strategy and luck! Play Backgammon against friends or challenge online opponents in this beautifully crafted digital version of one of the world's oldest board games.",
+			"videoUrl": "/games/backgammon/header.mp4",
+			"stores": {
+				"appStore": "",
+				"googlePlay": "",
+				"_": ""
+			},
+			"socialMedia": {
+				"enabled": false,
+				"facebook": "https://facebook.com/backgammongame",
+				"instagram": "https://instagram.com/backgammongame",
+				"twitter": "https://twitter.com/backgammongame"
+			},
+			"screenshots": [
+				"/games/backgammon/s1.jpg",
+				"/games/backgammon/s2.jpg",
+				"/games/backgammon/s3.jpg",
+				"/games/backgammon/s4.jpg"
+			]
+		}
+	]
+}
