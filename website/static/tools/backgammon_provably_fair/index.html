@@ -120,8 +120,8 @@
 		<h1>Backgammon&nbsp;Provably-Fair&nbsp;Verifier</h1>
 
 		<textarea id="input" placeholder="Copy or drag report file to here"></textarea>
-		<button id="btn">Verify</button>
 		<pre id="out"></pre>
+		<button id="btn">Verify</button>
 
 		<footer>Offline Running · Provably Fair · <a href="https://github.com/gopherd/backgammon_provably_fair"
 				target="_blank" rel="noopener"><strong>Open Source</strong></a></footer>
@@ -179,13 +179,22 @@
 
 				$("input").value = text;
 
+				const doVerify = () => {
+					run();
+					// --- 滚动到底部 ---
+					window.scrollTo({
+						top: document.body.scrollHeight,
+						behavior: "smooth"   // 想要瞬间跳转就去掉这一行
+					});
+				};
+
 				// 如果 WASM 还没就绪，轮询等待
 				if (!wasmReady) {
 					const h = setInterval(() => {
-						if (wasmReady) {clearInterval(h); run();}
+						if (wasmReady) {clearInterval(h); doVerify();}
 					}, 40);
 				} else {
-					run();
+					doVerify();
 				}
 			} catch (e) {
 				console.error("Failed to decode report param:", e);
