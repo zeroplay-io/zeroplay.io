@@ -105,7 +105,6 @@
 		button:disabled {
 			opacity: .6;
 			cursor: default;
-			transform: scale(.97);
 		}
 
 		pre {
@@ -223,8 +222,9 @@
 		<div id="progress"></div>
 		<div id="success"></div>
 
-		<textarea id="input" placeholder="Copy or drag report file to here"></textarea>
-		<pre id="out"></pre>
+		<textarea id="input" spellcheck="false" autocorrect="off" autocomplete="off"
+			placeholder="Copy or drag report file to here"></textarea>
+		<pre id="out"> </pre>
 		<button id="btn">Verify</button>
 
 		<footer>
@@ -287,10 +287,9 @@
 			const btn = $("btn"), bar = $("progress"), out = $("out");
 			const MIN_MS = 800;
 
-			out.textContent = "";
+			out.textContent = "Verifying…";
 			out.className = "";
 			btn.disabled = true;
-			btn.textContent = "Verifying…";
 
 			bar.classList.remove("loading");
 			bar.offsetWidth;              /* reset animation */
@@ -304,7 +303,6 @@
 			setTimeout(() => {
 				bar.classList.remove("loading");
 				btn.disabled = false;
-				btn.textContent = "Verify";
 
 				if (err) {
 					out.className = "bad";
