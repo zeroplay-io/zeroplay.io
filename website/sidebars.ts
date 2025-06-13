@@ -17,6 +17,11 @@ const sidebars: SidebarsConfig = {
       label: "Legal",
       items: ["legal/terms-of-service", "legal/privacy-policy"],
     },
+    {
+      type: "category",
+      label: "Backgammon",
+      items: ["backgammon/how-to-delete-account"],
+    },
   ],
 };
 
