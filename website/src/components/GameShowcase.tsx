@@ -24,6 +24,7 @@ interface SocialMedia {
 interface GameData {
   title: string;
   description: string;
+  icon: string;
   videoUrl: string;
   stores?: StoreLinks;
   socialMedia?: SocialMedia;
@@ -38,6 +39,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
   game: {
     title,
     description,
+    icon,
     videoUrl,
     stores = {},
     socialMedia = {},
@@ -113,6 +115,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
+        <img src={icon} alt={`${title} Icon`} className={styles.gameIcon} />
       </div>
 
       {/* Game Info */}
