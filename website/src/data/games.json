@@ -8,7 +8,7 @@
 			"stores": {
 				"appStore": "https://apps.apple.com/app/id6739750400",
 				"googlePlay": "",
-				"h5": "/games/backgammon/webgl/index.html",
+				"h5": "https://play.zeroplay.io/backgammon",
 				"_": ""
 			},
 			"socialMedia": {
