@@ -12,6 +12,7 @@ interface StoreLinks {
   galaxyStore?: string;
   appGallery?: string;
   aptoide?: string;
+  h5?: string;
 }
 
 interface SocialMedia {
@@ -162,6 +163,11 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
               rel="noopener noreferrer"
             >
               <img src="/img/stores/microsoft.png" alt="Microsoft Store" />
+            </a>
+          )}
+          {stores.h5 && (
+            <a href={stores.h5} target="_blank" rel="noopener noreferrer">
+              <img src="/img/stores/h5.svg" alt="Play on Web" />
             </a>
           )}
         </div>
