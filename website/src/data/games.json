@@ -3,7 +3,7 @@
 		{
 			"title": "Backgammon Online Fair Dice",
 			"description": "Roll honest dice, beat real opponents! Backgammon Online Fair Dice uses verifiable RNG, live multiplayer, friend duels, tournaments & a fun pet to raise—fair play in every match.",
-			"icon": "/games/backgammon/icon.png",
+			"icon": "/games/backgammon/icon-320.png",
 			"videoUrl": "/games/backgammon/header.mp4",
 			"stores": {
 				"appStore": "https://apps.apple.com/app/id6739750400",
