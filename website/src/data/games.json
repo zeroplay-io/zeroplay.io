@@ -7,7 +7,7 @@
 			"videoUrl": "/games/backgammon/header.mp4",
 			"stores": {
 				"appStore": "https://apps.apple.com/app/id6739750400",
-				"googlePlay": "",
+				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.backgammon2",
 				"h5": "https://play.zeroplay.io/backgammon",
 				"_": ""
 			},
