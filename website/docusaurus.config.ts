@@ -8,7 +8,7 @@ const ORGANIZATION_NAME = "mkideal";
 const PROJECT_NAME = "zeroplay";
 const REPO = `https://github.com/${ORGANIZATION_NAME}/${PROJECT_NAME}`;
 const CURRENT_YEAR = new Date().getFullYear();
-const COPYRIGHT = `Copyright © ${CURRENT_YEAR} ZeroPlay, Inc. (成都零游网络科技有限公司)`;
+const COPYRIGHT = `Copyright © ${CURRENT_YEAR} ZeroPlay Ltd. (成都零游网络科技有限公司)`;
 
 const customFields = {
   version: "0.0.1",
