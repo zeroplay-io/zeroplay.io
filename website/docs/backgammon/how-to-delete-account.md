@@ -1,6 +1,6 @@
 # How To Delete Account
 
-### If you want to delete your account from the <b>Backgammon Live: Online Play</b>, follow these steps:
+### If you want to delete your account from the <b>Backgammon - Fair Board Game</b>, follow these steps:
 
 ### Step 1: Launch the game and click on <b>Settings</b> button at the top right corner
 
