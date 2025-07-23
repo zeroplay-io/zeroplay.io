@@ -1,8 +1,8 @@
 {
 	"games": [
 		{
-			"title": "Backgammon - Fair Board Game",
-			"description": "Roll honest dice, beat real opponents! Backgammon - Fair Board Game uses verifiable RNG, live multiplayer, friend duels, tournaments & a fun pet to raise—fair play in every match.",
+			"title": "Backgammon - Fair Board Games",
+			"description": "Roll honest dice, beat real opponents! Backgammon - Fair Board Games uses verifiable RNG, live multiplayer, friend duels, tournaments & a fun pet to raise—fair play in every match.",
 			"icon": "/games/backgammon/icon-320.png",
 			"videoUrl": "/games/backgammon/header.mp4",
 			"stores": {
