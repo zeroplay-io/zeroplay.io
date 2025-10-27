@@ -1,10 +1,14 @@
 {
 	"games": [
 		{
+			"id": "backgammon",
 			"title": "Backgammon - Fair Board Games",
+			"subtitle": "Classic strategy board game",
 			"description": "Roll honest dice, beat real opponents! Backgammon - Fair Board Games uses verifiable RNG, live multiplayer, friend duels, tournaments & a fun pet to raise—fair play in every match.",
 			"icon": "/games/backgammon/icon-320.png",
 			"videoUrl": "/games/backgammon/header.mp4",
+			"screenshotCount": 6,
+			"orientation": "landscape",
 			"stores": {
 				"appStore": "https://apps.apple.com/app/id6739750400",
 				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.backgammon2",
@@ -15,15 +19,25 @@
 				"facebook": "https://facebook.com/backgammongo",
 				"instagram": "https://instagram.com/backgammongo",
 				"twitter": "https://twitter.com/backgammongo"
+			}
+		},
+		{
+			"id": "solitaire",
+			"title": "Solitaire - Classic Card Game",
+			"subtitle": "Timeless patience game",
+			"description": "Play the classic Solitaire card game! Enjoy smooth gameplay, beautiful graphics, and relaxing music. Perfect for quick breaks or extended play sessions.",
+			"icon": "/games/solitaire/icon-320.png",
+			"videoUrl": "/games/solitaire/header.mp4",
+			"screenshotCount": 5,
+			"orientation": "portrait",
+			"stores": {
+				"appStore": "https://apps.apple.com/app/solitaire",
+				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire",
+				"h5": "https://play.zeroplay.io/solitaire"
 			},
-			"screenshots": [
-				"/games/backgammon/01.jpg",
-				"/games/backgammon/02.jpg",
-				"/games/backgammon/03.jpg",
-				"/games/backgammon/04.jpg",
-				"/games/backgammon/05.jpg",
-				"/games/backgammon/06.jpg"
-			]
+			"socialMedia": {
+				"enabled": false
+			}
 		}
 	]
 }

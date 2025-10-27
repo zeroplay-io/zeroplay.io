@@ -36,8 +36,8 @@ interface GameShowcaseProps {
   game: GameData;
 }
 
-const GameShowcase: React.FC<GameShowcaseProps> = ({
-  game: {
+const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
+  const {
     title,
     description,
     icon,
@@ -45,8 +45,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
     stores = {},
     socialMedia = {},
     screenshots = [],
-  },
-}) => {
+  } = game;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevClick = () => {
@@ -104,29 +103,34 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
 
   return (
     <div className={styles.gameShowcase}>
-      {/* Header Video */}
-      <div className={styles.videoContainer}>
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={styles.video}
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </video>
-        <img src={icon} alt={`${title} Icon`} className={styles.gameIcon} />
-      </div>
+      {/* Header Section */}
+      <div className={styles.headerSection}>
+        {/* Video with Device Frame */}
+        <div className={styles.videoContainer}>
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.video}
+          >
+            <source src={videoUrl} type="video/mp4" />
+          </video>
+        </div>
 
-      {/* Game Info */}
-      <div className={styles.gameInfo}>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.description}>{description}</p>
-      </div>
+        {/* Game Info */}
+        <div className={styles.gameInfo}>
+          <div className={styles.titleRow}>
+            <img src={icon} alt={`${title} Icon`} className={styles.gameIcon} />
+            <div className={styles.titleGroup}>
+              <h1 className={styles.title}>{title}</h1>
+              <p className={styles.subtitle}>{game.subtitle || ''}</p>
+            </div>
+          </div>
 
-      {/* Store Links - First Row */}
-      <div className={styles.storeLinksContainer}>
+          {/* Store Links */}
+          <div className={styles.storeLinksContainer}>
         <div className={styles.storeLinksRow}>
           {stores.appStore && (
             <a href={stores.appStore} target="_blank" rel="noopener noreferrer">
@@ -205,6 +209,11 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
         </div>
       </div>
 
+          {/* Description */}
+          <p className={styles.description}>{description}</p>
+        </div>
+      </div>
+
       {/* Social Media Links */}
       {socialMedia.enabled && (
         <div className={styles.socialMediaContainer}>
@@ -241,9 +250,11 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
         </div>
       )}
 
-      {/* Screenshots Carousel */}
-      <div className={styles.screenshotsContainer}>
-        <div className={styles.screenshotWrapper}>
+      {/* Screenshots Section */}
+      {screenshots.length > 0 && (
+        <div className={styles.screenshotsSection}>
+          <div className={styles.screenshotsContainer}>
+            <div className={styles.screenshotWrapper}>
           {screenshots.length > 0 && (
             <ProgressiveImage
               src={screenshots[currentIndex]}
@@ -301,12 +312,14 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({
             </button>
           )}
 
-          {/* 添加图片计数器 */}
-          <div className={styles.counter}>
-            {currentIndex + 1} / {screenshots.length}
+              {/* 添加图片计数器 */}
+              <div className={styles.counter}>
+                {currentIndex + 1} / {screenshots.length}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

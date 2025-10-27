@@ -6,7 +6,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
-import GameShowcase from "@site/src/components/GameShowcase";
+import GameCard from "@site/src/components/GameCard";
 import gamesData from "@site/src/data/games.json";
 import styles from "./index.module.css";
 
@@ -42,10 +42,13 @@ export default function Home(): JSX.Element {
     >
       <HeroBanner />
       <main>
-        <div className="games-list">
-          {gamesData.games.map((game, index) => (
-            <GameShowcase key={`${game.title}-${index}`} game={game} />
-          ))}
+        <div className={styles.gamesSection}>
+          <h2 className={styles.gamesTitle}>Our Games</h2>
+          <div className={styles.gamesListContainer}>
+            {gamesData.games.map((game, index) => (
+              <GameCard key={game.id || index} game={game} />
+            ))}
+          </div>
         </div>
       </main>
     </Layout>

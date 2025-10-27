@@ -19,8 +19,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Backgammon",
-      items: ["backgammon/how-to-delete-account"],
+      label: "Games",
+      items: [
+        "games/how-to-delete-account",
+        {
+          type: "category",
+          label: "Backgammon",
+          items: ["games/backgammon/how-to-delete-account"],
+        },
+      ],
     },
   ],
 };

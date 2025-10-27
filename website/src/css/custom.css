@@ -268,3 +268,233 @@ pre[class*="language-"] {
   -moz-tab-size: 4;
   -o-tab-size: 4;
 }
+
+/* Screenshots styling for documentation pages */
+.markdown img {
+  max-width: 380px;
+  border-radius: 16px;
+  margin: 2rem auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.markdown img:hover {
+  transform: translateY(-2px);
+}
+
+/* Landscape screenshots (horizontal orientation) - use #landscape in image URL */
+.markdown img[src*="#landscape"] {
+  max-width: 750px;
+  border-radius: 12px;
+}
+
+[data-theme="light"] .markdown img {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .markdown img:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .markdown img {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .markdown img:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .markdown img {
+    max-width: 100%;
+  }
+
+  .markdown img[src*="#landscape"] {
+    max-width: 100%;
+  }
+}
+
+/* Enhanced styling for how-to-delete-account pages */
+.markdown h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.markdown > p:first-of-type {
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.markdown h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+  position: relative;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border-left: 4px solid;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+}
+
+[data-theme="dark"] .markdown h3 {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+}
+
+.markdown h3:first-of-type {
+  margin-top: 2rem;
+}
+
+/* Step description text */
+.markdown h3 + p {
+  font-size: 0.98rem;
+  color: var(--ifm-color-emphasis-800);
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  padding-left: 0.3rem;
+}
+
+.markdown ul {
+  margin-top: 1rem;
+  line-height: 1.9;
+  padding-left: 1.5rem;
+}
+
+.markdown ul li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.markdown ul li::marker {
+  color: var(--ifm-color-primary);
+}
+
+/* Important Notes section styling */
+.markdown h3 + ul {
+  padding: 1.5rem 1.8rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.markdown h3 + ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #f59e0b 0%, #f97316 100%);
+}
+
+[data-theme="light"] .markdown h3 + ul {
+  background: linear-gradient(135deg, #fffbeb 0%, #fff4e6 100%);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="dark"] .markdown h3 + ul {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(249, 115, 22, 0.08) 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.markdown h3 + ul li {
+  padding-left: 0.8rem;
+}
+
+/* Paragraph spacing */
+.markdown > p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+/* Strong text styling */
+.markdown strong {
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  position: relative;
+}
+
+/* Danger keyword styling - red theme for destructive actions */
+.danger-text {
+  color: #dc2626;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.12) 0%, rgba(239, 68, 68, 0.08) 100%);
+  border: 1.5px solid rgba(220, 38, 38, 0.25);
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.1);
+}
+
+.danger-text:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.15);
+}
+
+[data-theme="dark"] .danger-text {
+  color: #fca5a5;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.25) 0%, rgba(239, 68, 68, 0.15) 100%);
+  border: 1.5px solid rgba(220, 38, 38, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .danger-text:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Button text styling - neutral theme for UI elements */
+.markdown em {
+  font-style: normal;
+  color: #374151;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border: 1.5px solid #e5e7eb;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.markdown em:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .markdown em {
+  color: #e5e7eb;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .markdown em:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Horizontal dividers */
+.markdown hr {
+  margin: 2.5rem 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-300) 50%, transparent 100%);
+}

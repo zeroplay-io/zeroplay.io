@@ -92,6 +92,11 @@ const config: Config = {
       items: [
         // Left links
         {
+          to: "/games",
+          position: "left",
+          label: "Games",
+        },
+        {
           type: "doc",
           position: "left",
           docId: "legal/terms-of-service",
