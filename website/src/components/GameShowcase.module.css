@@ -76,7 +76,7 @@
   background: #000;
 }
 
-.video.loading {
+.video.loading:not([poster]) {
   opacity: 0;
   height: 100%;
 }
