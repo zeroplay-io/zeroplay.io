@@ -274,7 +274,6 @@
   cursor: grab;
   user-select: none;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: auto;
   margin: 0 -32px;
   padding-left: 32px;
   padding-right: 32px;

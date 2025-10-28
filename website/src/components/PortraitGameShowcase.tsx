@@ -168,7 +168,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     if (!isDragging || !scrollContainerRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // 拖动速度倍数
+    const walk = (x - startX) * 2;
     scrollContainerRef.current.scrollLeft = scrollLeftPos - walk;
   };
 
