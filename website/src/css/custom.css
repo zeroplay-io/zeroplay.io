@@ -71,7 +71,56 @@ html[data-theme="dark"] {
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #2b3137;
+  --ifm-footer-background-color: #1a1d23;
+  --ifm-footer-link-color: #a8b2d1;
+  --ifm-footer-title-color: #e6f1ff;
+}
+
+/* Footer styling improvements */
+.footer {
+  padding: 3rem 0 2rem;
+  background: linear-gradient(180deg, #1a1d23 0%, #0f1116 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+.footer__logo:hover {
+  opacity: 1;
+}
+
+.footer__links {
+  margin-bottom: 2rem;
+}
+
+.footer__link-item {
+  color: var(--ifm-footer-link-color);
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+.footer__link-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .unique-tabs .tabs__item {

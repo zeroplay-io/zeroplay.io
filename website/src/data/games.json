@@ -4,7 +4,7 @@
 			"id": "backgammon",
 			"title": "Backgammon - Fair Board Games",
 			"subtitle": "Classic strategy board game",
-			"description": "Roll honest dice, beat real opponents! Backgammon - Fair Board Games uses verifiable RNG, live multiplayer, friend duels, tournaments & a fun pet to raise—fair play in every match.",
+			"description": "Experience the world's most trusted backgammon game with verifiable RNG technology. Roll honest dice and compete against real opponents worldwide in live multiplayer matches. Challenge your friends in private duels, join exciting tournaments to win rewards, and raise your adorable companion pet as you play. Our commitment to fair play means every dice roll is transparent and verifiable, ensuring a level playing field for all players. Whether you're a beginner learning the ropes or a seasoned pro seeking competitive matches, enjoy smooth gameplay with stunning graphics and intuitive controls. Track your progress with detailed statistics, climb the global leaderboards, and unlock achievements as you master this timeless strategy game.",
 			"icon": "/games/backgammon/icon-320.png",
 			"videoUrl": "/games/backgammon/header.mp4",
 			"screenshotCount": 6,
@@ -25,15 +25,14 @@
 			"id": "solitaire",
 			"title": "Solitaire - Classic Card Game",
 			"subtitle": "Timeless patience game",
-			"description": "Play the classic Solitaire card game! Enjoy smooth gameplay, beautiful graphics, and relaxing music. Perfect for quick breaks or extended play sessions.",
+			"description": "Rediscover the timeless classic that has captivated millions! Our Solitaire game brings you the perfect blend of traditional gameplay and modern design. Enjoy crystal-clear HD graphics with beautifully crafted card decks and customizable backgrounds. Experience buttery-smooth animations and intuitive touch controls that make every move feel natural. Challenge yourself with daily puzzles, unlock achievements, and track your best times and win rates. Choose from multiple game modes including Draw 1, Draw 3, and Vegas scoring. Relax with soothing background music or play in silence—it's your game, your way. Whether you're killing time during your commute or unwinding before bed, our ad-free experience ensures uninterrupted enjoyment. With offline play support, you can play anytime, anywhere without an internet connection.",
 			"icon": "/games/solitaire/icon-320.png",
 			"videoUrl": "/games/solitaire/header.mp4",
 			"screenshotCount": 5,
 			"orientation": "portrait",
 			"stores": {
-				"appStore": "https://apps.apple.com/app/solitaire",
-				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire",
-				"h5": "https://play.zeroplay.io/solitaire"
+				"appStore": "https://apps.apple.com/app/id6753621971",
+				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire"
 			},
 			"socialMedia": {
 				"enabled": false

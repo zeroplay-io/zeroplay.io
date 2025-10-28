@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import styles from "./ProgressiveImage.module.css";
 
 const ProgressiveImage = ({ src, alt, className, ...props }) => {
   const [currentSrc, setCurrentSrc] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+    setCurrentSrc("");
+
     // 生成4种清晰度的图片URL
     const extension = src.match(/\.[^.]+$/)?.[0] || "";
     const baseName = src.replace(/\.[^.]+$/, "");
@@ -29,6 +34,7 @@ const ProgressiveImage = ({ src, alt, className, ...props }) => {
         );
         if (!currentSrc || newIndex > currentIndex) {
           setCurrentSrc(url);
+          setIsLoading(false);
         }
       };
 
@@ -36,18 +42,18 @@ const ProgressiveImage = ({ src, alt, className, ...props }) => {
     });
   }, [src]);
 
-  // 如果没有任何图片加载成功，返回 null
-  if (!currentSrc) {
-    return null;
-  }
-
   return (
-    <img
-      src={currentSrc}
-      alt={alt}
-      className={`w-full h-full object-cover transition-[filter] duration-300 ${className}`}
-      {...props}
-    />
+    <div className={styles.imageContainer}>
+      {isLoading && <div className={styles.loading} />}
+      {currentSrc && (
+        <img
+          src={currentSrc}
+          alt={alt}
+          className={`${styles.image} ${className}`}
+          {...props}
+        />
+      )}
+    </div>
   );
 };
 

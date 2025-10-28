@@ -52,6 +52,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -65,6 +66,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
           .play()
           .then(() => {
             console.log("Video resumed playing.");
+            setIsVideoLoading(false);
           })
           .catch((error) => {
             console.log("Video play failed, retrying...", error);
@@ -78,7 +80,12 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
         }
       };
 
+      const handleLoadedData = () => {
+        setIsVideoLoading(false);
+      };
+
       video.oncanplaythrough = tryPlay;
+      video.addEventListener('loadeddata', handleLoadedData);
 
       const handleFocus = () => {
         console.log("Page has focus");
@@ -94,6 +101,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
           handleVisibilityChange
         );
         window.removeEventListener("focus", handleFocus);
+        video.removeEventListener('loadeddata', handleLoadedData);
       };
     }
   }, []);
@@ -187,17 +195,20 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
       <div className={styles.headerSection}>
         <div className={styles.contentWrapper}>
           {/* Video Container - Portrait oriented */}
-          <div className={styles.videoContainer}>
-            <video
-              ref={videoRef}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={styles.video}
-            >
-              <source src={videoUrl} type="video/mp4" />
-            </video>
+          <div className={`${styles.videoContainer} ${!isVideoLoading ? styles.loaded : ''}`}>
+            <div className={styles.videoWrapper}>
+              {isVideoLoading && <div className={styles.videoLoading} />}
+              <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className={`${styles.video} ${isVideoLoading ? styles.loading : ''}`}
+              >
+                <source src={videoUrl} type="video/mp4" />
+              </video>
+            </div>
           </div>
 
           {/* Game Info */}

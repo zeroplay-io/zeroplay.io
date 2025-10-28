@@ -47,6 +47,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     screenshots = [],
   } = game;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const handlePrevClick = () => {
     setCurrentIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
@@ -67,6 +68,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
           .play()
           .then(() => {
             console.log("Video resumed playing.");
+            setIsVideoLoading(false);
           })
           .catch((error) => {
             console.log("Video play failed, retrying...", error);
@@ -80,7 +82,12 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
         }
       };
 
+      const handleLoadedData = () => {
+        setIsVideoLoading(false);
+      };
+
       video.oncanplaythrough = tryPlay;
+      video.addEventListener('loadeddata', handleLoadedData);
 
       const handleFocus = () => {
         console.log("Page has focus");
@@ -90,13 +97,13 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       document.addEventListener("visibilitychange", handleVisibilityChange);
       window.addEventListener("focus", handleFocus);
 
-      // 清理函数
       return () => {
         document.removeEventListener(
           "visibilitychange",
           handleVisibilityChange
         );
         window.removeEventListener("focus", handleFocus);
+        video.removeEventListener('loadeddata', handleLoadedData);
       };
     }
   }, []);
@@ -106,17 +113,20 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       {/* Header Section */}
       <div className={styles.headerSection}>
         {/* Video with Device Frame */}
-        <div className={styles.videoContainer}>
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className={styles.video}
-          >
-            <source src={videoUrl} type="video/mp4" />
-          </video>
+        <div className={`${styles.videoContainer} ${!isVideoLoading ? styles.loaded : ''}`}>
+          <div className={styles.videoWrapper}>
+            {isVideoLoading && <div className={styles.videoLoading} />}
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`${styles.video} ${isVideoLoading ? styles.loading : ''}`}
+            >
+              <source src={videoUrl} type="video/mp4" />
+            </video>
+          </div>
         </div>
 
         {/* Game Info */}
@@ -131,83 +141,83 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
 
           {/* Store Links */}
           <div className={styles.storeLinksContainer}>
-        <div className={styles.storeLinksRow}>
-          {stores.appStore && (
-            <a href={stores.appStore} target="_blank" rel="noopener noreferrer">
-              <img src="/img/stores/app-store.svg" alt="App Store" />
-            </a>
-          )}
-          {stores.googlePlay && (
-            <a
-              href={stores.googlePlay}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/img/stores/google-play.png" alt="Google Play" />
-            </a>
-          )}
-          {stores.amazon && (
-            <a href={stores.amazon} target="_blank" rel="noopener noreferrer">
-              <img src="/img/stores/amazon.png" alt="Amazon" />
-            </a>
-          )}
-          {stores.macAppStore && (
-            <a
-              href={stores.macAppStore}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/img/stores/mac-app-store.png" alt="Mac App Store" />
-            </a>
-          )}
-          {stores.microsoft && (
-            <a
-              href={stores.microsoft}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/img/stores/microsoft.png" alt="Microsoft Store" />
-            </a>
-          )}
-          {stores.h5 && (
-            <a href={stores.h5} target="_blank" rel="noopener noreferrer">
-              <img src="/img/stores/h5.svg" alt="Play on Web" />
-            </a>
-          )}
-        </div>
+            <div className={styles.storeLinksRow}>
+              {stores.appStore && (
+                <a href={stores.appStore} target="_blank" rel="noopener noreferrer">
+                  <img src="/img/stores/app-store.svg" alt="App Store" />
+                </a>
+              )}
+              {stores.googlePlay && (
+                <a
+                  href={stores.googlePlay}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/img/stores/google-play.png" alt="Google Play" />
+                </a>
+              )}
+              {stores.amazon && (
+                <a href={stores.amazon} target="_blank" rel="noopener noreferrer">
+                  <img src="/img/stores/amazon.png" alt="Amazon" />
+                </a>
+              )}
+              {stores.macAppStore && (
+                <a
+                  href={stores.macAppStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/img/stores/mac-app-store.png" alt="Mac App Store" />
+                </a>
+              )}
+              {stores.microsoft && (
+                <a
+                  href={stores.microsoft}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/img/stores/microsoft.png" alt="Microsoft Store" />
+                </a>
+              )}
+              {stores.h5 && (
+                <a href={stores.h5} target="_blank" rel="noopener noreferrer">
+                  <img src="/img/stores/h5.svg" alt="Play on Web" />
+                </a>
+              )}
+            </div>
 
-        {/* Store Links - Second Row */}
-        <div className={styles.storeLinksRow}>
-          {stores.facebook && (
-            <a href={stores.facebook} target="_blank" rel="noopener noreferrer">
-              <img src="/img/stores/facebook.png" alt="Facebook Gaming" />
-            </a>
-          )}
-          {stores.galaxyStore && (
-            <a
-              href={stores.galaxyStore}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/img/stores/galaxy-store.png" alt="Galaxy Store" />
-            </a>
-          )}
-          {stores.appGallery && (
-            <a
-              href={stores.appGallery}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/img/stores/app-gallery.png" alt="AppGallery" />
-            </a>
-          )}
-          {stores.aptoide && (
-            <a href={stores.aptoide} target="_blank" rel="noopener noreferrer">
-              <img src="/img/stores/aptoide.png" alt="Aptoide" />
-            </a>
-          )}
-        </div>
-      </div>
+            {/* Store Links - Second Row */}
+            <div className={styles.storeLinksRow}>
+              {stores.facebook && (
+                <a href={stores.facebook} target="_blank" rel="noopener noreferrer">
+                  <img src="/img/stores/facebook.png" alt="Facebook Gaming" />
+                </a>
+              )}
+              {stores.galaxyStore && (
+                <a
+                  href={stores.galaxyStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/img/stores/galaxy-store.png" alt="Galaxy Store" />
+                </a>
+              )}
+              {stores.appGallery && (
+                <a
+                  href={stores.appGallery}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/img/stores/app-gallery.png" alt="AppGallery" />
+                </a>
+              )}
+              {stores.aptoide && (
+                <a href={stores.aptoide} target="_blank" rel="noopener noreferrer">
+                  <img src="/img/stores/aptoide.png" alt="Aptoide" />
+                </a>
+              )}
+            </div>
+          </div>
 
           {/* Description */}
           <p className={styles.description}>{description}</p>

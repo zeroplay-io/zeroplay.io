@@ -21,6 +21,7 @@
 .videoContainer {
   position: relative;
   width: 300px;
+  aspect-ratio: 9 / 19.5; /* iPhone 15 Pro Max portrait ratio - initial state */
   flex-shrink: 0;
   background: #1d1d1f;
   border-radius: 40px;
@@ -28,6 +29,14 @@
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.3),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove fixed aspect ratio after video loads */
+.videoContainer.loaded {
+  aspect-ratio: auto;
 }
 
 .videoContainer::before {
@@ -56,6 +65,15 @@
   z-index: 11;
 }
 
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .video {
   width: 100%;
   height: auto;
@@ -63,6 +81,31 @@
   border-radius: 30px;
   object-fit: contain;
   background: #000;
+}
+
+.video.loading {
+  opacity: 0;
+  height: 100%;
+}
+
+.videoLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  z-index: 5;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Game Info */
@@ -188,7 +231,7 @@
 
 /* Screenshots Section - Horizontal Scroll (App Store Style) */
 .screenshotsSection {
-  padding: 60px 0;
+  padding: 60px 24px;
   background: linear-gradient(
     180deg,
     var(--ifm-background-surface-color) 0%,
@@ -222,7 +265,7 @@
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
-  padding: 20px 24px;
+  padding: 20px 0;
   cursor: grab;
   user-select: none;
 }
@@ -397,11 +440,11 @@
   }
 
   .screenshotsSection {
-    padding: 48px 0;
+    padding: 48px 32px;
   }
 
   .screenshotsContainer {
-    padding: 20px 32px;
+    padding: 20px 0;
   }
 
   .screenshotItem {
@@ -450,11 +493,11 @@
   }
 
   .screenshotsSection {
-    padding: 40px 0;
+    padding: 40px 24px;
   }
 
   .screenshotsContainer {
-    padding: 20px 24px;
+    padding: 20px 0;
   }
 
   .screenshotItem {
@@ -518,19 +561,28 @@
   }
 
   .storeLinksRow {
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .storeLinksRow::-webkit-scrollbar {
+    display: none;
   }
 
   .storeLinksRow img {
-    height: 38px;
+    height: 32px;
+    flex-shrink: 0;
   }
 
   .screenshotsSection {
-    padding: 36px 0;
+    padding: 36px 20px;
   }
 
   .screenshotsContainer {
-    padding: 16px 20px;
+    padding: 16px 0;
     gap: 14px;
   }
 
