@@ -48,6 +48,8 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
   } = game;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [screenshotDimensions, setScreenshotDimensions] = useState<{width: number, height: number} | null>(null);
+  const screenshotWrapperRef = useRef<HTMLDivElement>(null);
 
   const handlePrevClick = () => {
     setCurrentIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
@@ -55,6 +57,16 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
 
   const handleNextClick = () => {
     setCurrentIndex((i) => (i + 1) % screenshots.length);
+  };
+
+  const handleFirstImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    if (!screenshotDimensions && screenshotWrapperRef.current) {
+      const img = event.currentTarget;
+      setScreenshotDimensions({
+        width: img.naturalWidth,
+        height: img.naturalHeight
+      });
+    }
   };
 
   const videoRef = useRef(null);
@@ -264,12 +276,19 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       {screenshots.length > 0 && (
         <div className={styles.screenshotsSection}>
           <div className={styles.screenshotsContainer}>
-            <div className={styles.screenshotWrapper}>
+            <div
+              ref={screenshotWrapperRef}
+              className={styles.screenshotWrapper}
+              style={screenshotDimensions ? {
+                aspectRatio: `${screenshotDimensions.width} / ${screenshotDimensions.height}`
+              } : undefined}
+            >
           {screenshots.length > 0 && (
             <ProgressiveImage
               src={screenshots[currentIndex]}
               alt={`${title} Screenshot ${currentIndex + 1}`}
               className={styles.screenshot}
+              onLoad={currentIndex === 0 ? handleFirstImageLoad : undefined}
             />
           )}
 

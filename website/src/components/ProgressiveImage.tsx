@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ProgressiveImage.module.css";
 
-const ProgressiveImage = ({ src, alt, className, ...props }) => {
+const ProgressiveImage = ({ src, alt, className, onLoad, ...props }) => {
   const [currentSrc, setCurrentSrc] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [firstLoadDone, setFirstLoadDone] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,6 +36,12 @@ const ProgressiveImage = ({ src, alt, className, ...props }) => {
         if (!currentSrc || newIndex > currentIndex) {
           setCurrentSrc(url);
           setIsLoading(false);
+
+          // Call onLoad callback with the image element for the first successful load
+          if (!firstLoadDone && onLoad) {
+            setFirstLoadDone(true);
+            onLoad({ currentTarget: img });
+          }
         }
       };
 
