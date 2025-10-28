@@ -84,14 +84,34 @@ html[data-theme="dark"] {
 }
 
 .footer__logo {
-  max-width: 180px;
-  margin-bottom: 1rem;
+  max-width: 400px;
+  margin-bottom: 2rem;
   opacity: 0.95;
   transition: opacity 0.2s ease;
 }
 
 .footer__logo:hover {
   opacity: 1;
+}
+
+/* Footer logo responsive sizes */
+@media (max-width: 996px) {
+  .footer__logo {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__logo {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__logo {
+    max-width: 240px;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .footer__links {

@@ -397,6 +397,25 @@
 
   .videoContainer {
     width: 260px;
+    padding: 8.7px;
+    border-radius: 35px;
+  }
+
+  .videoContainer::before {
+    top: 8.7px;
+    width: 87px;
+    height: 24px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .videoContainer::after {
+    top: 15.7px;
+    width: 49px;
+    height: 4.3px;
+  }
+
+  .video {
+    border-radius: 26px;
   }
 
   .gameInfo {
@@ -464,6 +483,25 @@
 
   .videoContainer {
     width: 220px;
+    padding: 7.3px;
+    border-radius: 29px;
+  }
+
+  .videoContainer::before {
+    top: 7.3px;
+    width: 73px;
+    height: 20.5px;
+    border-radius: 0 0 13px 13px;
+  }
+
+  .videoContainer::after {
+    top: 13.2px;
+    width: 41px;
+    height: 3.7px;
+  }
+
+  .video {
+    border-radius: 22px;
   }
 
   .titleRow {
@@ -530,6 +568,25 @@
 
   .videoContainer {
     width: min(280px, calc(100vw - 80px));
+    padding: 9.3px;
+    border-radius: 37px;
+  }
+
+  .videoContainer::before {
+    top: 9.3px;
+    width: 93px;
+    height: 26px;
+    border-radius: 0 0 17px 17px;
+  }
+
+  .videoContainer::after {
+    top: 16.7px;
+    width: 52px;
+    height: 4.7px;
+  }
+
+  .video {
+    border-radius: 28px;
   }
 
   .titleRow {
