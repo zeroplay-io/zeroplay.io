@@ -27,6 +27,7 @@ interface GameData {
   description: string;
   icon: string;
   videoUrl: string;
+  posterUrl?: string;
   stores?: StoreLinks;
   socialMedia?: SocialMedia;
   screenshots?: string[];
@@ -42,6 +43,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     description,
     icon,
     videoUrl,
+    posterUrl,
     stores = {},
     socialMedia = {},
     screenshots = [],
@@ -50,6 +52,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [screenshotDimensions, setScreenshotDimensions] = useState<{width: number, height: number} | null>(null);
   const screenshotWrapperRef = useRef<HTMLDivElement>(null);
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
   const handlePrevClick = () => {
     setCurrentIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
@@ -75,6 +78,11 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     if (videoRef.current) {
       const video = videoRef.current;
 
+      const handlePlay = () => {
+        console.log("Video play event fired");
+        setHasPlayedOnce(true);
+      };
+
       const tryPlay = () => {
         video
           .play()
@@ -98,6 +106,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
         setIsVideoLoading(false);
       };
 
+      video.addEventListener('play', handlePlay);
       video.oncanplaythrough = tryPlay;
       video.addEventListener('loadeddata', handleLoadedData);
 
@@ -116,6 +125,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
         );
         window.removeEventListener("focus", handleFocus);
         video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('play', handlePlay);
       };
     }
   }, []);
@@ -134,6 +144,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
               loop
               muted
               playsInline
+              poster={!hasPlayedOnce && posterUrl ? posterUrl : undefined}
               className={`${styles.video} ${isVideoLoading ? styles.loading : ''}`}
             >
               <source src={videoUrl} type="video/mp4" />

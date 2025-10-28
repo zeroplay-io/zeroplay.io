@@ -27,6 +27,7 @@ interface GameData {
   description: string;
   icon: string;
   videoUrl: string;
+  posterUrl?: string;
   stores?: StoreLinks;
   socialMedia?: SocialMedia;
   screenshots?: string[];
@@ -44,6 +45,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     description,
     icon,
     videoUrl,
+    posterUrl,
     stores = {},
     socialMedia = {},
     screenshots = [],
@@ -53,6 +55,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
   const [startX, setStartX] = useState(0);
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -60,6 +63,11 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
   useEffect(() => {
     if (videoRef.current) {
       const video = videoRef.current;
+
+      const handlePlay = () => {
+        console.log("Video play event fired");
+        setHasPlayedOnce(true);
+      };
 
       const tryPlay = () => {
         video
@@ -84,6 +92,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
         setIsVideoLoading(false);
       };
 
+      video.addEventListener('play', handlePlay);
       video.oncanplaythrough = tryPlay;
       video.addEventListener('loadeddata', handleLoadedData);
 
@@ -102,6 +111,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
         );
         window.removeEventListener("focus", handleFocus);
         video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('play', handlePlay);
       };
     }
   }, []);
@@ -204,6 +214,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
                 loop
                 muted
                 playsInline
+                poster={!hasPlayedOnce && posterUrl ? posterUrl : undefined}
                 className={`${styles.video} ${isVideoLoading ? styles.loading : ''}`}
               >
                 <source src={videoUrl} type="video/mp4" />
