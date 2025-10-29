@@ -19,16 +19,10 @@ export default function BackgammonPage(): JSX.Element {
     );
   }
 
-  // Generate screenshots array based on screenshotCount
-  const screenshots = Array.from(
-    { length: game.screenshotCount || 0 },
-    (_, i) => `/games/${game.id}/screenshot-${String(i + 1).padStart(2, "0")}.jpg`
-  );
-
-  // Prepare game data with screenshots
+  // Use screenshots array directly from game data
   const gameWithScreenshots = {
     ...game,
-    screenshots,
+    screenshots: game.screenshots || [],
   };
 
   // Choose component based on orientation
