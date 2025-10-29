@@ -73,6 +73,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  background: #000;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .video {
@@ -81,7 +85,9 @@
   display: block;
   border-radius: 30px;
   object-fit: contain;
-  background: #000;
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .video.loading:not([poster]) {
@@ -475,8 +481,15 @@
     padding: 48px 32px;
   }
 
+  .screenshotsCarousel {
+    padding: 40px 24px;
+  }
+
   .screenshotsContainer {
     padding: 20px 0;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .screenshotItem {
@@ -547,8 +560,15 @@
     padding: 40px 24px;
   }
 
+  .screenshotsCarousel {
+    padding: 40px 20px;
+  }
+
   .screenshotsContainer {
     padding: 20px 0;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .screenshotItem {
@@ -651,9 +671,16 @@
     padding: 36px 20px;
   }
 
+  .screenshotsCarousel {
+    padding: 40px 20px;
+  }
+
   .screenshotsContainer {
     padding: 16px 0;
     gap: 14px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .screenshotItem {
