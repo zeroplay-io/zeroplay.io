@@ -51,13 +51,16 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     screenshots = [],
   } = game;
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeftPos, setScrollLeftPos] = useState(0);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isDraggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const dragStartScrollLeftRef = useRef(0);
+  const touchStartYRef = useRef(0);
+  const isTouchActiveRef = useRef(false);
+  const touchIntentRef = useRef<"horizontal" | "vertical" | null>(null);
 
   // Video auto-play logic
   useEffect(() => {
@@ -144,51 +147,84 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
   // Mouse drag to scroll
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeftPos(scrollContainerRef.current.scrollLeft);
+    isDraggingRef.current = true;
+    startXRef.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
     scrollContainerRef.current.style.cursor = "grabbing";
   };
 
   const handleMouseLeave = () => {
-    setIsDragging(false);
+    isDraggingRef.current = false;
     if (scrollContainerRef.current) {
       scrollContainerRef.current.style.cursor = "grab";
     }
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    isDraggingRef.current = false;
     if (scrollContainerRef.current) {
       scrollContainerRef.current.style.cursor = "grab";
     }
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
+    if (!isDraggingRef.current || !scrollContainerRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeftPos - walk;
+    const walk = (x - startXRef.current) * 2;
+    scrollContainerRef.current.scrollLeft =
+      dragStartScrollLeftRef.current - walk;
   };
 
   // Touch events for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeftPos(scrollContainerRef.current.scrollLeft);
+    isTouchActiveRef.current = true;
+    touchIntentRef.current = null;
+    isDraggingRef.current = false;
+    startXRef.current =
+      e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
+    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
+    touchStartYRef.current = e.touches[0].pageY;
   };
 
   const handleTouchEnd = () => {
-    setIsDragging(false);
+    isTouchActiveRef.current = false;
+    isDraggingRef.current = false;
+    touchIntentRef.current = null;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeftPos - walk;
+    if (!isTouchActiveRef.current || !scrollContainerRef.current) return;
+    const touch = e.touches[0];
+    const x = touch.pageX - scrollContainerRef.current.offsetLeft;
+    const deltaX = x - startXRef.current;
+    const deltaY = touch.pageY - touchStartYRef.current;
+
+    if (!touchIntentRef.current) {
+      // Allow a short movement to determine if the user intends to scroll vertically
+      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+        touchIntentRef.current = "vertical";
+        isDraggingRef.current = false;
+        return;
+      }
+
+      if (Math.abs(deltaX) < 8) {
+        return;
+      }
+
+      touchIntentRef.current = "horizontal";
+      isDraggingRef.current = true;
+    }
+
+    if (touchIntentRef.current === "vertical") {
+      return;
+    }
+
+    e.preventDefault();
+    const walk = deltaX;
+    scrollContainerRef.current.scrollLeft =
+      dragStartScrollLeftRef.current - walk;
   };
 
   const canScrollLeft = scrollPosition > 10;
@@ -427,6 +463,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
               onMouseMove={handleMouseMove}
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
+              onTouchCancel={handleTouchEnd}
               onTouchMove={handleTouchMove}
             >
               {screenshots.map((screenshot, index) => (
