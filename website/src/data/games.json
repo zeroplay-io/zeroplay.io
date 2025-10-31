@@ -47,7 +47,8 @@
 			"orientation": "portrait",
 			"stores": {
 				"appStore": "https://apps.apple.com/app/id6753621971",
-				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire"
+				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire",
+				"h5": "https://play.zeroplay.io/solitaire"
 			},
 			"socialMedia": {
 				"enabled": false
