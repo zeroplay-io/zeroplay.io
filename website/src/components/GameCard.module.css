@@ -11,25 +11,103 @@
 }
 
 .card {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 24px;
-  background: var(--ifm-card-background-color, #ffffff);
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: clamp(16px, 4vw, 32px);
+  background: #0f1219;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   margin-bottom: 24px;
+  color: #ffffff;
+  min-height: 240px;
+  aspect-ratio: 1024 / 500;
+  isolation: isolate;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.cardLoading {
+  background: radial-gradient(circle at top, #1d2433 0%, #0f1219 55%, #0a0c12 100%);
+}
+
+.cardLoaded {
+  background: #000;
+}
+
+.banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+.cardLoaded .banner {
+  opacity: 1;
+}
+
+.card:hover .banner {
+  transform: scale(1.03);
+}
+
+.bannerPlaceholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(45, 58, 81, 0.85) 0%, rgba(17, 23, 38, 0.9) 60%, rgba(10, 14, 23, 0.95) 100%);
+  z-index: 1;
+  animation: bannerPulse 1.6s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+
+.cardLoaded .bannerPlaceholder {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.65) 32%,
+    rgba(0, 0, 0, 0.3) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.info {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(14px, 3vw, 20px);
+  width: 100%;
+  z-index: 4;
 }
 
 .iconContainer {
   flex-shrink: 0;
+  position: relative;
+  align-self: end;
 }
 
 .icon {
@@ -43,13 +121,14 @@
 .content {
   flex: 1;
   min-width: 0;
+  color: #ffffff;
+  align-self: end;
 }
 
 .title {
   margin: 0 0 8px 0;
   font-size: 24px;
   font-weight: 700;
-  color: var(--ifm-heading-color);
   line-height: 1.2;
 }
 
@@ -57,14 +136,14 @@
   margin: 0 0 12px 0;
   font-size: 16px;
   font-weight: 400;
-  color: var(--ifm-color-emphasis-500);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.3;
 }
 
 .description {
   margin: 0;
   font-size: 14px;
-  color: var(--ifm-color-emphasis-700);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -73,57 +152,65 @@
   text-overflow: ellipsis;
 }
 
-/* Dark mode support */
-[data-theme='dark'] .card {
-  background: var(--ifm-card-background-color, #1c1e21);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme='dark'] .card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+@keyframes bannerPulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .card {
-    padding: 20px;
-    gap: 16px;
+    padding: clamp(16px, 6vw, 24px);
+    aspect-ratio: 16 / 9;
+    min-height: 220px;
   }
 
   .icon {
-    width: 80px;
-    height: 80px;
+    width: clamp(88px, 18vw, 110px);
+    height: clamp(88px, 18vw, 110px);
     border-radius: 16px;
   }
 
   .title {
-    font-size: 18px;
+    font-size: 19px;
+    margin-bottom: 6px;
   }
 
   .subtitle {
     font-size: 14px;
+    margin-bottom: 10px;
   }
 
   .description {
     font-size: 13px;
+    line-height: 1.45;
   }
 }
 
 @media (max-width: 480px) {
   .card {
     padding: 16px;
-    gap: 12px;
+    aspect-ratio: auto;
+    min-height: 200px;
   }
 
   .icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 12px;
+    width: clamp(78px, 24vw, 92px);
+    height: clamp(78px, 24vw, 92px);
+    border-radius: 14px;
   }
 
   .title {
-    font-size: 16px;
-    line-height: 1.3;
+    font-size: 17px;
+    line-height: 1.25;
+    margin-bottom: 6px;
   }
 
   .subtitle {
@@ -133,5 +220,6 @@
 
   .description {
     font-size: 12px;
+    line-height: 1.45;
   }
 }

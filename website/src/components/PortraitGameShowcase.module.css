@@ -19,13 +19,20 @@
 
 /* Video Container - Portrait Style with iPhone frame */
 .videoContainer {
+  --frame-padding: 10px;
+  --frame-radius: 40px;
+  --notch-width: 100px;
+  --notch-height: 28px;
+  --notch-radius: 18px;
+  --speaker-width: 56px;
+  --speaker-height: 5px;
   position: relative;
   width: 300px;
   aspect-ratio: 886 / 1920; /* Portrait phone mockup ratio - initial state */
   flex-shrink: 0;
   background: #1d1d1f;
-  border-radius: 40px;
-  padding: 10px;
+  border-radius: var(--frame-radius);
+  padding: var(--frame-padding);
   box-sizing: content-box; /* Ensure aspect-ratio calculation excludes padding */
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.3),
@@ -43,26 +50,28 @@
 .videoContainer::before {
   content: '';
   position: absolute;
-  top: 10px;
+  top: var(--frame-padding);
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 28px;
+  width: var(--notch-width);
+  height: var(--notch-height);
   background: #1d1d1f;
-  border-radius: 0 0 18px 18px;
+  border-radius: 0 0 var(--notch-radius) var(--notch-radius);
   z-index: 10;
 }
 
 .videoContainer::after {
   content: '';
   position: absolute;
-  top: 18px;
+  top: calc(
+    var(--frame-padding) + (var(--notch-height) - var(--speaker-height)) / 2
+  );
   left: 50%;
   transform: translateX(-50%);
-  width: 56px;
-  height: 5px;
+  width: var(--speaker-width);
+  height: var(--speaker-height);
   background: rgba(0, 0, 0, 0.6);
-  border-radius: 2.5px;
+  border-radius: calc(var(--speaker-height) / 2);
   z-index: 11;
 }
 
@@ -75,7 +84,7 @@
   justify-content: center;
   z-index: 1;
   background: #000;
-  border-radius: 30px;
+  border-radius: calc(var(--frame-radius) - var(--frame-padding));
   overflow: hidden;
 }
 
@@ -83,7 +92,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 30px;
+  border-radius: calc(var(--frame-radius) - var(--frame-padding));
   object-fit: contain;
   background: transparent;
   position: relative;
@@ -267,6 +276,7 @@
     0 1px 3px rgba(0, 0, 0, 0.02),
     0 2px 8px rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 }
 
 .screenshotsContainer {
@@ -278,16 +288,40 @@
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   padding: 20px 0;
-  cursor: grab;
   user-select: none;
   -webkit-overflow-scrolling: touch;
   margin: 0 -32px;
   padding-left: 32px;
   padding-right: 32px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 32px;
+  touch-action: pan-y pinch-zoom;
+  position: relative;
 }
 
-.screenshotsContainer:active {
-  cursor: grabbing;
+.screenshotsCarousel::before,
+.screenshotsCarousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(
+    to right,
+    rgba(250, 251, 252, 1),
+    rgba(250, 251, 252, 0)
+  );
+}
+
+.screenshotsCarousel::before {
+  left: 0;
+}
+
+.screenshotsCarousel::after {
+  right: 0;
+  transform: scaleX(-1);
 }
 
 .screenshotsContainer::-webkit-scrollbar {
@@ -297,6 +331,25 @@
 .screenshotItem {
   flex-shrink: 0;
   width: 300px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    opacity 0.35s ease;
+  transform: scale(0.92);
+  opacity: 0.7;
+  border-radius: 24px;
+  outline: none;
+}
+
+.screenshotItem:focus-visible {
+  box-shadow: 0 0 0 3px rgba(46, 170, 220, 0.45);
+}
+
+.screenshotItemActive {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .screenshot {
@@ -309,9 +362,15 @@
     0 0 0 1px rgba(0, 0, 0, 0.04);
   display: block;
   object-fit: contain;
-  pointer-events: none;
   background: #fff;
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.screenshotItemActive .screenshot {
+  box-shadow:
+    0 10px 24px rgba(15, 21, 30, 0.16),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 /* Scroll Buttons */
@@ -332,6 +391,7 @@
   z-index: 10;
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
 }
 
 .scrollButton:hover {
@@ -346,12 +406,44 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.scrollButton:disabled {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
 .scrollButtonLeft {
   left: 16px;
 }
 
 .scrollButtonRight {
   right: 16px;
+}
+
+.paginationDots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.paginationDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(80, 92, 112, 0.25);
+  transition: all 0.3s ease;
+}
+
+.paginationDotActive {
+  width: 20px;
+  background: var(--ifm-color-primary);
+  opacity: 0.9;
 }
 
 /* Dark mode support */
@@ -376,6 +468,15 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+[data-theme='dark'] .screenshotsCarousel::before,
+[data-theme='dark'] .screenshotsCarousel::after {
+  background: linear-gradient(
+    to right,
+    rgba(26, 29, 35, 0.95),
+    rgba(26, 29, 35, 0)
+  );
+}
+
 [data-theme='dark'] .videoContainer {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
@@ -386,6 +487,12 @@
     0 4px 12px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.05);
   background: rgba(20, 24, 32, 0.6);
+}
+
+[data-theme='dark'] .screenshotItemActive .screenshot {
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 [data-theme='dark'] .scrollButton {
@@ -399,6 +506,14 @@
   background: rgba(48, 52, 60, 1);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .paginationDot {
+  background: rgba(163, 174, 193, 0.25);
+}
+
+[data-theme='dark'] .paginationDotActive {
+  background: var(--ifm-color-primary);
 }
 
 /* Responsive Design */
@@ -416,25 +531,13 @@
 
   .videoContainer {
     width: 260px;
-    padding: 8.7px;
-    border-radius: 35px;
-  }
-
-  .videoContainer::before {
-    top: 8.7px;
-    width: 87px;
-    height: 24px;
-    border-radius: 0 0 16px 16px;
-  }
-
-  .videoContainer::after {
-    top: 15.7px;
-    width: 49px;
-    height: 4.3px;
-  }
-
-  .video {
-    border-radius: 26px;
+    --frame-padding: 8.7px;
+    --frame-radius: 35px;
+    --notch-width: 87px;
+    --notch-height: 24px;
+    --notch-radius: 16px;
+    --speaker-width: 49px;
+    --speaker-height: 4.3px;
   }
 
   .gameInfo {
@@ -509,25 +612,13 @@
 
   .videoContainer {
     width: 220px;
-    padding: 7.3px;
-    border-radius: 29px;
-  }
-
-  .videoContainer::before {
-    top: 7.3px;
-    width: 73px;
-    height: 20.5px;
-    border-radius: 0 0 13px 13px;
-  }
-
-  .videoContainer::after {
-    top: 13.2px;
-    width: 41px;
-    height: 3.7px;
-  }
-
-  .video {
-    border-radius: 22px;
+    --frame-padding: 7.3px;
+    --frame-radius: 29px;
+    --notch-width: 73px;
+    --notch-height: 20.5px;
+    --notch-radius: 13px;
+    --speaker-width: 41px;
+    --speaker-height: 3.7px;
   }
 
   .titleRow {
@@ -601,25 +692,13 @@
 
   .videoContainer {
     width: min(280px, calc(100vw - 80px));
-    padding: 9.3px;
-    border-radius: 37px;
-  }
-
-  .videoContainer::before {
-    top: 9.3px;
-    width: 93px;
-    height: 26px;
-    border-radius: 0 0 17px 17px;
-  }
-
-  .videoContainer::after {
-    top: 16.7px;
-    width: 52px;
-    height: 4.7px;
-  }
-
-  .video {
-    border-radius: 28px;
+    --frame-padding: 9.3px;
+    --frame-radius: 37px;
+    --notch-width: 93px;
+    --notch-height: 26px;
+    --notch-radius: 17px;
+    --speaker-width: 52px;
+    --speaker-height: 4.7px;
   }
 
   .titleRow {

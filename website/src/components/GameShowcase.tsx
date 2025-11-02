@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import ProgressiveImage from "./ProgressiveImage";
 import styles from "./GameShowcase.module.css";
 
@@ -24,6 +24,7 @@ interface SocialMedia {
 
 interface GameData {
   title: string;
+  subtitle?: string;
   description: string;
   icon: string;
   videoUrl: string;
@@ -50,7 +51,9 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
   } = game;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
-  const [screenshotDimensions, setScreenshotDimensions] = useState<{width: number, height: number} | null>(null);
+  const [dimensionsBySrc, setDimensionsBySrc] = useState<
+    Record<string, { width: number; height: number }>
+  >({});
   const screenshotWrapperRef = useRef<HTMLDivElement>(null);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
@@ -62,14 +65,32 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     setCurrentIndex((i) => (i + 1) % screenshots.length);
   };
 
-  const handleFirstImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
-    if (!screenshotDimensions && screenshotWrapperRef.current) {
-      const img = event.currentTarget;
-      setScreenshotDimensions({
-        width: img.naturalWidth,
-        height: img.naturalHeight
-      });
+  const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    const { naturalWidth, naturalHeight, currentSrc } = img;
+
+    if (!naturalWidth || !naturalHeight || !currentSrc) {
+      return;
     }
+
+    setDimensionsBySrc((prev) => {
+      const existing = prev[currentSrc];
+      if (
+        existing &&
+        existing.width === naturalWidth &&
+        existing.height === naturalHeight
+      ) {
+        return prev;
+      }
+
+      return {
+        ...prev,
+        [currentSrc]: {
+          width: naturalWidth,
+          height: naturalHeight,
+        },
+      };
+    });
   };
 
   const videoRef = useRef(null);
@@ -129,6 +150,31 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       };
     }
   }, []);
+
+  const activeScreenshotSrc = screenshots[currentIndex];
+  const activeDimensions = activeScreenshotSrc
+    ? dimensionsBySrc[activeScreenshotSrc]
+    : undefined;
+
+  const fallbackDimensions = useMemo(() => {
+    for (const src of screenshots) {
+      const dimensions = dimensionsBySrc[src];
+      if (dimensions) {
+        return dimensions;
+      }
+    }
+    return undefined;
+  }, [screenshots, dimensionsBySrc]);
+
+  const screenshotWrapperStyle = activeDimensions
+    ? {
+        aspectRatio: `${activeDimensions.width} / ${activeDimensions.height}`,
+      }
+    : fallbackDimensions
+    ? {
+        aspectRatio: `${fallbackDimensions.width} / ${fallbackDimensions.height}`,
+      }
+    : undefined;
 
   return (
     <div className={styles.gameShowcase}>
@@ -290,16 +336,14 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
             <div
               ref={screenshotWrapperRef}
               className={styles.screenshotWrapper}
-              style={screenshotDimensions ? {
-                aspectRatio: `${screenshotDimensions.width} / ${screenshotDimensions.height}`
-              } : undefined}
+              style={screenshotWrapperStyle}
             >
           {screenshots.length > 0 && (
             <ProgressiveImage
               src={screenshots[currentIndex]}
               alt={`${title} Screenshot ${currentIndex + 1}`}
               className={styles.screenshot}
-              onLoad={currentIndex === 0 ? handleFirstImageLoad : undefined}
+              onLoad={handleImageLoad}
             />
           )}
 

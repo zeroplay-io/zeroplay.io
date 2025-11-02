@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import clsx from "clsx";
 import ProgressiveImage from "./ProgressiveImage";
 import styles from "./PortraitGameShowcase.module.css";
 
@@ -24,6 +25,7 @@ interface SocialMedia {
 
 interface GameData {
   title: string;
+  subtitle?: string;
   description: string;
   icon: string;
   videoUrl: string;
@@ -50,17 +52,15 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     socialMedia = {},
     screenshots = [],
   } = game;
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const isDraggingRef = useRef(false);
-  const startXRef = useRef(0);
-  const dragStartScrollLeftRef = useRef(0);
-  const touchStartYRef = useRef(0);
-  const isTouchActiveRef = useRef(false);
-  const touchIntentRef = useRef<"horizontal" | "vertical" | null>(null);
+  const screenshotRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollAnimationFrame = useRef<number | null>(null);
+  const [activeScreenshot, setActiveScreenshot] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   // Video auto-play logic
   useEffect(() => {
@@ -120,120 +120,113 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
   }, []);
 
   // Scroll handling for screenshot carousel
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      setScrollPosition(scrollContainerRef.current.scrollLeft);
-    }
-  };
-
-  const scrollLeftBtn = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: -320,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollRightBtn = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 320,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Mouse drag to scroll
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    isDraggingRef.current = true;
-    startXRef.current = e.pageX - scrollContainerRef.current.offsetLeft;
-    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
-    scrollContainerRef.current.style.cursor = "grabbing";
-  };
-
-  const handleMouseLeave = () => {
-    isDraggingRef.current = false;
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = "grab";
-    }
-  };
-
-  const handleMouseUp = () => {
-    isDraggingRef.current = false;
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = "grab";
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDraggingRef.current || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startXRef.current) * 2;
-    scrollContainerRef.current.scrollLeft =
-      dragStartScrollLeftRef.current - walk;
-  };
-
-  // Touch events for mobile
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollContainerRef.current) return;
-    isTouchActiveRef.current = true;
-    touchIntentRef.current = null;
-    isDraggingRef.current = false;
-    startXRef.current =
-      e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
-    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
-    touchStartYRef.current = e.touches[0].pageY;
-  };
-
-  const handleTouchEnd = () => {
-    isTouchActiveRef.current = false;
-    isDraggingRef.current = false;
-    touchIntentRef.current = null;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isTouchActiveRef.current || !scrollContainerRef.current) return;
-    const touch = e.touches[0];
-    const x = touch.pageX - scrollContainerRef.current.offsetLeft;
-    const deltaX = x - startXRef.current;
-    const deltaY = touch.pageY - touchStartYRef.current;
-
-    if (!touchIntentRef.current) {
-      // Allow a short movement to determine if the user intends to scroll vertically
-      if (Math.abs(deltaY) > Math.abs(deltaX)) {
-        touchIntentRef.current = "vertical";
-        isDraggingRef.current = false;
-        return;
-      }
-
-      if (Math.abs(deltaX) < 8) {
-        return;
-      }
-
-      touchIntentRef.current = "horizontal";
-      isDraggingRef.current = true;
-    }
-
-    if (touchIntentRef.current === "vertical") {
+  const updateScrollMetrics = useCallback(() => {
+    if (!scrollContainerRef.current) {
       return;
     }
 
-    e.preventDefault();
-    const walk = deltaX;
-    scrollContainerRef.current.scrollLeft =
-      dragStartScrollLeftRef.current - walk;
+    const container = scrollContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const containerWidth = container.clientWidth;
+    const maxScrollLeft = container.scrollWidth - containerWidth;
+    const containerCenter = scrollLeft + containerWidth / 2;
+
+    const nextCanScrollLeft = scrollLeft > 24;
+    const nextCanScrollRight = scrollLeft < maxScrollLeft - 24;
+
+    setCanScrollLeft((prev) =>
+      prev === nextCanScrollLeft ? prev : nextCanScrollLeft
+    );
+    setCanScrollRight((prev) =>
+      prev === nextCanScrollRight ? prev : nextCanScrollRight
+    );
+
+    let closestIndex = 0;
+    let smallestDistance = Number.POSITIVE_INFINITY;
+
+    screenshotRefs.current.forEach((item, index) => {
+      if (!item) {
+        return;
+      }
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const distance = Math.abs(itemCenter - containerCenter);
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setActiveScreenshot((prev) =>
+      prev === closestIndex ? prev : closestIndex
+    );
+  }, []);
+
+  const handleScroll = () => {
+    if (scrollAnimationFrame.current) {
+      cancelAnimationFrame(scrollAnimationFrame.current);
+    }
+    scrollAnimationFrame.current = window.requestAnimationFrame(
+      updateScrollMetrics
+    );
   };
 
-  const canScrollLeft = scrollPosition > 10;
-  const canScrollRight =
-    scrollContainerRef.current &&
-    scrollPosition <
-      scrollContainerRef.current.scrollWidth -
-        scrollContainerRef.current.clientWidth -
-        10;
+  const scrollToScreenshot = useCallback(
+    (index: number) => {
+      if (!scrollContainerRef.current || screenshots.length === 0) {
+        return;
+      }
+
+      const safeIndex = Math.max(
+        0,
+        Math.min(index, screenshots.length - 1)
+      );
+      const target = screenshotRefs.current[safeIndex];
+
+      if (!target) {
+        return;
+      }
+
+      const container = scrollContainerRef.current;
+      const targetOffset =
+        target.offsetLeft +
+        target.offsetWidth / 2 -
+        container.clientWidth / 2;
+
+      container.scrollTo({
+        left: targetOffset,
+        behavior: "smooth",
+      });
+    },
+    [screenshots.length]
+  );
+
+  const scrollLeftBtn = () => {
+    scrollToScreenshot(activeScreenshot - 1);
+  };
+
+  const scrollRightBtn = () => {
+    scrollToScreenshot(activeScreenshot + 1);
+  };
+
+  useEffect(() => {
+    screenshotRefs.current = screenshotRefs.current.slice(
+      0,
+      screenshots.length
+    );
+    updateScrollMetrics();
+  }, [screenshots.length, updateScrollMetrics]);
+
+  useEffect(() => {
+    const handleResize = () => updateScrollMetrics();
+    window.addEventListener("resize", handleResize);
+    updateScrollMetrics();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (scrollAnimationFrame.current) {
+        cancelAnimationFrame(scrollAnimationFrame.current);
+      }
+    };
+  }, [updateScrollMetrics]);
 
   return (
     <div className={styles.portraitGameShowcase}>
@@ -431,9 +424,11 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
           <div className={styles.screenshotsCarousel}>
             {canScrollLeft && (
               <button
+                type="button"
                 onClick={scrollLeftBtn}
                 className={`${styles.scrollButton} ${styles.scrollButtonLeft}`}
                 aria-label="Scroll left"
+                disabled={!canScrollLeft}
               >
                 <svg
                   width="24"
@@ -457,17 +452,30 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
               ref={scrollContainerRef}
               className={styles.screenshotsContainer}
               onScroll={handleScroll}
-              onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-              onTouchCancel={handleTouchEnd}
-              onTouchMove={handleTouchMove}
+              role="list"
+              aria-label={`${title} screenshots`}
             >
               {screenshots.map((screenshot, index) => (
-                <div key={index} className={styles.screenshotItem}>
+                <div
+                  key={`${screenshot}-${index}`}
+                  className={clsx(
+                    styles.screenshotItem,
+                    activeScreenshot === index && styles.screenshotItemActive
+                  )}
+                  ref={(element) => {
+                    screenshotRefs.current[index] = element;
+                  }}
+                  onClick={() => scrollToScreenshot(index)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      scrollToScreenshot(index);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View screenshot ${index + 1}`}
+                >
                   <ProgressiveImage
                     src={screenshot}
                     alt={`${title} Screenshot ${index + 1}`}
@@ -477,11 +485,25 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
               ))}
             </div>
 
+            <div className={styles.paginationDots} aria-hidden="true">
+              {screenshots.map((_, index) => (
+                <span
+                  key={`dot-${index}`}
+                  className={clsx(
+                    styles.paginationDot,
+                    activeScreenshot === index && styles.paginationDotActive
+                  )}
+                />
+              ))}
+            </div>
+
             {canScrollRight && (
               <button
+                type="button"
                 onClick={scrollRightBtn}
                 className={`${styles.scrollButton} ${styles.scrollButtonRight}`}
                 aria-label="Scroll right"
+                disabled={!canScrollRight}
               >
                 <svg
                   width="24"
