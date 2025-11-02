@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "ZeroPlay",
+    "description": "The title in the navbar"
+  },
+  "item.label.Games": {
+    "message": "游戏",
+    "description": "Navbar item with label Games"
+  },
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
+  }
+}

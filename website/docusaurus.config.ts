@@ -40,7 +40,74 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: [
+      "en",       // English
+      "zh-Hans",  // Simplified Chinese
+      "zh-Hant",  // Traditional Chinese
+      "ja",       // Japanese
+      "ko",       // Korean
+      "es",       // Spanish
+      "fr",       // French
+      "de",       // German
+      "it",       // Italian
+      "pt",       // Portuguese
+      "pt-BR",    // Brazilian Portuguese
+      "ru",       // Russian
+      "ar",       // Arabic
+      "tr",       // Turkish
+      "th",       // Thai
+      "vi",       // Vietnamese
+      "id",       // Indonesian
+      "ms",       // Malay
+      "fil",      // Filipino
+      "hi",       // Hindi
+      "nl",       // Dutch
+      "pl",       // Polish
+      "sv",       // Swedish
+      "no",       // Norwegian
+      "da",       // Danish
+      "fi",       // Finnish
+      "he",       // Hebrew
+      "fa",       // Persian
+      "uk",       // Ukrainian
+      "ro",       // Romanian
+      "cs",       // Czech
+      "hu",       // Hungarian
+    ],
+    localeConfigs: {
+      en: { label: "English", direction: "ltr", htmlLang: "en-US" },
+      "zh-Hans": { label: "简体中文", direction: "ltr", htmlLang: "zh-CN" },
+      "zh-Hant": { label: "繁體中文", direction: "ltr", htmlLang: "zh-TW" },
+      ja: { label: "日本語", direction: "ltr", htmlLang: "ja-JP" },
+      ko: { label: "한국어", direction: "ltr", htmlLang: "ko-KR" },
+      es: { label: "Español", direction: "ltr", htmlLang: "es-ES" },
+      fr: { label: "Français", direction: "ltr", htmlLang: "fr-FR" },
+      de: { label: "Deutsch", direction: "ltr", htmlLang: "de-DE" },
+      it: { label: "Italiano", direction: "ltr", htmlLang: "it-IT" },
+      pt: { label: "Português", direction: "ltr", htmlLang: "pt-PT" },
+      "pt-BR": { label: "Português (Brasil)", direction: "ltr", htmlLang: "pt-BR" },
+      ru: { label: "Русский", direction: "ltr", htmlLang: "ru-RU" },
+      ar: { label: "العربية", direction: "rtl", htmlLang: "ar-SA" },
+      tr: { label: "Türkçe", direction: "ltr", htmlLang: "tr-TR" },
+      th: { label: "ไทย", direction: "ltr", htmlLang: "th-TH" },
+      vi: { label: "Tiếng Việt", direction: "ltr", htmlLang: "vi-VN" },
+      id: { label: "Bahasa Indonesia", direction: "ltr", htmlLang: "id-ID" },
+      ms: { label: "Bahasa Melayu", direction: "ltr", htmlLang: "ms-MY" },
+      fil: { label: "Filipino", direction: "ltr", htmlLang: "fil-PH" },
+      hi: { label: "हिन्दी", direction: "ltr", htmlLang: "hi-IN" },
+      nl: { label: "Nederlands", direction: "ltr", htmlLang: "nl-NL" },
+      pl: { label: "Polski", direction: "ltr", htmlLang: "pl-PL" },
+      sv: { label: "Svenska", direction: "ltr", htmlLang: "sv-SE" },
+      no: { label: "Norsk", direction: "ltr", htmlLang: "no-NO" },
+      da: { label: "Dansk", direction: "ltr", htmlLang: "da-DK" },
+      fi: { label: "Suomi", direction: "ltr", htmlLang: "fi-FI" },
+      he: { label: "עברית", direction: "rtl", htmlLang: "he-IL" },
+      fa: { label: "فارسی", direction: "rtl", htmlLang: "fa-IR" },
+      uk: { label: "Українська", direction: "ltr", htmlLang: "uk-UA" },
+      ro: { label: "Română", direction: "ltr", htmlLang: "ro-RO" },
+      cs: { label: "Čeština", direction: "ltr", htmlLang: "cs-CZ" },
+      hu: { label: "Magyar", direction: "ltr", htmlLang: "hu-HU" },
+    },
   },
 
   markdown: {
@@ -101,6 +168,11 @@ const config: Config = {
           position: "left",
           docId: "legal/terms-of-service",
           label: "Docs",
+        },
+        // Right links
+        {
+          type: "localeDropdown",
+          position: "right",
         },
       ],
     },

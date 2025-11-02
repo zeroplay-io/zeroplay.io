@@ -1,0 +1,14 @@
+{
+  "homepage.hero.title": {
+    "message": "Start from <b>Zero</b>,<b>Play</b> to Infinite!",
+    "description": "Home page hero title, can contain simple html tags"
+  },
+  "homepage.games.title": {
+    "message": "Our Games",
+    "description": "Title for games section on homepage"
+  },
+  "game.button.get": {
+    "message": "Get",
+    "description": "Get/Download button text on game cards"
+  }
+}

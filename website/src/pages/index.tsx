@@ -7,7 +7,7 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
 import GameCard from "@site/src/components/GameCard";
-import gamesData from "@site/src/data/games.json";
+import { getLocalizedGames } from "@site/src/utils/i18nGames";
 import styles from "./index.module.css";
 
 function HeroBanner() {
@@ -34,7 +34,9 @@ function HeroBanner() {
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, i18n } = useDocusaurusContext();
+  const localizedGames = getLocalizedGames(i18n.currentLocale);
+
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -43,9 +45,11 @@ export default function Home(): JSX.Element {
       <HeroBanner />
       <main>
         <div className={styles.gamesSection}>
-          <h2 className={styles.gamesTitle}>Our Games</h2>
+          <h2 className={styles.gamesTitle}>
+            <Translate id="homepage.games.title">Our Games</Translate>
+          </h2>
           <div className={styles.gamesListContainer}>
-            {gamesData.games.map((game, index) => (
+            {localizedGames.map((game, index) => (
               <GameCard key={game.id || index} game={game} />
             ))}
           </div>

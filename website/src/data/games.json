@@ -7,6 +7,13 @@
 			"description": "100% FAIR DICE · PURE STRATEGY\n\nWelcome to Backgammon - Fair Board Games — the classic board strategy where every roll is provably fair and a match starts in seconds!\n\nFEATURES:\n• Provably Fair RNG – open-source code & in-app seeds for self-verification\n• Quick Matchmaking – tap Play and join a ranked game instantly\n• Smart Bot Backup – no waiting; bots use the same fair dice and affect your rank\n• Friend Links – share a URL via WhatsApp, iMessage or Facebook for 1-on-1 duels\n• Pet Companion – feed, level up and earn bonus coins daily\n\nVERIFY EVERY ROLL:\n• Both seeds shown after each game—run the script and confirm the outcome\n• Bots follow identical rules, keeping competition honest\n\nPLAY YOUR WAY:\n• Ranked ladder, casual duels or AI practice\n• Watch live games or replay every move\n• Progress and pets sync across all devices\n\nDownload now and make every roll count!",
 			"icon": "https://dl.zeroplay.cc/metadata/backgammon/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/backgammon/banner.png?v=1",
+			"translations": {
+				"zh-Hans": {
+					"title": "西洋双陆棋 - 公平棋盘游戏",
+					"subtitle": "经典策略棋盘游戏",
+					"description": "100% 公平骰子 · 纯策略对战\n\n欢迎来到西洋双陆棋 - 公平棋盘游戏！每次掷骰都可验证公平性，几秒钟即可开始对局！\n\n特色功能：\n• 可验证公平随机数 - 开源代码和应用内种子可供自我验证\n• 快速匹配 - 点击游戏即可立即加入排名赛\n• 智能机器人备选 - 无需等待；机器人使用相同的公平骰子并影响排名\n• 好友链接 - 通过 WhatsApp、iMessage 或 Facebook 分享链接进行一对一对决\n• 宠物伙伴 - 每日喂养、升级并赚取奖励金币\n\n验证每次掷骰：\n• 每局游戏后显示双方种子 - 运行脚本确认结果\n• 机器人遵循相同规则，保持竞争公平\n\n随心所欲游玩：\n• 排名天梯、休闲对决或 AI 练习\n• 观看实时游戏或回放每一步\n• 进度和宠物在所有设备间同步\n\n立即下载，让每次掷骰都算数！"
+				}
+			},
 			"deeplink": "https://backgammon-go.onelink.me/4n1X?pid=zeroplay&bg_type=web",
 			"videoUrl": "https://dl.zeroplay.cc/metadata/backgammon/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/backgammon/poster.jpg",
@@ -38,6 +45,18 @@
 			"description": "Experience the classic Klondike Solitaire with smooth animations and beautiful design. Perfect for all devices, enjoy the timeless card game loved by millions worldwide.\n\nMaster your skills with intelligent hint system that suggests the best moves, unlimited undo to correct mistakes, and auto-complete feature to finish games quickly. Track your progress with real-time statistics including score, time, and move count. Auto-save ensures you never lose progress.\n\nCompete on global leaderboards, regional rankings, and challenge friends. Choose your competition style: highest score, fastest time, or fewest moves. Complete daily challenges to earn coins and unlock beautiful background skins to personalize your game. Enjoy automatic dark and light theme switching with haptic feedback for every interaction.\n\nPerfect for commuting, breaks, or relaxing before bed. Play offline anytime, anywhere. Download now and start your Solitaire journey.",
 			"icon": "https://dl.zeroplay.cc/metadata/solitaire/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/solitaire/banner.png?v=1",
+			"translations": {
+				"zh-Hans": {
+					"title": "纸牌接龙 - 经典纸牌游戏",
+					"subtitle": "永恒的耐心游戏",
+					"description": "体验经典克朗代克纸牌接龙，流畅的动画和精美的设计。适配所有设备，享受全球数百万人喜爱的永恒纸牌游戏。\n\n通过智能提示系统提升技巧，建议最佳移动，无限撤销纠正错误，自动完成功能快速完成游戏。实时统计跟踪进度，包括分数、时间和移动次数。自动保存确保你永不丢失进度。\n\n在全球排行榜、地区排名中竞争，挑战好友。选择你的竞争方式：最高分、最快时间或最少移动次数。完成每日挑战赚取金币，解锁精美背景皮肤个性化你的游戏。享受自动的深色和浅色主题切换，每次互动都有触觉反馈。\n\n非常适合通勤、休息或睡前放松。随时随地离线游玩。立即下载，开始你的纸牌接龙之旅。"
+				},
+				"zh-Hant": {
+					"title": "接龍紙牌 - 經典紙牌遊戲",
+					"subtitle": "永恆的耐心遊戲",
+					"description": "體驗經典克朗代克接龍紙牌，流暢的動畫和精美的設計。適配所有裝置，享受全球數百萬人喜愛的永恆紙牌遊戲。\n\n通過智慧提示系統提升技巧，建議最佳移動，無限撤銷糾正錯誤，自動完成功能快速完成遊戲。即時統計追蹤進度，包括分數、時間和移動次數。自動儲存確保你永不遺失進度。\n\n在全球排行榜、地區排名中競爭，挑戰好友。選擇你的競爭方式：最高分、最快時間或最少移動次數。完成每日挑戰賺取金幣，解鎖精美背景皮膚個性化你的遊戲。享受自動的深色和淺色主題切換，每次互動都有觸覺回饋。\n\n非常適合通勤、休息或睡前放鬆。隨時隨地離線遊玩。立即下載，開始你的紙牌接龍之旅。"
+				}
+			},
 			"deeplink": "https://solitaire-io.onelink.me/Vd8i?pid=zeroplay&zp_type=web",
 			"videoUrl": "https://dl.zeroplay.cc/metadata/solitaire/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/solitaire/poster.jpg",

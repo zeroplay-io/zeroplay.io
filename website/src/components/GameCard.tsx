@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
+import Translate from "@docusaurus/Translate";
 import styles from "./GameCard.module.css";
 
 interface GameCardData {
@@ -75,7 +76,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
                   onClick={(event) => event.stopPropagation()}
                   aria-label={`Get ${game.title}`}
                 >
-                  Get
+                  <Translate id="game.button.get">Get</Translate>
                 </a>
               )}
             </div>
