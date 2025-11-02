@@ -6,8 +6,59 @@
   "homepage.games.title": {
     "message": "我们的游戏"
   },
+  "games.page.meta.title": {
+    "message": "游戏"
+  },
+  "games.page.meta.description": {
+    "message": "探索我们的游戏"
+  },
+  "games.page.heading": {
+    "message": "我们的游戏"
+  },
+  "games.page.empty": {
+    "message": "当前筛选条件下没有可展示的游戏。"
+  },
+  "game.banner.alt": {
+    "message": "{title} 横幅"
+  },
   "game.button.get": {
     "message": "获取"
+  },
+  "game.button.get.aria": {
+    "message": "获取 {title}"
+  },
+  "game.showcase.iconAlt": {
+    "message": "{title} 图标"
+  },
+  "game.showcase.carousel.prev": {
+    "message": "上一张图片"
+  },
+  "game.showcase.carousel.next": {
+    "message": "下一张图片"
+  },
+  "game.showcase.screenshot.alt": {
+    "message": "{title} 截图 {index}"
+  },
+  "game.showcase.social.title": {
+    "message": "订阅 {title} 最新消息"
+  },
+  "game.portrait.carousel.prev": {
+    "message": "向左滚动"
+  },
+  "game.portrait.carousel.next": {
+    "message": "向右滚动"
+  },
+  "game.portrait.screenshots.label": {
+    "message": "{title} 截图"
+  },
+  "game.portrait.screenshots.view": {
+    "message": "查看第 {index} 张截图"
+  },
+  "game.page.notFound.title": {
+    "message": "未找到游戏"
+  },
+  "game.page.notFound.description": {
+    "message": "无法找到请求的游戏。"
   },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",

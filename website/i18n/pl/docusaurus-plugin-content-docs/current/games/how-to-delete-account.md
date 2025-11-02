@@ -1,6 +1,7 @@
 # Jak Usunąć Konto
 
 Jeśli chcesz usunąć swoje konto z dowolnej gry **ZeroPlay**, postępuj zgodnie z poniższymi krokami:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 

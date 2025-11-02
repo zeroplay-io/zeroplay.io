@@ -1,12 +1,20 @@
 import React, { useMemo } from "react";
 import Layout from "@theme/Layout";
+import Translate from "@docusaurus/Translate";
+import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import { useLocation } from "@docusaurus/router";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import GameCard from "@site/src/components/GameCard";
-import gamesData from "@site/src/data/games.json";
+import { getLocalizedGames } from "@site/src/utils/i18nGames";
 import styles from "./index.module.css";
 
 export default function GamesPage(): JSX.Element {
   const location = useLocation();
+  const { i18n } = useDocusaurusContext();
+  const localizedGames = useMemo(
+    () => getLocalizedGames(i18n.currentLocale),
+    [i18n.currentLocale],
+  );
 
   const filteredGames = useMemo(() => {
     const params = new URLSearchParams(location.search);
@@ -21,20 +29,33 @@ export default function GamesPage(): JSX.Element {
     });
 
     if (excludeTokens.length === 0) {
-      return gamesData.games;
+      return localizedGames;
     }
 
     const excludeSet = new Set(excludeTokens);
-    return gamesData.games.filter(
-      (game) => !excludeSet.has(game.id.toLowerCase()),
-    );
-  }, [location.search]);
+    return localizedGames.filter((game) => !excludeSet.has(game.id.toLowerCase()));
+  }, [localizedGames, location.search]);
+
+  const pageTitle = translate({
+    id: "games.page.meta.title",
+    message: "Games",
+    description: "Title for the games page metadata",
+  });
+  const pageDescription = translate({
+    id: "games.page.meta.description",
+    message: "Explore our games",
+    description: "Description for the games page metadata",
+  });
 
   return (
-    <Layout title="Games" description="Explore our games">
+    <Layout title={pageTitle} description={pageDescription}>
       <div className={styles.gamesPage}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Our Games</h1>
+          <h1 className={styles.title}>
+            <Translate id="games.page.heading" description="Heading for games page">
+              Our Games
+            </Translate>
+          </h1>
         </div>
         <div className={styles.gamesListContainer}>
           {filteredGames.length > 0 ? (
@@ -43,7 +64,9 @@ export default function GamesPage(): JSX.Element {
             ))
           ) : (
             <div className={styles.emptyState}>
-              No games to display with the current filter.
+              <Translate id="games.page.empty" description="Empty state for games page">
+                No games to display with the current filter.
+              </Translate>
             </div>
           )}
         </div>

@@ -1,6 +1,7 @@
 # Paano Tanggalin ang Account
 
 Kung gusto mong tanggalin ang iyong account mula sa anumang laro ng **ZeroPlay**, sundin ang mga hakbang na ito:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 

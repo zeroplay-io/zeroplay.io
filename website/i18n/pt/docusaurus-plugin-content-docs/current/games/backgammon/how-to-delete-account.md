@@ -1,30 +1,31 @@
 # Como Excluir a Conta
 
 Se você deseja excluir sua conta do **Backgammon - Fair Board Games**, siga estes passos:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
 ### Passo 1: Abra as Configurações
 
-Inicie o jogo e toque no botão *Configurações* no canto superior direito.
+Inicie o jogo e toque no botão *Settings* no canto superior direito.
 
 ![Configurações](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/1.jpg#landscape)
 
 ### Passo 2: Localize a Opção de Exclusão
 
-Role até o final da janela de Configurações e toque no botão <span className="danger-text">Excluir Conta</span>.
+Role até o final da janela de Configurações e toque no botão <span className="danger-text">Delete Account</span>.
 
 ![Excluir Conta](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
 ### Passo 3: Verifique sua Ação
 
-Digite o código de confirmação exibido na tela e, em seguida, toque no botão *Excluir* para prosseguir.
+Digite o código de confirmação exibido na tela e, em seguida, toque no botão *Delete* para prosseguir.
 
 ![Confirmar Exclusão](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/3.jpg#landscape)
 
 ### Passo 4: Contagem Regressiva Final
 
-O processo de exclusão começa com uma contagem regressiva de 10 segundos. Você ainda pode cancelar tocando em *Cancelar Exclusão* durante este tempo.
+O processo de exclusão começa com uma contagem regressiva de 10 segundos. Você ainda pode cancelar tocando em *Cancel Deletion* durante este tempo.
 
 ![Conta Excluída](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

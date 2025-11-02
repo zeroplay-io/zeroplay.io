@@ -1,6 +1,7 @@
 # Hoe Account Verwijderen
 
 Als u uw account wilt verwijderen van een **ZeroPlay** spel, volg dan deze stappen:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 

@@ -1,10 +1,6 @@
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl, { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
 import GameCard from "@site/src/components/GameCard";
 import { getLocalizedGames } from "@site/src/utils/i18nGames";

@@ -1,30 +1,31 @@
 # วิธีลบบัญชี
 
 หากคุณต้องการลบบัญชีของคุณจากเกม **ZeroPlay** ใดๆ ให้ทำตามขั้นตอนเหล่านี้:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 
 ### ขั้นตอนที่ 1: เข้าถึงโปรไฟล์ของคุณ
 
-แตะแท็บ *ฉัน* ที่แถบนำทางด้านล่างเพื่อเข้าถึงหน้าโปรไฟล์ของคุณ
+แตะแท็บ *Me* ที่แถบนำทางด้านล่างเพื่อเข้าถึงหน้าโปรไฟล์ของคุณ
 
 ![Profile](https://dl.zeroplay.cc/metadata/how-to-delete-account/1.jpg)
 
 ### ขั้นตอนที่ 2: ค้นหาตัวเลือกลบ
 
-เลื่อนลงไปที่ส่วน <span className="danger-text">โซนอันตราย</span> และแตะปุ่ม <span className="danger-text">ลบบัญชี</span>
+เลื่อนลงไปที่ส่วน <span className="danger-text">DANGER ZONE</span> และแตะปุ่ม <span className="danger-text">Delete Account</span>
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/how-to-delete-account/2.jpg)
 
 ### ขั้นตอนที่ 3: ยืนยันการลบ
 
-ตรวจสอบคำเตือนและแตะ *ดำเนินการต่อ* เพื่อดำเนินการลบบัญชี
+ตรวจสอบคำเตือนและแตะ *Continue* เพื่อดำเนินการลบบัญชี
 
 ![Confirm Deletion](https://dl.zeroplay.cc/metadata/how-to-delete-account/3.jpg)
 
 ### ขั้นตอนที่ 4: การนับถอยหลังสุดท้าย
 
-กระบวนการลบจะเริ่มต้นด้วยการนับถอยหลัง 10 วินาที คุณยังคงสามารถยกเลิกได้โดยแตะ *ยกเลิกการลบ* ในช่วงเวลานี้
+กระบวนการลบจะเริ่มต้นด้วยการนับถอยหลัง 10 วินาที คุณยังคงสามารถยกเลิกได้โดยแตะ *Cancel Deletion* ในช่วงเวลานี้
 
 ![Account Deletion in Progress](https://dl.zeroplay.cc/metadata/how-to-delete-account/4.jpg)
 

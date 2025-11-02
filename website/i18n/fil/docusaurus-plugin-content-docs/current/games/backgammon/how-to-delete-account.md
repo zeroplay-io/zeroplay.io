@@ -1,6 +1,7 @@
 # Paano Tanggalin ang Account
 
 Kung gusto mong tanggalin ang iyong account mula sa **Backgammon - Fair Board Games**, sundin ang mga hakbang na ito:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 

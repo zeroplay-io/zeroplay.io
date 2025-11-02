@@ -353,7 +353,7 @@ pre[class*="language-"] {
 
 /* Landscape screenshots (horizontal orientation) - use #landscape in image URL */
 .markdown img[src*="#landscape"] {
-  max-width: 750px;
+  max-width: 900px;
   border-radius: 12px;
 }
 

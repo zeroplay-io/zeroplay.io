@@ -1,6 +1,7 @@
 # Jak smazat účet
 
 Pokud chcete smazat svůj účet z **Backgammon - Fair Board Games**, postupujte podle těchto kroků:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@ Spusťte hru a klepněte na tlačítko *Settings* v pravém horním rohu.
 
 ### Krok 2: Najděte možnost smazání
 
-Posuňte se na konec okna nastavení a klepněte na tlačítko <span className="danger-text">Smazat účet</span>.
+Posuňte se na konec okna nastavení a klepněte na tlačítko <span className="danger-text">Delete Account</span>.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@ Zadejte potvrzovací kód zobrazený na obrazovce a poté klepněte na tlačítk
 
 ### Krok 4: Závěrečné odpočítávání
 
-Proces mazání začíná 10sekundovým odpočítáváním. Stále můžete zrušit klepnutím na *Zrušit mazání* během této doby.
+Proces mazání začíná 10sekundovým odpočítáváním. Stále můžete zrušit klepnutím na *Cancel Deletion* během této doby.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

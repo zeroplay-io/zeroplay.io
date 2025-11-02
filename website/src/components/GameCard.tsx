@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import styles from "./GameCard.module.css";
 
 interface GameCardData {
@@ -29,6 +30,27 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
     game.stores?.appStore ||
     game.stores?.googlePlay ||
     game.stores?.h5;
+  const downloadLabel = translate({
+    id: "game.button.get",
+    message: "Get",
+    description: "Label for the game download button",
+  });
+  const downloadAriaLabel = translate(
+    {
+      id: "game.button.get.aria",
+      message: "Get {title}",
+      description: "Aria-label for the game download button",
+    },
+    { title: game.title },
+  );
+  const bannerAlt = translate(
+    {
+      id: "game.banner.alt",
+      message: "{title} banner",
+      description: "Alt text for the game banner image",
+    },
+    { title: game.title },
+  );
 
   return (
     <Link to={`/games/${game.id}`} className={styles.cardLink}>
@@ -40,7 +62,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
         >
           <img
             src={game.banner}
-            alt={`${game.title} banner`}
+            alt={bannerAlt}
             className={styles.banner}
             loading="lazy"
             onLoad={() => setIsBannerLoaded(true)}
@@ -70,11 +92,11 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
                 <a
                   href={primaryLink}
                   className={styles.downloadButton}
-                  title="Get"
+                  title={downloadLabel}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(event) => event.stopPropagation()}
-                  aria-label={`Get ${game.title}`}
+                  aria-label={downloadAriaLabel}
                 >
                   <Translate id="game.button.get">Get</Translate>
                 </a>

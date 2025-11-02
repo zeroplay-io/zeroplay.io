@@ -1,6 +1,7 @@
 # Hvordan Slette Konto
 
 Hvis du vil slette kontoen din fra et **ZeroPlay** spill, følg disse trinnene:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 
@@ -12,19 +13,19 @@ Trykk på *Me* fanen på nedre navigasjonslinje for å få tilgang til profilsid
 
 ### Trinn 2: Finn Slettealternativet
 
-Rull ned til <span className="danger-text">FARESONE</span> delen og trykk på <span className="danger-text">Slett Konto</span> knappen.
+Rull ned til <span className="danger-text">DANGER ZONE</span> delen og trykk på <span className="danger-text">Delete Account</span> knappen.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/how-to-delete-account/2.jpg)
 
 ### Trinn 3: Bekreft Sletting
 
-Gå gjennom advarselen og trykk *Fortsett* for å fortsette med kontosletting.
+Gå gjennom advarselen og trykk *Continue* for å fortsette med kontosletting.
 
 ![Confirm Deletion](https://dl.zeroplay.cc/metadata/how-to-delete-account/3.jpg)
 
 ### Trinn 4: Siste Nedtelling
 
-Sletteprosessen starter med en 10-sekunders nedtelling. Du kan fortsatt avbryte ved å trykke *Avbryt Sletting* i løpet av denne tiden.
+Sletteprosessen starter med en 10-sekunders nedtelling. Du kan fortsatt avbryte ved å trykke *Cancel Deletion* i løpet av denne tiden.
 
 ![Account Deletion in Progress](https://dl.zeroplay.cc/metadata/how-to-delete-account/4.jpg)
 

@@ -1,6 +1,7 @@
 # Jak Usunąć Konto
 
 Jeśli chcesz usunąć swoje konto z **Backgammon - Fair Board Games**, postępuj zgodnie z poniższymi krokami:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import ProgressiveImage from "./ProgressiveImage";
 import styles from "./GameShowcase.module.css";
 
@@ -175,6 +176,40 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
         aspectRatio: `${fallbackDimensions.width} / ${fallbackDimensions.height}`,
       }
     : undefined;
+  const iconAlt = translate(
+    {
+      id: "game.showcase.iconAlt",
+      message: "{title} icon",
+      description: "Alt text for the game icon in the showcase component",
+    },
+    { title },
+  );
+  const previousImageLabel = translate({
+    id: "game.showcase.carousel.prev",
+    message: "Previous image",
+    description: "Aria-label for the previous image button in the carousel",
+  });
+  const nextImageLabel = translate({
+    id: "game.showcase.carousel.next",
+    message: "Next image",
+    description: "Aria-label for the next image button in the carousel",
+  });
+  const socialTitle = translate(
+    {
+      id: "game.showcase.social.title",
+      message: "Sign up for {title} news",
+      description: "Heading for the social media section on game detail pages",
+    },
+    { title },
+  );
+  const screenshotAlt = translate(
+    {
+      id: "game.showcase.screenshot.alt",
+      message: "{title} screenshot {index}",
+      description: "Alt text for the main screenshot displayed in the carousel",
+    },
+    { title, index: currentIndex + 1 },
+  );
 
   return (
     <div className={styles.gameShowcase}>
@@ -201,7 +236,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
         {/* Game Info */}
         <div className={styles.gameInfo}>
           <div className={styles.titleRow}>
-            <img src={icon} alt={`${title} Icon`} className={styles.gameIcon} />
+            <img src={icon} alt={iconAlt} className={styles.gameIcon} />
             <div className={styles.titleGroup}>
               <h1 className={styles.title}>{title}</h1>
               <p className={styles.subtitle}>{game.subtitle || ''}</p>
@@ -296,7 +331,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       {/* Social Media Links */}
       {socialMedia.enabled && (
         <div className={styles.socialMediaContainer}>
-          <h3 className={styles.socialTitle}>Sign up for {title} news</h3>
+          <h3 className={styles.socialTitle}>{socialTitle}</h3>
           <div className={styles.socialLinks}>
             {socialMedia.facebook && (
               <a
@@ -341,7 +376,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
           {screenshots.length > 0 && (
             <ProgressiveImage
               src={screenshots[currentIndex]}
-              alt={`${title} Screenshot ${currentIndex + 1}`}
+              alt={screenshotAlt}
               className={styles.screenshot}
               onLoad={handleImageLoad}
             />
@@ -352,7 +387,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
             <button
               onClick={handlePrevClick}
               className={`${styles.navButton} ${styles.prevButton}`}
-              aria-label="Previous image"
+              aria-label={previousImageLabel}
             >
               <svg
                 width="32"
@@ -376,7 +411,7 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
             <button
               onClick={handleNextClick}
               className={`${styles.navButton} ${styles.nextButton}`}
-              aria-label="Next image"
+              aria-label={nextImageLabel}
             >
               <svg
                 width="32"

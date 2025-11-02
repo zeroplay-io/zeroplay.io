@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
+import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import ProgressiveImage from "./ProgressiveImage";
 import styles from "./PortraitGameShowcase.module.css";
 
@@ -228,6 +229,41 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     };
   }, [updateScrollMetrics]);
 
+  const iconAlt = translate(
+    {
+      id: "game.showcase.iconAlt",
+      message: "{title} icon",
+      description: "Alt text for the game icon in the showcase component",
+    },
+    { title },
+  );
+  const scrollLeftLabel = translate({
+    id: "game.portrait.carousel.prev",
+    message: "Scroll left",
+    description: "Aria-label for scrolling left in the portrait carousel",
+  });
+  const scrollRightLabel = translate({
+    id: "game.portrait.carousel.next",
+    message: "Scroll right",
+    description: "Aria-label for scrolling right in the portrait carousel",
+  });
+  const screenshotsListLabel = translate(
+    {
+      id: "game.portrait.screenshots.label",
+      message: "{title} screenshots",
+      description: "Aria-label for the portrait screenshots list",
+    },
+    { title },
+  );
+  const socialTitle = translate(
+    {
+      id: "game.showcase.social.title",
+      message: "Sign up for {title} news",
+      description: "Heading for the social media section on game detail pages",
+    },
+    { title },
+  );
+
   return (
     <div className={styles.portraitGameShowcase}>
       {/* Header Section with Video and Info */}
@@ -257,7 +293,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
             <div className={styles.titleRow}>
               <img
                 src={icon}
-                alt={`${title} Icon`}
+                alt={iconAlt}
                 className={styles.gameIcon}
               />
               <div className={styles.titleGroup}>
@@ -385,7 +421,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
       {/* Social Media Links */}
       {socialMedia.enabled && (
         <div className={styles.socialMediaContainer}>
-          <h3 className={styles.socialTitle}>Sign up for {title} news</h3>
+          <h3 className={styles.socialTitle}>{socialTitle}</h3>
           <div className={styles.socialLinks}>
             {socialMedia.facebook && (
               <a
@@ -427,7 +463,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
                 type="button"
                 onClick={scrollLeftBtn}
                 className={`${styles.scrollButton} ${styles.scrollButtonLeft}`}
-                aria-label="Scroll left"
+                aria-label={scrollLeftLabel}
                 disabled={!canScrollLeft}
               >
                 <svg
@@ -453,7 +489,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
               className={styles.screenshotsContainer}
               onScroll={handleScroll}
               role="list"
-              aria-label={`${title} screenshots`}
+              aria-label={screenshotsListLabel}
             >
               {screenshots.map((screenshot, index) => (
                 <div
@@ -474,11 +510,27 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
                   }}
                   role="button"
                   tabIndex={0}
-                  aria-label={`View screenshot ${index + 1}`}
+                  aria-label={translate(
+                    {
+                      id: "game.portrait.screenshots.view",
+                      message: "View screenshot {index}",
+                      description:
+                        "Aria-label for selecting a screenshot in the carousel",
+                    },
+                    { index: index + 1 },
+                  )}
                 >
                   <ProgressiveImage
                     src={screenshot}
-                    alt={`${title} Screenshot ${index + 1}`}
+                    alt={translate(
+                      {
+                        id: "game.showcase.screenshot.alt",
+                        message: "{title} screenshot {index}",
+                        description:
+                          "Alt text for a screenshot displayed in the portrait carousel",
+                      },
+                      { title, index: index + 1 },
+                    )}
                     className={styles.screenshot}
                   />
                 </div>
@@ -502,7 +554,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
                 type="button"
                 onClick={scrollRightBtn}
                 className={`${styles.scrollButton} ${styles.scrollButtonRight}`}
-                aria-label="Scroll right"
+                aria-label={scrollRightLabel}
                 disabled={!canScrollRight}
               >
                 <svg

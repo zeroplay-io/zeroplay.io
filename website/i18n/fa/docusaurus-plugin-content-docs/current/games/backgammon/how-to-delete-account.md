@@ -1,6 +1,7 @@
 # نحوه حذف حساب کاربری
 
 اگر می‌خواهید حساب کاربری خود را از **Backgammon - Fair Board Games** حذف کنید، این مراحل را دنبال کنید:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@
 
 ### مرحله 2: گزینه حذف را پیدا کنید
 
-به پایین پنجره تنظیمات بروید و روی دکمه <span className="danger-text">حذف حساب</span> ضربه بزنید.
+به پایین پنجره تنظیمات بروید و روی دکمه <span className="danger-text">Delete Account</span> ضربه بزنید.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@
 
 ### مرحله 4: شمارش معکوس نهایی
 
-فرآیند حذف با یک شمارش معکوس 10 ثانیه‌ای شروع می‌شود. شما هنوز می‌توانید با ضربه زدن روی *لغو حذف* در این مدت لغو کنید.
+فرآیند حذف با یک شمارش معکوس 10 ثانیه‌ای شروع می‌شود. شما هنوز می‌توانید با ضربه زدن روی *Cancel Deletion* در این مدت لغو کنید.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

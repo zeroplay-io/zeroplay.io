@@ -1,6 +1,7 @@
 # Tilin Poistaminen
 
 Jos haluat poistaa tilisi pelistä **Backgammon - Fair Board Games**, seuraa näitä ohjeita:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@ Käynnistä peli ja napauta *Settings* painiketta oikeassa yläkulmassa.
 
 ### Vaihe 2: Etsi Poisto-vaihtoehto
 
-Vieritä asetusikkunan alaosaan ja napauta <span className="danger-text">Poista Tili</span> painiketta.
+Vieritä asetusikkunan alaosaan ja napauta <span className="danger-text">Delete Account</span> painiketta.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@ Kirjoita näytölle ilmestyvä vahvistuskoodi ja napauta sitten *Delete* painike
 
 ### Vaihe 4: Viimeinen Lähtölaskenta
 
-Poistoprosessi alkaa 10 sekunnin lähtölaskennalla. Voit vielä peruuttaa napauttamalla *Peruuta Poisto* tämän ajan kuluessa.
+Poistoprosessi alkaa 10 sekunnin lähtölaskennalla. Voit vielä peruuttaa napauttamalla *Cancel Deletion* tämän ajan kuluessa.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

@@ -1,6 +1,7 @@
 # Hur Man Raderar Konto
 
 Om du vill radera ditt konto från något **ZeroPlay** spel, följ dessa steg:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 

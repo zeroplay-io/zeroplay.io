@@ -1,30 +1,31 @@
 # Cómo Eliminar la Cuenta
 
 Si desea eliminar su cuenta de cualquier juego de **ZeroPlay**, siga estos pasos:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 
 ### Paso 1: Acceda a su Perfil
 
-Toque la pestaña *Mi Perfil* en la barra de navegación inferior para acceder a su página de perfil.
+Toque la pestaña *Me* en la barra de navegación inferior para acceder a su página de perfil.
 
 ![Perfil](https://dl.zeroplay.cc/metadata/how-to-delete-account/1.jpg)
 
 ### Paso 2: Localice la Opción de Eliminación
 
-Desplácese hacia abajo hasta la sección <span className="danger-text">ZONA DE PELIGRO</span> y toque el botón <span className="danger-text">Eliminar Cuenta</span>.
+Desplácese hacia abajo hasta la sección <span className="danger-text">DANGER ZONE</span> y toque el botón <span className="danger-text">Delete Account</span>.
 
 ![Eliminar Cuenta](https://dl.zeroplay.cc/metadata/how-to-delete-account/2.jpg)
 
 ### Paso 3: Confirme la Eliminación
 
-Revise la advertencia y toque *Continuar* para proceder con la eliminación de la cuenta.
+Revise la advertencia y toque *Continue* para proceder con la eliminación de la cuenta.
 
 ![Confirmar Eliminación](https://dl.zeroplay.cc/metadata/how-to-delete-account/3.jpg)
 
 ### Paso 4: Cuenta Regresiva Final
 
-El proceso de eliminación comienza con una cuenta regresiva de 10 segundos. Aún puede cancelar tocando *Cancelar Eliminación* durante este tiempo.
+El proceso de eliminación comienza con una cuenta regresiva de 10 segundos. Aún puede cancelar tocando *Cancel Deletion* durante este tiempo.
 
 ![Eliminación de Cuenta en Progreso](https://dl.zeroplay.cc/metadata/how-to-delete-account/4.jpg)
 

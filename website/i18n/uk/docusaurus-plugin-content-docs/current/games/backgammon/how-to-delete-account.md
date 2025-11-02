@@ -1,6 +1,7 @@
 # Як видалити обліковий запис
 
 Якщо ви хочете видалити свій обліковий запис з **Backgammon - Fair Board Games**, виконайте такі кроки:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@
 
 ### Крок 2: Знайдіть опцію видалення
 
-Прокрутіть вниз вікна налаштувань і натисніть кнопку <span className="danger-text">Видалити обліковий запис</span>.
+Прокрутіть вниз вікна налаштувань і натисніть кнопку <span className="danger-text">Delete Account</span>.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@
 
 ### Крок 4: Остаточний відлік
 
-Процес видалення починається з 10-секундного зворотного відліку. Ви все ще можете скасувати, натиснувши *Скасувати видалення* протягом цього часу.
+Процес видалення починається з 10-секундного зворотного відліку. Ви все ще можете скасувати, натиснувши *Cancel Deletion* протягом цього часу.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

@@ -1,6 +1,7 @@
 # Cum să Ștergeți Contul
 
 Dacă doriți să vă ștergeți contul din **Backgammon - Fair Board Games**, urmați acești pași:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@ Lansați jocul și apăsați butonul *Settings* din colțul din dreapta sus.
 
 ### Pasul 2: Găsiți Opțiunea de Ștergere
 
-Derulați în josul ferestrei de setări și apăsați butonul <span className="danger-text">Ștergeți Contul</span>.
+Derulați în josul ferestrei de setări și apăsați butonul <span className="danger-text">Delete Account</span>.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@ Introduceți codul de confirmare afișat pe ecran, apoi apăsați butonul *Delet
 
 ### Pasul 4: Numărătoare Inversă Finală
 
-Procesul de ștergere începe cu o numărătoare inversă de 10 secunde. Puteți încă anula apăsând *Anulați Ștergerea* în acest timp.
+Procesul de ștergere începe cu o numărătoare inversă de 10 secunde. Puteți încă anula apăsând *Cancel Deletion* în acest timp.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

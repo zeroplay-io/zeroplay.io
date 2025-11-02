@@ -1,6 +1,7 @@
 # Fiók Törlése
 
 Ha törölni szeretné fiókját bármelyik **ZeroPlay** játékból, kövesse ezeket a lépéseket:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 
@@ -12,19 +13,19 @@ Koppintson az *Me* fülre az alsó navigációs sávon, hogy hozzáférjen profi
 
 ### 2. lépés: Keresse Meg a Törlési Opciót
 
-Görgessen le a <span className="danger-text">VESZÉLYZÓNA</span> szakaszhoz, és koppintson a <span className="danger-text">Fiók Törlése</span> gombra.
+Görgessen le a <span className="danger-text">DANGER ZONE</span> szakaszhoz, és koppintson a <span className="danger-text">Delete Account</span> gombra.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/how-to-delete-account/2.jpg)
 
 ### 3. lépés: Erősítse Meg a Törlést
 
-Tekintse át a figyelmeztetést, és koppintson a *Folytatás* gombra a fiók törlésének folytatásához.
+Tekintse át a figyelmeztetést, és koppintson a *Continue* gombra a fiók törlésének folytatásához.
 
 ![Confirm Deletion](https://dl.zeroplay.cc/metadata/how-to-delete-account/3.jpg)
 
 ### 4. lépés: Végső Visszaszámlálás
 
-A törlési folyamat egy 10 másodperces visszaszámlálással kezdődik. Még mindig megszakíthatja a *Törlés Megszakítása* gombra koppintva ez idő alatt.
+A törlési folyamat egy 10 másodperces visszaszámlálással kezdődik. Még mindig megszakíthatja a *Cancel Deletion* gombra koppintva ez idő alatt.
 
 ![Account Deletion in Progress](https://dl.zeroplay.cc/metadata/how-to-delete-account/4.jpg)
 

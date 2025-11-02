@@ -1,6 +1,7 @@
 # Hur Man Raderar Konto
 
 Om du vill radera ditt konto från **Backgammon - Fair Board Games**, följ dessa steg:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 

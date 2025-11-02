@@ -1,6 +1,7 @@
 # How To Delete Account
 
 If you want to delete your account from **Backgammon - Fair Board Games**, follow these steps:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 

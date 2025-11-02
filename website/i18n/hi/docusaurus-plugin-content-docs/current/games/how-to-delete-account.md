@@ -1,6 +1,7 @@
 # खाता कैसे हटाएं
 
 यदि आप किसी भी **ZeroPlay** गेम से अपना खाता हटाना चाहते हैं, तो इन चरणों का पालन करें:
+<!-- Button labels remain in English to match UI screenshots: Me, DANGER ZONE, Delete Account, Continue, Cancel Deletion. -->
 
 ---
 

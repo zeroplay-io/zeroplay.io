@@ -1,6 +1,7 @@
 # Fiók Törlése
 
 Ha törölni szeretné fiókját a **Backgammon - Fair Board Games** játékból, kövesse ezeket a lépéseket:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@ Indítsa el a játékot, és koppintson a *Settings* gombra a jobb felső sarokb
 
 ### 2. lépés: Keresse Meg a Törlési Opciót
 
-Görgessen a beállítások ablak aljára, és koppintson a <span className="danger-text">Fiók Törlése</span> gombra.
+Görgessen a beállítások ablak aljára, és koppintson a <span className="danger-text">Delete Account</span> gombra.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@ Görgessen a beállítások ablak aljára, és koppintson a <span className="dan
 
 ### 4. lépés: Végső Visszaszámlálás
 
-A törlési folyamat egy 10 másodperces visszaszámlálással kezdődik. Még mindig megszakíthatja a *Törlés Megszakítása* gombra koppintva ez idő alatt.
+A törlési folyamat egy 10 másodperces visszaszámlálással kezdődik. Még mindig megszakíthatja a *Cancel Deletion* gombra koppintva ez idő alatt.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 

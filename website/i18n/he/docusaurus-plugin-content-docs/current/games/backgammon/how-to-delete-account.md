@@ -1,6 +1,7 @@
 # כיצד למחוק חשבון
 
 אם ברצונך למחוק את חשבונך מ-**Backgammon - Fair Board Games**, בצע את השלבים הבאים:
+<!-- Button labels remain in English to match the Backgammon UI: Settings, Delete Account, Delete, Cancel Deletion. -->
 
 ---
 
@@ -12,7 +13,7 @@
 
 ### שלב 2: אתר את אפשרות המחיקה
 
-גלול לתחתית חלון ההגדרות והקש על כפתור <span className="danger-text">מחק חשבון</span>.
+גלול לתחתית חלון ההגדרות והקש על כפתור <span className="danger-text">Delete Account</span>.
 
 ![Delete Account](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/2.jpg#landscape)
 
@@ -24,7 +25,7 @@
 
 ### שלב 4: ספירה לאחור אחרונה
 
-תהליך המחיקה מתחיל עם ספירה לאחור של 10 שניות. אתה עדיין יכול לבטל על ידי הקשה על *בטל מחיקה* במהלך זמן זה.
+תהליך המחיקה מתחיל עם ספירה לאחור של 10 שניות. אתה עדיין יכול לבטל על ידי הקשה על *Cancel Deletion* במהלך זמן זה.
 
 ![Account Deleted](https://dl.zeroplay.cc/metadata/backgammon/how-to-delete-account/4.jpg#landscape)
 
