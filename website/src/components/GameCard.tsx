@@ -9,6 +9,12 @@ interface GameCardData {
   description: string;
   icon: string;
   banner: string;
+  deeplink?: string;
+  stores?: {
+    appStore?: string;
+    googlePlay?: string;
+    h5?: string;
+  };
 }
 
 interface GameCardProps {
@@ -17,27 +23,34 @@ interface GameCardProps {
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
   const [isBannerLoaded, setIsBannerLoaded] = useState(false);
+  const primaryLink =
+    game.deeplink ||
+    game.stores?.appStore ||
+    game.stores?.googlePlay ||
+    game.stores?.h5;
 
   return (
     <Link to={`/games/${game.id}`} className={styles.cardLink}>
-      <div
-        className={`${styles.card} ${
-          isBannerLoaded ? styles.cardLoaded : styles.cardLoading
-        }`}
-      >
-        <img
-          src={game.banner}
-          alt={`${game.title} banner`}
-          className={styles.banner}
-          loading="lazy"
-          onLoad={() => setIsBannerLoaded(true)}
-          onError={() => setIsBannerLoaded(false)}
-        />
-        {!isBannerLoaded && (
-          <div className={styles.bannerPlaceholder} aria-hidden="true" />
-        )}
-        <div className={styles.overlay} />
-        <div className={styles.info}>
+      <article className={styles.card}>
+        <div
+          className={`${styles.bannerSection} ${
+            isBannerLoaded ? styles.bannerLoaded : styles.bannerLoading
+          }`}
+        >
+          <img
+            src={game.banner}
+            alt={`${game.title} banner`}
+            className={styles.banner}
+            loading="lazy"
+            onLoad={() => setIsBannerLoaded(true)}
+            onError={() => setIsBannerLoaded(false)}
+          />
+          {!isBannerLoaded && (
+            <div className={styles.bannerPlaceholder} aria-hidden="true" />
+          )}
+          <div className={styles.bannerOverlay} />
+        </div>
+        <div className={styles.metadata}>
           <div className={styles.iconContainer}>
             <img
               src={game.icon}
@@ -47,12 +60,29 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
             />
           </div>
           <div className={styles.content}>
-            <h2 className={styles.title}>{game.title}</h2>
-            <p className={styles.subtitle}>{game.subtitle}</p>
+            <div className={styles.headingRow}>
+              <div className={styles.textGroup}>
+                <h2 className={styles.title}>{game.title}</h2>
+                <p className={styles.subtitle}>{game.subtitle}</p>
+              </div>
+              {primaryLink && (
+                <a
+                  href={primaryLink}
+                  className={styles.downloadButton}
+                  title="Get"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) => event.stopPropagation()}
+                  aria-label={`Get ${game.title}`}
+                >
+                  Get
+                </a>
+              )}
+            </div>
             <p className={styles.description}>{game.description}</p>
           </div>
         </div>
-      </div>
+      </article>
     </Link>
   );
 };

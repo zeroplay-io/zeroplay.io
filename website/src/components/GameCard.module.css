@@ -1,7 +1,7 @@
 .cardLink {
+  display: block;
   text-decoration: none;
   color: inherit;
-  display: block;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -13,37 +13,39 @@
 .card {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: clamp(16px, 4vw, 32px);
-  background: #0f1219;
-  border-radius: 16px;
+  flex-direction: column;
+  border-radius: 20px;
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(18, 22, 37, 0.94) 0%, rgba(11, 14, 25, 0.98) 100%);
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   margin-bottom: 24px;
   color: #ffffff;
-  min-height: 240px;
-  aspect-ratio: 1024 / 500;
-  isolation: isolate;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='light'] .card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(231, 238, 255, 0.94) 100%);
+  box-shadow:
+    0 16px 32px rgba(86, 110, 190, 0.18),
+    inset 0 0 0 1px rgba(123, 146, 222, 0.16);
+  color: #0f172a;
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+    0 12px 28px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
-.cardLoading {
-  background: radial-gradient(circle at top, #1d2433 0%, #0f1219 55%, #0a0c12 100%);
-}
-
-.cardLoaded {
-  background: #000;
+.bannerSection {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1024 / 500;
+  overflow: hidden;
 }
 
 .banner {
@@ -52,104 +54,201 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease, opacity 0.4s ease;
   opacity: 0;
-  z-index: 2;
+  transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
-.cardLoaded .banner {
-  opacity: 1;
-}
-
-.card:hover .banner {
+.bannerSection:hover .banner {
   transform: scale(1.03);
+}
+
+.bannerLoaded .banner {
+  opacity: 1;
 }
 
 .bannerPlaceholder {
   position: absolute;
   inset: 0;
-  background: linear-gradient(140deg, rgba(45, 58, 81, 0.85) 0%, rgba(17, 23, 38, 0.9) 60%, rgba(10, 14, 23, 0.95) 100%);
-  z-index: 1;
-  animation: bannerPulse 1.6s ease-in-out infinite;
+  background: linear-gradient(140deg, rgba(45, 58, 81, 0.9) 0%, rgba(17, 23, 38, 0.92) 60%, rgba(10, 14, 23, 0.95) 100%);
   transition: opacity 0.4s ease;
 }
 
-.cardLoaded .bannerPlaceholder {
+.bannerLoaded .bannerPlaceholder {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-.overlay {
+.bannerOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.65) 32%,
-    rgba(0, 0, 0, 0.3) 65%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.15) 72%,
     rgba(0, 0, 0, 0) 100%
   );
-  pointer-events: none;
-  z-index: 3;
 }
 
-.info {
-  position: relative;
+.metadata {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  align-items: end;
-  gap: clamp(14px, 3vw, 20px);
-  width: 100%;
-  z-index: 4;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 28px);
+  padding: clamp(22px, 3vw, 32px);
+  background: linear-gradient(180deg, rgba(11, 15, 26, 0.92) 0%, rgba(8, 11, 20, 0.97) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='light'] .metadata {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 246, 255, 0.95) 100%);
+  border-top: 1px solid rgba(126, 148, 219, 0.32);
 }
 
 .iconContainer {
-  flex-shrink: 0;
-  position: relative;
-  align-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
-  width: 120px;
-  height: 120px;
-  border-radius: 20px;
+  width: clamp(92px, 12vw, 120px);
+  height: clamp(92px, 12vw, 120px);
+  border-radius: clamp(22px, 3vw, 26px);
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .content {
-  flex: 1;
+  display: grid;
+  gap: clamp(10px, 1.8vw, 14px);
   min-width: 0;
-  color: #ffffff;
-  align-self: end;
+  color: inherit;
+}
+
+.headingRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.textGroup {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 1vw, 6px);
 }
 
 .title {
-  margin: 0 0 8px 0;
-  font-size: 24px;
+  margin: 0;
+  font-size: clamp(20px, 3vw, 26px);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subtitle {
-  margin: 0 0 12px 0;
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.3;
+  margin: 0;
+  font-size: clamp(13.5px, 2.3vw, 16px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .description {
   margin: 0;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(12.5px, 1.9vw, 14px);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .description {
+    display: none;
+  }
+}
+
+.downloadButton {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(16px, 3vw, 24px);
+  height: clamp(30px, 5vw, 36px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(16, 24, 40, 0.55);
+  color: #ffffff;
+  font-size: clamp(12.5px, 2.3vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 12px 22px rgba(0, 0, 0, 0.38);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.downloadButton:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 16px 28px rgba(0, 0, 0, 0.4);
+  background: rgba(18, 28, 50, 0.7);
+}
+
+.downloadButton:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 6px 14px rgba(0, 0, 0, 0.35);
+  background: rgba(14, 24, 42, 0.65);
+}
+
+.downloadButton:focus-visible {
+  outline: 2px solid rgba(96, 165, 250, 0.6);
+  outline-offset: 3px;
+}
+
+[data-theme='light'] .subtitle {
+  color: rgba(15, 23, 42, 0.66);
+}
+
+[data-theme='light'] .description {
+  color: rgba(15, 23, 42, 0.74);
+}
+
+[data-theme='light'] .downloadButton {
+  border-color: rgba(104, 120, 167, 0.35);
+  background: rgba(255, 255, 255, 0.65);
+  color: #0f172a;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65),
+    0 14px 26px rgba(123, 145, 215, 0.22);
+}
+
+[data-theme='light'] .downloadButton:hover {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7),
+    0 16px 30px rgba(123, 145, 215, 0.28);
+}
+
+[data-theme='light'] .downloadButton:active {
+  background: rgba(244, 247, 255, 0.9);
 }
 
 @keyframes bannerPulse {
@@ -164,62 +263,33 @@
   }
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .card {
-    padding: clamp(16px, 6vw, 24px);
-    aspect-ratio: 16 / 9;
-    min-height: 220px;
+@media (max-width: 640px) {
+  .metadata {
+    gap: clamp(16px, 4vw, 24px);
+    padding: clamp(18px, 5vw, 26px);
   }
 
   .icon {
-    width: clamp(88px, 18vw, 110px);
-    height: clamp(88px, 18vw, 110px);
-    border-radius: 16px;
+    width: clamp(50px, 4vw, 96px);
+    height: clamp(50px, 4vw, 96px);
+    border-radius: clamp(8px, 2vw, 22px);
   }
 
   .title {
-    font-size: 19px;
-    margin-bottom: 6px;
+    font-size: clamp(10px, 3vw, 22px);
   }
 
   .subtitle {
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: clamp(8px, 3vw, 14px);
   }
 
   .description {
-    font-size: 13px;
-    line-height: 1.45;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    padding: 16px;
-    aspect-ratio: auto;
-    min-height: 200px;
+    font-size: clamp(11.8px, 3.4vw, 13px);
   }
 
-  .icon {
-    width: clamp(78px, 24vw, 92px);
-    height: clamp(78px, 24vw, 92px);
-    border-radius: 14px;
-  }
-
-  .title {
-    font-size: 17px;
-    line-height: 1.25;
-    margin-bottom: 6px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-
-  .description {
-    font-size: 12px;
-    line-height: 1.45;
+  .downloadButton {
+    padding: 0 clamp(14px, 4.6vw, 20px);
+    height: clamp(30px, 7vw, 34px);
+    font-size: clamp(11.8px, 3.8vw, 12.8px);
   }
 }
