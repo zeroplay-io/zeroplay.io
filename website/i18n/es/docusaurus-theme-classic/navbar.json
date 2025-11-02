@@ -1,8 +1,14 @@
 {
   "item.label.Games": {
-    "message": "Juegos"
+    "message": "Juegos",
+    "description": "Navbar item with label Games"
   },
   "item.label.Docs": {
-    "message": "Documentos"
+    "message": "Documentos",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
   }
 }

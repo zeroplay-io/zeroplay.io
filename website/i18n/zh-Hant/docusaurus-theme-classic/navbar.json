@@ -1,8 +1,14 @@
 {
   "item.label.Games": {
-    "message": "遊戲"
+    "message": "遊戲",
+    "description": "Navbar item with label Games"
   },
   "item.label.Docs": {
-    "message": "文檔"
+    "message": "文檔",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
   }
 }

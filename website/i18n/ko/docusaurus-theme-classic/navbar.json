@@ -1,8 +1,14 @@
 {
   "item.label.Games": {
-    "message": "게임"
+    "message": "게임",
+    "description": "Navbar item with label Games"
   },
   "item.label.Docs": {
-    "message": "문서"
+    "message": "문서",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
   }
 }

@@ -1,8 +1,14 @@
 {
   "item.label.Games": {
-    "message": "משחקים"
+    "message": "משחקים",
+    "description": "Navbar item with label Games"
   },
   "item.label.Docs": {
-    "message": "מסמכים"
+    "message": "מסמכים",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
   }
 }

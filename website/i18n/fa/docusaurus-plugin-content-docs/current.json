@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Legal": {
+    "message": "قانونی",
+    "description": "The label for category Legal in sidebar docs"
+  },
+  "sidebar.docs.category.Games": {
+    "message": "بازی‌ها",
+    "description": "The label for category Games in sidebar docs"
+  },
+  "sidebar.docs.category.Backgammon": {
+    "message": "Backgammon",
+    "description": "The label for category Backgammon in sidebar docs"
+  }
+}

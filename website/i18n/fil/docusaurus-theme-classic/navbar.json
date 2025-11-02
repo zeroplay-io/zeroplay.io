@@ -1,8 +1,14 @@
 {
   "item.label.Games": {
-    "message": "Mga Laro"
+    "message": "Mga Laro",
+    "description": "Navbar item with label Games"
   },
   "item.label.Docs": {
-    "message": "Mga Dokumento"
+    "message": "Mga Dokumento",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
   }
 }

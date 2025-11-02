@@ -1,11 +1,18 @@
 {
   "link.item.label.Terms of Service": {
-    "message": "Termini di Servizio"
+    "message": "Termini di Servizio",
+    "description": "The label of footer link with label=Terms of Service linking to /docs/legal/terms-of-service"
   },
   "link.item.label.Privacy Policy": {
-    "message": "Informativa sulla Privacy"
+    "message": "Informativa sulla Privacy",
+    "description": "The label of footer link with label=Privacy Policy linking to /docs/legal/privacy-policy"
   },
   "copyright": {
-    "message": "Copyright © 2024 ZeroPlay Ltd. (成都零游网络科技有限公司)"
+    "message": "Copyright © 2024 ZeroPlay Ltd. (成都零游网络科技有限公司)",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of footer logo"
   }
 }

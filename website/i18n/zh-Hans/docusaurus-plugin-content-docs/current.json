@@ -4,11 +4,11 @@
     "description": "The label for version current"
   },
   "sidebar.docs.category.Legal": {
-    "message": "Legal",
+    "message": "法律",
     "description": "The label for category Legal in sidebar docs"
   },
   "sidebar.docs.category.Games": {
-    "message": "Games",
+    "message": "游戏",
     "description": "The label for category Games in sidebar docs"
   },
   "sidebar.docs.category.Backgammon": {
