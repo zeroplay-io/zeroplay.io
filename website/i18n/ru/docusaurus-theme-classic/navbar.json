@@ -1,14 +1,8 @@
 {
-  "title": {
-    "message": "ZeroPlay",
-    "description": "The title in the navbar"
-  },
   "item.label.Games": {
-    "message": "Games",
-    "description": "Navbar item with label Games"
+    "message": "Игры"
   },
   "item.label.Docs": {
-    "message": "Docs",
-    "description": "Navbar item with label Docs"
+    "message": "Документация"
   }
 }

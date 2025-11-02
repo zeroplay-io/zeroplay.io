@@ -1,14 +1,11 @@
 {
   "link.item.label.Terms of Service": {
-    "message": "Terms of Service",
-    "description": "The label of footer link with label=Terms of Service"
+    "message": "Användarvillkor"
   },
   "link.item.label.Privacy Policy": {
-    "message": "Privacy Policy",
-    "description": "The label of footer link with label=Privacy Policy"
+    "message": "Integritetspolicy"
   },
   "copyright": {
-    "message": "Copyright © 2025 ZeroPlay Ltd. (成都零游网络科技有限公司)",
-    "description": "The footer copyright"
+    "message": "Copyright © 2024 ZeroPlay Ltd. (成都零游网络科技有限公司)"
   }
 }
