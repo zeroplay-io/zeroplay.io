@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 // Language mapping for better browser language detection
 const LANGUAGE_MAP: Record<string, string> = {
@@ -133,31 +134,60 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
   const {
     i18n: { currentLocale, defaultLocale, locales },
   } = useDocusaurusContext();
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const leadingSegment = pathSegments[0];
+  const hasLocalePrefix = leadingSegment ? locales.includes(leadingSegment) : false;
+  const isDefaultLocalePath = !hasLocalePrefix || leadingSegment === defaultLocale;
+
+  const [isLocaleReady, setIsLocaleReady] = React.useState<boolean>(() => {
+    if (!ExecutionEnvironment.canUseDOM) {
+      return true;
+    }
+    if (!isDefaultLocalePath || currentLocale !== defaultLocale) {
+      return true;
+    }
+    return false;
+  });
 
   useEffect(() => {
-    // Treat routes without a non-default locale prefix as default-locale pages
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    const leadingSegment = pathSegments[0];
-    const hasLocalePrefix = leadingSegment ? locales.includes(leadingSegment) : false;
-    const isDefaultLocalePath = !hasLocalePrefix || leadingSegment === defaultLocale;
+    if (!ExecutionEnvironment.canUseDOM) {
+      return;
+    }
+
+    const pathSegmentsInEffect = location.pathname.split('/').filter(Boolean);
+    const leadingSegmentInEffect = pathSegmentsInEffect[0];
+    const hasLocalePrefixInEffect = leadingSegmentInEffect ? locales.includes(leadingSegmentInEffect) : false;
+    const isDefaultLocalePathInEffect = !hasLocalePrefixInEffect || leadingSegmentInEffect === defaultLocale;
     const hasTrailingSlash = location.pathname.endsWith('/');
     const searchParams = new URLSearchParams(location.search);
     const langParam = searchParams.get('lang');
     const hasVisitedBefore = localStorage.getItem('docusaurus.locale.visited');
 
-    if (isDefaultLocalePath && currentLocale === defaultLocale) {
+    const needsBlocking =
+      isDefaultLocalePathInEffect &&
+      currentLocale === defaultLocale &&
+      (Boolean(langParam) || !hasVisitedBefore);
+
+    if (needsBlocking && isLocaleReady) {
+      setIsLocaleReady(false);
+    }
+
+    if (isDefaultLocalePathInEffect && currentLocale === defaultLocale) {
       if (langParam) {
         const requestedLocale = resolveLocaleCandidate(langParam, locales);
 
         if (requestedLocale && requestedLocale !== currentLocale) {
           localStorage.setItem('docusaurus.locale.visited', 'true');
-          const newPath = buildRedirectPath(requestedLocale, pathSegments, defaultLocale, hasTrailingSlash);
+          const newPath = buildRedirectPath(requestedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
           window.location.href = newPath + location.search + location.hash;
-        } else if (requestedLocale) {
-          // Respect explicit language requests even when they equal the current locale
+          return;
+        }
+
+        if (requestedLocale) {
           localStorage.setItem('docusaurus.locale.visited', 'true');
         }
 
+        setIsLocaleReady(true);
         return;
       }
 
@@ -165,20 +195,33 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
         const detectedLocale = getBrowserLanguage(locales);
 
         if (detectedLocale && detectedLocale !== defaultLocale) {
-          // Mark as visited before redirecting
           localStorage.setItem('docusaurus.locale.visited', 'true');
-
-          // Redirect to detected language
-          const newPath = buildRedirectPath(detectedLocale, pathSegments, defaultLocale, hasTrailingSlash);
-
+          const newPath = buildRedirectPath(detectedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
           window.location.href = newPath + location.search + location.hash;
-        } else {
-          // Mark as visited even if staying on default locale
-          localStorage.setItem('docusaurus.locale.visited', 'true');
+          return;
         }
+
+        localStorage.setItem('docusaurus.locale.visited', 'true');
       }
     }
-  }, [location.pathname, location.search, currentLocale, defaultLocale, locales]);
+
+    setIsLocaleReady(true);
+  }, [
+    currentLocale,
+    defaultLocale,
+    locales,
+    location.pathname,
+    location.search,
+    isLocaleReady,
+  ]);
+
+  if (!isLocaleReady) {
+    return (
+      <div className="locale-loading" role="status" aria-live="polite">
+        Loading…
+      </div>
+    );
+  }
 
   return <>{children}</>;
 }
