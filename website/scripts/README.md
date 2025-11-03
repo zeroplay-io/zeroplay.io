@@ -4,28 +4,42 @@
 
 ## 脚本列表
 
-### 1. update_games_i18n.py
+### 1. update_game_i18n.py
 
-**用途**: 从CSV文件批量更新游戏元数据的多语言翻译
+**用途**: 从CSV文件更新指定游戏的多语言翻译元数据
 
 **使用场景**:
 - 从App Store导出的CSV元数据更新游戏翻译
-- 批量更新游戏标题、副标题、描述等字段
+- 更新游戏标题、副标题、描述等字段
 
 **用法**:
 ```bash
-# 需要先将CSV文件放在父目录
-python3 scripts/update_games_i18n.py
+python3 scripts/update_game_i18n.py <game_id> <csv_path>
 ```
 
-**输入**:
-- `../backgammon_metadata.csv` - Backgammon游戏的App Store元数据
-- `../solitaire_metadata.csv` - Solitaire游戏的App Store元数据
+**参数**:
+- `game_id`: 游戏ID（必须与 games.json 中的 id 字段匹配）
+- `csv_path`: Apple Store 元数据 CSV 文件路径
+
+**示例**:
+```bash
+# 更新 Solitaire 游戏
+python3 scripts/update_game_i18n.py solitaire ../../solitaire/docs/metadata.csv
+
+# 更新 Backgammon 游戏
+python3 scripts/update_game_i18n.py backgammon ../../backgammon/docs/metadata.csv
+```
+
+**CSV格式要求**:
+- `Locale`: Apple 语言代码（如 en-US, zh-Hans, ja）
+- `App Name`: 应用名称
+- `Subtitle`: 副标题
+- `Description`: 应用描述
 
 **输出**:
-- 更新 `src/data/games.json` 中的translations字段
+- 更新 `src/data/games.json` 中对应游戏的 title、subtitle、description 和 translations 字段
 
-**注意**: 使用完CSV文件后记得删除，它们只是临时数据源。
+**语言映射**: 脚本自动将 Apple 语言代码映射到项目 i18n 代码（如 en-US → en）
 
 ---
 
@@ -66,10 +80,9 @@ Languages with all docs:    31/31
 ### 添加新游戏翻译
 
 1. 从App Store Connect导出游戏元数据CSV
-2. 将CSV文件放在website父目录
-3. 更新 `update_games_i18n.py` 中的游戏ID和CSV文件名
-4. 运行脚本更新games.json
-5. 删除临时CSV文件
+2. 运行脚本: `python3 scripts/update_game_i18n.py <game_id> <csv_path>`
+3. 验证 `src/data/games.json` 中的更新
+4. 提交更改到版本控制
 
 ### 添加新语言
 
