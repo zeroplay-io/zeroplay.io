@@ -1,9 +1,10 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
 import Translate from "@docusaurus/Translate";
 import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import GameCard from "@site/src/components/GameCard";
 import { getLocalizedGames } from "@site/src/utils/i18nGames";
 import styles from "./index.module.css";
@@ -16,11 +17,31 @@ export default function GamesPage(): JSX.Element {
     [i18n.currentLocale],
   );
 
-  const filteredGames = useMemo(() => {
+  const hasFilterQuery = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return params.has("source_game");
+  }, [location.search]);
+
+  const [filteredGames, setFilteredGames] = useState(() =>
+    hasFilterQuery ? [] : localizedGames,
+  );
+  const [isFilterReady, setIsFilterReady] = useState(() => !hasFilterQuery);
+
+  useEffect(() => {
+    if (hasFilterQuery) {
+      setIsFilterReady(false);
+    }
+
+    if (!ExecutionEnvironment.canUseDOM) {
+      setFilteredGames(localizedGames);
+      setIsFilterReady(true);
+      return;
+    }
+
     const params = new URLSearchParams(location.search);
     const excludeTokens: string[] = [];
 
-    params.getAll("exclude").forEach((value) => {
+    params.getAll("source_game").forEach((value) => {
       value
         .split(",")
         .map((token) => token.trim().toLowerCase())
@@ -29,12 +50,17 @@ export default function GamesPage(): JSX.Element {
     });
 
     if (excludeTokens.length === 0) {
-      return localizedGames;
+      setFilteredGames(localizedGames);
+      setIsFilterReady(true);
+      return;
     }
 
     const excludeSet = new Set(excludeTokens);
-    return localizedGames.filter((game) => !excludeSet.has(game.id.toLowerCase()));
-  }, [localizedGames, location.search]);
+    setFilteredGames(
+      localizedGames.filter((game) => !excludeSet.has(game.id.toLowerCase())),
+    );
+    setIsFilterReady(true);
+  }, [hasFilterQuery, localizedGames, location.search]);
 
   const pageTitle = translate({
     id: "games.page.meta.title",
@@ -58,7 +84,11 @@ export default function GamesPage(): JSX.Element {
           </h1>
         </div>
         <div className={styles.gamesListContainer}>
-          {filteredGames.length > 0 ? (
+          {!isFilterReady ? (
+            <div className="locale-loading" role="status" aria-live="polite">
+              Loading…
+            </div>
+          ) : filteredGames.length > 0 ? (
             filteredGames.map((game, index) => (
               <GameCard key={game.id || index} game={game} />
             ))

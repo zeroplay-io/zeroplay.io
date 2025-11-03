@@ -137,6 +137,7 @@ const config: Config = {
     ],
   ],
 
+  scripts: [{ src: "/js/clean-mode-init.js", async: false }],
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",

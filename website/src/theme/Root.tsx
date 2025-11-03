@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
@@ -134,12 +134,28 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
   const {
     i18n: { currentLocale, defaultLocale, locales },
   } = useDocusaurusContext();
+  const safeSearch = typeof location.search === 'string' ? location.search : '';
   const pathSegments = location.pathname.split('/').filter(Boolean);
   const leadingSegment = pathSegments[0];
   const hasLocalePrefix = leadingSegment ? locales.includes(leadingSegment) : false;
   const isDefaultLocalePath = !hasLocalePrefix || leadingSegment === defaultLocale;
+  const searchParamsMemo = useMemo(
+    () => new URLSearchParams(safeSearch),
+    [safeSearch],
+  );
+  const isCleanMode = useMemo(
+    () => searchParamsMemo.get('mode')?.toLowerCase() === 'clean',
+    [searchParamsMemo],
+  );
+  const requestedTheme = useMemo(() => {
+    const themeParam = searchParamsMemo.get('theme')?.toLowerCase();
+    if (themeParam === 'light' || themeParam === 'dark') {
+      return themeParam;
+    }
+    return null;
+  }, [searchParamsMemo]);
 
-  const [isLocaleReady, setIsLocaleReady] = React.useState<boolean>(() => {
+  const [isLocaleReady, setIsLocaleReady] = useState<boolean>(() => {
     if (!ExecutionEnvironment.canUseDOM) {
       return true;
     }
@@ -159,7 +175,7 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
     const hasLocalePrefixInEffect = leadingSegmentInEffect ? locales.includes(leadingSegmentInEffect) : false;
     const isDefaultLocalePathInEffect = !hasLocalePrefixInEffect || leadingSegmentInEffect === defaultLocale;
     const hasTrailingSlash = location.pathname.endsWith('/');
-    const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams(safeSearch);
     const langParam = searchParams.get('lang');
     const hasVisitedBefore = localStorage.getItem('docusaurus.locale.visited');
 
@@ -206,14 +222,36 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
     }
 
     setIsLocaleReady(true);
-  }, [
-    currentLocale,
-    defaultLocale,
-    locales,
-    location.pathname,
-    location.search,
-    isLocaleReady,
-  ]);
+  }, [currentLocale, defaultLocale, locales, location.pathname, safeSearch, isLocaleReady]);
+
+  const useIsomorphicLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : useEffect;
+
+  useIsomorphicLayoutEffect(() => {
+    if (!ExecutionEnvironment.canUseDOM) {
+      return;
+    }
+
+    document.documentElement.classList.toggle('clean-mode', isCleanMode);
+    document.body.classList.toggle('clean-mode', isCleanMode);
+  }, [isCleanMode]);
+
+  useIsomorphicLayoutEffect(() => {
+    if (!ExecutionEnvironment.canUseDOM) {
+      return;
+    }
+
+    if (!requestedTheme) {
+      return;
+    }
+
+    const html = document.documentElement;
+    html.setAttribute('data-theme', requestedTheme);
+    try {
+      window.localStorage.setItem('theme', requestedTheme);
+    } catch {
+      // Ignore storage failures (e.g., private mode)
+    }
+  }, [requestedTheme]);
 
   if (!isLocaleReady) {
     return (
