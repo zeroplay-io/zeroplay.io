@@ -141,12 +141,11 @@ const config: Config = {
 
   scripts: [
     {
-      id: "zeroplay-locale-config",
-      async: false,
-      content: `window.__ZERO_LOCALE_CONFIG=${JSON.stringify({
+      src: "data:text/javascript;charset=utf-8," + encodeURIComponent(`window.__ZERO_LOCALE_CONFIG=${JSON.stringify({
         defaultLocale: I18N_CONFIG.defaultLocale,
         locales: I18N_CONFIG.locales,
-      })};`,
+      })};`),
+      async: false,
     },
     { src: "/js/clean-mode-init.js", async: false },
   ],
