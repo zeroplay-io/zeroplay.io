@@ -178,12 +178,12 @@
 			"videoUrl": "https://dl.zeroplay.cc/metadata/backgammon/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/backgammon/poster.jpg",
 			"screenshots": [
-				"https://dl.zeroplay.cc/metadata/backgammon/screenshot-01.jpg",
-				"https://dl.zeroplay.cc/metadata/backgammon/screenshot-02.jpg",
-				"https://dl.zeroplay.cc/metadata/backgammon/screenshot-03.jpg",
-				"https://dl.zeroplay.cc/metadata/backgammon/screenshot-04.jpg",
-				"https://dl.zeroplay.cc/metadata/backgammon/screenshot-05.jpg",
-				"https://dl.zeroplay.cc/metadata/backgammon/screenshot-06.jpg"
+				"https://dl.zeroplay.cc/metadata/backgammon/screenshots/01.jpg",
+				"https://dl.zeroplay.cc/metadata/backgammon/screenshots/02.jpg",
+				"https://dl.zeroplay.cc/metadata/backgammon/screenshots/03.jpg",
+				"https://dl.zeroplay.cc/metadata/backgammon/screenshots/04.jpg",
+				"https://dl.zeroplay.cc/metadata/backgammon/screenshots/05.jpg",
+				"https://dl.zeroplay.cc/metadata/backgammon/screenshots/06.jpg"
 			],
 			"orientation": "landscape",
 			"stores": {
@@ -371,11 +371,11 @@
 			"videoUrl": "https://dl.zeroplay.cc/metadata/solitaire/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/solitaire/poster.jpg",
 			"screenshots": [
-				"https://dl.zeroplay.cc/metadata/solitaire/screenshot-01.jpg",
-				"https://dl.zeroplay.cc/metadata/solitaire/screenshot-02.jpg",
-				"https://dl.zeroplay.cc/metadata/solitaire/screenshot-03.jpg",
-				"https://dl.zeroplay.cc/metadata/solitaire/screenshot-04.jpg",
-				"https://dl.zeroplay.cc/metadata/solitaire/screenshot-05.jpg"
+				"https://dl.zeroplay.cc/metadata/solitaire/screenshots/01.jpg",
+				"https://dl.zeroplay.cc/metadata/solitaire/screenshots/02.jpg",
+				"https://dl.zeroplay.cc/metadata/solitaire/screenshots/03.jpg",
+				"https://dl.zeroplay.cc/metadata/solitaire/screenshots/04.jpg",
+				"https://dl.zeroplay.cc/metadata/solitaire/screenshots/05.jpg"
 			],
 			"orientation": "portrait",
 			"stores": {
