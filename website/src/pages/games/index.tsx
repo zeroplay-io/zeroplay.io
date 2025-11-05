@@ -32,9 +32,17 @@ export default function GamesPage(): JSX.Element {
       setIsFilterReady(false);
     }
 
+    const releaseFilterBlocking = () => {
+      if (!ExecutionEnvironment.canUseDOM) {
+        return;
+      }
+      document.documentElement.classList.remove("games-filter-blocking");
+    };
+
     if (!ExecutionEnvironment.canUseDOM) {
       setFilteredGames(localizedGames);
       setIsFilterReady(true);
+      releaseFilterBlocking();
       return;
     }
 
@@ -52,6 +60,7 @@ export default function GamesPage(): JSX.Element {
     if (excludeTokens.length === 0) {
       setFilteredGames(localizedGames);
       setIsFilterReady(true);
+      releaseFilterBlocking();
       return;
     }
 
@@ -60,6 +69,7 @@ export default function GamesPage(): JSX.Element {
       localizedGames.filter((game) => !excludeSet.has(game.id.toLowerCase())),
     );
     setIsFilterReady(true);
+    releaseFilterBlocking();
   }, [hasFilterQuery, localizedGames, location.search]);
 
   const pageTitle = translate({
@@ -72,6 +82,11 @@ export default function GamesPage(): JSX.Element {
     message: "Explore our games",
     description: "Description for the games page metadata",
   });
+  const loadingLabel = translate({
+    id: "games.page.loading",
+    message: "Loading…",
+    description: "Assistive text shown while the games filter is resolving",
+  });
 
   return (
     <Layout title={pageTitle} description={pageDescription}>
@@ -83,7 +98,10 @@ export default function GamesPage(): JSX.Element {
             </Translate>
           </h1>
         </div>
-        <div className={styles.gamesListContainer}>
+        <div
+          className={styles.gamesListContainer}
+          data-loading-label={loadingLabel}
+        >
           {!isFilterReady ? (
             <div className="locale-loading" role="status" aria-live="polite">
               Loading…

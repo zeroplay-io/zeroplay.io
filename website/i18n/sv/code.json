@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Våra Spel"
   },
+  "games.page.meta.title": {
+    "message": "Spel"
+  },
+  "games.page.meta.description": {
+    "message": "Utforska våra spel"
+  },
+  "games.page.heading": {
+    "message": "Våra Spel"
+  },
+  "games.page.empty": {
+    "message": "Inga spel att visa med det aktuella filtret."
+  },
   "game.button.get": {
     "message": "Hämta"
   },

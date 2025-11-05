@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Ang Aming Mga Laro"
   },
+  "games.page.meta.title": {
+    "message": "Mga Laro"
+  },
+  "games.page.meta.description": {
+    "message": "Tuklasin ang aming mga laro"
+  },
+  "games.page.heading": {
+    "message": "Ang Aming Mga Laro"
+  },
+  "games.page.empty": {
+    "message": "Walang laro na ipapakita sa kasalukuyang filter."
+  },
   "game.button.get": {
     "message": "Kunin"
   },

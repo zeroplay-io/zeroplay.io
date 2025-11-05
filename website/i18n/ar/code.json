@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "ألعابنا"
   },
+  "games.page.meta.title": {
+    "message": "الألعاب"
+  },
+  "games.page.meta.description": {
+    "message": "استكشف ألعابنا"
+  },
+  "games.page.heading": {
+    "message": "ألعابنا"
+  },
+  "games.page.empty": {
+    "message": "لا توجد ألعاب لعرضها مع الفلتر الحالي."
+  },
   "game.button.get": {
     "message": "احصل عليه"
   },

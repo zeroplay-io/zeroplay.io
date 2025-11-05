@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Onze Games"
   },
+  "games.page.meta.title": {
+    "message": "Games"
+  },
+  "games.page.meta.description": {
+    "message": "Ontdek onze games"
+  },
+  "games.page.heading": {
+    "message": "Onze Games"
+  },
+  "games.page.empty": {
+    "message": "Geen games om weer te geven met het huidige filter."
+  },
   "game.button.get": {
     "message": "Downloaden"
   },

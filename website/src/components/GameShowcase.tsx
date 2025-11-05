@@ -55,7 +55,6 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
   const [dimensionsBySrc, setDimensionsBySrc] = useState<
     Record<string, { width: number; height: number }>
   >({});
-  const screenshotWrapperRef = useRef<HTMLDivElement>(null);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
   const handlePrevClick = () => {
@@ -167,14 +166,20 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     return undefined;
   }, [screenshots, dimensionsBySrc]);
 
-  const screenshotWrapperStyle = activeDimensions
-    ? {
-        aspectRatio: `${activeDimensions.width} / ${activeDimensions.height}`,
-      }
-    : fallbackDimensions
-    ? {
-        aspectRatio: `${fallbackDimensions.width} / ${fallbackDimensions.height}`,
-      }
+  const aspectPercentage = useMemo(() => {
+    if (activeDimensions) {
+      return (activeDimensions.height / activeDimensions.width) * 100;
+    }
+    if (fallbackDimensions) {
+      return (fallbackDimensions.height / fallbackDimensions.width) * 100;
+    }
+    return null;
+  }, [activeDimensions, fallbackDimensions]);
+
+  const screenshotWrapperStyle = aspectPercentage
+    ? ({
+        "--screenshot-aspect-ratio": `${aspectPercentage}%`,
+      } as React.CSSProperties)
     : undefined;
   const iconAlt = translate(
     {
@@ -368,73 +373,67 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       {screenshots.length > 0 && (
         <div className={styles.screenshotsSection}>
           <div className={styles.screenshotsContainer}>
-            <div
-              ref={screenshotWrapperRef}
-              className={styles.screenshotWrapper}
-              style={screenshotWrapperStyle}
-            >
-          {screenshots.length > 0 && (
-            <ProgressiveImage
-              src={screenshots[currentIndex]}
-              alt={screenshotAlt}
-              className={styles.screenshot}
-              onLoad={handleImageLoad}
-            />
-          )}
-
-          {/* 添加切换按钮 */}
-          {screenshots.length > 1 && (
-            <button
-              onClick={handlePrevClick}
-              className={`${styles.navButton} ${styles.prevButton}`}
-              aria-label={previousImageLabel}
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 18L9 12L15 6"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+            <div className={styles.screenshotWrapper} style={screenshotWrapperStyle}>
+              <div className={styles.screenshotViewport}>
+                <ProgressiveImage
+                  src={screenshots[currentIndex]}
+                  alt={screenshotAlt}
+                  className={styles.screenshot}
+                  onLoad={handleImageLoad}
                 />
-              </svg>
-            </button>
-          )}
-
-          {screenshots.length > 1 && (
-            <button
-              onClick={handleNextClick}
-              className={`${styles.navButton} ${styles.nextButton}`}
-              aria-label={nextImageLabel}
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 18L15 12L9 6"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          )}
-
-              {/* 添加图片计数器 */}
-              <div className={styles.counter}>
-                {currentIndex + 1} / {screenshots.length}
+                {screenshots.length > 1 && (
+                  <div className={styles.counter}>
+                    {currentIndex + 1} / {screenshots.length}
+                  </div>
+                )}
               </div>
+              {screenshots.length > 1 && (
+                <>
+                  <button
+                    onClick={handlePrevClick}
+                    className={`${styles.navButton} ${styles.prevButton}`}
+                    aria-label={previousImageLabel}
+                  >
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 18L9 12L15 6"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  <button
+                    onClick={handleNextClick}
+                    className={`${styles.navButton} ${styles.nextButton}`}
+                    aria-label={nextImageLabel}
+                  >
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 18L15 12L9 6"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>

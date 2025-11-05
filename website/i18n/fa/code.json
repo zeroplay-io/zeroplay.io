@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "بازی‌های ما"
   },
+  "games.page.meta.title": {
+    "message": "بازی‌ها"
+  },
+  "games.page.meta.description": {
+    "message": "بازی‌های ما را کاوش کنید"
+  },
+  "games.page.heading": {
+    "message": "بازی‌های ما"
+  },
+  "games.page.empty": {
+    "message": "هیچ بازی‌ای برای نمایش با فیلتر فعلی وجود ندارد."
+  },
   "game.button.get": {
     "message": "دریافت"
   },

@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "हमारे गेम"
   },
+  "games.page.meta.title": {
+    "message": "गेम"
+  },
+  "games.page.meta.description": {
+    "message": "हमारे गेम देखें"
+  },
+  "games.page.heading": {
+    "message": "हमारे गेम"
+  },
+  "games.page.empty": {
+    "message": "वर्तमान फ़िल्टर के साथ प्रदर्शित करने के लिए कोई गेम नहीं।"
+  },
   "game.button.get": {
     "message": "प्राप्त करें"
   },

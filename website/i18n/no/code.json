@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Våre Spill"
   },
+  "games.page.meta.title": {
+    "message": "Spill"
+  },
+  "games.page.meta.description": {
+    "message": "Utforsk våre spill"
+  },
+  "games.page.heading": {
+    "message": "Våre Spill"
+  },
+  "games.page.empty": {
+    "message": "Ingen spill å vise med gjeldende filter."
+  },
   "game.button.get": {
     "message": "Last ned"
   },

@@ -231,6 +231,21 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
       return;
     }
 
+    const html = document.documentElement;
+    if (isLocaleReady) {
+      html.classList.remove('locale-blocking');
+      html.classList.add('locale-ready');
+    } else {
+      html.classList.remove('locale-ready');
+      html.classList.add('locale-blocking');
+    }
+  }, [isLocaleReady]);
+
+  useIsomorphicLayoutEffect(() => {
+    if (!ExecutionEnvironment.canUseDOM) {
+      return;
+    }
+
     document.documentElement.classList.toggle('clean-mode', isCleanMode);
     document.body.classList.toggle('clean-mode', isCleanMode);
   }, [isCleanMode]);

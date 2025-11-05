@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "私たちのゲーム"
   },
+  "games.page.meta.title": {
+    "message": "ゲーム"
+  },
+  "games.page.meta.description": {
+    "message": "私たちのゲームを探索"
+  },
+  "games.page.heading": {
+    "message": "私たちのゲーム"
+  },
+  "games.page.empty": {
+    "message": "現在のフィルター条件で表示できるゲームはありません。"
+  },
   "game.button.get": {
     "message": "入手"
   },

@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Jocurile Noastre"
   },
+  "games.page.meta.title": {
+    "message": "Jocuri"
+  },
+  "games.page.meta.description": {
+    "message": "Explorează jocurile noastre"
+  },
+  "games.page.heading": {
+    "message": "Jocurile Noastre"
+  },
+  "games.page.empty": {
+    "message": "Nu există jocuri de afișat cu filtrul actual."
+  },
   "game.button.get": {
     "message": "Descarcă"
   },

@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "המשחקים שלנו"
   },
+  "games.page.meta.title": {
+    "message": "משחקים"
+  },
+  "games.page.meta.description": {
+    "message": "גלה את המשחקים שלנו"
+  },
+  "games.page.heading": {
+    "message": "המשחקים שלנו"
+  },
+  "games.page.empty": {
+    "message": "אין משחקים להצגה עם הסינון הנוכחי."
+  },
   "game.button.get": {
     "message": "הורד"
   },

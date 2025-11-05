@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Permainan Kami"
   },
+  "games.page.meta.title": {
+    "message": "Permainan"
+  },
+  "games.page.meta.description": {
+    "message": "Terokai permainan kami"
+  },
+  "games.page.heading": {
+    "message": "Permainan Kami"
+  },
+  "games.page.empty": {
+    "message": "Tiada permainan untuk dipaparkan dengan penapis semasa."
+  },
   "game.button.get": {
     "message": "Dapatkan"
   },

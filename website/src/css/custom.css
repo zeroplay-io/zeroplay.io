@@ -595,3 +595,39 @@ html.clean-mode {
   height: 2px;
   background: linear-gradient(90deg, transparent 0%, var(--ifm-color-emphasis-300) 50%, transparent 100%);
 }
+
+html.locale-blocking body {
+  opacity: 0;
+}
+
+html.locale-ready body {
+  opacity: 1;
+  transition: opacity 200ms ease-in-out;
+}
+
+html.games-filter-blocking .gamesPage .gamesListContainer {
+  position: relative;
+}
+
+html.games-filter-blocking .gamesPage .gamesListContainer > a {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.games-filter-blocking .gamesPage .gamesListContainer::before {
+  content: attr(data-loading-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+html[data-theme="dark"].games-filter-blocking
+  .gamesPage
+  .gamesListContainer::before {
+  color: var(--ifm-color-emphasis-200);
+}

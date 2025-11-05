@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Vores Spil"
   },
+  "games.page.meta.title": {
+    "message": "Spil"
+  },
+  "games.page.meta.description": {
+    "message": "Udforsk vores spil"
+  },
+  "games.page.heading": {
+    "message": "Vores Spil"
+  },
+  "games.page.empty": {
+    "message": "Ingen spil at vise med det aktuelle filter."
+  },
   "game.button.get": {
     "message": "Hent"
   },

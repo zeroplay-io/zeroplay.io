@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "เกมของเรา"
   },
+  "games.page.meta.title": {
+    "message": "เกม"
+  },
+  "games.page.meta.description": {
+    "message": "สำรวจเกมของเรา"
+  },
+  "games.page.heading": {
+    "message": "เกมของเรา"
+  },
+  "games.page.empty": {
+    "message": "ไม่มีเกมที่จะแสดงด้วยตัวกรองปัจจุบัน"
+  },
   "game.button.get": {
     "message": "ดาวน์โหลด"
   },

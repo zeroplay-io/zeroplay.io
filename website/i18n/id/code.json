@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Game Kami"
   },
+  "games.page.meta.title": {
+    "message": "Game"
+  },
+  "games.page.meta.description": {
+    "message": "Jelajahi game kami"
+  },
+  "games.page.heading": {
+    "message": "Game Kami"
+  },
+  "games.page.empty": {
+    "message": "Tidak ada game untuk ditampilkan dengan filter saat ini."
+  },
   "game.button.get": {
     "message": "Dapatkan"
   },

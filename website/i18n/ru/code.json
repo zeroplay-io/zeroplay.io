@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Наши Игры"
   },
+  "games.page.meta.title": {
+    "message": "Игры"
+  },
+  "games.page.meta.description": {
+    "message": "Изучите наши игры"
+  },
+  "games.page.heading": {
+    "message": "Наши Игры"
+  },
+  "games.page.empty": {
+    "message": "Нет игр для отображения с текущим фильтром."
+  },
   "game.button.get": {
     "message": "Загрузить"
   },

@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Oyunlarımız"
   },
+  "games.page.meta.title": {
+    "message": "Oyunlar"
+  },
+  "games.page.meta.description": {
+    "message": "Oyunlarımızı keşfedin"
+  },
+  "games.page.heading": {
+    "message": "Oyunlarımız"
+  },
+  "games.page.empty": {
+    "message": "Mevcut filtre ile gösterilecek oyun yok."
+  },
   "game.button.get": {
     "message": "Edinin"
   },

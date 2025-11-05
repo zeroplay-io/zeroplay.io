@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Játékaink"
   },
+  "games.page.meta.title": {
+    "message": "Játékok"
+  },
+  "games.page.meta.description": {
+    "message": "Fedezd fel játékainkat"
+  },
+  "games.page.heading": {
+    "message": "Játékaink"
+  },
+  "games.page.empty": {
+    "message": "Nincs megjeleníthető játék a jelenlegi szűrővel."
+  },
   "game.button.get": {
     "message": "Letöltés"
   },

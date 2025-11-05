@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "우리의 게임"
   },
+  "games.page.meta.title": {
+    "message": "게임"
+  },
+  "games.page.meta.description": {
+    "message": "게임 탐색"
+  },
+  "games.page.heading": {
+    "message": "우리의 게임"
+  },
+  "games.page.empty": {
+    "message": "현재 필터 조건에서 표시할 게임이 없습니다."
+  },
   "game.button.get": {
     "message": "받기"
   },

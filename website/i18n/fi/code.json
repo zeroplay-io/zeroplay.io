@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Pelimme"
   },
+  "games.page.meta.title": {
+    "message": "Pelit"
+  },
+  "games.page.meta.description": {
+    "message": "Tutustu peleihimme"
+  },
+  "games.page.heading": {
+    "message": "Pelimme"
+  },
+  "games.page.empty": {
+    "message": "Ei näytettäviä pelejä nykyisellä suodattimella."
+  },
   "game.button.get": {
     "message": "Hanki"
   },

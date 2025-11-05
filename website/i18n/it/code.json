@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "I Nostri Giochi"
   },
+  "games.page.meta.title": {
+    "message": "Giochi"
+  },
+  "games.page.meta.description": {
+    "message": "Esplora i nostri giochi"
+  },
+  "games.page.heading": {
+    "message": "I Nostri Giochi"
+  },
+  "games.page.empty": {
+    "message": "Nessun gioco da visualizzare con il filtro attuale."
+  },
   "game.button.get": {
     "message": "Ottieni"
   },

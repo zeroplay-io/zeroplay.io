@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "Trò Chơi Của Chúng Tôi"
   },
+  "games.page.meta.title": {
+    "message": "Trò Chơi"
+  },
+  "games.page.meta.description": {
+    "message": "Khám phá trò chơi của chúng tôi"
+  },
+  "games.page.heading": {
+    "message": "Trò Chơi Của Chúng Tôi"
+  },
+  "games.page.empty": {
+    "message": "Không có trò chơi nào để hiển thị với bộ lọc hiện tại."
+  },
   "game.button.get": {
     "message": "Tải về"
   },

@@ -6,6 +6,18 @@
   "homepage.games.title": {
     "message": "我們的遊戲"
   },
+  "games.page.meta.title": {
+    "message": "遊戲"
+  },
+  "games.page.meta.description": {
+    "message": "探索我們的遊戲"
+  },
+  "games.page.heading": {
+    "message": "我們的遊戲"
+  },
+  "games.page.empty": {
+    "message": "當前篩選條件下沒有可展示的遊戲。"
+  },
   "game.button.get": {
     "message": "獲取"
   },
