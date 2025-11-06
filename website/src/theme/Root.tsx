@@ -159,10 +159,11 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
     if (!ExecutionEnvironment.canUseDOM) {
       return true;
     }
-    if (!isDefaultLocalePath || currentLocale !== defaultLocale) {
-      return true;
+    // Only block if we're on default locale (need to check if redirect is needed)
+    if (currentLocale === defaultLocale) {
+      return false;
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
@@ -173,51 +174,41 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
     const pathSegmentsInEffect = location.pathname.split('/').filter(Boolean);
     const leadingSegmentInEffect = pathSegmentsInEffect[0];
     const hasLocalePrefixInEffect = leadingSegmentInEffect ? locales.includes(leadingSegmentInEffect) : false;
-    const isDefaultLocalePathInEffect = !hasLocalePrefixInEffect || leadingSegmentInEffect === defaultLocale;
     const hasTrailingSlash = location.pathname.endsWith('/');
     const searchParams = new URLSearchParams(safeSearch);
     const langParam = searchParams.get('lang');
-    const hasVisitedBefore = localStorage.getItem('docusaurus.locale.visited');
 
-    const needsBlocking =
-      isDefaultLocalePathInEffect &&
-      currentLocale === defaultLocale &&
-      (Boolean(langParam) || !hasVisitedBefore);
+    // Check if we're on a default locale page (no locale prefix or explicit default locale prefix)
+    const isOnDefaultLocalePage = !hasLocalePrefixInEffect || leadingSegmentInEffect === defaultLocale;
 
-    if (needsBlocking && isLocaleReady) {
-      setIsLocaleReady(false);
-    }
+    if (isOnDefaultLocalePage && currentLocale === defaultLocale) {
+      const needsBlocking = Boolean(langParam);
 
-    if (isDefaultLocalePathInEffect && currentLocale === defaultLocale) {
+      if (needsBlocking && isLocaleReady) {
+        setIsLocaleReady(false);
+      }
+
+      // Handle explicit lang parameter first
       if (langParam) {
         const requestedLocale = resolveLocaleCandidate(langParam, locales);
 
         if (requestedLocale && requestedLocale !== currentLocale) {
-          localStorage.setItem('docusaurus.locale.visited', 'true');
           const newPath = buildRedirectPath(requestedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
           window.location.href = newPath + location.search + location.hash;
           return;
-        }
-
-        if (requestedLocale) {
-          localStorage.setItem('docusaurus.locale.visited', 'true');
         }
 
         setIsLocaleReady(true);
         return;
       }
 
-      if (!hasVisitedBefore) {
-        const detectedLocale = getBrowserLanguage(locales);
+      // Always detect browser language for any default locale page
+      const detectedLocale = getBrowserLanguage(locales);
 
-        if (detectedLocale && detectedLocale !== defaultLocale) {
-          localStorage.setItem('docusaurus.locale.visited', 'true');
-          const newPath = buildRedirectPath(detectedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
-          window.location.href = newPath + location.search + location.hash;
-          return;
-        }
-
-        localStorage.setItem('docusaurus.locale.visited', 'true');
+      if (detectedLocale && detectedLocale !== defaultLocale) {
+        const newPath = buildRedirectPath(detectedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
+        window.location.href = newPath + location.search + location.hash;
+        return;
       }
     }
 

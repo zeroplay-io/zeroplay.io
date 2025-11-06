@@ -12,32 +12,26 @@ import styles from "./index.module.css";
 export default function GamesPage(): JSX.Element {
   const location = useLocation();
   const { i18n } = useDocusaurusContext();
-  const localizedGames = useMemo(
-    () => getLocalizedGames(i18n.currentLocale),
-    [i18n.currentLocale],
-  );
 
   const hasFilterQuery = useMemo(() => {
     const params = new URLSearchParams(location.search);
     return params.has("source_game");
   }, [location.search]);
 
-  const [filteredGames, setFilteredGames] = useState(() =>
-    hasFilterQuery ? [] : localizedGames,
-  );
-  const [isFilterReady, setIsFilterReady] = useState(() => !hasFilterQuery);
+  // Don't compute localized games until filter is ready
+  const [isFilterReady, setIsFilterReady] = useState(false);
+  const [filteredGames, setFilteredGames] = useState<any[]>([]);
 
   useEffect(() => {
-    if (hasFilterQuery) {
-      setIsFilterReady(false);
-    }
-
     const releaseFilterBlocking = () => {
       if (!ExecutionEnvironment.canUseDOM) {
         return;
       }
       document.documentElement.classList.remove("games-filter-blocking");
     };
+
+    // Get localized games only when we're ready to filter
+    const localizedGames = getLocalizedGames(i18n.currentLocale);
 
     if (!ExecutionEnvironment.canUseDOM) {
       setFilteredGames(localizedGames);
@@ -70,7 +64,7 @@ export default function GamesPage(): JSX.Element {
     );
     setIsFilterReady(true);
     releaseFilterBlocking();
-  }, [hasFilterQuery, localizedGames, location.search]);
+  }, [i18n.currentLocale, hasFilterQuery, location.search]);
 
   const pageTitle = translate({
     id: "games.page.meta.title",
