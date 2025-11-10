@@ -208,15 +208,7 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
       }
 
       if (!hasVisitedBefore) {
-        const detectedLocale = getBrowserLanguage(locales);
-
-        if (detectedLocale && detectedLocale !== defaultLocale) {
-          localStorage.setItem('docusaurus.locale.visited', 'true');
-          const newPath = buildRedirectPath(detectedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
-          window.location.href = newPath + location.search + location.hash;
-          return;
-        }
-
+        // Auto-detection disabled: no longer redirect based on browser language
         localStorage.setItem('docusaurus.locale.visited', 'true');
       }
     }

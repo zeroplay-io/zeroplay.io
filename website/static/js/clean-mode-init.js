@@ -211,12 +211,8 @@
       var normalizedStoredLocale = resolveLocaleCandidate(storedLocale, locales);
       if (normalizedStoredLocale && normalizedStoredLocale !== currentLocale) {
         targetLocale = normalizedStoredLocale;
-      } else if (!hasVisitedBefore) {
-        var detectedLocale = detectBrowserLocale(locales);
-        if (detectedLocale && detectedLocale !== defaultLocale) {
-          targetLocale = detectedLocale;
-        }
       }
+      // Auto-detection disabled: no longer detect browser language for first-time visitors
     }
 
     if (targetLocale && targetLocale !== currentLocale) {
