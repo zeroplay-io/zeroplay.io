@@ -177,12 +177,11 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
     const hasTrailingSlash = location.pathname.endsWith('/');
     const searchParams = new URLSearchParams(safeSearch);
     const langParam = searchParams.get('lang');
-    const hasVisitedBefore = localStorage.getItem('docusaurus.locale.visited');
 
     const needsBlocking =
       isDefaultLocalePathInEffect &&
       currentLocale === defaultLocale &&
-      (Boolean(langParam) || !hasVisitedBefore);
+      Boolean(langParam);
 
     if (needsBlocking && isLocaleReady) {
       setIsLocaleReady(false);
@@ -193,24 +192,16 @@ export default function Root({ children }: { children: React.ReactNode }): JSX.E
         const requestedLocale = resolveLocaleCandidate(langParam, locales);
 
         if (requestedLocale && requestedLocale !== currentLocale) {
-          localStorage.setItem('docusaurus.locale.visited', 'true');
           const newPath = buildRedirectPath(requestedLocale, pathSegmentsInEffect, defaultLocale, hasTrailingSlash);
           window.location.href = newPath + location.search + location.hash;
           return;
-        }
-
-        if (requestedLocale) {
-          localStorage.setItem('docusaurus.locale.visited', 'true');
         }
 
         setIsLocaleReady(true);
         return;
       }
 
-      if (!hasVisitedBefore) {
-        // Auto-detection disabled: no longer redirect based on browser language
-        localStorage.setItem('docusaurus.locale.visited', 'true');
-      }
+      // Auto-detection disabled: no longer redirect based on browser language
     }
 
     setIsLocaleReady(true);

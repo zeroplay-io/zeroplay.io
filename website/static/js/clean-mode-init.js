@@ -191,13 +191,11 @@
     var hasTrailingSlash = window.location.pathname.endsWith("/");
 
     var langParam = params ? params.get("lang") : null;
-    var storedLocale = safeGetLocalStorage("docusaurus.locale");
-    var hasVisitedBefore = safeGetLocalStorage("docusaurus.locale.visited");
 
     var shouldBlockForLocale =
       isDefaultLocalePath &&
       currentLocale === defaultLocale &&
-      (!!langParam || !hasVisitedBefore);
+      !!langParam;
 
     if (shouldBlockForLocale) {
       docEl.classList.add("locale-blocking");
@@ -207,25 +205,14 @@
 
     if (langParam) {
       targetLocale = resolveLocaleCandidate(langParam, locales);
-    } else if (!hasLocalePrefix) {
-      var normalizedStoredLocale = resolveLocaleCandidate(storedLocale, locales);
-      if (normalizedStoredLocale && normalizedStoredLocale !== currentLocale) {
-        targetLocale = normalizedStoredLocale;
-      }
-      // Auto-detection disabled: no longer detect browser language for first-time visitors
     }
+    // Auto-detection and localStorage restoration disabled
 
     if (targetLocale && targetLocale !== currentLocale) {
       docEl.classList.add("locale-blocking");
-      safeSetLocalStorage("docusaurus.locale", targetLocale);
-      safeSetLocalStorage("docusaurus.locale.visited", "true");
       var newPath = buildRedirectPath(targetLocale, pathSegments, defaultLocale, hasTrailingSlash);
       window.location.replace(newPath + window.location.search + window.location.hash);
       return;
-    }
-
-    if (!hasVisitedBefore) {
-      safeSetLocalStorage("docusaurus.locale.visited", "true");
     }
   }
 
