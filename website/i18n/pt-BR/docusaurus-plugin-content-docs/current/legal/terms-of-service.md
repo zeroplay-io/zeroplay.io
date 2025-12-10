@@ -2,7 +2,9 @@
 
 ## 1. Introdução
 
-Bem-vindo ao ZeroPlay ("nós", "nosso"). Ao acessar ou usar nossos serviços de jogos, aplicativos móveis e sites (coletivamente, os "Serviços"), você concorda em estar vinculado a estes Termos de Serviço ("Termos"). Por favor, leia estes Termos cuidadosamente antes de usar nossos Serviços.
+Bem-vindo ao ZeroPlay ("nós", "nosso", "nossa" ou "Licenciador"). Ao acessar ou usar nossos serviços de jogos, aplicativos móveis e sites (coletivamente, os "Serviços" ou "Aplicações Licenciadas"), você concorda em estar vinculado a estes Termos de Serviço ("Termos" ou "Acordo"). Por favor, leia estes Termos cuidadosamente antes de usar nossos Serviços.
+
+**IMPORTANTE: AS APLICAÇÕES LICENCIADAS DISPONÍVEIS ATRAVÉS DAS LOJAS DE APLICATIVOS SÃO LICENCIADAS, NÃO VENDIDAS, A VOCÊ.** Sua licença para cada Aplicação Licenciada está sujeita à sua aceitação prévia destes Termos. Reservamos todos os direitos nas e para as Aplicações Licenciadas não expressamente concedidos a você sob estes Termos.
 
 ## 2. Registro de Conta e Elegibilidade
 
@@ -14,47 +16,157 @@ Bem-vindo ao ZeroPlay ("nós", "nosso"). Ao acessar ou usar nossos serviços de 
 
 2.4. Você é responsável por manter a confidencialidade das credenciais de sua conta e por todas as atividades sob sua conta.
 
-## 3. Itens Virtuais e Pagamentos
+## 3. Escopo da Licença
 
-3.1. Nossos Serviços podem oferecer itens virtuais para compra usando moeda real.
+3.1. **Concessão de Licença.** Concedemos a você uma licença não transferível, não exclusiva e revogável para usar as Aplicações Licenciadas em dispositivos que você possui ou controla e conforme permitido pelas regras de uso das lojas de aplicativos aplicáveis.
 
-3.2. Todas as compras são finais e não reembolsáveis, a menos que exigido pela lei aplicável.
+3.2. **Escopo da Licença.** Os termos deste Acordo regerão qualquer conteúdo, material ou serviço acessível de ou comprado dentro da Aplicação Licenciada, bem como atualizações que fornecemos que substituem ou complementam a Aplicação Licenciada original, a menos que tal atualização seja acompanhada de termos separados.
 
-3.3. Itens virtuais não têm valor monetário e não podem ser trocados por dinheiro real ou itens fora dos Serviços.
+3.3. **Restrições.** Exceto conforme previsto nas regras de uso aplicáveis, você não pode:
+- Distribuir ou disponibilizar a Aplicação Licenciada através de uma rede onde possa ser usada por múltiplos dispositivos ao mesmo tempo
+- Transferir, redistribuir ou sublicenciar a Aplicação Licenciada
+- Copiar a Aplicação Licenciada exceto conforme permitido por esta licença
+- Fazer engenharia reversa, desmontar, tentar derivar o código-fonte, modificar ou criar obras derivadas da Aplicação Licenciada, de quaisquer atualizações ou de qualquer parte dela (exceto na medida em que qualquer restrição anterior seja proibida pela lei aplicável ou na medida em que possa ser permitido pelos termos de licença que regem o uso de quaisquer componentes de código aberto incluídos com a Aplicação Licenciada)
 
-3.4. Reservamo-nos o direito de modificar, regular ou eliminar itens virtuais a qualquer momento.
+3.4. Se você vender ou transferir seu dispositivo para um terceiro, deve remover a Aplicação Licenciada do dispositivo antes de fazê-lo.
 
-## 4. Conduta do Usuário
+## 4. Itens Virtuais e Pagamentos
 
-4.1. Você concorda em não:
+4.1. Nossos Serviços podem oferecer itens virtuais para compra usando moeda real.
+
+4.2. Todas as compras são finais e não reembolsáveis, a menos que exigido pela lei aplicável.
+
+4.3. Itens virtuais não têm valor monetário e não podem ser trocados por dinheiro real ou itens fora dos Serviços.
+
+4.4. Reservamo-nos o direito de modificar, regular ou eliminar itens virtuais a qualquer momento.
+
+## 5. Termos de Assinatura
+
+5.1. Alguns dos nossos aplicativos podem oferecer serviços de assinatura com renovação automática ("Assinaturas"). Quando você optar por adquirir uma Assinatura em qualquer um dos nossos aplicativos, o nome específico da assinatura, duração e preço serão claramente exibidos no aplicativo antes de você confirmar a compra.
+
+5.2. O pagamento será cobrado na sua conta Apple ID no momento da confirmação da compra.
+
+5.3. As Assinaturas são renovadas automaticamente, a menos que a renovação automática seja desativada pelo menos 24 horas antes do final do período atual.
+
+5.4. Sua conta será cobrada pela renovação dentro de 24 horas antes do final do período atual.
+
+5.5. Você pode gerenciar e cancelar sua Assinatura a qualquer momento, acessando as configurações da sua conta na App Store após a compra.
+
+5.6. Qualquer parte não utilizada de um período de avaliação gratuita (se oferecido) será perdida quando você adquirir uma Assinatura.
+
+## 6. Consentimento para Uso de Dados
+
+6.1. Você concorda que podemos coletar e usar dados técnicos e informações relacionadas, incluindo, mas não limitado a, informações técnicas sobre seu dispositivo, sistema e software de aplicativo, e periféricos, que são coletados periodicamente para facilitar o fornecimento de atualizações de software, suporte ao produto e outros serviços (se houver) relacionados à Aplicação Licenciada.
+
+6.2. Podemos usar essas informações, desde que estejam em uma forma que não o identifique pessoalmente, para melhorar nossos produtos ou para fornecer serviços ou tecnologias a você.
+
+6.3. Consulte nossa [Política de Privacidade](/docs/legal/privacy-policy) para informações detalhadas sobre como coletamos, usamos e protegemos seus dados pessoais.
+
+## 7. Conduta do Usuário
+
+7.1. Você concorda em não:
 - Usar trapaças, exploits, software de automação ou software de terceiros não autorizado
 - Assediar, abusar ou prejudicar outros usuários
 - Participar de qualquer atividade fraudulenta
 - Violar quaisquer leis ou regulamentos aplicáveis
 - Interferir no funcionamento adequado dos Serviços
 
-## 5. Propriedade Intelectual
+## 8. Propriedade Intelectual
 
-5.1. Todo o conteúdo em nossos Serviços é de nossa propriedade ou licenciado para nós e é protegido por leis de propriedade intelectual.
+8.1. Todo o conteúdo em nossos Serviços é de nossa propriedade ou licenciado para nós e é protegido por leis de propriedade intelectual.
 
-5.2. Concedemos a você uma licença limitada e revogável para usar nossos Serviços para fins pessoais e não comerciais.
+8.2. Concedemos a você uma licença limitada e revogável para usar nossos Serviços para fins pessoais e não comerciais.
 
-## 6. Rescisão
+## 9. Serviços Externos
 
-6.1. Podemos suspender ou encerrar seu acesso aos Serviços a nosso critério, com ou sem aviso prévio.
+9.1. A Aplicação Licenciada pode permitir o acesso aos nossos serviços e/ou serviços e sites de terceiros (coletiva e individualmente, "Serviços Externos"). Você concorda em usar os Serviços Externos por sua conta e risco.
 
-6.2. Após a rescisão, você perderá o acesso à sua conta e a quaisquer itens virtuais associados a ela.
+9.2. Não somos responsáveis por examinar ou avaliar o conteúdo ou a precisão de quaisquer Serviços Externos de terceiros, e não seremos responsáveis por tais Serviços Externos de terceiros.
 
-## 7. Isenções de Responsabilidade e Limitações de Responsabilidade
+9.3. Os dados exibidos por qualquer Aplicação Licenciada ou Serviço Externo, incluindo, mas não limitado a, informações financeiras, médicas e de localização, são apenas para fins informativos gerais e não são garantidos por nós ou pelos nossos agentes.
 
-7.1. Os Serviços são fornecidos "no estado em que se encontram", sem garantias de qualquer tipo.
+9.4. Você não usará os Serviços Externos de forma inconsistente com os termos deste Acordo ou que infrinja os nossos direitos de propriedade intelectual ou os de terceiros.
 
-7.2. Não somos responsáveis por quaisquer danos indiretos, incidentais ou consequenciais.
+9.5. Você concorda em não usar os Serviços Externos para assediar, abusar, perseguir, ameaçar ou difamar qualquer pessoa ou entidade, e não somos responsáveis por tal uso.
 
-## 8. Alterações nos Termos
+9.6. Os Serviços Externos podem não estar disponíveis em todos os idiomas ou no seu país de origem, e podem não ser apropriados ou disponíveis para uso em qualquer localização específica. Na medida em que você escolha usar tais Serviços Externos, você é o único responsável pela conformidade com quaisquer leis aplicáveis.
 
-8.1. Podemos modificar estes Termos a qualquer momento. O uso continuado dos Serviços constitui aceitação dos Termos modificados.
+9.7. Reservamo-nos o direito de alterar, suspender, remover, desativar ou impor restrições ou limites de acesso a qualquer Serviço Externo a qualquer momento sem aviso ou responsabilidade para com você.
 
-## 9. Entre em Contato
+## 10. Rescisão
 
-Para perguntas sobre estes Termos de Serviço, entre em contato conosco em: [support@zeroplay.io](mailto:support@zeroplay.io). Consulte também nossa [Política de Privacidade](/docs/legal/privacy-policy) para informações sobre como coletamos, usamos e protegemos seus dados pessoais.
+10.1. Este Acordo é efetivo até ser rescindido por você ou por nós. Seus direitos sob este Acordo terminarão automaticamente se você não cumprir qualquer um dos seus termos.
+
+10.2. Podemos suspender ou encerrar seu acesso aos Serviços a nosso critério, com ou sem aviso prévio.
+
+10.3. Após a rescisão, você perderá o acesso à sua conta e a quaisquer itens virtuais associados a ela.
+
+## 11. Isenção de Garantias
+
+**VOCÊ RECONHECE E CONCORDA EXPRESSAMENTE QUE O USO DA APLICAÇÃO LICENCIADA É POR SUA CONTA E RISCO. NA MÁXIMA EXTENSÃO PERMITIDA PELA LEI APLICÁVEL, A APLICAÇÃO LICENCIADA E QUAISQUER SERVIÇOS REALIZADOS OU FORNECIDOS PELA APLICAÇÃO LICENCIADA SÃO FORNECIDOS "NO ESTADO EM QUE SE ENCONTRAM" E "CONFORME DISPONÍVEL", COM TODAS AS FALHAS E SEM GARANTIA DE QUALQUER TIPO, E RENUNCIAMOS POR ESTE MEIO A TODAS AS GARANTIAS E CONDIÇÕES COM RESPEITO À APLICAÇÃO LICENCIADA E QUAISQUER SERVIÇOS, SEJAM EXPRESSAS, IMPLÍCITAS OU ESTATUTÁRIAS, INCLUINDO, MAS NÃO LIMITADO A, AS GARANTIAS E/OU CONDIÇÕES IMPLÍCITAS DE COMERCIALIZAÇÃO, DE QUALIDADE SATISFATÓRIA, DE ADEQUAÇÃO A UM FIM PARTICULAR, DE PRECISÃO, DE GOZO PACÍFICO E DE NÃO VIOLAÇÃO DE DIREITOS DE TERCEIROS.**
+
+**NENHUMA INFORMAÇÃO OU CONSELHO ORAL OU ESCRITO FORNECIDO POR NÓS OU PELO NOSSO REPRESENTANTE AUTORIZADO CRIARÁ UMA GARANTIA. SE A APLICAÇÃO LICENCIADA OU OS SERVIÇOS SE REVELAREM DEFEITUOSOS, VOCÊ ASSUME O CUSTO TOTAL DE TODA A MANUTENÇÃO, REPARAÇÃO OU CORREÇÃO NECESSÁRIA.**
+
+**ALGUMAS JURISDIÇÕES NÃO PERMITEM A EXCLUSÃO DE GARANTIAS IMPLÍCITAS OU LIMITAÇÕES NOS DIREITOS ESTATUTÁRIOS APLICÁVEIS DE UM CONSUMIDOR, PELO QUE A EXCLUSÃO E AS LIMITAÇÕES ACIMA PODEM NÃO SE APLICAR A VOCÊ.**
+
+## 12. Limitação de Responsabilidade
+
+**NA MEDIDA EM QUE NÃO SEJA PROIBIDO POR LEI, EM NENHUMA CIRCUNSTÂNCIA SEREMOS RESPONSÁVEIS POR LESÕES PESSOAIS OU QUAISQUER DANOS INCIDENTAIS, ESPECIAIS, INDIRETOS OU CONSEQUENCIAIS, INCLUINDO, SEM LIMITAÇÃO, DANOS POR PERDA DE LUCROS, PERDA DE DADOS, INTERRUPÇÃO DE NEGÓCIOS OU QUAISQUER OUTROS DANOS OU PERDAS COMERCIAIS, DECORRENTES DE OU RELACIONADOS COM O SEU USO OU INCAPACIDADE DE USAR A APLICAÇÃO LICENCIADA, INDEPENDENTEMENTE DA CAUSA, INDEPENDENTEMENTE DA TEORIA DE RESPONSABILIDADE (CONTRATO, ATO ILÍCITO OU OUTRO) E MESMO QUE TENHAMOS SIDO AVISADOS DA POSSIBILIDADE DE TAIS DANOS.**
+
+**ALGUMAS JURISDIÇÕES NÃO PERMITEM A LIMITAÇÃO DE RESPONSABILIDADE POR LESÕES PESSOAIS OU POR DANOS INCIDENTAIS OU CONSEQUENCIAIS, PELO QUE ESTA LIMITAÇÃO PODE NÃO SE APLICAR A VOCÊ.**
+
+**EM NENHUMA CIRCUNSTÂNCIA NOSSA RESPONSABILIDADE TOTAL PARA COM VOCÊ POR TODOS OS DANOS (EXCETO CONFORME POSSA SER EXIGIDO PELA LEI APLICÁVEL EM CASOS ENVOLVENDO LESÕES PESSOAIS) EXCEDERÁ O MONTANTE DE CINQUENTA DÓLARES ($50,00). AS LIMITAÇÕES ACIMA SE APLICARÃO MESMO QUE O REMÉDIO ACIMA DECLARADO NÃO CUMPRA SEU PROPÓSITO ESSENCIAL.**
+
+## 13. Conformidade com Exportação
+
+13.1. Você não pode usar ou exportar ou reexportar a Aplicação Licenciada exceto conforme autorizado pela lei dos Estados Unidos e pelas leis da jurisdição em que a Aplicação Licenciada foi obtida.
+
+13.2. Em particular, mas sem limitação, a Aplicação Licenciada não pode ser exportada ou reexportada:
+- Para nenhum país embargado pelos EUA
+- Para qualquer pessoa na Lista de Nacionais Especialmente Designados do Departamento do Tesouro dos EUA ou na Lista de Pessoas Negadas ou Lista de Entidades do Departamento de Comércio dos EUA
+
+13.3. Ao usar a Aplicação Licenciada, você declara e garante que não está localizado em nenhum desses países ou em nenhuma dessas listas.
+
+13.4. Você também concorda que não usará estes produtos para quaisquer fins proibidos pela lei dos Estados Unidos, incluindo, sem limitação, o desenvolvimento, design, fabricação ou produção de armas nucleares, de mísseis ou químicas ou biológicas.
+
+## 14. Direitos do Governo dos EUA
+
+14.1. A Aplicação Licenciada e a documentação relacionada são "Itens Comerciais", conforme esse termo é definido em 48 C.F.R. §2.101, consistindo em "Software de Computador Comercial" e "Documentação de Software de Computador Comercial", conforme tais termos são usados em 48 C.F.R. §12.212 ou 48 C.F.R. §227.7202, conforme aplicável.
+
+14.2. De acordo com 48 C.F.R. §12.212 ou 48 C.F.R. §227.7202-1 a 227.7202-4, conforme aplicável, o Software de Computador Comercial e a Documentação de Software de Computador Comercial estão sendo licenciados aos usuários finais do Governo dos EUA (a) apenas como Itens Comerciais e (b) apenas com aqueles direitos concedidos a todos os outros usuários finais de acordo com os termos e condições aqui contidos.
+
+14.3. Os direitos não publicados estão reservados sob as leis de direitos autorais dos Estados Unidos.
+
+## 15. Lei Aplicável e Resolução de Disputas
+
+15.1. Este Acordo e a relação entre você e nós serão regidos pelas leis do Estado da Califórnia, Estados Unidos, excluindo suas disposições sobre conflitos de leis.
+
+15.2. Você e nós concordamos em submeter-nos à jurisdição pessoal e exclusiva dos tribunais localizados no condado de Santa Clara, Califórnia, para resolver qualquer disputa ou reclamação decorrente deste Acordo.
+
+15.3. **Para usuários fora dos Estados Unidos:** Se (a) você não é cidadão dos EUA; (b) você não reside nos EUA; (c) você não está acessando o Serviço dos EUA; e (d) você é cidadão de um dos países identificados abaixo, você concorda que qualquer disputa ou reclamação decorrente deste Acordo será regida pela lei aplicável estabelecida abaixo, sem considerar quaisquer disposições sobre conflitos de leis, e você submete-se irrevogavelmente à jurisdição não exclusiva dos tribunais localizados no estado, província ou país identificado abaixo cuja lei governa:
+
+- **União Europeia, Suíça, Noruega ou Islândia:** A lei aplicável e o foro serão as leis e tribunais do seu local habitual de residência.
+
+15.4. Especificamente excluída da aplicação a este Acordo está a lei conhecida como Convenção das Nações Unidas sobre Contratos de Compra e Venda Internacional de Mercadorias.
+
+## 16. Alterações aos Termos
+
+16.1. Podemos modificar estes Termos a qualquer momento. O uso continuado dos Serviços constitui aceitação dos Termos modificados.
+
+16.2. Faremos esforços razoáveis para notificá-lo de alterações materiais a estes Termos através dos Serviços ou por outros meios.
+
+## 17. Disposições Gerais
+
+17.1. **Acordo Completo.** Estes Termos constituem o acordo completo entre você e nós relativamente ao uso dos Serviços.
+
+17.2. **Divisibilidade.** Se qualquer disposição destes Termos for considerada inválida ou inexequível, tal disposição será eliminada e as disposições restantes serão aplicadas.
+
+17.3. **Renúncia.** Nossa falha em fazer cumprir qualquer direito ou disposição destes Termos não será considerada uma renúncia a esses direitos.
+
+17.4. **Cessão.** Você não pode ceder ou transferir estes Termos sem o nosso consentimento prévio por escrito. Podemos ceder nossos direitos e obrigações sob estes Termos sem restrição.
+
+## 18. Entre em Contato
+
+Para perguntas sobre estes Termos de Serviço, entre em contato conosco em: [support@zeroplay.io](mailto:support@zeroplay.io).
+
+Consulte também nossa [Política de Privacidade](/docs/legal/privacy-policy) para informações sobre como coletamos, usamos e protegemos seus dados pessoais.

@@ -2,7 +2,9 @@
 
 ## 1. Johdanto
 
-Tervetuloa ZeroPlayhin ("me," "meidän"). Käyttämällä pelitoimintojamme, mobiilisovelluksiamme ja verkkosivustojamme (yhdessä "Palvelut"), hyväksyt nämä Käyttöehdot ("Ehdot"). Lue nämä Ehdot huolellisesti ennen Palveluidemme käyttöä.
+Tervetuloa ZeroPlayhin ("me," "meidän," tai "Lisenssinantaja"). Käyttämällä pelitoimintojamme, mobiilisovelluksiamme ja verkkosivustojamme (yhdessä "Palvelut" tai "Lisensioidut Sovellukset"), hyväksyt nämä Käyttöehdot ("Ehdot" tai "Sopimus"). Lue nämä Ehdot huolellisesti ennen Palveluidemme käyttöä.
+
+**TÄRKEÄÄ: SOVELLUSKAUPPOJEN KAUTTA SAATAVILLA OLEVAT LISENSIOIDUT SOVELLUKSET ON LISENSOITU, EI MYYTY, SINULLE.** Lisenssisi jokaiseen Lisensoituun Sovellukseen edellyttää, että hyväksyt nämä Ehdot etukäteen. Pidätämme kaikki oikeudet Lisensoituihin Sovelluksiin, joita ei ole nimenomaisesti myönnetty sinulle näissä Ehdoissa.
 
 ## 2. Tilin Rekisteröinti ja Kelpoisuus
 
@@ -14,47 +16,157 @@ Tervetuloa ZeroPlayhin ("me," "meidän"). Käyttämällä pelitoimintojamme, mob
 
 2.4. Olet vastuussa tilisi kirjautumistietojen luottamuksellisuuden säilyttämisestä ja kaikista tilisi kautta tapahtuvista toimista.
 
-## 3. Virtuaaliset Tuotteet ja Maksut
+## 3. Lisenssin Laajuus
 
-3.1. Palvelumme voivat tarjota virtuaalisia tuotteita ostettavaksi oikealla rahalla.
+3.1. **Lisenssin Myöntäminen.** Myönnämme sinulle siirtokelvottoman, ei-yksinomaisen, peruutettavan lisenssin Lisensoitujen Sovellusten käyttöön omistamillasi tai hallitsemillasi laitteilla ja sovelluskaupan käyttösääntöjen mukaisesti.
 
-3.2. Kaikki ostot ovat lopullisia eikä niitä voi palauttaa, ellei sovellettava laki toisin edellytä.
+3.2. **Lisenssin Laajuus.** Tämän Sopimuksen ehdot koskevat kaikkea Lisensoidusta Sovelluksesta saatavilla olevaa tai sen sisältä ostettua sisältöä, materiaaleja tai palveluja sekä meidän toimittamiamme päivityksiä, jotka korvaavat tai täydentävät alkuperäistä Lisensoitua Sovellusta, ellei tällaista päivitystä liitetä erilliset ehdot.
 
-3.3. Virtuaalisilla tuotteilla ei ole rahallista arvoa, eikä niitä voi vaihtaa oikeaan rahaan tai tuotteisiin Palvelujen ulkopuolella.
+3.3. **Rajoitukset.** Lukuun ottamatta sovellettavia käyttösääntöjä, et saa:
+- Jakaa tai tehdä Lisensoitua Sovellusta saataville verkossa, jossa sitä voidaan käyttää useilla laitteilla samanaikaisesti
+- Siirtää, jakaa edelleen tai alilisensoida Lisensoitua Sovellusta
+- Kopioida Lisensoitua Sovellusta muutoin kuin tässä lisenssissä sallitaan
+- Purkaa, hajottaa, yrittää johtaa lähdekoodia, muokata tai luoda johdannaisteoksia Lisensoidusta Sovelluksesta, päivityksistä tai niiden osista (paitsi ja vain siinä määrin kuin tällainen rajoitus on sovellettavan lain mukaan kielletty tai siinä määrin kuin Lisensoituun Sovellukseen sisältyvien avoimen lähdekoodin komponenttien käyttöä säätelevät lisenssiehdot sen sallivat)
 
-3.4. Pidätämme oikeuden muokata, säännellä tai poistaa virtuaalisia tuotteita milloin tahansa.
+3.4. Jos myyt tai siirrät laitteesi kolmannelle osapuolelle, sinun on poistettava Lisensoitu Sovellus laitteesta ennen toimenpidettä.
 
-## 4. Käyttäytyminen
+## 4. Virtuaaliset Tuotteet ja Maksut
 
-4.1. Sitoudut olemaan:
+4.1. Palvelumme voivat tarjota virtuaalisia tuotteita ostettavaksi oikealla rahalla.
+
+4.2. Kaikki ostot ovat lopullisia eikä niitä voi palauttaa, ellei sovellettava laki toisin edellytä.
+
+4.3. Virtuaalisilla tuotteilla ei ole rahallista arvoa, eikä niitä voi vaihtaa oikeaan rahaan tai tuotteisiin Palvelujen ulkopuolella.
+
+4.4. Pidätämme oikeuden muokata, säännellä tai poistaa virtuaalisia tuotteita milloin tahansa.
+
+## 5. Tilausehdot
+
+5.1. Jotkut sovelluksistamme saattavat tarjota automaattisesti uusiutuvia tilauspalveluja ("Tilaukset"). Kun päätät ostaa Tilauksen jostain sovelluksistamme, tilauksen nimi, kesto ja hinta näytetään selkeästi sovelluksessa ennen ostoksen vahvistamista.
+
+5.2. Maksu veloitetaan Apple ID -tililtäsi ostoksen vahvistamisen yhteydessä.
+
+5.3. Tilaukset uusiutuvat automaattisesti, ellei automaattista uusimista ole kytketty pois päältä vähintään 24 tuntia ennen nykyisen jakson päättymistä.
+
+5.4. Tililtäsi veloitetaan uusimismaksu 24 tunnin kuluessa ennen nykyisen jakson päättymistä.
+
+5.5. Voit hallita ja peruuttaa Tilauksesi milloin tahansa siirtymällä App Storen tiliasetuksiin ostoksen jälkeen.
+
+5.6. Käyttämätön osa ilmaisesta kokeilujaksosta (jos tarjotaan) menetetään, kun ostat Tilauksen.
+
+## 6. Suostumus Tietojen Käyttöön
+
+6.1. Hyväksyt, että voimme kerätä ja käyttää teknisiä tietoja ja niihin liittyviä tietoja—mukaan lukien mutta ei rajoittuen laitteesi, järjestelmä- ja sovellusohjelmistojen ja oheislaitteiden tekniset tiedot—jotka kerätään säännöllisesti ohjelmistopäivitysten, tuotetuen ja muiden sinulle (jos sellaisia on) Lisensoituun Sovellukseen liittyvien palvelujen tarjoamisen helpottamiseksi.
+
+6.2. Voimme käyttää näitä tietoja, kunhan ne ovat muodossa, joka ei tunnista sinua henkilökohtaisesti, tuotteidemme parantamiseen tai palvelujen tai teknologioiden tarjoamiseen sinulle.
+
+6.3. Katso [Tietosuojakäytäntömme](/docs/legal/privacy-policy) saadaksesi yksityiskohtaisia tietoja siitä, miten keräämme, käytämme ja suojaamme henkilötietojasi.
+
+## 7. Käyttäytyminen
+
+7.1. Sitoudut olemaan:
 - Käyttämättä huijauksia, hyväksikäyttöjä, automaatio-ohjelmistoja tai luvattomia kolmannen osapuolen ohjelmistoja
 - Häiritsemättä, käyttämättä väärin tai vahingoittamatta muita käyttäjiä
 - Osallistumatta vilpilliseen toimintaan
 - Rikkomatta sovellettavia lakeja tai määräyksiä
 - Häiritsemättä Palvelujen asianmukaista toimintaa
 
-## 5. Immateriaalioikeudet
+## 8. Immateriaalioikeudet
 
-5.1. Kaikki Palveluidemme sisältö on meidän omistuksessamme tai meille lisensoitu, ja sitä suojaa immateriaalioikeuslainsäädäntö.
+8.1. Kaikki Palveluidemme sisältö on meidän omistuksessamme tai meille lisensoitu, ja sitä suojaa immateriaalioikeuslainsäädäntö.
 
-5.2. Myönnämme sinulle rajoitetun, peruutettavan lisenssin Palveluidemme käyttöön henkilökohtaisiin, ei-kaupallisiin tarkoituksiin.
+8.2. Myönnämme sinulle rajoitetun, peruutettavan lisenssin Palveluidemme käyttöön henkilökohtaisiin, ei-kaupallisiin tarkoituksiin.
 
-## 6. Irtisanominen
+## 9. Ulkoiset Palvelut
 
-6.1. Voimme keskeyttää tai lopettaa Palveluiden käyttöoikeutesi oman harkintamme mukaan, ilmoituksella tai ilman.
+9.1. Lisensoitu Sovellus voi mahdollistaa pääsyn meidän ja/tai kolmannen osapuolen palveluihin ja verkkosivustoihin (yhdessä ja erikseen, "Ulkoiset Palvelut"). Hyväksyt käyttäväsi Ulkoisia Palveluja omalla vastuullasi.
 
-6.2. Irtisanomisen yhteydessä menetät pääsyn tiliisi ja kaikkiin siihen liittyviin virtuaalisiin tuotteisiin.
+9.2. Emme ole vastuussa kolmannen osapuolen Ulkoisten Palvelujen sisällön tai tarkkuuden tutkimisesta tai arvioinnista, emmekä ole vastuussa tällaisista kolmannen osapuolen Ulkoisista Palveluista.
 
-## 7. Vastuuvapauslausekkeet ja Vastuunrajoitukset
+9.3. Minkä tahansa Lisensoidun Sovelluksen tai Ulkoisen Palvelun näyttämät tiedot, mukaan lukien mutta ei rajoittuen taloudellisiin, lääketieteellisiin ja sijaintitietoihin, ovat vain yleisiin tiedotustarkoituksiin, emmekä me tai agenttimme takaa niitä.
 
-7.1. Palvelut tarjotaan "sellaisina kuin ne ovat" ilman minkäänlaisia takuita.
+9.4. Et käytä Ulkoisia Palveluja tavalla, joka on ristiriidassa tämän Sopimuksen ehtojen kanssa tai joka loukkaa meidän tai kolmannen osapuolen immateriaalioikeuksia.
 
-7.2. Emme ole vastuussa välillisistä, satunnaisista tai seurannaisvahingoista.
+9.5. Hyväksyt, ettet käytä Ulkoisia Palveluja häiritäksesi, käyttääksesi väärin, vainoaksesi, uhaillaksesi tai panetellaksesi ketään henkilöä tai yhteisöä, emmekä me ole vastuussa tällaisesta käytöstä.
 
-## 8. Muutokset Ehtoihin
+9.6. Ulkoiset Palvelut eivät välttämättä ole saatavilla kaikilla kielillä tai kotimaassasi, eivätkä ne välttämättä ole sopivia tai käytettävissä tietyssä paikassa. Jos valitset käyttää tällaisia Ulkoisia Palveluja, olet yksin vastuussa sovellettavien lakien noudattamisesta.
 
-8.1. Voimme muokata näitä Ehtoja milloin tahansa. Palvelujen jatkuva käyttö merkitsee muutettujen Ehtojen hyväksymistä.
+9.7. Pidätämme oikeuden muuttaa, keskeyttää, poistaa, poistaa käytöstä tai asettaa pääsyrajoituksia tai -rajoja mihin tahansa Ulkoisiin Palveluihin milloin tahansa ilman ennakkoilmoitusta tai vastuuta sinua kohtaan.
 
-## 9. Ota Yhteyttä
+## 10. Irtisanominen
 
-Jos sinulla on kysyttävää näistä Käyttöehdoista, ota yhteyttä: [support@zeroplay.io](mailto:support@zeroplay.io). Katso myös [Tietosuojakäytäntömme](/docs/legal/privacy-policy) saadaksesi tietoa siitä, miten keräämme, käytämme ja suojaamme henkilötietojasi.
+10.1. Tämä Sopimus on voimassa, kunnes sinä tai me irtisanomme sen. Oikeutesi tämän Sopimuksen mukaan päättyvät automaattisesti, jos et noudata jotakin sen ehdoista.
+
+10.2. Voimme keskeyttää tai lopettaa Palveluiden käyttöoikeutesi oman harkintamme mukaan, ilmoituksella tai ilman.
+
+10.3. Irtisanomisen yhteydessä menetät pääsyn tiliisi ja kaikkiin siihen liittyviin virtuaalisiin tuotteisiin.
+
+## 11. Vastuuvapauslauseke
+
+**TUNNUSTAT JA HYVÄKSYT NIMENOMAISESTI, ETTÄ LISENSOIDUN SOVELLUKSEN KÄYTTÖ TAPAHTUU OMALLA VASTUULLASI. SOVELLETTAVAN LAIN SALLIMASSA ENIMMÄISMÄÄRÄSSÄ LISENSOITU SOVELLUS JA KAIKKI LISENSOIDUN SOVELLUKSEN SUORITTAMAT TAI TARJOAMAT PALVELUT TARJOTAAN "SELLAISENAAN" JA "SAATAVILLA OLEVANA," KAIKKINE VIKOINEEN JA ILMAN MINKÄÄNLAISTA TAKUUTA, JA ME KIISTÄMME TÄTEN KAIKKI LISENSOIDUN SOVELLUKSEN JA PALVELUJEN TAKUUT JA EHDOT, OLIVATPA NE NIMENOMAISET, EPÄSUORAT TAI LAKISÄÄTEISET, MUKAAN LUKIEN MUTTA EI RAJOITTUEN EPÄSUORIIN TAKUISIIN JA/TAI EHTOIHIN KOSKIEN KAUPPAKELPOSUUTTA, TYYDYTTÄVÄÄ LAATUA, SOPIVUUTTA TIETTYYN TARKOITUKSEEN, TARKKUUTTA, HÄIRIÖTÖNTÄ KÄYTTÖÄ JA KOLMANNEN OSAPUOLEN OIKEUKSIEN LOUKKAAMATTOMUUTTA.**
+
+**MIKÄÄN MEIDÄN TAI VALTUUTETUN EDUSTAJAMME ANTAMA SUULLINEN TAI KIRJALLINEN TIETO TAI NEUVO EI LUO TAKUUTA. JOS LISENSOITU SOVELLUS TAI PALVELUT OSOITTAUTUVAT VIALLISIKSI, SINÄ KANNAT KAIKKI TARVITTAVAN HUOLLON, KORJAUKSEN TAI OIKAISUN KUSTANNUKSET.**
+
+**JOTKIN LAINKÄYTTÖALUEET EIVÄT SALLI EPÄSUORIEN TAKUIDEN TAI KULUTTAJAN LAKISÄÄTEISTEN OIKEUKSIEN RAJOITUSTEN POISSULKEMISTA, JOTEN YLLÄ OLEVAT POISSULKEMISET JA RAJOITUKSET EIVÄT VÄLTTÄMÄTTÄ KOSKE SINUA.**
+
+## 12. Vastuunrajoitus
+
+**LAIN KIELTÄMÄTTÖMÄSSÄ LAAJUUDESSA EMME OLE MISSÄÄN TAPAUKSESSA VASTUUSSA HENKILÖVAHINGOISTA TAI MISTÄÄN SATUNNAISISTA, ERITYISISTÄ, EPÄSUORISTA TAI VÄLILLISISTÄ VAHINGOISTA, MUKAAN LUKIEN MUTTA EI RAJOITTUEN VAHINKOIHIN VOITON MENETYKSESTÄ, TIETOJEN MENETYKSESTÄ, LIIKETOIMINNAN KESKEYTYKSESTÄ TAI MUISTA KAUPALLISISTA VAHINGOISTA TAI TAPPIOISTA, JOTKA JOHTUVAT LISENSOIDUN SOVELLUKSEN KÄYTÖSTÄ TAI KYVYTTÖMYYDESTÄ KÄYTTÄÄ SITÄ, SYYSTÄ RIIPPUMATTA, VASTUUTEORIAN MUKAAN (SOPIMUS, VAHINGONKORVAUS TAI MUU) JA VAIKKA MEITÄ OLISI VAROITETTU TÄLLAISTEN VAHINKOJEN MAHDOLLISUUDESTA.**
+
+**JOTKIN LAINKÄYTTÖALUEET EIVÄT SALLI VASTUUN RAJOITTAMISTA HENKILÖVAHINGOISTA TAI SATUNNAISISTA TAI VÄLILLISISTÄ VAHINGOISTA, JOTEN TÄMÄ RAJOITUS EI VÄLTTÄMÄTTÄ KOSKE SINUA.**
+
+**MEIDÄN KOKONAISVASTUUMME SINUA KOHTAAN KAIKISTA VAHINGOISTA (MUUTOIN KUIN SOVELLETTAVAN LAIN HENKILÖVAHINKOTAPAUKSISSA EDELLYTTÄMÄSTÄ) EI MISSÄÄN TAPAUKSESSA YLITÄ VIIDENKYMMENEN DOLLARIN ($50.00) MÄÄRÄÄ. EDELLÄ MAINITUT RAJOITUKSET OVAT VOIMASSA, VAIKKA EDELLÄ MAINITTU OIKEUSSUOJAKEINO EPÄONNISTUISI OLENNAISESSA TARKOITUKSESSAAN.**
+
+## 13. Vientimääräysten Noudattaminen
+
+13.1. Et saa käyttää tai muutoin viedä tai jälleenviedä Lisensoitua Sovellusta muuten kuin Yhdysvaltojen lain ja sen lainkäyttöalueen lakien mukaan, jossa Lisensoitu Sovellus hankittiin.
+
+13.2. Erityisesti, mutta ei rajoittuen, Lisensoitua Sovellusta ei saa viedä tai jälleenviedä:
+- Mihinkään Yhdysvaltojen kauppasaartoon asettamiin maihin
+- Kenellekään Yhdysvaltojen valtiovarainministeriön erityisesti nimettyjen kansalaisten listalla tai Yhdysvaltojen kauppaministeriön kiellettyjen henkilöiden tai yhteisöjen listalla olevalle
+
+13.3. Käyttämällä Lisensoitua Sovellusta vakuutat ja takaat, ettet ole sellaisessa maassa tai tällaisella listalla.
+
+13.4. Hyväksyt myös, ettet käytä näitä tuotteita Yhdysvaltojen lain kieltämiin tarkoituksiin, mukaan lukien mutta ei rajoittuen ydin-, ohjus- tai kemiallisten tai biologisten aseiden kehittämiseen, suunnitteluun, valmistukseen tai tuotantoon.
+
+## 14. Yhdysvaltojen Hallituksen Oikeudet
+
+14.1. Lisensoitu Sovellus ja siihen liittyvä dokumentaatio ovat "Kaupallisia Tuotteita", kuten määritelty 48 C.F.R. §2.101:ssä, koostuen "Kaupallisesta Tietokoneohjelmistosta" ja "Kaupallisesta Tietokoneohjelmistodokumentaatiosta", kuten näitä termejä käytetään 48 C.F.R. §12.212:ssa tai 48 C.F.R. §227.7202:ssa, tapauksen mukaan.
+
+14.2. 48 C.F.R. §12.212:n tai 48 C.F.R. §227.7202-1 - 227.7202-4:n mukaisesti Kaupallinen Tietokoneohjelmisto ja Kaupallinen Tietokoneohjelmistodokumentaatio lisensoidaan Yhdysvaltojen hallituksen loppukäyttäjille (a) vain Kaupallisina Tuotteina ja (b) vain niillä oikeuksilla, jotka myönnetään kaikille muille loppukäyttäjille tämän sopimuksen ehtojen mukaisesti.
+
+14.3. Julkaisemattomat oikeudet on varattu Yhdysvaltojen tekijänoikeuslakien mukaisesti.
+
+## 15. Sovellettava Laki ja Riitojenratkaisu
+
+15.1. Tätä Sopimusta ja sinun ja meidän välistä suhdetta säännellään Kalifornian osavaltion, Yhdysvallat, lait, lukuun ottamatta sen lainvalintasäännöksiä.
+
+15.2. Sinä ja me hyväksymme Santa Clara Countyn, Kalifornia, tuomioistuinten henkilökohtaisen ja yksinomaisen lainkäyttövallan tästä Sopimuksesta johtuvien riitojen tai vaatimusten ratkaisemiseksi.
+
+15.3. **Yhdysvaltojen ulkopuolisille käyttäjille:** Jos (a) et ole Yhdysvaltojen kansalainen; (b) et asu Yhdysvalloissa; (c) et käytä Palvelua Yhdysvalloissa; ja (d) olet alla mainittujen maiden kansalainen, hyväksyt täten, että tästä Sopimuksesta johtuva riita tai vaatimus määräytyy alla mainitun sovellettavan lain mukaan ottamatta huomioon lainvalintasäännöksiä, ja alistut täten peruuttamattomasti sen osavaltion, maakunnan tai maan tuomioistuinten ei-yksinomaiselle lainkäyttövallalle, jonka laki on sovellettava:
+
+- **Euroopan unioni, Sveitsi, Norja tai Islanti:** Sovellettavana lakina ja foorumina ovat tavanomaisen asuinpaikkasi lait ja tuomioistuimet.
+
+15.4. Tähän Sopimukseen ei sovelleta lakia, joka tunnetaan nimellä Yhdistyneiden Kansakuntien yleissopimus kansainvälisistä tavaran kauppaa koskevista sopimuksista.
+
+## 16. Muutokset Ehtoihin
+
+16.1. Voimme muokata näitä Ehtoja milloin tahansa. Palvelujen jatkuva käyttö merkitsee muutettujen Ehtojen hyväksymistä.
+
+16.2. Pyrimme kohtuullisesti ilmoittamaan sinulle näiden Ehtojen olennaisista muutoksista Palvelujen kautta tai muulla tavoin.
+
+## 17. Yleiset Määräykset
+
+17.1. **Koko Sopimus.** Nämä Ehdot muodostavat koko sopimuksen sinun ja meidän välillämme Palvelujen käytöstä.
+
+17.2. **Erotettavuus.** Jos jokin näiden Ehtojen määräys todetaan pätemättömäksi tai täytäntöönpanokelvottomaksi, tällainen määräys poistetaan ja jäljellä olevat määräykset pysyvät voimassa.
+
+17.3. **Luopuminen.** Se, että emme pane täytäntöön jotakin näiden Ehtojen oikeutta tai määräystä, ei tarkoita näistä oikeuksista luopumista.
+
+17.4. **Siirto.** Et saa siirtää tai luovuttaa näitä Ehtoja ilman ennakkokirjallista suostumustamme. Voimme siirtää oikeutemme ja velvollisuutemme näiden Ehtojen mukaan ilman rajoituksia.
+
+## 18. Ota Yhteyttä
+
+Jos sinulla on kysyttävää näistä Käyttöehdoista, ota yhteyttä: [support@zeroplay.io](mailto:support@zeroplay.io).
+
+Katso myös [Tietosuojakäytäntömme](/docs/legal/privacy-policy) saadaksesi tietoa siitä, miten keräämme, käytämme ja suojaamme henkilötietojasi.
