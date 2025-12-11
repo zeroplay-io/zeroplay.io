@@ -44,13 +44,13 @@ Witamy w ZeroPlay ("my," "nas," "naszych" lub "Licencjodawca"). Uzyskując dost�
 
 5.1. Niektóre z naszych aplikacji mogą oferować automatycznie odnawialne usługi subskrypcyjne ("Subskrypcje"). Gdy zdecydujesz się zakupić Subskrypcję w dowolnej z naszych aplikacji, konkretna nazwa subskrypcji, czas trwania i cena będą wyraźnie wyświetlone w aplikacji przed potwierdzeniem zakupu.
 
-5.2. Płatność zostanie pobrana z Twojego konta Apple ID w momencie potwierdzenia zakupu.
+5.2. Płatność zostanie pobrana z Twojego konta sklepu z aplikacjami w momencie potwierdzenia zakupu.
 
 5.3. Subskrypcje odnawiają się automatycznie, chyba że automatyczne odnawianie zostanie wyłączone co najmniej 24 godziny przed końcem bieżącego okresu.
 
 5.4. Twoje konto zostanie obciążone za odnowienie w ciągu 24 godzin przed końcem bieżącego okresu.
 
-5.5. Możesz zarządzać i anulować swoją Subskrypcję w dowolnym momencie, przechodząc do ustawień konta w App Store po dokonaniu zakupu.
+5.5. Możesz zarządzać i anulować swoją Subskrypcję w dowolnym momencie, przechodząc do ustawień konta w sklepie z aplikacjami po dokonaniu zakupu.
 
 5.6. Każda niewykorzystana część bezpłatnego okresu próbnego (jeśli jest oferowana) zostanie utracona po zakupie Subskrypcji.
 
@@ -117,55 +117,33 @@ Witamy w ZeroPlay ("my," "nas," "naszych" lub "Licencjodawca"). Uzyskując dost�
 
 **W ŻADNYM WYPADKU NASZA CAŁKOWITA ODPOWIEDZIALNOŚĆ WOBEC CIEBIE ZA WSZYSTKIE SZKODY (POZA TYM, CO MOŻE BYĆ WYMAGANE PRZEZ OBOWIĄZUJĄCE PRAWO W PRZYPADKACH DOTYCZĄCYCH OBRAŻEŃ CIAŁA) NIE PRZEKROCZY KWOTY PIĘĆDZIESIĘCIU DOLARÓW ($50,00). POWYŻSZE OGRANICZENIA BĘDĄ MIAŁY ZASTOSOWANIE NAWET JEŚLI POWYŻSZY ŚRODEK ZARADCZY NIE OSIĄGNIE SWOJEGO ZASADNICZEGO CELU.**
 
-## 13. Zgodność z Przepisami Eksportowymi
+## 13. Prawo Właściwe i Rozwiązywanie Sporów
 
-13.1. Nie możesz używać ani eksportować lub reeksportować Aplikacji Licencjonowanej z wyjątkiem przypadków dozwolonych przez prawo Stanów Zjednoczonych i prawo jurysdykcji, w której Aplikacja Licencjonowana została uzyskana.
+13.1. Niniejsza Umowa będzie regulowana i interpretowana zgodnie z prawem Twojego kraju zamieszkania, bez względu na przepisy dotyczące kolizji praw.
 
-13.2. W szczególności, ale bez ograniczeń, Aplikacja Licencjonowana nie może być eksportowana lub reeksportowana:
-- Do żadnego kraju objętego embargiem USA
-- Do nikogo z listy Specially Designated Nationals List Departamentu Skarbu USA lub Denied Persons List lub Entity List Departamentu Handlu USA
+13.2. Wszelkie spory wynikające z lub związane z niniejszą Umową będą rozwiązywane poprzez negocjacje w dobrej wierze między stronami. Jeśli spór nie może zostać rozwiązany poprzez negocjacje, zostanie on przekazany do właściwych sądów Twojego kraju zamieszkania.
 
-13.3. Używając Aplikacji Licencjonowanej, oświadczasz i gwarantujesz, że nie znajdujesz się w żadnym z takich krajów ani na żadnej z takich list.
+13.3. Dla użytkowników w Unii Europejskiej, możesz również być uprawniony do korzystania z platformy Internetowego Rozstrzygania Sporów Komisji Europejskiej.
 
-13.4. Zgadzasz się również, że nie będziesz używać tych produktów do celów zabronionych przez prawo Stanów Zjednoczonych, w tym między innymi do rozwoju, projektowania, produkcji lub wytwarzania broni jądrowej, rakietowej lub chemicznej bądź biologicznej.
+13.4. Żadne postanowienie niniejszej Umowy nie wpływa na Twoje ustawowe prawa jako konsumenta zgodnie z prawem Twojego kraju zamieszkania.
 
-## 14. Prawa Rządu USA
+## 14. Zmiany w Warunkach
 
-14.1. Aplikacja Licencjonowana i powiązana dokumentacja są "Towarami Komercyjnymi", jak ten termin jest zdefiniowany w 48 C.F.R. §2.101, składającymi się z "Komercyjnego Oprogramowania Komputerowego" i "Dokumentacji Komercyjnego Oprogramowania Komputerowego", jak te terminy są używane w 48 C.F.R. §12.212 lub 48 C.F.R. §227.7202, w zależności od przypadku.
+14.1. Możemy modyfikować te Warunki w dowolnym momencie. Dalsze korzystanie z Usług stanowi akceptację zmodyfikowanych Warunków.
 
-14.2. Zgodnie z 48 C.F.R. §12.212 lub 48 C.F.R. §227.7202-1 przez 227.7202-4, w zależności od przypadku, Komercyjne Oprogramowanie Komputerowe i Dokumentacja Komercyjnego Oprogramowania Komputerowego są licencjonowane użytkownikom końcowym rządu USA (a) tylko jako Towary Komercyjne i (b) tylko z prawami przyznawanymi wszystkim innym użytkownikom końcowym zgodnie z warunkami zawartymi w niniejszym dokumencie.
+14.2. Podejmiemy rozsądne wysiłki, aby powiadomić cię o istotnych zmianach w tych Warunkach za pośrednictwem Usług lub innymi środkami.
 
-14.3. Nieopublikowane prawa są zastrzeżone na mocy praw autorskich Stanów Zjednoczonych.
+## 15. Postanowienia Ogólne
 
-## 15. Prawo Właściwe i Rozwiązywanie Sporów
+15.1. **Całość Umowy.** Te Warunki stanowią całość umowy między tobą a nami dotyczącą korzystania z Usług.
 
-15.1. Ta Umowa i relacja między tobą a nami będą regulowane przez prawo stanu Kalifornia, Stany Zjednoczone, z wyłączeniem jego przepisów dotyczących kolizji praw.
+15.2. **Rozdzielność.** Jeśli jakiekolwiek postanowienie tych Warunków zostanie uznane za nieważne lub niewykonalne, takie postanowienie zostanie usunięte, a pozostałe postanowienia będą egzekwowane.
 
-15.2. Ty i my zgadzamy się poddać osobistej i wyłącznej jurysdykcji sądów zlokalizowanych w hrabstwie Santa Clara, Kalifornia, w celu rozwiązania jakiegokolwiek sporu lub roszczenia wynikającego z tej Umowy.
+15.3. **Zrzeczenie się.** Nasze niepowodzenie w egzekwowaniu jakiegokolwiek prawa lub postanowienia tych Warunków nie będzie uznane za zrzeczenie się tych praw.
 
-15.3. **Dla użytkowników spoza Stanów Zjednoczonych:** Jeśli (a) nie jesteś obywatelem USA; (b) nie mieszkasz w USA; (c) nie uzyskujesz dostępu do Usługi z USA; i (d) jesteś obywatelem jednego z krajów określonych poniżej, niniejszym zgadzasz się, że jakikolwiek spór lub roszczenie wynikające z tej Umowy będzie regulowane przez obowiązujące prawo określone poniżej, bez względu na przepisy dotyczące kolizji praw, i niniejszym nieodwołalnie poddajesz się niewyłącznej jurysdykcji sądów zlokalizowanych w stanie, prowincji lub kraju określonym poniżej, którego prawo obowiązuje:
+15.4. **Cesja.** Nie możesz cedować ani przenosić tych Warunków bez naszej uprzedniej pisemnej zgody. Możemy cedować nasze prawa i obowiązki na mocy tych Warunków bez ograniczeń.
 
-- **Unia Europejska, Szwajcaria, Norwegia lub Islandia:** Prawo właściwe i forum będą prawo i sądy twojego zwykłego miejsca zamieszkania.
-
-15.4. Wyraźnie wykluczone ze stosowania do tej Umowy jest prawo znane jako Konwencja Narodów Zjednoczonych o umowach międzynarodowej sprzedaży towarów.
-
-## 16. Zmiany w Warunkach
-
-16.1. Możemy modyfikować te Warunki w dowolnym momencie. Dalsze korzystanie z Usług stanowi akceptację zmodyfikowanych Warunków.
-
-16.2. Podejmiemy rozsądne wysiłki, aby powiadomić cię o istotnych zmianach w tych Warunkach za pośrednictwem Usług lub innymi środkami.
-
-## 17. Postanowienia Ogólne
-
-17.1. **Całość Umowy.** Te Warunki stanowią całość umowy między tobą a nami dotyczącą korzystania z Usług.
-
-17.2. **Rozdzielność.** Jeśli jakiekolwiek postanowienie tych Warunków zostanie uznane za nieważne lub niewykonalne, takie postanowienie zostanie usunięte, a pozostałe postanowienia będą egzekwowane.
-
-17.3. **Zrzeczenie się.** Nasze niepowodzenie w egzekwowaniu jakiegokolwiek prawa lub postanowienia tych Warunków nie będzie uznane za zrzeczenie się tych praw.
-
-17.4. **Cesja.** Nie możesz cedować ani przenosić tych Warunków bez naszej uprzedniej pisemnej zgody. Możemy cedować nasze prawa i obowiązki na mocy tych Warunków bez ograniczeń.
-
-## 18. Skontaktuj Się Z Nami
+## 16. Skontaktuj Się Z Nami
 
 W przypadku pytań dotyczących niniejszych Warunków Świadczenia Usług prosimy o kontakt: [support@zeroplay.io](mailto:support@zeroplay.io).
 

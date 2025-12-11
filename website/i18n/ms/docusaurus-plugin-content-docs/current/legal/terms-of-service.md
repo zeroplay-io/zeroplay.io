@@ -4,7 +4,7 @@
 
 Selamat datang ke ZeroPlay ("kami," "kami," "milik kami," atau "Pemberi Lesen"). Dengan mengakses atau menggunakan perkhidmatan permainan, aplikasi mudah alih, dan laman web kami (secara kolektif, "Perkhidmatan" atau "Aplikasi Berlesen"), anda bersetuju untuk terikat dengan Terma Perkhidmatan ini ("Terma" atau "Perjanjian"). Sila baca Terma ini dengan teliti sebelum menggunakan Perkhidmatan kami.
 
-**PENTING: APLIKASI BERLESEN YANG DISEDIAKAN MELALUI KEDAI APLIKASI DILESENKAN, BUKAN DIJUAL, KEPADA ANDA.** Lesen anda untuk setiap Aplikasi Berlesen tertakluk kepada penerimaan anda terlebih dahulu terhadap Terma ini. Kami mengekalkan semua hak dalam dan kepada Aplikasi Berlesen yang tidak diberikan secara nyata kepada anda di bawah Terma ini.
+**PENTING: APLIKASI BERLESEN YANG DISEDIAKAN MELALUI GEDUNG APLIKASI DILESENKAN, BUKAN DIJUAL, KEPADA ANDA.** Lesen anda untuk setiap Aplikasi Berlesen tertakluk kepada penerimaan anda terlebih dahulu terhadap Terma ini. Kami mengekalkan semua hak dalam dan kepada Aplikasi Berlesen yang tidak diberikan secara nyata kepada anda di bawah Terma ini.
 
 ## 2. Pendaftaran Akaun dan Kelayakan
 
@@ -18,7 +18,7 @@ Selamat datang ke ZeroPlay ("kami," "kami," "milik kami," atau "Pemberi Lesen").
 
 ## 3. Skop Lesen
 
-3.1. **Pemberian Lesen.** Kami memberikan kepada anda lesen yang tidak boleh dipindah milik, tidak eksklusif, dan boleh dibatalkan untuk menggunakan Aplikasi Berlesen pada peranti yang anda miliki atau kawal dan sebagaimana yang dibenarkan oleh peraturan penggunaan kedai aplikasi yang berkenaan.
+3.1. **Pemberian Lesen.** Kami memberikan kepada anda lesen yang tidak boleh dipindah milik, tidak eksklusif, dan boleh dibatalkan untuk menggunakan Aplikasi Berlesen pada peranti yang anda miliki atau kawal dan sebagaimana yang dibenarkan oleh peraturan penggunaan gedung aplikasi yang berkenaan.
 
 3.2. **Skop Lesen.** Terma Perjanjian ini akan mengawal mana-mana kandungan, bahan, atau perkhidmatan yang boleh diakses dari atau dibeli dalam Aplikasi Berlesen serta naik taraf yang disediakan oleh kami yang menggantikan atau menambah Aplikasi Berlesen asal, melainkan naik taraf tersebut disertakan dengan terma berasingan.
 
@@ -44,13 +44,13 @@ Selamat datang ke ZeroPlay ("kami," "kami," "milik kami," atau "Pemberi Lesen").
 
 5.1. Sesetengah Aplikasi kami mungkin menawarkan perkhidmatan langganan yang diperbaharui secara automatik ("Langganan"). Apabila anda memilih untuk membeli Langganan dalam mana-mana Aplikasi kami, nama langganan khusus, tempoh, dan harga akan dipaparkan dengan jelas dalam Aplikasi sebelum anda mengesahkan pembelian.
 
-5.2. Bayaran akan dicaj ke akaun Apple ID anda pada pengesahan pembelian.
+5.2. Bayaran akan dicaj ke akaun gedung aplikasi anda pada pengesahan pembelian.
 
 5.3. Langganan diperbaharui secara automatik melainkan pembaharuan automatik dimatikan sekurang-kurangnya 24 jam sebelum tamat tempoh semasa.
 
 5.4. Akaun anda akan dicaj untuk pembaharuan dalam masa 24 jam sebelum tamat tempoh semasa.
 
-5.5. Anda boleh mengurus dan membatalkan Langganan anda pada bila-bila masa dengan pergi ke tetapan akaun anda di App Store selepas pembelian.
+5.5. Anda boleh mengurus dan membatalkan Langganan anda pada bila-bila masa dengan pergi ke tetapan akaun anda di gedung aplikasi selepas pembelian.
 
 5.6. Mana-mana bahagian tempoh percubaan percuma yang tidak digunakan (jika ditawarkan) akan dilucutkan apabila anda membeli Langganan.
 
@@ -117,56 +117,34 @@ Selamat datang ke ZeroPlay ("kami," "kami," "milik kami," atau "Pemberi Lesen").
 
 **DALAM SEBARANG KEADAAN, JUMLAH LIABILITI KAMI KEPADA ANDA UNTUK SEMUA KEROSAKAN (SELAIN YANG MUNGKIN DIPERLUKAN OLEH UNDANG-UNDANG YANG BERKENAAN DALAM KES YANG MELIBATKAN KECEDERAAN PERIBADI) TIDAK AKAN MELEBIHI JUMLAH LIMA PULUH DOLAR ($50.00). HAD-HAD DI ATAS AKAN TERPAKAI WALAUPUN PEMULIHAN YANG DINYATAKAN DI ATAS GAGAL DALAM TUJUAN POKOKNYA.**
 
-## 13. Pematuhan Eksport
+## 13. Undang-undang Yang Mengawal dan Penyelesaian Pertikaian
 
-13.1. Anda tidak boleh menggunakan atau mengeksport atau mengeksport semula Aplikasi Berlesen kecuali sebagaimana yang dibenarkan oleh undang-undang Amerika Syarikat dan undang-undang bidang kuasa di mana Aplikasi Berlesen diperolehi.
+13.1. Perjanjian ini akan dikawal oleh dan ditafsirkan mengikut undang-undang negara tempat kediaman anda, tanpa mengambil kira peruntukan konflik undang-undangnya.
 
-13.2. Secara khusus, tetapi tanpa had, Aplikasi Berlesen tidak boleh dieksport atau dieksport semula:
-- Ke mana-mana negara yang diembargo oleh AS
-- Kepada sesiapa pun dalam Senarai Warganegara Yang Ditetapkan Khas Jabatan Perbendaharaan AS atau Senarai Orang Yang Ditolak atau Senarai Entiti Jabatan Perdagangan AS
+13.2. Sebarang pertikaian yang timbul daripada atau berkaitan dengan Perjanjian ini akan diselesaikan melalui rundingan dengan niat baik antara pihak-pihak. Jika pertikaian tidak dapat diselesaikan melalui rundingan, ia akan diserahkan kepada mahkamah yang berkuasa di negara tempat kediaman anda.
 
-13.3. Dengan menggunakan Aplikasi Berlesen, anda mewakili dan menjamin bahawa anda tidak berada di mana-mana negara tersebut atau dalam mana-mana senarai tersebut.
+13.3. Untuk pengguna di Kesatuan Eropah, anda juga mungkin berhak untuk menggunakan platform Penyelesaian Pertikaian Dalam Talian Suruhanjaya Eropah.
 
-13.4. Anda juga bersetuju bahawa anda tidak akan menggunakan produk ini untuk sebarang tujuan yang dilarang oleh undang-undang Amerika Syarikat, termasuk, tanpa had, pembangunan, reka bentuk, pembuatan, atau pengeluaran senjata nuklear, peluru berpandu, atau senjata kimia atau biologi.
+13.4. Tiada apa-apa dalam Perjanjian ini akan menjejaskan hak berkanun anda sebagai pengguna di bawah undang-undang negara tempat kediaman anda.
 
-## 14. Hak Kerajaan AS
+## 14. Perubahan kepada Terma
 
-14.1. Aplikasi Berlesen dan dokumentasi berkaitan adalah "Barang Komersial", sebagaimana istilah tersebut ditakrifkan pada 48 C.F.R. §2.101, yang terdiri daripada "Perisian Komputer Komersial" dan "Dokumentasi Perisian Komputer Komersial", sebagaimana istilah tersebut digunakan dalam 48 C.F.R. §12.212 atau 48 C.F.R. §227.7202, sebagaimana yang berkenaan.
+14.1. Kami boleh mengubah suai Terma ini pada bila-bila masa. Penggunaan berterusan Perkhidmatan merupakan penerimaan Terma yang diubah suai.
 
-14.2. Konsisten dengan 48 C.F.R. §12.212 atau 48 C.F.R. §227.7202-1 hingga 227.7202-4, sebagaimana yang berkenaan, Perisian Komputer Komersial dan Dokumentasi Perisian Komputer Komersial sedang dilesenkan kepada pengguna akhir Kerajaan AS (a) hanya sebagai Barang Komersial dan (b) hanya dengan hak yang diberikan kepada semua pengguna akhir lain menurut terma dan syarat di sini.
+14.2. Kami akan membuat usaha yang munasabah untuk memberitahu anda tentang perubahan material kepada Terma ini melalui Perkhidmatan atau dengan cara lain.
 
-14.3. Hak yang tidak diterbitkan dilindungi di bawah undang-undang hak cipta Amerika Syarikat.
+## 15. Peruntukan Am
 
-## 15. Undang-undang Yang Mengawal dan Penyelesaian Pertikaian
+15.1. **Keseluruhan Perjanjian.** Terma ini membentuk keseluruhan perjanjian antara anda dan kami berkenaan penggunaan Perkhidmatan.
 
-15.1. Perjanjian ini dan hubungan antara anda dan kami akan dikawal oleh undang-undang Negeri California, Amerika Syarikat, tidak termasuk peruntukan konflik undang-undangnya.
+15.2. **Kebolehpisahan.** Jika mana-mana peruntukan Terma ini dianggap tidak sah atau tidak boleh dikuatkuasakan, peruntukan tersebut akan dikeluarkan dan peruntukan yang selebihnya akan dikuatkuasakan.
 
-15.2. Anda dan kami bersetuju untuk tunduk kepada bidang kuasa peribadi dan eksklusif mahkamah yang terletak dalam daerah Santa Clara, California, untuk menyelesaikan sebarang pertikaian atau tuntutan yang timbul daripada Perjanjian ini.
+15.3. **Penepian.** Kegagalan kami untuk menguatkuasakan mana-mana hak atau peruntukan Terma ini tidak akan dianggap sebagai penepian hak tersebut.
 
-15.3. **Untuk pengguna di luar Amerika Syarikat:** Jika (a) anda bukan warganegara AS; (b) anda tidak tinggal di AS; (c) anda tidak mengakses Perkhidmatan dari AS; dan (d) anda adalah warganegara salah satu negara yang dikenal pasti di bawah, anda dengan ini bersetuju bahawa sebarang pertikaian atau tuntutan yang timbul daripada Perjanjian ini akan dikawal oleh undang-undang yang berkenaan yang ditetapkan di bawah, tanpa mengambil kira sebarang peruntukan konflik undang-undang, dan anda dengan ini secara tidak boleh ditarik balik tunduk kepada bidang kuasa bukan eksklusif mahkamah yang terletak di negeri, wilayah, atau negara yang dikenal pasti di bawah yang undang-undangnya mengawal:
+15.4. **Penyerahan Hak.** Anda tidak boleh menyerahkan atau memindahkan Terma ini tanpa persetujuan bertulis kami terlebih dahulu. Kami boleh menyerahkan hak dan kewajipan kami di bawah Terma ini tanpa sekatan.
 
-- **Kesatuan Eropah, Switzerland, Norway, atau Iceland:** Undang-undang yang mengawal dan forum akan menjadi undang-undang dan mahkamah tempat kediaman biasa anda.
+## 16. Hubungi Kami
 
-15.4. Yang dikecualikan secara khusus daripada permohonan kepada Perjanjian ini adalah undang-undang yang dikenali sebagai Konvensyen Pertubuhan Bangsa-Bangsa Bersatu mengenai Jualan Barang Antarabangsa.
-
-## 16. Perubahan kepada Terma
-
-16.1. Kami boleh mengubah suai Terma ini pada bila-bila masa. Penggunaan berterusan Perkhidmatan merupakan penerimaan Terma yang diubah suai.
-
-16.2. Kami akan membuat usaha yang munasabah untuk memberitahu anda tentang perubahan material kepada Terma ini melalui Perkhidmatan atau dengan cara lain.
-
-## 17. Peruntukan Am
-
-17.1. **Keseluruhan Perjanjian.** Terma ini membentuk keseluruhan perjanjian antara anda dan kami berkenaan penggunaan Perkhidmatan.
-
-17.2. **Kebolehpisahan.** Jika mana-mana peruntukan Terma ini dianggap tidak sah atau tidak boleh dikuatkuasakan, peruntukan tersebut akan dikeluarkan dan peruntukan yang selebihnya akan dikuatkuasakan.
-
-17.3. **Penepian.** Kegagalan kami untuk menguatkuasakan mana-mana hak atau peruntukan Terma ini tidak akan dianggap sebagai penepian hak tersebut.
-
-17.4. **Penyerahan Hak.** Anda tidak boleh menyerahkan atau memindahkan Terma ini tanpa persetujuan bertulis kami terlebih dahulu. Kami boleh menyerahkan hak dan kewajipan kami di bawah Terma ini tanpa sekatan.
-
-## 18. Hubungi Kami
-
-Untuk pertanyaan mengenai Terma Perkhidmatan ini, sila hubungi kami di: [support@zeroplay.io](mailto:support@zeroplay.io)
+Untuk pertanyaan mengenai Terma Perkhidmatan ini, sila hubungi kami di: [support@zeroplay.io](mailto:support@zeroplay.io).
 
 Sila juga rujuk [Dasar Privasi](/docs/legal/privacy-policy) kami untuk maklumat tentang cara kami mengumpul, menggunakan, dan melindungi data peribadi anda.

@@ -44,13 +44,13 @@
 
 5.1. Egyes alkalmazásaink automatikusan megújuló előfizetési szolgáltatásokat ("Előfizetések") kínálhatnak. Amikor úgy dönt, hogy Előfizetést vásárol bármelyik alkalmazásunkban, az előfizetés konkrét neve, időtartama és ára egyértelműen megjelenik az alkalmazásban a vásárlás megerősítése előtt.
 
-5.2. A fizetés a vásárlás megerősítésekor kerül levonásra az Apple ID fiókjából.
+5.2. A fizetés a vásárlás megerősítésekor kerül levonásra az alkalmazásbolt fiókjából.
 
 5.3. Az Előfizetések automatikusan megújulnak, hacsak az automatikus megújítást nem kapcsolják ki legalább 24 órával az aktuális időszak vége előtt.
 
 5.4. A megújítás díját az aktuális időszak vége előtt 24 órán belül számítjuk fel fiókjára.
 
-5.5. Az Előfizetést bármikor kezelheti és lemondhatja a vásárlás után az App Store fiókbeállításaiban.
+5.5. Az Előfizetést bármikor kezelheti és lemondhatja a vásárlás után az alkalmazásbolt fiókbeállításaiban.
 
 5.6. Az ingyenes próbaidőszak fel nem használt része (ha van ilyen) elvész, amikor Előfizetést vásárol.
 
@@ -117,55 +117,33 @@
 
 **SEMMI ESETRE SEM HALADJA MEG AZ ÖNNEL SZEMBENI TELJES FELELŐSSÉGÜNK AZ ÖSSZES KÁRÉRT (AZOKON KÍVÜL, AMELYEKET AZ ALKALMAZANDÓ JOG SZEMÉLYI SÉRÜLÉST ÉRINTŐ ESETEKBEN MEGKÖVETELHET) AZ ÖTVEN DOLLÁR ($50.00) ÖSSZEGET. A FENTI KORLÁTOZÁSOK AKKOR IS ÉRVÉNYESEK, HA A FENT MEGÁLLAPÍTOTT JOGORVOSLAT NEM ÉRHETI EL AZ ALAPVETŐ CÉLJÁT.**
 
-## 13. Exportmegfelelés
+## 13. Irányadó Jog és Vitarendezés
 
-13.1. Nem használhatja vagy egyéb módon exportálhatja vagy reexportálhatja a Licencelt Alkalmazást, kivéve az Egyesült Államok törvényei és azon joghatóság törvényei által engedélyezett módon, ahol a Licencelt Alkalmazást beszerezték.
+13.1. Ez a Megállapodás az Ön lakóhelye szerinti ország törvényeinek megfelelően kerül szabályozásra és értelmezésre, annak jogválasztási rendelkezéseinek figyelmen kívül hagyásával.
 
-13.2. Különösen, de nem kizárólagosan, a Licencelt Alkalmazás nem exportálható vagy reexportálható:
-- Bármely amerikai embargó alatt álló országba
-- Senkinek az Egyesült Államok Pénzügyminisztériumának Különlegesen Kijelölt Állampolgárok Listáján vagy az Egyesült Államok Kereskedelmi Minisztériumának Megtagadott Személyek vagy Entitások Listáján
+13.2. A jelen Megállapodásból eredő vagy azzal kapcsolatos vitákat a felek közötti jóhiszemű tárgyalások útján kell rendezni. Ha a vitát tárgyalások útján nem lehet rendezni, azt az Ön lakóhelye szerinti ország illetékes bíróságaihoz kell benyújtani.
 
-13.3. A Licencelt Alkalmazás használatával Ön kijelenti és szavatolja, hogy nem tartózkodik ilyen országban és nem szerepel ilyen listán.
+13.3. Az Európai Unióban élő felhasználók számára Önnek joga lehet az Európai Bizottság Online Vitarendezési platformjának használatára is.
 
-13.4. Ön azt is elfogadja, hogy ezeket a termékeket nem fogja használni az Egyesült Államok törvényei által tiltott célokra, beleértve, de nem kizárólagosan, nukleáris, rakéta vagy vegyi vagy biológiai fegyverek fejlesztésére, tervezésére, gyártására vagy előállítására.
+13.4. E Megállapodás egyetlen rendelkezése sem érinti az Ön lakóhelye szerinti ország törvényei által biztosított fogyasztói törvényes jogait.
 
-## 14. USA Kormányzati Jogok
+## 14. A Feltételek Módosítása
 
-14.1. A Licencelt Alkalmazás és a kapcsolódó dokumentáció "Kereskedelmi Termékek", ahogyan az kifejezés a 48 C.F.R. §2.101-ben meghatározásra kerül, amely "Kereskedelmi Számítógépes Szoftverből" és "Kereskedelmi Számítógépes Szoftver Dokumentációból" áll, ahogyan ezeket a kifejezéseket a 48 C.F.R. §12.212 vagy 48 C.F.R. §227.7202 használja, az alkalmazandóság szerint.
+14.1. Bármikor módosíthatjuk ezeket a Feltételeket. A Szolgáltatások további használata a módosított Feltételek elfogadását jelenti.
 
-14.2. A 48 C.F.R. §12.212 vagy 48 C.F.R. §227.7202-1 - 227.7202-4 értelmében, az alkalmazandóság szerint, a Kereskedelmi Számítógépes Szoftver és a Kereskedelmi Számítógépes Szoftver Dokumentáció az Egyesült Államok kormányzati végfelhasználói számára (a) csak Kereskedelmi Termékként és (b) csak azokkal a jogokkal kerül licencelésre, amelyek minden más végfelhasználó számára az itt meghatározott feltételek szerint biztosítottak.
+14.2. Ésszerű erőfeszítéseket teszünk arra, hogy értesítsük Önt ezen Feltételek lényeges változásairól a Szolgáltatásokon keresztül vagy más módon.
 
-14.3. A nem publikált jogok az Egyesült Államok szerzői jogi törvényei alapján fenntartottak.
+## 15. Általános Rendelkezések
 
-## 15. Irányadó Jog és Vitarendezés
+15.1. **Teljes Megállapodás.** Ezek a Feltételek képezik a teljes megállapodást Ön és mi között a Szolgáltatások használatával kapcsolatban.
 
-15.1. Ez a Megállapodás és az Ön és mi közötti kapcsolat Kalifornia állam, Egyesült Államok törvényei által szabályozandó, annak jogválasztási rendelkezéseinek kizárásával.
+15.2. **Elválaszthatóság.** Ha ezen Feltételek bármely rendelkezése érvénytelennek vagy végrehajthatatlannak bizonyul, az ilyen rendelkezés törlésre kerül, és a fennmaradó rendelkezések érvényben maradnak.
 
-15.2. Ön és mi beleegyezünk abba, hogy alávetjük magunkat a Santa Clara megyében, Kaliforniában található bíróságok személyes és kizárólagos joghatóságának a jelen Megállapodásból eredő bármely vita vagy követelés rendezésére.
+15.3. **Lemondás.** Az, hogy nem érvényesítjük ezen Feltételek bármely jogát vagy rendelkezését, nem tekintendő ezen jogokról való lemondásnak.
 
-15.3. **Az Egyesült Államokon kívüli felhasználók számára:** Ha (a) Ön nem az Egyesült Államok állampolgára; (b) nem az Egyesült Államokban él; (c) nem az Egyesült Államokból fér hozzá a Szolgáltatáshoz; és (d) az alább felsorolt országok egyikének állampolgára, Ön ezennel beleegyezik abba, hogy a jelen Megállapodásból eredő bármely vita vagy követelés az alább meghatározott alkalmazandó jog hatálya alá tartozik, tekintet nélkül bármely jogválasztási rendelkezésre, és Ön ezennel visszavonhatatlanul alávetí magát az alább meghatározott államban, tartományban vagy országban található bíróságok nem kizárólagos joghatóságának, amelynek joga az irányadó:
+15.4. **Átruházás.** Ön nem ruházhatja át vagy adhatja át ezeket a Feltételeket előzetes írásbeli hozzájárulásunk nélkül. Mi átruházhatjuk jogainkat és kötelezettségeinket ezen Feltételek alapján korlátozás nélkül.
 
-- **Európai Unió, Svájc, Norvégia vagy Izland:** Az irányadó jog és a fórum a szokásos tartózkodási helyének törvényei és bíróságai lesznek.
-
-15.4. Kifejezetten ki van zárva e Megállapodásra való alkalmazásból az az Egyesült Nemzetek Szervezetének nemzetközi árueladási szerződésekről szóló egyezménye néven ismert jog.
-
-## 16. A Feltételek Módosítása
-
-16.1. Bármikor módosíthatjuk ezeket a Feltételeket. A Szolgáltatások további használata a módosított Feltételek elfogadását jelenti.
-
-16.2. Ésszerű erőfeszítéseket teszünk arra, hogy értesítsük Önt ezen Feltételek lényeges változásairól a Szolgáltatásokon keresztül vagy más módon.
-
-## 17. Általános Rendelkezések
-
-17.1. **Teljes Megállapodás.** Ezek a Feltételek képezik a teljes megállapodást Ön és mi között a Szolgáltatások használatával kapcsolatban.
-
-17.2. **Elválaszthatóság.** Ha ezen Feltételek bármely rendelkezése érvénytelennek vagy végrehajthatatlannak bizonyul, az ilyen rendelkezés törlésre kerül, és a fennmaradó rendelkezések érvényben maradnak.
-
-17.3. **Lemondás.** Az, hogy nem érvényesítjük ezen Feltételek bármely jogát vagy rendelkezését, nem tekintendő ezen jogokról való lemondásnak.
-
-17.4. **Átruházás.** Ön nem ruházhatja át vagy adhatja át ezeket a Feltételeket előzetes írásbeli hozzájárulásunk nélkül. Mi átruházhatjuk jogainkat és kötelezettségeinket ezen Feltételek alapján korlátozás nélkül.
-
-## 18. Lépjen Kapcsolatba Velünk
+## 16. Lépjen Kapcsolatba Velünk
 
 A Szolgáltatási Feltételekkel kapcsolatos kérdésekkel kérjük, lépjen kapcsolatba velünk: [support@zeroplay.io](mailto:support@zeroplay.io).
 

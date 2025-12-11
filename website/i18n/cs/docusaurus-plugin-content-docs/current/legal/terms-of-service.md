@@ -44,13 +44,13 @@ Vítejte v ZeroPlay ("my", "nás", "naše" nebo "Poskytovatel licence"). Příst
 
 5.1. Některé z našich aplikací mohou nabízet služby automaticky obnovovaného předplatného ("Předplatné"). Pokud se rozhodnete zakoupit Předplatné v jakékoli z našich aplikací, konkrétní název předplatného, doba trvání a cena budou v aplikaci jasně zobrazeny před potvrzením nákupu.
 
-5.2. Platba bude stržena z vašeho účtu Apple ID při potvrzení nákupu.
+5.2. Platba bude stržena z vašeho účtu obchodu s aplikacemi při potvrzení nákupu.
 
 5.3. Předplatné se automaticky obnovuje, pokud není automatické obnovení vypnuto nejméně 24 hodin před koncem aktuálního období.
 
 5.4. Váš účet bude účtován za obnovení do 24 hodin před koncem aktuálního období.
 
-5.5. Předplatné můžete kdykoli spravovat a zrušit v nastavení účtu v App Store po zakoupení.
+5.5. Předplatné můžete kdykoli spravovat a zrušit v nastavení účtu v obchodu s aplikacemi po zakoupení.
 
 5.6. Jakákoli nevyužitá část bezplatného zkušebního období (pokud je nabízena) bude při zakoupení Předplatného propadnuta.
 
@@ -117,55 +117,33 @@ Vítejte v ZeroPlay ("my", "nás", "naše" nebo "Poskytovatel licence"). Příst
 
 **V ŽÁDNÉM PŘÍPADĚ NEPŘEKROČÍ NAŠE CELKOVÁ ODPOVĚDNOST VŮČI VÁM ZA VŠECHNY ŠKODY (JINÉ NEŽ TY, KTERÉ MOHOU BÝT VYŽADOVÁNY PLATNÝM PRÁVEM V PŘÍPADECH TÝKAJÍCÍCH SE ÚRAZU NA ZDRAVÍ) ČÁSTKU PADESÁT DOLARŮ ($50.00). VÝŠE UVEDENÁ OMEZENÍ SE BUDOU VZTAHOVAT, I KDYŽ SE VÝŠE UVEDENÝ OPRAVNÝ PROSTŘEDEK NEUKÁŽE BÝT ÚČINNÝM VE SVÉM ZÁKLADNÍM ÚČELU.**
 
-## 13. Dodržování exportních předpisů
+## 13. Rozhodné právo a řešení sporů
 
-13.1. Nesmíte používat nebo jinak exportovat nebo reexportovat Licencovanou aplikaci, kromě případů autorizovaných zákonem Spojených států a zákony jurisdikce, ve které byla Licencovaná aplikace získána.
+13.1. Tato Smlouva se řídí a bude vykládána v souladu se zákony vaší země pobytu, bez ohledu na ustanovení o kolizi zákonů.
 
-13.2. Zejména, ale bez omezení, nesmí být Licencovaná aplikace exportována nebo reexportována:
-- Do jakýchkoli zemí s embargem USA
-- Komukoli na seznamu zvláště určených státních příslušníků ministerstva financí USA nebo na seznamu zamítnutých osob nebo seznamu subjektů ministerstva obchodu USA
+13.2. Jakékoli spory vyplývající z této Smlouvy nebo s ní související budou řešeny prostřednictvím jednání v dobré víře mezi stranami. Pokud nelze spor vyřešit jednáním, bude předložen příslušným soudům vaší země pobytu.
 
-13.3. Používáním Licencované aplikace prohlašujete a zaručujete, že se nenacházíte v žádné takové zemi ani na žádném takovém seznamu.
+13.3. Pro uživatele v Evropské unii můžete mít také nárok na použití platformy pro online řešení sporů Evropské komise.
 
-13.4. Také souhlasíte s tím, že tyto produkty nebudete používat pro žádné účely zakázané zákony Spojených států, včetně, bez omezení, vývoje, návrhu, výroby nebo produkce jaderných, raketových nebo chemických nebo biologických zbraní.
+13.4. Nic v této Smlouvě nemá vliv na vaše zákonná práva jako spotřebitele podle zákonů vaší země pobytu.
 
-## 14. Práva vlády USA
+## 14. Změny podmínek
 
-14.1. Licencovaná aplikace a související dokumentace jsou "Komerční položky", jak je tento termín definován v 48 C.F.R. §2.101, skládající se z "Komerčního počítačového softwaru" a "Dokumentace komerčního počítačového softwaru", jak jsou tyto termíny používány v 48 C.F.R. §12.212 nebo 48 C.F.R. §227.7202, podle toho, co je použitelné.
+14.1. Můžeme tyto Podmínky kdykoli upravit. Další používání Služeb představuje přijetí upravených Podmínek.
 
-14.2. V souladu s 48 C.F.R. §12.212 nebo 48 C.F.R. §227.7202-1 až 227.7202-4, podle toho, co je použitelné, je Komerční počítačový software a Dokumentace komerčního počítačového softwaru licencována koncovým uživatelům vlády USA (a) pouze jako Komerční položky a (b) pouze s těmi právy, která jsou udělena všem ostatním koncovým uživatelům podle podmínek zde uvedených.
+14.2. Vynaložíme přiměřené úsilí, abychom vás o podstatných změnách těchto Podmínek informovali prostřednictvím Služeb nebo jinými prostředky.
 
-14.3. Nezveřejněná práva jsou vyhrazena podle autorských zákonů Spojených států.
+## 15. Obecná ustanovení
 
-## 15. Rozhodné právo a řešení sporů
+15.1. **Celá smlouva.** Tyto Podmínky představují celou smlouvu mezi vámi a námi ohledně používání Služeb.
 
-15.1. Tato Smlouva a vztah mezi vámi a námi se řídí zákony státu Kalifornie, Spojené státy, s vyloučením jeho ustanovení o kolizi zákonů.
+15.2. **Oddělitelnost.** Pokud bude jakékoli ustanovení těchto Podmínek shledáno neplatným nebo nevymahatelným, takové ustanovení bude vymazáno a zbývající ustanovení budou vymáhána.
 
-15.2. Vy a my souhlasíme s podrobením se osobní a výlučné jurisdikci soudů nacházejících se v okrese Santa Clara, Kalifornie, k vyřešení jakéhokoli sporu nebo nároku vyplývajícího z této Smlouvy.
+15.3. **Zřeknutí se práv.** Naše neuplatnění jakéhokoli práva nebo ustanovení těchto Podmínek nebude považováno za zřeknutí se těchto práv.
 
-15.3. **Pro uživatele mimo Spojené státy:** Pokud (a) nejste občanem USA; (b) nebydlíte v USA; (c) nepřistupujete ke Službě z USA; a (d) jste občanem jedné ze zemí uvedených níže, souhlasíte tímto s tím, že jakýkoli spor nebo nárok vyplývající z této Smlouvy se bude řídit příslušným právem uvedeným níže, bez ohledu na jakákoli ustanovení o kolizi zákonů, a tímto se neodvolatelně podřizujete nevýlučné jurisdikci soudů nacházejících se ve státě, provincii nebo zemi uvedené níže, jejichž právo se použije:
+15.4. **Postoupení.** Nesmíte postoupit nebo převést tyto Podmínky bez našeho předchozího písemného souhlasu. Můžeme postoupit naše práva a povinnosti podle těchto Podmínek bez omezení.
 
-- **Evropská unie, Švýcarsko, Norsko nebo Island:** Rozhodným právem a fórem budou zákony a soudy vašeho obvyklého místa bydliště.
-
-15.4. Z použití na tuto Smlouvu je výslovně vyloučen zákon známý jako Úmluva Organizace spojených národů o smlouvách o mezinárodní koupi zboží.
-
-## 16. Změny podmínek
-
-16.1. Můžeme tyto Podmínky kdykoli upravit. Další používání Služeb představuje přijetí upravených Podmínek.
-
-16.2. Vynaložíme přiměřené úsilí, abychom vás o podstatných změnách těchto Podmínek informovali prostřednictvím Služeb nebo jinými prostředky.
-
-## 17. Obecná ustanovení
-
-17.1. **Celá smlouva.** Tyto Podmínky představují celou smlouvu mezi vámi a námi ohledně používání Služeb.
-
-17.2. **Oddělitelnost.** Pokud bude jakékoli ustanovení těchto Podmínek shledáno neplatným nebo nevymahatelným, takové ustanovení bude vymazáno a zbývající ustanovení budou vymáhána.
-
-17.3. **Zřeknutí se práv.** Naše neuplatnění jakéhokoli práva nebo ustanovení těchto Podmínek nebude považováno za zřeknutí se těchto práv.
-
-17.4. **Postoupení.** Nesmíte postoupit nebo převést tyto Podmínky bez našeho předchozího písemného souhlasu. Můžeme postoupit naše práva a povinnosti podle těchto Podmínek bez omezení.
-
-## 18. Kontaktujte nás
+## 16. Kontaktujte nás
 
 V případě dotazů týkajících se těchto Podmínek služby nás prosím kontaktujte na: [support@zeroplay.io](mailto:support@zeroplay.io).
 

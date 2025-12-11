@@ -44,13 +44,13 @@ ZeroPlay'e ("biz," "bize," "bizim" veya "Lisans Veren") hoş geldiniz. Oyun hizm
 
 5.1. Bazı Uygulamalarımız otomatik yenilenen abonelik hizmetleri ("Abonelikler") sunabilir. Uygulamalarımızdan herhangi birinde bir Abonelik satın almayı seçtiğinizde, satın alma işlemini onaylamadan önce belirli abonelik adı, süresi ve fiyatı Uygulamada açıkça görüntülenecektir.
 
-5.2. Ödeme, satın alma onayı sırasında Apple ID hesabınızdan alınacaktır.
+5.2. Ödeme, satın alma onayı sırasında uygulama mağazası hesabınızdan alınacaktır.
 
 5.3. Abonelikler, mevcut dönemin bitiminden en az 24 saat önce otomatik yenileme kapatılmadığı sürece otomatik olarak yenilenir.
 
 5.4. Hesabınıza yenileme ücreti, mevcut dönemin bitiminden 24 saat öncesinde uygulanacaktır.
 
-5.5. Aboneliğinizi satın alma işleminden sonra App Store'daki hesap ayarlarınıza giderek istediğiniz zaman yönetebilir ve iptal edebilirsiniz.
+5.5. Aboneliğinizi satın alma işleminden sonra uygulama mağazasındaki hesap ayarlarınıza giderek istediğiniz zaman yönetebilir ve iptal edebilirsiniz.
 
 5.6. Ücretsiz deneme süresinin kullanılmayan kısmı (teklif edilmişse) bir Abonelik satın aldığınızda geçersiz olacaktır.
 
@@ -117,55 +117,33 @@ ZeroPlay'e ("biz," "bize," "bizim" veya "Lisans Veren") hoş geldiniz. Oyun hizm
 
 **HİÇBİR DURUMDA TÜM HASARLAR İÇİN SİZE KARŞI TOPLAM SORUMLULUĞUMUZ (KİŞİSEL YARALANMAYI İÇEREN DURUMLARDA GEÇERLİ YASALARCA GEREKLİ OLABİLECEK DURUMLAR HARİÇ) ELLİ DOLAR ($50.00) TUTARINI AŞMAYACAKTIR. YUKARIDAKİ SINIRLAMALAR, YUKARIDAKİ BELİRTİLEN ÇÖZÜM TEMEL AMACINDA BAŞARISIZ OLSA BİLE GEÇERLİ OLACAKTIR.**
 
-## 13. İhracat Uyumluluğu
+## 13. Geçerli Hukuk ve Uyuşmazlık Çözümü
 
-13.1. Lisanslı Uygulamayı Birleşik Devletler yasaları ve Lisanslı Uygulamanın elde edildiği yargı bölgesinin yasaları tarafından yetkilendirilmediği sürece kullanamazsınız veya ihraç edemez veya yeniden ihraç edemezsiniz.
+13.1. Bu Sözleşme, hukuk çatışması hükümlerine bakılmaksızın, ikamet ettiğiniz ülkenin yasalarına göre yönetilecek ve yorumlanacaktır.
 
-13.2. Özellikle, ancak sınırlama olmaksızın, Lisanslı Uygulama şunlara ihraç edilemez veya yeniden ihraç edilemez:
-- Herhangi bir ABD ambargolu ülkeye
-- ABD Hazine Bakanlığı Özel Olarak Belirlenmiş Vatandaşlar Listesi veya ABD Ticaret Bakanlığı Reddedilen Kişiler Listesi veya Kuruluş Listesinde yer alan herkese
+13.2. Bu Sözleşmeden kaynaklanan veya bununla ilgili herhangi bir uyuşmazlık, taraflar arasında iyi niyetli görüşmeler yoluyla çözülecektir. Uyuşmazlık görüşmeler yoluyla çözülemezse, ikamet ettiğiniz ülkenin yetkili mahkemelerine sunulacaktır.
 
-13.3. Lisanslı Uygulamayı kullanarak, böyle bir ülkede bulunmadığınızı veya böyle bir listede yer almadığınızı beyan ve garanti edersiniz.
+13.3. Avrupa Birliği'ndeki kullanıcılar için, Avrupa Komisyonu'nun Çevrimiçi Uyuşmazlık Çözümü platformunu kullanma hakkınız da olabilir.
 
-13.4. Ayrıca bu ürünleri nükleer, füze veya kimyasal veya biyolojik silahların geliştirilmesi, tasarımı, imalatı veya üretimi dahil ancak bunlarla sınırlı olmamak üzere Birleşik Devletler yasaları tarafından yasaklanan herhangi bir amaç için kullanmayacağınızı kabul edersiniz.
+13.4. Bu Sözleşmedeki hiçbir şey, ikamet ettiğiniz ülke yasaları kapsamında bir tüketici olarak yasal haklarınızı etkilemez.
 
-## 14. ABD Hükümeti Hakları
+## 14. Şartlarda Değişiklikler
 
-14.1. Lisanslı Uygulama ve ilgili belgeler, 48 C.F.R. §2.101'de tanımlandığı şekilde "Ticari Ürünler"dir ve 48 C.F.R. §12.212 veya 48 C.F.R. §227.7202'de kullanıldığı şekilde "Ticari Bilgisayar Yazılımı" ve "Ticari Bilgisayar Yazılımı Belgeleri"nden oluşur.
+14.1. Bu Şartları herhangi bir zamanda değiştirebiliriz. Hizmetlerin sürekli kullanımı, değiştirilmiş Şartların kabulünü oluşturur.
 
-14.2. 48 C.F.R. §12.212 veya 48 C.F.R. §227.7202-1 ile 227.7202-4 ile tutarlı olarak, uygunsa, Ticari Bilgisayar Yazılımı ve Ticari Bilgisayar Yazılımı Belgeleri ABD Hükümeti son kullanıcılarına (a) yalnızca Ticari Ürünler olarak ve (b) buradaki şartlar ve koşullar uyarınca diğer tüm son kullanıcılara verilen haklarla lisanslanmaktadır.
+14.2. Bu Şartlarda yapılan önemli değişiklikler hakkında sizi Hizmetler aracılığıyla veya diğer yollarla bilgilendirmek için makul çabalar göstereceğiz.
 
-14.3. Yayımlanmamış haklar Amerika Birleşik Devletleri telif hakkı yasaları kapsamında saklıdır.
+## 15. Genel Hükümler
 
-## 15. Geçerli Hukuk ve Uyuşmazlık Çözümü
+15.1. **Tüm Sözleşme.** Bu Şartlar, Hizmetlerin kullanımı ile ilgili olarak sizinle bizim aramızdaki tüm sözleşmeyi oluşturur.
 
-15.1. Bu Sözleşme ve sizinle bizim aramızdaki ilişki, çatışan hukuk hükümleri hariç olmak üzere Amerika Birleşik Devletleri'nin California eyaleti yasalarına tabi olacaktır.
+15.2. **Ayrılabilirlik.** Bu Şartların herhangi bir hükmünün geçersiz veya uygulanamaz olduğuna karar verilirse, bu hüküm çıkarılacak ve kalan hükümler uygulanacaktır.
 
-15.2. Siz ve biz, bu Sözleşmeden kaynaklanan herhangi bir uyuşmazlığı veya iddiayı çözümlemek için California, Santa Clara ilçesinde bulunan mahkemelerin kişisel ve münhasır yargı yetkisine tabi olmayı kabul ederiz.
+15.3. **Feragat.** Bu Şartların herhangi bir hakkını veya hükmünü uygulamamız, bu haklardan feragat olarak kabul edilmeyecektir.
 
-15.3. **Amerika Birleşik Devletleri dışındaki kullanıcılar için:** Eğer (a) ABD vatandaşı değilseniz; (b) ABD'de ikamet etmiyorsanız; (c) Hizmete ABD'den erişmiyorsanız; ve (d) aşağıda belirtilen ülkelerden birinin vatandaşıysanız, bu Sözleşmeden kaynaklanan herhangi bir uyuşmazlık veya iddianın herhangi bir hukuk çatışması hükmü dikkate alınmaksızın aşağıda belirtilen geçerli hukuka tabi olacağını kabul edersiniz ve aşağıda belirtilen ve yasası geçerli olan eyalet, il veya ülkede bulunan mahkemelerin münhasır olmayan yargı yetkisine geri alınamaz şekilde tabi olursunuz:
+15.4. **Devir.** Bu Şartları önceden yazılı onayımız olmaksızın devredemez veya transfer edemezsiniz. Bu Şartlar kapsamındaki haklarımızı ve yükümlülüklerimizi kısıtlama olmaksızın devredebiliriz.
 
-- **Avrupa Birliği, İsviçre, Norveç veya İzlanda:** Geçerli hukuk ve forum, olağan ikametgahınızın yasaları ve mahkemeleri olacaktır.
-
-15.4. Uluslararası Mal Satışına İlişkin Birleşmiş Milletler Sözleşmesi olarak bilinen o yasa bu Sözleşmeye uygulanmaktan özellikle hariç tutulmuştur.
-
-## 16. Şartlarda Değişiklikler
-
-16.1. Bu Şartları herhangi bir zamanda değiştirebiliriz. Hizmetlerin sürekli kullanımı, değiştirilmiş Şartların kabulünü oluşturur.
-
-16.2. Bu Şartlarda yapılan önemli değişiklikler hakkında sizi Hizmetler aracılığıyla veya diğer yollarla bilgilendirmek için makul çabalar göstereceğiz.
-
-## 17. Genel Hükümler
-
-17.1. **Tüm Sözleşme.** Bu Şartlar, Hizmetlerin kullanımı ile ilgili olarak sizinle bizim aramızdaki tüm sözleşmeyi oluşturur.
-
-17.2. **Ayrılabilirlik.** Bu Şartların herhangi bir hükmünün geçersiz veya uygulanamaz olduğuna karar verilirse, bu hüküm çıkarılacak ve kalan hükümler uygulanacaktır.
-
-17.3. **Feragat.** Bu Şartların herhangi bir hakkını veya hükmünü uygulamamız, bu haklardan feragat olarak kabul edilmeyecektir.
-
-17.4. **Devir.** Bu Şartları önceden yazılı onayımız olmaksızın devredemez veya transfer edemezsiniz. Bu Şartlar kapsamındaki haklarımızı ve yükümlülüklerimizi kısıtlama olmaksızın devredebiliriz.
-
-## 18. Bize Ulaşın
+## 16. Bize Ulaşın
 
 Bu Hizmet Şartları hakkında sorularınız için lütfen bizimle iletişime geçin: [support@zeroplay.io](mailto:support@zeroplay.io).
 

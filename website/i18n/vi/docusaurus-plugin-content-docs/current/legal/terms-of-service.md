@@ -4,7 +4,7 @@
 
 Chào mừng đến với ZeroPlay ("chúng tôi," "của chúng tôi," hoặc "Bên cấp phép"). Bằng cách truy cập hoặc sử dụng các dịch vụ trò chơi, ứng dụng di động và trang web của chúng tôi (gọi chung là "Dịch vụ" hoặc "Ứng dụng được cấp phép"), bạn đồng ý bị ràng buộc bởi các Điều khoản Dịch vụ này ("Điều khoản" hoặc "Thỏa thuận"). Vui lòng đọc kỹ các Điều khoản này trước khi sử dụng Dịch vụ của chúng tôi.
 
-**QUAN TRỌNG: CÁC ỨNG DỤNG ĐƯỢC CÁP PHÉP CÓ SẴN THÔNG QUA CÁC CỬA HÀNG ỨNG DỤNG ĐƯỢC CẤP PHÉP CHO BẠN, KHÔNG PHẢI BÁN.** Giấy phép của bạn đối với mỗi Ứng dụng được cấp phép phụ thuộc vào việc bạn chấp nhận trước các Điều khoản này. Chúng tôi bảo lưu tất cả các quyền đối với Ứng dụng được cấp phép không được cấp cho bạn một cách rõ ràng theo các Điều khoản này.
+**QUAN TRỌNG: CÁC ỨNG DỤNG ĐƯỢC CẤP PHÉP CÓ SẴN THÔNG QUA CÁC CỬA HÀNG ỨNG DỤNG ĐƯỢC CẤP PHÉP CHO BẠN, KHÔNG PHẢI BÁN.** Giấy phép của bạn đối với mỗi Ứng dụng được cấp phép phụ thuộc vào việc bạn chấp nhận trước các Điều khoản này. Chúng tôi bảo lưu tất cả các quyền đối với Ứng dụng được cấp phép không được cấp cho bạn một cách rõ ràng theo các Điều khoản này.
 
 ## 2. Đăng ký Tài khoản và Đủ điều kiện
 
@@ -44,13 +44,13 @@ Chào mừng đến với ZeroPlay ("chúng tôi," "của chúng tôi," hoặc "
 
 5.1. Một số Ứng dụng của chúng tôi có thể cung cấp dịch vụ đăng ký tự động gia hạn ("Đăng ký"). Khi bạn chọn mua Đăng ký trong bất kỳ Ứng dụng nào của chúng tôi, tên đăng ký cụ thể, thời hạn và giá sẽ được hiển thị rõ ràng trong Ứng dụng trước khi bạn xác nhận mua hàng.
 
-5.2. Thanh toán sẽ được tính vào tài khoản Apple ID của bạn khi xác nhận mua hàng.
+5.2. Thanh toán sẽ được tính vào tài khoản cửa hàng ứng dụng của bạn khi xác nhận mua hàng.
 
 5.3. Đăng ký tự động gia hạn trừ khi tự động gia hạn được tắt ít nhất 24 giờ trước khi kết thúc kỳ hiện tại.
 
 5.4. Tài khoản của bạn sẽ bị tính phí gia hạn trong vòng 24 giờ trước khi kết thúc kỳ hiện tại.
 
-5.5. Bạn có thể quản lý và hủy Đăng ký của mình bất cứ lúc nào bằng cách vào cài đặt tài khoản của bạn trên App Store sau khi mua.
+5.5. Bạn có thể quản lý và hủy Đăng ký của mình bất cứ lúc nào bằng cách vào cài đặt tài khoản của bạn trên cửa hàng ứng dụng sau khi mua.
 
 5.6. Bất kỳ phần nào chưa sử dụng của thời gian dùng thử miễn phí (nếu được cung cấp) sẽ bị mất khi bạn mua Đăng ký.
 
@@ -117,56 +117,34 @@ Chào mừng đến với ZeroPlay ("chúng tôi," "của chúng tôi," hoặc "
 
 **TRONG MỌI TRƯỜNG HỢP, TỔNG TRÁCH NHIỆM PHÁP LÝ CỦA CHÚNG TÔI ĐỐI VỚI BẠN CHO TẤT CẢ CÁC THIỆT HẠI (NGOẠI TRỪ THEO YÊU CẦU CỦA PHÁP LUẬT HIỆN HÀNH TRONG CÁC TRƯỜNG HỢP LIÊN QUAN ĐẾN THƯƠNG TÍCH CÁ NHÂN) SẼ KHÔNG VƯỢT QUÁ SỐ TIỀN NĂM MƯƠI ĐÔ LA ($50.00). CÁC GIỚI HẠN TRƯỚC ĐÂY SẼ ÁP DỤNG NGAY CẢ KHI BIỆN PHÁP KHẮC PHỤC NÊU TRÊN THẤT BẠI VỀ MỤC ĐÍCH THIẾT YẾU CỦA NÓ.**
 
-## 13. Tuân thủ Xuất khẩu
+## 13. Luật Điều chỉnh và Giải quyết Tranh chấp
 
-13.1. Bạn không được sử dụng hoặc xuất khẩu hoặc tái xuất khẩu Ứng dụng được cấp phép trừ khi được ủy quyền bởi luật pháp Hoa Kỳ và luật pháp của khuôn khổ pháp lý nơi có được Ứng dụng được cấp phép.
+13.1. Thỏa thuận này sẽ được điều chỉnh bởi và giải thích theo luật pháp của quốc gia nơi bạn cư trú, không xét đến các quy định xung đột pháp luật của nó.
 
-13.2. Cụ thể, nhưng không giới hạn, Ứng dụng được cấp phép không được xuất khẩu hoặc tái xuất khẩu:
-- Vào bất kỳ quốc gia nào bị Hoa Kỳ cấm vận
-- Cho bất kỳ ai trong Danh sách Công dân Được chỉ định Đặc biệt của Bộ Tài chính Hoa Kỳ hoặc Danh sách Người bị Từ chối hoặc Danh sách Tổ chức của Bộ Thương mại Hoa Kỳ
+13.2. Bất kỳ tranh chấp nào phát sinh từ hoặc liên quan đến Thỏa thuận này sẽ được giải quyết thông qua đàm phán thiện chí giữa các bên. Nếu tranh chấp không thể được giải quyết thông qua đàm phán, nó sẽ được đệ trình lên các tòa án có thẩm quyền của quốc gia nơi bạn cư trú.
 
-13.3. Bằng cách sử dụng Ứng dụng được cấp phép, bạn tuyên bố và bảo đảm rằng bạn không ở bất kỳ quốc gia nào như vậy hoặc trong bất kỳ danh sách nào như vậy.
+13.3. Đối với người dùng trong Liên minh Châu Âu, bạn cũng có thể có quyền sử dụng nền tảng Giải quyết Tranh chấp Trực tuyến của Ủy ban Châu Âu.
 
-13.4. Bạn cũng đồng ý rằng bạn sẽ không sử dụng các sản phẩm này cho bất kỳ mục đích nào bị cấm bởi luật pháp Hoa Kỳ, bao gồm nhưng không giới hạn, phát triển, thiết kế, sản xuất hoặc chế tạo vũ khí hạt nhân, tên lửa hoặc vũ khí hóa học hoặc sinh học.
+13.4. Không có điều gì trong Thỏa thuận này ảnh hưởng đến các quyền theo luật định của bạn với tư cách là người tiêu dùng theo luật pháp của quốc gia nơi bạn cư trú.
 
-## 14. Quyền của Chính phủ Hoa Kỳ
+## 14. Thay đổi Điều khoản
 
-14.1. Ứng dụng được cấp phép và tài liệu liên quan là "Hàng hóa Thương mại", như thuật ngữ được định nghĩa tại 48 C.F.R. §2.101, bao gồm "Phần mềm Máy tính Thương mại" và "Tài liệu Phần mềm Máy tính Thương mại", như các thuật ngữ được sử dụng trong 48 C.F.R. §12.212 hoặc 48 C.F.R. §227.7202, tùy trường hợp.
+14.1. Chúng tôi có thể sửa đổi các Điều khoản này bất cứ lúc nào. Việc tiếp tục sử dụng Dịch vụ cấu thành sự chấp nhận các Điều khoản đã sửa đổi.
 
-14.2. Phù hợp với 48 C.F.R. §12.212 hoặc 48 C.F.R. §227.7202-1 đến 227.7202-4, tùy trường hợp, Phần mềm Máy tính Thương mại và Tài liệu Phần mềm Máy tính Thương mại đang được cấp phép cho người dùng cuối Chính phủ Hoa Kỳ (a) chỉ với tư cách là Hàng hóa Thương mại và (b) chỉ với những quyền được cấp cho tất cả người dùng cuối khác theo các điều khoản và điều kiện ở đây.
+14.2. Chúng tôi sẽ nỗ lực hợp lý để thông báo cho bạn về các thay đổi quan trọng đối với các Điều khoản này thông qua Dịch vụ hoặc bằng các phương tiện khác.
 
-14.3. Các quyền chưa được công bố được bảo lưu theo luật bản quyền của Hoa Kỳ.
+## 15. Điều khoản Chung
 
-## 15. Luật Điều chỉnh và Giải quyết Tranh chấp
+15.1. **Toàn bộ Thỏa thuận.** Các Điều khoản này cấu thành toàn bộ thỏa thuận giữa bạn và chúng tôi liên quan đến việc sử dụng Dịch vụ.
 
-15.1. Thỏa thuận này và mối quan hệ giữa bạn và chúng tôi sẽ được điều chỉnh bởi luật pháp của Bang California, Hoa Kỳ, không bao gồm các quy định xung đột pháp luật của nó.
+15.2. **Khả năng Tách rời.** Nếu bất kỳ điều khoản nào của các Điều khoản này bị coi là không hợp lệ hoặc không thể thi hành, điều khoản đó sẽ bị loại bỏ và các điều khoản còn lại sẽ được thi hành.
 
-15.2. Bạn và chúng tôi đồng ý tuân theo quyền tài phán cá nhân và độc quyền của các tòa án nằm trong quận Santa Clara, California, để giải quyết bất kỳ tranh chấp hoặc khiếu nại nào phát sinh từ Thỏa thuận này.
+15.3. **Từ bỏ.** Việc chúng tôi không thi hành bất kỳ quyền hoặc điều khoản nào của các Điều khoản này sẽ không được coi là từ bỏ các quyền đó.
 
-15.3. **Đối với người dùng bên ngoài Hoa Kỳ:** Nếu (a) bạn không phải là công dân Hoa Kỳ; (b) bạn không cư trú tại Hoa Kỳ; (c) bạn không truy cập Dịch vụ từ Hoa Kỳ; và (d) bạn là công dân của một trong các quốc gia được xác định dưới đây, bạn đồng ý rằng bất kỳ tranh chấp hoặc khiếu nại nào phát sinh từ Thỏa thuận này sẽ được điều chỉnh bởi luật hiện hành được nêu dưới đây, không xem xét đến bất kỳ quy định xung đột pháp luật nào, và bạn không thể thu hồi việc tuân theo quyền tài phán không độc quyền của các tòa án nằm trong bang, tỉnh hoặc quốc gia được xác định dưới đây mà luật pháp của nó điều chỉnh:
+15.4. **Chuyển nhượng.** Bạn không được chuyển nhượng hoặc chuyển giao các Điều khoản này mà không có sự đồng ý trước bằng văn bản của chúng tôi. Chúng tôi có thể chuyển nhượng các quyền và nghĩa vụ của chúng tôi theo các Điều khoản này mà không bị hạn chế.
 
-- **Liên minh Châu Âu, Thụy Sĩ, Na Uy hoặc Iceland:** Luật điều chỉnh và tòa án sẽ là luật pháp và tòa án của nơi cư trú thông thường của bạn.
+## 16. Liên hệ với Chúng tôi
 
-15.4. Luật được biết đến như Công ước Liên Hợp Quốc về Bán Hàng Hóa Quốc tế được loại trừ cụ thể khỏi việc áp dụng cho Thỏa thuận này.
-
-## 16. Thay đổi Điều khoản
-
-16.1. Chúng tôi có thể sửa đổi các Điều khoản này bất cứ lúc nào. Việc tiếp tục sử dụng Dịch vụ cấu thành sự chấp nhận các Điều khoản đã sửa đổi.
-
-16.2. Chúng tôi sẽ nỗ lực hợp lý để thông báo cho bạn về các thay đổi quan trọng đối với các Điều khoản này thông qua Dịch vụ hoặc bằng các phương tiện khác.
-
-## 17. Điều khoản Chung
-
-17.1. **Toàn bộ Thỏa thuận.** Các Điều khoản này cấu thành toàn bộ thỏa thuận giữa bạn và chúng tôi liên quan đến việc sử dụng Dịch vụ.
-
-17.2. **Khả năng Tách rời.** Nếu bất kỳ điều khoản nào của các Điều khoản này bị coi là không hợp lệ hoặc không thể thi hành, điều khoản đó sẽ bị loại bỏ và các điều khoản còn lại sẽ được thi hành.
-
-17.3. **Từ bỏ.** Việc chúng tôi không thi hành bất kỳ quyền hoặc điều khoản nào của các Điều khoản này sẽ không được coi là từ bỏ các quyền đó.
-
-17.4. **Chuyển nhượng.** Bạn không được chuyển nhượng hoặc chuyển giao các Điều khoản này mà không có sự đồng ý trước bằng văn bản của chúng tôi. Chúng tôi có thể chuyển nhượng các quyền và nghĩa vụ của chúng tôi theo các Điều khoản này mà không bị hạn chế.
-
-## 18. Liên hệ với Chúng tôi
-
-Nếu có câu hỏi về các Điều khoản Dịch vụ này, vui lòng liên hệ với chúng tôi tại: [support@zeroplay.io](mailto:support@zeroplay.io)
+Nếu có câu hỏi về các Điều khoản Dịch vụ này, vui lòng liên hệ với chúng tôi tại: [support@zeroplay.io](mailto:support@zeroplay.io).
 
 Vui lòng cũng tham khảo [Chính sách Bảo mật](/docs/legal/privacy-policy) của chúng tôi để biết thông tin về cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu cá nhân của bạn.

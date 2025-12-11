@@ -44,13 +44,13 @@ Maligayang pagdating sa ZeroPlay ("kami," "namin," o "Tagapagbigay ng Lisensya")
 
 5.1. Ang ilang sa aming mga App ay maaaring mag-alok ng mga serbisyo ng subscription na awtomatikong nire-renew ("Mga Subscription"). Kapag pinili mong bumili ng Subscription sa alinman sa aming mga App, ang partikular na pangalan ng subscription, tagal, at presyo ay malinaw na ipapakita sa App bago mo kumpirmahin ang pagbili.
 
-5.2. Ang bayad ay sisingilin sa iyong Apple ID account sa pagkumpirma ng pagbili.
+5.2. Ang bayad ay sisingilin sa iyong app store account sa pagkumpirma ng pagbili.
 
 5.3. Ang mga Subscription ay awtomatikong nagre-renew maliban kung ang auto-renew ay pinatay ng hindi bababa sa 24 oras bago matapos ang kasalukuyang panahon.
 
 5.4. Ang iyong account ay sisingilin para sa renewal sa loob ng 24 oras bago matapos ang kasalukuyang panahon.
 
-5.5. Maaari mong pamahalaan at kanselahin ang iyong Subscription anumang oras sa pamamagitan ng pagpunta sa iyong account settings sa App Store pagkatapos ng pagbili.
+5.5. Maaari mong pamahalaan at kanselahin ang iyong Subscription anumang oras sa pamamagitan ng pagpunta sa iyong account settings sa app store pagkatapos ng pagbili.
 
 5.6. Ang anumang hindi nagamit na bahagi ng libreng trial period (kung inaalok) ay mawawala kapag bumili ka ng Subscription.
 
@@ -117,56 +117,34 @@ Maligayang pagdating sa ZeroPlay ("kami," "namin," o "Tagapagbigay ng Lisensya")
 
 **SA ANUMANG KAGANAPAN ANG AMING KABUUANG LIABILITY SA IYO PARA SA LAHAT NG DAMAGES (MALIBAN SA MAAARING KINAKAILANGAN NG NAAANGKOP NA BATAS SA MGA KASO NA NAGSASANGKOT NG PERSONAL INJURY) AY HINDI LALAMPAS SA HALAGA NG LIMAMPUNG DOLYAR ($50.00). ANG NABANGGIT NA MGA LIMITASYON AY MAGLALAPAT KAHIT NA ANG NABANGGIT NA REMEDY SA ITAAS AY NABIGO SA ESSENTIAL PURPOSE NITO.**
 
-## 13. Pagsunod sa Export
+## 13. Namamahalang Batas at Paglutas ng Dispute
 
-13.1. Hindi mo maaaring gamitin o mag-export o muling mag-export ng Aplikasyong May Lisensya maliban sa pinahihintulutan ng batas ng Estados Unidos at ng mga batas ng jurisdiction kung saan nakuha ang Aplikasyong May Lisensya.
+13.1. Ang Kasunduang ito ay mamahahala at bubuin alinsunod sa mga batas ng iyong bansang tirahan, nang hindi isinasaalang-alang ang mga probisyon sa conflicts of law nito.
 
-13.2. Partikular, ngunit walang limitasyon, ang Aplikasyong May Lisensya ay hindi maaaring ma-export o muling ma-export:
-- Sa anumang mga bansang may embargo ng U.S.
-- Sa sinuman sa U.S. Treasury Department's Specially Designated Nationals List o ang U.S. Department of Commerce Denied Persons List o Entity List
+13.2. Anumang dispute na lumalabas mula sa o nauugnay sa Kasunduang ito ay lulutasin sa pamamagitan ng good faith negotiations sa pagitan ng mga partido. Kung ang dispute ay hindi malulutas sa pamamagitan ng negotiations, ito ay isusumite sa mga naaangkop na hukuman ng iyong bansang tirahan.
 
-13.3. Sa pamamagitan ng paggamit ng Aplikasyong May Lisensya, kinakatawan at ginagarantiya mo na hindi ka matatagpuan sa anumang ganoong bansa o sa anumang ganoong listahan.
+13.3. Para sa mga gumagamit sa European Union, maaari ka ring makarating sa European Commission's Online Dispute Resolution platform.
 
-13.4. Sumasang-ayon ka rin na hindi mo gagamitin ang mga produktong ito para sa anumang mga layuning ipinagbabawal ng batas ng Estados Unidos, kasama, nang walang limitasyon, ang development, design, manufacture, o production ng nuclear, missile, o chemical o biological weapons.
+13.4. Walang nakalagay sa Kasunduang ito ang makakaapekto sa iyong mga statutory rights bilang consumer sa ilalim ng mga batas ng iyong bansang tirahan.
 
-## 14. Mga Karapatan ng Gobyerno ng U.S.
+## 14. Mga Pagbabago sa Mga Tuntunin
 
-14.1. Ang Aplikasyong May Lisensya at kaugnay na dokumentasyon ay "Commercial Items", gaya ng tinukoy ng terminong iyon sa 48 C.F.R. §2.101, na binubuo ng "Commercial Computer Software" at "Commercial Computer Software Documentation", gaya ng ginagamit ang mga terminong iyon sa 48 C.F.R. §12.212 o 48 C.F.R. §227.7202, kung naaangkop.
+14.1. Maaari naming baguhin ang Mga Tuntuning ito anumang oras. Ang patuloy na paggamit ng Mga Serbisyo ay nagpapahiwatig ng pagtanggap ng binagong Mga Tuntunin.
 
-14.2. Alinsunod sa 48 C.F.R. §12.212 o 48 C.F.R. §227.7202-1 hanggang 227.7202-4, kung naaangkop, ang Commercial Computer Software at Commercial Computer Software Documentation ay lisensyado sa mga end user ng Gobyerno ng U.S. (a) lamang bilang Commercial Items at (b) lamang may mga karapatan na ibinigay sa lahat ng iba pang end user alinsunod sa mga tuntunin at kondisyon dito.
+14.2. Gagawa kami ng makatwirang pagsisikap upang abisuhan ka tungkol sa mga materyal na pagbabago sa Mga Tuntuning ito sa pamamagitan ng Mga Serbisyo o sa pamamagitan ng iba pang paraan.
 
-14.3. Ang mga hindi nai-publish na karapatan ay nakalaan sa ilalim ng mga batas sa copyright ng Estados Unidos.
+## 15. Pangkalahatang Mga Probisyon
 
-## 15. Namamahalang Batas at Paglutas ng Dispute
+15.1. **Buong Kasunduan.** Ang Mga Tuntuning ito ay bumubuo ng buong kasunduan sa pagitan mo at namin hinggil sa paggamit ng Mga Serbisyo.
 
-15.1. Ang Kasunduang ito at ang relasyon sa pagitan mo at namin ay mamahahala ng mga batas ng Estado ng California, Estados Unidos, hindi kasama ang mga probisyon sa conflicts of law nito.
+15.2. **Severability.** Kung ang anumang probisyon ng Mga Tuntuning ito ay hawakan na invalid o hindi maisasakatuparan, ang probisyong iyon ay aalisin at ang natitirang mga probisyon ay ipapatupad.
 
-15.2. Ikaw at kami ay sumasang-ayon na sumailalim sa personal at eksklusibong jurisdiction ng mga hukuman na matatagpuan sa loob ng county ng Santa Clara, California, upang lutasin ang anumang dispute o claim na lumalabas mula sa Kasunduang ito.
+15.3. **Waiver.** Ang aming kabiguan na ipatupad ang anumang karapatan o probisyon ng Mga Tuntuning ito ay hindi ituturing na pagwawaiver ng mga karapatan na iyon.
 
-15.3. **Para sa mga gumagamit sa labas ng Estados Unidos:** Kung (a) ikaw ay hindi mamamayan ng U.S.; (b) hindi ka nakatira sa U.S.; (c) hindi ka nag-a-access ng Serbisyo mula sa U.S.; at (d) ikaw ay mamamayan ng isa sa mga bansang kinilala sa ibaba, sa pamamagitan nito ay sumasang-ayon ka na ang anumang dispute o claim na lumalabas mula sa Kasunduang ito ay mamahahala ng naaangkop na batas na nakatakda sa ibaba, nang hindi isinasaalang-alang ang anumang probisyon sa conflict of law, at sa pamamagitan nito ay hindi mababawing sumusuko ka sa hindi eksklusibong jurisdiction ng mga hukuman na matatagpuan sa estado, probinsya, o bansang kinilala sa ibaba kung ang batas nito ang namamahala:
+15.4. **Assignment.** Hindi mo maaaring italaga o ilipat ang Mga Tuntuning ito nang walang aming naunang nakasulat na pahintulot. Maaari naming italaga ang aming mga karapatan at obligasyon sa ilalim ng Mga Tuntuning ito nang walang paghihigpit.
 
-- **European Union, Switzerland, Norway, o Iceland:** Ang namamahalang batas at forum ay magiging mga batas at hukuman ng iyong karaniwang lugar ng paninirahan.
+## 16. Makipag-ugnayan sa Amin
 
-15.4. Partikular na hindi kasama sa aplikasyon sa Kasunduang ito ang batas na kilala bilang United Nations Convention on the International Sale of Goods.
-
-## 16. Mga Pagbabago sa Mga Tuntunin
-
-16.1. Maaari naming baguhin ang Mga Tuntuning ito anumang oras. Ang patuloy na paggamit ng Mga Serbisyo ay nagpapahiwatig ng pagtanggap ng binagong Mga Tuntunin.
-
-16.2. Gagawa kami ng makatwirang pagsisikap upang abisuhan ka tungkol sa mga materyal na pagbabago sa Mga Tuntuning ito sa pamamagitan ng Mga Serbisyo o sa pamamagitan ng iba pang paraan.
-
-## 17. Pangkalahatang Mga Probisyon
-
-17.1. **Buong Kasunduan.** Ang Mga Tuntuning ito ay bumubuo ng buong kasunduan sa pagitan mo at namin hinggil sa paggamit ng Mga Serbisyo.
-
-17.2. **Severability.** Kung ang anumang probisyon ng Mga Tuntuning ito ay hawakan na invalid o hindi maisasakatuparan, ang probisyong iyon ay aalisin at ang natitirang mga probisyon ay ipapatupad.
-
-17.3. **Waiver.** Ang aming kabiguan na ipatupad ang anumang karapatan o probisyon ng Mga Tuntuning ito ay hindi ituturing na pagwawaiver ng mga karapatan na iyon.
-
-17.4. **Assignment.** Hindi mo maaaring italaga o ilipat ang Mga Tuntuning ito nang walang aming naunang nakasulat na pahintulot. Maaari naming italaga ang aming mga karapatan at obligasyon sa ilalim ng Mga Tuntuning ito nang walang paghihigpit.
-
-## 18. Makipag-ugnayan sa Amin
-
-Para sa mga katanungan tungkol sa Mga Tuntunin ng Serbisyo na ito, mangyaring makipag-ugnayan sa amin sa: [support@zeroplay.io](mailto:support@zeroplay.io)
+Para sa mga katanungan tungkol sa Mga Tuntunin ng Serbisyo na ito, mangyaring makipag-ugnayan sa amin sa: [support@zeroplay.io](mailto:support@zeroplay.io).
 
 Mangyaring sumangguni din sa aming [Privacy Policy](/docs/legal/privacy-policy) para sa impormasyon kung paano namin kinokolekta, ginagamit, at pinoprotektahan ang iyong personal na data.

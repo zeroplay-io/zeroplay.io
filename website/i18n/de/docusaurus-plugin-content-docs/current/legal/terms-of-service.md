@@ -44,13 +44,13 @@ Willkommen bei ZeroPlay („wir", „uns", „unser" oder „Lizenzgeber"). Durc
 
 5.1. Einige unserer Apps bieten möglicherweise automatisch verlängerbare Abonnementdienste („Abonnements") an. Wenn Sie sich für den Kauf eines Abonnements in einer unserer Apps entscheiden, werden der spezifische Abonnementname, die Dauer und der Preis in der App deutlich angezeigt, bevor Sie den Kauf bestätigen.
 
-5.2. Die Zahlung wird bei Bestätigung des Kaufs Ihrem Apple ID-Konto belastet.
+5.2. Die Zahlung wird bei Bestätigung des Kaufs Ihrem App-Store-Konto belastet.
 
 5.3. Abonnements verlängern sich automatisch, es sei denn, die automatische Verlängerung wird mindestens 24 Stunden vor Ende des aktuellen Zeitraums deaktiviert.
 
 5.4. Ihrem Konto wird die Verlängerung innerhalb von 24 Stunden vor Ende des aktuellen Zeitraums in Rechnung gestellt.
 
-5.5. Sie können Ihr Abonnement jederzeit verwalten und kündigen, indem Sie nach dem Kauf zu Ihren Kontoeinstellungen im App Store gehen.
+5.5. Sie können Ihr Abonnement jederzeit verwalten und kündigen, indem Sie nach dem Kauf zu Ihren Kontoeinstellungen im App-Store gehen.
 
 5.6. Nicht genutzte Teile einer kostenlosen Testphase (falls angeboten) verfallen, wenn Sie ein Abonnement erwerben.
 
@@ -117,55 +117,33 @@ Willkommen bei ZeroPlay („wir", „uns", „unser" oder „Lizenzgeber"). Durc
 
 **IN KEINEM FALL ÜBERSTEIGT UNSERE GESAMTHAFTUNG IHNEN GEGENÜBER FÜR ALLE SCHÄDEN (ABGESEHEN VON DEM, WAS NACH GELTENDEM RECHT IN FÄLLEN VON PERSONENSCHÄDEN ERFORDERLICH SEIN KANN) DEN BETRAG VON FÜNFZIG DOLLAR ($50,00). DIE VORSTEHENDEN BESCHRÄNKUNGEN GELTEN AUCH DANN, WENN DER OBEN GENANNTE RECHTSBEHELF SEINEN WESENTLICHEN ZWECK VERFEHLT.**
 
-## 13. Exportkonformität
+## 13. Anwendbares Recht und Streitbeilegung
 
-13.1. Sie dürfen die Lizenzierte Anwendung nur gemäß den Gesetzen der Vereinigten Staaten und den Gesetzen der Rechtsordnung, in der die Lizenzierte Anwendung erworben wurde, verwenden oder exportieren oder reexportieren.
+13.1. Diese Vereinbarung wird gemäß den Gesetzen Ihres Wohnsitzlandes ausgelegt und unterliegt diesen, ohne Rücksicht auf Kollisionsnormen.
 
-13.2. Insbesondere, aber ohne Einschränkung, darf die Lizenzierte Anwendung nicht exportiert oder reexportiert werden:
-- In von den USA embargierte Länder
-- An Personen auf der Liste der speziell bezeichneten Staatsangehörigen des US-Finanzministeriums oder der Liste der abgelehnten Personen oder der Entitätenliste des US-Handelsministeriums
+13.2. Alle Streitigkeiten, die sich aus oder im Zusammenhang mit dieser Vereinbarung ergeben, werden durch gutgläubige Verhandlungen zwischen den Parteien beigelegt. Kann die Streitigkeit nicht durch Verhandlungen beigelegt werden, wird sie den zuständigen Gerichten Ihres Wohnsitzlandes vorgelegt.
 
-13.3. Durch die Nutzung der Lizenzierten Anwendung versichern und gewährleisten Sie, dass Sie sich nicht in einem solchen Land befinden oder auf einer solchen Liste stehen.
+13.3. Für Nutzer in der Europäischen Union haben Sie möglicherweise auch Anspruch auf die Nutzung der Online-Streitbeilegungsplattform der Europäischen Kommission.
 
-13.4. Sie stimmen auch zu, dass Sie diese Produkte nicht für Zwecke verwenden werden, die nach US-amerikanischem Recht verboten sind, einschließlich, aber nicht beschränkt auf die Entwicklung, das Design, die Herstellung oder Produktion von Kern-, Raketen- oder chemischen oder biologischen Waffen.
+13.4. Nichts in dieser Vereinbarung beeinträchtigt Ihre gesetzlichen Rechte als Verbraucher gemäß den Gesetzen Ihres Wohnsitzlandes.
 
-## 14. Rechte der US-Regierung
+## 14. Änderungen der Bedingungen
 
-14.1. Die Lizenzierte Anwendung und die zugehörige Dokumentation sind „Kommerzielle Artikel", wie dieser Begriff in 48 C.F.R. §2.101 definiert ist, bestehend aus „Kommerzieller Computersoftware" und „Dokumentation kommerzieller Computersoftware", wie diese Begriffe in 48 C.F.R. §12.212 oder 48 C.F.R. §227.7202 verwendet werden, je nach Anwendbarkeit.
+14.1. Wir können diese Bedingungen jederzeit ändern. Die fortgesetzte Nutzung der Dienste stellt die Annahme der geänderten Bedingungen dar.
 
-14.2. In Übereinstimmung mit 48 C.F.R. §12.212 oder 48 C.F.R. §227.7202-1 bis 227.7202-4, je nach Anwendbarkeit, werden die Kommerzielle Computersoftware und die Dokumentation kommerzieller Computersoftware an Endbenutzer der US-Regierung (a) nur als Kommerzielle Artikel und (b) nur mit denjenigen Rechten lizenziert, die allen anderen Endbenutzern gemäß den hierin enthaltenen Bedingungen gewährt werden.
+14.2. Wir werden angemessene Anstrengungen unternehmen, um Sie über wesentliche Änderungen dieser Bedingungen über die Dienste oder auf andere Weise zu informieren.
 
-14.3. Nicht veröffentlichte Rechte sind gemäß den Urheberrechtsgesetzen der Vereinigten Staaten vorbehalten.
+## 15. Allgemeine Bestimmungen
 
-## 15. Anwendbares Recht und Streitbeilegung
+15.1. **Gesamte Vereinbarung.** Diese Bedingungen stellen die gesamte Vereinbarung zwischen Ihnen und uns hinsichtlich der Nutzung der Dienste dar.
 
-15.1. Diese Vereinbarung und die Beziehung zwischen Ihnen und uns unterliegen den Gesetzen des Staates Kalifornien, Vereinigte Staaten, unter Ausschluss seiner Kollisionsnormen.
+15.2. **Salvatorische Klausel.** Sollte eine Bestimmung dieser Bedingungen für ungültig oder nicht durchsetzbar befunden werden, wird diese Bestimmung gestrichen und die verbleibenden Bestimmungen durchgesetzt.
 
-15.2. Sie und wir stimmen zu, uns der persönlichen und ausschließlichen Gerichtsbarkeit der Gerichte im Bezirk Santa Clara, Kalifornien, zu unterwerfen, um alle Streitigkeiten oder Ansprüche aus dieser Vereinbarung zu lösen.
+15.3. **Verzicht.** Unser Versäumnis, ein Recht oder eine Bestimmung dieser Bedingungen durchzusetzen, wird nicht als Verzicht auf diese Rechte betrachtet.
 
-15.3. **Für Nutzer außerhalb der Vereinigten Staaten:** Wenn (a) Sie kein US-Staatsbürger sind; (b) Sie nicht in den USA wohnen; (c) Sie nicht aus den USA auf den Dienst zugreifen; und (d) Sie Staatsbürger eines der unten genannten Länder sind, stimmen Sie hiermit zu, dass alle Streitigkeiten oder Ansprüche aus dieser Vereinbarung dem unten angegebenen geltenden Recht unterliegen, ohne Rücksicht auf Kollisionsnormen, und Sie unterwerfen sich hiermit unwiderruflich der nicht ausschließlichen Gerichtsbarkeit der Gerichte im unten genannten Staat, Provinz oder Land, dessen Recht gilt:
+15.4. **Abtretung.** Sie können diese Bedingungen nicht ohne unsere vorherige schriftliche Zustimmung abtreten oder übertragen. Wir können unsere Rechte und Pflichten aus diesen Bedingungen ohne Einschränkung abtreten.
 
-- **Europäische Union, Schweiz, Norwegen oder Island:** Das anwendbare Recht und Forum sind die Gesetze und Gerichte Ihres gewöhnlichen Aufenthaltsorts.
-
-15.4. Ausdrücklich ausgeschlossen von der Anwendung auf diese Vereinbarung ist das Gesetz, das als Übereinkommen der Vereinten Nationen über Verträge über den internationalen Warenkauf bekannt ist.
-
-## 16. Änderungen der Bedingungen
-
-16.1. Wir können diese Bedingungen jederzeit ändern. Die fortgesetzte Nutzung der Dienste stellt die Annahme der geänderten Bedingungen dar.
-
-16.2. Wir werden angemessene Anstrengungen unternehmen, um Sie über wesentliche Änderungen dieser Bedingungen über die Dienste oder auf andere Weise zu informieren.
-
-## 17. Allgemeine Bestimmungen
-
-17.1. **Gesamte Vereinbarung.** Diese Bedingungen stellen die gesamte Vereinbarung zwischen Ihnen und uns hinsichtlich der Nutzung der Dienste dar.
-
-17.2. **Salvatorische Klausel.** Sollte eine Bestimmung dieser Bedingungen für ungültig oder nicht durchsetzbar befunden werden, wird diese Bestimmung gestrichen und die verbleibenden Bestimmungen durchgesetzt.
-
-17.3. **Verzicht.** Unser Versäumnis, ein Recht oder eine Bestimmung dieser Bedingungen durchzusetzen, wird nicht als Verzicht auf diese Rechte betrachtet.
-
-17.4. **Abtretung.** Sie können diese Bedingungen nicht ohne unsere vorherige schriftliche Zustimmung abtreten oder übertragen. Wir können unsere Rechte und Pflichten aus diesen Bedingungen ohne Einschränkung abtreten.
-
-## 18. Kontaktieren Sie uns
+## 16. Kontaktieren Sie uns
 
 Bei Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns bitte unter: [support@zeroplay.io](mailto:support@zeroplay.io).
 

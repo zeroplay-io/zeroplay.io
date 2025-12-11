@@ -44,13 +44,13 @@ Selamat datang di ZeroPlay ("kami," "milik kami," atau "Pemberi Lisensi"). Denga
 
 5.1. Beberapa Aplikasi kami mungkin menawarkan layanan langganan yang diperbarui secara otomatis ("Langganan"). Ketika Anda memilih untuk membeli Langganan di salah satu Aplikasi kami, nama langganan spesifik, durasi, dan harga akan ditampilkan dengan jelas di Aplikasi sebelum Anda mengkonfirmasi pembelian.
 
-5.2. Pembayaran akan dibebankan ke akun Apple ID Anda pada saat konfirmasi pembelian.
+5.2. Pembayaran akan dibebankan ke akun app store Anda pada saat konfirmasi pembelian.
 
 5.3. Langganan diperbarui secara otomatis kecuali perpanjangan otomatis dinonaktifkan setidaknya 24 jam sebelum akhir periode saat ini.
 
 5.4. Akun Anda akan dikenakan biaya perpanjangan dalam waktu 24 jam sebelum akhir periode saat ini.
 
-5.5. Anda dapat mengelola dan membatalkan Langganan Anda kapan saja dengan pergi ke pengaturan akun Anda di App Store setelah pembelian.
+5.5. Anda dapat mengelola dan membatalkan Langganan Anda kapan saja dengan pergi ke pengaturan akun Anda di app store setelah pembelian.
 
 5.6. Bagian yang tidak digunakan dari periode percobaan gratis (jika ditawarkan) akan hilang ketika Anda membeli Langganan.
 
@@ -117,56 +117,34 @@ Selamat datang di ZeroPlay ("kami," "milik kami," atau "Pemberi Lisensi"). Denga
 
 **DALAM KEADAAN APA PUN TOTAL TANGGUNG JAWAB KAMI KEPADA ANDA UNTUK SEMUA KERUSAKAN (SELAIN YANG MUNGKIN DIPERLUKAN OLEH HUKUM YANG BERLAKU DALAM KASUS YANG MELIBATKAN CEDERA PRIBADI) TIDAK AKAN MELEBIHI JUMLAH LIMA PULUH DOLAR ($50.00). PEMBATASAN DI ATAS AKAN BERLAKU BAHKAN JIKA PEMULIHAN YANG DINYATAKAN DI ATAS GAGAL DALAM TUJUAN POKOKNYA.**
 
-## 13. Kepatuhan Ekspor
+## 13. Hukum yang Mengatur dan Penyelesaian Sengketa
 
-13.1. Anda tidak boleh menggunakan atau mengekspor atau mengekspor kembali Aplikasi Berlisensi kecuali sebagaimana diizinkan oleh hukum Amerika Serikat dan hukum yurisdiksi di mana Aplikasi Berlisensi diperoleh.
+13.1. Perjanjian ini akan diatur oleh dan ditafsirkan sesuai dengan hukum negara tempat tinggal Anda, tanpa memperhatikan ketentuan konflik hukumnya.
 
-13.2. Secara khusus, tetapi tanpa batasan, Aplikasi Berlisensi tidak boleh diekspor atau diekspor kembali:
-- Ke negara-negara yang diembargo oleh AS
-- Kepada siapa pun yang ada dalam Daftar Warga Negara yang Ditunjuk Khusus Departemen Keuangan AS atau Daftar Orang yang Ditolak atau Daftar Entitas Departemen Perdagangan AS
+13.2. Setiap sengketa yang timbul dari atau terkait dengan Perjanjian ini akan diselesaikan melalui negosiasi dengan itikad baik antara para pihak. Jika sengketa tidak dapat diselesaikan melalui negosiasi, maka akan diserahkan kepada pengadilan yang berwenang di negara tempat tinggal Anda.
 
-13.3. Dengan menggunakan Aplikasi Berlisensi, Anda menyatakan dan menjamin bahwa Anda tidak berada di negara tersebut atau dalam daftar tersebut.
+13.3. Untuk pengguna di Uni Eropa, Anda mungkin juga berhak untuk menggunakan platform Penyelesaian Sengketa Online Komisi Eropa.
 
-13.4. Anda juga setuju bahwa Anda tidak akan menggunakan produk ini untuk tujuan apa pun yang dilarang oleh hukum Amerika Serikat, termasuk, tanpa batasan, pengembangan, desain, pembuatan, atau produksi senjata nuklir, rudal, atau senjata kimia atau biologi.
+13.4. Tidak ada dalam Perjanjian ini yang akan mempengaruhi hak hukum Anda sebagai konsumen berdasarkan hukum negara tempat tinggal Anda.
 
-## 14. Hak Pemerintah AS
+## 14. Perubahan pada Ketentuan
 
-14.1. Aplikasi Berlisensi dan dokumentasi terkait adalah "Barang Komersial", sebagaimana istilah tersebut didefinisikan pada 48 C.F.R. §2.101, yang terdiri dari "Perangkat Lunak Komputer Komersial" dan "Dokumentasi Perangkat Lunak Komputer Komersial", sebagaimana istilah-istilah tersebut digunakan dalam 48 C.F.R. §12.212 atau 48 C.F.R. §227.7202, sebagaimana berlaku.
+14.1. Kami dapat memodifikasi Ketentuan ini kapan saja. Penggunaan Layanan yang berkelanjutan merupakan penerimaan atas Ketentuan yang dimodifikasi.
 
-14.2. Konsisten dengan 48 C.F.R. §12.212 atau 48 C.F.R. §227.7202-1 hingga 227.7202-4, sebagaimana berlaku, Perangkat Lunak Komputer Komersial dan Dokumentasi Perangkat Lunak Komputer Komersial dilisensikan kepada pengguna akhir Pemerintah AS (a) hanya sebagai Barang Komersial dan (b) hanya dengan hak yang diberikan kepada semua pengguna akhir lainnya sesuai dengan syarat dan ketentuan di sini.
+14.2. Kami akan melakukan upaya yang wajar untuk memberi tahu Anda tentang perubahan material pada Ketentuan ini melalui Layanan atau dengan cara lain.
 
-14.3. Hak yang tidak dipublikasikan dilindungi di bawah hukum hak cipta Amerika Serikat.
+## 15. Ketentuan Umum
 
-## 15. Hukum yang Mengatur dan Penyelesaian Sengketa
+15.1. **Keseluruhan Perjanjian.** Ketentuan ini merupakan keseluruhan perjanjian antara Anda dan kami mengenai penggunaan Layanan.
 
-15.1. Perjanjian ini dan hubungan antara Anda dan kami akan diatur oleh hukum Negara Bagian California, Amerika Serikat, tidak termasuk ketentuan konflik hukumnya.
+15.2. **Keterpisahan.** Jika ketentuan apa pun dari Ketentuan ini dinyatakan tidak valid atau tidak dapat dilaksanakan, ketentuan tersebut akan dihapus dan ketentuan yang tersisa akan tetap diberlakukan.
 
-15.2. Anda dan kami setuju untuk tunduk pada yurisdiksi pribadi dan eksklusif dari pengadilan yang berlokasi di county Santa Clara, California, untuk menyelesaikan sengketa atau klaim apa pun yang timbul dari Perjanjian ini.
+15.3. **Pengabaian.** Kegagalan kami untuk menegakkan hak atau ketentuan apa pun dari Ketentuan ini tidak akan dianggap sebagai pengabaian hak-hak tersebut.
 
-15.3. **Untuk pengguna di luar Amerika Serikat:** Jika (a) Anda bukan warga negara AS; (b) Anda tidak tinggal di AS; (c) Anda tidak mengakses Layanan dari AS; dan (d) Anda adalah warga negara dari salah satu negara yang diidentifikasi di bawah ini, Anda dengan ini setuju bahwa setiap sengketa atau klaim yang timbul dari Perjanjian ini akan diatur oleh hukum yang berlaku yang ditetapkan di bawah ini, tanpa memperhatikan ketentuan konflik hukum apa pun, dan Anda dengan ini secara tidak dapat dibatalkan tunduk pada yurisdiksi non-eksklusif dari pengadilan yang berlokasi di negara bagian, provinsi, atau negara yang diidentifikasi di bawah ini yang hukumnya mengatur:
+15.4. **Pengalihan.** Anda tidak boleh mengalihkan atau mentransfer Ketentuan ini tanpa persetujuan tertulis kami sebelumnya. Kami dapat mengalihkan hak dan kewajiban kami berdasarkan Ketentuan ini tanpa pembatasan.
 
-- **Uni Eropa, Swiss, Norwegia, atau Islandia:** Hukum yang mengatur dan forum akan menjadi hukum dan pengadilan tempat tinggal biasa Anda.
+## 16. Hubungi Kami
 
-15.4. Yang secara khusus dikecualikan dari penerapan pada Perjanjian ini adalah hukum yang dikenal sebagai Konvensi Perserikatan Bangsa-Bangsa tentang Penjualan Barang Internasional.
-
-## 16. Perubahan pada Ketentuan
-
-16.1. Kami dapat memodifikasi Ketentuan ini kapan saja. Penggunaan Layanan yang berkelanjutan merupakan penerimaan atas Ketentuan yang dimodifikasi.
-
-16.2. Kami akan melakukan upaya yang wajar untuk memberi tahu Anda tentang perubahan material pada Ketentuan ini melalui Layanan atau dengan cara lain.
-
-## 17. Ketentuan Umum
-
-17.1. **Keseluruhan Perjanjian.** Ketentuan ini merupakan keseluruhan perjanjian antara Anda dan kami mengenai penggunaan Layanan.
-
-17.2. **Keterpisahan.** Jika ketentuan apa pun dari Ketentuan ini dinyatakan tidak valid atau tidak dapat dilaksanakan, ketentuan tersebut akan dihapus dan ketentuan yang tersisa akan tetap diberlakukan.
-
-17.3. **Pengabaian.** Kegagalan kami untuk menegakkan hak atau ketentuan apa pun dari Ketentuan ini tidak akan dianggap sebagai pengabaian hak-hak tersebut.
-
-17.4. **Pengalihan.** Anda tidak boleh mengalihkan atau mentransfer Ketentuan ini tanpa persetujuan tertulis kami sebelumnya. Kami dapat mengalihkan hak dan kewajiban kami berdasarkan Ketentuan ini tanpa pembatasan.
-
-## 18. Hubungi Kami
-
-Untuk pertanyaan tentang Ketentuan Layanan ini, silakan hubungi kami di: [support@zeroplay.io](mailto:support@zeroplay.io)
+Untuk pertanyaan tentang Ketentuan Layanan ini, silakan hubungi kami di: [support@zeroplay.io](mailto:support@zeroplay.io).
 
 Silakan juga merujuk ke [Kebijakan Privasi](/docs/legal/privacy-policy) kami untuk informasi tentang bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.

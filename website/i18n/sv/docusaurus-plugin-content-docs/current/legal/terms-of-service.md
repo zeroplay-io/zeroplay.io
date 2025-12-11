@@ -44,13 +44,13 @@ Välkommen till ZeroPlay ("vi," "oss," "våra" eller "Licensgivare"). Genom att 
 
 5.1. Vissa av våra appar kan erbjuda automatiskt förnybara prenumerationstjänster ("Prenumerationer"). När du väljer att köpa en Prenumeration i någon av våra appar kommer det specifika prenumerationsnamnet, varaktigheten och priset att tydligt visas i appen innan du bekräftar köpet.
 
-5.2. Betalning debiteras ditt Apple ID-konto vid bekräftelse av köpet.
+5.2. Betalning debiteras ditt appbutikskonto vid bekräftelse av köpet.
 
 5.3. Prenumerationer förnyas automatiskt om inte automatisk förnyelse stängs av minst 24 timmar före slutet av den aktuella perioden.
 
 5.4. Ditt konto debiteras för förnyelse inom 24 timmar före slutet av den aktuella perioden.
 
-5.5. Du kan hantera och avbryta din Prenumeration när som helst genom att gå till dina kontoinställningar i App Store efter köpet.
+5.5. Du kan hantera och avbryta din Prenumeration när som helst genom att gå till dina kontoinställningar i appbutiken efter köpet.
 
 5.6. Oanvänd del av en gratis provperiod (om sådan erbjuds) förverkas när du köper en Prenumeration.
 
@@ -117,55 +117,33 @@ Välkommen till ZeroPlay ("vi," "oss," "våra" eller "Licensgivare"). Genom att 
 
 **UNDER INGA OMSTÄNDIGHETER SKA VÅRT TOTALA ANSVAR GENTEMOT DIG FÖR ALLA SKADOR (ANNAT ÄN VAD SOM KAN KRÄVAS AV TILLÄMPLIG LAG I FALL SOM RÖR PERSONSKADA) ÖVERSTIGA BELOPPET FEMTIO DOLLAR ($50,00). DE FÖREGÅENDE BEGRÄNSNINGARNA SKA GÄLLA ÄVEN OM DET OVAN ANGIVNA RÄTTSMEDLET MISSLYCKAS MED SITT VÄSENTLIGA SYFTE.**
 
-## 13. Exportefterlevnad
+## 13. Tillämplig Lag och Tvistlösning
 
-13.1. Du får inte använda eller exportera eller återexportera den Licensierade Applikationen förutom som auktoriserat av Förenta staternas lag och lagarna i den jurisdiktion där den Licensierade Applikationen erhölls.
+13.1. Detta Avtal ska regleras av och tolkas i enlighet med lagarna i ditt hemland, utan hänsyn till dess lagvalsprinciper.
 
-13.2. I synnerhet, men utan begränsning, får den Licensierade Applikationen inte exporteras eller återexporteras:
-- Till något U.S.-embargerat land
-- Till någon på U.S. Treasury Department's Specially Designated Nationals List eller U.S. Department of Commerce Denied Persons List eller Entity List
+13.2. Tvister som uppstår från eller relaterar till detta Avtal ska lösas genom förhandlingar i god tro mellan parterna. Om tvisten inte kan lösas genom förhandlingar ska den överlämnas till behöriga domstolar i ditt hemland.
 
-13.3. Genom att använda den Licensierade Applikationen representerar och garanterar du att du inte befinner dig i något sådant land eller på någon sådan lista.
+13.3. För användare i Europeiska unionen kan du också ha rätt att använda Europeiska kommissionens plattform för tvistlösning online.
 
-13.4. Du samtycker också till att du inte kommer att använda dessa produkter för ändamål som är förbjudna enligt Förenta staternas lag, inklusive, utan begränsning, utveckling, design, tillverkning eller produktion av kärnvapen, missiler eller kemiska eller biologiska vapen.
+13.4. Ingenting i detta Avtal påverkar dina lagstadgade rättigheter som konsument enligt lagarna i ditt hemland.
 
-## 14. U.S. Regeringens Rättigheter
+## 14. Ändringar av Villkor
 
-14.1. Den Licensierade Applikationen och relaterad dokumentation är "Kommersiella Artiklar", som den termen definieras i 48 C.F.R. §2.101, bestående av "Kommersiell Datorprogramvara" och "Kommersiell Datorprogramvarudokumentation", som dessa termer används i 48 C.F.R. §12.212 eller 48 C.F.R. §227.7202, beroende på vad som är tillämpligt.
+14.1. Vi kan ändra dessa Villkor när som helst. Fortsatt användning av Tjänsterna utgör acceptans av ändrade Villkor.
 
-14.2. I enlighet med 48 C.F.R. §12.212 eller 48 C.F.R. §227.7202-1 till 227.7202-4, beroende på vad som är tillämpligt, licensieras den Kommersiella Datorprogramvaran och Kommersiell Datorprogramvarudokumentation till slutanvändare i U.S. Government (a) endast som Kommersiella Artiklar och (b) endast med de rättigheter som beviljas alla andra slutanvändare enligt villkoren häri.
+14.2. Vi kommer att göra rimliga ansträngningar för att meddela dig om väsentliga ändringar av dessa Villkor via Tjänsterna eller på annat sätt.
 
-14.3. Opublicerade rättigheter är reserverade enligt upphovsrättslagarna i Förenta staterna.
+## 15. Allmänna Bestämmelser
 
-## 15. Tillämplig Lag och Tvistlösning
+15.1. **Helt Avtal.** Dessa Villkor utgör hela avtalet mellan dig och oss angående användningen av Tjänsterna.
 
-15.1. Detta Avtal och förhållandet mellan dig och oss ska regleras av lagarna i delstaten Kalifornien, Förenta staterna, med undantag för dess lagvalsprinciper.
+15.2. **Skiljbarhet.** Om någon bestämmelse i dessa Villkor bedöms vara ogiltig eller omöjlig att verkställa, ska den bestämmelsen strykas och de återstående bestämmelserna ska verkställas.
 
-15.2. Du och vi samtycker till att underkasta oss den personliga och exklusiva jurisdiktionen hos domstolarna belägna inom Santa Clara County, Kalifornien, för att lösa varje tvist eller anspråk som härrör från detta Avtal.
+15.3. **Avstående.** Vårt misslyckande att verkställa någon rättighet eller bestämmelse i dessa Villkor kommer inte att betraktas som ett avstående från dessa rättigheter.
 
-15.3. **För användare utanför Förenta staterna:** Om (a) du inte är en U.S. medborgare; (b) du inte bor i U.S.; (c) du inte får åtkomst till Tjänsten från U.S.; och (d) du är medborgare i ett av de länder som identifieras nedan, samtycker du härmed till att varje tvist eller anspråk som härrör från detta Avtal ska regleras av den tillämpliga lag som anges nedan, utan hänsyn till några lagvalsprinciper, och du underkastas härmed oåterkalleligt den icke-exklusiva jurisdiktionen hos domstolarna belägna i den stat, provins eller det land som identifieras nedan vars lag styr:
+15.4. **Överlåtelse.** Du får inte överlåta eller överföra dessa Villkor utan vårt skriftliga samtycke i förväg. Vi kan överlåta våra rättigheter och skyldigheter enligt dessa Villkor utan begränsning.
 
-- **Europeiska unionen, Schweiz, Norge eller Island:** Den tillämpliga lagen och forumet ska vara lagarna och domstolarna på din vanliga vistelseort.
-
-15.4. Specifikt utesluten från tillämpning på detta Avtal är den lag som kallas FN:s konvention om avtal för internationella köp av varor.
-
-## 16. Ändringar av Villkor
-
-16.1. Vi kan ändra dessa Villkor när som helst. Fortsatt användning av Tjänsterna utgör acceptans av ändrade Villkor.
-
-16.2. Vi kommer att göra rimliga ansträngningar för att meddela dig om väsentliga ändringar av dessa Villkor via Tjänsterna eller på annat sätt.
-
-## 17. Allmänna Bestämmelser
-
-17.1. **Helt Avtal.** Dessa Villkor utgör hela avtalet mellan dig och oss angående användningen av Tjänsterna.
-
-17.2. **Skiljbarhet.** Om någon bestämmelse i dessa Villkor bedöms vara ogiltig eller omöjlig att verkställa, ska den bestämmelsen strykas och de återstående bestämmelserna ska verkställas.
-
-17.3. **Avstående.** Vårt misslyckande att verkställa någon rättighet eller bestämmelse i dessa Villkor kommer inte att betraktas som ett avstående från dessa rättigheter.
-
-17.4. **Överlåtelse.** Du får inte överlåta eller överföra dessa Villkor utan vårt skriftliga samtycke i förväg. Vi kan överlåta våra rättigheter och skyldigheter enligt dessa Villkor utan begränsning.
-
-## 18. Kontakta Oss
+## 16. Kontakta Oss
 
 För frågor om dessa Användarvillkor, vänligen kontakta oss på: [support@zeroplay.io](mailto:support@zeroplay.io).
 

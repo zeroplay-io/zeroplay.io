@@ -44,13 +44,13 @@ Welcome to ZeroPlay ("we," "us," "our," or "Licensor"). By accessing or using ou
 
 5.1. Some of our Apps may offer auto-renewable subscription services ("Subscriptions"). When you choose to purchase a Subscription in any of our Apps, the specific subscription name, duration and price will be clearly displayed in the App before you confirm the purchase.
 
-5.2. Payment will be charged to your Apple ID account at the confirmation of purchase.
+5.2. Payment will be charged to your app store account upon confirmation of purchase.
 
 5.3. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.
 
 5.4. Your account will be charged for renewal within 24 hours prior to the end of the current period.
 
-5.5. You can manage and cancel your Subscription at any time by going to your account settings on the App Store after purchase.
+5.5. You can manage and cancel your Subscription at any time by going to your account settings in the app store after purchase.
 
 5.6. Any unused portion of a free trial period (if offered) will be forfeited when you purchase a Subscription.
 
@@ -117,55 +117,33 @@ Welcome to ZeroPlay ("we," "us," "our," or "Licensor"). By accessing or using ou
 
 **IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL DAMAGES (OTHER THAN AS MAY BE REQUIRED BY APPLICABLE LAW IN CASES INVOLVING PERSONAL INJURY) EXCEED THE AMOUNT OF FIFTY DOLLARS ($50.00). THE FOREGOING LIMITATIONS WILL APPLY EVEN IF THE ABOVE STATED REMEDY FAILS OF ITS ESSENTIAL PURPOSE.**
 
-## 13. Export Compliance
+## 13. Governing Law and Dispute Resolution
 
-13.1. You may not use or otherwise export or re-export the Licensed Application except as authorized by United States law and the laws of the jurisdiction in which the Licensed Application was obtained.
+13.1. This Agreement shall be governed by and construed in accordance with the laws of your country of residence, without regard to its conflict of law provisions.
 
-13.2. In particular, but without limitation, the Licensed Application may not be exported or re-exported:
-- Into any U.S.-embargoed countries
-- To anyone on the U.S. Treasury Department's Specially Designated Nationals List or the U.S. Department of Commerce Denied Persons List or Entity List
+13.2. Any disputes arising from or relating to this Agreement shall be resolved through good faith negotiations between the parties. If the dispute cannot be resolved through negotiations, it shall be submitted to the competent courts of your country of residence.
 
-13.3. By using the Licensed Application, you represent and warrant that you are not located in any such country or on any such list.
+13.3. For users in the European Union, you may also be entitled to use the European Commission's Online Dispute Resolution platform.
 
-13.4. You also agree that you will not use these products for any purposes prohibited by United States law, including, without limitation, the development, design, manufacture, or production of nuclear, missile, or chemical or biological weapons.
+13.4. Nothing in this Agreement shall affect your statutory rights as a consumer under the laws of your country of residence.
 
-## 14. U.S. Government Rights
+## 14. Changes to Terms
 
-14.1. The Licensed Application and related documentation are "Commercial Items", as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable.
+14.1. We may modify these Terms at any time. Continued use of the Services constitutes acceptance of modified Terms.
 
-14.2. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1 through 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein.
+14.2. We will make reasonable efforts to notify you of material changes to these Terms through the Services or by other means.
 
-14.3. Unpublished rights are reserved under the copyright laws of the United States.
+## 15. General Provisions
 
-## 15. Governing Law and Dispute Resolution
+15.1. **Entire Agreement.** These Terms constitute the entire agreement between you and us regarding the use of the Services.
 
-15.1. This Agreement and the relationship between you and us shall be governed by the laws of the State of California, United States, excluding its conflicts of law provisions.
+15.2. **Severability.** If any provision of these Terms is held to be invalid or unenforceable, such provision shall be struck and the remaining provisions shall be enforced.
 
-15.2. You and we agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California, to resolve any dispute or claim arising from this Agreement.
+15.3. **Waiver.** Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
 
-15.3. **For users outside the United States:** If (a) you are not a U.S. citizen; (b) you do not reside in the U.S.; (c) you are not accessing the Service from the U.S.; and (d) you are a citizen of one of the countries identified below, you hereby agree that any dispute or claim arising from this Agreement shall be governed by the applicable law set forth below, without regard to any conflict of law provisions, and you hereby irrevocably submit to the non-exclusive jurisdiction of the courts located in the state, province or country identified below whose law governs:
+15.4. **Assignment.** You may not assign or transfer these Terms without our prior written consent. We may assign our rights and obligations under these Terms without restriction.
 
-- **European Union, Switzerland, Norway, or Iceland:** The governing law and forum shall be the laws and courts of your usual place of residence.
-
-15.4. Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.
-
-## 16. Changes to Terms
-
-16.1. We may modify these Terms at any time. Continued use of the Services constitutes acceptance of modified Terms.
-
-16.2. We will make reasonable efforts to notify you of material changes to these Terms through the Services or by other means.
-
-## 17. General Provisions
-
-17.1. **Entire Agreement.** These Terms constitute the entire agreement between you and us regarding the use of the Services.
-
-17.2. **Severability.** If any provision of these Terms is held to be invalid or unenforceable, such provision shall be struck and the remaining provisions shall be enforced.
-
-17.3. **Waiver.** Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
-
-17.4. **Assignment.** You may not assign or transfer these Terms without our prior written consent. We may assign our rights and obligations under these Terms without restriction.
-
-## 18. Contact Us
+## 16. Contact Us
 
 For questions about these Terms of Service, please contact us at: [support@zeroplay.io](mailto:support@zeroplay.io).
 

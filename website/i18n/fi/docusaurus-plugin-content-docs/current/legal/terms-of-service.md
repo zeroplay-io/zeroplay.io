@@ -44,13 +44,13 @@ Tervetuloa ZeroPlayhin ("me," "meidän," tai "Lisenssinantaja"). Käyttämällä
 
 5.1. Jotkut sovelluksistamme saattavat tarjota automaattisesti uusiutuvia tilauspalveluja ("Tilaukset"). Kun päätät ostaa Tilauksen jostain sovelluksistamme, tilauksen nimi, kesto ja hinta näytetään selkeästi sovelluksessa ennen ostoksen vahvistamista.
 
-5.2. Maksu veloitetaan Apple ID -tililtäsi ostoksen vahvistamisen yhteydessä.
+5.2. Maksu veloitetaan sovelluskaupan tililtäsi ostoksen vahvistamisen yhteydessä.
 
 5.3. Tilaukset uusiutuvat automaattisesti, ellei automaattista uusimista ole kytketty pois päältä vähintään 24 tuntia ennen nykyisen jakson päättymistä.
 
 5.4. Tililtäsi veloitetaan uusimismaksu 24 tunnin kuluessa ennen nykyisen jakson päättymistä.
 
-5.5. Voit hallita ja peruuttaa Tilauksesi milloin tahansa siirtymällä App Storen tiliasetuksiin ostoksen jälkeen.
+5.5. Voit hallita ja peruuttaa Tilauksesi milloin tahansa siirtymällä sovelluskaupan tiliasetuksiin ostoksen jälkeen.
 
 5.6. Käyttämätön osa ilmaisesta kokeilujaksosta (jos tarjotaan) menetetään, kun ostat Tilauksen.
 
@@ -117,55 +117,33 @@ Tervetuloa ZeroPlayhin ("me," "meidän," tai "Lisenssinantaja"). Käyttämällä
 
 **MEIDÄN KOKONAISVASTUUMME SINUA KOHTAAN KAIKISTA VAHINGOISTA (MUUTOIN KUIN SOVELLETTAVAN LAIN HENKILÖVAHINKOTAPAUKSISSA EDELLYTTÄMÄSTÄ) EI MISSÄÄN TAPAUKSESSA YLITÄ VIIDENKYMMENEN DOLLARIN ($50.00) MÄÄRÄÄ. EDELLÄ MAINITUT RAJOITUKSET OVAT VOIMASSA, VAIKKA EDELLÄ MAINITTU OIKEUSSUOJAKEINO EPÄONNISTUISI OLENNAISESSA TARKOITUKSESSAAN.**
 
-## 13. Vientimääräysten Noudattaminen
+## 13. Sovellettava Laki ja Riitojenratkaisu
 
-13.1. Et saa käyttää tai muutoin viedä tai jälleenviedä Lisensoitua Sovellusta muuten kuin Yhdysvaltojen lain ja sen lainkäyttöalueen lakien mukaan, jossa Lisensoitu Sovellus hankittiin.
+13.1. Tätä Sopimusta säännellään ja tulkitaan asuinmaasi lakien mukaisesti ottamatta huomioon sen lainvalintasäännöksiä.
 
-13.2. Erityisesti, mutta ei rajoittuen, Lisensoitua Sovellusta ei saa viedä tai jälleenviedä:
-- Mihinkään Yhdysvaltojen kauppasaartoon asettamiin maihin
-- Kenellekään Yhdysvaltojen valtiovarainministeriön erityisesti nimettyjen kansalaisten listalla tai Yhdysvaltojen kauppaministeriön kiellettyjen henkilöiden tai yhteisöjen listalla olevalle
+13.2. Tästä Sopimuksesta johtuvat tai siihen liittyvät riidat ratkaistaan osapuolten välisillä vilpittömässä mielessä käytävillä neuvotteluilla. Jos riitaa ei voida ratkaista neuvotteluilla, se siirretään asuinmaasi toimivaltaisten tuomioistuinten ratkaistavaksi.
 
-13.3. Käyttämällä Lisensoitua Sovellusta vakuutat ja takaat, ettet ole sellaisessa maassa tai tällaisella listalla.
+13.3. Euroopan unionin käyttäjät voivat myös olla oikeutettuja käyttämään Euroopan komission verkossa toimivaa riidanratkaisualustaa.
 
-13.4. Hyväksyt myös, ettet käytä näitä tuotteita Yhdysvaltojen lain kieltämiin tarkoituksiin, mukaan lukien mutta ei rajoittuen ydin-, ohjus- tai kemiallisten tai biologisten aseiden kehittämiseen, suunnitteluun, valmistukseen tai tuotantoon.
+13.4. Mikään tässä Sopimuksessa ei vaikuta lakisääteisiin oikeuksiisi kuluttajana asuinmaasi lakien mukaisesti.
 
-## 14. Yhdysvaltojen Hallituksen Oikeudet
+## 14. Muutokset Ehtoihin
 
-14.1. Lisensoitu Sovellus ja siihen liittyvä dokumentaatio ovat "Kaupallisia Tuotteita", kuten määritelty 48 C.F.R. §2.101:ssä, koostuen "Kaupallisesta Tietokoneohjelmistosta" ja "Kaupallisesta Tietokoneohjelmistodokumentaatiosta", kuten näitä termejä käytetään 48 C.F.R. §12.212:ssa tai 48 C.F.R. §227.7202:ssa, tapauksen mukaan.
+14.1. Voimme muokata näitä Ehtoja milloin tahansa. Palvelujen jatkuva käyttö merkitsee muutettujen Ehtojen hyväksymistä.
 
-14.2. 48 C.F.R. §12.212:n tai 48 C.F.R. §227.7202-1 - 227.7202-4:n mukaisesti Kaupallinen Tietokoneohjelmisto ja Kaupallinen Tietokoneohjelmistodokumentaatio lisensoidaan Yhdysvaltojen hallituksen loppukäyttäjille (a) vain Kaupallisina Tuotteina ja (b) vain niillä oikeuksilla, jotka myönnetään kaikille muille loppukäyttäjille tämän sopimuksen ehtojen mukaisesti.
+14.2. Pyrimme kohtuullisesti ilmoittamaan sinulle näiden Ehtojen olennaisista muutoksista Palvelujen kautta tai muulla tavoin.
 
-14.3. Julkaisemattomat oikeudet on varattu Yhdysvaltojen tekijänoikeuslakien mukaisesti.
+## 15. Yleiset Määräykset
 
-## 15. Sovellettava Laki ja Riitojenratkaisu
+15.1. **Koko Sopimus.** Nämä Ehdot muodostavat koko sopimuksen sinun ja meidän välillämme Palvelujen käytöstä.
 
-15.1. Tätä Sopimusta ja sinun ja meidän välistä suhdetta säännellään Kalifornian osavaltion, Yhdysvallat, lait, lukuun ottamatta sen lainvalintasäännöksiä.
+15.2. **Erotettavuus.** Jos jokin näiden Ehtojen määräys todetaan pätemättömäksi tai täytäntöönpanokelvottomaksi, tällainen määräys poistetaan ja jäljellä olevat määräykset pysyvät voimassa.
 
-15.2. Sinä ja me hyväksymme Santa Clara Countyn, Kalifornia, tuomioistuinten henkilökohtaisen ja yksinomaisen lainkäyttövallan tästä Sopimuksesta johtuvien riitojen tai vaatimusten ratkaisemiseksi.
+15.3. **Luopuminen.** Se, että emme pane täytäntöön jotakin näiden Ehtojen oikeutta tai määräystä, ei tarkoita näistä oikeuksista luopumista.
 
-15.3. **Yhdysvaltojen ulkopuolisille käyttäjille:** Jos (a) et ole Yhdysvaltojen kansalainen; (b) et asu Yhdysvalloissa; (c) et käytä Palvelua Yhdysvalloissa; ja (d) olet alla mainittujen maiden kansalainen, hyväksyt täten, että tästä Sopimuksesta johtuva riita tai vaatimus määräytyy alla mainitun sovellettavan lain mukaan ottamatta huomioon lainvalintasäännöksiä, ja alistut täten peruuttamattomasti sen osavaltion, maakunnan tai maan tuomioistuinten ei-yksinomaiselle lainkäyttövallalle, jonka laki on sovellettava:
+15.4. **Siirto.** Et saa siirtää tai luovuttaa näitä Ehtoja ilman ennakkokirjallista suostumustamme. Voimme siirtää oikeutemme ja velvollisuutemme näiden Ehtojen mukaan ilman rajoituksia.
 
-- **Euroopan unioni, Sveitsi, Norja tai Islanti:** Sovellettavana lakina ja foorumina ovat tavanomaisen asuinpaikkasi lait ja tuomioistuimet.
-
-15.4. Tähän Sopimukseen ei sovelleta lakia, joka tunnetaan nimellä Yhdistyneiden Kansakuntien yleissopimus kansainvälisistä tavaran kauppaa koskevista sopimuksista.
-
-## 16. Muutokset Ehtoihin
-
-16.1. Voimme muokata näitä Ehtoja milloin tahansa. Palvelujen jatkuva käyttö merkitsee muutettujen Ehtojen hyväksymistä.
-
-16.2. Pyrimme kohtuullisesti ilmoittamaan sinulle näiden Ehtojen olennaisista muutoksista Palvelujen kautta tai muulla tavoin.
-
-## 17. Yleiset Määräykset
-
-17.1. **Koko Sopimus.** Nämä Ehdot muodostavat koko sopimuksen sinun ja meidän välillämme Palvelujen käytöstä.
-
-17.2. **Erotettavuus.** Jos jokin näiden Ehtojen määräys todetaan pätemättömäksi tai täytäntöönpanokelvottomaksi, tällainen määräys poistetaan ja jäljellä olevat määräykset pysyvät voimassa.
-
-17.3. **Luopuminen.** Se, että emme pane täytäntöön jotakin näiden Ehtojen oikeutta tai määräystä, ei tarkoita näistä oikeuksista luopumista.
-
-17.4. **Siirto.** Et saa siirtää tai luovuttaa näitä Ehtoja ilman ennakkokirjallista suostumustamme. Voimme siirtää oikeutemme ja velvollisuutemme näiden Ehtojen mukaan ilman rajoituksia.
-
-## 18. Ota Yhteyttä
+## 16. Ota Yhteyttä
 
 Jos sinulla on kysyttävää näistä Käyttöehdoista, ota yhteyttä: [support@zeroplay.io](mailto:support@zeroplay.io).
 

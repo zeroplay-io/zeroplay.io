@@ -44,13 +44,13 @@ Bem-vindo ao ZeroPlay ("nós", "nosso", "nossa" ou "Licenciador"). Ao acessar ou
 
 5.1. Alguns dos nossos aplicativos podem oferecer serviços de assinatura com renovação automática ("Assinaturas"). Quando você optar por adquirir uma Assinatura em qualquer um dos nossos aplicativos, o nome específico da assinatura, duração e preço serão claramente exibidos no aplicativo antes de você confirmar a compra.
 
-5.2. O pagamento será cobrado na sua conta Apple ID no momento da confirmação da compra.
+5.2. O pagamento será cobrado na sua conta da loja de aplicativos no momento da confirmação da compra.
 
 5.3. As Assinaturas são renovadas automaticamente, a menos que a renovação automática seja desativada pelo menos 24 horas antes do final do período atual.
 
 5.4. Sua conta será cobrada pela renovação dentro de 24 horas antes do final do período atual.
 
-5.5. Você pode gerenciar e cancelar sua Assinatura a qualquer momento, acessando as configurações da sua conta na App Store após a compra.
+5.5. Você pode gerenciar e cancelar sua Assinatura a qualquer momento, acessando as configurações da sua conta na loja de aplicativos após a compra.
 
 5.6. Qualquer parte não utilizada de um período de avaliação gratuita (se oferecido) será perdida quando você adquirir uma Assinatura.
 
@@ -117,55 +117,33 @@ Bem-vindo ao ZeroPlay ("nós", "nosso", "nossa" ou "Licenciador"). Ao acessar ou
 
 **EM NENHUMA CIRCUNSTÂNCIA NOSSA RESPONSABILIDADE TOTAL PARA COM VOCÊ POR TODOS OS DANOS (EXCETO CONFORME POSSA SER EXIGIDO PELA LEI APLICÁVEL EM CASOS ENVOLVENDO LESÕES PESSOAIS) EXCEDERÁ O MONTANTE DE CINQUENTA DÓLARES ($50,00). AS LIMITAÇÕES ACIMA SE APLICARÃO MESMO QUE O REMÉDIO ACIMA DECLARADO NÃO CUMPRA SEU PROPÓSITO ESSENCIAL.**
 
-## 13. Conformidade com Exportação
+## 13. Lei Aplicável e Resolução de Disputas
 
-13.1. Você não pode usar ou exportar ou reexportar a Aplicação Licenciada exceto conforme autorizado pela lei dos Estados Unidos e pelas leis da jurisdição em que a Aplicação Licenciada foi obtida.
+13.1. Este Acordo será regido e interpretado de acordo com as leis do seu país de residência, sem considerar suas disposições sobre conflitos de leis.
 
-13.2. Em particular, mas sem limitação, a Aplicação Licenciada não pode ser exportada ou reexportada:
-- Para nenhum país embargado pelos EUA
-- Para qualquer pessoa na Lista de Nacionais Especialmente Designados do Departamento do Tesouro dos EUA ou na Lista de Pessoas Negadas ou Lista de Entidades do Departamento de Comércio dos EUA
+13.2. Quaisquer disputas decorrentes de ou relacionadas a este Acordo serão resolvidas através de negociações de boa-fé entre as partes. Se a disputa não puder ser resolvida através de negociações, será submetida aos tribunais competentes do seu país de residência.
 
-13.3. Ao usar a Aplicação Licenciada, você declara e garante que não está localizado em nenhum desses países ou em nenhuma dessas listas.
+13.3. Para usuários na União Europeia, você também pode ter o direito de usar a plataforma de Resolução de Disputas Online da Comissão Europeia.
 
-13.4. Você também concorda que não usará estes produtos para quaisquer fins proibidos pela lei dos Estados Unidos, incluindo, sem limitação, o desenvolvimento, design, fabricação ou produção de armas nucleares, de mísseis ou químicas ou biológicas.
+13.4. Nada neste Acordo afetará seus direitos estatutários como consumidor sob as leis do seu país de residência.
 
-## 14. Direitos do Governo dos EUA
+## 14. Alterações aos Termos
 
-14.1. A Aplicação Licenciada e a documentação relacionada são "Itens Comerciais", conforme esse termo é definido em 48 C.F.R. §2.101, consistindo em "Software de Computador Comercial" e "Documentação de Software de Computador Comercial", conforme tais termos são usados em 48 C.F.R. §12.212 ou 48 C.F.R. §227.7202, conforme aplicável.
+14.1. Podemos modificar estes Termos a qualquer momento. O uso continuado dos Serviços constitui aceitação dos Termos modificados.
 
-14.2. De acordo com 48 C.F.R. §12.212 ou 48 C.F.R. §227.7202-1 a 227.7202-4, conforme aplicável, o Software de Computador Comercial e a Documentação de Software de Computador Comercial estão sendo licenciados aos usuários finais do Governo dos EUA (a) apenas como Itens Comerciais e (b) apenas com aqueles direitos concedidos a todos os outros usuários finais de acordo com os termos e condições aqui contidos.
+14.2. Faremos esforços razoáveis para notificá-lo de alterações materiais a estes Termos através dos Serviços ou por outros meios.
 
-14.3. Os direitos não publicados estão reservados sob as leis de direitos autorais dos Estados Unidos.
+## 15. Disposições Gerais
 
-## 15. Lei Aplicável e Resolução de Disputas
+15.1. **Acordo Completo.** Estes Termos constituem o acordo completo entre você e nós relativamente ao uso dos Serviços.
 
-15.1. Este Acordo e a relação entre você e nós serão regidos pelas leis do Estado da Califórnia, Estados Unidos, excluindo suas disposições sobre conflitos de leis.
+15.2. **Divisibilidade.** Se qualquer disposição destes Termos for considerada inválida ou inexequível, tal disposição será eliminada e as disposições restantes serão aplicadas.
 
-15.2. Você e nós concordamos em submeter-nos à jurisdição pessoal e exclusiva dos tribunais localizados no condado de Santa Clara, Califórnia, para resolver qualquer disputa ou reclamação decorrente deste Acordo.
+15.3. **Renúncia.** Nossa falha em fazer cumprir qualquer direito ou disposição destes Termos não será considerada uma renúncia a esses direitos.
 
-15.3. **Para usuários fora dos Estados Unidos:** Se (a) você não é cidadão dos EUA; (b) você não reside nos EUA; (c) você não está acessando o Serviço dos EUA; e (d) você é cidadão de um dos países identificados abaixo, você concorda que qualquer disputa ou reclamação decorrente deste Acordo será regida pela lei aplicável estabelecida abaixo, sem considerar quaisquer disposições sobre conflitos de leis, e você submete-se irrevogavelmente à jurisdição não exclusiva dos tribunais localizados no estado, província ou país identificado abaixo cuja lei governa:
+15.4. **Cessão.** Você não pode ceder ou transferir estes Termos sem o nosso consentimento prévio por escrito. Podemos ceder nossos direitos e obrigações sob estes Termos sem restrição.
 
-- **União Europeia, Suíça, Noruega ou Islândia:** A lei aplicável e o foro serão as leis e tribunais do seu local habitual de residência.
-
-15.4. Especificamente excluída da aplicação a este Acordo está a lei conhecida como Convenção das Nações Unidas sobre Contratos de Compra e Venda Internacional de Mercadorias.
-
-## 16. Alterações aos Termos
-
-16.1. Podemos modificar estes Termos a qualquer momento. O uso continuado dos Serviços constitui aceitação dos Termos modificados.
-
-16.2. Faremos esforços razoáveis para notificá-lo de alterações materiais a estes Termos através dos Serviços ou por outros meios.
-
-## 17. Disposições Gerais
-
-17.1. **Acordo Completo.** Estes Termos constituem o acordo completo entre você e nós relativamente ao uso dos Serviços.
-
-17.2. **Divisibilidade.** Se qualquer disposição destes Termos for considerada inválida ou inexequível, tal disposição será eliminada e as disposições restantes serão aplicadas.
-
-17.3. **Renúncia.** Nossa falha em fazer cumprir qualquer direito ou disposição destes Termos não será considerada uma renúncia a esses direitos.
-
-17.4. **Cessão.** Você não pode ceder ou transferir estes Termos sem o nosso consentimento prévio por escrito. Podemos ceder nossos direitos e obrigações sob estes Termos sem restrição.
-
-## 18. Entre em Contato
+## 16. Entre em Contato
 
 Para perguntas sobre estes Termos de Serviço, entre em contato conosco em: [support@zeroplay.io](mailto:support@zeroplay.io).
 

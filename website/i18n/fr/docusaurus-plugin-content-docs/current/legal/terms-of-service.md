@@ -44,13 +44,13 @@ Bienvenue sur ZeroPlay (« nous », « notre », « nos » ou « Concédant »).
 
 5.1. Certaines de nos applications peuvent proposer des services d'abonnement à renouvellement automatique (« Abonnements »). Lorsque vous choisissez d'acheter un Abonnement dans l'une de nos applications, le nom spécifique de l'abonnement, sa durée et son prix seront clairement affichés dans l'application avant que vous ne confirmiez l'achat.
 
-5.2. Le paiement sera débité de votre compte Apple ID lors de la confirmation de l'achat.
+5.2. Le paiement sera débité de votre compte du magasin d'applications lors de la confirmation de l'achat.
 
 5.3. Les Abonnements se renouvellent automatiquement, sauf si le renouvellement automatique est désactivé au moins 24 heures avant la fin de la période en cours.
 
 5.4. Votre compte sera débité pour le renouvellement dans les 24 heures précédant la fin de la période en cours.
 
-5.5. Vous pouvez gérer et annuler votre Abonnement à tout moment en accédant aux paramètres de votre compte sur l'App Store après l'achat.
+5.5. Vous pouvez gérer et annuler votre Abonnement à tout moment en accédant aux paramètres de votre compte sur le magasin d'applications après l'achat.
 
 5.6. Toute partie non utilisée d'une période d'essai gratuit (si proposée) sera perdue lorsque vous achèterez un Abonnement.
 
@@ -117,55 +117,33 @@ Bienvenue sur ZeroPlay (« nous », « notre », « nos » ou « Concédant »).
 
 **EN AUCUN CAS NOTRE RESPONSABILITÉ TOTALE ENVERS VOUS POUR TOUS LES DOMMAGES (AUTRES QUE CEUX QUI PEUVENT ÊTRE REQUIS PAR LA LOI APPLICABLE EN CAS DE BLESSURES CORPORELLES) NE DÉPASSERA LE MONTANT DE CINQUANTE DOLLARS (50,00 $). LES LIMITATIONS CI-DESSUS S'APPLIQUERONT MÊME SI LE RECOURS SUSMENTIONNÉ N'ATTEINT PAS SON OBJECTIF ESSENTIEL.**
 
-## 13. Conformité à l'exportation
+## 13. Loi applicable et résolution des litiges
 
-13.1. Vous ne pouvez pas utiliser ou exporter ou réexporter l'Application Sous Licence sauf autorisation de la loi des États-Unis et des lois de la juridiction dans laquelle l'Application Sous Licence a été obtenue.
+13.1. Cet Accord sera régi et interprété conformément aux lois de votre pays de résidence, sans tenir compte de ses dispositions relatives aux conflits de lois.
 
-13.2. En particulier, mais sans limitation, l'Application Sous Licence ne peut être exportée ou réexportée :
-- Dans aucun pays sous embargo américain
-- À quiconque figure sur la liste des ressortissants spécialement désignés du Département du Trésor américain ou sur la liste des personnes refusées ou la liste des entités du Département du Commerce américain
+13.2. Tout litige découlant de ou lié à cet Accord sera résolu par des négociations de bonne foi entre les parties. Si le litige ne peut être résolu par des négociations, il sera soumis aux tribunaux compétents de votre pays de résidence.
 
-13.3. En utilisant l'Application Sous Licence, vous déclarez et garantissez que vous n'êtes situé dans aucun de ces pays ni sur aucune de ces listes.
+13.3. Pour les utilisateurs de l'Union européenne, vous pouvez également avoir le droit d'utiliser la plateforme de règlement des litiges en ligne de la Commission européenne.
 
-13.4. Vous acceptez également de ne pas utiliser ces produits à des fins interdites par la loi des États-Unis, y compris, sans limitation, le développement, la conception, la fabrication ou la production d'armes nucléaires, de missiles ou chimiques ou biologiques.
+13.4. Rien dans cet Accord n'affectera vos droits légaux en tant que consommateur en vertu des lois de votre pays de résidence.
 
-## 14. Droits du gouvernement américain
+## 14. Modifications des Conditions
 
-14.1. L'Application Sous Licence et la documentation connexe sont des « Articles Commerciaux », tel que ce terme est défini au 48 C.F.R. §2.101, consistant en un « Logiciel Informatique Commercial » et une « Documentation de Logiciel Informatique Commercial », tels que ces termes sont utilisés dans 48 C.F.R. §12.212 ou 48 C.F.R. §227.7202, selon le cas.
+14.1. Nous pouvons modifier ces Conditions à tout moment. L'utilisation continue des Services constitue l'acceptation des Conditions modifiées.
 
-14.2. Conformément au 48 C.F.R. §12.212 ou 48 C.F.R. §227.7202-1 à 227.7202-4, selon le cas, le Logiciel Informatique Commercial et la Documentation de Logiciel Informatique Commercial sont concédés sous licence aux utilisateurs finaux du gouvernement américain (a) uniquement en tant qu'Articles Commerciaux et (b) uniquement avec les droits accordés à tous les autres utilisateurs finaux conformément aux termes et conditions du présent document.
+14.2. Nous ferons des efforts raisonnables pour vous informer des modifications importantes apportées à ces Conditions via les Services ou par d'autres moyens.
 
-14.3. Les droits non publiés sont réservés en vertu des lois sur le droit d'auteur des États-Unis.
+## 15. Dispositions générales
 
-## 15. Loi applicable et résolution des litiges
+15.1. **Accord intégral.** Ces Conditions constituent l'intégralité de l'accord entre vous et nous concernant l'utilisation des Services.
 
-15.1. Cet Accord et la relation entre vous et nous seront régis par les lois de l'État de Californie, États-Unis, à l'exclusion de ses dispositions relatives aux conflits de lois.
+15.2. **Divisibilité.** Si une disposition de ces Conditions est jugée invalide ou inapplicable, cette disposition sera supprimée et les dispositions restantes seront appliquées.
 
-15.2. Vous et nous acceptons de nous soumettre à la juridiction personnelle et exclusive des tribunaux situés dans le comté de Santa Clara, Californie, pour résoudre tout litige ou réclamation découlant de cet Accord.
+15.3. **Renonciation.** Notre non-application d'un droit ou d'une disposition de ces Conditions ne sera pas considérée comme une renonciation à ces droits.
 
-15.3. **Pour les utilisateurs en dehors des États-Unis :** Si (a) vous n'êtes pas citoyen américain ; (b) vous ne résidez pas aux États-Unis ; (c) vous n'accédez pas au Service depuis les États-Unis ; et (d) vous êtes citoyen de l'un des pays identifiés ci-dessous, vous acceptez par les présentes que tout litige ou réclamation découlant de cet Accord sera régi par la loi applicable énoncée ci-dessous, sans égard à toute disposition relative aux conflits de lois, et vous vous soumettez irrévocablement à la juridiction non exclusive des tribunaux situés dans l'État, la province ou le pays identifié ci-dessous dont la loi s'applique :
+15.4. **Cession.** Vous ne pouvez pas céder ou transférer ces Conditions sans notre consentement écrit préalable. Nous pouvons céder nos droits et obligations en vertu de ces Conditions sans restriction.
 
-- **Union européenne, Suisse, Norvège ou Islande :** La loi applicable et le forum seront les lois et tribunaux de votre lieu de résidence habituel.
-
-15.4. Est spécifiquement exclue de l'application à cet Accord la loi connue sous le nom de Convention des Nations Unies sur les contrats de vente internationale de marchandises.
-
-## 16. Modifications des Conditions
-
-16.1. Nous pouvons modifier ces Conditions à tout moment. L'utilisation continue des Services constitue l'acceptation des Conditions modifiées.
-
-16.2. Nous ferons des efforts raisonnables pour vous informer des modifications importantes apportées à ces Conditions via les Services ou par d'autres moyens.
-
-## 17. Dispositions générales
-
-17.1. **Accord intégral.** Ces Conditions constituent l'intégralité de l'accord entre vous et nous concernant l'utilisation des Services.
-
-17.2. **Divisibilité.** Si une disposition de ces Conditions est jugée invalide ou inapplicable, cette disposition sera supprimée et les dispositions restantes seront appliquées.
-
-17.3. **Renonciation.** Notre non-application d'un droit ou d'une disposition de ces Conditions ne sera pas considérée comme une renonciation à ces droits.
-
-17.4. **Cession.** Vous ne pouvez pas céder ou transférer ces Conditions sans notre consentement écrit préalable. Nous pouvons céder nos droits et obligations en vertu de ces Conditions sans restriction.
-
-## 18. Nous contacter
+## 16. Nous contacter
 
 Pour toute question concernant ces Conditions d'utilisation, veuillez nous contacter à : [support@zeroplay.io](mailto:support@zeroplay.io).
 

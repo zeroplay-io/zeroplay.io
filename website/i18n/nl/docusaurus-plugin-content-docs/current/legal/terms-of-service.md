@@ -44,13 +44,13 @@ Welkom bij ZeroPlay ("wij," "ons," "onze" of "Licentiegever"). Door toegang te k
 
 5.1. Sommige van onze Apps kunnen automatisch verlengbare abonnementsdiensten ("Abonnementen") aanbieden. Wanneer u ervoor kiest een Abonnement aan te schaffen in een van onze Apps, worden de specifieke abonnementsnaam, duur en prijs duidelijk weergegeven in de App voordat u de aankoop bevestigt.
 
-5.2. Betaling wordt in rekening gebracht op uw Apple ID-account bij bevestiging van de aankoop.
+5.2. Betaling wordt in rekening gebracht op uw app store-account bij bevestiging van de aankoop.
 
 5.3. Abonnementen worden automatisch verlengd tenzij automatische verlenging ten minste 24 uur voor het einde van de huidige periode wordt uitgeschakeld.
 
 5.4. Uw account wordt binnen 24 uur voor het einde van de huidige periode belast voor verlenging.
 
-5.5. U kunt uw Abonnement op elk moment beheren en annuleren door na aankoop naar uw accountinstellingen in de App Store te gaan.
+5.5. U kunt uw Abonnement op elk moment beheren en annuleren door na aankoop naar uw accountinstellingen in de app store te gaan.
 
 5.6. Elk ongebruikt deel van een gratis proefperiode (indien aangeboden) vervalt wanneer u een Abonnement aanschaft.
 
@@ -117,55 +117,33 @@ Welkom bij ZeroPlay ("wij," "ons," "onze" of "Licentiegever"). Door toegang te k
 
 **IN GEEN GEVAL ZAL ONZE TOTALE AANSPRAKELIJKHEID JEGENS U VOOR ALLE SCHADE (ANDERS DAN WAT MOGELIJK VEREIST IS DOOR TOEPASSELIJK RECHT IN GEVALLEN VAN PERSOONLIJK LETSEL) HET BEDRAG VAN VIJFTIG DOLLAR ($50,00) OVERSCHRIJDEN. DE BOVENSTAANDE BEPERKINGEN ZIJN VAN TOEPASSING ZELFS ALS HET BOVENGENOEMDE RECHTSMIDDEL ZIJN ESSENTIËLE DOEL NIET BEREIKT.**
 
-## 13. Exportnaleving
+## 13. Toepasselijk Recht en Geschillenbeslechting
 
-13.1. U mag de Gelicentieerde Applicatie niet gebruiken of exporteren of herexporteren, behalve zoals geautoriseerd door de wetgeving van de Verenigde Staten en de wetten van de jurisdictie waarin de Gelicentieerde Applicatie is verkregen.
+13.1. Deze Overeenkomst wordt beheerst door en geïnterpreteerd in overeenstemming met de wetten van uw land van verblijf, zonder rekening te houden met zijn conflictbepalingen.
 
-13.2. In het bijzonder, maar zonder beperking, mag de Gelicentieerde Applicatie niet worden geëxporteerd of geherexporteerd:
-- Naar een land onder embargo van de VS
-- Naar iemand op de Specially Designated Nationals List van het Amerikaanse Ministerie van Financiën of de Denied Persons List of Entity List van het Amerikaanse Ministerie van Handel
+13.2. Geschillen die voortvloeien uit of verband houden met deze Overeenkomst worden opgelost door middel van te goeder trouw onderhandelingen tussen de partijen. Als het geschil niet door onderhandelingen kan worden opgelost, wordt het voorgelegd aan de bevoegde rechtbanken van uw land van verblijf.
 
-13.3. Door de Gelicentieerde Applicatie te gebruiken, verklaart en garandeert u dat u zich niet in een dergelijk land bevindt of op een dergelijke lijst staat.
+13.3. Voor gebruikers in de Europese Unie kunt u ook recht hebben op het gebruik van het platform voor Onlinegeschillenbeslechting van de Europese Commissie.
 
-13.4. U gaat ook akkoord dat u deze producten niet zult gebruiken voor doeleinden die verboden zijn door de wetgeving van de Verenigde Staten, inclusief, zonder beperking, de ontwikkeling, het ontwerp, de productie of vervaardiging van nucleaire, raket- of chemische of biologische wapens.
+13.4. Niets in deze Overeenkomst heeft invloed op uw wettelijke rechten als consument onder de wetten van uw land van verblijf.
 
-## 14. Rechten van de Amerikaanse Overheid
+## 14. Wijzigingen van de Voorwaarden
 
-14.1. De Gelicentieerde Applicatie en gerelateerde documentatie zijn "Commerciële Artikelen", zoals die term is gedefinieerd in 48 C.F.R. §2.101, bestaande uit "Commerciële Computersoftware" en "Documentatie van Commerciële Computersoftware", zoals die termen worden gebruikt in 48 C.F.R. §12.212 of 48 C.F.R. §227.7202, naargelang van toepassing.
+14.1. Wij kunnen deze Voorwaarden op elk moment wijzigen. Voortgezet gebruik van de Diensten vormt acceptatie van gewijzigde Voorwaarden.
 
-14.2. In overeenstemming met 48 C.F.R. §12.212 of 48 C.F.R. §227.7202-1 tot en met 227.7202-4, naargelang van toepassing, worden de Commerciële Computersoftware en Documentatie van Commerciële Computersoftware gelicentieerd aan eindgebruikers van de Amerikaanse overheid (a) alleen als Commerciële Artikelen en (b) alleen met die rechten die worden verleend aan alle andere eindgebruikers volgens de hierin vervatte voorwaarden.
+14.2. Wij zullen redelijke inspanningen leveren om u op de hoogte te stellen van materiële wijzigingen in deze Voorwaarden via de Diensten of op andere wijze.
 
-14.3. Niet-gepubliceerde rechten zijn voorbehouden onder de auteursrechtwetten van de Verenigde Staten.
+## 15. Algemene Bepalingen
 
-## 15. Toepasselijk Recht en Geschillenbeslechting
+15.1. **Volledige Overeenkomst.** Deze Voorwaarden vormen de volledige overeenkomst tussen u en ons met betrekking tot het gebruik van de Diensten.
 
-15.1. Deze Overeenkomst en de relatie tussen u en ons worden beheerst door de wetten van de staat Californië, Verenigde Staten, met uitsluiting van haar bepalingen inzake wetsconflicten.
+15.2. **Deelbaarheid.** Als een bepaling van deze Voorwaarden ongeldig of niet-afdwingbaar wordt bevonden, wordt die bepaling verwijderd en blijven de overige bepalingen van kracht.
 
-15.2. U en wij stemmen ermee in ons te onderwerpen aan de persoonlijke en exclusieve jurisdictie van de rechtbanken in Santa Clara County, Californië, om geschillen of claims voortvloeiend uit deze Overeenkomst op te lossen.
+15.3. **Afstand van Recht.** Ons verzuim om een recht of bepaling van deze Voorwaarden af te dwingen, wordt niet beschouwd als een afstand van die rechten.
 
-15.3. **Voor gebruikers buiten de Verenigde Staten:** Als (a) u geen Amerikaans staatsburger bent; (b) u niet in de VS woont; (c) u geen toegang heeft tot de Dienst vanuit de VS; en (d) u staatsburger bent van een van de hieronder genoemde landen, gaat u hierbij akkoord dat geschillen of claims voortvloeiend uit deze Overeenkomst worden beheerst door het hieronder uiteengezette toepasselijke recht, zonder rekening te houden met bepalingen inzake wetsconflicten, en u onderwerpt zich hierbij onherroepelijk aan de niet-exclusieve jurisdictie van de rechtbanken in de hieronder genoemde staat, provincie of land waarvan het recht van toepassing is:
+15.4. **Overdracht.** U mag deze Voorwaarden niet overdragen of overdragen zonder onze voorafgaande schriftelijke toestemming. Wij kunnen onze rechten en verplichtingen onder deze Voorwaarden zonder beperking overdragen.
 
-- **Europese Unie, Zwitserland, Noorwegen of IJsland:** Het toepasselijke recht en forum zijn de wetten en rechtbanken van uw gebruikelijke verblijfplaats.
-
-15.4. Specifiek uitgesloten van toepassing op deze Overeenkomst is de wet bekend als het Verdrag van de Verenigde Naties inzake internationale koopovereenkomsten betreffende roerende zaken.
-
-## 16. Wijzigingen van de Voorwaarden
-
-16.1. Wij kunnen deze Voorwaarden op elk moment wijzigen. Voortgezet gebruik van de Diensten vormt acceptatie van gewijzigde Voorwaarden.
-
-16.2. Wij zullen redelijke inspanningen leveren om u op de hoogte te stellen van materiële wijzigingen in deze Voorwaarden via de Diensten of op andere wijze.
-
-## 17. Algemene Bepalingen
-
-17.1. **Volledige Overeenkomst.** Deze Voorwaarden vormen de volledige overeenkomst tussen u en ons met betrekking tot het gebruik van de Diensten.
-
-17.2. **Deelbaarheid.** Als een bepaling van deze Voorwaarden ongeldig of niet-afdwingbaar wordt bevonden, wordt die bepaling verwijderd en blijven de overige bepalingen van kracht.
-
-17.3. **Afstand van Recht.** Ons verzuim om een recht of bepaling van deze Voorwaarden af te dwingen, wordt niet beschouwd als een afstand van die rechten.
-
-17.4. **Overdracht.** U mag deze Voorwaarden niet overdragen of overdragen zonder onze voorafgaande schriftelijke toestemming. Wij kunnen onze rechten en verplichtingen onder deze Voorwaarden zonder beperking overdragen.
-
-## 18. Contact Opnemen
+## 16. Contact Opnemen
 
 Voor vragen over deze Servicevoorwaarden kunt u contact met ons opnemen via: [support@zeroplay.io](mailto:support@zeroplay.io).
 

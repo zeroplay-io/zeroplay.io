@@ -44,13 +44,13 @@ Velkommen til ZeroPlay ("vi," "oss," "vår," eller "Lisensgiveren"). Ved å få 
 
 5.1. Noen av våre apper kan tilby automatisk fornybare abonnementstjenester ("Abonnementer"). Når du velger å kjøpe et Abonnement i noen av våre apper, vil det spesifikke abonnementsnavnet, varigheten og prisen tydelig vises i appen før du bekrefter kjøpet.
 
-5.2. Betaling belastes Apple ID-kontoen din ved bekreftelse av kjøpet.
+5.2. Betaling belastes app-butikk-kontoen din ved bekreftelse av kjøpet.
 
 5.3. Abonnementer fornyes automatisk med mindre automatisk fornyelse slås av minst 24 timer før slutten av gjeldende periode.
 
 5.4. Kontoen din belastes for fornyelse innen 24 timer før slutten av gjeldende periode.
 
-5.5. Du kan administrere og kansellere Abonnementet ditt når som helst ved å gå til kontoinnstillingene i App Store etter kjøpet.
+5.5. Du kan administrere og kansellere Abonnementet ditt når som helst ved å gå til kontoinnstillingene i app-butikken etter kjøpet.
 
 5.6. Eventuell ubrukt del av en gratis prøveperiode (hvis tilbudt) vil bli tapt når du kjøper et Abonnement.
 
@@ -117,55 +117,33 @@ Velkommen til ZeroPlay ("vi," "oss," "vår," eller "Lisensgiveren"). Ved å få 
 
 **UNDER INGEN OMSTENDIGHETER SKAL VÅRT TOTALE ANSVAR OVERFOR DEG FOR ALLE SKADER (ANNET ENN DET SOM KAN VÆRE PÅKREVD AV GJELDENDE LOV I SAKER SOM INVOLVERER PERSONSKADE) OVERSTIGE BELØPET PÅ FEMTI DOLLAR ($50.00). DE FOREGÅENDE BEGRENSNINGENE VIL GJELDE SELV OM DET OVENNEVNTE BOTEMIDDELET MISLYKKES I SITT VESENTLIGE FORMÅL.**
 
-## 13. Eksportoverholdelse
+## 13. Gjeldende Lov og Tvisteløsning
 
-13.1. Du kan ikke bruke eller på annen måte eksportere eller re-eksportere den Lisensierte Applikasjonen bortsett fra det som er autorisert av USAs lover og lovene i jurisdiksjonen der den Lisensierte Applikasjonen ble anskaffet.
+13.1. Denne Avtalen skal styres av og tolkes i samsvar med lovene i ditt bostedsland, uten hensyn til lovvalgsbestemmelser.
 
-13.2. Spesielt, men uten begrensning, kan den Lisensierte Applikasjonen ikke eksporteres eller re-eksporteres:
-- Til noen USA-embargoerte land
-- Til noen på USAs finansdepartements liste over spesielt utpekte statsborgere eller USAs handelsdepartements liste over nektet personer eller enheter
+13.2. Eventuelle tvister som oppstår fra eller relaterer til denne Avtalen skal løses gjennom forhandlinger i god tro mellom partene. Hvis tvisten ikke kan løses gjennom forhandlinger, skal den fremlegges for de kompetente domstolene i ditt bostedsland.
 
-13.3. Ved å bruke den Lisensierte Applikasjonen, representerer og garanterer du at du ikke befinner deg i noe slikt land eller på noen slik liste.
+13.3. For brukere i Den Europeiske Union kan du også ha rett til å bruke den Europeiske Kommisjonens plattform for nettbasert tvisteløsning.
 
-13.4. Du godtar også at du ikke vil bruke disse produktene til noen formål forbudt av USAs lover, inkludert, uten begrensning, utvikling, design, produksjon eller fremstilling av atomvåpen, missiler eller kjemiske eller biologiske våpen.
+13.4. Ingenting i denne Avtalen påvirker dine lovbestemte rettigheter som forbruker i henhold til lovene i ditt bostedsland.
 
-## 14. USAs Regjeringsrettigheter
+## 14. Endringer i Vilkår
 
-14.1. Den Lisensierte Applikasjonen og relatert dokumentasjon er "Kommersielle Varer", som definert i 48 C.F.R. §2.101, bestående av "Kommersiell Dataprogramvare" og "Kommersiell Dataprogramvaredokumentasjon", som disse begrepene brukes i 48 C.F.R. §12.212 eller 48 C.F.R. §227.7202, etter hva som er aktuelt.
+14.1. Vi kan endre disse Vilkårene når som helst. Fortsatt bruk av Tjenestene utgjør aksept av endrede Vilkår.
 
-14.2. I samsvar med 48 C.F.R. §12.212 eller 48 C.F.R. §227.7202-1 til 227.7202-4, etter hva som er aktuelt, blir den Kommersielle Dataprogramvaren og Kommersiell Dataprogramvaredokumentasjon lisensiert til USAs regjeringssluttbrukere (a) kun som Kommersielle Varer og (b) med kun de rettighetene som gis til alle andre sluttbrukere i henhold til vilkårene og betingelsene heri.
+14.2. Vi vil gjøre rimelige anstrengelser for å varsle deg om vesentlige endringer i disse Vilkårene gjennom Tjenestene eller på annen måte.
 
-14.3. Upubliserte rettigheter er reservert under USAs opphavsrettslover.
+## 15. Generelle Bestemmelser
 
-## 15. Gjeldende Lov og Tvisteløsning
+15.1. **Hel Avtale.** Disse Vilkårene utgjør hele avtalen mellom deg og oss angående bruk av Tjenestene.
 
-15.1. Denne Avtalen og forholdet mellom deg og oss skal styres av lovene i staten California, USA, unntatt dens lovvalgbestemmelser.
+15.2. **Delbarhet.** Hvis noen bestemmelse i disse Vilkårene anses for å være ugyldig eller umulig å håndheve, skal en slik bestemmelse strykes og de gjenværende bestemmelsene skal håndheves.
 
-15.2. Du og vi godtar å underkaste oss personlig og eksklusiv jurisdiksjon til domstolene lokalisert innenfor fylket Santa Clara, California, for å løse enhver tvist eller krav som oppstår fra denne Avtalen.
+15.3. **Fraskrivelse.** Vår manglende håndhevelse av noen rettighet eller bestemmelse i disse Vilkårene vil ikke bli ansett som en fraskrivelse av disse rettighetene.
 
-15.3. **For brukere utenfor USA:** Hvis (a) du ikke er en amerikansk statsborger; (b) du ikke bor i USA; (c) du ikke får tilgang til Tjenesten fra USA; og (d) du er statsborger i et av landene identifisert nedenfor, godtar du herved at enhver tvist eller krav som oppstår fra denne Avtalen skal styres av gjeldende lov angitt nedenfor, uten hensyn til eventuelle lovvalgbestemmelser, og du underkaster deg herved ugjenkallelig den ikke-eksklusive jurisdiksjonen til domstolene lokalisert i staten, provinsen eller landet identifisert nedenfor hvis lov styrer:
+15.4. **Overdragelse.** Du kan ikke tildele eller overføre disse Vilkårene uten vårt forutgående skriftlige samtykke. Vi kan tildele våre rettigheter og forpliktelser under disse Vilkårene uten begrensning.
 
-- **Den Europeiske Union, Sveits, Norge eller Island:** Den gjeldende loven og forumet skal være lovene og domstolene i ditt vanlige bosted.
-
-15.4. Spesifikt ekskludert fra anvendelse på denne Avtalen er den loven kjent som FNs konvensjon om internasjonale kjøp av varer.
-
-## 16. Endringer i Vilkår
-
-16.1. Vi kan endre disse Vilkårene når som helst. Fortsatt bruk av Tjenestene utgjør aksept av endrede Vilkår.
-
-16.2. Vi vil gjøre rimelige anstrengelser for å varsle deg om vesentlige endringer i disse Vilkårene gjennom Tjenestene eller på annen måte.
-
-## 17. Generelle Bestemmelser
-
-17.1. **Hel Avtale.** Disse Vilkårene utgjør hele avtalen mellom deg og oss angående bruk av Tjenestene.
-
-17.2. **Delbarhet.** Hvis noen bestemmelse i disse Vilkårene anses for å være ugyldig eller umulig å håndheve, skal en slik bestemmelse strykes og de gjenværende bestemmelsene skal håndheves.
-
-17.3. **Fraskrivelse.** Vår manglende håndhevelse av noen rettighet eller bestemmelse i disse Vilkårene vil ikke bli ansett som en fraskrivelse av disse rettighetene.
-
-17.4. **Overdragelse.** Du kan ikke tildele eller overføre disse Vilkårene uten vårt forutgående skriftlige samtykke. Vi kan tildele våre rettigheter og forpliktelser under disse Vilkårene uten begrensning.
-
-## 18. Kontakt Oss
+## 16. Kontakt Oss
 
 For spørsmål om disse Vilkårene for Bruk, vennligst kontakt oss på: [support@zeroplay.io](mailto:support@zeroplay.io).
 

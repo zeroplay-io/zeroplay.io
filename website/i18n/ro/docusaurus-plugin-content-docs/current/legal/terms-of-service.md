@@ -44,13 +44,13 @@ Bun venit la ZeroPlay ("noi", "noastră", "al nostru" sau "Licențiatorul"). Pri
 
 5.1. Unele dintre aplicațiile noastre pot oferi servicii de abonament cu reînnoire automată ("Abonamente"). Când alegeți să achiziționați un Abonament în oricare dintre aplicațiile noastre, numele specific al abonamentului, durata și prețul vor fi afișate clar în aplicație înainte de a confirma achiziția.
 
-5.2. Plata va fi debitată din contul dvs. Apple ID la confirmarea achiziției.
+5.2. Plata va fi debitată din contul dvs. de magazin de aplicații la confirmarea achiziției.
 
 5.3. Abonamentele se reînnoiesc automat dacă reînnoirea automată nu este dezactivată cu cel puțin 24 de ore înainte de sfârșitul perioadei curente.
 
 5.4. Contul dvs. va fi debitat pentru reînnoire în termen de 24 de ore înainte de sfârșitul perioadei curente.
 
-5.5. Puteți gestiona și anula Abonamentul în orice moment accesând setările contului dvs. din App Store după achiziție.
+5.5. Puteți gestiona și anula Abonamentul în orice moment accesând setările contului dvs. din magazinul de aplicații după achiziție.
 
 5.6. Orice parte neutilizată a unei perioade de probă gratuită (dacă este oferită) va fi pierdută când achiziționați un Abonament.
 
@@ -117,55 +117,33 @@ Bun venit la ZeroPlay ("noi", "noastră", "al nostru" sau "Licențiatorul"). Pri
 
 **ÎN NICIUN CAZ RĂSPUNDEREA NOASTRĂ TOTALĂ FAȚĂ DE DVS. PENTRU TOATE DAUNELE (ALTELE DECÂT CELE CARE POT FI CERUTE DE LEGEA APLICABILĂ ÎN CAZURI DE VĂTĂMARE CORPORALĂ) NU VA DEPĂȘI SUMA DE CINCIZECI DE DOLARI ($50.00). LIMITĂRILE ANTERIOARE SE VOR APLICA CHIAR DACĂ REMEDIUL MENȚIONAT MAI SUS EȘUEAZĂ ÎN SCOPUL SĂU ESENȚIAL.**
 
-## 13. Conformitatea cu Reglementările de Export
+## 13. Legea Aplicabilă și Soluționarea Disputelor
 
-13.1. Nu puteți utiliza sau exporta sau reexporta în alt mod Aplicația Licențiată, cu excepția celor autorizate de legea Statelor Unite și de legile jurisdicției în care a fost obținută Aplicația Licențiată.
+13.1. Acest Acord va fi guvernat și interpretat în conformitate cu legile țării dvs. de reședință, fără a ține cont de dispozițiile sale privind conflictul de legi.
 
-13.2. În special, dar fără limitare, Aplicația Licențiată nu poate fi exportată sau reexportată:
-- În nicio țară cu embargou din partea SUA
-- Către oricine de pe Lista Resortisanților Special Desemnați a Departamentului de Trezorerie al SUA sau pe Lista Persoanelor Refuzate sau Lista Entităților a Departamentului de Comerț al SUA
+13.2. Orice dispută rezultată din sau legată de acest Acord va fi rezolvată prin negocieri cu bună-credință între părți. Dacă disputa nu poate fi rezolvată prin negocieri, aceasta va fi supusă instanțelor competente din țara dvs. de reședință.
 
-13.3. Prin utilizarea Aplicației Licențiate, declarați și garantați că nu vă aflați într-o astfel de țară sau pe o astfel de listă.
+13.3. Pentru utilizatorii din Uniunea Europeană, este posibil să aveți, de asemenea, dreptul de a utiliza platforma de soluționare online a disputelor a Comisiei Europene.
 
-13.4. De asemenea, sunteți de acord că nu veți utiliza aceste produse în niciun scop interzis de legile Statelor Unite, inclusiv, fără limitare, dezvoltarea, proiectarea, fabricarea sau producția de arme nucleare, cu rachete sau chimice sau biologice.
+13.4. Nimic în acest Acord nu afectează drepturile dvs. statutare ca consumator în conformitate cu legile țării dvs. de reședință.
 
-## 14. Drepturile Guvernului SUA
+## 14. Modificări ale Termenilor
 
-14.1. Aplicația Licențiată și documentația conexă sunt "Articole Comerciale", conform definiției din 48 C.F.R. §2.101, constând din "Software Comercial pentru Computere" și "Documentație Software Comercială pentru Computere", astfel cum sunt utilizați acești termeni în 48 C.F.R. §12.212 sau 48 C.F.R. §227.7202, după caz.
+14.1. Putem modifica acești Termeni în orice moment. Utilizarea continuă a Serviciilor constituie acceptarea Termenilor modificați.
 
-14.2. În conformitate cu 48 C.F.R. §12.212 sau 48 C.F.R. §227.7202-1 până la 227.7202-4, după caz, Software-ul Comercial pentru Computere și Documentația Software Comercială pentru Computere sunt licențiate utilizatorilor finali ai guvernului SUA (a) numai ca Articole Comerciale și (b) doar cu acele drepturi acordate tuturor celorlalți utilizatori finali în conformitate cu termenii și condițiile de aici.
+14.2. Vom depune eforturi rezonabile pentru a vă notifica despre modificările materiale ale acestor Termeni prin Servicii sau prin alte mijloace.
 
-14.3. Drepturile nepublicate sunt rezervate în conformitate cu legile privind drepturile de autor ale Statelor Unite.
+## 15. Dispoziții Generale
 
-## 15. Legea Aplicabilă și Soluționarea Disputelor
+15.1. **Acord Complet.** Acești Termeni constituie acordul complet între dvs. și noi cu privire la utilizarea Serviciilor.
 
-15.1. Acest Acord și relația dintre dvs. și noi vor fi guvernate de legile statului California, Statele Unite, excluzând dispozițiile sale privind conflictul de legi.
+15.2. **Separabilitate.** Dacă orice dispoziție a acestor Termeni este considerată invalidă sau inaplicabilă, o astfel de dispoziție va fi eliminată, iar dispozițiile rămase vor fi aplicate.
 
-15.2. Dvs. și noi suntem de acord să ne supunem jurisdicției personale și exclusive a instanțelor situate în județul Santa Clara, California, pentru a rezolva orice dispută sau revendicare rezultată din acest Acord.
+15.3. **Renunțare.** Neaplicarea de către noi a oricărui drept sau dispoziție a acestor Termeni nu va fi considerată o renunțare la aceste drepturi.
 
-15.3. **Pentru utilizatorii din afara Statelor Unite:** Dacă (a) nu sunteți cetățean al SUA; (b) nu locuiți în SUA; (c) nu accesați Serviciul din SUA; și (d) sunteți cetățean al uneia dintre țările identificate mai jos, sunteți de acord prin prezenta că orice dispută sau revendicare rezultată din acest Acord va fi guvernată de legea aplicabilă prevăzută mai jos, fără a ține cont de orice dispoziții privind conflictul de legi, și vă supuneți în mod irevocabil prin prezenta jurisdicției neexclusive a instanțelor situate în statul, provincia sau țara identificată mai jos a cărei lege guvernează:
+15.4. **Cesiune.** Nu puteți cesiona sau transfera acești Termeni fără consimțământul nostru scris prealabil. Putem cesiona drepturile și obligațiile noastre conform acestor Termeni fără restricții.
 
-- **Uniunea Europeană, Elveția, Norvegia sau Islanda:** Legea aplicabilă și forumul vor fi legile și instanțele locului dvs. obișnuit de reședință.
-
-15.4. Specific exclusă de la aplicarea acestui Acord este legea cunoscută sub numele de Convenția Națiunilor Unite privind Contractele de Vânzare Internațională de Mărfuri.
-
-## 16. Modificări ale Termenilor
-
-16.1. Putem modifica acești Termeni în orice moment. Utilizarea continuă a Serviciilor constituie acceptarea Termenilor modificați.
-
-16.2. Vom depune eforturi rezonabile pentru a vă notifica despre modificările materiale ale acestor Termeni prin Servicii sau prin alte mijloace.
-
-## 17. Dispoziții Generale
-
-17.1. **Acord Complet.** Acești Termeni constituie acordul complet între dvs. și noi cu privire la utilizarea Serviciilor.
-
-17.2. **Separabilitate.** Dacă orice dispoziție a acestor Termeni este considerată invalidă sau inaplicabilă, o astfel de dispoziție va fi eliminată, iar dispozițiile rămase vor fi aplicate.
-
-17.3. **Renunțare.** Neaplicarea de către noi a oricărui drept sau dispoziție a acestor Termeni nu va fi considerată o renunțare la aceste drepturi.
-
-17.4. **Cesiune.** Nu puteți cesiona sau transfera acești Termeni fără consimțământul nostru scris prealabil. Putem cesiona drepturile și obligațiile noastre conform acestor Termeni fără restricții.
-
-## 18. Contactați-ne
+## 16. Contactați-ne
 
 Pentru întrebări despre acești Termeni și Condiții, vă rugăm să ne contactați la: [support@zeroplay.io](mailto:support@zeroplay.io).
 

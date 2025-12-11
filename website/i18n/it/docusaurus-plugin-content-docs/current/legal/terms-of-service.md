@@ -44,13 +44,13 @@ Benvenuto su ZeroPlay ("noi", "nostro", "nostra" o "Licenziante"). Accedendo o u
 
 5.1. Alcune delle nostre App possono offrire servizi di abbonamento con rinnovo automatico ("Abbonamenti"). Quando scegli di acquistare un Abbonamento in una delle nostre App, il nome specifico dell'abbonamento, la durata e il prezzo saranno chiaramente visualizzati nell'App prima di confermare l'acquisto.
 
-5.2. Il pagamento verrà addebitato sul tuo account Apple ID al momento della conferma dell'acquisto.
+5.2. Il pagamento verrà addebitato sul tuo account dell'app store al momento della conferma dell'acquisto.
 
 5.3. Gli Abbonamenti si rinnovano automaticamente a meno che il rinnovo automatico non venga disattivato almeno 24 ore prima della fine del periodo corrente.
 
 5.4. Il rinnovo verrà addebitato sul tuo account entro 24 ore prima della fine del periodo corrente.
 
-5.5. Puoi gestire e annullare il tuo Abbonamento in qualsiasi momento accedendo alle impostazioni del tuo account sull'App Store dopo l'acquisto.
+5.5. Puoi gestire e annullare il tuo Abbonamento in qualsiasi momento accedendo alle impostazioni del tuo account sull'app store dopo l'acquisto.
 
 5.6. Qualsiasi parte non utilizzata di un periodo di prova gratuito (se offerto) andrà persa quando acquisti un Abbonamento.
 
@@ -103,7 +103,7 @@ Benvenuto su ZeroPlay ("noi", "nostro", "nostra" o "Licenziante"). Accedendo o u
 
 ## 11. Esclusione di Garanzie
 
-**RICONOSCI E ACCETTI ESPRESSAMENTE CHE L'USO DELL'APPLICAZIONE CONCESSA IN LICENZA È A TUO RISCHIO E PERICOLO. NELLA MASSIMA MISURA CONSENTITA DALLA LEGGE APPLICABILE, L'APPLICAZIONE CONCESSA IN LICENZA E QUALSIASI SERVIZIO ESEGUITO O FORNITO DALL'APPLICAZIONE CONCESSA IN LICENZA SONO FORNITI "COSÌ COME SONO" E "COME DISPONIBILI", CON TUTTI I DIFETTI E SENZA GARANZIA DI ALCUN TIPO, E NOI ESCLUDIAMO TUTTE LE GARANZIE E CONDIZIONI RISPETTO ALL'APPLICAZIONE CONCESSA IN LICENZA E A QUALSIASI SERVIZIO, SIA ESPRESSE, IMPLICITE O LEGALI, INCLUSE, MA NON LIMITATE A, LE GARANZIE E/O CONDIZIONI IMPLICITE DI COMMERCIABILITÀ, DI QUALITÀ SODDISFACENTE, DI IDONEITÀ PER UN PARTICOLARE SCOPO, DI ACCURATEZZA, DI GODIMENTO PACIFICO E DI NON VIOLAZIONE DI DIRITTI DI TERZE PARTI.**
+**RICONOSCI E ACCETTI ESPRESSAMENTE CHE L'USO DELL'APPLICAZIONE CONCESSA IN LICENZA È A TUO RISCHIO E PERICOLO. NELLA MASSIMA MISURA CONSENTITA DALLA LEGGE APPLICABILE, L'APPLICAZIONE CONCESSA IN LICENZA E QUALSIASI SERVIZIO ESEGUITO O FORNITO DALL'APPLICAZIONE CONCESSA IN LICENZA SONO FORNITI "COSÌ COME SONO" E "COME DISPONIBILI", CON TUTTI I DIFETTI E SENZA GARANZIA DI ALCUN TIPO, E NOI ESCLUDIAMO TUTTE LE GARANZIE E CONDIZIONI RISPETTO ALL'APPLICAZIONE CONCESSA IN LICENZA E A QUALSIASI SERVIZIO, SIA ESPRESSE, IMPLICITE O LEGALI, INCLUSE, MA NON LIMITATE A, LE GARANZIE E/O CONDIZIONI IMPLICITE DI COMMERCIABILITÀ, DI QUALITÀ SODDISFACENTE, DI IDONEITÀ PER UN PARTICULAR SCOPO, DI ACCURATEZZA, DI GODIMENTO PACIFICO E DI NON VIOLAZIONE DI DIRITTI DI TERZE PARTI.**
 
 **NESSUNA INFORMAZIONE O CONSIGLIO ORALE O SCRITTO FORNITO DA NOI O DAL NOSTRO RAPPRESENTANTE AUTORIZZATO CREERÀ UNA GARANZIA. SE L'APPLICAZIONE CONCESSA IN LICENZA O I SERVIZI SI RIVELANO DIFETTOSI, ASSUMI L'INTERO COSTO DI TUTTA LA MANUTENZIONE, RIPARAZIONE O CORREZIONE NECESSARIA.**
 
@@ -117,55 +117,33 @@ Benvenuto su ZeroPlay ("noi", "nostro", "nostra" o "Licenziante"). Accedendo o u
 
 **IN NESSUN CASO LA NOSTRA RESPONSABILITÀ TOTALE NEI TUOI CONFRONTI PER TUTTI I DANNI (DIVERSI DA QUANTO POSSA ESSERE RICHIESTO DALLA LEGGE APPLICABILE IN CASI DI LESIONI PERSONALI) SUPERERÀ L'IMPORTO DI CINQUANTA DOLLARI ($50,00). LE LIMITAZIONI PRECEDENTI SI APPLICHERANNO ANCHE SE IL RIMEDIO SOPRA INDICATO NON RAGGIUNGE IL SUO SCOPO ESSENZIALE.**
 
-## 13. Conformità all'Esportazione
+## 13. Legge Applicabile e Risoluzione delle Controversie
 
-13.1. Non puoi utilizzare o esportare o riesportare l'Applicazione Concessa in Licenza se non come autorizzato dalla legge degli Stati Uniti e dalle leggi della giurisdizione in cui è stata ottenuta l'Applicazione Concessa in Licenza.
+13.1. Questo Accordo sarà regolato e interpretato in conformità con le leggi del tuo paese di residenza, senza riguardo alle sue disposizioni sui conflitti di legge.
 
-13.2. In particolare, ma senza limitazione, l'Applicazione Concessa in Licenza non può essere esportata o riesportata:
-- In nessun paese soggetto a embargo degli Stati Uniti
-- A chiunque sia nell'Elenco dei cittadini appositamente designati del Dipartimento del Tesoro degli Stati Uniti o nell'Elenco delle persone negate o nell'Elenco delle entità del Dipartimento del Commercio degli Stati Uniti
+13.2. Qualsiasi controversia derivante da o relativa a questo Accordo sarà risolta attraverso negoziazioni in buona fede tra le parti. Se la controversia non può essere risolta attraverso negoziazioni, sarà sottoposta ai tribunali competenti del tuo paese di residenza.
 
-13.3. Utilizzando l'Applicazione Concessa in Licenza, dichiari e garantisci di non trovarti in alcun paese di questo tipo né in alcun elenco di questo tipo.
+13.3. Per gli utenti nell'Unione Europea, potresti anche avere il diritto di utilizzare la piattaforma di risoluzione delle controversie online della Commissione Europea.
 
-13.4. Accetti inoltre di non utilizzare questi prodotti per scopi vietati dalla legge degli Stati Uniti, inclusi, senza limitazione, lo sviluppo, la progettazione, la fabbricazione o la produzione di armi nucleari, missilistiche o chimiche o biologiche.
+13.4. Nulla in questo Accordo influirà sui tuoi diritti legali come consumatore ai sensi delle leggi del tuo paese di residenza.
 
-## 14. Diritti del Governo degli Stati Uniti
+## 14. Modifiche ai Termini
 
-14.1. L'Applicazione Concessa in Licenza e la documentazione correlata sono "Articoli Commerciali", come definito in 48 C.F.R. §2.101, consistenti in "Software Informatico Commerciale" e "Documentazione di Software Informatico Commerciale", come tali termini sono utilizzati in 48 C.F.R. §12.212 o 48 C.F.R. §227.7202, a seconda dei casi.
+14.1. Possiamo modificare questi Termini in qualsiasi momento. L'uso continuato dei Servizi costituisce l'accettazione dei Termini modificati.
 
-14.2. In conformità con 48 C.F.R. §12.212 o 48 C.F.R. §227.7202-1 fino a 227.7202-4, a seconda dei casi, il Software Informatico Commerciale e la Documentazione di Software Informatico Commerciale sono concessi in licenza agli utenti finali del Governo degli Stati Uniti (a) solo come Articoli Commerciali e (b) solo con quei diritti concessi a tutti gli altri utenti finali ai sensi dei termini e delle condizioni qui contenuti.
+14.2. Faremo sforzi ragionevoli per informarti di modifiche sostanziali a questi Termini tramite i Servizi o con altri mezzi.
 
-14.3. I diritti non pubblicati sono riservati ai sensi delle leggi sul copyright degli Stati Uniti.
+## 15. Disposizioni Generali
 
-## 15. Legge Applicabile e Risoluzione delle Controversie
+15.1. **Accordo Completo.** Questi Termini costituiscono l'accordo completo tra te e noi riguardo all'uso dei Servizi.
 
-15.1. Questo Accordo e il rapporto tra te e noi saranno regolati dalle leggi dello Stato della California, Stati Uniti, escludendo le sue disposizioni sui conflitti di legge.
+15.2. **Separabilità.** Se una qualsiasi disposizione di questi Termini viene ritenuta invalida o inapplicabile, tale disposizione sarà eliminata e le disposizioni rimanenti saranno applicate.
 
-15.2. Tu e noi accettiamo di sottometterci alla giurisdizione personale ed esclusiva dei tribunali situati nella contea di Santa Clara, California, per risolvere qualsiasi controversia o reclamo derivante da questo Accordo.
+15.3. **Rinuncia.** Il nostro mancato esercizio di qualsiasi diritto o disposizione di questi Termini non sarà considerato una rinuncia a tali diritti.
 
-15.3. **Per gli utenti al di fuori degli Stati Uniti:** Se (a) non sei un cittadino degli Stati Uniti; (b) non risiedi negli Stati Uniti; (c) non accedi al Servizio dagli Stati Uniti; e (d) sei cittadino di uno dei paesi identificati di seguito, con la presente accetti che qualsiasi controversia o reclamo derivante da questo Accordo sarà regolato dalla legge applicabile di seguito indicata, senza riguardo a qualsiasi disposizione sui conflitti di legge, e con la presente ti sottometti irrevocabilmente alla giurisdizione non esclusiva dei tribunali situati nello stato, provincia o paese identificato di seguito la cui legge governa:
+15.4. **Cessione.** Non puoi cedere o trasferire questi Termini senza il nostro previo consenso scritto. Possiamo cedere i nostri diritti e obblighi ai sensi di questi Termini senza restrizioni.
 
-- **Unione Europea, Svizzera, Norvegia o Islanda:** La legge applicabile e il foro saranno le leggi e i tribunali del tuo luogo abituale di residenza.
-
-15.4. È specificamente esclusa dall'applicazione a questo Accordo la legge nota come Convenzione delle Nazioni Unite sui contratti di vendita internazionale di merci.
-
-## 16. Modifiche ai Termini
-
-16.1. Possiamo modificare questi Termini in qualsiasi momento. L'uso continuato dei Servizi costituisce l'accettazione dei Termini modificati.
-
-16.2. Faremo sforzi ragionevoli per informarti di modifiche sostanziali a questi Termini tramite i Servizi o con altri mezzi.
-
-## 17. Disposizioni Generali
-
-17.1. **Accordo Completo.** Questi Termini costituiscono l'accordo completo tra te e noi riguardo all'uso dei Servizi.
-
-17.2. **Separabilità.** Se una qualsiasi disposizione di questi Termini viene ritenuta invalida o inapplicabile, tale disposizione sarà eliminata e le disposizioni rimanenti saranno applicate.
-
-17.3. **Rinuncia.** Il nostro mancato esercizio di qualsiasi diritto o disposizione di questi Termini non sarà considerato una rinuncia a tali diritti.
-
-17.4. **Cessione.** Non puoi cedere o trasferire questi Termini senza il nostro previo consenso scritto. Possiamo cedere i nostri diritti e obblighi ai sensi di questi Termini senza restrizioni.
-
-## 18. Contattaci
+## 16. Contattaci
 
 Per domande su questi Termini di Servizio, contattaci all'indirizzo: [support@zeroplay.io](mailto:support@zeroplay.io).
 
