@@ -40,7 +40,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
       })
     : translate({
         id: "game.button.preorder",
-        message: "预约",
+        message: "Pre-order",
         description: "Label for the pre-order button for unreleased games",
       });
   const downloadAriaLabel = isReleased
