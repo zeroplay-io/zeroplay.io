@@ -3,6 +3,7 @@ import backgammonTranslations from "@site/src/data/translations/backgammon.json"
 import solitaireTranslations from "@site/src/data/translations/solitaire.json";
 import rubikTranslations from "@site/src/data/translations/rubik.json";
 import sudokuTranslations from "@site/src/data/translations/sudoku.json";
+import minesweeperTranslations from "@site/src/data/translations/minesweeper.json";
 
 export interface GameTranslations {
   title?: string;
@@ -42,6 +43,7 @@ const translationsMap: Record<string, Record<string, GameTranslations>> = {
   solitaire: solitaireTranslations,
   rubik: rubikTranslations,
   sudoku: sudokuTranslations,
+  minesweeper: minesweeperTranslations,
 };
 
 /**

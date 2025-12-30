@@ -122,7 +122,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
                 title={downloadLabel}
                 aria-label={downloadAriaLabel}
               >
-                <Translate id="game.button.preorder">预约</Translate>
+                <Translate id="game.button.preorder">Pre-order</Translate>
               </span>
             ) : null}
           </div>

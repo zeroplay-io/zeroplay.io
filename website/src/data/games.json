@@ -97,6 +97,26 @@
 				"enabled": false
 			},
 			"released": false
+		},
+		{
+			"id": "minesweeper",
+			"icon": "https://dl.zeroplay.cc/metadata/minesweeper/icon.png",
+			"banner": "https://dl.zeroplay.cc/metadata/minesweeper/banner.jpg",
+			"videoUrl": "https://dl.zeroplay.cc/metadata/minesweeper/preview%400.5x.mp4",
+			"posterUrl": "https://dl.zeroplay.cc/metadata/minesweeper/poster.jpg",
+			"screenshots": [
+				"https://dl.zeroplay.cc/metadata/minesweeper/screenshots/01.jpg",
+				"https://dl.zeroplay.cc/metadata/minesweeper/screenshots/02.jpg",
+				"https://dl.zeroplay.cc/metadata/minesweeper/screenshots/03.jpg",
+				"https://dl.zeroplay.cc/metadata/minesweeper/screenshots/04.jpg",
+				"https://dl.zeroplay.cc/metadata/minesweeper/screenshots/05.jpg"
+			],
+			"orientation": "portrait",
+			"stores": {},
+			"socialMedia": {
+				"enabled": false
+			},
+			"released": false
 		}
 	]
 }
