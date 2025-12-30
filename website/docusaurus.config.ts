@@ -13,6 +13,7 @@ const COPYRIGHT = `Copyright © ${CURRENT_YEAR} ZeroPlay Ltd. (成都零游网�
 const customFields = {
   version: "0.0.1",
   repo: REPO,
+  email: "support@zeroplay.io",
 };
 
 const I18N_CONFIG: Config["i18n"] = {
@@ -174,6 +175,16 @@ const config: Config = {
           to: "/games",
           position: "left",
           label: "Games",
+        },
+        {
+          to: "/about",
+          position: "left",
+          label: "About",
+        },
+        {
+          to: "/contact",
+          position: "left",
+          label: "Contact",
         },
         {
           type: "doc",

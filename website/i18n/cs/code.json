@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Stáhnout"
   },
+  "game.button.get.aria": {
+    "message": "Stáhnout {title}"
+  },
+  "game.button.preorder": {
+    "message": "Předobjednat"
+  },
+  "game.button.preorder.aria": {
+    "message": "Předobjednat {title}"
+  },
+  "about.page.title": {
+    "message": "O nás"
+  },
+  "about.page.description": {
+    "message": "Dozvědět se více o ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "O ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Začni od nuly, hraj do nekonečna"
+  },
+  "about.mission.title": {
+    "message": "Naše mise"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay se věnuje tvorbě výjimečných casualových logických her, které přinášejí radost a mentální stimulaci hráčům po celém světě. Věříme, že skvělé hry by měly být přístupné všem a nabízet chvíle relaxace a intelektuální výzvy ve stejné míře."
+  },
+  "about.philosophy.title": {
+    "message": "Naše filozofie"
+  },
+  "about.philosophy.text": {
+    "message": "Zavazujeme se k férovosti a transparentnosti ve všem, co děláme. Naše hry obsahují prokazatelně férové systémy, které zajišťují každému hráči stejnou příležitost uspět. Kombinujeme klasickou herní mechaniku s moderními designovými principy, abychom vytvořili zážitky, které jsou současně nadčasové i svěží."
+  },
+  "about.games.title": {
+    "message": "Naše hry"
+  },
+  "about.games.text": {
+    "message": "Od strategických deskových her jako Backgammon po relaxační karetní hry jako Solitaire a hlavolamy jako Rubikova kostka, naše portfolio pokrývá širokou škálu casualových herních zážitků. Každá hra je vytvořena s důrazem na detail, krásnou vizuální stránku a hladkou hratelnost, která bezproblémově funguje na všech vašich zařízeních."
+  },
+  "about.global.title": {
+    "message": "Globální komunita"
+  },
+  "about.global.text": {
+    "message": "S podporou více než 30 jazyků a hráčů z každého koutu světa hry ZeroPlay spojují lidi prostřednictvím univerzálního jazyka hry. Připojte se k milionům hráčů, kteří udělali z našich her součást své denní rutiny."
+  },
+  "contact.page.title": {
+    "message": "Kontaktujte nás"
+  },
+  "contact.page.description": {
+    "message": "Spojte se s ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Kontaktujte nás"
+  },
+  "contact.hero.tagline": {
+    "message": "Rádi od vás uslyšíme"
+  },
+  "contact.email.title": {
+    "message": "E-mail"
+  },
+  "contact.email.description": {
+    "message": "Pro obecné dotazy, podporu nebo zpětnou vazbu nás prosím kontaktujte e-mailem."
+  },
+  "contact.response.title": {
+    "message": "Doba odezvy"
+  },
+  "contact.response.text": {
+    "message": "Na všechny dotazy obvykle odpovídáme do 1-2 pracovních dnů. Pro naléhavé záležitosti související s problémy s účtem nebo nákupy v aplikaci prosím uveďte své ID hráče ve zprávě pro rychlejší pomoc."
+  },
+  "contact.feedback.title": {
+    "message": "Zpětná vazba vítána"
+  },
+  "contact.feedback.text": {
+    "message": "Vaše zpětná vazba nám pomáhá vylepšovat naše hry. Ať už máte návrhy na nové funkce, našli jste chybu, nebo se jen chcete podělit o svůj zážitek, vážíme si toho, když od našich hráčů slyšíme."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

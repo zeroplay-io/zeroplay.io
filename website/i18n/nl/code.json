@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Downloaden"
   },
+  "game.button.get.aria": {
+    "message": "{title} downloaden"
+  },
+  "game.button.preorder": {
+    "message": "Voorbestellen"
+  },
+  "game.button.preorder.aria": {
+    "message": "{title} voorbestellen"
+  },
+  "about.page.title": {
+    "message": "Over Ons"
+  },
+  "about.page.description": {
+    "message": "Meer informatie over ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Over ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Vanaf nul, games oneindig"
+  },
+  "about.mission.title": {
+    "message": "Onze Missie"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay zet zich in voor het creëren van uitzonderlijke casual puzzelgames die vreugde en mentale stimulatie brengen aan spelers wereldwijd. Wij geloven dat geweldige games toegankelijk moeten zijn voor iedereen, en momenten van ontspanning en intellectuele uitdaging in gelijke mate moeten bieden."
+  },
+  "about.philosophy.title": {
+    "message": "Onze Filosofie"
+  },
+  "about.philosophy.text": {
+    "message": "Wij zijn toegewijd aan eerlijkheid en transparantie in alles wat we doen. Onze games hebben aantoonbaar eerlijke systemen, die elke speler een gelijke kans op succes garanderen. We combineren klassieke gameplay-mechanica met moderne ontwerpprincipes om ervaringen te creëren die zowel tijdloos als fris zijn."
+  },
+  "about.games.title": {
+    "message": "Onze Games"
+  },
+  "about.games.text": {
+    "message": "Van strategische bordspellen zoals Backgammon tot ontspannende kaartspellen zoals Patience, en hersenkrakende puzzels zoals Rubik's Cube, ons portfolio omvat een breed scala aan casual game-ervaringen. Elk spel is met aandacht voor detail, prachtige visuele elementen en vloeiende gameplay die naadloos werkt op al je apparaten."
+  },
+  "about.global.title": {
+    "message": "Wereldwijde Gemeenschap"
+  },
+  "about.global.text": {
+    "message": "Met ondersteuning voor meer dan 30 talen en spelers uit elke hoek van de wereld, brengen ZeroPlay-games mensen samen door de universele taal van spel. Sluit je aan bij miljoenen spelers die onze games onderdeel van hun dagelijkse routine hebben gemaakt."
+  },
+  "contact.page.title": {
+    "message": "Contact"
+  },
+  "contact.page.description": {
+    "message": "Neem contact op met ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Contact"
+  },
+  "contact.hero.tagline": {
+    "message": "We horen graag van je"
+  },
+  "contact.email.title": {
+    "message": "E-mail"
+  },
+  "contact.email.description": {
+    "message": "Voor algemene vragen, ondersteuning of feedback, neem contact met ons op via e-mail."
+  },
+  "contact.response.title": {
+    "message": "Reactietijd"
+  },
+  "contact.response.text": {
+    "message": "We reageren doorgaans binnen 1-2 werkdagen op alle vragen. Voor urgente zaken met betrekking tot accountproblemen of in-app aankopen, vermeld dan je speler-ID in je bericht voor snellere hulp."
+  },
+  "contact.feedback.title": {
+    "message": "Feedback Welkom"
+  },
+  "contact.feedback.text": {
+    "message": "Jouw feedback helpt ons onze games te verbeteren. Of je nu suggesties hebt voor nieuwe functies, een bug hebt gevonden of gewoon je ervaring wilt delen, we waarderen het om van onze spelers te horen."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

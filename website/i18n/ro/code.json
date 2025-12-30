@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Descarcă"
   },
+  "game.button.get.aria": {
+    "message": "Descarcă {title}"
+  },
+  "game.button.preorder": {
+    "message": "Precomandă"
+  },
+  "game.button.preorder.aria": {
+    "message": "Precomandă {title}"
+  },
+  "about.page.title": {
+    "message": "Despre noi"
+  },
+  "about.page.description": {
+    "message": "Aflați mai multe despre ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Despre ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Începe de la zero, joacă la infinit"
+  },
+  "about.mission.title": {
+    "message": "Misiunea noastră"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay este dedicat creării de jocuri puzzle casual excepționale care aduc bucurie și stimulare mentală jucătorilor din întreaga lume. Credem că jocurile grozave ar trebui să fie accesibile tuturor, oferind momente de relaxare și provocare intelectuală în măsură egală."
+  },
+  "about.philosophy.title": {
+    "message": "Filosofia noastră"
+  },
+  "about.philosophy.text": {
+    "message": "Suntem angajați față de corectitudine și transparență în tot ceea ce facem. Jocurile noastre prezintă sisteme dovedite corecte, asigurând fiecărui jucător o șansă egală de a reuși. Combinăm mecanica clasică de joc cu principii moderne de design pentru a crea experiențe care sunt atât atemporale, cât și proaspete."
+  },
+  "about.games.title": {
+    "message": "Jocurile noastre"
+  },
+  "about.games.text": {
+    "message": "De la jocuri de masă strategice precum Backgammon la jocuri de cărți relaxante precum Solitaire și puzzle-uri care îți provocă creierul precum Cubul Rubik, portofoliul nostru acoperă o gamă largă de experiențe de joc casual. Fiecare joc este creat cu atenție la detalii, grafică frumoasă și gameplay fluid care funcționează perfect pe toate dispozitivele tale."
+  },
+  "about.global.title": {
+    "message": "Comunitate globală"
+  },
+  "about.global.text": {
+    "message": "Cu suport pentru peste 30 de limbi și jucători din fiecare colț al lumii, jocurile ZeroPlay reunesc oamenii prin limbajul universal al jocului. Alătură-te milioanelor de jucători care au făcut din jocurile noastre parte din rutina lor zilnică."
+  },
+  "contact.page.title": {
+    "message": "Contactează-ne"
+  },
+  "contact.page.description": {
+    "message": "Contactați ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Contactează-ne"
+  },
+  "contact.hero.tagline": {
+    "message": "Ne-ar plăcea să auzim de la tine"
+  },
+  "contact.email.title": {
+    "message": "Email"
+  },
+  "contact.email.description": {
+    "message": "Pentru întrebări generale, asistență sau feedback, vă rugăm să ne contactați prin email."
+  },
+  "contact.response.title": {
+    "message": "Timp de răspuns"
+  },
+  "contact.response.text": {
+    "message": "De obicei, răspundem la toate solicitările în termen de 1-2 zile lucrătoare. Pentru problemele urgente legate de problemele contului sau achizițiile în aplicație, vă rugăm să includeți ID-ul dvs. de jucător în mesaj pentru asistență mai rapidă."
+  },
+  "contact.feedback.title": {
+    "message": "Feedback binevenit"
+  },
+  "contact.feedback.text": {
+    "message": "Feedback-ul tău ne ajută să ne îmbunătățim jocurile. Fie că ai sugestii pentru funcții noi, ai găsit un bug sau vrei doar să îți împărtășești experiența, apreciem să auzim de la jucătorii noștri."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Dapatkan"
   },
+  "game.button.get.aria": {
+    "message": "Dapatkan {title}"
+  },
+  "game.button.preorder": {
+    "message": "Pra-tempah"
+  },
+  "game.button.preorder.aria": {
+    "message": "Pra-tempah {title}"
+  },
+  "about.page.title": {
+    "message": "Tentang Kami"
+  },
+  "about.page.description": {
+    "message": "Ketahui lebih lanjut tentang ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Tentang ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Mulai dari Sifar, Main ke Infiniti"
+  },
+  "about.mission.title": {
+    "message": "Misi Kami"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay berdedikasi untuk mencipta permainan teka-teki kasual yang luar biasa yang membawa kegembiraan dan rangsangan mental kepada pemain di seluruh dunia. Kami percaya bahawa permainan hebat harus dapat diakses oleh semua orang, menawarkan detik-detik kelonggaran dan cabaran intelektual dalam ukuran yang sama."
+  },
+  "about.philosophy.title": {
+    "message": "Falsafah Kami"
+  },
+  "about.philosophy.text": {
+    "message": "Kami komited terhadap keadilan dan ketelusan dalam segala yang kami lakukan. Permainan kami menampilkan sistem yang adil yang dapat dibuktikan, memastikan setiap pemain mempunyai peluang yang sama untuk berjaya. Kami menggabungkan mekanik permainan klasik dengan prinsip reka bentuk moden untuk mencipta pengalaman yang abadi dan segar."
+  },
+  "about.games.title": {
+    "message": "Permainan Kami"
+  },
+  "about.games.text": {
+    "message": "Daripada permainan papan strategik seperti Backgammon kepada permainan kad yang santai seperti Solitaire, dan teka-teki yang mencabar minda seperti Rubik's Cube, portfolio kami merangkumi pelbagai jenis pengalaman permainan kasual. Setiap permainan dibuat dengan perhatian terhadap perincian, visual yang cantik, dan permainan yang lancar yang berfungsi dengan sempurna merentas semua peranti anda."
+  },
+  "about.global.title": {
+    "message": "Komuniti Global"
+  },
+  "about.global.text": {
+    "message": "Dengan sokongan untuk lebih daripada 30 bahasa dan pemain dari setiap sudut dunia, permainan ZeroPlay menyatukan orang ramai melalui bahasa universal permainan. Sertai berjuta-juta pemain yang telah menjadikan permainan kami sebahagian daripada rutin harian mereka."
+  },
+  "contact.page.title": {
+    "message": "Hubungi Kami"
+  },
+  "contact.page.description": {
+    "message": "Berhubung dengan ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Hubungi Kami"
+  },
+  "contact.hero.tagline": {
+    "message": "Kami ingin mendengar daripada anda"
+  },
+  "contact.email.title": {
+    "message": "E-mel"
+  },
+  "contact.email.description": {
+    "message": "Untuk pertanyaan umum, sokongan, atau maklum balas, sila hubungi kami melalui e-mel."
+  },
+  "contact.response.title": {
+    "message": "Masa Respons"
+  },
+  "contact.response.text": {
+    "message": "Kami biasanya membalas semua pertanyaan dalam masa 1-2 hari bekerja. Untuk perkara mendesak yang berkaitan dengan isu akaun atau pembelian dalam aplikasi, sila sertakan ID pemain anda dalam mesej anda untuk bantuan yang lebih cepat."
+  },
+  "contact.feedback.title": {
+    "message": "Maklum Balas Dialu-alukan"
+  },
+  "contact.feedback.text": {
+    "message": "Maklum balas anda membantu kami meningkatkan permainan kami. Sama ada anda mempunyai cadangan untuk ciri baharu, menemui pepijat, atau hanya ingin berkongsi pengalaman anda, kami menghargai pendengaran daripada pemain kami."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -2,178 +2,8 @@
 	"games": [
 		{
 			"id": "backgammon",
-			"title": "Backgammon - Fair Board Games",
-			"subtitle": "Pure Strategy Classic Game",
-			"description": "100% FAIR DICE · PURE STRATEGY\n\nWelcome to Backgammon - Fair Board Games — the classic board strategy where every roll is provably fair and a match starts in seconds!\n\nFEATURES:\n• Provably Fair RNG – open-source code & in-app seeds for self-verification\n• Quick Matchmaking – tap Play and join a ranked game instantly\n• Smart Bot Backup – no waiting; bots use the same fair dice and affect your rank\n• Friend Links – share a URL via WhatsApp, iMessage or Facebook for 1-on-1 duels\n• Pet Companion – feed, level up and earn bonus coins daily\n\nVERIFY EVERY ROLL:\n• Both seeds shown after each game—run the script and confirm the outcome\n• Bots follow identical rules, keeping competition honest\n\nPLAY YOUR WAY:\n• Ranked ladder, casual duels or AI practice\n• Watch live games or replay every move\n• Progress and pets sync across all devices\n\nDownload now and make every roll count!",
 			"icon": "https://dl.zeroplay.cc/metadata/backgammon/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/backgammon/banner.jpg",
-			"translations": {
-				"ar": {
-					"title": "Backgammon - طاولة زهر",
-					"subtitle": "لعبة الطاولة الكلاسيكية",
-					"description": "100% نرد عادل · استراتيجية خالصة\n\nمرحباً بك في Backgammon - طاولة زهر — لعبة الطاولة الكلاسيكية حيث كل رمية نرد عادلة بشكل مثبت وتبدأ المباراة في ثوانٍ معدودة!\n\nالمميزات الرئيسية:\n• مولد أرقام عشوائية عادل ومثبت - كود مفتوح المصدر وبذور داخل التطبيق للتحقق الذاتي من عدالة اللعب\n• مطابقة سريعة - انقر على \"العب\" وانضم إلى لعبة مصنفة على الفور دون انتظار\n• دعم ذكي بالروبوت - لا انتظار؛ تستخدم الروبوتات نفس النرد العادل وتؤثر على تصنيفك الحقيقي\n• روابط الأصدقاء - شارك رابط URL عبر WhatsApp أو iMessage أو Facebook للمبارزات الفردية المثيرة\n• رفيق حيوان أليف محبوب - أطعم حيوانك الأليف وطوّر مستواه واكسب عملات إضافية يومياً\n• أوضاع لعب متعددة - سلم مصنف تنافسي، مبارزات عادية مع الأصدقاء أو تدريب مع الذكاء الاصطناعي المتقدم\n• تقدم متزامن سحابي - احفظ تقدمك وحيواناتك الأليفة عبر جميع أجهزتك تلقائياً\n\nاللعب النزيه المضمون 100%:\n• يتم عرض البذور الكاملة بعد كل لعبة - شغّل السكريبت وتأكد من النتيجة بنفسك\n• تتبع الروبوتات نفس القواعد تماماً، مما يحافظ على نزاهة المنافسة الكاملة\n• شاهد الألعاب المباشرة أو أعد تشغيل كل حركة للتعلم من اللاعبين المحترفين\n• نظام مكافحة الغش المتطور يضمن بيئة لعب عادلة للجميع\n\nأنماط اللعب المتنوعة والمثيرة:\n• العب في البطولات المصنفة لاختبار مهاراتك ضد لاعبين حقيقيين من جميع أنحاء العالم\n• تحدى أصدقاءك وعائلتك في مباريات خاصة عبر روابط مشتركة سهلة\n• تدرب ضد الذكاء الاصطناعي بمستويات صعوبة متعددة من المبتدئ إلى الخبير\n• استمتع بألعاب سريعة لدقائق قليلة أو مباريات طويلة استراتيجية حسب تفضيلك\n• شارك في البطولات الأسبوعية والشهرية مع جوائز قيمة\n\nمميزات إضافية رائعة:\n• واجهة سلسة وسهلة الاستخدام مع رسومات جميلة عالية الدقة\n• إحصائيات مفصلة وتحليلات متقدمة لتتبع تقدمك وتحسين استراتيجيتك\n• دردشة داخل اللعبة آمنة للتواصل مع خصومك بروح رياضية\n• بطولات منتظمة يومية وأسبوعية مع جوائز مثيرة وتصنيفات عالمية\n• لعب بدون إنترنت متاح للتدريب والمتعة في أي وقت وأي مكان\n• دعم كامل للغة العربية مع واجهة مصممة خصيصاً للاعبين العرب\n• نظام إنجازات شامل مع مكافآت يومية وأسبوعية وشهرية\n• خيارات تخصيص متعددة للوحة اللعب والقطع والخلفيات\n\nحمّل الآن واستمتع بأفضل تجربة طاولة زهر عادلة ومثيرة!"
-				},
-				"ca": {
-					"title": "Backgammon - Joc Just",
-					"subtitle": "Joc d'estratègia clàssic",
-					"description": "100% DAUS JUSTOS · ESTRATÈGIA PURA\n\nBenvingut a Backgammon - Joc Just — el joc d'estratègia clàssic on cada tirada és demostrablament justa i les partides comencen en segons!\n\nCARACTERÍSTIQUES:\n• RNG Demostrablemente Just - codi obert i llavors per auto-verificació\n• Emparellament Ràpid - toca Jugar i uneix-te a una partida classificada a l'instant\n• Suport Intel·ligent de Bots - sense esperes; els bots usen els mateixos daus justos\n• Enllaços d'Amics - comparteix URL via WhatsApp, iMessage o Facebook per duels\n• Mascota Company - alimenta, puja nivells i guanya monedes diàries\n• Progrés sincronitzat entre tots els dispositius\n\nDescarrega ara i fes que cada tirada compti!"
-				},
-				"hr": {
-					"title": "Backgammon - Poštena Igra",
-					"subtitle": "Klasična strateška igra",
-					"description": "100% POŠTENE KOCKE · ČISTA STRATEGIJA\n\nDobrodošli u Backgammon - Poštena Igra — klasična strateška igra gdje je svako bacanje dokazano pošteno i meč počinje u sekundama!\n\nZNAČAJKE:\n• Dokazano pošten RNG - otvoreni kod i sjemena za samo-provjeru\n• Brzo uparivanje - dodirnite Igraj i pridružite se rangiranoj igri odmah\n• Pametna podrška botova - bez čekanja; botovi koriste iste poštene kocke\n• Linkovi za prijatelje - podijelite URL putem WhatsApp, iMessage ili Facebook\n• Kućni ljubimac - hranite, podignite razinu i zaradite bonus novčiće dnevno\n• Sinkronizirani napredak na svim uređajima\n\nPreuzmite sada i neka svako bacanje bude važno!"
-				},
-				"cs": {
-					"title": "Backgammon - Férová Hra",
-					"subtitle": "Klasická strategická hra",
-					"description": "100% FÉROVÉ KOSTKY · ČISTÁ STRATEGIE\n\nVítejte v Backgammon - Férová Hra — klasická strategická hra, kde je každý hod prokazatelně férový a zápas začíná během sekund!\n\nFUNKCE:\n• Prokazatelně férový RNG - otevřený kód a semena pro vlastní ověření\n• Rychlé párování - klepněte na Hrát a okamžitě se připojte k hodnocené hře\n• Chytrá podpora botů - žádné čekání; boti používají stejné férové kostky\n• Odkazy pro přátele - sdílejte URL přes WhatsApp, iMessage nebo Facebook\n• Mazlíček společník - krmte, zvyšujte úroveň a získávejte bonusové mince denně\n• Synchronizovaný postup napříč všemi zařízeními\n\nStáhněte nyní a nechte každý hod počítat!"
-				},
-				"da": {
-					"title": "Backgammon - Fair Brætspil",
-					"subtitle": "Klassisk strategispil",
-					"description": "100% FAIR TERNINGER · REN STRATEGI\n\nVelkommen til Backgammon - Fair Brætspil — det klassiske strategispil hvor hvert kast er bevisligt fair og kampe starter på sekunder!\n\nFUNKTIONER:\n• Bevisligt Fair RNG - open source kode og frø til selv-verifikation\n• Hurtig Matchmaking - tryk Spil og deltag i rangeret spil øjeblikkeligt\n• Smart Bot Support - ingen ventetid; bots bruger samme fair terninger\n• Venne-links - del URL via WhatsApp, iMessage eller Facebook til dueller\n• Kæledyr Makker - fodre, level op og tjen bonus mønter dagligt\n• Synkroniseret fremgang på tværs af alle enheder\n\nDownload nu og få hvert kast til at tælle!"
-				},
-				"nl": {
-					"title": "Backgammon - Eerlijk Spel",
-					"subtitle": "Klassiek strategisch bordspel",
-					"description": "100% EERLIJKE DOBBELSTENEN · PURE STRATEGIE\n\nWelkom bij Backgammon - Eerlijk Spel — het klassieke strategische bordspel waar elke worp aantoonbaar eerlijk is en wedstrijden in seconden beginnen!\n\nKENMERKEN:\n• Aantoonbaar Eerlijke RNG - open source code en seeds voor zelfverificatie\n• Snelle Matchmaking - tik op Spelen en doe direct mee aan een gerankt spel\n• Slimme Bot Ondersteuning - geen wachttijd; bots gebruiken dezelfde eerlijke dobbelstenen\n• Vrienden Links - deel URL via WhatsApp, iMessage of Facebook voor duels\n• Huisdier Metgezel - voed, level omhoog en verdien dagelijks bonus munten\n• Gesynchroniseerde voortgang op alle apparaten\n\nDownload nu en laat elke worp tellen!"
-				},
-				"fi": {
-					"title": "Backgammon - Reilu Peli",
-					"subtitle": "Klassinen strategiapeli",
-					"description": "100% REILUT NOPAT · PUHDAS STRATEGIA\n\nTervetuloa Backgammon - Reilu Peli — klassinen strategiapeli, jossa jokainen heitto on todistettavasti reilu ja ottelu alkaa sekunneissa!\n\nOMINAISUUDET:\n• Todistettavasti Reilu RNG - avoimen lähdekoodin ja siemenet itse varmistamiseen\n• Nopea Vastustajan Etsintä - napauta Pelaa ja liity rankattuun peliin heti\n• Älykäs Bottituki - ei odottelua; botit käyttävät samoja reiluja noppia\n• Ystävälinkit - jaa URL WhatsApp, iMessage tai Facebook kautta kaksintaisteluihin\n• Lemmikki Kumppani - ruoki, nosta tasoa ja ansaitse bonuskolikoita päivittäin\n• Synkronoitu edistyminen kaikilla laitteilla\n\nLataa nyt ja tee jokaisesta heitosta tärkeä!"
-				},
-				"fr": {
-					"title": "Backgammon - Jeu Équitable",
-					"subtitle": "Jeu de stratégie classique",
-					"description": "100% DÉS ÉQUITABLES · PURE STRATÉGIE\n\nBienvenue dans Backgammon - Jeu Équitable — le jeu de stratégie classique où chaque lancer est prouvé équitable et une partie commence en secondes !\n\nFONCTIONNALITÉS :\n• RNG Prouvé Équitable - code open source et graines pour auto-vérification\n• Matchmaking Rapide - appuyez sur Jouer et rejoignez une partie classée instantanément\n• Support Bot Intelligent - pas d'attente ; les bots utilisent les mêmes dés équitables\n• Liens Amis - partagez une URL via WhatsApp, iMessage ou Facebook pour des duels\n• Compagnon Animal - nourrissez, montez de niveau et gagnez des pièces bonus quotidiennement\n• Progression synchronisée sur tous les appareils\n\nTéléchargez maintenant et faites compter chaque lancer !"
-				},
-				"de": {
-					"title": "Backgammon - Faires Spiel",
-					"subtitle": "Klassisches Strategiespiel",
-					"description": "100% FAIRE WÜRFEL · REINE STRATEGIE\n\nWillkommen bei Backgammon - Faires Spiel — das klassische Strategiespiel, bei dem jeder Wurf nachweislich fair ist und ein Match in Sekunden beginnt!\n\nFUNKTIONEN:\n• Nachweislich Fairer RNG - Open-Source-Code und Seeds zur Selbstverifizierung\n• Schnelles Matchmaking - tippe auf Spielen und trete sofort einem gewerteten Spiel bei\n• Intelligente Bot-Unterstützung - kein Warten; Bots verwenden dieselben fairen Würfel\n• Freundeslinks - teile URL über WhatsApp, iMessage oder Facebook für Duelle\n• Haustier-Begleiter - füttere, levele auf und verdiene täglich Bonusmünzen\n• Synchronisierter Fortschritt auf allen Geräten\n\nJetzt herunterladen und jeden Wurf zählen lassen!"
-				},
-				"el": {
-					"title": "Backgammon - Τάβλι",
-					"subtitle": "Κλασικό παιχνίδι στρατηγικής",
-					"description": "100% ΔΙΚΑΙΑ ΖΑΡΙΑ · ΚΑΘΑΡΗ ΣΤΡΑΤΗΓΙΚΗ\n\nΚαλώς ήρθατε στο Backgammon - Τάβλι — το κλασικό παιχνίδι στρατηγικής όπου κάθε ζαριά είναι αποδεδειγμένα δίκαιη και ένας αγώνας ξεκινά σε δευτερόλεπτα!\n\nΧΑΡΑΚΤΗΡΙΣΤΙΚΑ:\n• Αποδεδειγμένα Δίκαιη Γεννήτρια - ανοιχτός κώδικας και σπόροι για αυτο-επαλήθευση\n• Γρήγορο Ταίριασμα - πατήστε Παίξτε και μπείτε σε κατατασσόμενο παιχνίδι αμέσως\n• Έξυπνη Υποστήριξη Bot - χωρίς αναμονή· τα bots χρησιμοποιούν τα ίδια δίκαια ζάρια\n• Σύνδεσμοι Φίλων - μοιραστείτε URL μέσω WhatsApp, iMessage ή Facebook για μονομαχίες\n• Κατοικίδιο Σύντροφος - ταΐστε, ανεβάστε επίπεδο και κερδίστε μπόνους νομίσματα καθημερινά\n• Συγχρονισμένη πρόοδος σε όλες τις συσκευές\n\nΚατεβάστε τώρα και κάντε κάθε ζαριά να μετράει!"
-				},
-				"he": {
-					"title": "שש בש - Backgammon",
-					"subtitle": "משחק אסטרטגיה קלאסי",
-					"description": "100% קוביות הוגנות · אסטרטגיה טהורה\n\nברוכים הבאים לשש בש - Backgammon — משחק האסטרטגיה הקלאסי שבו כל הטלה הוגנת באופן מוכח ומשחק מתחיל בשניות!\n\nתכונות:\n• RNG הוגן מוכח - קוד פתוח וזרעים לאימות עצמי\n• התאמה מהירה - הקש שחק והצטרף למשחק מדורג מיד\n• תמיכת בוט חכמה - ללא המתנה; בוטים משתמשים באותן קוביות הוגנות\n• קישורי חברים - שתף URL דרך WhatsApp, iMessage או Facebook לדו-קרב\n• חיית מחמד - האכל, העלה רמה וזכה במטבעות בונוס מדי יום\n• התקדמות מסונכרנת בכל המכשירים\n\nהורד עכשיו וגרום לכל הטלה להיחשב!"
-				},
-				"hi": {
-					"title": "Backgammon - निष्पक्ष खेल",
-					"subtitle": "क्लासिक रणनीति गेम",
-					"description": "100% निष्पक्ष पासे · शुद्ध रणनीति\n\nBackgammon - निष्पक्ष खेल में आपका स्वागत है — क्लासिक बोर्ड रणनीति जहां हर रोल निष्पक्ष साबित होता है और मैच सेकंड में शुरू होता है!\n\nविशेषताएं:\n• साबित निष्पक्ष RNG - स्व-सत्यापन के लिए ओपन-सोर्स कोड और बीज\n• त्वरित मैचमेकिंग - प्ले पर टैप करें और तुरंत रैंक गेम में शामिल हों\n• स्मार्ट बॉट समर्थन - कोई प्रतीक्षा नहीं; बॉट्स समान निष्पक्ष पासे का उपयोग करते हैं\n• मित्र लिंक - 1-ऑन-1 द्वंद्व के लिए WhatsApp, iMessage या Facebook के माध्यम से URL साझा करें\n• पालतू साथी - खिलाएं, स्तर बढ़ाएं और दैनिक बोनस सिक्के कमाएं\n• सभी उपकरणों में सिंक्रोनाइज़ प्रगति\n\nअभी डाउनलोड करें और हर रोल को महत्वपूर्ण बनाएं!"
-				},
-				"hu": {
-					"title": "Backgammon - Fair Játék",
-					"subtitle": "Klasszikus stratégiai játék",
-					"description": "100% FAIR KOCKÁK · TISZTA STRATÉGIA\n\nÜdvözöljük a Backgammon - Fair Játék játékban — a klasszikus stratégiai játék, ahol minden dobás bizonyíthatóan tisztességes és a meccs másodpercek alatt kezdődik!\n\nJELLEMZŐK:\n• Bizonyíthatóan Fair RNG - nyílt forráskódú és magok az önellenőrzéshez\n• Gyors Párosítás - koppints a Játék gombra és azonnal csatlakozz rangsorolt játékhoz\n• Okos Bot Támogatás - nincs várakozás; a botok ugyanazokat a fair kockákat használják\n• Barát Linkek - ossz meg URL-t WhatsApp, iMessage vagy Facebook keresztül párbajokhoz\n• Háziállat Társ - etesd, szintet lépj és szerezz bónusz érméket naponta\n• Szinkronizált haladás minden eszközön\n\nTöltsd le most és számítson minden dobás!"
-				},
-				"id": {
-					"title": "Backgammon - Permainan Adil",
-					"subtitle": "Permainan strategi klasik",
-					"description": "100% DADU ADIL · STRATEGI MURNI\n\nSelamat datang di Backgammon - Permainan Adil — strategi papan klasik di mana setiap lemparan terbukti adil dan pertandingan dimulai dalam hitungan detik!\n\nFITUR:\n• RNG Terbukti Adil - kode sumber terbuka & benih untuk verifikasi mandiri\n• Pencocokan Cepat - ketuk Main dan bergabung dengan game berperingkat secara instan\n• Dukungan Bot Pintar - tanpa menunggu; bot menggunakan dadu adil yang sama\n• Tautan Teman - bagikan URL melalui WhatsApp, iMessage atau Facebook untuk duel\n• Hewan Peliharaan - beri makan, naik level dan dapatkan koin bonus harian\n• Kemajuan tersinkronisasi di semua perangkat\n\nUnduh sekarang dan buat setiap lemparan berarti!"
-				},
-				"it": {
-					"title": "Backgammon - Gioco Equo",
-					"subtitle": "Gioco di strategia classico",
-					"description": "100% DADI EQUI · STRATEGIA PURA\n\nBenvenuto in Backgammon - Gioco Equo — il classico gioco di strategia dove ogni lancio è dimostrabilmente equo e una partita inizia in pochi secondi!\n\nCARATTERISTICHE:\n• RNG Dimostrabilmente Equo - codice open source e semi per auto-verifica\n• Matchmaking Veloce - tocca Gioca e unisciti istantaneamente a una partita classificata\n• Supporto Bot Intelligente - nessuna attesa; i bot usano gli stessi dadi equi\n• Link Amici - condividi URL via WhatsApp, iMessage o Facebook per duelli\n• Animale Domestico - nutri, sali di livello e guadagna monete bonus giornaliere\n• Progressi sincronizzati su tutti i dispositivi\n\nScarica ora e rendi importante ogni lancio!"
-				},
-				"ja": {
-					"title": "バックギャモン - 公平なゲーム",
-					"subtitle": "クラシック戦略ゲーム",
-					"description": "100%公平なサイコロ・純粋な戦略\n\nバックギャモン - 公平なゲームへようこそ — すべてのロールが証明可能に公平で、数秒で試合が始まるクラシックボード戦略ゲーム！\n\n機能：\n• 証明可能に公平なRNG - 自己検証のためのオープンソースコードとシード\n• クイックマッチング - プレイをタップして即座にランク戦に参加\n• スマートボットサポート - 待ち時間なし；ボットは同じ公平なサイコロを使用\n• フレンドリンク - WhatsApp、iMessage、Facebookで1対1の対戦用URLを共有\n• ペットコンパニオン - 餌をやり、レベルアップして毎日ボーナスコインを獲得\n• すべてのデバイスで同期された進行状況\n\n今すぐダウンロードして、すべてのロールを大切に！"
-				},
-				"ko": {
-					"title": "백개먼 - 공정한 보드게임",
-					"subtitle": "클래식 전략 게임",
-					"description": "100% 공정한 주사위 · 순수 전략\n\n백개먼 - 공정한 보드게임에 오신 것을 환영합니다 — 모든 주사위가 증명 가능하게 공정하고 몇 초 만에 경기가 시작되는 클래식 보드 전략 게임!\n\n특징:\n• 증명 가능한 공정 RNG - 자체 검증을 위한 오픈 소스 코드 및 시드\n• 빠른 매치메이킹 - 플레이를 탭하고 즉시 랭크 게임에 참여\n• 스마트 봇 지원 - 대기 없음; 봇은 동일한 공정한 주사위 사용\n• 친구 링크 - WhatsApp, iMessage 또는 Facebook을 통해 1대1 대결용 URL 공유\n• 펫 동반자 - 먹이 주고, 레벨 업하고 매일 보너스 코인 획득\n• 모든 기기에서 동기화된 진행 상황\n\n지금 다운로드하고 모든 주사위를 중요하게 만드세요!"
-				},
-				"ms": {
-					"title": "Backgammon - Permainan Adil",
-					"subtitle": "Permainan strategi klasik",
-					"description": "100% DADU ADIL · STRATEGI TULEN\n\nSelamat datang ke Backgammon - Permainan Adil — strategi papan klasik di mana setiap lontaran terbukti adil dan perlawanan bermula dalam saat!\n\nCIRI-CIRI:\n• RNG Terbukti Adil - kod sumber terbuka & benih untuk pengesahan sendiri\n• Padanan Pantas - ketik Main dan sertai permainan berperingkat serta-merta\n• Sokongan Bot Pintar - tiada menunggu; bot menggunakan dadu adil yang sama\n• Pautan Rakan - kongsi URL melalui WhatsApp, iMessage atau Facebook untuk pertarungan\n• Haiwan Peliharaan - beri makan, naik tahap dan peroleh syiling bonus harian\n• Kemajuan disegerakkan merentas semua peranti\n\nMuat turun sekarang dan jadikan setiap lontaran bermakna!"
-				},
-				"no": {
-					"title": "Backgammon - Rettferdig Spill",
-					"subtitle": "Klassisk strategispill",
-					"description": "100% RETTFERDIGE TERNINGER · REN STRATEGI\n\nVelkommen til Backgammon - Rettferdig Spill — det klassiske strategispillet hvor hvert kast er beviselig rettferdig og kamper starter på sekunder!\n\nFUNKSJONER:\n• Beviselig Rettferdig RNG - åpen kildekode og frø for selvverifisering\n• Rask Matchmaking - trykk Spill og bli med i rangert spill øyeblikkelig\n• Smart Bot-støtte - ingen venting; bots bruker samme rettferdige terninger\n• Vennelenker - del URL via WhatsApp, iMessage eller Facebook for dueller\n• Kjæledyr Følgesvenn - mat, nivå opp og tjen bonusmynter daglig\n• Synkronisert fremgang på tvers av alle enheter\n\nLast ned nå og la hvert kast telle!"
-				},
-				"pl": {
-					"title": "Backgammon - Uczciwa Gra",
-					"subtitle": "Klasyczna gra strategiczna",
-					"description": "100% UCZCIWE KOSTKI · CZYSTA STRATEGIA\n\nWitamy w Backgammon - Uczciwa Gra — klasyczna strategia planszowa, gdzie każdy rzut jest udowodniony jako uczciwy, a mecz zaczyna się w sekundy!\n\nFUNKCJE:\n• Udowodniony Uczciwy RNG - kod open source i nasiona do samoweryfikacji\n• Szybkie Dopasowanie - stuknij Graj i dołącz do rankingowej gry natychmiast\n• Inteligentne Wsparcie Botów - bez czekania; boty używają tych samych uczciwych kostek\n• Linki Przyjaciół - udostępnij URL przez WhatsApp, iMessage lub Facebook do pojedynków\n• Zwierzak Towarzysz - karm, awansuj i zdobywaj bonusowe monety codziennie\n• Zsynchronizowany postęp na wszystkich urządzeniach\n\nPobierz teraz i spraw, by każdy rzut się liczył!"
-				},
-				"pt-BR": {
-					"title": "Gamão - Jogo Justo",
-					"subtitle": "Jogo de estratégia clássico",
-					"description": "100% DADOS JUSTOS · ESTRATÉGIA PURA\n\nBem-vindo ao Gamão - Jogo Justo — o clássico jogo de estratégia onde cada jogada é comprovadamente justa e uma partida começa em segundos!\n\nRECURSOS:\n• RNG Comprovadamente Justo - código aberto e sementes para auto-verificação\n• Matchmaking Rápido - toque Jogar e entre em um jogo ranqueado instantaneamente\n• Suporte Bot Inteligente - sem espera; bots usam os mesmos dados justos\n• Links de Amigos - compartilhe URL via WhatsApp, iMessage ou Facebook para duelos\n• Pet Companheiro - alimente, suba de nível e ganhe moedas bônus diariamente\n• Progresso sincronizado em todos os dispositivos\n\nBaixe agora e faça cada jogada valer!"
-				},
-				"pt": {
-					"title": "Backgammon - Jogo Justo",
-					"subtitle": "Jogo de estratégia clássico",
-					"description": "100% DADOS JUSTOS · ESTRATÉGIA PURA\n\nBem-vindo ao Backgammon - Jogo Justo — o clássico jogo de estratégia onde cada lançamento é comprovadamente justo e uma partida começa em segundos!\n\nCARACTERÍSTICAS:\n• RNG Comprovadamente Justo - código aberto e sementes para auto-verificação\n• Emparelhamento Rápido - toque Jogar e junte-se a um jogo classificado instantaneamente\n• Suporte Bot Inteligente - sem espera; bots usam os mesmos dados justos\n• Links de Amigos - partilhe URL via WhatsApp, iMessage ou Facebook para duelos\n• Animal de Estimação - alimente, suba de nível e ganhe moedas bónus diariamente\n• Progresso sincronizado em todos os dispositivos\n\nDescarregue agora e faça cada lançamento contar!"
-				},
-				"ro": {
-					"title": "Backgammon - Joc Corect",
-					"subtitle": "Joc de strategie clasic",
-					"description": "100% ZARURI CORECTE · STRATEGIE PURĂ\n\nBun venit la Backgammon - Joc Corect — jocul clasic de strategie unde fiecare aruncare este demonstrabil corectă și o partidă începe în câteva secunde!\n\nCARACTERISTICI:\n• RNG Demonstrabil Corect - cod open source și semințe pentru auto-verificare\n• Potrivire Rapidă - apasă Joacă și intră instant într-un joc clasificat\n• Suport Bot Inteligent - fără așteptare; boții folosesc aceleași zaruri corecte\n• Linkuri Prieteni - partajează URL prin WhatsApp, iMessage sau Facebook pentru dueluri\n• Animal de Companie - hrănește, crește nivelul și câștigă monede bonus zilnic\n• Progres sincronizat pe toate dispozitivele\n\nDescarcă acum și fă ca fiecare aruncare să conteze!"
-				},
-				"ru": {
-					"title": "Нарды - Честная Игра",
-					"subtitle": "Классическая стратегия",
-					"description": "100% ЧЕСТНЫЕ КОСТИ · ЧИСТАЯ СТРАТЕГИЯ\n\nДобро пожаловать в Нарды - Честная Игра — классическая настольная стратегия, где каждый бросок доказуемо честный, а матч начинается за секунды!\n\nОСОБЕННОСТИ:\n• Доказуемо Честный ГСЧ - открытый код и внутренние сиды для самопроверки\n• Быстрый Подбор - нажмите Играть и мгновенно присоединитесь к рейтинговой игре\n• Умная Поддержка Ботов - без ожидания; боты используют те же честные кости\n• Ссылки для Друзей - поделитесь URL через WhatsApp, iMessage или Facebook для дуэлей\n• Питомец-Компаньон - кормите, повышайте уровень и зарабатывайте бонусные монеты ежедневно\n• Синхронизированный прогресс на всех устройствах\n\nСкачайте сейчас и сделайте каждый бросок важным!"
-				},
-				"sk": {
-					"title": "Backgammon - Férová Hra",
-					"subtitle": "Klasická strategická hra",
-					"description": "100% FÉROVÉ KOCKY · ČISTÁ STRATÉGIA\n\nVitajte v Backgammon - Férová Hra — klasická strategická hra, kde je každý hod preukázateľne férový a zápas začína za sekundy!\n\nFUNKCIE:\n• Preukázateľne Férový RNG - otvorený kód a semená pre vlastnú verifikáciu\n• Rýchle Párovanie - ťuknite na Hrať a okamžite sa pripojte k hodnotenému zápasu\n• Inteligentná Podpora Botov - žiadne čakanie; boti používajú tie isté férové kocky\n• Odkazy pre Priateľov - zdieľajte URL cez WhatsApp, iMessage alebo Facebook pre súboje\n• Domáci Miláčik - kŕmte, zvyšujte úroveň a získavajte bonusové mince denne\n• Synchronizovaný pokrok naprieč všetkými zariadeniami\n\nStiahnite teraz a nech sa každý hod počíta!"
-				},
-				"es": {
-					"title": "Backgammon - Juego Justo",
-					"subtitle": "Juego de estrategia clásico",
-					"description": "100% DADOS JUSTOS · ESTRATEGIA PURA\n\n¡Bienvenido a Backgammon - Juego Justo — el juego de estrategia clásico donde cada tirada es demostrablemente justa y las partidas empiezan en segundos!\n\nCARACTERÍSTICAS:\n• RNG Demostrablemente Justo - código abierto y semillas para auto-verificación\n• Emparejamiento Rápido - pulsa Jugar y únete a un juego clasificado al instante\n• Soporte de Bot Inteligente - sin esperas; los bots usan los mismos dados justos\n• Enlaces de Amigos - comparte URL vía WhatsApp, iMessage o Facebook para duelos\n• Mascota Compañera - alimenta, sube de nivel y gana monedas bonus diariamente\n• Progreso sincronizado en todos los dispositivos\n\n¡Descarga ahora y haz que cada tirada cuente!"
-				},
-				"sv": {
-					"title": "Backgammon - Rättvist Spel",
-					"subtitle": "Klassiskt strategispel",
-					"description": "100% RÄTTVISA TÄRNINGAR · REN STRATEGI\n\nVälkommen till Backgammon - Rättvist Spel — det klassiska strategispelet där varje kast är bevisligen rättvist och matcher börjar på sekunder!\n\nFUNKTIONER:\n• Bevisligen Rättvis RNG - öppen källkod och frön för självverifiering\n• Snabb Matchmaking - tryck Spela och gå med i ett rankat spel direkt\n• Smart Bot-stöd - ingen väntan; botar använder samma rättvisa tärningar\n• Vänlänkar - dela URL via WhatsApp, iMessage eller Facebook för dueller\n• Husdjur Kompis - mata, levla upp och tjäna bonusmynt dagligen\n• Synkroniserade framsteg över alla enheter\n\nLadda ner nu och gör varje kast värt!"
-				},
-				"th": {
-					"title": "แบ็คแกมมอน - เกมยุติธรรม",
-					"subtitle": "เกมกลยุทธ์คลาสสิก",
-					"description": "100% ลูกเต๋ายุติธรรม · กลยุทธ์บริสุทธิ์\n\nยินดีต้อนรับสู่ แบ็คแกมมอน - เกมยุติธรรม — เกมกลยุทธ์คลาสสิกที่ทุกการทอยพิสูจน์ได้ว่ายุติธรรมและแมตช์เริ่มในไม่กี่วินาที!\n\nคุณสมบัติ:\n• RNG ที่พิสูจน์ได้ว่ายุติธรรม - โค้ดโอเพ่นซอร์สและซีดสำหรับการตรวจสอบด้วยตนเอง\n• การจับคู่ที่รวดเร็ว - แตะเล่นและเข้าร่วมเกมแรงค์ทันที\n• การสนับสนุนบอทอัจฉริยะ - ไม่ต้องรอ บอทใช้ลูกเต๋ายุติธรรมเดียวกัน\n• ลิงก์เพื่อน - แชร์ URL ผ่าน WhatsApp, iMessage หรือ Facebook สำหรับการดวล\n• สัตว์เลี้ยงคู่ใจ - ให้อาหาร เลเวลอัพ และรับเหรียญโบนัสทุกวัน\n• ความก้าวหน้าที่ซิงค์ข้ามอุปกรณ์ทั้งหมด\n\nดาวน์โหลดตอนนี้และทำให้ทุกการทอยมีความหมาย!"
-				},
-				"tr": {
-					"title": "Tavla - Adil Oyun",
-					"subtitle": "Klasik strateji oyunu",
-					"description": "100% ADİL ZARLAR · SAF STRATEJİ\n\nTavla - Adil Oyun'a hoş geldiniz — her atışın kanıtlanabilir şekilde adil olduğu ve maçların saniyeler içinde başladığı klasik strateji oyunu!\n\nÖZELLİKLER:\n• Kanıtlanabilir Adil RNG - kendi doğrulama için açık kaynak kod ve tohumlar\n• Hızlı Eşleştirme - Oyna'ya dokunun ve anında dereceli oyuna katılın\n• Akıllı Bot Desteği - bekleme yok; botlar aynı adil zarları kullanır\n• Arkadaş Bağlantıları - düello için WhatsApp, iMessage veya Facebook üzerinden URL paylaşın\n• Evcil Hayvan Arkadaş - besleyin, seviye atlayın ve günlük bonus para kazanın\n• Tüm cihazlarda senkronize ilerleme\n\nŞimdi indirin ve her atışın önemli olmasını sağlayın!"
-				},
-				"uk": {
-					"title": "Нарди - Чесна Гра",
-					"subtitle": "Класична стратегічна гра",
-					"description": "100% ЧЕСНІ КУБИКИ · ЧИСТА СТРАТЕГІЯ\n\nЛаскаво просимо до Нарди - Чесна Гра — класична настільна стратегія, де кожен кидок доведено чесний, а матч починається за секунди!\n\nОСОБЛИВОСТІ:\n• Доведено Чесний ГВЧ - відкритий код та внутрішні сіди для самоперевірки\n• Швидкий Підбір - натисніть Грати і миттєво приєднайтесь до рейтингової гри\n• Розумна Підтримка Ботів - без очікування; боти використовують ті самі чесні кубики\n• Посилання для Друзів - поділіться URL через WhatsApp, iMessage або Facebook для дуелей\n• Домашній Улюбленець - годуйте, підвищуйте рівень та заробляйте бонусні монети щодня\n• Синхронізований прогрес на всіх пристроях\n\nЗавантажте зараз і зробіть кожен кидок важливим!"
-				},
-				"vi": {
-					"title": "Backgammon - Xúc Xắc Công Bằng",
-					"subtitle": "Trò chơi chiến lược cổ điển",
-					"description": "100% XÚC XẮC CÔNG BẰNG · CHIẾN LƯỢC THUẦN TÚY\n\nChào mừng đến với Cờ Cá Ngựa - Trò Chơi Công Bằng — trò chơi chiến lược cổ điển nơi mọi lần tung xúc xắc đều công bằng có thể chứng minh và trận đấu bắt đầu trong vài giây!\n\nTÍNH NĂNG:\n• RNG Công Bằng Có Thể Chứng Minh - mã nguồn mở và hạt giống để tự xác minh\n• Ghép Trận Nhanh - chạm Chơi và tham gia trò chơi xếp hạng ngay lập tức\n• Hỗ Trợ Bot Thông Minh - không phải chờ; bot sử dụng cùng xúc xắc công bằng\n• Liên Kết Bạn Bè - chia sẻ URL qua WhatsApp, iMessage hoặc Facebook để đấu tay đôi\n• Thú Cưng Đồng Hành - cho ăn, lên cấp và kiếm xu thưởng hàng ngày\n• Tiến trình đồng bộ trên tất cả thiết bị\n\nTải xuống ngay và làm cho mỗi lần tung xúc xắc đều có ý nghĩa!"
-				},
-				"zh-Hans": {
-					"title": "双陆棋 - 公平游戏",
-					"subtitle": "经典策略游戏",
-					"description": "100%公平骰子·纯粹策略\n\n欢迎来到双陆棋 - 公平游戏——经典的棋盘策略游戏，每次掷骰都可证明公平，比赛在几秒内开始！\n\n功能特色：\n• 可证明公平的随机数生成器 - 开源代码和应用内种子供自我验证\n• 快速匹配 - 点击开始，立即加入排位赛\n• 智能机器人支持 - 无需等待；机器人使用相同的公平骰子\n• 好友链接 - 通过WhatsApp、iMessage或Facebook分享URL进行一对一对决\n• 宠物伙伴 - 喂养、升级并每日赚取奖励金币\n• 所有设备同步进度\n\n立即下载，让每次掷骰都有意义！"
-				},
-				"zh-Hant": {
-					"title": "雙陸棋 - 公平遊戲",
-					"subtitle": "經典策略遊戲",
-					"description": "100%公平骰子·純粹策略\n\n歡迎來到雙陸棋 - 公平遊戲——經典的棋盤策略遊戲，每次擲骰都可證明公平，比賽在幾秒內開始！\n\n功能特色：\n• 可證明公平的隨機數生成器 - 開源代碼和應用內種子供自我驗證\n• 快速配對 - 點擊開始，立即加入排位賽\n• 智慧機器人支援 - 無需等待；機器人使用相同的公平骰子\n• 好友連結 - 透過WhatsApp、iMessage或Facebook分享URL進行一對一對決\n• 寵物夥伴 - 餵養、升級並每日賺取獎勵金幣\n• 所有裝置同步進度\n\n立即下載，讓每次擲骰都有意義！"
-				}
-			},
 			"deeplink": "https://backgammon-go.onelink.me/4n1X?pid=zeroplay&bg_type=web",
 			"videoUrl": "https://dl.zeroplay.cc/metadata/backgammon/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/backgammon/poster.jpg",
@@ -196,177 +26,13 @@
 				"facebook": "https://facebook.com/backgammongo",
 				"instagram": "https://instagram.com/backgammongo",
 				"twitter": "https://twitter.com/backgammongo"
-			}
+			},
+			"released": true
 		},
 		{
 			"id": "solitaire",
-			"title": "Solitaire - Klondike Cards+",
-			"subtitle": "Relax with classic Klondike",
-			"description": "Experience the classic Klondike Solitaire with smooth animations and beautiful design. Perfect for all devices, enjoy the timeless card game loved by millions worldwide.\n\nMaster your skills with intelligent hint system that suggests the best moves, unlimited undo to correct mistakes, and auto-complete feature to finish games quickly. Track your progress with real-time statistics including score, time, and move count. Auto-save ensures you never lose progress.\n\nCompete on global leaderboards, regional rankings, and challenge friends. Choose your competition style: highest score, fastest time, or fewest moves. Complete daily challenges to earn coins and unlock beautiful background skins to personalize your game. Enjoy automatic dark and light theme switching with haptic feedback for every interaction.\n\nPerfect for commuting, breaks, or relaxing before bed. Play offline anytime, anywhere. Download now and start your Solitaire journey.",
 			"icon": "https://dl.zeroplay.cc/metadata/solitaire/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/solitaire/banner.jpg",
-			"translations": {
-				"ar": {
-					"title": "‏+‏سوليتير ‏-‏ لعبة كلاسيكية",
-					"subtitle": "استمتع بسوليتير الكلاسيكي",
-					"description": "استمتع بلعبة سوليتير كلوندايك الكلاسيكية مع رسوم متحركة سلسة وتصميم جميل。مثالية لجميع الأجهزة، استمتع بلعبة الورق الخالدة التي يحبها الملايين حول العالم。\n\nأتقن مهاراتك مع نظام التلميحات الذكي الذي يقترح أفضل الحركات، والتراجع غير المحدود لتصحيح الأخطاء، وميزة الإكمال التلقائي لإنهاء الألعاب بسرعة。تتبع تقدمك مع إحصائيات في الوقت الفعلي بما في ذلك النقاط والوقت وعدد الحركات。الحفظ التلقائي يضمن عدم فقدان تقدمك أبدًا。\n\nتنافس في لوحات المتصدرين العالمية والتصنيفات الإقليمية وتحدى الأصدقاء。اختر أسلوب المنافسة الخاص بك: أعلى نقاط أو أسرع وقت أو أقل حركات。أكمل التحديات اليومية لكسب العملات وفتح خلفيات جميلة لتخصيص لعبتك。استمتع بالتبديل التلقائي بين السمة الداكنة والفاتحة مع الملاحظات اللمسية في كل تفاعل。\n\nمثالية للتنقل أو فترات الراحة أو الاسترخاء قبل النوم。العب دون اتصال في أي وقت وفي أي مكان。قم بالتنزيل الآن وابدأ رحلتك في السوليتير。"
-				},
-				"ca": {
-					"title": "Solitari - Cartes Clàssiques+",
-					"subtitle": "Gaudeix del solitari clàssic",
-					"description": "Experimenteu el clàssic Solitari Klondike amb animacions fluides i un disseny preciós. Perfecte per a tots els dispositius, gaudiu del joc de cartes atemporal estimat per milions arreu del món.\n\nDomineu les vostres habilitats amb el sistema de pistes intel·ligent que suggereix els millors moviments, desfer il·limitat per corregir errors i funció d'autocompletat per acabar partides ràpidament. Feu seguiment del vostre progrés amb estadístiques en temps real incloent puntuació, temps i nombre de moviments. El desat automàtic garanteix que mai perdreu el vostre progrés.\n\nCompetiu en classificacions globals, rànquings regionals i desafieu amics. Trieu el vostre estil de competició: puntuació més alta, temps més ràpid o menys moviments. Completeu reptes diaris per guanyar monedes i desbloquejar temes de fons bonics per personalitzar el vostre joc. Gaudiu del canvi automàtic entre tema fosc i clar amb retorn hàptic a cada interacció.\n\nPerfecte per a desplaçaments, pauses o relaxar-se abans d'anar a dormir. Jugueu fora de línia en qualsevol moment, en qualsevol lloc. Descarregueu ara i comenceu el vostre viatge al Solitari."
-				},
-				"cs": {
-					"title": "Pasiáns - Karetní Klasik+",
-					"subtitle": "Pohodový klasický pasiáns",
-					"description": "Zažijte klasické Klondike Solitaire s plynulými animacemi a krásným designem. Perfektní pro všechna zařízení, užijte si nadčasovou karetní hru milovanou miliony po celém světě.\n\nZdokonalte své dovednosti s inteligentním systémem nápovědy, který navrhuje nejlepší tahy, neomezeným vracením zpět pro opravu chyb a funkcí automatického dokončení pro rychlé ukončení her. Sledujte svůj pokrok s statistikami v reálném čase včetně skóre, času a počtu tahů. Automatické ukládání zajišťuje, že nikdy neztratíte svůj pokrok.\n\nSoutěžte v globálních žebříčcích, regionálních žebříčcích a vyzvěte přátele. Vyberte si svůj styl soutěže: nejvyšší skóre, nejrychlejší čas nebo nejméně tahů. Plňte denní výzvy, abyste získali mince a odemkli krásné motivy pozadí pro přizpůsobení vaší hry. Užijte si automatické přepínání mezi tmavým a světlým tématem s haptickou odezvou při každé interakci.\n\nIdeální pro dojíždění, přestávky nebo relaxaci před spaním. Hrajte offline kdykoli a kdekoli. Stáhněte si nyní a začněte svou cestu se Solitaire."
-				},
-				"da": {
-					"title": "Kabale - Kortklassiker+",
-					"subtitle": "Hyggeligt klassisk kabalespil",
-					"description": "Oplev det klassiske Klondike Kabale med glatte animationer og smukt design. Perfekt til alle enheder, nyd det tidløse kortspil elsket af millioner verden over.\n\nMestre dine færdigheder med intelligent hintsystem, der foreslår de bedste træk, ubegrænset fortryd til at rette fejl og autofuldførelsesfunktion til hurtigt at afslutte spil. Spor din fremgang med realtidsstatistikker inklusive score, tid og antal træk. Automatisk gemning sikrer, at du aldrig mister din fremgang.\n\nKonkurrér i globale ranglister, regionale placeringer og udfordre venner. Vælg din konkurrencestil: højeste score, hurtigste tid eller færreste træk. Gennemfør daglige udfordringer for at tjene mønter og låse smukke baggrundstemaer op til at personalisere dit spil. Nyd automatisk skift mellem mørkt og lyst tema med haptisk feedback ved hver interaktion.\n\nPerfekt til pendling, pauser eller afslapning før sengetid. Spil offline når som helst, hvor som helst. Download nu og start din Kabale-rejse."
-				},
-				"de": {
-					"title": "Solitär - Kartenklassiker+",
-					"subtitle": "Entspanntes Solitär-Klassiker",
-					"description": "Erleben Sie das klassische Klondike Solitaire mit flüssigen Animationen und wunderschönem Design. Perfekt für alle Geräte, genießen Sie das zeitlose Kartenspiel, das von Millionen weltweit geliebt wird.\n\nMeistern Sie Ihre Fähigkeiten mit dem intelligenten Hinweissystem, das die besten Züge vorschlägt, unbegrenztem Rückgängigmachen zur Fehlerkorrektur und der Auto-Vervollständigungsfunktion zum schnellen Beenden von Spielen. Verfolgen Sie Ihren Fortschritt mit Echtzeit-Statistiken einschließlich Punkte, Zeit und Anzahl der Züge. Die automatische Speicherung stellt sicher, dass Sie nie Ihren Fortschritt verlieren.\n\nTreten Sie in globalen Bestenlisten, regionalen Ranglisten an und fordern Sie Freunde heraus. Wählen Sie Ihren Wettbewerbsstil: höchste Punktzahl, schnellste Zeit oder wenigste Züge. Absolvieren Sie tägliche Herausforderungen, um Münzen zu verdienen und wunderschöne Hintergrund-Skins freizuschalten, um Ihr Spiel zu personalisieren. Genießen Sie den automatischen Wechsel zwischen dunklem und hellem Thema mit haptischem Feedback bei jeder Interaktion.\n\nPerfekt für Pendeln, Pausen oder zum Entspannen vor dem Schlafengehen. Spielen Sie jederzeit und überall offline. Jetzt herunterladen und Ihre Solitaire-Reise beginnen."
-				},
-				"el": {
-					"title": "Πασιέντζα - Κλασικό Παιχνίδι+",
-					"subtitle": "Χαλαρή κλασική πασιέντζα",
-					"description": "Ζήστε την κλασική Klondike Πασιέντζα με ομαλά κινούμενα σχέδια και όμορφο σχεδιασμό. Ιδανικό για όλες τις συσκευές, απολαύστε το διαχρονικό παιχνίδι με τράπουλα που αγαπούν εκατομμύρια σε όλο τον κόσμο.\n\nΚατακτήστε τις δεξιότητές σας με έξυπνο σύστημα υποδείξεων που προτείνει τις καλύτερες κινήσεις, απεριόριστη αναίρεση για διόρθωση λαθών και λειτουργία αυτόματης ολοκλήρωσης για γρήγορη ολοκλήρωση παιχνιδιών. Παρακολουθήστε την πρόοδό σας με στατιστικά σε πραγματικό χρόνο που περιλαμβάνουν βαθμολογία, χρόνο και αριθμό κινήσεων. Η αυτόματη αποθήκευση διασφαλίζει ότι δεν θα χάσετε ποτέ την πρόοδό σας.\n\nΑνταγωνιστείτε σε παγκόσμιους πίνακες κατάταξης, περιφερειακές κατατάξεις και προκαλέστε φίλους. Επιλέξτε το στυλ ανταγωνισμού σας: υψηλότερη βαθμολογία, ταχύτερος χρόνος ή λιγότερες κινήσεις. Ολοκληρώστε καθημερινές προκλήσεις για να κερδίσετε νομίσματα και να ξεκλειδώσετε όμορφα θέματα φόντου για να προσαρμόσετε το παιχνίδι σας. Απολαύστε αυτόματη εναλλαγή μεταξύ σκούρου και ανοιχτού θέματος με απτική ανατροφοδότηση σε κάθε αλληλεπίδραση.\n\nΙδανικό για μετακινήσεις, διαλείμματα ή χαλάρωση πριν τον ύπνο. Παίξτε εκτός σύνδεσης ανά πάσα στιγμή, οπουδήποτε. Κατεβάστε τώρα και ξεκινήστε το ταξίδι σας στην Πασιέντζα."
-				},
-				"es": {
-					"title": "Solitario - Cartas Clásicas+",
-					"subtitle": "Disfruta del solitario clásico",
-					"description": "Experimenta el clásico Solitario Klondike con animaciones fluidas y un hermoso diseño. Perfecto para todos los dispositivos, disfruta del juego de cartas atemporal amado por millones en todo el mundo.\n\nDomina tus habilidades con el sistema de pistas inteligente que sugiere los mejores movimientos, deshacer ilimitado para corregir errores y función de autocompletado para terminar partidas rápidamente. Rastrea tu progreso con estadísticas en tiempo real que incluyen puntuación, tiempo y número de movimientos. El guardado automático garantiza que nunca pierdas tu progreso.\n\nCompite en clasificaciones globales, rankings regionales y desafía a amigos. Elige tu estilo de competición: puntuación más alta, tiempo más rápido o menos movimientos. Completa desafíos diarios para ganar monedas y desbloquear hermosos fondos para personalizar tu juego. Disfruta del cambio automático entre tema oscuro y claro con retroalimentación háptica en cada interacción.\n\nPerfecto para el viaje diario, descansos o relajarte antes de dormir. Juega sin conexión en cualquier momento y lugar. Descarga ahora y comienza tu viaje en el Solitario."
-				},
-				"fi": {
-					"title": "Pasianssi - Korttiklassikko+",
-					"subtitle": "Klassinen pasianssi rentouttaa",
-					"description": "Koe klassinen Klondike-pasianssi sujuvilla animaatioilla ja kauniilla suunnittelulla. Täydellinen kaikille laitteille, nauti ajattomasta korttipelistä, jota miljoonat rakastavat ympäri maailmaa.\n\nHallitse taitosi älykkään vihjejärjestelmän avulla, joka ehdottaa parhaita siirtoja, rajattomalla kumoamisella virheiden korjaamiseen ja automaattisella viimeistelytoiminnolla pelien nopeaan päättämiseen. Seuraa edistymistäsi reaaliaikaisilla tilastoilla, mukaan lukien pisteet, aika ja siirtojen määrä. Automaattinen tallennus varmistaa, ettet koskaan menetä edistymistäsi.\n\nKilpaile maailmanlaajuisissa tulostauluissa, alueellisissa sijoituksissa ja haasta ystäviä. Valitse kilpailutyylisi: korkein pistemäärä, nopein aika tai vähiten siirtoja. Suorita päivittäiset haasteet ansaitaksesi kolikoita ja avataksesi kauniita taustateemoja pelisi personoimiseksi. Nauti automaattisesta tumman ja vaalean teeman vaihtamisesta haptisen palautteen kera jokaisessa vuorovaikutuksessa.\n\nTäydellinen työmatkalle, tauoille tai rentoutumiseen ennen nukkumaanmenoa. Pelaa offline-tilassa milloin ja missä tahansa. Lataa nyt ja aloita Solitaire-matkasi."
-				},
-				"fr": {
-					"title": "Solitaire - Cartes Classiques+",
-					"subtitle": "Solitaire classique détente",
-					"description": "Découvrez le classique Solitaire Klondike avec des animations fluides et un design magnifique. Parfait pour tous les appareils, profitez du jeu de cartes intemporel aimé par des millions de personnes dans le monde.\n\nMaîtrisez vos compétences avec le système d'indices intelligent qui suggère les meilleurs coups, l'annulation illimitée pour corriger les erreurs et la fonction de complétion automatique pour terminer les parties rapidement. Suivez votre progression avec des statistiques en temps réel incluant le score, le temps et le nombre de coups. La sauvegarde automatique garantit que vous ne perdez jamais votre progression.\n\nAffrontez le monde entier sur les classements mondiaux, les classements régionaux et défiez vos amis. Choisissez votre style de compétition : score le plus élevé, temps le plus rapide ou moins de coups. Complétez les défis quotidiens pour gagner des pièces et débloquer de magnifiques fonds pour personnaliser votre jeu. Profitez du basculement automatique entre thème sombre et clair avec retour haptique à chaque interaction.\n\nParfait pour les trajets, les pauses ou se détendre avant de dormir. Jouez hors ligne à tout moment, n'importe où. Téléchargez maintenant et commencez votre aventure Solitaire."
-				},
-				"he": {
-					"title": "‏+‏סוליטר ‏-‏ משחק קלפים קלאסי",
-					"subtitle": "סוליטר קלאסי מהנה",
-					"description": "חוו את הקלונדייק סוליטר הקלאסי עם אנימציות חלקות ועיצוב יפהפה. מושלם לכל המכשירים, תהנו ממשחק הקלפים הנצחי האהוב על מיליונים ברחבי העולם.\n\nשלטו במיומנויות שלכם עם מערכת רמזים חכמה שמציעה את המהלכים הטובים ביותר, ביטול בלתי מוגבל לתיקון טעויות ותכונת השלמה אוטומטית לסיום משחקים במהירות. עקבו אחר ההתקדמות שלכם עם סטטיסטיקות בזמן אמת כולל ניקוד, זמן ומספר מהלכים. שמירה אוטומטית מבטיחה שלעולם לא תאבדו את ההתקדמות שלכם.\n\nהתחרו בלוחות מובילים גלובליים, דירוגים אזוריים ואתגרו חברים. בחרו את סגנון התחרות שלכם: הניקוד הגבוה ביותר, הזמן המהיר ביותר או המהלכים המעטים ביותר. השלימו אתגרים יומיים כדי להרוויח מטבעות ולפתוח נושאי רקע יפים לאישיות המשחק שלכם. תהנו ממעבר אוטומטי בין ערכת נושא כהה ובהירה עם משוב מישוש בכל אינטראקציה.\n\nמושלם לנסיעות, הפסקות או הרפיה לפני השינה. שחקו במצב לא מקוון בכל זמן, בכל מקום. הורידו עכשיו והתחילו את מסע הסוליטר שלכם."
-				},
-				"hi": {
-					"title": "सॉलिटेयर - क्लासिक कार्ड गेम+",
-					"subtitle": "क्लासिक सॉलिटेयर का आनंद लें",
-					"description": "सुंदर एनिमेशन और खूबसूरत डिज़ाइन के साथ क्लासिक क्लोंडाइक सॉलिटेयर का अनुभव करें। सभी उपकरणों के लिए बिल्कुल सही, दुनिया भर में लाखों लोगों द्वारा पसंद किए जाने वाले कालातीत कार्ड गेम का आनंद लें।\n\nबुद्धिमान संकेत प्रणाली के साथ अपने कौशल में महारत हासिल करें जो सर्वोत्तम चालें सुझाती है, गलतियों को सुधारने के लिए असीमित पूर्ववत करें और गेम को जल्दी खत्म करने के लिए स्वतः पूर्ण सुविधा। स्कोर, समय और चालों की संख्या सहित वास्तविक समय के आंकड़ों के साथ अपनी प्रगति को ट्रैक करें। स्वचालित सहेजना सुनिश्चित करता है कि आप कभी भी अपनी प्रगति नहीं खोएंगे।\n\nवैश्विक लीडरबोर्ड, क्षेत्रीय रैंकिंग में प्रतिस्पर्धा करें और मित्रों को चुनौती दें। अपनी प्रतिस्पर्धा शैली चुनें: उच्चतम स्कोर, सबसे तेज समय या सबसे कम चालें। दैनिक चुनौतियों को पूरा करें और सिक्के अर्जित करें और अपने गेम को वैयक्तिकृत करने के लिए सुंदर पृष्ठभूमि थीम अनलॉक करें। प्रत्येक इंटरैक्शन पर हैप्टिक फीडबैक के साथ स्वचालित डार्क और लाइट थीम स्विचिंग का आनंद लें।\n\nआवागमन, विराम या सोने से पहले आराम करने के लिए बिल्कुल सही। कभी भी, कहीं भी ऑफलाइन खेलें। अभी डाउनलोड करें और अपनी सॉलिटेयर यात्रा शुरू करें।"
-				},
-				"hr": {
-					"title": "Pasijans - Kartaški Klasik+",
-					"subtitle": "Klasični pasijans za opuštanje",
-					"description": "Doživite klasični Klondike Solitaire s glatkim animacijama i prekrasnim dizajnom. Savršen za sve uređaje, uživajte u bezvremena kartaškoj igri koju vole milijuni širom svijeta.\n\nSavladajte svoje vještine s inteligentnim sustavom savjeta koji predlaže najbolje poteze, neograničenim poništavanjem za ispravljanje grešaka i funkcijom automatskog dovršavanja za brzo završavanje igara. Pratite svoj napredak s statistikama u stvarnom vremenu uključujući rezultat, vrijeme i broj poteza. Automatsko spremanje osigurava da nikada ne izgubite svoj napredak.\n\nNatječite se u globalnim ljestvicama, regionalnim ljestvicama i izazovite prijatelje. Odaberite svoj stil natjecanja: najviši rezultat, najbrže vrijeme ili najmanje poteza. Dovršite dnevne izazove za zaradu novčića i otključavanje prekrasnih pozadinskih tema za personalizaciju vaše igre. Uživajte u automatskoj promjeni između tamne i svijetle teme s haptičkom povratnom informacijom pri svakoj interakciji.\n\nSavršeno za putovanje, pauze ili opuštanje prije spavanja. Igrajte izvan mreže bilo kada, bilo gdje. Preuzmite sada i započnite svoje Solitaire putovanje."
-				},
-				"hu": {
-					"title": "Pasziánsz - Kártya Klasszikus+",
-					"subtitle": "Klasszikus pasziánsz pihenés",
-					"description": "Tapasztalja meg a klasszikus Klondike-pasziánszt sima animációkkal és gyönyörű designnal. Tökéletes minden eszközre, élvezze az időtlen kártyajátékot, amelyet világszerte milliók szeretnek.\n\nSajátítsa el készségeit az intelligens tipprendszerrel, amely a legjobb lépéseket javasolja, korlátlan visszavonással a hibák javításához és automatikus kiegészítő funkcióval a játékok gyors befejezéséhez. Kövesse nyomon haladását valós idejű statisztikákkal, beleértve a pontszámot, az időt és a lépések számát. Az automatikus mentés biztosítja, hogy soha ne veszítse el haladását.\n\nVersenyezzen globális ranglistákon, regionális rangsorokban és hívja ki barátait. Válassza ki versengési stílusát: legmagasabb pontszám, leggyorsabb idő vagy legkevesebb lépés. Teljesítse a napi kihívásokat, hogy érméket szerezzen és gyönyörű háttértémákat oldjon fel játéka személyre szabásához. Élvezze az automatikus váltást a sötét és világos téma között haptikus visszajelzéssel minden interakciónál.\n\nTökéletes ingázáshoz, szünetekhez vagy lefekvés előtti relaxáláshoz. Játsszon offline bármikor, bárhol. Töltse le most és kezdje el Pasziánsz utazását."
-				},
-				"id": {
-					"title": "Solitaire - Gim Kartu Klasik+",
-					"subtitle": "Santai dengan solitaire klasik",
-					"description": "Rasakan Solitaire Klondike klasik dengan animasi halus dan desain indah. Sempurna untuk semua perangkat, nikmati permainan kartu abadi yang dicintai jutaan orang di seluruh dunia.\n\nKuasai keterampilan Anda dengan sistem petunjuk cerdas yang menyarankan langkah terbaik, pembatalan tanpa batas untuk memperbaiki kesalahan, dan fitur pelengkapan otomatis untuk menyelesaikan permainan dengan cepat. Lacak kemajuan Anda dengan statistik waktu nyata termasuk skor, waktu, dan jumlah langkah. Penyimpanan otomatis memastikan Anda tidak akan pernah kehilangan kemajuan.\n\nBersaing di papan peringkat global, peringkat regional, dan tantang teman. Pilih gaya kompetisi Anda: skor tertinggi, waktu tercepat, atau langkah paling sedikit. Selesaikan tantangan harian untuk mendapatkan koin dan buka kunci tema latar belakang indah untuk mempersonalisasi permainan Anda. Nikmati perpindahan otomatis antara tema gelap dan terang dengan umpan balik haptik di setiap interaksi.\n\nSempurna untuk perjalanan, istirahat, atau bersantai sebelum tidur. Main offline kapan saja, di mana saja. Unduh sekarang dan mulai perjalanan Solitaire Anda."
-				},
-				"it": {
-					"title": "Solitario - Carte Classiche+",
-					"subtitle": "Goditi il solitario classico",
-					"description": "Vivi il classico Solitario Klondike con animazioni fluide e un design accattivante. Perfetto per tutti i dispositivi, goditi il gioco di carte senza tempo amato da milioni in tutto il mondo.\n\nPadroneggia le tue abilità con il sistema di suggerimenti intelligente che propone le mosse migliori, annullamento illimitato per correggere gli errori e funzione di completamento automatico per terminare le partite rapidamente. Monitora i tuoi progressi con statistiche in tempo reale inclusi punteggio, tempo e numero di mosse. Il salvataggio automatico garantisce che non perderai mai i tuoi progressi.\n\nGareggia nelle classifiche globali, classifiche regionali e sfida gli amici. Scegli il tuo stile di competizione: punteggio più alto, tempo più veloce o minor numero di mosse. Completa le sfide giornaliere per guadagnare monete e sbloccare splendide skin di sfondo per personalizzare il tuo gioco. Goditi il passaggio automatico tra tema scuro e chiaro con feedback aptico per ogni interazione.\n\nPerfetto per i viaggi, le pause o rilassarsi prima di dormire. Gioca offline in qualsiasi momento, ovunque. Scarica ora e inizia il tuo viaggio nel Solitario."
-				},
-				"ja": {
-					"title": "ソリティア - 定番カードゲーム+",
-					"subtitle": "定番ソリティアでひと休み",
-					"description": "クラシックなクロンダイクソリティアを、滑らかなアニメーションと美しいデザインで体験してください。あらゆるデバイスに対応し、世界中の何百万人ものプレイヤーに愛されている時代を超えたカードゲームをお楽しみいただけます。\n\n最適な手を提案するインテリジェントヒントシステム、ミスを修正できる無制限のアンドゥ、ゲームを素早く終了できるオートコンプリート機能でスキルを磨きましょう。スコア、時間、移動回数をリアルタイム統計で追跡できます。自動保存機能で進捗を失うことはありません。\n\nグローバルリーダーボード、地域ランキングで競い、フレンドに挑戦しましょう。競争スタイルを選択：最高スコア、最速タイム、または最少移動。毎日のチャレンジをクリアしてコインを獲得し、美しい背景スキンをアンロックしてゲームをパーソナライズしましょう。ダークモードとライトモードが自動切替、ハプティックフィードバックですべてのインタラクションを感じ取れます。\n\n通勤中、休憩時間、就寝前のリラックスに最適です。いつでもどこでもオフラインでプレイできます。今すぐダウンロードして、ソリティアの旅を始めましょう。"
-				},
-				"ko": {
-					"title": "솔리테어 - 클래식 카드게임+",
-					"subtitle": "클래식 솔리테어로 휴식",
-					"description": "부드러운 애니메이션과 아름다운 디자인의 클래식 클론다이크 솔리테어를 경험하세요。모든 기기에 완벽하게 대응하며, 전 세계 수백만 명이 사랑하는 시대를 초월한 카드 게임을 즐기세요。\n\n최적의 수를 제안하는 지능형 힌트 시스템, 실수를 수정할 수 있는 무제한 실행 취소, 게임을 빠르게 완료할 수 있는 자동 완성 기능으로 기술을 마스터하세요。점수, 시간, 이동 횟수를 실시간 통계로 추적하세요。자동 저장 기능으로 진행 상황을 잃지 않습니다。\n\n글로벌 리더보드, 지역 랭킹에서 경쟁하고 친구에게 도전하세요。경쟁 스타일을 선택하세요: 최고 점수, 최단 시간, 또는 최소 이동。매일 도전을 완료하여 코인을 획득하고 아름다운 배경 스킨을 잠금 해제하여 게임을 개인화하세요。다크 모드와 라이트 모드가 자동 전환되며, 햅틱 피드백으로 모든 상호작용을 느껴보세요。\n\n통근, 휴식 시간 또는 취침 전 휴식에 완벽합니다。언제 어디서나 오프라인으로 플레이하세요。지금 다운로드하여 솔리테어 여정을 시작하세요。"
-				},
-				"ms": {
-					"title": "Solitaire - Gim Kad Klasik+",
-					"subtitle": "Santai dengan solitaire klasik",
-					"description": "Alami Solitaire Klondike klasik dengan animasi lancar dan reka bentuk cantik. Sempurna untuk semua peranti, nikmati permainan kad abadi yang digemari berjuta-juta orang di seluruh dunia.\n\nKuasai kemahiran anda dengan sistem petunjuk pintar yang mencadangkan pergerakan terbaik, buat asal tanpa had untuk membetulkan kesilapan, dan ciri siap automatik untuk menghabiskan permainan dengan cepat. Jejaki kemajuan anda dengan statistik masa nyata termasuk skor, masa dan bilangan pergerakan. Penjimatan automatik memastikan anda tidak akan kehilangan kemajuan.\n\nBersaing dalam papan pendahulu global, kedudukan serantau dan cabar rakan. Pilih gaya persaingan anda: skor tertinggi, masa terpantas atau pergerakan paling sedikit. Selesaikan cabaran harian untuk mendapat syiling dan buka kunci tema latar belakang cantik untuk memperibadikan permainan anda. Nikmati penukaran automatik antara tema gelap dan cerah dengan maklum balas haptik pada setiap interaksi.\n\nSempurna untuk berulang-alik, rehat atau berehat sebelum tidur. Main luar talian pada bila-bila masa, di mana-mana sahaja. Muat turun sekarang dan mulakan perjalanan Solitaire anda."
-				},
-				"no": {
-					"title": "Kabal - Kortklassiker+",
-					"subtitle": "Slapp av med klassisk kabal",
-					"description": "Opplev den klassiske Klondike-kabal med jevne animasjoner og vakker design. Perfekt for alle enheter, nyt det tidløse kortspillet elsket av millioner over hele verden.\n\nMestre ferdighetene dine med intelligent hint-system som foreslår de beste trekkene, ubegrenset angre for å rette feil og automatisk fullføring for å avslutte spill raskt. Spor fremgangen din med sanntidsstatistikk inkludert poengsum, tid og antall trekk. Automatisk lagring sikrer at du aldri mister fremgangen din.\n\nKonkurrér i globale poengtavler, regionale rangeringer og utfordre venner. Velg din konkurransestil: høyeste poengsum, raskeste tid eller færrest trekk. Fullfør daglige utfordringer for å tjene mynter og låse opp vakre bakgrunnstemaer for å tilpasse spillet ditt. Nyt automatisk bytte mellom mørkt og lyst tema med haptisk tilbakemelding ved hver interaksjon.\n\nPerfekt for pendling, pauser eller avslapning før sengetid. Spill frakoblet når som helst, hvor som helst. Last ned nå og start Kabal-reisen din."
-				},
-				"pl": {
-					"title": "Pasjans - Klasyk Kartowy+",
-					"subtitle": "Klasyczny pasjans na relaks",
-					"description": "Doświadcz klasycznego pasjansa Klondike z płynnymi animacjami i pięknym designem. Idealny na wszystkie urządzenia, ciesz się ponadczasową grą karcianą uwielbianą przez miliony na całym świecie.\n\nOpanuj swoje umiejętności dzięki inteligentnemu systemowi podpowiedzi sugerującemu najlepsze ruchy, nieograniczonemu cofaniu do poprawiania błędów i funkcji autouzupełniania do szybkiego kończenia gier. Śledź swoje postępy dzięki statystykom w czasie rzeczywistym, obejmującym wynik, czas i liczbę ruchów. Automatyczny zapis gwarantuje, że nigdy nie stracisz swoich postępów.\n\nRywalizuj w globalnych tablicach wyników, rankingach regionalnych i rzucaj wyzwanie przyjaciołom. Wybierz swój styl rywalizacji: najwyższy wynik, najszybszy czas lub najmniej ruchów. Ukończ codzienne wyzwania, aby zdobyć monety i odblokować piękne motywy tła, aby spersonalizować swoją grę. Ciesz się automatycznym przełączaniem między ciemnym i jasnym motywem z informacją zwrotną haptyczną przy każdej interakcji.\n\nIdealny na dojazdy, przerwy lub relaks przed snem. Graj offline w każdej chwili i wszędzie. Pobierz teraz i rozpocznij swoją przygodę z pasjansem."
-				},
-				"pt-BR": {
-					"title": "Paciência - Cartas Clássicas+",
-					"subtitle": "Paciência clássica relaxante",
-					"description": "Experimente o clássico Paciência Klondike com animações suaves e design bonito. Perfeito para todos os dispositivos, aproveite o jogo de cartas atemporal amado por milhões em todo o mundo.\n\nDomine suas habilidades com o sistema de dicas inteligente que sugere os melhores movimentos, desfazer ilimitado para corrigir erros e recurso de autocompletar para terminar jogos rapidamente. Acompanhe seu progresso com estatísticas em tempo real incluindo pontuação, tempo e número de movimentos. O salvamento automático garante que você nunca perca seu progresso.\n\nCompita em classificações globais, rankings regionais e desafie amigos. Escolha seu estilo de competição: pontuação mais alta, tempo mais rápido ou menos movimentos. Complete desafios diários para ganhar moedas e desbloquear belos temas de fundo para personalizar seu jogo. Aproveite a alternância automática entre tema escuro e claro com feedback tátil em cada interação.\n\nPerfeito para deslocamentos, pausas ou relaxar antes de dormir. Jogue offline a qualquer momento, em qualquer lugar. Baixe agora e comece sua jornada no Paciência."
-				},
-				"pt": {
-					"title": "Paciência - Cartas Clássicas+",
-					"subtitle": "Paciência clássica relaxante",
-					"description": "Experimente o clássico Paciência Klondike com animações suaves e design bonito. Perfeito para todos os dispositivos, aproveite o jogo de cartas atemporal amado por milhões em todo o mundo.\n\nDomine suas habilidades com o sistema de dicas inteligente que sugere os melhores movimentos, desfazer ilimitado para corrigir erros e recurso de autocompletar para terminar jogos rapidamente. Acompanhe seu progresso com estatísticas em tempo real incluindo pontuação, tempo e número de movimentos. O salvamento automático garante que você nunca perca seu progresso.\n\nCompita em classificações globais, rankings regionais e desafie amigos. Escolha seu estilo de competição: pontuação mais alta, tempo mais rápido ou menos movimentos. Complete desafios diários para ganhar moedas e desbloquear belos temas de fundo para personalizar seu jogo. Aproveite a alternância automática entre tema escuro e claro com feedback tátil em cada interação.\n\nPerfeito para deslocamentos, pausas ou relaxar antes de dormir. Jogue offline a qualquer momento, em qualquer lugar. Baixe agora e comece sua jornada no Paciência."
-				},
-				"ro": {
-					"title": "Solitaire - Cărți Clasice+",
-					"subtitle": "Bucură-te de solitarul clasic",
-					"description": "Experimentați clasicul Solitaire Klondike cu animații fluide și design frumos. Perfect pentru toate dispozitivele, bucurați-vă de jocul de cărți fără timp îndrăgit de milioane în întreaga lume.\n\nStăpâniți-vă abilitățile cu sistemul inteligent de indicii care sugerează cele mai bune mutări, anulare nelimitată pentru corectarea greșelilor și funcția de completare automată pentru terminarea rapidă a jocurilor. Urmăriți-vă progresul cu statistici în timp real incluzând scor, timp și număr de mutări. Salvarea automată asigură că nu veți pierde niciodată progresul.\n\nConcurați în clasamente globale, clasamente regionale și provocați prietenii. Alegeți stilul dvs. de competiție: cel mai mare scor, cel mai rapid timp sau cele mai puține mutări. Completați provocările zilnice pentru a câștiga monede și a debloca teme de fundal frumoase pentru a personaliza jocul. Bucurați-vă de comutarea automată între tema închisă și deschisă cu feedback haptic la fiecare interacțiune.\n\nPerfect pentru naveta, pauze sau relaxare înainte de culcare. Jucați offline oricând, oriunde. Descărcați acum și începeți călătoria dvs. Solitaire."
-				},
-				"ru": {
-					"title": "Пасьянс - Клондайк Классика+",
-					"subtitle": "Отдых с классическим пасьянсом",
-					"description": "Испытайте классический пасьянс Клондайк с плавными анимациями и красивым дизайном. Идеально для всех устройств, наслаждайтесь вневременной карточной игрой, любимой миллионами по всему миру.\n\nСовершенствуйте свои навыки с интеллектуальной системой подсказок, предлагающей лучшие ходы, неограниченной отменой для исправления ошибок и функцией автозавершения для быстрого окончания игр. Отслеживайте свой прогресс с помощью статистики в реальном времени, включая счет, время и количество ходов. Автосохранение гарантирует, что вы никогда не потеряете свой прогресс.\n\nСоревнуйтесь в глобальных таблицах лидеров, региональных рейтингах и бросайте вызов друзьям. Выберите свой стиль соревнования: наивысший счет, самое быстрое время или наименьшее количество ходов. Выполняйте ежедневные задания, чтобы зарабатывать монеты и разблокировать красивые фоновые темы для персонализации игры. Наслаждайтесь автоматическим переключением между темной и светлой темами с тактильной обратной связью при каждом взаимодействии.\n\nИдеально подходит для поездок, перерывов или расслабления перед сном. Играйте офлайн в любое время и в любом месте. Скачайте сейчас и начните свое путешествие в пасьянс."
-				},
-				"sk": {
-					"title": "Soliter - Kartový Klasik+",
-					"subtitle": "Klasický solitér na oddych",
-					"description": "Zažite klasické Klondike Solitaire s plynulými animáciami a krásnym dizajnom. Perfektné pre všetky zariadenia, užite si nadčasovú kartovú hru milovanú miliónmi po celom svete.\n\nZdokonalte svoje zručnosti s inteligentným systémom rád, ktorý navrhuje najlepšie ťahy, neobmedzeným vrátením späť na opravu chýb a funkciou automatického dokončenia na rýchle ukončenie hier. Sledujte svoj pokrok so štatistikami v reálnom čase vrátane skóre, času a počtu ťahov. Automatické ukladanie zabezpečuje, že nikdy nestratíte svoj pokrok.\n\nSúťažte v globálnych rebríčkoch, regionálnych rebríčkoch a vyzvite priateľov. Vyberte si svoj štýl súťaženia: najvyššie skóre, najrýchlejší čas alebo najmenej ťahov. Plňte denné výzvy, aby ste získali mince a odomkli krásne motívy pozadia na prispôsobenie vašej hry. Užite si automatické prepínanie medzi tmavou a svetlou témou s haptickou odozvou pri každej interakcii.\n\nIdeálne na dochádzanie, prestávky alebo relaxáciu pred spaním. Hrajte offline kedykoľvek a kdekoľvek. Stiahnite si teraz a začnite svoju cestu so Solitaire."
-				},
-				"sv": {
-					"title": "Patiens - Kortklassiker+",
-					"subtitle": "Koppla av med klassisk patiens",
-					"description": "Upplev den klassiska Klondike-patiensen med mjuka animationer och vacker design. Perfekt för alla enheter, njut av det tidlösa kortspelet älskat av miljoner över hela världen.\n\nBemästra dina färdigheter med intelligent hintsystem som föreslår de bästa dragen, obegränsad ångra för att rätta till fel och autokompletteringsfunktion för att snabbt avsluta spel. Spåra din framgång med realtidsstatistik inklusive poäng, tid och antal drag. Automatisk sparning säkerställer att du aldrig förlorar din framgång.\n\nTävla i globala topplister, regionala rankningar och utmana vänner. Välj din tävlingsstil: högsta poäng, snabbaste tid eller minst antal drag. Slutför dagliga utmaningar för att tjäna mynt och låsa upp vackra bakgrundsteman för att anpassa ditt spel. Njut av automatisk växling mellan mörkt och ljust tema med haptisk feedback vid varje interaktion.\n\nPerfekt för pendling, raster eller avkoppling före läggdags. Spela offline när som helst, var som helst. Ladda ner nu och börja din Patiens-resa."
-				},
-				"th": {
-					"title": "โซลิแทร์ - เกมไพ่คลาสสิก+",
-					"subtitle": "เพลิดเพลินกับโซลิแทร์คลาสสิก",
-					"description": "สัมผัสเกมไพ่เก็บเรียง Klondike คลาสสิกด้วยแอนิเมชันที่ลื่นไหลและการออกแบบที่สวยงาม เหมาะสำหรับทุกอุปกรณ์ เพลิดเพลินกับเกมไพ่เหนือกาลเวลาที่ผู้คนนับล้านทั่วโลกชื่นชอบ\n\nเชี่ยวชาญทักษะของคุณด้วยระบบคำใบ้อัจฉริยะที่แนะนำการเคลื่อนไหวที่ดีที่สุด การเลิกทำไม่จำกัดเพื่อแก้ไขข้อผิดพลาด และฟีเจอร์ทำให้สำเร็จอัตโนมัติเพื่อจบเกมอย่างรวดเร็ว ติดตามความคืบหน้าของคุณด้วยสถิติแบบเรียลไทม์รวมถึงคะแนน เวลา และจำนวนการเคลื่อนไหว การบันทึกอัตโนมัติทำให้มั่นใจว่าคุณจะไม่สูญเสียความคืบหน้า\n\nแข่งขันในกระดานผู้นำทั่วโลก การจัดอันดับระดับภูมิภาค และท้าทายเพื่อน เลือกสไตล์การแข่งขันของคุณ: คะแนนสูงสุด เวลาเร็วที่สุด หรือการเคลื่อนไหวน้อยที่สุด ทำความท้าทายรายวันให้สำเร็จเพื่อรับเหรียญและปลดล็อกธีมพื้นหลังที่สวยงามเพื่อปรับแต่งเกมของคุณ เพลิดเพลินกับการสลับระหว่างธีมมืดและสว่างอัตโนมัติพร้อมการตอบสนองแบบสัมผัสในทุกการโต้ตอบ\n\nเหมาะสำหรับการเดินทางไปทำงาน พักผ่อน หรือผ่อนคลายก่อนนอน เล่นออฟไลน์ได้ทุกที่ทุกเวลา ดาวน์โหลดตอนนี้และเริ่มต้นการเดินทางเกมไพ่เก็บเรียงของคุณ"
-				},
-				"tr": {
-					"title": "Solitaire - Klasik Kart Oyunu+",
-					"subtitle": "Keyifli klasik Solitaire",
-					"description": "Pürüzsüz animasyonlar ve güzel tasarımla klasik Klondike Solitaire deneyimini yaşayın. Tüm cihazlar için mükemmel, dünya çapında milyonlar tarafından sevilen zamansız kart oyununun keyfini çıkarın.\n\nEn iyi hamleleri öneren akıllı ipucu sistemi, hataları düzeltmek için sınırsız geri alma ve oyunları hızla bitirmek için otomatik tamamlama özelliği ile becerilerinizi geliştirin. Puan, süre ve hamle sayısı dahil gerçek zamanlı istatistiklerle ilerlemenizi takip edin. Otomatik kayıt, ilerlemenizi asla kaybetmemenizi sağlar.\n\nKüresel lider tablolarında, bölgesel sıralamalarda yarışın ve arkadaşlarınıza meydan okuyun. Rekabet tarzınızı seçin: en yüksek puan, en hızlı süre veya en az hamle. Madeni para kazanmak için günlük zorlukları tamamlayın ve oyununuzu kişiselleştirmek için güzel arka plan temalarının kilidini açın. Her etkileşimde dokunsal geri bildirimle otomatik koyu ve açık tema geçişinin keyfini çıkarın.\n\nYolculuklar, molalar veya uyumadan önce rahatlamak için mükemmel. Her zaman, her yerde çevrimdışı oynayın. Şimdi indirin ve Solitaire yolculuğunuza başlayın."
-				},
-				"uk": {
-					"title": "Пасьянс - Клондайк Класика+",
-					"subtitle": "Класичний пасьянс для релаксу",
-					"description": "Відчуйте класичний пасьянс Клондайк з плавними анімаціями та красивим дизайном. Ідеально для всіх пристроїв, насолоджуйтесь позачасовою карточною грою, улюбленою мільйонами по всьому світу.\n\nВдосконалюйте свої навички з інтелектуальною системою підказок, яка пропонує найкращі ходи, необмеженою відміною для виправлення помилок і функцією автозавершення для швидкого закінчення ігор. Відстежуйте свій прогрес за допомогою статистики в реальному часі, включаючи рахунок, час і кількість ходів. Автоматичне збереження гарантує, що ви ніколи не втратите свій прогрес.\n\nЗмагайтеся в глобальних таблицях лідерів, регіональних рейтингах і кидайте виклик друзям. Виберіть свій стиль змагання: найвищий рахунок, найшвидший час або найменша кількість ходів. Виконуйте щоденні завдання, щоб заробляти монети та розблокувати красиві фонові теми для персоналізації вашої гри. Насолоджуйтесь автоматичним перемиканням між темною та світлою темами з тактильним зворотним зв'язком при кожній взаємодії.\n\nІдеально підходить для поїздок, перерв або розслаблення перед сном. Грайте офлайн у будь-який час і в будь-якому місці. Завантажте зараз і почніть свою подорож у пасьянс."
-				},
-				"vi": {
-					"title": "Solitaire - Trò Bài Cổ Điển+",
-					"subtitle": "Thư giãn với solitaire cổ điển",
-					"description": "Trải nghiệm trò chơi Solitaire Klondike cổ điển với hoạt ảnh mượt mà và thiết kế đẹp mắt. Hoàn hảo cho mọi thiết bị, hãy tận hưởng trò chơi bài vượt thời gian được hàng triệu người yêu thích trên toàn thế giới.\n\nNắm vững kỹ năng của bạn với hệ thống gợi ý thông minh đề xuất các nước đi tốt nhất, hoàn tác không giới hạn để sửa lỗi và tính năng tự động hoàn thành để kết thúc trò chơi nhanh chóng. Theo dõi tiến trình của bạn với thống kê thời gian thực bao gồm điểm số, thời gian và số lượt di chuyển. Lưu tự động đảm bảo bạn không bao giờ mất tiến trình.\n\nThi đấu trên bảng xếp hạng toàn cầu, xếp hạng khu vực và thách thức bạn bè. Chọn phong cách thi đấu của bạn: điểm số cao nhất, thời gian nhanh nhất hoặc ít nước đi nhất. Hoàn thành thử thách hàng ngày để kiếm xu và mở khóa các chủ đề nền đẹp để cá nhân hóa trò chơi của bạn. Tận hưởng tự động chuyển đổi giữa chủ đề tối và sáng với phản hồi xúc giác ở mọi tương tác.\n\nHoàn hảo cho việc đi lại, giải lao hoặc thư giãn trước khi đi ngủ. Chơi ngoại tuyến mọi lúc, mọi nơi. Tải xuống ngay và bắt đầu hành trình Solitaire của bạn."
-				},
-				"zh-Hans": {
-					"title": "纸牌接龙 - 经典纸牌游戏+",
-					"subtitle": "畅玩经典纸牌接龙",
-					"description": "体验经典克朗代克接龙游戏，流畅的动画和精美的设计。适合各种设备，享受这款深受全球数百万玩家喜爱的经典纸牌游戏。\n\n借助智能提示系统掌握技巧，找到最佳走法，无限撤销功能纠正错误，自动完成功能快速结束游戏。通过实时统计追踪分数、时间和步数。自动保存进度，随时继续游戏。\n\n在全球排行榜、地区排行榜和好友排行榜上竞技。选择你的比拼方式：最高分数、最快时间或最少步数。完成每日挑战赢取金币，解锁精美背景皮肤，个性化你的游戏。深浅色主题自动切换，触觉反馈增强每次互动体验。\n\n非常适合通勤、休息或睡前放松。随时随地离线游玩。立即下载，开启你的接龙之旅。"
-				},
-				"zh-Hant": {
-					"title": "紙牌接龍 - 經典紙牌遊戲+",
-					"subtitle": "暢玩經典紙牌接龍",
-					"description": "體驗經典克朗代克接龍遊戲，流暢的動畫和精美的設計。適合各種裝置，享受這款深受全球數百萬玩家喜愛的經典紙牌遊戲。\n\n藉助智慧提示系統掌握技巧，找到最佳走法，無限撤銷功能糾正錯誤，自動完成功能快速結束遊戲。透過即時統計追蹤分數、時間和步數。自動儲存進度，隨時繼續遊戲。\n\n在全球排行榜、地區排行榜和好友排行榜上競技。選擇你的比拼方式：最高分數、最快時間或最少步數。完成每日挑戰贏取金幣，解鎖精美背景皮膚，個人化你的遊戲。深淺色主題自動切換，觸覺回饋增強每次互動體驗。\n\n非常適合通勤、休息或睡前放鬆。隨時隨地離線遊玩。立即下載，開啟你的接龍之旅。"
-				}
-			},
 			"deeplink": "https://solitaire-io.onelink.me/Vd8i?pid=zeroplay&zp_type=web",
 			"videoUrl": "https://dl.zeroplay.cc/metadata/solitaire/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/solitaire/poster.jpg",
@@ -385,7 +51,52 @@
 			},
 			"socialMedia": {
 				"enabled": false
-			}
+			},
+			"released": true
+		},
+		{
+			"id": "rubik",
+			"icon": "https://dl.zeroplay.cc/metadata/rubik/icon.png",
+			"banner": "https://dl.zeroplay.cc/metadata/rubik/banner.jpg",
+			"deeplink": "https://rubik-cube.onelink.me/Kp4R?pid=zeroplay&zp_type=web",
+			"videoUrl": "https://dl.zeroplay.cc/metadata/rubik/preview%400.5x.mp4",
+			"posterUrl": "https://dl.zeroplay.cc/metadata/rubik/poster.jpg",
+			"screenshots": [
+				"https://dl.zeroplay.cc/metadata/rubik/screenshots/01.jpg",
+				"https://dl.zeroplay.cc/metadata/rubik/screenshots/02.jpg",
+				"https://dl.zeroplay.cc/metadata/rubik/screenshots/03.jpg",
+				"https://dl.zeroplay.cc/metadata/rubik/screenshots/04.jpg",
+				"https://dl.zeroplay.cc/metadata/rubik/screenshots/05.jpg"
+			],
+			"orientation": "portrait",
+			"stores": {
+				"appStore": "https://apps.apple.com/app/id6744870498",
+				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.rubik"
+			},
+			"socialMedia": {
+				"enabled": false
+			},
+			"released": true
+		},
+		{
+			"id": "sudoku",
+			"icon": "https://dl.zeroplay.cc/metadata/sudoku/icon.png",
+			"banner": "https://dl.zeroplay.cc/metadata/sudoku/banner.jpg",
+			"videoUrl": "https://dl.zeroplay.cc/metadata/sudoku/preview%400.5x.mp4",
+			"posterUrl": "https://dl.zeroplay.cc/metadata/sudoku/poster.jpg",
+			"screenshots": [
+				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/01.jpg",
+				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/02.jpg",
+				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/03.jpg",
+				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/04.jpg",
+				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/05.jpg"
+			],
+			"orientation": "portrait",
+			"stores": {},
+			"socialMedia": {
+				"enabled": false
+			},
+			"released": false
 		}
 	]
 }

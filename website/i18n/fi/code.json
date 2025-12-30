@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Hanki"
   },
+  "game.button.get.aria": {
+    "message": "Hanki {title}"
+  },
+  "game.button.preorder": {
+    "message": "Ennakkotilaa"
+  },
+  "game.button.preorder.aria": {
+    "message": "Ennakkotilaa {title}"
+  },
+  "about.page.title": {
+    "message": "Tietoa meistä"
+  },
+  "about.page.description": {
+    "message": "Lue lisää ZeroPlaystä"
+  },
+  "about.hero.title": {
+    "message": "Tietoa ZeroPlaystä"
+  },
+  "about.hero.tagline": {
+    "message": "Aloita nollasta, pelaa äärettömään"
+  },
+  "about.mission.title": {
+    "message": "Missiomme"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay on omistautunut luomaan poikkeuksellisia casual-palapelipelejä, jotka tuovat iloa ja henkistä stimulaatiota pelaajille ympäri maailmaa. Uskomme, että hyvien pelien tulisi olla kaikkien saatavilla tarjoten yhtä lailla rentoutumisen ja älyllisen haasteen hetkiä."
+  },
+  "about.philosophy.title": {
+    "message": "Filosofiamme"
+  },
+  "about.philosophy.text": {
+    "message": "Olemme sitoutuneet oikeudenmukaisuuteen ja läpinäkyvyyteen kaikessa tekemässämme. Pelissämme on todistettavasti oikeudenmukaisia järjestelmiä, jotka varmistavat, että jokaisella pelaajalla on yhtäläinen mahdollisuus menestyä. Yhdistämme klassisen pelilogiikan nykyaikaisiin suunnitteluperiaatteisiin luodaksemme kokemuksia, jotka ovat sekä ajattomia että tuoreita."
+  },
+  "about.games.title": {
+    "message": "Pelimme"
+  },
+  "about.games.text": {
+    "message": "Strategisista lautapeleistä, kuten Backgammon, rentouttaviin korttipeleihin, kuten Pasianssi, ja aivoja haastaviin palapelihin, kuten Rubikin kuutio, portfoliomme kattaa laajan valikoiman casual-pelikokemuksia. Jokainen peli on valmistettu huolella yksityiskohtiin, kauniilla visuaaleilla ja sujuvalla pelaamisella, joka toimii saumattomasti kaikilla laitteillasi."
+  },
+  "about.global.title": {
+    "message": "Maailmanlaajuinen yhteisö"
+  },
+  "about.global.text": {
+    "message": "Yli 30 kielen tuella ja pelaajilla joka puolelta maailmaa, ZeroPlay-pelit yhdistävät ihmisiä pelin universaalin kielen kautta. Liity miljoonien pelaajien joukkoon, jotka ovat tehneet peleistämme osan päivittäistä rutiiniaan."
+  },
+  "contact.page.title": {
+    "message": "Ota yhteyttä"
+  },
+  "contact.page.description": {
+    "message": "Ota yhteyttä ZeroPlayhyn"
+  },
+  "contact.hero.title": {
+    "message": "Ota yhteyttä"
+  },
+  "contact.hero.tagline": {
+    "message": "Haluamme kuulla sinusta"
+  },
+  "contact.email.title": {
+    "message": "Sähköposti"
+  },
+  "contact.email.description": {
+    "message": "Yleisiä kyselyjä, tukea tai palautetta varten, ota yhteyttä sähköpostitse."
+  },
+  "contact.response.title": {
+    "message": "Vastausaika"
+  },
+  "contact.response.text": {
+    "message": "Vastaamme tyypillisesti kaikkiin kyselyihin 1-2 arkipäivän kuluessa. Kiireellisissä tilin ongelmiin tai sovellusostoihin liittyvissä asioissa sisällytä viestiin pelaajatunnuksesi nopeampaa apua varten."
+  },
+  "contact.feedback.title": {
+    "message": "Palaute tervetullutta"
+  },
+  "contact.feedback.text": {
+    "message": "Palautteesi auttaa meitä parantamaan pelejämme. Oli sinulla sitten ehdotuksia uusista ominaisuuksista, löysitkö bugin tai haluat vain jakaa kokemuksesi, arvostamme pelaajien kuulemista."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

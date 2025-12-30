@@ -10,5 +10,13 @@
   "logo.alt": {
     "message": "ZeroPlay Logo",
     "description": "The alt text of navbar logo"
+  },
+  "item.label.About": {
+    "message": "Sobre nosotros",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Contact": {
+    "message": "Contacto",
+    "description": "Navbar item with label Contact"
   }
 }

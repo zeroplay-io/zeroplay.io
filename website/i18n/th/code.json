@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "ดาวน์โหลด"
   },
+  "game.button.get.aria": {
+    "message": "ดาวน์โหลด {title}"
+  },
+  "game.button.preorder": {
+    "message": "สั่งจองล่วงหน้า"
+  },
+  "game.button.preorder.aria": {
+    "message": "สั่งจองล่วงหน้า {title}"
+  },
+  "about.page.title": {
+    "message": "เกี่ยวกับเรา"
+  },
+  "about.page.description": {
+    "message": "เรียนรู้เพิ่มเติมเกี่ยวกับ ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "เกี่ยวกับ ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "จากศูนย์ เกมไม่สิ้นสุด"
+  },
+  "about.mission.title": {
+    "message": "ภารกิจของเรา"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay มุ่งมั่นในการสร้างเกมปริศนาสบายๆ ที่โดดเด่นซึ่งนำความสุขและการกระตุ้นทางจิตมาสู่ผู้เล่นทั่วโลก เราเชื่อว่าเกมที่ยอดเยี่ยมควรเข้าถึงได้สำหรับทุกคน โดยมอบช่วงเวลาแห่งการผ่อนคลายและความท้าทายทางปัญญาอย่างเท่าเทียมกัน"
+  },
+  "about.philosophy.title": {
+    "message": "ปรัชญาของเรา"
+  },
+  "about.philosophy.text": {
+    "message": "เรามุ่งมั่นต่อความยุติธรรมและความโปร่งใสในทุกสิ่งที่เราทำ เกมของเรามีระบบที่ยุติธรรมอย่างพิสูจน์ได้ รับประกันโอกาสความสำเร็จที่เท่าเทียมกันสำหรับผู้เล่นทุกคน เรารวมกลไกการเล่นเกมคลาสสิกเข้ากับหลักการออกแบบสมัยใหม่เพื่อสร้างประสบการณ์ที่ทั้งเหนือกาลเวลาและสดใหม่"
+  },
+  "about.games.title": {
+    "message": "เกมของเรา"
+  },
+  "about.games.text": {
+    "message": "ตั้งแต่เกมกระดานเชิงกลยุทธ์อย่าง Backgammon ไปจนถึงเกมไพ่ผ่อนคลายอย่าง Solitaire และปริศนาเพื่อบริหารสมองอย่าง Rubik's Cube แฟ้มผลงานของเราครอบคลุมประสบการณ์เกมสบายๆ ที่หลากหลาย เกมแต่ละเกมได้รับการออกแบบด้วยความใส่ใจในรายละเอียด ภาพที่สวยงาม และการเล่นที่ลื่นไหลซึ่งทำงานได้อย่างไร้รอยต่อบนทุกอุปกรณ์ของคุณ"
+  },
+  "about.global.title": {
+    "message": "ชุมชนทั่วโลก"
+  },
+  "about.global.text": {
+    "message": "ด้วยการสนับสนุนกว่า 30 ภาษาและผู้เล่นจากทุกมุมโลก เกม ZeroPlay เชื่อมโยงผู้คนเข้าด้วยกันผ่านภาษาสากลของการเล่น เข้าร่วมกับผู้เล่นหลายล้านคนที่ทำให้เกมของเราเป็นส่วนหนึ่งของกิจวัตรประจำวันของพวกเขา"
+  },
+  "contact.page.title": {
+    "message": "ติดต่อเรา"
+  },
+  "contact.page.description": {
+    "message": "ติดต่อกับ ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "ติดต่อเรา"
+  },
+  "contact.hero.tagline": {
+    "message": "เรายินดีรับฟังจากคุณ"
+  },
+  "contact.email.title": {
+    "message": "อีเมล"
+  },
+  "contact.email.description": {
+    "message": "สำหรับคำถามทั่วไป การสนับสนุน หรือความคิดเห็น โปรดติดต่อเราทางอีเมล"
+  },
+  "contact.response.title": {
+    "message": "เวลาตอบกลับ"
+  },
+  "contact.response.text": {
+    "message": "โดยปกติเราจะตอบคำถามทั้งหมดภายใน 1-2 วันทำการ สำหรับเรื่องด่วนที่เกี่ยวข้องกับปัญหาบัญชีหรือการซื้อในแอป โปรดระบุ ID ผู้เล่นของคุณในข้อความเพื่อรับความช่วยเหลือที่รวดเร็วยิ่งขึ้น"
+  },
+  "contact.feedback.title": {
+    "message": "ยินดีรับความคิดเห็น"
+  },
+  "contact.feedback.text": {
+    "message": "ความคิดเห็นของคุณช่วยให้เราปรับปรุงเกมของเรา ไม่ว่าคุณจะมีข้อเสนอแนะสำหรับฟีเจอร์ใหม่ พบข้อผิดพลาด หรือเพียงต้องการแบ่งปันประสบการณ์ของคุณ เราขอขอบคุณที่รับฟังจากผู้เล่นของเรา"
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

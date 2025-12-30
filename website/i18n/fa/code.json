@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "دریافت"
   },
+  "game.button.get.aria": {
+    "message": "دریافت {title}"
+  },
+  "game.button.preorder": {
+    "message": "پیش‌سفارش"
+  },
+  "game.button.preorder.aria": {
+    "message": "پیش‌سفارش {title}"
+  },
+  "about.page.title": {
+    "message": "درباره ما"
+  },
+  "about.page.description": {
+    "message": "بیشتر درباره ZeroPlay بدانید"
+  },
+  "about.hero.title": {
+    "message": "درباره ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "از صفر شروع کنید، تا بی‌نهایت بازی کنید"
+  },
+  "about.mission.title": {
+    "message": "مأموریت ما"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay به ایجاد بازی‌های پازل معمولی استثنایی اختصاص دارد که شادی و تحریک ذهنی را برای بازیکنان در سراسر جهان به ارمغان می‌آورد. ما معتقدیم که بازی‌های عالی باید برای همه قابل دسترسی باشند و لحظاتی از آرامش و چالش فکری را به طور یکسان ارائه دهند."
+  },
+  "about.philosophy.title": {
+    "message": "فلسفه ما"
+  },
+  "about.philosophy.text": {
+    "message": "ما به انصاف و شفافیت در هر کاری که انجام می‌دهیم متعهدیم. بازی‌های ما دارای سیستم‌های عادلانه قابل اثبات هستند که اطمینان می‌دهند هر بازیکن فرصت برابری برای موفقیت دارد. ما مکانیک‌های بازی کلاسیک را با اصول طراحی مدرن ترکیب می‌کنیم تا تجربیاتی را ایجاد کنیم که هم جاودانه و هم تازه هستند."
+  },
+  "about.games.title": {
+    "message": "بازی‌های ما"
+  },
+  "about.games.text": {
+    "message": "از بازی‌های تخته استراتژیک مانند تخته نرد گرفته تا بازی‌های کارتی آرام‌بخش مانند سالیتر و پازل‌های چالش‌برانگیز مانند مکعب روبیک، نمونه کارهای ما طیف گسترده‌ای از تجربیات بازی معمولی را پوشش می‌دهند. هر بازی با توجه به جزئیات، تصاویر زیبا و گیم‌پلی روان ساخته شده است که به طور یکپارچه در همه دستگاه‌های شما کار می‌کند."
+  },
+  "about.global.title": {
+    "message": "جامعه جهانی"
+  },
+  "about.global.text": {
+    "message": "با پشتیبانی از بیش از 30 زبان و بازیکنان از هر گوشه جهان، بازی‌های ZeroPlay مردم را از طریق زبان جهانی بازی گرد هم می‌آورند. به میلیون‌ها بازیکن بپیوندید که بازی‌های ما را بخشی از روال روزانه خود کرده‌اند."
+  },
+  "contact.page.title": {
+    "message": "تماس با ما"
+  },
+  "contact.page.description": {
+    "message": "با ZeroPlay در تماس باشید"
+  },
+  "contact.hero.title": {
+    "message": "تماس با ما"
+  },
+  "contact.hero.tagline": {
+    "message": "ما دوست داریم از شما بشنویم"
+  },
+  "contact.email.title": {
+    "message": "ایمیل"
+  },
+  "contact.email.description": {
+    "message": "برای سؤالات عمومی، پشتیبانی یا بازخورد، لطفاً از طریق ایمیل با ما تماس بگیرید."
+  },
+  "contact.response.title": {
+    "message": "زمان پاسخگویی"
+  },
+  "contact.response.text": {
+    "message": "ما معمولاً به همه سؤالات در عرض 1-2 روز کاری پاسخ می‌دهیم. برای موارد فوری مربوط به مسائل حساب یا خریدهای درون‌برنامه‌ای، لطفاً شناسه بازیکن خود را در پیام خود قرار دهید تا سریع‌تر کمک دریافت کنید."
+  },
+  "contact.feedback.title": {
+    "message": "بازخورد خوش‌آمدید"
+  },
+  "contact.feedback.text": {
+    "message": "بازخورد شما به ما کمک می‌کند تا بازی‌های خود را بهبود بخشیم. چه پیشنهادی برای ویژگی‌های جدید داشته باشید، چه باگی پیدا کرده باشید، یا فقط بخواهید تجربه خود را به اشتراک بگذارید، ما از شنیدن نظرات بازیکنان خود قدردانی می‌کنیم."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

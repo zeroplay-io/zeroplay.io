@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "احصل عليه"
   },
+  "game.button.get.aria": {
+    "message": "احصل على {title}"
+  },
+  "game.button.preorder": {
+    "message": "الطلب المسبق"
+  },
+  "game.button.preorder.aria": {
+    "message": "الطلب المسبق لـ {title}"
+  },
+  "about.page.title": {
+    "message": "من نحن"
+  },
+  "about.page.description": {
+    "message": "اعرف المزيد عن ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "حول ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "من الصفر، ألعاب لا نهائية"
+  },
+  "about.mission.title": {
+    "message": "مهمتنا"
+  },
+  "about.mission.text": {
+    "message": "تكرس ZeroPlay جهودها لإنشاء ألعاب ألغاز عادية استثنائية تجلب الفرح والتحفيز الذهني للاعبين في جميع أنحاء العالم. نؤمن بأن الألعاب الرائعة يجب أن تكون في متناول الجميع، وتقدم لحظات من الاسترخاء والتحدي الفكري بالتساوي."
+  },
+  "about.philosophy.title": {
+    "message": "فلسفتنا"
+  },
+  "about.philosophy.text": {
+    "message": "نحن ملتزمون بالعدالة والشفافية في كل ما نقوم به. تتميز ألعابنا بأنظمة عادلة يمكن إثباتها، مما يضمن لكل لاعب فرصة متساوية للنجاح. نجمع بين آليات اللعب الكلاسيكية ومبادئ التصميم الحديثة لإنشاء تجارب خالدة ومنعشة في آن واحد."
+  },
+  "about.games.title": {
+    "message": "ألعابنا"
+  },
+  "about.games.text": {
+    "message": "من ألعاب الطاولة الإستراتيجية مثل الطاولة إلى ألعاب الورق المريحة مثل سوليتير، والألغاز المحيرة مثل مكعب روبيك، تشمل مجموعتنا مجموعة واسعة من تجارب الألعاب العادية. يتم صياغة كل لعبة بعناية فائقة للتفاصيل، ورسومات جميلة، وطريقة لعب سلسة تعمل بسلاسة على جميع أجهزتك."
+  },
+  "about.global.title": {
+    "message": "مجتمع عالمي"
+  },
+  "about.global.text": {
+    "message": "مع دعم أكثر من 30 لغة ولاعبين من كل ركن من أركان العالم، تجمع ألعاب ZeroPlay الناس معًا من خلال اللغة العالمية للعب. انضم إلى ملايين اللاعبين الذين جعلوا ألعابنا جزءًا من روتينهم اليومي."
+  },
+  "contact.page.title": {
+    "message": "اتصل بنا"
+  },
+  "contact.page.description": {
+    "message": "تواصل مع ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "اتصل بنا"
+  },
+  "contact.hero.tagline": {
+    "message": "نود أن نسمع منك"
+  },
+  "contact.email.title": {
+    "message": "البريد الإلكتروني"
+  },
+  "contact.email.description": {
+    "message": "للاستفسارات العامة أو الدعم أو التعليقات، يرجى التواصل معنا عبر البريد الإلكتروني."
+  },
+  "contact.response.title": {
+    "message": "وقت الاستجابة"
+  },
+  "contact.response.text": {
+    "message": "عادة ما نرد على جميع الاستفسارات في غضون 1-2 يوم عمل. بالنسبة للأمور العاجلة المتعلقة بمشاكل الحساب أو المشتريات داخل التطبيق، يرجى تضمين معرف اللاعب الخاص بك في رسالتك للحصول على مساعدة أسرع."
+  },
+  "contact.feedback.title": {
+    "message": "التعليقات مرحب بها"
+  },
+  "contact.feedback.text": {
+    "message": "تساعدنا ملاحظاتك على تحسين ألعابنا. سواء كان لديك اقتراحات لميزات جديدة، أو وجدت خطأ، أو تريد فقط مشاركة تجربتك، فنحن نقدر سماع آراء لاعبينا."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

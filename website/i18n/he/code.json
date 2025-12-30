@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "הורד"
   },
+  "game.button.get.aria": {
+    "message": "הורד את {title}"
+  },
+  "game.button.preorder": {
+    "message": "הזמנה מראש"
+  },
+  "game.button.preorder.aria": {
+    "message": "הזמנה מראש של {title}"
+  },
+  "about.page.title": {
+    "message": "אודותינו"
+  },
+  "about.page.description": {
+    "message": "למד עוד על ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "אודות ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "התחל מאפס, שחק עד אינסוף"
+  },
+  "about.mission.title": {
+    "message": "המשימה שלנו"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay מחויבת ליצירת משחקי פאזל מזדמנים יוצאי דופן שמביאים שמחה וגירוי נפשי לשחקנים ברחבי העולם. אנו מאמינים שמשחקים נהדרים צריכים להיות נגישים לכולם, ומציעים רגעים של הרפיה ואתגר אינטלקטואלי במידה שווה."
+  },
+  "about.philosophy.title": {
+    "message": "הפילוסופיה שלנו"
+  },
+  "about.philosophy.text": {
+    "message": "אנו מחויבים להגינות ושקיפות בכל מה שאנו עושים. המשחקים שלנו כוללים מערכות הוגנות הניתנות להוכחה, המבטיחות שלכל שחקן יש הזדמנות שווה להצליח. אנו משלבים מכניקות משחק קלאסיות עם עקרונות עיצוב מודרניים כדי ליצור חוויות שהן גם נצחיות וגם רעננות."
+  },
+  "about.games.title": {
+    "message": "המשחקים שלנו"
+  },
+  "about.games.text": {
+    "message": "ממשחקי לוח אסטרטגיים כמו שש-בש ועד משחקי קלפים מרגיעים כמו סוליטר, וחידות מאתגרות כמו קוביית רוביק, תיק העבודות שלנו משתרע על מגוון רחב של חוויות משחק מזדמנות. כל משחק נוצר עם תשומת לב לפרטים, ויזואליה יפה ומשחק חלק שעובד בצורה חלקה בכל המכשירים שלך."
+  },
+  "about.global.title": {
+    "message": "קהילה גלובלית"
+  },
+  "about.global.text": {
+    "message": "עם תמיכה ביותר מ-30 שפות ושחקנים מכל פינה בעולם, משחקי ZeroPlay מחברים בין אנשים דרך השפה האוניברסלית של משחק. הצטרף למיליוני שחקנים שהפכו את המשחקים שלנו לחלק מהשגרה היומיומית שלהם."
+  },
+  "contact.page.title": {
+    "message": "צור קשר"
+  },
+  "contact.page.description": {
+    "message": "צור קשר עם ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "צור קשר"
+  },
+  "contact.hero.tagline": {
+    "message": "נשמח לשמוע ממך"
+  },
+  "contact.email.title": {
+    "message": "דוא\"ל"
+  },
+  "contact.email.description": {
+    "message": "לפניות כלליות, תמיכה או משוב, אנא פנה אלינו באמצעות דוא\"ל."
+  },
+  "contact.response.title": {
+    "message": "זמן תגובה"
+  },
+  "contact.response.text": {
+    "message": "אנו בדרך כלל מגיבים לכל הפניות תוך 1-2 ימי עסקים. לעניינים דחופים הקשורים לבעיות חשבון או רכישות בתוך האפליקציה, אנא כלול את מזהה השחקן שלך בהודעה שלך לקבלת סיוע מהיר יותר."
+  },
+  "contact.feedback.title": {
+    "message": "משוב מבורך"
+  },
+  "contact.feedback.text": {
+    "message": "המשוב שלך עוזר לנו לשפר את המשחקים שלנו. בין אם יש לך הצעות לתכונות חדשות, מצאת באג, או שאתה רק רוצה לשתף את החוויה שלך, אנו מעריכים לשמוע מהשחקנים שלנו."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

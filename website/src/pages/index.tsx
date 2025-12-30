@@ -45,7 +45,7 @@ export default function Home(): JSX.Element {
             <Translate id="homepage.games.title">Our Games</Translate>
           </h2>
           <div className={styles.gamesListContainer}>
-            {localizedGames.map((game, index) => (
+            {[...localizedGames].reverse().map((game, index) => (
               <GameCard key={game.id || index} game={game} />
             ))}
           </div>

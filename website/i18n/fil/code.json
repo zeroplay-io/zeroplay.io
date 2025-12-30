@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Kunin"
   },
+  "game.button.get.aria": {
+    "message": "Kunin ang {title}"
+  },
+  "game.button.preorder": {
+    "message": "Mag-pre-order"
+  },
+  "game.button.preorder.aria": {
+    "message": "Mag-pre-order ng {title}"
+  },
+  "about.page.title": {
+    "message": "Tungkol sa Amin"
+  },
+  "about.page.description": {
+    "message": "Alamin pa ang tungkol sa ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Tungkol sa ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Magsimula sa Zero, Maglaro Hanggang Walang Hanggan"
+  },
+  "about.mission.title": {
+    "message": "Ang Aming Misyon"
+  },
+  "about.mission.text": {
+    "message": "Ang ZeroPlay ay nakatuon sa paglikha ng pambihirang casual puzzle games na nagdudulot ng kasiyahan at mental stimulation sa mga manlalaro sa buong mundo. Naniniwala kami na ang mga dakilang laro ay dapat na accessible sa lahat, nag-aalok ng mga sandali ng relaxation at intellectual challenge sa pantay na sukat."
+  },
+  "about.philosophy.title": {
+    "message": "Ang Aming Pilosopiya"
+  },
+  "about.philosophy.text": {
+    "message": "Kami ay nakatuon sa katarungan at transparency sa lahat ng aming ginagawa. Ang aming mga laro ay may provably fair systems, tinitiyak na bawat manlalaro ay may pantay na pagkakataon na magtagumpay. Pinagsasama namin ang mga classic gameplay mechanics sa mga modernong design principles upang lumikha ng mga karanasang parehong timeless at fresh."
+  },
+  "about.games.title": {
+    "message": "Ang Aming Mga Laro"
+  },
+  "about.games.text": {
+    "message": "Mula sa strategic board games tulad ng Backgammon hanggang sa relaxing card games tulad ng Solitaire, at brain-teasing puzzles tulad ng Rubik's Cube, ang aming portfolio ay sumasaklaw sa malawak na hanay ng casual gaming experiences. Bawat laro ay nilikha nang may pansin sa detalye, magagandang visuals, at smooth gameplay na gumagana nang seamlessly sa lahat ng iyong mga device."
+  },
+  "about.global.title": {
+    "message": "Pandaigdigang Komunidad"
+  },
+  "about.global.text": {
+    "message": "Sa suporta para sa higit sa 30 wika at mga manlalaro mula sa bawat sulok ng mundo, ang mga laro ng ZeroPlay ay nagsasama ng mga tao sa pamamagitan ng universal na wika ng paglalaro. Sumali sa milyun-milyong manlalaro na ginawa ang aming mga laro na bahagi ng kanilang pang-araw-araw na gawain."
+  },
+  "contact.page.title": {
+    "message": "Makipag-ugnayan sa Amin"
+  },
+  "contact.page.description": {
+    "message": "Makipag-ugnayan sa ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Makipag-ugnayan sa Amin"
+  },
+  "contact.hero.tagline": {
+    "message": "Gusto naming marinig mula sa iyo"
+  },
+  "contact.email.title": {
+    "message": "Email"
+  },
+  "contact.email.description": {
+    "message": "Para sa pangkalahatang mga katanungan, suporta, o feedback, mangyaring makipag-ugnayan sa amin sa pamamagitan ng email."
+  },
+  "contact.response.title": {
+    "message": "Oras ng Pagtugon"
+  },
+  "contact.response.text": {
+    "message": "Karaniwang tumutugon kami sa lahat ng mga katanungan sa loob ng 1-2 business days. Para sa mga urgent na bagay na may kaugnayan sa mga isyu sa account o in-app purchases, mangyaring isama ang iyong player ID sa iyong mensahe para sa mas mabilis na tulong."
+  },
+  "contact.feedback.title": {
+    "message": "Maligayang Pagdating ang Feedback"
+  },
+  "contact.feedback.text": {
+    "message": "Ang iyong feedback ay tumutulong sa amin na mapabuti ang aming mga laro. Kung mayroon kang mga mungkahi para sa mga bagong feature, nakahanap ng bug, o gusto lang magbahagi ng iyong karanasan, pinahahalagahan namin ang pakikinig mula sa aming mga manlalaro."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

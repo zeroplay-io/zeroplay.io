@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Dapatkan"
   },
+  "game.button.get.aria": {
+    "message": "Dapatkan {title}"
+  },
+  "game.button.preorder": {
+    "message": "Pra-pesan"
+  },
+  "game.button.preorder.aria": {
+    "message": "Pra-pesan {title}"
+  },
+  "about.page.title": {
+    "message": "Tentang Kami"
+  },
+  "about.page.description": {
+    "message": "Pelajari lebih lanjut tentang ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Tentang ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Dari nol, game tanpa batas"
+  },
+  "about.mission.title": {
+    "message": "Misi Kami"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay berdedikasi untuk menciptakan game puzzle kasual yang luar biasa yang membawa kegembiraan dan stimulasi mental kepada pemain di seluruh dunia. Kami percaya bahwa game hebat harus dapat diakses oleh semua orang, menawarkan momen relaksasi dan tantangan intelektual dalam ukuran yang sama."
+  },
+  "about.philosophy.title": {
+    "message": "Filosofi Kami"
+  },
+  "about.philosophy.text": {
+    "message": "Kami berkomitmen pada keadilan dan transparansi dalam semua yang kami lakukan. Game kami menampilkan sistem yang terbukti adil, memastikan setiap pemain memiliki kesempatan yang sama untuk sukses. Kami menggabungkan mekanik gameplay klasik dengan prinsip desain modern untuk menciptakan pengalaman yang abadi dan segar."
+  },
+  "about.games.title": {
+    "message": "Game Kami"
+  },
+  "about.games.text": {
+    "message": "Dari game papan strategis seperti Backgammon hingga game kartu yang menenangkan seperti Solitaire, dan teka-teki yang merangsang otak seperti Rubik's Cube, portofolio kami mencakup berbagai macam pengalaman game kasual. Setiap game dibuat dengan perhatian terhadap detail, visual yang indah, dan gameplay yang mulus yang bekerja sempurna di semua perangkat Anda."
+  },
+  "about.global.title": {
+    "message": "Komunitas Global"
+  },
+  "about.global.text": {
+    "message": "Dengan dukungan untuk lebih dari 30 bahasa dan pemain dari setiap sudut dunia, game ZeroPlay menyatukan orang-orang melalui bahasa universal permainan. Bergabunglah dengan jutaan pemain yang telah menjadikan game kami bagian dari rutinitas harian mereka."
+  },
+  "contact.page.title": {
+    "message": "Hubungi Kami"
+  },
+  "contact.page.description": {
+    "message": "Hubungi ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Hubungi Kami"
+  },
+  "contact.hero.tagline": {
+    "message": "Kami ingin mendengar dari Anda"
+  },
+  "contact.email.title": {
+    "message": "Email"
+  },
+  "contact.email.description": {
+    "message": "Untuk pertanyaan umum, dukungan, atau masukan, silakan hubungi kami melalui email."
+  },
+  "contact.response.title": {
+    "message": "Waktu Respons"
+  },
+  "contact.response.text": {
+    "message": "Kami biasanya merespons semua pertanyaan dalam 1-2 hari kerja. Untuk masalah mendesak terkait masalah akun atau pembelian dalam aplikasi, harap sertakan ID pemain Anda dalam pesan untuk bantuan lebih cepat."
+  },
+  "contact.feedback.title": {
+    "message": "Masukan Diterima"
+  },
+  "contact.feedback.text": {
+    "message": "Masukan Anda membantu kami meningkatkan game kami. Baik Anda memiliki saran untuk fitur baru, menemukan bug, atau hanya ingin berbagi pengalaman Anda, kami menghargai mendengar dari pemain kami."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

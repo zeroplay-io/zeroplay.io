@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Obtenir"
   },
+  "game.button.get.aria": {
+    "message": "Obtenir {title}"
+  },
+  "game.button.preorder": {
+    "message": "Précommander"
+  },
+  "game.button.preorder.aria": {
+    "message": "Précommander {title}"
+  },
+  "about.page.title": {
+    "message": "À Propos de Nous"
+  },
+  "about.page.description": {
+    "message": "En savoir plus sur ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "À Propos de ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Depuis zéro, jeux infinis"
+  },
+  "about.mission.title": {
+    "message": "Notre Mission"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay se consacre à la création de jeux de puzzle casual exceptionnels qui apportent joie et stimulation mentale aux joueurs du monde entier. Nous croyons que les grands jeux doivent être accessibles à tous, offrant des moments de détente et de défi intellectuel à parts égales."
+  },
+  "about.philosophy.title": {
+    "message": "Notre Philosophie"
+  },
+  "about.philosophy.text": {
+    "message": "Nous nous engageons à l'équité et à la transparence dans tout ce que nous faisons. Nos jeux disposent de systèmes prouvés équitables, garantissant à chaque joueur une chance égale de réussir. Nous combinons des mécaniques de jeu classiques avec des principes de design modernes pour créer des expériences à la fois intemporelles et fraîches."
+  },
+  "about.games.title": {
+    "message": "Nos Jeux"
+  },
+  "about.games.text": {
+    "message": "Des jeux de plateau stratégiques comme le Backgammon aux jeux de cartes relaxants comme le Solitaire, en passant par les casse-têtes stimulants comme le Rubik's Cube, notre portefeuille couvre une large gamme d'expériences de jeu casual. Chaque jeu est élaboré avec attention aux détails, de beaux visuels et un gameplay fluide qui fonctionne parfaitement sur tous vos appareils."
+  },
+  "about.global.title": {
+    "message": "Communauté Mondiale"
+  },
+  "about.global.text": {
+    "message": "Avec le support de plus de 30 langues et des joueurs du monde entier, les jeux ZeroPlay rassemblent les gens à travers le langage universel du jeu. Rejoignez des millions de joueurs qui ont fait de nos jeux une partie de leur routine quotidienne."
+  },
+  "contact.page.title": {
+    "message": "Contactez-Nous"
+  },
+  "contact.page.description": {
+    "message": "Entrez en contact avec ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Contactez-Nous"
+  },
+  "contact.hero.tagline": {
+    "message": "Nous serions ravis de vous entendre"
+  },
+  "contact.email.title": {
+    "message": "Email"
+  },
+  "contact.email.description": {
+    "message": "Pour des demandes générales, du support ou des commentaires, contactez-nous par email."
+  },
+  "contact.response.title": {
+    "message": "Temps de Réponse"
+  },
+  "contact.response.text": {
+    "message": "Nous répondons généralement à toutes les demandes sous 1 à 2 jours ouvrables. Pour les questions urgentes liées aux problèmes de compte ou aux achats intégrés, veuillez inclure votre ID de joueur dans votre message pour une assistance plus rapide."
+  },
+  "contact.feedback.title": {
+    "message": "Commentaires Bienvenus"
+  },
+  "contact.feedback.text": {
+    "message": "Vos commentaires nous aident à améliorer nos jeux. Que vous ayez des suggestions pour de nouvelles fonctionnalités, que vous ayez trouvé un bug ou que vous souhaitiez simplement partager votre expérience, nous apprécions d'entendre nos joueurs."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

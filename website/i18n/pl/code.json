@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Pobierz"
   },
+  "game.button.get.aria": {
+    "message": "Pobierz {title}"
+  },
+  "game.button.preorder": {
+    "message": "Zamów w przedsprzedaży"
+  },
+  "game.button.preorder.aria": {
+    "message": "Zamów w przedsprzedaży {title}"
+  },
+  "about.page.title": {
+    "message": "O nas"
+  },
+  "about.page.description": {
+    "message": "Dowiedz się więcej o ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "O ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Zaczynaj od zera, graj w nieskończoność"
+  },
+  "about.mission.title": {
+    "message": "Nasza misja"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay jest oddany tworzeniu wyjątkowych casualowych gier logicznych, które przynoszą radość i stymulację umysłową graczom na całym świecie. Wierzymy, że świetne gry powinny być dostępne dla wszystkich, oferując momenty relaksu i intelektualnego wyzwania w równej mierze."
+  },
+  "about.philosophy.title": {
+    "message": "Nasza filozofia"
+  },
+  "about.philosophy.text": {
+    "message": "Jesteśmy zaangażowani w uczciwość i przejrzystość we wszystkim, co robimy. Nasze gry zawierają sprawdzone uczciwe systemy, zapewniając każdemu graczowi równą szansę na sukces. Łączymy klasyczne mechaniki rozgrywki z nowoczesnymi zasadami projektowania, aby tworzyć doświadczenia, które są zarówno ponadczasowe, jak i świeże."
+  },
+  "about.games.title": {
+    "message": "Nasze gry"
+  },
+  "about.games.text": {
+    "message": "Od strategicznych gier planszowych, takich jak Backgammon, po relaksujące gry karciane, takie jak Pasjans, i łamigłówki, takie jak Kostka Rubika, nasze portfolio obejmuje szeroki zakres casualowych doświadczeń gamingowych. Każda gra jest stworzona z dbałością o szczegóły, piękną oprawą wizualną i płynną rozgrywką, która działa bezproblemowo na wszystkich Twoich urządzeniach."
+  },
+  "about.global.title": {
+    "message": "Globalna społeczność"
+  },
+  "about.global.text": {
+    "message": "Dzięki obsłudze ponad 30 języków i graczom z każdego zakątka świata, gry ZeroPlay łączą ludzi poprzez uniwersalny język zabawy. Dołącz do milionów graczy, którzy uczynili nasze gry częścią swojej codziennej rutyny."
+  },
+  "contact.page.title": {
+    "message": "Skontaktuj się z nami"
+  },
+  "contact.page.description": {
+    "message": "Skontaktuj się z ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Skontaktuj się z nami"
+  },
+  "contact.hero.tagline": {
+    "message": "Chcielibyśmy usłyszeć od Ciebie"
+  },
+  "contact.email.title": {
+    "message": "E-mail"
+  },
+  "contact.email.description": {
+    "message": "W przypadku ogólnych zapytań, wsparcia lub opinii prosimy o kontakt e-mailowy."
+  },
+  "contact.response.title": {
+    "message": "Czas odpowiedzi"
+  },
+  "contact.response.text": {
+    "message": "Zazwyczaj odpowiadamy na wszystkie zapytania w ciągu 1-2 dni roboczych. W pilnych sprawach związanych z problemami z kontem lub zakupami w aplikacji prosimy o podanie identyfikatora gracza w wiadomości, aby uzyskać szybszą pomoc."
+  },
+  "contact.feedback.title": {
+    "message": "Opinie mile widziane"
+  },
+  "contact.feedback.text": {
+    "message": "Twoja opinia pomaga nam ulepszać nasze gry. Niezależnie od tego, czy masz sugestie dotyczące nowych funkcji, znalazłeś błąd, czy po prostu chcesz podzielić się swoim doświadczeniem, cenimy sobie słuchanie naszych graczy."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Tải về"
   },
+  "game.button.get.aria": {
+    "message": "Tải về {title}"
+  },
+  "game.button.preorder": {
+    "message": "Đặt trước"
+  },
+  "game.button.preorder.aria": {
+    "message": "Đặt trước {title}"
+  },
+  "about.page.title": {
+    "message": "Về Chúng Tôi"
+  },
+  "about.page.description": {
+    "message": "Tìm hiểu thêm về ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Về ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Từ số không, trò chơi vô tận"
+  },
+  "about.mission.title": {
+    "message": "Sứ Mệnh Của Chúng Tôi"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay tận tâm tạo ra những trò chơi giải đố thông thường đặc biệt mang lại niềm vui và kích thích tinh thần cho người chơi trên toàn thế giới. Chúng tôi tin rằng những trò chơi tuyệt vời phải có thể truy cập được cho mọi người, mang lại những khoảnh khắc thư giãn và thử thách trí tuệ một cách cân bằng."
+  },
+  "about.philosophy.title": {
+    "message": "Triết Lý Của Chúng Tôi"
+  },
+  "about.philosophy.text": {
+    "message": "Chúng tôi cam kết về sự công bằng và minh bạch trong mọi việc chúng tôi làm. Trò chơi của chúng tôi có hệ thống công bằng có thể chứng minh được, đảm bảo mọi người chơi có cơ hội thành công ngang nhau. Chúng tôi kết hợp cơ chế chơi game cổ điển với các nguyên tắc thiết kế hiện đại để tạo ra trải nghiệm vừa vượt thời gian vừa mới mẻ."
+  },
+  "about.games.title": {
+    "message": "Trò Chơi Của Chúng Tôi"
+  },
+  "about.games.text": {
+    "message": "Từ trò chơi bàn chiến lược như Backgammon đến trò chơi bài thư giãn như Solitaire, và những câu đố trí tuệ như Rubik's Cube, danh mục của chúng tôi bao gồm nhiều trải nghiệm trò chơi thông thường. Mỗi trò chơi được chế tác với sự chú ý đến chi tiết, hình ảnh đẹp mắt và lối chơi mượt mà hoạt động liền mạch trên tất cả các thiết bị của bạn."
+  },
+  "about.global.title": {
+    "message": "Cộng Đồng Toàn Cầu"
+  },
+  "about.global.text": {
+    "message": "Với hỗ trợ hơn 30 ngôn ngữ và người chơi từ mọi nơi trên thế giới, trò chơi ZeroPlay kết nối mọi người thông qua ngôn ngữ chung của trò chơi. Tham gia hàng triệu người chơi đã biến trò chơi của chúng tôi thành một phần trong thói quen hàng ngày của họ."
+  },
+  "contact.page.title": {
+    "message": "Liên Hệ Với Chúng Tôi"
+  },
+  "contact.page.description": {
+    "message": "Liên lạc với ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Liên Hệ Với Chúng Tôi"
+  },
+  "contact.hero.tagline": {
+    "message": "Chúng tôi rất mong được nghe từ bạn"
+  },
+  "contact.email.title": {
+    "message": "Email"
+  },
+  "contact.email.description": {
+    "message": "Đối với các câu hỏi chung, hỗ trợ hoặc phản hồi, vui lòng liên hệ với chúng tôi qua email."
+  },
+  "contact.response.title": {
+    "message": "Thời Gian Phản Hồi"
+  },
+  "contact.response.text": {
+    "message": "Chúng tôi thường phản hồi tất cả các câu hỏi trong vòng 1-2 ngày làm việc. Đối với các vấn đề khẩn cấp liên quan đến vấn đề tài khoản hoặc mua hàng trong ứng dụng, vui lòng bao gồm ID người chơi của bạn trong tin nhắn để được hỗ trợ nhanh hơn."
+  },
+  "contact.feedback.title": {
+    "message": "Hoan Nghênh Phản Hồi"
+  },
+  "contact.feedback.text": {
+    "message": "Phản hồi của bạn giúp chúng tôi cải thiện trò chơi. Dù bạn có đề xuất cho các tính năng mới, tìm thấy lỗi hay chỉ muốn chia sẻ trải nghiệm của mình, chúng tôi đánh giá cao việc được nghe từ người chơi."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -1,0 +1,132 @@
+.aboutPage {
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(-45deg, #0b1437, #1f0b37, #370b23, #021e44);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: radial-gradient(
+      circle at 30% 50%,
+      rgba(121, 40, 202, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(circle at 70% 50%, rgba(63, 94, 251, 0.08), transparent 35%);
+  animation: aurora 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes aurora {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  margin: 0 0 16px 0;
+}
+
+.sectionText {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .content {
+    padding: 40px 20px;
+  }
+
+  .section {
+    margin-bottom: 36px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .sectionText {
+    font-size: 16px;
+  }
+}

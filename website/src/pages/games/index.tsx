@@ -6,14 +6,14 @@ import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import GameCard from "@site/src/components/GameCard";
-import { getLocalizedGames } from "@site/src/utils/i18nGames";
+import { getReleasedGames } from "@site/src/utils/i18nGames";
 import styles from "./index.module.css";
 
 export default function GamesPage(): JSX.Element {
   const location = useLocation();
   const { i18n } = useDocusaurusContext();
   const localizedGames = useMemo(
-    () => getLocalizedGames(i18n.currentLocale),
+    () => getReleasedGames(i18n.currentLocale),
     [i18n.currentLocale],
   );
 
@@ -91,13 +91,6 @@ export default function GamesPage(): JSX.Element {
   return (
     <Layout title={pageTitle} description={pageDescription}>
       <div className={styles.gamesPage}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>
-            <Translate id="games.page.heading" description="Heading for games page">
-              Our Games
-            </Translate>
-          </h1>
-        </div>
         <div
           className={styles.gamesListContainer}
           data-loading-label={loadingLabel}
@@ -107,7 +100,7 @@ export default function GamesPage(): JSX.Element {
               Loading…
             </div>
           ) : filteredGames.length > 0 ? (
-            filteredGames.map((game, index) => (
+            [...filteredGames].reverse().map((game, index) => (
               <GameCard key={game.id || index} game={game} />
             ))
           ) : (

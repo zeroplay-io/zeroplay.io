@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Letöltés"
   },
+  "game.button.get.aria": {
+    "message": "{title} letöltése"
+  },
+  "game.button.preorder": {
+    "message": "Előrendelés"
+  },
+  "game.button.preorder.aria": {
+    "message": "{title} előrendelése"
+  },
+  "about.page.title": {
+    "message": "Rólunk"
+  },
+  "about.page.description": {
+    "message": "Tudj meg többet a ZeroPlayről"
+  },
+  "about.hero.title": {
+    "message": "A ZeroPlayről"
+  },
+  "about.hero.tagline": {
+    "message": "Kezdj a nullától, játssz a végtelenig"
+  },
+  "about.mission.title": {
+    "message": "Küldetésünk"
+  },
+  "about.mission.text": {
+    "message": "A ZeroPlay kivételes casual puzzle játékok létrehozására törekszik, amelyek örömöt és szellemi stimulációt hoznak a világ minden tájáról érkező játékosoknak. Hiszünk abban, hogy a nagyszerű játékoknak mindenkinek elérhetőnek kell lenniük, egyenlő mértékben kínálva a kikapcsolódás és az intellektuális kihívás pillanatait."
+  },
+  "about.philosophy.title": {
+    "message": "Filozófiánk"
+  },
+  "about.philosophy.text": {
+    "message": "Elkötelezettek vagyunk a tisztesség és az átláthatóság mellett mindenben, amit teszünk. Játékaink bizonyítottan tisztességes rendszerekkel rendelkeznek, biztosítva, hogy minden játékos egyenlő eséllyel rendelkezzen a sikerre. Kombináljuk a klasszikus játékmechanikát a modern tervezési elvekkel, hogy olyan élményeket hozzunk létre, amelyek egyszerre időtlenek és frissek."
+  },
+  "about.games.title": {
+    "message": "Játékaink"
+  },
+  "about.games.text": {
+    "message": "A stratégiai társasjátékoktól, mint a Backgammon, a pihentető kártyajátékokon, mint a Pasziánsz, át az agytréningező rejtvényekig, mint a Rubik-kocka, portfóliónk a casual játékélmények széles spektrumát öleli fel. Minden játékot a részletekre való odafigyeléssel, gyönyörű látványvilággal és zökkenőmentes játékmenettel készítettünk, amely minden eszközödön tökéletesen működik."
+  },
+  "about.global.title": {
+    "message": "Globális közösség"
+  },
+  "about.global.text": {
+    "message": "Több mint 30 nyelv támogatásával és a világ minden szegletéből érkező játékosokkal a ZeroPlay játékok a játék univerzális nyelvén keresztül hozzák össze az embereket. Csatlakozz a több millió játékoshoz, akik napi rutinjuk részévé tették játékainkat."
+  },
+  "contact.page.title": {
+    "message": "Kapcsolat"
+  },
+  "contact.page.description": {
+    "message": "Lépj kapcsolatba a ZeroPlay-jel"
+  },
+  "contact.hero.title": {
+    "message": "Kapcsolat"
+  },
+  "contact.hero.tagline": {
+    "message": "Szeretnénk hallani rólad"
+  },
+  "contact.email.title": {
+    "message": "E-mail"
+  },
+  "contact.email.description": {
+    "message": "Általános kérdések, támogatás vagy visszajelzés esetén kérjük, lépjen velünk kapcsolatba e-mailben."
+  },
+  "contact.response.title": {
+    "message": "Válaszidő"
+  },
+  "contact.response.text": {
+    "message": "Általában 1-2 munkanapon belül válaszolunk minden megkeresésre. Sürgős, fiókproblémákkal vagy alkalmazáson belüli vásárlásokkal kapcsolatos ügyekben kérjük, hogy gyorsabb segítség érdekében adja meg játékosazonosítóját az üzenetében."
+  },
+  "contact.feedback.title": {
+    "message": "Visszajelzés várunk"
+  },
+  "contact.feedback.text": {
+    "message": "Visszajelzésed segít játékaink fejlesztésében. Akár új funkciókra vonatkozó javaslataid vannak, hibát találtál, vagy csak meg szeretnéd osztani tapasztalataidat, értékeljük játékosaink véleményét."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

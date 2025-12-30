@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "獲取"
   },
+  "game.button.get.aria": {
+    "message": "獲取 {title}"
+  },
+  "game.button.preorder": {
+    "message": "預約"
+  },
+  "game.button.preorder.aria": {
+    "message": "預約 {title}"
+  },
+  "about.page.title": {
+    "message": "關於我們"
+  },
+  "about.page.description": {
+    "message": "了解更多關於ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "關於 ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "從零開始，遊戲無限"
+  },
+  "about.mission.title": {
+    "message": "我們的使命"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay 致力於打造卓越的休閒益智遊戲，為全球玩家帶來歡樂與智力激發。我們相信優秀的遊戲應該人人可及，在放鬆身心與智力挑戰之間取得完美平衡。"
+  },
+  "about.philosophy.title": {
+    "message": "我們的理念"
+  },
+  "about.philosophy.text": {
+    "message": "我們致力於在所有工作中保持公平和透明。我們的遊戲採用可證明公平的系統，確保每位玩家都有平等的成功機會。我們將經典的遊戲玩法與現代設計理念相結合，創造既經典又新穎的遊戲體驗。"
+  },
+  "about.games.title": {
+    "message": "我們的遊戲"
+  },
+  "about.games.text": {
+    "message": "從西洋雙陸棋等策略棋盤遊戲，到紙牌接龍等休閒卡牌遊戲，再到魔術方塊等益智解謎遊戲，我們的產品涵蓋豐富多樣的休閒遊戲體驗。每款遊戲都精心打磨，擁有精美的視覺效果和流暢的遊戲體驗，完美適配您的所有裝置。"
+  },
+  "about.global.title": {
+    "message": "全球社群"
+  },
+  "about.global.text": {
+    "message": "我們支援30多種語言，玩家遍布世界各地，ZeroPlay遊戲透過遊戲這一通用語言將人們聯繫在一起。加入數百萬玩家的行列，讓我們的遊戲成為您日常生活的一部分。"
+  },
+  "contact.page.title": {
+    "message": "聯絡我們"
+  },
+  "contact.page.description": {
+    "message": "與ZeroPlay取得聯繫"
+  },
+  "contact.hero.title": {
+    "message": "聯絡我們"
+  },
+  "contact.hero.tagline": {
+    "message": "我們期待您的來信"
+  },
+  "contact.email.title": {
+    "message": "電子郵件"
+  },
+  "contact.email.description": {
+    "message": "如有一般諮詢、技術支援或回饋意見，請透過郵件與我們聯繫。"
+  },
+  "contact.response.title": {
+    "message": "回覆時間"
+  },
+  "contact.response.text": {
+    "message": "我們通常會在1-2個工作日內回覆所有諮詢。如涉及帳戶問題或應用程式內購買等緊急事項，請在郵件中附上您的玩家ID以便更快獲得協助。"
+  },
+  "contact.feedback.title": {
+    "message": "歡迎回饋"
+  },
+  "contact.feedback.text": {
+    "message": "您的回饋幫助我們不斷改進遊戲。無論是新功能建議、Bug回饋，還是分享您的遊戲體驗，我們都非常感謝玩家的聲音。"
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

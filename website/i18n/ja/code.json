@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "入手"
   },
+  "game.button.get.aria": {
+    "message": "{title}を入手"
+  },
+  "game.button.preorder": {
+    "message": "予約する"
+  },
+  "game.button.preorder.aria": {
+    "message": "{title}を予約する"
+  },
+  "about.page.title": {
+    "message": "会社概要"
+  },
+  "about.page.description": {
+    "message": "ZeroPlayについて詳しく知る"
+  },
+  "about.hero.title": {
+    "message": "ZeroPlayについて"
+  },
+  "about.hero.tagline": {
+    "message": "ゼロから始め、ゲームは無限"
+  },
+  "about.mission.title": {
+    "message": "私たちのミッション"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlayは、世界中のプレイヤーに喜びと知的刺激をもたらす優れたカジュアルパズルゲームの制作に専念しています。優れたゲームは誰もがアクセスでき、リラックスと知的挑戦を同等に提供すべきだと信じています。"
+  },
+  "about.philosophy.title": {
+    "message": "私たちの理念"
+  },
+  "about.philosophy.text": {
+    "message": "私たちは、すべての取り組みにおいて公平性と透明性を重視しています。ゲームには証明可能な公平システムを採用し、すべてのプレイヤーに平等な成功の機会を保証します。クラシックなゲームプレイと現代的なデザイン原則を組み合わせ、時代を超越した新鮮な体験を創造します。"
+  },
+  "about.games.title": {
+    "message": "私たちのゲーム"
+  },
+  "about.games.text": {
+    "message": "バックギャモンなどの戦略的ボードゲームから、ソリティアなどのリラックスできるカードゲーム、ルービックキューブなどの頭脳パズルまで、幅広いカジュアルゲーム体験を提供しています。各ゲームは細部にまでこだわり、美しいビジュアルとスムーズなゲームプレイで、あらゆるデバイスでシームレスに動作します。"
+  },
+  "about.global.title": {
+    "message": "グローバルコミュニティ"
+  },
+  "about.global.text": {
+    "message": "30以上の言語をサポートし、世界中のプレイヤーがいます。ZeroPlayゲームは、遊びという普遍的な言語を通じて人々を結びつけます。何百万人ものプレイヤーが日常の一部として楽しんでいます。"
+  },
+  "contact.page.title": {
+    "message": "お問い合わせ"
+  },
+  "contact.page.description": {
+    "message": "ZeroPlayに連絡する"
+  },
+  "contact.hero.title": {
+    "message": "お問い合わせ"
+  },
+  "contact.hero.tagline": {
+    "message": "お気軽にご連絡ください"
+  },
+  "contact.email.title": {
+    "message": "メール"
+  },
+  "contact.email.description": {
+    "message": "一般的なお問い合わせ、サポート、フィードバックについては、メールでご連絡ください。"
+  },
+  "contact.response.title": {
+    "message": "返信時間"
+  },
+  "contact.response.text": {
+    "message": "通常、すべてのお問い合わせに1〜2営業日以内に返信いたします。アカウント問題やアプリ内購入に関する緊急の問題については、迅速な対応のためにプレイヤーIDをメッセージに含めてください。"
+  },
+  "contact.feedback.title": {
+    "message": "フィードバック歓迎"
+  },
+  "contact.feedback.text": {
+    "message": "皆様のフィードバックがゲームの改善に役立ちます。新機能の提案、バグの報告、または体験の共有など、プレイヤーの皆様からのご意見をお待ちしております。"
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

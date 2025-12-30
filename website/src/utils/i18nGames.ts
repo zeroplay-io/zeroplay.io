@@ -1,4 +1,8 @@
 import gamesData from "@site/src/data/games.json";
+import backgammonTranslations from "@site/src/data/translations/backgammon.json";
+import solitaireTranslations from "@site/src/data/translations/solitaire.json";
+import rubikTranslations from "@site/src/data/translations/rubik.json";
+import sudokuTranslations from "@site/src/data/translations/sudoku.json";
 
 export interface GameTranslations {
   title?: string;
@@ -29,28 +33,40 @@ export interface GameData {
     instagram?: string;
     twitter?: string;
   };
-  translations?: Record<string, GameTranslations>;
+  released: boolean;
 }
+
+// Map game IDs to their translation data
+const translationsMap: Record<string, Record<string, GameTranslations>> = {
+  backgammon: backgammonTranslations,
+  solitaire: solitaireTranslations,
+  rubik: rubikTranslations,
+  sudoku: sudokuTranslations,
+};
 
 /**
  * Get localized game data based on current locale
  */
 export function getLocalizedGames(locale: string = "en"): GameData[] {
   return gamesData.games.map((game: any) => {
-    // If locale is English or no translations available, return original
-    if (locale === "en" || !game.translations || !game.translations[locale]) {
-      return game as GameData;
-    }
+    const translations = translationsMap[game.id] || {};
+    const localeTranslation = translations[locale] || translations["en"] || {};
+    const enTranslation = translations["en"] || {};
 
-    // Merge translations with original data
-    const translations = game.translations[locale];
     return {
       ...game,
-      title: translations.title || game.title,
-      subtitle: translations.subtitle || game.subtitle,
-      description: translations.description || game.description,
+      title: localeTranslation.title || enTranslation.title || game.id,
+      subtitle: localeTranslation.subtitle || enTranslation.subtitle || "",
+      description: localeTranslation.description || enTranslation.description || "",
     } as GameData;
   });
+}
+
+/**
+ * Get released games only
+ */
+export function getReleasedGames(locale: string = "en"): GameData[] {
+  return getLocalizedGames(locale).filter((game) => game.released);
 }
 
 /**

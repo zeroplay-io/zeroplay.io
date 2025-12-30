@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Edinin"
   },
+  "game.button.get.aria": {
+    "message": "{title} edinin"
+  },
+  "game.button.preorder": {
+    "message": "Ön Sipariş"
+  },
+  "game.button.preorder.aria": {
+    "message": "{title} ön siparişi"
+  },
+  "about.page.title": {
+    "message": "Hakkımızda"
+  },
+  "about.page.description": {
+    "message": "ZeroPlay hakkında daha fazla bilgi edinin"
+  },
+  "about.hero.title": {
+    "message": "ZeroPlay Hakkında"
+  },
+  "about.hero.tagline": {
+    "message": "Sıfırdan, oyunlar sonsuz"
+  },
+  "about.mission.title": {
+    "message": "Misyonumuz"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay, dünya çapındaki oyunculara neşe ve zihinsel uyarım getiren olağanüstü gündelik bulmaca oyunları yaratmaya adanmıştır. Harika oyunların herkes için erişilebilir olması gerektiğine, eşit ölçüde rahatlama ve entelektüel meydan okuma anları sunması gerektiğine inanıyoruz."
+  },
+  "about.philosophy.title": {
+    "message": "Felsefemiz"
+  },
+  "about.philosophy.text": {
+    "message": "Yaptığımız her şeyde adalet ve şeffaflığa kararlıyız. Oyunlarımız, her oyuncuya eşit başarı fırsatı sağlayan kanıtlanabilir şekilde adil sistemlere sahiptir. Klasik oyun mekaniklerini modern tasarım ilkeleriyle birleştirerek hem zamansız hem de taze deneyimler yaratıyoruz."
+  },
+  "about.games.title": {
+    "message": "Oyunlarımız"
+  },
+  "about.games.text": {
+    "message": "Tavla gibi stratejik masa oyunlarından Solitaire gibi rahatlatıcı kart oyunlarına ve Rubik Küpü gibi beyin bulmacalarına kadar, portföyümüz geniş bir gündelik oyun deneyimi yelpazesini kapsar. Her oyun, ayrıntılara dikkat, güzel görseller ve tüm cihazlarınızda kusursuz çalışan akıcı oynanışla hazırlanmıştır."
+  },
+  "about.global.title": {
+    "message": "Küresel Topluluk"
+  },
+  "about.global.text": {
+    "message": "30'dan fazla dil desteği ve dünyanın her köşesinden oyuncularla, ZeroPlay oyunları insanları evrensel oyun dili aracılığıyla bir araya getiriyor. Oyunlarımızı günlük rutinlerinin bir parçası haline getiren milyonlarca oyuncuya katılın."
+  },
+  "contact.page.title": {
+    "message": "Bize Ulaşın"
+  },
+  "contact.page.description": {
+    "message": "ZeroPlay ile iletişime geçin"
+  },
+  "contact.hero.title": {
+    "message": "Bize Ulaşın"
+  },
+  "contact.hero.tagline": {
+    "message": "Sizden haber almak isteriz"
+  },
+  "contact.email.title": {
+    "message": "E-posta"
+  },
+  "contact.email.description": {
+    "message": "Genel sorular, destek veya geri bildirim için lütfen e-posta yoluyla bizimle iletişime geçin."
+  },
+  "contact.response.title": {
+    "message": "Yanıt Süresi"
+  },
+  "contact.response.text": {
+    "message": "Genellikle tüm sorulara 1-2 iş günü içinde yanıt veriyoruz. Hesap sorunları veya uygulama içi satın alımlarla ilgili acil konular için, daha hızlı yardım almak için mesajınıza oyuncu kimliğinizi ekleyin."
+  },
+  "contact.feedback.title": {
+    "message": "Geri Bildirim Bekliyoruz"
+  },
+  "contact.feedback.text": {
+    "message": "Geri bildiriminiz oyunlarımızı geliştirmemize yardımcı olur. Yeni özellikler için önerileriniz olsun, bir hata bulmuş olun veya sadece deneyiminizi paylaşmak isteyin, oyuncularımızdan haber almayı takdir ediyoruz."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

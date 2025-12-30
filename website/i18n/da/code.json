@@ -21,6 +21,81 @@
   "game.button.get": {
     "message": "Hent"
   },
+  "game.button.get.aria": {
+    "message": "Hent {title}"
+  },
+  "game.button.preorder": {
+    "message": "Forudbestil"
+  },
+  "game.button.preorder.aria": {
+    "message": "Forudbestil {title}"
+  },
+  "about.page.title": {
+    "message": "Om os"
+  },
+  "about.page.description": {
+    "message": "Lær mere om ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "Om ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "Start fra nul, spil til det uendelige"
+  },
+  "about.mission.title": {
+    "message": "Vores mission"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay er dedikeret til at skabe exceptionelle casual puslespil, der bringer glæde og mental stimulation til spillere over hele verden. Vi mener, at gode spil skal være tilgængelige for alle og tilbyde øjeblikke af afslapning og intellektuel udfordring i lige stor grad."
+  },
+  "about.philosophy.title": {
+    "message": "Vores filosofi"
+  },
+  "about.philosophy.text": {
+    "message": "Vi er forpligtet til retfærdighed og gennemsigtighed i alt, hvad vi gør. Vores spil har bevisligt fair systemer, der sikrer, at hver spiller har lige mulighed for at få succes. Vi kombinerer klassisk spilmekanik med moderne designprincipper for at skabe oplevelser, der er både tidløse og friske."
+  },
+  "about.games.title": {
+    "message": "Vores spil"
+  },
+  "about.games.text": {
+    "message": "Fra strategiske brætspil som Backgammon til afslappende kortspil som Kabale og hjernetrimende puslespil som Rubiks terning, dækker vores portefølje et bredt udvalg af casual spilопlevelser. Hvert spil er skabt med opmærksomhed på detaljer, smuk grafik og jævn gameplay, der fungerer problemfrit på alle dine enheder."
+  },
+  "about.global.title": {
+    "message": "Globalt fællesskab"
+  },
+  "about.global.text": {
+    "message": "Med support til over 30 sprog og spillere fra alle verdenshjørner, samler ZeroPlay-spil mennesker gennem det universelle sprog leg. Deltag med millioner af spillere, der har gjort vores spil til en del af deres daglige rutine."
+  },
+  "contact.page.title": {
+    "message": "Kontakt os"
+  },
+  "contact.page.description": {
+    "message": "Kom i kontakt med ZeroPlay"
+  },
+  "contact.hero.title": {
+    "message": "Kontakt os"
+  },
+  "contact.hero.tagline": {
+    "message": "Vi vil gerne høre fra dig"
+  },
+  "contact.email.title": {
+    "message": "E-mail"
+  },
+  "contact.email.description": {
+    "message": "For generelle forespørgsler, support eller feedback bedes du kontakte os via e-mail."
+  },
+  "contact.response.title": {
+    "message": "Svartid"
+  },
+  "contact.response.text": {
+    "message": "Vi svarer typisk på alle forespørgsler inden for 1-2 hverdage. For presserende sager relateret til kontoproblemer eller køb i appen bedes du inkludere dit spiller-ID i din besked for hurtigere hjælp."
+  },
+  "contact.feedback.title": {
+    "message": "Feedback velkommen"
+  },
+  "contact.feedback.text": {
+    "message": "Din feedback hjælper os med at forbedre vores spil. Uanset om du har forslag til nye funktioner, har fundet en fejl eller bare vil dele din oplevelse, sætter vi pris på at høre fra vores spillere."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

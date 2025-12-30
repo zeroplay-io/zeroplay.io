@@ -27,6 +27,12 @@
   "game.button.get.aria": {
     "message": "获取 {title}"
   },
+  "game.button.preorder": {
+    "message": "预约"
+  },
+  "game.button.preorder.aria": {
+    "message": "预约 {title}"
+  },
   "game.showcase.iconAlt": {
     "message": "{title} 图标"
   },
@@ -59,6 +65,72 @@
   },
   "game.page.notFound.description": {
     "message": "无法找到请求的游戏。"
+  },
+  "about.page.title": {
+    "message": "关于我们"
+  },
+  "about.page.description": {
+    "message": "了解更多关于ZeroPlay"
+  },
+  "about.hero.title": {
+    "message": "关于 ZeroPlay"
+  },
+  "about.hero.tagline": {
+    "message": "从零开始，游戏无限"
+  },
+  "about.mission.title": {
+    "message": "我们的使命"
+  },
+  "about.mission.text": {
+    "message": "ZeroPlay 致力于打造卓越的休闲益智游戏，为全球玩家带来欢乐与智力激发。我们相信优秀的游戏应该人人可及，在放松身心与智力挑战之间取得完美平衡。"
+  },
+  "about.philosophy.title": {
+    "message": "我们的理念"
+  },
+  "about.philosophy.text": {
+    "message": "我们致力于在所有工作中保持公平和透明。我们的游戏采用可证明公平的系统，确保每位玩家都有平等的成功机会。我们将经典的游戏玩法与现代设计理念相结合，创造既经典又新颖的游戏体验。"
+  },
+  "about.games.title": {
+    "message": "我们的游戏"
+  },
+  "about.games.text": {
+    "message": "从西洋双陆棋等策略棋盘游戏，到纸牌接龙等休闲卡牌游戏，再到魔方等益智解谜游戏，我们的产品涵盖丰富多样的休闲游戏体验。每款游戏都精心打磨，拥有精美的视觉效果和流畅的游戏体验，完美适配您的所有设备。"
+  },
+  "about.global.title": {
+    "message": "全球社区"
+  },
+  "about.global.text": {
+    "message": "我们支持30多种语言，玩家遍布世界各地，ZeroPlay游戏通过游戏这一通用语言将人们联系在一起。加入数百万玩家的行列，让我们的游戏成为您日常生活的一部分。"
+  },
+  "contact.page.title": {
+    "message": "联系我们"
+  },
+  "contact.page.description": {
+    "message": "与ZeroPlay取得联系"
+  },
+  "contact.hero.title": {
+    "message": "联系我们"
+  },
+  "contact.hero.tagline": {
+    "message": "我们期待您的来信"
+  },
+  "contact.email.title": {
+    "message": "电子邮件"
+  },
+  "contact.email.description": {
+    "message": "如有一般咨询、技术支持或反馈意见，请通过邮件与我们联系。"
+  },
+  "contact.response.title": {
+    "message": "回复时间"
+  },
+  "contact.response.text": {
+    "message": "我们通常会在1-2个工作日内回复所有咨询。如涉及账户问题或应用内购买等紧急事项，请在邮件中附上您的玩家ID以便更快获得帮助。"
+  },
+  "contact.feedback.title": {
+    "message": "欢迎反馈"
+  },
+  "contact.feedback.text": {
+    "message": "您的反馈帮助我们不断改进游戏。无论是新功能建议、Bug反馈，还是分享您的游戏体验，我们都非常感谢玩家的声音。"
   },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
