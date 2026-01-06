@@ -4,6 +4,7 @@
   }
 
   var docEl = document.documentElement;
+  var STORE_FILTERS = ["ios", "ios-china", "google-play", "zeroplay", "taptap-cn"];
 
   function safeGetLocalStorage(key) {
     try {
@@ -216,7 +217,18 @@
     }
   }
 
-  if (params && params.has("source_game")) {
+  function resolveStoreFilter(value) {
+    if (!value) {
+      return null;
+    }
+    var normalized = value.trim().toLowerCase();
+    return STORE_FILTERS.indexOf(normalized) >= 0 ? normalized : null;
+  }
+
+  if (
+    params &&
+    (params.has("source_game") || resolveStoreFilter(params.get("store")))
+  ) {
     docEl.classList.add("games-filter-blocking");
   }
 

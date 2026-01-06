@@ -24,9 +24,11 @@ export interface GameData {
   screenshots?: string[];
   orientation?: string;
   stores?: {
-    appStore?: string;
-    googlePlay?: string;
-    h5?: string;
+    ios?: string;
+    "ios-china"?: string;
+    "google-play"?: string;
+    zeroplay?: string;
+    "taptap-cn"?: string;
   };
   socialMedia?: {
     enabled: boolean;

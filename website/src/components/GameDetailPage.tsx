@@ -2,16 +2,39 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Translate from "@docusaurus/Translate";
 import { translate } from "@docusaurus/core/lib/client/exports/Translate";
+import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import GameShowcase from "@site/src/components/GameShowcase";
 import PortraitGameShowcase from "@site/src/components/PortraitGameShowcase";
 import gamesData from "@site/src/data/games.json";
 import { getLocalizedGame } from "@site/src/utils/i18nGames";
 
-export default function BackgammonPage(): JSX.Element {
+const getGameIdFromPath = (pathname: string): string | undefined => {
+  const segments = pathname.split("/").filter(Boolean);
+  const gamesIndex = segments.lastIndexOf("games");
+  if (gamesIndex < 0 || gamesIndex + 1 >= segments.length) {
+    return undefined;
+  }
+  const rawId = segments[gamesIndex + 1];
+  try {
+    return decodeURIComponent(rawId);
+  } catch (_) {
+    return rawId;
+  }
+};
+
+export default function GameDetailPage(): JSX.Element {
   const { i18n } = useDocusaurusContext();
-  const baseGame = gamesData.games.find((g) => g.id === "backgammon");
-  const localizedGame = getLocalizedGame("backgammon", i18n.currentLocale);
+  const location = useLocation();
+  const gameId = getGameIdFromPath(location.pathname);
+  const normalizedId = gameId ? gameId.toLowerCase() : "";
+  const baseGame = normalizedId
+    ? gamesData.games.find((game) => game.id.toLowerCase() === normalizedId)
+    : undefined;
+  const resolvedGameId = baseGame?.id ?? normalizedId;
+  const localizedGame = resolvedGameId
+    ? getLocalizedGame(resolvedGameId, i18n.currentLocale)
+    : undefined;
   const game = localizedGame ?? baseGame;
 
   if (!game) {
@@ -37,7 +60,6 @@ export default function BackgammonPage(): JSX.Element {
     );
   }
 
-  // Use screenshots array directly from game data
   type ShowcaseGame = React.ComponentProps<typeof GameShowcase>["game"];
   const resolvedGame = game as ShowcaseGame;
   const gameWithScreenshots: ShowcaseGame = {
@@ -45,15 +67,11 @@ export default function BackgammonPage(): JSX.Element {
     screenshots: resolvedGame.screenshots || [],
   };
 
-  // Choose component based on orientation
   const ShowcaseComponent =
     game.orientation === "portrait" ? PortraitGameShowcase : GameShowcase;
 
   return (
-    <Layout
-      title={game.title}
-      description={game.description}
-    >
+    <Layout title={game.title} description={game.description}>
       <ShowcaseComponent game={gameWithScreenshots} />
     </Layout>
   );

@@ -4,6 +4,9 @@ import Translate from "@docusaurus/Translate";
 import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import styles from "./GameCard.module.css";
 
+type StoreKey = "ios" | "ios-china" | "google-play" | "zeroplay" | "taptap-cn";
+type StoreLinks = Partial<Record<StoreKey, string>>;
+
 interface GameCardData {
   id: string;
   title: string;
@@ -12,26 +15,29 @@ interface GameCardData {
   icon: string;
   banner: string;
   deeplink?: string;
-  stores?: {
-    appStore?: string;
-    googlePlay?: string;
-    h5?: string;
-  };
+  stores?: StoreLinks;
   released?: boolean;
 }
 
 interface GameCardProps {
   game: GameCardData;
+  preferredStore?: StoreKey;
 }
 
-const GameCard: React.FC<GameCardProps> = ({ game }) => {
+const GameCard: React.FC<GameCardProps> = ({ game, preferredStore }) => {
   const [isBannerLoaded, setIsBannerLoaded] = useState(false);
   const isReleased = game.released !== false;
-  const primaryLink =
-    game.deeplink ||
-    game.stores?.appStore ||
-    game.stores?.googlePlay ||
-    game.stores?.h5;
+  const preferredStoreLink = preferredStore
+    ? game.stores?.[preferredStore]
+    : undefined;
+  const primaryLink = preferredStore
+    ? preferredStoreLink || game.deeplink
+    : game.deeplink ||
+      game.stores?.ios ||
+      game.stores?.["google-play"] ||
+      game.stores?.zeroplay ||
+      game.stores?.["ios-china"] ||
+      game.stores?.["taptap-cn"];
   const downloadLabel = isReleased
     ? translate({
         id: "game.button.get",

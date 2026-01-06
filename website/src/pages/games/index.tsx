@@ -9,6 +9,19 @@ import GameCard from "@site/src/components/GameCard";
 import { getReleasedGames } from "@site/src/utils/i18nGames";
 import styles from "./index.module.css";
 
+const STORE_FILTERS = ["ios", "ios-china", "google-play", "zeroplay", "taptap-cn"] as const;
+type StoreFilter = (typeof STORE_FILTERS)[number];
+
+const resolveStoreFilter = (value: string | null): StoreFilter | undefined => {
+  if (!value) {
+    return undefined;
+  }
+  const normalized = value.trim().toLowerCase();
+  return STORE_FILTERS.includes(normalized as StoreFilter)
+    ? (normalized as StoreFilter)
+    : undefined;
+};
+
 export default function GamesPage(): JSX.Element {
   const location = useLocation();
   const { i18n } = useDocusaurusContext();
@@ -16,11 +29,15 @@ export default function GamesPage(): JSX.Element {
     () => getReleasedGames(i18n.currentLocale),
     [i18n.currentLocale],
   );
+  const storeFilter = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return resolveStoreFilter(params.get("store"));
+  }, [location.search]);
 
   const hasFilterQuery = useMemo(() => {
     const params = new URLSearchParams(location.search);
-    return params.has("source_game");
-  }, [location.search]);
+    return params.has("source_game") || Boolean(storeFilter);
+  }, [location.search, storeFilter]);
 
   const [filteredGames, setFilteredGames] = useState(() =>
     hasFilterQuery ? [] : localizedGames,
@@ -58,19 +75,26 @@ export default function GamesPage(): JSX.Element {
     });
 
     if (excludeTokens.length === 0) {
-      setFilteredGames(localizedGames);
+      const storeFilteredGames = storeFilter
+        ? localizedGames.filter((game) => game.stores?.[storeFilter])
+        : localizedGames;
+      setFilteredGames(storeFilteredGames);
       setIsFilterReady(true);
       releaseFilterBlocking();
       return;
     }
 
     const excludeSet = new Set(excludeTokens);
-    setFilteredGames(
-      localizedGames.filter((game) => !excludeSet.has(game.id.toLowerCase())),
+    const excludedGames = localizedGames.filter(
+      (game) => !excludeSet.has(game.id.toLowerCase()),
     );
+    const storeFilteredGames = storeFilter
+      ? excludedGames.filter((game) => game.stores?.[storeFilter])
+      : excludedGames;
+    setFilteredGames(storeFilteredGames);
     setIsFilterReady(true);
     releaseFilterBlocking();
-  }, [hasFilterQuery, localizedGames, location.search]);
+  }, [hasFilterQuery, localizedGames, location.search, storeFilter]);
 
   const pageTitle = translate({
     id: "games.page.meta.title",
@@ -101,7 +125,7 @@ export default function GamesPage(): JSX.Element {
             </div>
           ) : filteredGames.length > 0 ? (
             [...filteredGames].reverse().map((game, index) => (
-              <GameCard key={game.id || index} game={game} />
+              <GameCard key={game.id || index} game={game} preferredStore={storeFilter} />
             ))
           ) : (
             <div className={styles.emptyState}>

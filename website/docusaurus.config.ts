@@ -116,7 +116,20 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  plugins: [],
+  plugins: [
+    function gamesDynamicRoutePlugin() {
+      return {
+        name: "games-dynamic-route",
+        async contentLoaded({ actions }) {
+          actions.addRoute({
+            path: "/games/:gameId",
+            component: "@site/src/components/GameDetailPage.tsx",
+            exact: true,
+          });
+        },
+      };
+    },
+  ],
 
   customFields: customFields,
 

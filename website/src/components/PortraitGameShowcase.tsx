@@ -5,8 +5,9 @@ import ProgressiveImage from "./ProgressiveImage";
 import styles from "./PortraitGameShowcase.module.css";
 
 interface StoreLinks {
-  appStore?: string;
-  googlePlay?: string;
+  ios?: string;
+  "ios-china"?: string;
+  "google-play"?: string;
   amazon?: string;
   macAppStore?: string;
   microsoft?: string;
@@ -14,7 +15,8 @@ interface StoreLinks {
   galaxyStore?: string;
   appGallery?: string;
   aptoide?: string;
-  h5?: string;
+  zeroplay?: string;
+  "taptap-cn"?: string;
 }
 
 interface SocialMedia {
@@ -29,7 +31,7 @@ interface GameData {
   subtitle?: string;
   description: string;
   icon: string;
-  videoUrl: string;
+  videoUrl?: string;
   posterUrl?: string;
   stores?: StoreLinks;
   socialMedia?: SocialMedia;
@@ -53,7 +55,10 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     socialMedia = {},
     screenshots = [],
   } = game;
-  const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const appStoreLink = stores.ios || stores["ios-china"];
+  const hasVideo = Boolean(videoUrl);
+  const previewImage = screenshots[0];
+  const [isVideoLoading, setIsVideoLoading] = useState(() => hasVideo);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -69,6 +74,14 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
 
   // Video auto-play logic
   useEffect(() => {
+    if (!hasVideo) {
+      setIsVideoLoading(false);
+      setHasPlayedOnce(false);
+      return;
+    }
+
+    setIsVideoLoading(true);
+
     if (videoRef.current) {
       const video = videoRef.current;
 
@@ -122,7 +135,7 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
         video.removeEventListener('play', handlePlay);
       };
     }
-  }, []);
+  }, [hasVideo]);
 
   // Scroll handling for screenshot carousel
   const updateScrollMetrics = useCallback(() => {
@@ -305,6 +318,14 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
     },
     { title },
   );
+  const previewAlt = translate(
+    {
+      id: "game.showcase.screenshot.alt",
+      message: "{title} screenshot {index}",
+      description: "Alt text for a screenshot displayed in the portrait carousel",
+    },
+    { title, index: 1 },
+  );
 
   return (
     <div className={styles.portraitGameShowcase}>
@@ -314,18 +335,29 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
           {/* Video Container - Portrait oriented */}
           <div className={`${styles.videoContainer} ${!isVideoLoading ? styles.loaded : ''}`}>
             <div className={styles.videoWrapper}>
-              {isVideoLoading && <div className={styles.videoLoading} />}
-              <video
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={!hasPlayedOnce && posterUrl ? posterUrl : undefined}
-                className={`${styles.video} ${isVideoLoading ? styles.loading : ''}`}
-              >
-                <source src={videoUrl} type="video/mp4" />
-              </video>
+              {hasVideo ? (
+                <>
+                  {isVideoLoading && <div className={styles.videoLoading} />}
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster={!hasPlayedOnce && posterUrl ? posterUrl : undefined}
+                    className={`${styles.video} ${isVideoLoading ? styles.loading : ''}`}
+                  >
+                    <source src={videoUrl} type="video/mp4" />
+                  </video>
+                </>
+              ) : previewImage ? (
+                <img
+                  src={previewImage}
+                  alt={previewAlt}
+                  className={styles.video}
+                  loading="lazy"
+                />
+              ) : null}
             </div>
           </div>
 
@@ -347,18 +379,18 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
             {/* Store Links */}
             <div className={styles.storeLinksContainer}>
               <div className={styles.storeLinksRow}>
-                {stores.appStore && (
+                {appStoreLink && (
                   <a
-                    href={stores.appStore}
+                    href={appStoreLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <img src="/img/stores/app-store.svg" alt="App Store" />
                   </a>
                 )}
-                {stores.googlePlay && (
+                {stores["google-play"] && (
                   <a
-                    href={stores.googlePlay}
+                    href={stores["google-play"]}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -398,8 +430,8 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
                     />
                   </a>
                 )}
-                {stores.h5 && (
-                  <a href={stores.h5} target="_blank" rel="noopener noreferrer">
+                {stores.zeroplay && (
+                  <a href={stores.zeroplay} target="_blank" rel="noopener noreferrer">
                     <img src="/img/stores/h5.svg" alt="Play on Web" />
                   </a>
                 )}

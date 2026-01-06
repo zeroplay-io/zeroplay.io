@@ -18,9 +18,9 @@
 			],
 			"orientation": "landscape",
 			"stores": {
-				"appStore": "https://apps.apple.com/app/id6739750400",
-				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.backgammon2",
-				"h5": "https://play.zeroplay.io/backgammon"
+				"ios": "https://apps.apple.com/app/id6739750400",
+				"google-play": "https://play.google.com/store/apps/details?id=io.zeroplay.backgammon2",
+				"zeroplay": "https://play.zeroplay.io/backgammon"
 			},
 			"socialMedia": {
 				"enabled": false,
@@ -46,9 +46,9 @@
 			],
 			"orientation": "portrait",
 			"stores": {
-				"appStore": "https://apps.apple.com/app/id6753621971",
-				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire",
-				"h5": "https://play.zeroplay.io/solitaire"
+				"ios": "https://apps.apple.com/app/id6753621971",
+				"google-play": "https://play.google.com/store/apps/details?id=io.zeroplay.solitaire",
+				"zeroplay": "https://play.zeroplay.io/solitaire"
 			},
 			"socialMedia": {
 				"enabled": false
@@ -60,8 +60,6 @@
 			"icon": "https://dl.zeroplay.cc/metadata/rubik/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/rubik/banner.jpg",
 			"deeplink": "https://rubik-cube.onelink.me/Kp4R?pid=zeroplay&zp_type=web",
-			"videoUrl": "https://dl.zeroplay.cc/metadata/rubik/preview%400.5x.mp4",
-			"posterUrl": "https://dl.zeroplay.cc/metadata/rubik/poster.jpg",
 			"screenshots": [
 				"https://dl.zeroplay.cc/metadata/rubik/screenshots/01.jpg",
 				"https://dl.zeroplay.cc/metadata/rubik/screenshots/02.jpg",
@@ -71,8 +69,8 @@
 			],
 			"orientation": "portrait",
 			"stores": {
-				"appStore": "https://apps.apple.com/app/id6744870498",
-				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.rubik"
+				"ios": "https://apps.apple.com/app/id6744870498",
+				"google-play": "https://play.google.com/store/apps/details?id=io.zeroplay.rubik"
 			},
 			"socialMedia": {
 				"enabled": false
@@ -83,8 +81,6 @@
 			"id": "sudoku",
 			"icon": "https://dl.zeroplay.cc/metadata/sudoku/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/sudoku/banner.jpg",
-			"videoUrl": "https://dl.zeroplay.cc/metadata/sudoku/preview%400.5x.mp4",
-			"posterUrl": "https://dl.zeroplay.cc/metadata/sudoku/poster.jpg",
 			"screenshots": [
 				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/01.jpg",
 				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/02.jpg",
@@ -94,10 +90,10 @@
 			],
 			"orientation": "portrait",
 			"stores": {
-				"appStore": "https://apps.apple.com/app/id6756430990",
-				"appStoreCn": "https://apps.apple.com/cn/app/id6756429982",
-				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.sudoku",
-				"h5": "https://play.zeroplay.io/sudoku/"
+				"ios": "https://apps.apple.com/app/id6756430990",
+				"ios-china": "https://apps.apple.com/cn/app/id6756429982",
+				"google-play": "https://play.google.com/store/apps/details?id=io.zeroplay.sudoku",
+				"zeroplay": "https://play.zeroplay.io/sudoku/"
 			},
 			"socialMedia": {
 				"enabled": false
