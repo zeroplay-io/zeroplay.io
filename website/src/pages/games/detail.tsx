@@ -9,25 +9,23 @@ import PortraitGameShowcase from "@site/src/components/PortraitGameShowcase";
 import gamesData from "@site/src/data/games.json";
 import { getLocalizedGame } from "@site/src/utils/i18nGames";
 
-const getGameIdFromPath = (pathname: string): string | undefined => {
-  const segments = pathname.split("/").filter(Boolean);
-  const gamesIndex = segments.lastIndexOf("games");
-  if (gamesIndex < 0 || gamesIndex + 1 >= segments.length) {
+const getGameIdFromQuery = (search: string): string | undefined => {
+  if (!search) {
     return undefined;
   }
-  const rawId = segments[gamesIndex + 1];
-  try {
-    return decodeURIComponent(rawId);
-  } catch (_) {
-    return rawId;
+  const params = new URLSearchParams(search);
+  const id = params.get("id");
+  if (!id) {
+    return undefined;
   }
+  return id.trim() || undefined;
 };
 
 export default function GameDetailPage(): JSX.Element {
   const { i18n } = useDocusaurusContext();
   const location = useLocation();
-  const gameId = getGameIdFromPath(location.pathname);
-  const normalizedId = gameId ? gameId.toLowerCase() : "";
+  const queryId = getGameIdFromQuery(location.search);
+  const normalizedId = queryId ? queryId.toLowerCase() : "";
   const baseGame = normalizedId
     ? gamesData.games.find((game) => game.id.toLowerCase() === normalizedId)
     : undefined;

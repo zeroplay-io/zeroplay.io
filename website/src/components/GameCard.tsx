@@ -144,7 +144,10 @@ const GameCard: React.FC<GameCardProps> = ({ game, preferredStore }) => {
   }
 
   return (
-    <Link to={`/games/${game.id}`} className={styles.cardLink}>
+    <Link
+      to={`/games/detail?id=${encodeURIComponent(game.id)}`}
+      className={styles.cardLink}
+    >
       {cardContent}
     </Link>
   );

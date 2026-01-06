@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
@@ -14,19 +12,6 @@ const START_YEAR = 2025;
 const COPYRIGHT = `Copyright © ${
   CURRENT_YEAR > START_YEAR ? `${START_YEAR}-${CURRENT_YEAR}` : START_YEAR
 } ZeroPlay Ltd. (成都零游网络科技有限公司)`;
-const CONFIG_DIR = typeof __dirname === "string" ? __dirname : process.cwd();
-const gamesDataPath = path.join(CONFIG_DIR, "src", "data", "games.json");
-const gamesDataRaw = fs.readFileSync(gamesDataPath, "utf8");
-const gamesData = JSON.parse(gamesDataRaw);
-const gameRouteIds = Array.from(
-  new Set(
-    Array.isArray(gamesData?.games)
-      ? gamesData.games
-          .map((game: { id?: string }) => (game?.id || "").trim())
-          .filter(Boolean)
-      : [],
-  ),
-);
 
 const customFields = {
   version: "0.0.1",
@@ -134,27 +119,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  plugins: [
-    function gamesDynamicRoutePlugin() {
-      return {
-        name: "games-dynamic-route",
-        async contentLoaded({ actions }) {
-          gameRouteIds.forEach((gameId) => {
-            actions.addRoute({
-              path: `/games/${gameId}`,
-              component: "@site/src/components/GameDetailPage.tsx",
-              exact: true,
-            });
-          });
-          actions.addRoute({
-            path: "/games/:gameId",
-            component: "@site/src/components/GameDetailPage.tsx",
-            exact: true,
-          });
-        },
-      };
-    },
-  ],
+  plugins: [],
 
   customFields: customFields,
 
