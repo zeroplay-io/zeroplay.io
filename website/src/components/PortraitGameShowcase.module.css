@@ -284,18 +284,15 @@
   gap: 24px;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 20px 0;
   user-select: none;
   -webkit-overflow-scrolling: touch;
   margin: 0 -32px;
   padding-left: 32px;
   padding-right: 32px;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0 32px;
-  touch-action: pan-y pinch-zoom;
+  touch-action: pan-x pan-y;
   position: relative;
 }
 
@@ -328,28 +325,33 @@
   display: none; /* Chrome, Safari */
 }
 
+.screenshotsContainer.dragging {
+  cursor: grabbing;
+}
+
+.screenshotsContainer:not(.dragging) {
+  cursor: grab;
+}
+
+.screenshotsContainer img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .screenshotItem {
   flex-shrink: 0;
   width: 300px;
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    opacity 0.35s ease;
-  transform: scale(0.92);
-  opacity: 0.7;
+  transition: box-shadow 0.3s ease;
   border-radius: 24px;
   outline: none;
+  cursor: pointer;
 }
 
 .screenshotItem:focus-visible {
   box-shadow: 0 0 0 3px rgba(46, 170, 220, 0.45);
-}
-
-.screenshotItemActive {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .screenshot {
@@ -357,20 +359,21 @@
   height: auto;
   border-radius: 20px;
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.06),
     0 4px 12px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.06),
     0 0 0 1px rgba(0, 0, 0, 0.04);
   display: block;
   object-fit: contain;
   background: #fff;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
-.screenshotItemActive .screenshot {
+.screenshotItem:hover .screenshot {
   box-shadow:
-    0 10px 24px rgba(15, 21, 30, 0.16),
-    0 0 0 1px rgba(0, 0, 0, 0.08);
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    0 12px 32px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 /* Scroll Buttons */
@@ -483,15 +486,15 @@
 
 [data-theme='dark'] .screenshot {
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.3),
-    0 4px 12px rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.05);
   background: rgba(20, 24, 32, 0.6);
 }
 
-[data-theme='dark'] .screenshotItemActive .screenshot {
+[data-theme='dark'] .screenshotItem:hover .screenshot {
   box-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.45),
+    0 12px 28px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 

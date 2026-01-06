@@ -62,6 +62,10 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
   const [activeScreenshot, setActiveScreenshot] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const dragScrollLeft = useRef(0);
+  const dragMoved = useRef(false);
 
   // Video auto-play logic
   useEffect(() => {
@@ -207,6 +211,44 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
 
   const scrollRightBtn = () => {
     scrollToScreenshot(activeScreenshot + 1);
+  };
+
+  // Mouse drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    dragStartX.current = e.clientX;
+    dragScrollLeft.current = scrollContainerRef.current.scrollLeft;
+    dragMoved.current = false;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const delta = e.clientX - dragStartX.current;
+    if (Math.abs(delta) > 5) {
+      dragMoved.current = true;
+    }
+    scrollContainerRef.current.scrollLeft = dragScrollLeft.current - delta;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    const delta = e.clientX - dragStartX.current;
+    const threshold = 50;
+
+    if (Math.abs(delta) > threshold) {
+      if (delta > 0 && activeScreenshot > 0) {
+        scrollToScreenshot(activeScreenshot - 1);
+      } else if (delta < 0 && activeScreenshot < screenshots.length - 1) {
+        scrollToScreenshot(activeScreenshot + 1);
+      }
+    }
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
   };
 
   useEffect(() => {
@@ -486,22 +528,28 @@ const PortraitGameShowcase: React.FC<PortraitGameShowcaseProps> = ({
 
             <div
               ref={scrollContainerRef}
-              className={styles.screenshotsContainer}
+              className={`${styles.screenshotsContainer} ${isDragging ? styles.dragging : ''}`}
               onScroll={handleScroll}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+              onDragStart={(e) => e.preventDefault()}
               role="list"
               aria-label={screenshotsListLabel}
             >
               {screenshots.map((screenshot, index) => (
                 <div
                   key={`${screenshot}-${index}`}
-                  className={clsx(
-                    styles.screenshotItem,
-                    activeScreenshot === index && styles.screenshotItemActive
-                  )}
+                  className={styles.screenshotItem}
                   ref={(element) => {
                     screenshotRefs.current[index] = element;
                   }}
-                  onClick={() => scrollToScreenshot(index)}
+                  onClick={() => {
+                    if (!dragMoved.current) {
+                      scrollToScreenshot(index);
+                    }
+                  }}
                   onKeyDown={(event) => {
                     if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault();

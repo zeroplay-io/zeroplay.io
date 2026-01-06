@@ -93,11 +93,16 @@
 				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/05.jpg"
 			],
 			"orientation": "portrait",
-			"stores": {},
+			"stores": {
+				"appStore": "https://apps.apple.com/app/id6756430990",
+				"appStoreCn": "https://apps.apple.com/cn/app/id6756429982",
+				"googlePlay": "https://play.google.com/store/apps/details?id=io.zeroplay.sudoku",
+				"h5": "https://play.zeroplay.io/sudoku/"
+			},
 			"socialMedia": {
 				"enabled": false
 			},
-			"released": false
+			"released": true
 		},
 		{
 			"id": "minesweeper",

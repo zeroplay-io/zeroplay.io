@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import clsx from "clsx";
 import { translate } from "@docusaurus/core/lib/client/exports/Translate";
 import ProgressiveImage from "./ProgressiveImage";
 import styles from "./GameShowcase.module.css";
@@ -50,50 +51,167 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     socialMedia = {},
     screenshots = [],
   } = game;
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
-  const [dimensionsBySrc, setDimensionsBySrc] = useState<
-    Record<string, { width: number; height: number }>
-  >({});
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const screenshotRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollAnimationFrame = useRef<number | null>(null);
+  const [activeScreenshot, setActiveScreenshot] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const dragStartScrollLeft = useRef(0);
+  const dragMoved = useRef(false);
 
-  const handlePrevClick = () => {
-    setCurrentIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
-  };
-
-  const handleNextClick = () => {
-    setCurrentIndex((i) => (i + 1) % screenshots.length);
-  };
-
-  const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = event.currentTarget;
-    const { naturalWidth, naturalHeight, currentSrc } = img;
-
-    if (!naturalWidth || !naturalHeight || !currentSrc) {
+  // Scroll handling for screenshot carousel
+  const updateScrollMetrics = useCallback(() => {
+    if (!scrollContainerRef.current) {
       return;
     }
 
-    setDimensionsBySrc((prev) => {
-      const existing = prev[currentSrc];
-      if (
-        existing &&
-        existing.width === naturalWidth &&
-        existing.height === naturalHeight
-      ) {
-        return prev;
-      }
+    const container = scrollContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const containerWidth = container.clientWidth;
+    const maxScrollLeft = container.scrollWidth - containerWidth;
+    const containerCenter = scrollLeft + containerWidth / 2;
 
-      return {
-        ...prev,
-        [currentSrc]: {
-          width: naturalWidth,
-          height: naturalHeight,
-        },
-      };
+    const nextCanScrollLeft = scrollLeft > 24;
+    const nextCanScrollRight = scrollLeft < maxScrollLeft - 24;
+
+    setCanScrollLeft((prev) =>
+      prev === nextCanScrollLeft ? prev : nextCanScrollLeft
+    );
+    setCanScrollRight((prev) =>
+      prev === nextCanScrollRight ? prev : nextCanScrollRight
+    );
+
+    let closestIndex = 0;
+    let smallestDistance = Number.POSITIVE_INFINITY;
+
+    screenshotRefs.current.forEach((item, index) => {
+      if (!item) {
+        return;
+      }
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const distance = Math.abs(itemCenter - containerCenter);
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        closestIndex = index;
+      }
     });
+
+    setActiveScreenshot((prev) =>
+      prev === closestIndex ? prev : closestIndex
+    );
+  }, []);
+
+  const handleScroll = () => {
+    if (scrollAnimationFrame.current) {
+      cancelAnimationFrame(scrollAnimationFrame.current);
+    }
+    scrollAnimationFrame.current = window.requestAnimationFrame(
+      updateScrollMetrics
+    );
   };
 
-  const videoRef = useRef(null);
+  const scrollToScreenshot = useCallback(
+    (index: number) => {
+      if (!scrollContainerRef.current || screenshots.length === 0) {
+        return;
+      }
+
+      const safeIndex = Math.max(
+        0,
+        Math.min(index, screenshots.length - 1)
+      );
+      const target = screenshotRefs.current[safeIndex];
+
+      if (!target) {
+        return;
+      }
+
+      const container = scrollContainerRef.current;
+      const targetOffset =
+        target.offsetLeft +
+        target.offsetWidth / 2 -
+        container.clientWidth / 2;
+
+      container.scrollTo({
+        left: targetOffset,
+        behavior: "smooth",
+      });
+    },
+    [screenshots.length]
+  );
+
+  const scrollLeftBtn = () => {
+    scrollToScreenshot(activeScreenshot - 1);
+  };
+
+  const scrollRightBtn = () => {
+    scrollToScreenshot(activeScreenshot + 1);
+  };
+
+  // Mouse drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    dragStartX.current = e.clientX;
+    dragStartScrollLeft.current = scrollContainerRef.current.scrollLeft;
+    dragMoved.current = false;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const delta = e.clientX - dragStartX.current;
+    if (Math.abs(delta) > 5) {
+      dragMoved.current = true;
+    }
+    scrollContainerRef.current.scrollLeft = dragStartScrollLeft.current - delta;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    const delta = e.clientX - dragStartX.current;
+    const threshold = 50;
+
+    if (Math.abs(delta) > threshold) {
+      // 拖动超过阈值，切换到上/下一张
+      if (delta > 0 && activeScreenshot > 0) {
+        scrollToScreenshot(activeScreenshot - 1);
+      } else if (delta < 0 && activeScreenshot < screenshots.length - 1) {
+        scrollToScreenshot(activeScreenshot + 1);
+      }
+    }
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    screenshotRefs.current = screenshotRefs.current.slice(
+      0,
+      screenshots.length
+    );
+    updateScrollMetrics();
+  }, [screenshots.length, updateScrollMetrics]);
+
+  useEffect(() => {
+    const handleResize = () => updateScrollMetrics();
+    window.addEventListener("resize", handleResize);
+    updateScrollMetrics();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (scrollAnimationFrame.current) {
+        cancelAnimationFrame(scrollAnimationFrame.current);
+      }
+    };
+  }, [updateScrollMetrics]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -151,36 +269,6 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     }
   }, []);
 
-  const activeScreenshotSrc = screenshots[currentIndex];
-  const activeDimensions = activeScreenshotSrc
-    ? dimensionsBySrc[activeScreenshotSrc]
-    : undefined;
-
-  const fallbackDimensions = useMemo(() => {
-    for (const src of screenshots) {
-      const dimensions = dimensionsBySrc[src];
-      if (dimensions) {
-        return dimensions;
-      }
-    }
-    return undefined;
-  }, [screenshots, dimensionsBySrc]);
-
-  const aspectPercentage = useMemo(() => {
-    if (activeDimensions) {
-      return (activeDimensions.height / activeDimensions.width) * 100;
-    }
-    if (fallbackDimensions) {
-      return (fallbackDimensions.height / fallbackDimensions.width) * 100;
-    }
-    return null;
-  }, [activeDimensions, fallbackDimensions]);
-
-  const screenshotWrapperStyle = aspectPercentage
-    ? ({
-        "--screenshot-aspect-ratio": `${aspectPercentage}%`,
-      } as React.CSSProperties)
-    : undefined;
   const iconAlt = translate(
     {
       id: "game.showcase.iconAlt",
@@ -189,16 +277,24 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
     },
     { title },
   );
-  const previousImageLabel = translate({
+  const scrollLeftLabel = translate({
     id: "game.showcase.carousel.prev",
-    message: "Previous image",
-    description: "Aria-label for the previous image button in the carousel",
+    message: "Scroll left",
+    description: "Aria-label for scrolling left in the landscape carousel",
   });
-  const nextImageLabel = translate({
+  const scrollRightLabel = translate({
     id: "game.showcase.carousel.next",
-    message: "Next image",
-    description: "Aria-label for the next image button in the carousel",
+    message: "Scroll right",
+    description: "Aria-label for scrolling right in the landscape carousel",
   });
+  const screenshotsListLabel = translate(
+    {
+      id: "game.showcase.screenshots.label",
+      message: "{title} screenshots",
+      description: "Aria-label for the landscape screenshots list",
+    },
+    { title },
+  );
   const socialTitle = translate(
     {
       id: "game.showcase.social.title",
@@ -206,14 +302,6 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
       description: "Heading for the social media section on game detail pages",
     },
     { title },
-  );
-  const screenshotAlt = translate(
-    {
-      id: "game.showcase.screenshot.alt",
-      message: "{title} screenshot {index}",
-      description: "Alt text for the main screenshot displayed in the carousel",
-    },
-    { title, index: currentIndex + 1 },
   );
 
   return (
@@ -369,72 +457,132 @@ const GameShowcase: React.FC<GameShowcaseProps> = ({ game }) => {
         </div>
       )}
 
-      {/* Screenshots Section */}
+      {/* Screenshots Section - Horizontal Scroll Carousel */}
       {screenshots.length > 0 && (
         <div className={styles.screenshotsSection}>
-          <div className={styles.screenshotsContainer}>
-            <div className={styles.screenshotWrapper} style={screenshotWrapperStyle}>
-              <div className={styles.screenshotViewport}>
-                <ProgressiveImage
-                  src={screenshots[currentIndex]}
-                  alt={screenshotAlt}
-                  className={styles.screenshot}
-                  onLoad={handleImageLoad}
-                />
-                {screenshots.length > 1 && (
-                  <div className={styles.counter}>
-                    {currentIndex + 1} / {screenshots.length}
-                  </div>
-                )}
-              </div>
-              {screenshots.length > 1 && (
-                <>
-                  <button
-                    onClick={handlePrevClick}
-                    className={`${styles.navButton} ${styles.prevButton}`}
-                    aria-label={previousImageLabel}
-                  >
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 18L9 12L15 6"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
+          <div className={styles.screenshotsCarousel}>
+            {canScrollLeft && (
+              <button
+                type="button"
+                onClick={scrollLeftBtn}
+                className={`${styles.scrollButton} ${styles.scrollButtonLeft}`}
+                aria-label={scrollLeftLabel}
+                disabled={!canScrollLeft}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            )}
 
-                  <button
-                    onClick={handleNextClick}
-                    className={`${styles.navButton} ${styles.nextButton}`}
-                    aria-label={nextImageLabel}
-                  >
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 18L15 12L9 6"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </>
-              )}
+            <div
+              ref={scrollContainerRef}
+              className={`${styles.screenshotsContainer} ${isDragging ? styles.dragging : ''}`}
+              onScroll={handleScroll}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+              onDragStart={(e) => e.preventDefault()}
+              role="list"
+              aria-label={screenshotsListLabel}
+            >
+              {screenshots.map((screenshot, index) => (
+                <div
+                  key={`${screenshot}-${index}`}
+                  className={styles.screenshotItem}
+                  ref={(element) => {
+                    screenshotRefs.current[index] = element;
+                  }}
+                  onClick={() => {
+                    if (!dragMoved.current) {
+                      scrollToScreenshot(index);
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      scrollToScreenshot(index);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={translate(
+                    {
+                      id: "game.showcase.screenshots.view",
+                      message: "View screenshot {index}",
+                      description:
+                        "Aria-label for selecting a screenshot in the carousel",
+                    },
+                    { index: index + 1 },
+                  )}
+                >
+                  <ProgressiveImage
+                    src={screenshot}
+                    alt={translate(
+                      {
+                        id: "game.showcase.screenshot.alt",
+                        message: "{title} screenshot {index}",
+                        description:
+                          "Alt text for a screenshot displayed in the landscape carousel",
+                      },
+                      { title, index: index + 1 },
+                    )}
+                    className={styles.screenshot}
+                  />
+                </div>
+              ))}
             </div>
+
+            <div className={styles.paginationDots} aria-hidden="true">
+              {screenshots.map((_, index) => (
+                <span
+                  key={`dot-${index}`}
+                  className={clsx(
+                    styles.paginationDot,
+                    activeScreenshot === index && styles.paginationDotActive
+                  )}
+                />
+              ))}
+            </div>
+
+            {canScrollRight && (
+              <button
+                type="button"
+                onClick={scrollRightBtn}
+                className={`${styles.scrollButton} ${styles.scrollButtonRight}`}
+                aria-label={scrollRightLabel}
+                disabled={!canScrollRight}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       )}
