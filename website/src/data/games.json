@@ -69,7 +69,8 @@
 			],
 			"orientation": "portrait",
 			"stores": {
-				"ios": "https://apps.apple.com/app/id6744870498",
+				"ios": "https://apps.apple.com/app/id1500120768",
+				"ios-china": "https://apps.apple.com/cn/app/id1547076999",
 				"google-play": "https://play.google.com/store/apps/details?id=io.zeroplay.rubik"
 			},
 			"socialMedia": {
