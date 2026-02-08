@@ -1,0 +1,22 @@
+{
+  "item.label.Games": {
+    "message": "Spil",
+    "description": "Navbar item with label Games"
+  },
+  "item.label.Docs": {
+    "message": "Dokumenter",
+    "description": "Navbar item with label Docs"
+  },
+  "logo.alt": {
+    "message": "ZeroPlay Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.About": {
+    "message": "Om os",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Contact": {
+    "message": "Kontakt",
+    "description": "Navbar item with label Contact"
+  }
+}

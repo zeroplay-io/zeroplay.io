@@ -23,71 +23,73 @@ const I18N_CONFIG: Config["i18n"] = {
   defaultLocale: "en",
   locales: [
     "en",       // English
-    "zh-Hans",  // Simplified Chinese
-    "zh-Hant",  // Traditional Chinese
+    "ar",       // Arabic
+    "ca",       // Catalan
+    "cs",       // Czech
+    "da",       // Danish
+    "de",       // German
+    "el",       // Greek
+    "es",       // Spanish
+    "fi",       // Finnish
+    "fr",       // French
+    "he",       // Hebrew
+    "hi",       // Hindi
+    "hr",       // Croatian
+    "hu",       // Hungarian
+    "id",       // Indonesian
+    "it",       // Italian
     "ja",       // Japanese
     "ko",       // Korean
-    "es",       // Spanish
-    "fr",       // French
-    "de",       // German
-    "it",       // Italian
-    "pt",       // Portuguese
-    "pt-BR",    // Brazilian Portuguese
-    "ru",       // Russian
-    "ar",       // Arabic
-    "tr",       // Turkish
-    "th",       // Thai
-    "vi",       // Vietnamese
-    "id",       // Indonesian
     "ms",       // Malay
-    "fil",      // Filipino
-    "hi",       // Hindi
+    "nb",       // Norwegian Bokmål
     "nl",       // Dutch
     "pl",       // Polish
-    "sv",       // Swedish
-    "no",       // Norwegian
-    "da",       // Danish
-    "fi",       // Finnish
-    "he",       // Hebrew
-    "fa",       // Persian
-    "uk",       // Ukrainian
+    "pt",       // Portuguese
     "ro",       // Romanian
-    "cs",       // Czech
-    "hu",       // Hungarian
+    "ru",       // Russian
+    "sk",       // Slovak
+    "sv",       // Swedish
+    "th",       // Thai
+    "tr",       // Turkish
+    "uk",       // Ukrainian
+    "vi",       // Vietnamese
+    "zh-Hans",  // Simplified Chinese
+    "zh-Hant",  // Traditional Chinese
   ],
   localeConfigs: {
     en: { label: "English", direction: "ltr", htmlLang: "en-US" },
-    "zh-Hans": { label: "简体中文", direction: "ltr", htmlLang: "zh-CN" },
-    "zh-Hant": { label: "繁體中文", direction: "ltr", htmlLang: "zh-TW" },
+    ar: { label: "العربية", direction: "rtl", htmlLang: "ar-SA" },
+    ca: { label: "Català", direction: "ltr", htmlLang: "ca-ES" },
+    cs: { label: "Čeština", direction: "ltr", htmlLang: "cs-CZ" },
+    da: { label: "Dansk", direction: "ltr", htmlLang: "da-DK" },
+    de: { label: "Deutsch", direction: "ltr", htmlLang: "de-DE" },
+    el: { label: "Ελληνικά", direction: "ltr", htmlLang: "el-GR" },
+    es: { label: "Español", direction: "ltr", htmlLang: "es-ES" },
+    fi: { label: "Suomi", direction: "ltr", htmlLang: "fi-FI" },
+    fr: { label: "Français", direction: "ltr", htmlLang: "fr-FR" },
+    he: { label: "עברית", direction: "rtl", htmlLang: "he-IL" },
+    hi: { label: "हिन्दी", direction: "ltr", htmlLang: "hi-IN" },
+    hr: { label: "Hrvatski", direction: "ltr", htmlLang: "hr-HR" },
+    hu: { label: "Magyar", direction: "ltr", htmlLang: "hu-HU" },
+    id: { label: "Bahasa Indonesia", direction: "ltr", htmlLang: "id-ID" },
+    it: { label: "Italiano", direction: "ltr", htmlLang: "it-IT" },
     ja: { label: "日本語", direction: "ltr", htmlLang: "ja-JP" },
     ko: { label: "한국어", direction: "ltr", htmlLang: "ko-KR" },
-    es: { label: "Español", direction: "ltr", htmlLang: "es-ES" },
-    fr: { label: "Français", direction: "ltr", htmlLang: "fr-FR" },
-    de: { label: "Deutsch", direction: "ltr", htmlLang: "de-DE" },
-    it: { label: "Italiano", direction: "ltr", htmlLang: "it-IT" },
-    pt: { label: "Português", direction: "ltr", htmlLang: "pt-PT" },
-    "pt-BR": { label: "Português (Brasil)", direction: "ltr", htmlLang: "pt-BR" },
-    ru: { label: "Русский", direction: "ltr", htmlLang: "ru-RU" },
-    ar: { label: "العربية", direction: "rtl", htmlLang: "ar-SA" },
-    tr: { label: "Türkçe", direction: "ltr", htmlLang: "tr-TR" },
-    th: { label: "ไทย", direction: "ltr", htmlLang: "th-TH" },
-    vi: { label: "Tiếng Việt", direction: "ltr", htmlLang: "vi-VN" },
-    id: { label: "Bahasa Indonesia", direction: "ltr", htmlLang: "id-ID" },
     ms: { label: "Bahasa Melayu", direction: "ltr", htmlLang: "ms-MY" },
-    fil: { label: "Filipino", direction: "ltr", htmlLang: "fil-PH" },
-    hi: { label: "हिन्दी", direction: "ltr", htmlLang: "hi-IN" },
+    nb: { label: "Norsk Bokmål", direction: "ltr", htmlLang: "nb-NO" },
     nl: { label: "Nederlands", direction: "ltr", htmlLang: "nl-NL" },
     pl: { label: "Polski", direction: "ltr", htmlLang: "pl-PL" },
-    sv: { label: "Svenska", direction: "ltr", htmlLang: "sv-SE" },
-    no: { label: "Norsk", direction: "ltr", htmlLang: "no-NO" },
-    da: { label: "Dansk", direction: "ltr", htmlLang: "da-DK" },
-    fi: { label: "Suomi", direction: "ltr", htmlLang: "fi-FI" },
-    he: { label: "עברית", direction: "rtl", htmlLang: "he-IL" },
-    fa: { label: "فارسی", direction: "rtl", htmlLang: "fa-IR" },
-    uk: { label: "Українська", direction: "ltr", htmlLang: "uk-UA" },
+    pt: { label: "Português", direction: "ltr", htmlLang: "pt-PT" },
     ro: { label: "Română", direction: "ltr", htmlLang: "ro-RO" },
-    cs: { label: "Čeština", direction: "ltr", htmlLang: "cs-CZ" },
-    hu: { label: "Magyar", direction: "ltr", htmlLang: "hu-HU" },
+    ru: { label: "Русский", direction: "ltr", htmlLang: "ru-RU" },
+    sk: { label: "Slovenčina", direction: "ltr", htmlLang: "sk-SK" },
+    sv: { label: "Svenska", direction: "ltr", htmlLang: "sv-SE" },
+    th: { label: "ไทย", direction: "ltr", htmlLang: "th-TH" },
+    tr: { label: "Türkçe", direction: "ltr", htmlLang: "tr-TR" },
+    uk: { label: "Українська", direction: "ltr", htmlLang: "uk-UA" },
+    vi: { label: "Tiếng Việt", direction: "ltr", htmlLang: "vi-VN" },
+    "zh-Hans": { label: "简体中文", direction: "ltr", htmlLang: "zh-CN" },
+    "zh-Hant": { label: "繁體中文", direction: "ltr", htmlLang: "zh-TW" },
   },
 };
 

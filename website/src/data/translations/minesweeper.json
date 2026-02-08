@@ -94,7 +94,7 @@
     "subtitle": "Teka-teki logik klasik",
     "description": "Enjoy the classic Minesweeper game you know and love! Test your logic and deduction skills in this timeless puzzle game.\nKey Features:\n• Three difficulty levels: Easy (10 mines), Medium (40 mines), Hard (99 mines)\n• Customizable skin system: minimalist modern skin, classic Windows skin, and additional community skins\n• Global leaderboards for each difficulty level\n• Clean and elegant interface that works smoothly on all devices\n• Dark and light mode support\n• Auto-save progress\nHow to Play:\n• Tap a cell to reveal it\n• Long press to flag a potential mine\n• Numbers indicate adjacent mines\n• Reveal all safe cells to win\n• Beware: revealing a mine ends the game!\nPerfect for quick breaks or long gaming sessions. Challenge your friends and win a spot on the leaderboards!"
   },
-  "no": {
+  "nb": {
     "title": "Minesveiper: Klassisk 2026",
     "subtitle": "Klassisk logikkpuslespill",
     "description": "Enjoy the classic Minesweeper game you know and love! Test your logic and deduction skills in this timeless puzzle game.\nKey Features:\n• Three difficulty levels: Easy (10 mines), Medium (40 mines), Hard (99 mines)\n• Customizable skin system: minimalist modern skin, classic Windows skin, and additional community skins\n• Global leaderboards for each difficulty level\n• Clean and elegant interface that works smoothly on all devices\n• Dark and light mode support\n• Auto-save progress\nHow to Play:\n• Tap a cell to reveal it\n• Long press to flag a potential mine\n• Numbers indicate adjacent mines\n• Reveal all safe cells to win\n• Beware: revealing a mine ends the game!\nPerfect for quick breaks or long gaming sessions. Challenge your friends and win a spot on the leaderboards!"
@@ -108,11 +108,6 @@
     "title": "Saper: Klasyczna Gra 2026",
     "subtitle": "Klasyczna logiczna gra",
     "description": "Ciesz się klasyczną grą Saper, którą znasz i kochasz! Przetestuj swoje umiejętności logicznego myślenia i dedukcji w tej ponadczasowej grze.\nGłówne funkcje:\n• Trzy poziomy trudności: Łatwy (10 min), Średni (40 min), Trudny (99 min)\n• Dostosowywalny system skórek: minimalistyczna nowoczesna skórka, klasyczna skórka Windows i dodatkowe skórki społeczności\n• Globalne rankingi dla każdego poziomu trudności\n• Czysty i elegancki interfejs działający płynnie na wszystkich urządzeniach\n• Obsługa trybu ciemnego i jasnego\n• Automatyczne zapisywanie postępów\nJak grać:\n• Dotknij pola, aby je odkryć\n• Przytrzymaj, aby oznaczyć potencjalną minę\n• Liczby wskazują sąsiednie miny\n• Odkryj wszystkie bezpieczne pola, aby wygrać\n• Uwaga: odkrycie miny kończy grę!\nIdealne na szybkie przerwy lub długie sesje gry. Rzuć wyzwanie znajomym i zdobądź miejsce w rankingach!"
-  },
-  "pt-BR": {
-    "title": "Campo Minado: Clássico 2026",
-    "subtitle": "Puzzle lógico clássico",
-    "description": "Aproveite o jogo clássico Campo Minado que você conhece e adora! Teste suas habilidades de lógica e dedução neste jogo atemporal.\nRecursos principais:\n• Três níveis de dificuldade: Fácil (10 minas), Médio (40 minas), Difícil (99 minas)\n• Sistema de temas personalizável: tema moderno minimalista, tema clássico do Windows e temas adicionais da comunidade\n• Tabelas de classificação globais para cada nível de dificuldade\n• Interface limpa e elegante que funciona perfeitamente em todos os dispositivos\n• Suporte para modo escuro e claro\n• Salvamento automático do progresso\nComo jogar:\n• Toque em uma célula para revelá-la\n• Pressione longamente para marcar uma mina potencial\n• Os números indicam minas adjacentes\n• Revele todas as células seguras para vencer\n• Cuidado: revelar uma mina termina o jogo!\nPerfeito para pausas rápidas ou longas sessões de jogo. Desafie seus amigos e conquiste um lugar nas tabelas de classificação!"
   },
   "pt": {
     "title": "Campo Minado: Clássico 2026",
