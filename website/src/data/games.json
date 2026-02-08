@@ -2,6 +2,15 @@
 	"games": [
 		{
 			"id": "backgammon",
+			"appLinks": {
+				"ios": { "bundleId": "io.zeroplay.backgammon" },
+				"android": {
+					"packageName": "io.zeroplay.backgammon2",
+					"sha256CertFingerprints": [
+						"6A:9B:E8:4B:03:FD:78:A0:55:9D:5A:E9:C5:B3:E9:EE:7C:51:E5:8E:D7:A0:AE:E0:66:3E:D0:CC:FA:27:B0:78"
+					]
+				}
+			},
 			"icon": "https://dl.zeroplay.cc/metadata/backgammon/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/backgammon/banner.jpg",
 			"deeplink": "https://backgammon-go.onelink.me/4n1X?pid=zeroplay&bg_type=web",
@@ -32,6 +41,17 @@
 		},
 		{
 			"id": "solitaire",
+			"appLinks": {
+				"ios": { "bundleId": "io.zeroplay.solitaire" },
+				"ios-china": { "bundleId": "cn.zeroplay.solitaire" },
+				"android": {
+					"packageName": "io.zeroplay.solitaire",
+					"sha256CertFingerprints": [
+						"80:7F:FA:6E:8F:75:C0:DD:11:5F:C2:95:34:6F:10:A6:49:39:B3:0F:8C:08:8E:43:74:AE:9F:E5:2D:E3:B9:16",
+						"6A:9B:E8:4B:03:FD:78:A0:55:9D:5A:E9:C5:B3:E9:EE:7C:51:E5:8E:D7:A0:AE:E0:66:3E:D0:CC:FA:27:B0:78"
+					]
+				}
+			},
 			"icon": "https://dl.zeroplay.cc/metadata/solitaire/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/solitaire/banner.jpg",
 			"deeplink": "https://solitaire-io.onelink.me/Vd8i?pid=zeroplay&zp_type=web",
@@ -58,6 +78,17 @@
 		},
 		{
 			"id": "rubik",
+			"appLinks": {
+				"ios": { "bundleId": "com.chen.magic" },
+				"ios-china": { "bundleId": "cn.chen.rubik" },
+				"android": {
+					"packageName": "io.zeroplay.rubik",
+					"sha256CertFingerprints": [
+						"AC:88:C0:D3:B2:96:85:43:D3:EA:44:57:3D:6A:59:21:47:90:C2:71:6D:70:70:75:4B:3E:28:79:38:D3:5A:20",
+						"6A:9B:E8:4B:03:FD:78:A0:55:9D:5A:E9:C5:B3:E9:EE:7C:51:E5:8E:D7:A0:AE:E0:66:3E:D0:CC:FA:27:B0:78"
+					]
+				}
+			},
 			"icon": "https://dl.zeroplay.cc/metadata/rubik/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/rubik/banner.jpg",
 			"deeplink": "https://rubik-cube.onelink.me/Kp4R?pid=zeroplay&zp_type=web",
@@ -81,6 +112,17 @@
 		},
 		{
 			"id": "sudoku",
+			"appLinks": {
+				"ios": { "bundleId": "io.zeroplay.sudoku" },
+				"ios-china": { "bundleId": "cn.zeroplay.sudoku" },
+				"android": {
+					"packageName": "io.zeroplay.sudoku",
+					"sha256CertFingerprints": [
+						"6A:9B:E8:4B:03:FD:78:A0:55:9D:5A:E9:C5:B3:E9:EE:7C:51:E5:8E:D7:A0:AE:E0:66:3E:D0:CC:FA:27:B0:78",
+						"C4:3F:75:ED:42:7B:C5:6A:60:A5:2F:F0:EE:A5:96:C3:4A:5F:64:EA:DA:35:E4:15:C7:97:7D:74:9B:C8:72:21"
+					]
+				}
+			},
 			"icon": "https://dl.zeroplay.cc/metadata/sudoku/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/sudoku/banner.jpg",
 			"screenshots": [

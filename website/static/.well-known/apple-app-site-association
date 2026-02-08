@@ -1,0 +1,98 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "BL5JKRRNXD.io.zeroplay.backgammon"
+        ],
+        "components": [
+          {
+            "/": "/go/backgammon"
+          },
+          {
+            "/": "/go/backgammon/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "BL5JKRRNXD.io.zeroplay.solitaire"
+        ],
+        "components": [
+          {
+            "/": "/go/solitaire"
+          },
+          {
+            "/": "/go/solitaire/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "BL5JKRRNXD.cn.zeroplay.solitaire"
+        ],
+        "components": [
+          {
+            "/": "/go/cn/solitaire"
+          },
+          {
+            "/": "/go/cn/solitaire/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "BL5JKRRNXD.com.chen.magic"
+        ],
+        "components": [
+          {
+            "/": "/go/rubik"
+          },
+          {
+            "/": "/go/rubik/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "BL5JKRRNXD.cn.chen.rubik"
+        ],
+        "components": [
+          {
+            "/": "/go/cn/rubik"
+          },
+          {
+            "/": "/go/cn/rubik/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "BL5JKRRNXD.io.zeroplay.sudoku"
+        ],
+        "components": [
+          {
+            "/": "/go/sudoku"
+          },
+          {
+            "/": "/go/sudoku/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "BL5JKRRNXD.cn.zeroplay.sudoku"
+        ],
+        "components": [
+          {
+            "/": "/go/cn/sudoku"
+          },
+          {
+            "/": "/go/cn/sudoku/*"
+          }
+        ]
+      }
+    ]
+  }
+}
