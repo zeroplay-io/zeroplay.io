@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Din tilbakemelding hjelper oss å forbedre spillene våre. Enten du har forslag til nye funksjoner, har funnet en feil, eller bare vil dele din opplevelse, setter vi pris på å høre fra våre spillere."
   },
+  "feedback.page.title": {
+    "message": "Tilbakemelding"
+  },
+  "feedback.page.description": {
+    "message": "Send oss din tilbakemelding"
+  },
+  "feedback.header.title": {
+    "message": "Tilbakemelding"
+  },
+  "feedback.header.subtitle": {
+    "message": "Vennligst del dine tanker med oss."
+  },
+  "feedback.form.label": {
+    "message": "Din tilbakemelding"
+  },
+  "feedback.form.placeholder": {
+    "message": "Fortell oss hva du tenker..."
+  },
+  "feedback.form.submit": {
+    "message": "Send inn"
+  },
+  "feedback.form.submitting": {
+    "message": "Sender inn..."
+  },
+  "feedback.error.noAppId": {
+    "message": "App-ID er påkrevd"
+  },
+  "feedback.error.noContent": {
+    "message": "Vennligst skriv inn tilbakemeldingen din"
+  },
+  "feedback.error.submit": {
+    "message": "Kunne ikke sende tilbakemelding, vennligst prøv igjen senere."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Ugyldig tilgang"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Denne siden krever en gyldig app-ID-parameter."
+  },
+  "feedback.success.message": {
+    "message": "Takk for din tilbakemelding! Vi setter pris på din mening."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

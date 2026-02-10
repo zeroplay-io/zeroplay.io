@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Masukan Anda membantu kami meningkatkan game kami. Baik Anda memiliki saran untuk fitur baru, menemukan bug, atau hanya ingin berbagi pengalaman Anda, kami menghargai mendengar dari pemain kami."
   },
+  "feedback.page.title": {
+    "message": "Umpan Balik"
+  },
+  "feedback.page.description": {
+    "message": "Kirimkan umpan balik Anda kepada kami"
+  },
+  "feedback.header.title": {
+    "message": "Umpan Balik"
+  },
+  "feedback.header.subtitle": {
+    "message": "Silakan bagikan pemikiran Anda kepada kami."
+  },
+  "feedback.form.label": {
+    "message": "Umpan balik Anda"
+  },
+  "feedback.form.placeholder": {
+    "message": "Beri tahu kami apa yang Anda pikirkan..."
+  },
+  "feedback.form.submit": {
+    "message": "Kirim"
+  },
+  "feedback.form.submitting": {
+    "message": "Mengirim..."
+  },
+  "feedback.error.noAppId": {
+    "message": "ID aplikasi diperlukan"
+  },
+  "feedback.error.noContent": {
+    "message": "Silakan masukkan umpan balik Anda"
+  },
+  "feedback.error.submit": {
+    "message": "Gagal mengirim umpan balik, silakan coba lagi nanti."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Akses tidak valid"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Halaman ini memerlukan parameter ID aplikasi yang valid."
+  },
+  "feedback.success.message": {
+    "message": "Terima kasih atas umpan balik Anda! Kami menghargai pendapat Anda."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

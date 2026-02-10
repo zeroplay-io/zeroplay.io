@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Ваш відгук допомагає нам покращувати наші ігри. Чи маєте ви пропозиції щодо нових функцій, знайшли помилку чи просто хочете поділитися своїм досвідом, ми цінуємо відгуки наших гравців."
   },
+  "feedback.page.title": {
+    "message": "Зворотний зв'язок"
+  },
+  "feedback.page.description": {
+    "message": "Надішліть нам свій відгук"
+  },
+  "feedback.header.title": {
+    "message": "Зворотний зв'язок"
+  },
+  "feedback.header.subtitle": {
+    "message": "Будь ласка, поділіться з нами своїми думками."
+  },
+  "feedback.form.label": {
+    "message": "Ваш відгук"
+  },
+  "feedback.form.placeholder": {
+    "message": "Розкажіть нам, що ви думаєте..."
+  },
+  "feedback.form.submit": {
+    "message": "Надіслати"
+  },
+  "feedback.form.submitting": {
+    "message": "Надсилання..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Потрібен ID додатка"
+  },
+  "feedback.error.noContent": {
+    "message": "Будь ласка, введіть ваш відгук"
+  },
+  "feedback.error.submit": {
+    "message": "Не вдалося надіслати відгук, спробуйте пізніше."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Недійсний доступ"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Ця сторінка потребує дійсного параметра ID додатка."
+  },
+  "feedback.success.message": {
+    "message": "Дякуємо за ваш відгук! Ми цінуємо вашу думку."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

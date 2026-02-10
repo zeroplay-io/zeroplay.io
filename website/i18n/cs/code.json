@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Vaše zpětná vazba nám pomáhá vylepšovat naše hry. Ať už máte návrhy na nové funkce, našli jste chybu, nebo se jen chcete podělit o svůj zážitek, vážíme si toho, když od našich hráčů slyšíme."
   },
+  "feedback.page.title": {
+    "message": "Zpětná vazba"
+  },
+  "feedback.page.description": {
+    "message": "Pošlete nám svou zpětnou vazbu"
+  },
+  "feedback.header.title": {
+    "message": "Zpětná vazba"
+  },
+  "feedback.header.subtitle": {
+    "message": "Podělte se s námi prosím o své myšlenky."
+  },
+  "feedback.form.label": {
+    "message": "Vaše zpětná vazba"
+  },
+  "feedback.form.placeholder": {
+    "message": "Řekněte nám, co si myslíte..."
+  },
+  "feedback.form.submit": {
+    "message": "Odeslat"
+  },
+  "feedback.form.submitting": {
+    "message": "Odesílání..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Je vyžadováno ID aplikace"
+  },
+  "feedback.error.noContent": {
+    "message": "Prosím zadejte obsah zpětné vazby"
+  },
+  "feedback.error.submit": {
+    "message": "Odeslání zpětné vazby se nezdařilo, zkuste to prosím později."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Neplatný přístup"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Tato stránka vyžaduje platný parametr ID aplikace."
+  },
+  "feedback.success.message": {
+    "message": "Děkujeme za vaši zpětnou vazbu! Oceňujeme váš názor."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

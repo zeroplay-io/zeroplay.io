@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Geri bildiriminiz oyunlarımızı geliştirmemize yardımcı olur. Yeni özellikler için önerileriniz olsun, bir hata bulmuş olun veya sadece deneyiminizi paylaşmak isteyin, oyuncularımızdan haber almayı takdir ediyoruz."
   },
+  "feedback.page.title": {
+    "message": "Geri Bildirim"
+  },
+  "feedback.page.description": {
+    "message": "Bize geri bildiriminizi gönderin"
+  },
+  "feedback.header.title": {
+    "message": "Geri Bildirim"
+  },
+  "feedback.header.subtitle": {
+    "message": "Lütfen düşüncelerinizi bizimle paylaşın."
+  },
+  "feedback.form.label": {
+    "message": "Geri bildiriminiz"
+  },
+  "feedback.form.placeholder": {
+    "message": "Ne düşündüğünüzü bize söyleyin..."
+  },
+  "feedback.form.submit": {
+    "message": "Gönder"
+  },
+  "feedback.form.submitting": {
+    "message": "Gönderiliyor..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Uygulama kimliği gerekli"
+  },
+  "feedback.error.noContent": {
+    "message": "Lütfen geri bildiriminizi girin"
+  },
+  "feedback.error.submit": {
+    "message": "Geri bildirim gönderilemedi, lütfen daha sonra tekrar deneyin."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Geçersiz erişim"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Bu sayfa geçerli bir uygulama kimliği parametresi gerektirir."
+  },
+  "feedback.success.message": {
+    "message": "Geri bildiriminiz için teşekkürler! Görüşünüze değer veriyoruz."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

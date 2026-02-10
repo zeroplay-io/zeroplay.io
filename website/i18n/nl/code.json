@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Jouw feedback helpt ons onze games te verbeteren. Of je nu suggesties hebt voor nieuwe functies, een bug hebt gevonden of gewoon je ervaring wilt delen, we waarderen het om van onze spelers te horen."
   },
+  "feedback.page.title": {
+    "message": "Feedback"
+  },
+  "feedback.page.description": {
+    "message": "Stuur ons je feedback"
+  },
+  "feedback.header.title": {
+    "message": "Feedback"
+  },
+  "feedback.header.subtitle": {
+    "message": "Deel je gedachten met ons."
+  },
+  "feedback.form.label": {
+    "message": "Jouw feedback"
+  },
+  "feedback.form.placeholder": {
+    "message": "Vertel ons wat je denkt..."
+  },
+  "feedback.form.submit": {
+    "message": "Verzenden"
+  },
+  "feedback.form.submitting": {
+    "message": "Verzenden..."
+  },
+  "feedback.error.noAppId": {
+    "message": "App-ID vereist"
+  },
+  "feedback.error.noContent": {
+    "message": "Voer je feedback in"
+  },
+  "feedback.error.submit": {
+    "message": "Verzenden van feedback mislukt, probeer het later opnieuw."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Ongeldige toegang"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Deze pagina vereist een geldige app-ID parameter."
+  },
+  "feedback.success.message": {
+    "message": "Bedankt voor je feedback! We waarderen je mening."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

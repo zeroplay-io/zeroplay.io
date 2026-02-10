@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Din feedback hjælper os med at forbedre vores spil. Uanset om du har forslag til nye funktioner, har fundet en fejl eller bare vil dele din oplevelse, sætter vi pris på at høre fra vores spillere."
   },
+  "feedback.page.title": {
+    "message": "Σχόλια"
+  },
+  "feedback.page.description": {
+    "message": "Στείλτε μας τα σχόλιά σας"
+  },
+  "feedback.header.title": {
+    "message": "Σχόλια"
+  },
+  "feedback.header.subtitle": {
+    "message": "Παρακαλούμε μοιραστείτε τις σκέψεις σας μαζί μας."
+  },
+  "feedback.form.label": {
+    "message": "Τα σχόλιά σας"
+  },
+  "feedback.form.placeholder": {
+    "message": "Πείτε μας τι σκέφτεστε..."
+  },
+  "feedback.form.submit": {
+    "message": "Υποβολή"
+  },
+  "feedback.form.submitting": {
+    "message": "Υποβάλλεται..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Απαιτείται ID εφαρμογής"
+  },
+  "feedback.error.noContent": {
+    "message": "Παρακαλώ εισάγετε τα σχόλιά σας"
+  },
+  "feedback.error.submit": {
+    "message": "Αποτυχία υποβολής σχολίων, παρακαλώ δοκιμάστε ξανά αργότερα."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Μη έγκυρη πρόσβαση"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Αυτή η σελίδα απαιτεί έγκυρη παράμετρο ID εφαρμογής."
+  },
+  "feedback.success.message": {
+    "message": "Ευχαριστούμε για τα σχόλιά σας! Εκτιμούμε τη γνώμη σας."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

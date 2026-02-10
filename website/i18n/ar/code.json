@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "تساعدنا ملاحظاتك على تحسين ألعابنا. سواء كان لديك اقتراحات لميزات جديدة، أو وجدت خطأ، أو تريد فقط مشاركة تجربتك، فنحن نقدر سماع آراء لاعبينا."
   },
+  "feedback.page.title": {
+    "message": "ملاحظات"
+  },
+  "feedback.page.description": {
+    "message": "أرسل إلينا ملاحظاتك"
+  },
+  "feedback.header.title": {
+    "message": "ملاحظات"
+  },
+  "feedback.header.subtitle": {
+    "message": "يرجى مشاركة أفكارك معنا."
+  },
+  "feedback.form.label": {
+    "message": "ملاحظاتك"
+  },
+  "feedback.form.placeholder": {
+    "message": "أخبرنا بأفكارك..."
+  },
+  "feedback.form.submit": {
+    "message": "إرسال"
+  },
+  "feedback.form.submitting": {
+    "message": "جارٍ الإرسال..."
+  },
+  "feedback.error.noAppId": {
+    "message": "معرف التطبيق مطلوب"
+  },
+  "feedback.error.noContent": {
+    "message": "يرجى إدخال محتوى ملاحظاتك"
+  },
+  "feedback.error.submit": {
+    "message": "فشل إرسال الملاحظات، يرجى المحاولة مرة أخرى لاحقاً."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "وصول غير صالح"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "تتطلب هذه الصفحة معامل معرف تطبيق صالح."
+  },
+  "feedback.success.message": {
+    "message": "شكراً لك على ملاحظاتك! نقدر آرائك."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

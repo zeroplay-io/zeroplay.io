@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "ความคิดเห็นของคุณช่วยให้เราปรับปรุงเกมของเรา ไม่ว่าคุณจะมีข้อเสนอแนะสำหรับฟีเจอร์ใหม่ พบข้อผิดพลาด หรือเพียงต้องการแบ่งปันประสบการณ์ของคุณ เราขอขอบคุณที่รับฟังจากผู้เล่นของเรา"
   },
+  "feedback.page.title": {
+    "message": "คำติชม"
+  },
+  "feedback.page.description": {
+    "message": "ส่งคำติชมของคุณให้เรา"
+  },
+  "feedback.header.title": {
+    "message": "คำติชม"
+  },
+  "feedback.header.subtitle": {
+    "message": "โปรดแบ่งปันความคิดของคุณกับเรา"
+  },
+  "feedback.form.label": {
+    "message": "คำติชมของคุณ"
+  },
+  "feedback.form.placeholder": {
+    "message": "บอกเราว่าคุณคิดอย่างไร..."
+  },
+  "feedback.form.submit": {
+    "message": "ส่ง"
+  },
+  "feedback.form.submitting": {
+    "message": "กำลังส่ง..."
+  },
+  "feedback.error.noAppId": {
+    "message": "ต้องระบุ App ID"
+  },
+  "feedback.error.noContent": {
+    "message": "โปรดป้อนคำติชมของคุณ"
+  },
+  "feedback.error.submit": {
+    "message": "การส่งคำติชมล้มเหลว โปรดลองอีกครั้งในภายหลัง"
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "การเข้าถึงไม่ถูกต้อง"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "หน้านี้ต้องการพารามิเตอร์ App ID ที่ถูกต้อง"
+  },
+  "feedback.success.message": {
+    "message": "ขอบคุณสำหรับคำติชมของคุณ! เราขอขอบคุณความคิดเห็นของคุณ"
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Din feedback hjälper oss att förbättra våra spel. Oavsett om du har förslag på nya funktioner, hittat en bugg eller bara vill dela din upplevelse, uppskattar vi att höra från våra spelare."
   },
+  "feedback.page.title": {
+    "message": "Feedback"
+  },
+  "feedback.page.description": {
+    "message": "Skicka oss din feedback"
+  },
+  "feedback.header.title": {
+    "message": "Feedback"
+  },
+  "feedback.header.subtitle": {
+    "message": "Vänligen dela dina tankar med oss."
+  },
+  "feedback.form.label": {
+    "message": "Din feedback"
+  },
+  "feedback.form.placeholder": {
+    "message": "Berätta vad du tycker..."
+  },
+  "feedback.form.submit": {
+    "message": "Skicka"
+  },
+  "feedback.form.submitting": {
+    "message": "Skickar..."
+  },
+  "feedback.error.noAppId": {
+    "message": "App-ID krävs"
+  },
+  "feedback.error.noContent": {
+    "message": "Vänligen ange din feedback"
+  },
+  "feedback.error.submit": {
+    "message": "Misslyckades med att skicka feedback, försök igen senare."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Ogiltig åtkomst"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Denna sida kräver en giltig app-ID-parameter."
+  },
+  "feedback.success.message": {
+    "message": "Tack för din feedback! Vi uppskattar din åsikt."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

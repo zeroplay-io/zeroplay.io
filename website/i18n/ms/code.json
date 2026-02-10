@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Maklum balas anda membantu kami meningkatkan permainan kami. Sama ada anda mempunyai cadangan untuk ciri baharu, menemui pepijat, atau hanya ingin berkongsi pengalaman anda, kami menghargai pendengaran daripada pemain kami."
   },
+  "feedback.page.title": {
+    "message": "Maklum Balas"
+  },
+  "feedback.page.description": {
+    "message": "Hantar maklum balas anda kepada kami"
+  },
+  "feedback.header.title": {
+    "message": "Maklum Balas"
+  },
+  "feedback.header.subtitle": {
+    "message": "Sila kongsikan pemikiran anda dengan kami."
+  },
+  "feedback.form.label": {
+    "message": "Maklum balas anda"
+  },
+  "feedback.form.placeholder": {
+    "message": "Beritahu kami apa yang anda fikirkan..."
+  },
+  "feedback.form.submit": {
+    "message": "Hantar"
+  },
+  "feedback.form.submitting": {
+    "message": "Menghantar..."
+  },
+  "feedback.error.noAppId": {
+    "message": "ID aplikasi diperlukan"
+  },
+  "feedback.error.noContent": {
+    "message": "Sila masukkan maklum balas anda"
+  },
+  "feedback.error.submit": {
+    "message": "Gagal menghantar maklum balas, sila cuba lagi kemudian."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Akses tidak sah"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Halaman ini memerlukan parameter ID aplikasi yang sah."
+  },
+  "feedback.success.message": {
+    "message": "Terima kasih atas maklum balas anda! Kami menghargai pendapat anda."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

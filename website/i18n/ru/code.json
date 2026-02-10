@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Ваши отзывы помогают нам улучшать наши игры. Есть ли у вас предложения по новым функциям, нашли ошибку или просто хотите поделиться своим опытом, мы ценим отзывы наших игроков."
   },
+  "feedback.page.title": {
+    "message": "Обратная связь"
+  },
+  "feedback.page.description": {
+    "message": "Отправьте нам ваш отзыв"
+  },
+  "feedback.header.title": {
+    "message": "Обратная связь"
+  },
+  "feedback.header.subtitle": {
+    "message": "Пожалуйста, поделитесь с нами своими мыслями."
+  },
+  "feedback.form.label": {
+    "message": "Ваш отзыв"
+  },
+  "feedback.form.placeholder": {
+    "message": "Расскажите нам, что вы думаете..."
+  },
+  "feedback.form.submit": {
+    "message": "Отправить"
+  },
+  "feedback.form.submitting": {
+    "message": "Отправка..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Требуется ID приложения"
+  },
+  "feedback.error.noContent": {
+    "message": "Пожалуйста, введите ваш отзыв"
+  },
+  "feedback.error.submit": {
+    "message": "Не удалось отправить отзыв, попробуйте позже."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Недействительный доступ"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Эта страница требует действительный параметр ID приложения."
+  },
+  "feedback.success.message": {
+    "message": "Спасибо за ваш отзыв! Мы ценим ваше мнение."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Visszajelzésed segít játékaink fejlesztésében. Akár új funkciókra vonatkozó javaslataid vannak, hibát találtál, vagy csak meg szeretnéd osztani tapasztalataidat, értékeljük játékosaink véleményét."
   },
+  "feedback.page.title": {
+    "message": "Visszajelzés"
+  },
+  "feedback.page.description": {
+    "message": "Küldd el visszajelzésed"
+  },
+  "feedback.header.title": {
+    "message": "Visszajelzés"
+  },
+  "feedback.header.subtitle": {
+    "message": "Kérjük, oszd meg gondolataidat velünk."
+  },
+  "feedback.form.label": {
+    "message": "Visszajelzésed"
+  },
+  "feedback.form.placeholder": {
+    "message": "Mondd el, mit gondolsz..."
+  },
+  "feedback.form.submit": {
+    "message": "Küldés"
+  },
+  "feedback.form.submitting": {
+    "message": "Küldés..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Alkalmazás azonosító szükséges"
+  },
+  "feedback.error.noContent": {
+    "message": "Kérjük, add meg visszajelzésed"
+  },
+  "feedback.error.submit": {
+    "message": "A visszajelzés küldése sikertelen, kérjük próbáld újra később."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Érvénytelen hozzáférés"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Ez az oldal érvényes alkalmazásazonosító paramétert igényel."
+  },
+  "feedback.success.message": {
+    "message": "Köszönjük visszajelzésed! Nagyra értékeljük véleményed."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

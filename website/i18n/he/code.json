@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "המשוב שלך עוזר לנו לשפר את המשחקים שלנו. בין אם יש לך הצעות לתכונות חדשות, מצאת באג, או שאתה רק רוצה לשתף את החוויה שלך, אנו מעריכים לשמוע מהשחקנים שלנו."
   },
+  "feedback.page.title": {
+    "message": "משוב"
+  },
+  "feedback.page.description": {
+    "message": "שלח לנו את המשוב שלך"
+  },
+  "feedback.header.title": {
+    "message": "משוב"
+  },
+  "feedback.header.subtitle": {
+    "message": "אנא שתף אותנו במחשבות שלך."
+  },
+  "feedback.form.label": {
+    "message": "המשוב שלך"
+  },
+  "feedback.form.placeholder": {
+    "message": "ספר לנו מה אתה חושב..."
+  },
+  "feedback.form.submit": {
+    "message": "שלח"
+  },
+  "feedback.form.submitting": {
+    "message": "שולח..."
+  },
+  "feedback.error.noAppId": {
+    "message": "נדרש מזהה אפליקציה"
+  },
+  "feedback.error.noContent": {
+    "message": "אנא הזן את המשוב שלך"
+  },
+  "feedback.error.submit": {
+    "message": "שליחת המשוב נכשלה, אנא נסה שוב מאוחר יותר."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "גישה לא חוקית"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "דף זה דורש פרמטר מזהה אפליקציה תקף."
+  },
+  "feedback.success.message": {
+    "message": "תודה על המשוב שלך! אנחנו מעריכים את דעתך."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

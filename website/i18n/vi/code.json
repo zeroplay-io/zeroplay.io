@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Phản hồi của bạn giúp chúng tôi cải thiện trò chơi. Dù bạn có đề xuất cho các tính năng mới, tìm thấy lỗi hay chỉ muốn chia sẻ trải nghiệm của mình, chúng tôi đánh giá cao việc được nghe từ người chơi."
   },
+  "feedback.page.title": {
+    "message": "Phản hồi"
+  },
+  "feedback.page.description": {
+    "message": "Gửi phản hồi của bạn cho chúng tôi"
+  },
+  "feedback.header.title": {
+    "message": "Phản hồi"
+  },
+  "feedback.header.subtitle": {
+    "message": "Vui lòng chia sẻ suy nghĩ của bạn với chúng tôi."
+  },
+  "feedback.form.label": {
+    "message": "Phản hồi của bạn"
+  },
+  "feedback.form.placeholder": {
+    "message": "Cho chúng tôi biết bạn nghĩ gì..."
+  },
+  "feedback.form.submit": {
+    "message": "Gửi"
+  },
+  "feedback.form.submitting": {
+    "message": "Đang gửi..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Cần ID ứng dụng"
+  },
+  "feedback.error.noContent": {
+    "message": "Vui lòng nhập phản hồi của bạn"
+  },
+  "feedback.error.submit": {
+    "message": "Gửi phản hồi thất bại, vui lòng thử lại sau."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Truy cập không hợp lệ"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Trang này yêu cầu tham số ID ứng dụng hợp lệ."
+  },
+  "feedback.success.message": {
+    "message": "Cảm ơn phản hồi của bạn! Chúng tôi trân trọng ý kiến của bạn."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

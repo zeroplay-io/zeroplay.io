@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Din feedback hjælper os med at forbedre vores spil. Uanset om du har forslag til nye funktioner, har fundet en fejl eller bare vil dele din oplevelse, sætter vi pris på at høre fra vores spillere."
   },
+  "feedback.page.title": {
+    "message": "Spätná väzba"
+  },
+  "feedback.page.description": {
+    "message": "Pošlite nám svoju spätnú väzbu"
+  },
+  "feedback.header.title": {
+    "message": "Spätná väzba"
+  },
+  "feedback.header.subtitle": {
+    "message": "Prosím, podeľte sa s nami o svoje myšlienky."
+  },
+  "feedback.form.label": {
+    "message": "Vaša spätná väzba"
+  },
+  "feedback.form.placeholder": {
+    "message": "Povedzte nám, čo si myslíte..."
+  },
+  "feedback.form.submit": {
+    "message": "Odoslať"
+  },
+  "feedback.form.submitting": {
+    "message": "Odosiela sa..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Vyžaduje sa ID aplikácie"
+  },
+  "feedback.error.noContent": {
+    "message": "Prosím, zadajte svoju spätnú väzbu"
+  },
+  "feedback.error.submit": {
+    "message": "Odoslanie spätnej väzby zlyhalo, skúste to prosím neskôr."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Neplatný prístup"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Táto stránka vyžaduje platný parameter ID aplikácie."
+  },
+  "feedback.success.message": {
+    "message": "Ďakujeme za vašu spätnú väzbu! Oceňujeme váš názor."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

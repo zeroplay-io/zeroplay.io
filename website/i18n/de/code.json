@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Ihr Feedback hilft uns, unsere Spiele zu verbessern. Ob Sie Vorschläge für neue Funktionen haben, einen Fehler gefunden haben oder einfach Ihre Erfahrung teilen möchten, wir schätzen es, von unseren Spielern zu hören."
   },
+  "feedback.page.title": {
+    "message": "Feedback"
+  },
+  "feedback.page.description": {
+    "message": "Senden Sie uns Ihr Feedback"
+  },
+  "feedback.header.title": {
+    "message": "Feedback"
+  },
+  "feedback.header.subtitle": {
+    "message": "Bitte teilen Sie uns Ihre Gedanken mit."
+  },
+  "feedback.form.label": {
+    "message": "Ihr Feedback"
+  },
+  "feedback.form.placeholder": {
+    "message": "Sagen Sie uns, was Sie denken..."
+  },
+  "feedback.form.submit": {
+    "message": "Absenden"
+  },
+  "feedback.form.submitting": {
+    "message": "Wird gesendet..."
+  },
+  "feedback.error.noAppId": {
+    "message": "App-ID erforderlich"
+  },
+  "feedback.error.noContent": {
+    "message": "Bitte geben Sie Ihr Feedback ein"
+  },
+  "feedback.error.submit": {
+    "message": "Feedback konnte nicht gesendet werden, bitte versuchen Sie es später erneut."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Ungültiger Zugriff"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Diese Seite erfordert einen gültigen App-ID-Parameter."
+  },
+  "feedback.success.message": {
+    "message": "Vielen Dank für Ihr Feedback! Wir schätzen Ihre Meinung."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Din feedback hjælper os med at forbedre vores spil. Uanset om du har forslag til nye funktioner, har fundet en fejl eller bare vil dele din oplevelse, sætter vi pris på at høre fra vores spillere."
   },
+  "feedback.page.title": {
+    "message": "Comentaris"
+  },
+  "feedback.page.description": {
+    "message": "Envieu-nos els vostres comentaris"
+  },
+  "feedback.header.title": {
+    "message": "Comentaris"
+  },
+  "feedback.header.subtitle": {
+    "message": "Si us plau, compartiu les vostres idees amb nosaltres."
+  },
+  "feedback.form.label": {
+    "message": "Els vostres comentaris"
+  },
+  "feedback.form.placeholder": {
+    "message": "Digueu-nos què penseu..."
+  },
+  "feedback.form.submit": {
+    "message": "Enviar"
+  },
+  "feedback.form.submitting": {
+    "message": "Enviant..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Es requereix l'ID de l'aplicació"
+  },
+  "feedback.error.noContent": {
+    "message": "Si us plau, introduïu el contingut dels vostres comentaris"
+  },
+  "feedback.error.submit": {
+    "message": "Error en enviar els comentaris, si us plau, torneu-ho a provar més tard."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Accés no vàlid"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Aquesta pàgina requereix un paràmetre d'ID d'aplicació vàlid."
+  },
+  "feedback.success.message": {
+    "message": "Gràcies pels vostres comentaris! Agraïm les vostres opinions."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

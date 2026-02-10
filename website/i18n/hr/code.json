@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Din feedback hjælper os med at forbedre vores spil. Uanset om du har forslag til nye funktioner, har fundet en fejl eller bare vil dele din oplevelse, sætter vi pris på at høre fra vores spillere."
   },
+  "feedback.page.title": {
+    "message": "Povratne informacije"
+  },
+  "feedback.page.description": {
+    "message": "Pošaljite nam svoje povratne informacije"
+  },
+  "feedback.header.title": {
+    "message": "Povratne informacije"
+  },
+  "feedback.header.subtitle": {
+    "message": "Podijelite svoje misli s nama."
+  },
+  "feedback.form.label": {
+    "message": "Vaše povratne informacije"
+  },
+  "feedback.form.placeholder": {
+    "message": "Recite nam što mislite..."
+  },
+  "feedback.form.submit": {
+    "message": "Pošalji"
+  },
+  "feedback.form.submitting": {
+    "message": "Šalje se..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Potreban je ID aplikacije"
+  },
+  "feedback.error.noContent": {
+    "message": "Molimo unesite svoje povratne informacije"
+  },
+  "feedback.error.submit": {
+    "message": "Slanje povratnih informacija nije uspjelo, pokušajte ponovo kasnije."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Neispravan pristup"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Ova stranica zahtijeva valjan parametar ID-a aplikacije."
+  },
+  "feedback.success.message": {
+    "message": "Hvala na vašim povratnim informacijama! Cijenimo vaše mišljenje."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Palautteesi auttaa meitä parantamaan pelejämme. Oli sinulla sitten ehdotuksia uusista ominaisuuksista, löysitkö bugin tai haluat vain jakaa kokemuksesi, arvostamme pelaajien kuulemista."
   },
+  "feedback.page.title": {
+    "message": "Palaute"
+  },
+  "feedback.page.description": {
+    "message": "Lähetä meille palautetta"
+  },
+  "feedback.header.title": {
+    "message": "Palaute"
+  },
+  "feedback.header.subtitle": {
+    "message": "Jaa ajatuksesi kanssamme."
+  },
+  "feedback.form.label": {
+    "message": "Palautteesi"
+  },
+  "feedback.form.placeholder": {
+    "message": "Kerro meille mitä ajattelet..."
+  },
+  "feedback.form.submit": {
+    "message": "Lähetä"
+  },
+  "feedback.form.submitting": {
+    "message": "Lähetetään..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Sovellustunnus vaaditaan"
+  },
+  "feedback.error.noContent": {
+    "message": "Anna palautteesi"
+  },
+  "feedback.error.submit": {
+    "message": "Palautteen lähettäminen epäonnistui, yritä myöhemmin uudelleen."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Virheellinen pääsy"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Tämä sivu vaatii kelvollisen sovellustunnuksen."
+  },
+  "feedback.success.message": {
+    "message": "Kiitos palautteestasi! Arvostamme mielipidettäsi."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

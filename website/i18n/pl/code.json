@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Twoja opinia pomaga nam ulepszać nasze gry. Niezależnie od tego, czy masz sugestie dotyczące nowych funkcji, znalazłeś błąd, czy po prostu chcesz podzielić się swoim doświadczeniem, cenimy sobie słuchanie naszych graczy."
   },
+  "feedback.page.title": {
+    "message": "Opinia"
+  },
+  "feedback.page.description": {
+    "message": "Wyślij nam swoją opinię"
+  },
+  "feedback.header.title": {
+    "message": "Opinia"
+  },
+  "feedback.header.subtitle": {
+    "message": "Podziel się z nami swoimi przemyśleniami."
+  },
+  "feedback.form.label": {
+    "message": "Twoja opinia"
+  },
+  "feedback.form.placeholder": {
+    "message": "Powiedz nam, co myślisz..."
+  },
+  "feedback.form.submit": {
+    "message": "Wyślij"
+  },
+  "feedback.form.submitting": {
+    "message": "Wysyłanie..."
+  },
+  "feedback.error.noAppId": {
+    "message": "Wymagane ID aplikacji"
+  },
+  "feedback.error.noContent": {
+    "message": "Wprowadź swoją opinię"
+  },
+  "feedback.error.submit": {
+    "message": "Nie udało się wysłać opinii, spróbuj ponownie później."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Nieprawidłowy dostęp"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Ta strona wymaga prawidłowego parametru ID aplikacji."
+  },
+  "feedback.success.message": {
+    "message": "Dziękujemy za opinię! Cenimy Twoją opinię."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

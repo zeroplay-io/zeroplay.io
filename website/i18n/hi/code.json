@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "आपकी प्रतिक्रिया हमें अपने गेम में सुधार करने में मदद करती है। चाहे आपके पास नई सुविधाओं के लिए सुझाव हों, कोई बग मिला हो, या बस अपने अनुभव को साझा करना चाहते हों, हम अपने खिलाड़ियों से सुनना पसंद करते हैं।"
   },
+  "feedback.page.title": {
+    "message": "प्रतिक्रिया"
+  },
+  "feedback.page.description": {
+    "message": "हमें अपनी प्रतिक्रिया भेजें"
+  },
+  "feedback.header.title": {
+    "message": "प्रतिक्रिया"
+  },
+  "feedback.header.subtitle": {
+    "message": "कृपया अपने विचार हमारे साथ साझा करें।"
+  },
+  "feedback.form.label": {
+    "message": "आपकी प्रतिक्रिया"
+  },
+  "feedback.form.placeholder": {
+    "message": "हमें बताएं कि आप क्या सोचते हैं..."
+  },
+  "feedback.form.submit": {
+    "message": "जमा करें"
+  },
+  "feedback.form.submitting": {
+    "message": "जमा हो रहा है..."
+  },
+  "feedback.error.noAppId": {
+    "message": "ऐप आईडी आवश्यक है"
+  },
+  "feedback.error.noContent": {
+    "message": "कृपया अपनी प्रतिक्रिया दर्ज करें"
+  },
+  "feedback.error.submit": {
+    "message": "प्रतिक्रिया जमा करना विफल रहा, कृपया बाद में पुनः प्रयास करें।"
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "अमान्य पहुंच"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "इस पृष्ठ को मान्य ऐप आईडी पैरामीटर की आवश्यकता है।"
+  },
+  "feedback.success.message": {
+    "message": "आपकी प्रतिक्रिया के लिए धन्यवाद! हम आपकी राय की सराहना करते हैं।"
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

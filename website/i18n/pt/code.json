@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "O seu feedback ajuda-nos a melhorar os nossos jogos. Quer tenha sugestões para novas funcionalidades, tenha encontrado um bug ou apenas queira partilhar a sua experiência, apreciamos ouvir dos nossos jogadores."
   },
+  "feedback.page.title": {
+    "message": "Feedback"
+  },
+  "feedback.page.description": {
+    "message": "Envie-nos o seu feedback"
+  },
+  "feedback.header.title": {
+    "message": "Feedback"
+  },
+  "feedback.header.subtitle": {
+    "message": "Por favor, partilhe os seus pensamentos connosco."
+  },
+  "feedback.form.label": {
+    "message": "O seu feedback"
+  },
+  "feedback.form.placeholder": {
+    "message": "Diga-nos o que pensa..."
+  },
+  "feedback.form.submit": {
+    "message": "Enviar"
+  },
+  "feedback.form.submitting": {
+    "message": "A enviar..."
+  },
+  "feedback.error.noAppId": {
+    "message": "ID da aplicação necessário"
+  },
+  "feedback.error.noContent": {
+    "message": "Por favor, introduza o seu feedback"
+  },
+  "feedback.error.submit": {
+    "message": "Falha ao enviar feedback, tente novamente mais tarde."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Acesso inválido"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Esta página requer um parâmetro de ID de aplicação válido."
+  },
+  "feedback.success.message": {
+    "message": "Obrigado pelo seu feedback! Apreciamos a sua opinião."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

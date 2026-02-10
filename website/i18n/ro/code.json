@@ -96,6 +96,48 @@
   "contact.feedback.text": {
     "message": "Feedback-ul tău ne ajută să ne îmbunătățim jocurile. Fie că ai sugestii pentru funcții noi, ai găsit un bug sau vrei doar să îți împărtășești experiența, apreciem să auzim de la jucătorii noștri."
   },
+  "feedback.page.title": {
+    "message": "Feedback"
+  },
+  "feedback.page.description": {
+    "message": "Trimite-ne feedback-ul tău"
+  },
+  "feedback.header.title": {
+    "message": "Feedback"
+  },
+  "feedback.header.subtitle": {
+    "message": "Te rugăm să ne împărtășești gândurile tale."
+  },
+  "feedback.form.label": {
+    "message": "Feedback-ul tău"
+  },
+  "feedback.form.placeholder": {
+    "message": "Spune-ne ce crezi..."
+  },
+  "feedback.form.submit": {
+    "message": "Trimite"
+  },
+  "feedback.form.submitting": {
+    "message": "Se trimite..."
+  },
+  "feedback.error.noAppId": {
+    "message": "ID-ul aplicației este necesar"
+  },
+  "feedback.error.noContent": {
+    "message": "Te rugăm să introduci feedback-ul tău"
+  },
+  "feedback.error.submit": {
+    "message": "Trimiterea feedback-ului a eșuat, te rugăm să încerci din nou mai târziu."
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "Acces invalid"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "Această pagină necesită un parametru valid de ID al aplicației."
+  },
+  "feedback.success.message": {
+    "message": "Mulțumim pentru feedback! Apreciem părerea ta."
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
