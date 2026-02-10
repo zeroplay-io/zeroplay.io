@@ -106,7 +106,7 @@
     "message": "피드백"
   },
   "feedback.header.subtitle": {
-    "message": "여러분의 피드백을 소중히 여깁니다! 의견을 공유해 주세요."
+    "message": "의견을 공유해 주세요."
   },
   "feedback.form.label": {
     "message": "피드백 내용"
@@ -115,7 +115,7 @@
     "message": "의견을 알려주세요..."
   },
   "feedback.form.submit": {
-    "message": "피드백 제출"
+    "message": "제출"
   },
   "feedback.form.submitting": {
     "message": "제출 중..."

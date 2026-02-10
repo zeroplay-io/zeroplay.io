@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import Layout from "@theme/Layout";
 import Translate from "@docusaurus/Translate";
 import { translate } from "@docusaurus/core/lib/client/exports/Translate";
@@ -31,20 +31,12 @@ const getFeedbackParams = (search: string): FeedbackParams => {
 
 export default function FeedbackPage(): JSX.Element {
   const location = useLocation();
-  const [feedbackParams, setFeedbackParams] = useState<FeedbackParams>({
-    appId: null,
-    storeType: null,
-    userId: null,
-  });
+  const feedbackParams = useMemo(() => getFeedbackParams(location.search), [location.search]);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [content, setContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
-  useEffect(() => {
-    const params = getFeedbackParams(location.search);
-    setFeedbackParams(params);
-  }, [location.search]);
 
   const pageTitle = translate({
     id: "feedback.page.title",
@@ -57,6 +49,15 @@ export default function FeedbackPage(): JSX.Element {
     message: "Send us your feedback",
     description: "Description for the feedback page metadata",
   });
+
+  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setContent(e.target.value);
+    // 清除错误和成功状态，让用户可以重新输入
+    if (submitStatus !== "idle") {
+      setSubmitStatus("idle");
+      setErrorMessage("");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,6 +119,10 @@ export default function FeedbackPage(): JSX.Element {
 
       setSubmitStatus("success");
       setContent("");
+      // 成功后聚焦输入框，方便用户继续反馈
+      setTimeout(() => {
+        textareaRef.current?.focus();
+      }, 100);
     } catch (error) {
       console.error("Failed to submit feedback:", error);
       setErrorMessage(translate({
@@ -164,7 +169,7 @@ export default function FeedbackPage(): JSX.Element {
             </h1>
             <p className={styles.subtitle}>
               <Translate id="feedback.header.subtitle">
-                We value your feedback! Please share your thoughts with us.
+                Please share your thoughts with us.
               </Translate>
             </p>
           </div>
@@ -175,11 +180,12 @@ export default function FeedbackPage(): JSX.Element {
                 <Translate id="feedback.form.label">Your Feedback</Translate>
               </label>
               <textarea
+                ref={textareaRef}
                 id="feedback-content"
                 className={styles.textarea}
                 rows={8}
                 value={content}
-                onChange={(e) => setContent(e.target.value)}
+                onChange={handleContentChange}
                 placeholder={translate({
                   id: "feedback.form.placeholder",
                   message: "Tell us what you think...",
@@ -187,17 +193,32 @@ export default function FeedbackPage(): JSX.Element {
                 })}
                 disabled={isSubmitting}
                 required
+                maxLength={500}
+                aria-invalid={submitStatus === "error"}
+                aria-describedby={submitStatus === "error" ? "feedback-error" : undefined}
               />
+              <div
+                className={styles.charCount}
+                style={{
+                  color: content.length >= 500
+                    ? 'var(--ifm-color-danger)'
+                    : content.length >= 450
+                    ? 'var(--ifm-color-warning-darkest)'
+                    : 'var(--ifm-color-emphasis-600)'
+                }}
+              >
+                {content.length} / 500
+              </div>
             </div>
 
             {submitStatus === "error" && errorMessage && (
-              <div className={styles.errorMessage}>
+              <div id="feedback-error" className={styles.errorMessage} role="alert">
                 {errorMessage}
               </div>
             )}
 
             {submitStatus === "success" && (
-              <div className={styles.successMessage}>
+              <div className={styles.successMessage} role="status">
                 <Translate id="feedback.success.message">
                   Thank you for your feedback! We appreciate your input.
                 </Translate>

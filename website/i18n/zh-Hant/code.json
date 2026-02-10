@@ -106,7 +106,7 @@
     "message": "回饋"
   },
   "feedback.header.subtitle": {
-    "message": "我們重視您的回饋！請與我們分享您的想法。"
+    "message": "請與我們分享您的想法。"
   },
   "feedback.form.label": {
     "message": "您的回饋"
@@ -115,7 +115,7 @@
     "message": "告訴我們您的想法..."
   },
   "feedback.form.submit": {
-    "message": "提交回饋"
+    "message": "提交"
   },
   "feedback.form.submitting": {
     "message": "提交中..."

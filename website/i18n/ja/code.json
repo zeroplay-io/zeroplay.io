@@ -106,7 +106,7 @@
     "message": "フィードバック"
   },
   "feedback.header.subtitle": {
-    "message": "皆様のフィードバックをお待ちしております！ご意見をお聞かせください。"
+    "message": "ご意見をお聞かせください。"
   },
   "feedback.form.label": {
     "message": "フィードバック内容"
@@ -115,7 +115,7 @@
     "message": "ご意見をお聞かせください..."
   },
   "feedback.form.submit": {
-    "message": "フィードバックを送信"
+    "message": "送信"
   },
   "feedback.form.submitting": {
     "message": "送信中..."
