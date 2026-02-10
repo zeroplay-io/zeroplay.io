@@ -105,7 +105,7 @@ export default function FeedbackPage(): JSX.Element {
         payload.userID = feedbackParams.userId;
       }
 
-      const response = await fetch("https://developer.zeroplay.io/v1/developer/feedback", {
+      const response = await fetch("https://api.zeroplay.io/v1/developer/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -135,29 +135,6 @@ export default function FeedbackPage(): JSX.Element {
       setIsSubmitting(false);
     }
   };
-
-  if (!feedbackParams.appId) {
-    return (
-      <Layout title={pageTitle} description={pageDescription}>
-        <div className={styles.feedbackPage}>
-          <div className={styles.container}>
-            <div className={styles.errorBox}>
-              <h1 className={styles.errorTitle}>
-                <Translate id="feedback.error.invalidAccess.title">
-                  Invalid Access
-                </Translate>
-              </h1>
-              <p className={styles.errorText}>
-                <Translate id="feedback.error.invalidAccess.description">
-                  This page requires a valid app ID parameter.
-                </Translate>
-              </p>
-            </div>
-          </div>
-        </div>
-      </Layout>
-    );
-  }
 
   return (
     <Layout title={pageTitle} description={pageDescription}>
@@ -198,14 +175,13 @@ export default function FeedbackPage(): JSX.Element {
                 aria-describedby={submitStatus === "error" ? "feedback-error" : undefined}
               />
               <div
-                className={styles.charCount}
-                style={{
-                  color: content.length >= 500
-                    ? 'var(--ifm-color-danger)'
+                className={`${styles.charCount} ${
+                  content.length >= 500
+                    ? styles.charCountDanger
                     : content.length >= 450
-                    ? 'var(--ifm-color-warning-darkest)'
-                    : 'var(--ifm-color-emphasis-600)'
-                }}
+                    ? styles.charCountWarning
+                    : ''
+                }`}
               >
                 {content.length} / 500
               </div>
@@ -233,7 +209,7 @@ export default function FeedbackPage(): JSX.Element {
               {isSubmitting ? (
                 <Translate id="feedback.form.submitting">Submitting...</Translate>
               ) : (
-                <Translate id="feedback.form.submit">Submit Feedback</Translate>
+                <Translate id="feedback.form.submit">Submit</Translate>
               )}
             </button>
           </form>

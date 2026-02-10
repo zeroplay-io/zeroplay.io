@@ -82,6 +82,14 @@
   text-align: right;
 }
 
+.charCountWarning {
+  color: var(--ifm-color-warning-darkest);
+}
+
+.charCountDanger {
+  color: var(--ifm-color-danger);
+}
+
 .submitButton {
   width: 100%;
   padding: 0.875rem 1.5rem;
