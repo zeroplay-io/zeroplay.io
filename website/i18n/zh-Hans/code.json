@@ -132,6 +132,48 @@
   "contact.feedback.text": {
     "message": "您的反馈帮助我们不断改进游戏。无论是新功能建议、Bug反馈，还是分享您的游戏体验，我们都非常感谢玩家的声音。"
   },
+  "feedback.page.title": {
+    "message": "反馈"
+  },
+  "feedback.page.description": {
+    "message": "向我们发送您的反馈"
+  },
+  "feedback.header.title": {
+    "message": "反馈"
+  },
+  "feedback.header.subtitle": {
+    "message": "我们重视您的反馈！请与我们分享您的想法。"
+  },
+  "feedback.form.label": {
+    "message": "您的反馈"
+  },
+  "feedback.form.placeholder": {
+    "message": "告诉我们您的想法..."
+  },
+  "feedback.form.submit": {
+    "message": "提交反馈"
+  },
+  "feedback.form.submitting": {
+    "message": "提交中..."
+  },
+  "feedback.error.noAppId": {
+    "message": "需要应用ID"
+  },
+  "feedback.error.noContent": {
+    "message": "请输入您的反馈内容"
+  },
+  "feedback.error.submit": {
+    "message": "提交反馈失败，请稍后重试。"
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "无效访问"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "此页面需要有效的应用ID参数。"
+  },
+  "feedback.success.message": {
+    "message": "感谢您的反馈！我们非常感谢您的意见。"
+  },
   "theme.common.skipToMainContent": {
     "message": "跳转到主要内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"

@@ -1,0 +1,176 @@
+.feedbackPage {
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  padding: 2rem 1rem;
+  background: var(--ifm-background-color);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.form {
+  background: var(--ifm-card-background-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lightest);
+}
+
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.textarea::placeholder {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--ifm-color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--ifm-color-success-lightest);
+  border: 1px solid var(--ifm-color-success-light);
+  border-radius: 8px;
+  color: var(--ifm-color-success-darkest);
+  font-weight: 500;
+}
+
+.errorMessage {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--ifm-color-danger-lightest);
+  border: 1px solid var(--ifm-color-danger-light);
+  border-radius: 8px;
+  color: var(--ifm-color-danger-darkest);
+  font-weight: 500;
+}
+
+.errorBox {
+  background: var(--ifm-card-background-color);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: var(--ifm-global-shadow-lw);
+  text-align: center;
+}
+
+.errorTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-danger);
+}
+
+.errorText {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .feedbackPage {
+    padding: 1rem 0.5rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .form {
+    padding: 1.5rem;
+  }
+
+  .textarea {
+    font-size: 0.875rem;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}

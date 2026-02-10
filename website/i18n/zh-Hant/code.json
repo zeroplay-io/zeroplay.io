@@ -96,8 +96,50 @@
   "contact.feedback.text": {
     "message": "您的回饋幫助我們不斷改進遊戲。無論是新功能建議、Bug回饋，還是分享您的遊戲體驗，我們都非常感謝玩家的聲音。"
   },
+  "feedback.page.title": {
+    "message": "回饋"
+  },
+  "feedback.page.description": {
+    "message": "向我們發送您的回饋"
+  },
+  "feedback.header.title": {
+    "message": "回饋"
+  },
+  "feedback.header.subtitle": {
+    "message": "我們重視您的回饋！請與我們分享您的想法。"
+  },
+  "feedback.form.label": {
+    "message": "您的回饋"
+  },
+  "feedback.form.placeholder": {
+    "message": "告訴我們您的想法..."
+  },
+  "feedback.form.submit": {
+    "message": "提交回饋"
+  },
+  "feedback.form.submitting": {
+    "message": "提交中..."
+  },
+  "feedback.error.noAppId": {
+    "message": "需要應用程式ID"
+  },
+  "feedback.error.noContent": {
+    "message": "請輸入您的回饋內容"
+  },
+  "feedback.error.submit": {
+    "message": "提交回饋失敗，請稍後重試。"
+  },
+  "feedback.error.invalidAccess.title": {
+    "message": "無效存取"
+  },
+  "feedback.error.invalidAccess.description": {
+    "message": "此頁面需要有效的應用程式ID參數。"
+  },
+  "feedback.success.message": {
+    "message": "感謝您的回饋！我們非常感謝您的意見。"
+  },
   "theme.common.skipToMainContent": {
-    "message": "跳转到主要内容",
+    "message": "跳轉到主要內容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsPageTitle": {
