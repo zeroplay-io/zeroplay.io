@@ -119,10 +119,6 @@ export default function FeedbackPage(): JSX.Element {
 
       setSubmitStatus("success");
       setContent("");
-      // 成功后聚焦输入框，方便用户继续反馈
-      setTimeout(() => {
-        textareaRef.current?.focus();
-      }, 100);
     } catch (error) {
       console.error("Failed to submit feedback:", error);
       setErrorMessage(translate({
@@ -152,66 +148,68 @@ export default function FeedbackPage(): JSX.Element {
           </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.formGroup}>
-              <label htmlFor="feedback-content" className={styles.label}>
-                <Translate id="feedback.form.label">Your Feedback</Translate>
-              </label>
-              <textarea
-                ref={textareaRef}
-                id="feedback-content"
-                className={styles.textarea}
-                rows={8}
-                value={content}
-                onChange={handleContentChange}
-                placeholder={translate({
-                  id: "feedback.form.placeholder",
-                  message: "Tell us what you think...",
-                  description: "Placeholder text for feedback textarea",
-                })}
-                disabled={isSubmitting}
-                required
-                maxLength={500}
-                aria-invalid={submitStatus === "error"}
-                aria-describedby={submitStatus === "error" ? "feedback-error" : undefined}
-              />
-              <div
-                className={`${styles.charCount} ${
-                  content.length >= 500
-                    ? styles.charCountDanger
-                    : content.length >= 450
-                    ? styles.charCountWarning
-                    : ''
-                }`}
-              >
-                {content.length} / 500
-              </div>
-            </div>
-
-            {submitStatus === "error" && errorMessage && (
-              <div id="feedback-error" className={styles.errorMessage} role="alert">
-                {errorMessage}
-              </div>
-            )}
-
-            {submitStatus === "success" && (
+            {submitStatus === "success" ? (
               <div className={styles.successMessage} role="status">
                 <Translate id="feedback.success.message">
                   Thank you for your feedback! We appreciate your input.
                 </Translate>
               </div>
-            )}
+            ) : (
+              <>
+                <div className={styles.formGroup}>
+                  <label htmlFor="feedback-content" className={styles.label}>
+                    <Translate id="feedback.form.label">Your Feedback</Translate>
+                  </label>
+                  <textarea
+                    ref={textareaRef}
+                    id="feedback-content"
+                    className={styles.textarea}
+                    rows={8}
+                    value={content}
+                    onChange={handleContentChange}
+                    placeholder={translate({
+                      id: "feedback.form.placeholder",
+                      message: "Tell us what you think...",
+                      description: "Placeholder text for feedback textarea",
+                    })}
+                    disabled={isSubmitting}
+                    required
+                    maxLength={500}
+                    aria-invalid={submitStatus === "error"}
+                    aria-describedby={submitStatus === "error" ? "feedback-error" : undefined}
+                  />
+                  <div
+                    className={`${styles.charCount} ${
+                      content.length >= 500
+                        ? styles.charCountDanger
+                        : content.length >= 450
+                        ? styles.charCountWarning
+                        : ''
+                    }`}
+                  >
+                    {content.length} / 500
+                  </div>
+                </div>
 
-            <button
-              type="submit"
-              className={styles.submitButton}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <Translate id="feedback.form.submitting">Submitting...</Translate>
-              ) : (
-                <Translate id="feedback.form.submit">Submit</Translate>
-              )}
-            </button>
+                {submitStatus === "error" && errorMessage && (
+                  <div id="feedback-error" className={styles.errorMessage} role="alert">
+                    {errorMessage}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  className={styles.submitButton}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <Translate id="feedback.form.submitting">Submitting...</Translate>
+                  ) : (
+                    <Translate id="feedback.form.submit">Submit</Translate>
+                  )}
+                </button>
+              </>
+            )}
           </form>
         </div>
       </div>

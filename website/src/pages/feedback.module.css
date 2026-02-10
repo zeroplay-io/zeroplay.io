@@ -119,14 +119,28 @@
 }
 
 .successMessage {
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--ifm-color-success-lightest);
-  border: 1px solid var(--ifm-color-success-light);
-  border-radius: 8px;
-  color: var(--ifm-color-success-darkest);
+  padding: 2rem;
+  margin: 0;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+  border: none;
+  border-radius: 16px;
+  color: #2e7d32;
+  font-size: 1.125rem;
   font-weight: 500;
-  animation: slideIn 0.3s ease-out;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.1);
+  animation: successIn 0.5s ease-out;
+}
+
+@keyframes successIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .errorMessage {
