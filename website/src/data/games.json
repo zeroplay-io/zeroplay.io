@@ -83,6 +83,7 @@
 			"id": "sudoku",
 			"icon": "https://dl.zeroplay.cc/metadata/sudoku/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/sudoku/banner.jpg",
+			"deeplink": "https://go.zeroplay.io/2U82",
 			"screenshots": [
 				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/01.jpg",
 				"https://dl.zeroplay.cc/metadata/sudoku/screenshots/02.jpg",
@@ -106,6 +107,7 @@
 			"id": "minesweeper",
 			"icon": "https://dl.zeroplay.cc/metadata/minesweeper/icon.png",
 			"banner": "https://dl.zeroplay.cc/metadata/minesweeper/banner.jpg",
+			"deeplink": "https://go.zeroplay.io/RRbF",
 			"videoUrl": "https://dl.zeroplay.cc/metadata/minesweeper/preview%400.5x.mp4",
 			"posterUrl": "https://dl.zeroplay.cc/metadata/minesweeper/poster.jpg",
 			"screenshots": [
@@ -116,11 +118,16 @@
 				"https://dl.zeroplay.cc/metadata/minesweeper/screenshots/05.jpg"
 			],
 			"orientation": "portrait",
-			"stores": {},
+			"stores": {
+				"ios": "https://apps.apple.com/app/id6755920451",
+				"ios-china": "https://apps.apple.com/cn/app/id6755920544",
+				"google-play": "https://play.google.com/store/apps/details?id=io.zeroplay.minesweeper",
+				"zeroplay": "https://play.zeroplay.io/minesweeper"
+			},
 			"socialMedia": {
 				"enabled": false
 			},
-			"released": false
+			"released": true
 		}
 	]
 }
