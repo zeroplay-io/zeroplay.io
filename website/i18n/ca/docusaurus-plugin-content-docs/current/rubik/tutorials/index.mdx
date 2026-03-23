@@ -1,0 +1,178 @@
+---
+title: Com resoldre un cub de Rubik 3x3
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Com resoldre un cub de Rubik 3x3
+
+Aprèn a resoldre el cub de Rubik amb el mètode **capa per capa** — el mètode per a principiants més popular. Resoldrem el cub de baix a dalt en 7 passos.
+
+## Notació
+
+Els moviments del cub de Rubik s'escriuen amb lletres. Cada lletra es refereix a una cara del cub:
+
+- **R** = Dreta &nbsp;&nbsp; **L** = Esquerra &nbsp;&nbsp; **U** = Dalt &nbsp;&nbsp; **D** = Baix &nbsp;&nbsp; **F** = Davant &nbsp;&nbsp; **B** = Darrere
+
+Una lletra sola significa **90° en sentit horari**. Afegir **'** significa **en sentit antihorari**. Afegir **2** significa **180°**.
+
+Per exemple: **R** = girar la cara dreta en sentit horari, **R'** = en sentit antihorari, **R2** = 180°.
+
+Aguanta el cub amb el **centre blanc a baix** i el **centre groc a dalt** per a tots els passos.
+
+---
+
+## Pas 1: Creu blanca
+
+Construeix una **creu blanca** a la cara inferior. Cada aresta blanca també ha de coincidir amb el color del centre del costat adjacent.
+
+Aquest pas és **intuïtiu** — no hi ha algorismes fixos. Troba cada peça d'aresta blanca i mou-la a la posició correcta a baix.
+
+**Cas 1: Aresta blanca a la capa superior** — Alinea el color lateral amb el seu centre, després gira aquella cara dues vegades.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Cas 2: Aresta blanca a la capa del mig** — Porta-la a dalt primer, després tracta-la com el Cas 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Cas 3: Aresta blanca a baix però girada** — Treu-la i reinserta-la correctament.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Consells:** Comprova sempre que el color lateral de cada aresta blanca coincideixi amb el seu centre. Treballa al voltant de les arestes que ja estan al seu lloc.
+
+---
+
+## Pas 2: Cantonades blanques
+
+Completa la **primera capa** inserint les 4 peces de cantonada blanques.
+
+Troba una cantonada blanca a la capa superior. Col·loca-la sobre el seu lloc objectiu (la cantonada entre els dos colors laterals coincidents). Després repeteix el següent algorisme fins que la cantonada caigui al seu lloc — pot ser que calguin 1, 3 o 5 repeticions:
+
+**Algorisme: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Si una cantonada blanca està atrapada a la capa inferior però mal orientada, utilitza **R U R' U'** per treure-la a dalt, després reinserta-la.
+
+Repeteix per a les 4 cantonades. La primera capa sencera (cara blanca + costats coincidents) hauria d'estar completa ara.
+
+---
+
+## Pas 3: Segona capa
+
+Resol les **arestes de la capa del mig**. Mantén el blanc a baix. Troba una peça d'aresta a la capa superior que **no** tingui groc.
+
+Alinea el color frontal de l'aresta amb el seu centre coincident, després decideix en quina direcció ha d'anar l'aresta:
+
+**Inserir aresta a la dreta: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Inserir aresta a l'esquerra: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Si una aresta de la capa del mig està a la posició correcta però girada, insereix qualsevol aresta de la capa superior en aquell lloc per treure-la, després reinserta-la correctament.
+
+---
+
+## Pas 4: Creu groga
+
+Forma una **creu groga** a la cara superior. No cal que coincideixin els colors laterals encara — només aconsegueix que 4 arestes grogues mirin cap amunt.
+
+Veuràs un de tres patrons a dalt:
+
+- **Punt** (cap aresta groga amunt) — Fes l'algorisme un cop → forma de L.
+- **Forma de L** (dues arestes adjacents) — Aguanta la L a la cantonada posterior esquerra, fes l'algorisme → línia.
+- **Línia** (dues arestes oposades) — Aguanta la línia horitzontal, fes l'algorisme → creu.
+
+**Algorisme: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Pas 5: Cara groga
+
+Orienta totes les cantonades grogues perquè **tota la cara superior sigui groga**.
+
+Aguanta el cub de manera que una **cantonada groga que necessiti ser girada** estigui a la posició frontal dreta. Aplica l'algorisme. Després de cada aplicació, comprova si la cantonada frontal dreta és ara groga a dalt. Si no, aplica'l de nou **sense girar el cub**. Quan aquella cantonada estigui resolta, gira la cara U per portar la següent cantonada no resolta a la posició frontal dreta i repeteix.
+
+**Algorisme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Pot ser que hagis d'aplicar aquest algorisme múltiples vegades. No et preocupis si la resta del cub sembla desordenat durant aquest pas — tot s'ajustarà.
+
+---
+
+## Pas 6: Posicionar cantonades grogues
+
+Mou les cantonades grogues a les seves **posicions correctes** (coincidint amb els colors laterals). Les cantonades poden estar girades — no passa res, només necessitem que estiguin al lloc correcte.
+
+Mira les cantonades de la capa superior. Troba una cantonada que ja estigui entre els dos colors laterals correctes. Col·loca aquella cantonada a la **posició frontal dreta** i aplica l'algorisme. Si cap cantonada està correctament posicionada, aplica l'algorisme un cop des de qualsevol posició.
+
+**Algorisme: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Repeteix fins que les 4 cantonades estiguin a les seves posicions correctes.
+
+---
+
+## Pas 7: Posicionar arestes grogues
+
+L'últim pas! Mou les **arestes** de l'última capa a les seves posicions correctes per resoldre el cub.
+
+Troba una aresta que ja sigui correcta (el seu color coincideix amb el centre del costat). Col·loca aquella cara cap a tu com el **davant**. Després aplica un d'aquests algorismes per ciclar les altres tres arestes:
+
+**Cicle en sentit horari: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Cicle en sentit antihorari: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Si cap aresta és a la posició correcta, aplica qualsevol algorisme un cop — això crearà una aresta correctament col·locada. Després continua com a dalt.
+
+---
+
+**Felicitats!** Has resolt el cub de Rubik! Practica cada secció fins que es torni natural. Amb el temps, podràs resoldre el cub sencer en menys de 2 minuts.

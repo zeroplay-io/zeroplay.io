@@ -1,0 +1,178 @@
+---
+title: Jak složit Rubikovu kostku 3x3
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Jak složit Rubikovu kostku 3x3
+
+Naučte se složit Rubikovu kostku metodou **vrstva po vrstvě** — nejpopulárnější metodou pro začátečníky. Kostku budeme skládat odspodu nahoru v 7 krocích.
+
+## Notace
+
+Tahy Rubikovy kostky se zapisují pomocí písmen. Každé písmeno označuje jednu stěnu kostky:
+
+- **R** = Pravá &nbsp;&nbsp; **L** = Levá &nbsp;&nbsp; **U** = Horní &nbsp;&nbsp; **D** = Dolní &nbsp;&nbsp; **F** = Přední &nbsp;&nbsp; **B** = Zadní
+
+Písmeno samotné znamená **otočení o 90° ve směru hodinových ručiček**. Přidání **'** znamená **proti směru hodinových ručiček**. Přidání **2** znamená **180°**.
+
+Například: **R** = otočit pravou stěnu ve směru hodinových ručiček, **R'** = proti směru hodinových ručiček, **R2** = 180°.
+
+Držte kostku s **bílým středem dole** a **žlutým středem nahoře** ve všech krocích.
+
+---
+
+## Krok 1: Bílý kříž
+
+Sestavte **bílý kříž** na spodní stěně. Každá bílá hrana musí zároveň odpovídat barvě středu přilehlé strany.
+
+Tento krok je **intuitivní** — žádné pevné algoritmy. Najděte každý bílý hranový dílek a přesuňte ho na správné místo na spodku.
+
+**Případ 1: Bílá hrana v horní vrstvě** — Zarovnejte boční barvu s jejím středem, pak otočte danou stěnu dvakrát.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Případ 2: Bílá hrana ve střední vrstvě** — Nejprve ji přesuňte nahoru, pak řešte jako Případ 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Případ 3: Bílá hrana dole, ale překlopená** — Vyjměte ji a vložte správně.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Tipy:** Vždy zkontrolujte, že boční barva každé bílé hrany odpovídá jejímu středu. Pracujte kolem hran, které již jsou na svém místě.
+
+---
+
+## Krok 2: Bílé rohy
+
+Dokončete **první vrstvu** vložením 4 bílých rohových dílků.
+
+Najděte bílý roh v horní vrstvě. Umístěte ho nad jeho cílovou pozici (roh mezi dvěma odpovídajícími bočními barvami). Pak opakujte následující algoritmus, dokud roh nezapadne na místo — může to trvat 1, 3 nebo 5 opakování:
+
+**Algoritmus: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Pokud je bílý roh zaseknutý ve spodní vrstvě, ale špatně orientovaný, použijte **R U R' U'** k jeho vyjmutí nahoru, pak ho znovu vložte.
+
+Opakujte pro všechny 4 rohy. Celá první vrstva (bílá stěna + odpovídající strany) by měla být nyní hotová.
+
+---
+
+## Krok 3: Druhá vrstva
+
+Vyřešte **hrany střední vrstvy**. Bílou ponechte dole. Najděte hranový dílek v horní vrstvě, který **nemá** žlutou barvu.
+
+Zarovnejte přední barvu hrany s odpovídajícím středem, pak rozhodněte, kterým směrem musí hrana jít:
+
+**Vložit hranu doprava: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Vložit hranu doleva: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Pokud je hrana střední vrstvy na správném místě, ale překlopená, vložte do tohoto místa jakoukoli hranu z horní vrstvy, aby ji vytlačila, a pak ji znovu vložte správně.
+
+---
+
+## Krok 4: Žlutý kříž
+
+Vytvořte **žlutý kříž** na horní stěně. Zatím nemusíte sladit boční barvy — stačí mít 4 žluté hrany směrem nahoru.
+
+Na horní stěně uvidíte jeden ze tří vzorů:
+
+- **Tečka** (žádné žluté hrany nahoru) — Proveďte algoritmus jednou → tvar L.
+- **Tvar L** (dvě sousední hrany) — Držte L v zadním levém rohu, proveďte algoritmus → čára.
+- **Čára** (dvě protilehlé hrany) — Držte čáru vodorovně, proveďte algoritmus → kříž.
+
+**Algoritmus: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Krok 5: Žlutá stěna
+
+Zorientujte všechny žluté rohy tak, aby **celá horní stěna byla žlutá**.
+
+Držte kostku tak, aby **žlutý roh, který potřebuje otočit**, byl v pravé přední pozici. Aplikujte algoritmus. Po každé aplikaci zkontrolujte, zda je pravý přední roh nyní žlutý nahoře. Pokud ne, aplikujte ho znovu **bez otáčení kostky**. Jakmile je tento roh vyřešen, otočte stěnu U, abyste přesunuli další nevyřešený roh do pravé přední pozice, a opakujte.
+
+**Algoritmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Možná budete muset tento algoritmus aplikovat vícekrát. Nebojte se, pokud zbytek kostky vypadá během tohoto kroku rozházeně — vše se složí.
+
+---
+
+## Krok 6: Umístění žlutých rohů
+
+Přesuňte žluté rohy na jejich **správné pozice** (odpovídající bočním barvám). Rohy mohou být otočené — to nevadí, potřebujeme je jen na správném místě.
+
+Podívejte se na rohy horní vrstvy. Najděte roh, který je již mezi správnými dvěma bočními barvami. Umístěte tento roh do **pravé přední pozice** a aplikujte algoritmus. Pokud žádný roh není správně umístěn, aplikujte algoritmus jednou z jakékoli pozice.
+
+**Algoritmus: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Opakujte, dokud nebudou všechny 4 rohy na svých správných pozicích.
+
+---
+
+## Krok 7: Umístění žlutých hran
+
+Poslední krok! Přesuňte **hrany** poslední vrstvy na jejich správné pozice a složte kostku.
+
+Najděte hranu, která je již správně (její barva odpovídá středu strany). Umístěte tuto stěnu k sobě jako **přední**. Pak aplikujte jeden z těchto algoritmů pro cyklické přesunutí ostatních tří hran:
+
+**Cyklus ve směru hodinových ručiček: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Cyklus proti směru hodinových ručiček: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Pokud žádná hrana není na správné pozici, aplikujte jakýkoli algoritmus jednou — tím se vytvoří jedna správně umístěná hrana. Pak pokračujte jako výše.
+
+---
+
+**Gratulujeme!** Složili jste Rubikovu kostku! Procvičujte každou sekci, dokud se nestane přirozenou. Časem budete schopni složit celou kostku za méně než 2 minuty.

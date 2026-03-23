@@ -1,0 +1,178 @@
+---
+title: Sådan løser du en 3x3 Rubiks terning
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Sådan løser du en 3x3 Rubiks terning
+
+Lær at løse Rubiks terning med **lag-for-lag**-metoden — den mest populære begyndermetode. Vi løser terningen fra bund til top i 7 trin.
+
+## Notation
+
+Rubiks terning-træk skrives med bogstaver. Hvert bogstav henviser til en side af terningen:
+
+- **R** = Højre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Op &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bag
+
+Et bogstav alene betyder **90° med uret**. Tilføjelse af **'** betyder **mod uret**. Tilføjelse af **2** betyder **180°**.
+
+For eksempel: **R** = drej højre side med uret, **R'** = mod uret, **R2** = 180°.
+
+Hold terningen med **hvidt center i bunden** og **gult center på toppen** i alle trin.
+
+---
+
+## Trin 1: Hvidt kors
+
+Byg et **hvidt kors** på undersiden. Hver hvid kant skal også matche centerfarven på den tilstødende side.
+
+Dette trin er **intuitivt** — ingen faste algoritmer. Find hver hvid kantbrik og flyt den til den korrekte position i bunden.
+
+**Tilfælde 1: Hvid kant i toplag** — Juster sidefarven med dens center, drej derefter den side to gange.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Tilfælde 2: Hvid kant i midterlag** — Bring den op først, håndter derefter som Tilfælde 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Tilfælde 3: Hvid kant i bunden men vendt** — Tag den ud og sæt den korrekt ind igen.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Tips:** Tjek altid at sidefarven på hver hvid kant matcher dens center. Arbejd rundt om kanter, der allerede er på plads.
+
+---
+
+## Trin 2: Hvide hjørner
+
+Fuldfør det **første lag** ved at indsætte de 4 hvide hjørnebrikker.
+
+Find et hvidt hjørne i toplaget. Placer det over dets målposition (hjørnet mellem de to matchende sidefarver). Gentag derefter følgende algoritme, indtil hjørnet falder på plads — det kan tage 1, 3 eller 5 gentagelser:
+
+**Algoritme: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Hvis et hvidt hjørne sidder fast i bundlaget men er forkert orienteret, brug **R U R' U'** til at skubbe det op, og sæt det derefter ind igen.
+
+Gentag for alle 4 hjørner. Hele det første lag (hvid side + matchende sider) skal nu være komplet.
+
+---
+
+## Trin 3: Andet lag
+
+Løs **midterlagets kanter**. Hold hvid i bunden. Find en kantbrik i toplaget, der **ikke** har gul.
+
+Juster kantens frontfarve med dens matchende center, beslut derefter hvilken retning kanten skal:
+
+**Indsæt kant til højre: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Indsæt kant til venstre: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Hvis en midterlagskant er i den korrekte plads men vendt, indsæt en vilkårlig toplagskant i den plads for at skubbe den ud, og sæt den derefter korrekt ind.
+
+---
+
+## Trin 4: Gult kors
+
+Dan et **gult kors** på topsiden. Du behøver ikke matche sidefarver endnu — bare få 4 gule kanter til at pege opad.
+
+Du vil se et af tre mønstre på toppen:
+
+- **Prik** (ingen gule kanter op) — Udfør algoritmen én gang → L-form.
+- **L-form** (to tilstødende kanter) — Hold L'et i det bageste venstre hjørne, udfør algoritmen → linje.
+- **Linje** (to modsatte kanter) — Hold linjen vandret, udfør algoritmen → kors.
+
+**Algoritme: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Trin 5: Gul side
+
+Orienter alle gule hjørner, så **hele topsiden er gul**.
+
+Hold terningen, så et **gult hjørne der skal roteres** er i den forreste højre position. Anvend algoritmen. Efter hver anvendelse, tjek om det forreste højre hjørne nu er gult på toppen. Hvis ikke, anvend den igen **uden at rotere terningen**. Når det hjørne er løst, drej U-siden for at bringe det næste uløste hjørne til forreste højre og gentag.
+
+**Algoritme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Du skal måske anvende denne algoritme flere gange. Bare rolig, hvis resten af terningen ser rodet ud under dette trin — det kommer på plads.
+
+---
+
+## Trin 6: Placer gule hjørner
+
+Flyt de gule hjørner til deres **korrekte positioner** (matchende sidefarver). Hjørnerne kan være roterede — det er fint, vi skal bare have dem på det rigtige sted.
+
+Se på toplagets hjørner. Find et hjørne, der allerede er mellem de korrekte to sidefarver. Placer det hjørne i **forreste højre** og anvend algoritmen. Hvis intet hjørne er korrekt placeret, anvend algoritmen én gang fra en vilkårlig position.
+
+**Algoritme: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Gentag indtil alle 4 hjørner er i deres korrekte positioner.
+
+---
+
+## Trin 7: Placer gule kanter
+
+Det sidste trin! Flyt det sidste lags **kanter** til deres korrekte positioner for at løse terningen.
+
+Find en kant, der allerede er korrekt (dens farve matcher sidecenteret). Placer den side mod dig som **fronten**. Anvend derefter en af disse algoritmer for at cykle de andre tre kanter:
+
+**Cyklus med uret: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Cyklus mod uret: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Hvis ingen kant er i den korrekte position, anvend en vilkårlig algoritme én gang — dette vil skabe én korrekt placeret kant. Fortsæt derefter som ovenfor.
+
+---
+
+**Tillykke!** Du har løst Rubiks terning! Øv hver sektion, indtil det bliver naturligt. Med tiden vil du kunne løse hele terningen på under 2 minutter.

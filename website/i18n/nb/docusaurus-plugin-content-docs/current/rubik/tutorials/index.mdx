@@ -1,0 +1,178 @@
+---
+title: Slik løser du en 3x3 Rubiks kube
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Slik løser du en 3x3 Rubiks kube
+
+Lær å løse Rubiks kube med **lag-for-lag**-metoden — den mest populære nybegynnermetoden. Vi løser kuben fra bunn til topp i 7 steg.
+
+## Notasjon
+
+Rubiks kube-trekk skrives med bokstaver. Hver bokstav viser til en side av kuben:
+
+- **R** = Høyre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Opp &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bak
+
+En bokstav alene betyr **90° med klokken**. Et **'** betyr **mot klokken**. Et **2** betyr **180°**.
+
+For eksempel: **R** = drei høyre side med klokken, **R'** = mot klokken, **R2** = 180°.
+
+Hold kuben med **hvitt senter nederst** og **gult senter øverst** i alle steg.
+
+---
+
+## Steg 1: Hvitt kors
+
+Bygg et **hvitt kors** på undersiden. Hver hvit kantbrikke må også matche senterfargen på den tilstøtende siden.
+
+Dette steget er **intuitivt** — ingen faste algoritmer. Finn hver hvit kantbrikke og flytt den til riktig posisjon på bunnen.
+
+**Tilfelle 1: Hvit kant i topplag** — Juster sidefargen med senteret, drei deretter den siden to ganger.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Tilfelle 2: Hvit kant i midtlag** — Bring den opp først, håndter deretter som Tilfelle 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Tilfelle 3: Hvit kant på bunnen men snudd** — Ta den ut og sett den inn riktig.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Tips:** Sjekk alltid at sidefargen på hver hvit kant matcher senteret. Jobb rundt kanter som allerede er på plass.
+
+---
+
+## Steg 2: Hvite hjørner
+
+Fullfør det **første laget** ved å sette inn de 4 hvite hjørnene.
+
+Finn et hvitt hjørne i topplaget. Plasser det over målposisjonen (hjørnet mellom de to matchende sidefargene). Gjenta deretter følgende algoritme til hjørnet faller på plass — det kan ta 1, 3 eller 5 gjentakelser:
+
+**Algoritme: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Hvis et hvitt hjørne sitter fast i bunnlaget men er feil orientert, bruk **R U R' U'** for å dytte det opp, sett det deretter inn igjen.
+
+Gjenta for alle 4 hjørner. Hele det første laget (hvit side + matchende sider) bør nå være komplett.
+
+---
+
+## Steg 3: Andre lag
+
+Løs **midtlagets kanter**. Hold hvitt nederst. Finn en kantbrikke i topplaget som **ikke** har gult.
+
+Juster kantens frontfarge med det matchende senteret, avgjør deretter hvilken retning kanten må:
+
+**Sett inn kant til høyre: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Sett inn kant til venstre: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Hvis en midtlagskant er i riktig posisjon men snudd, sett inn en vilkårlig topplagskant i den posisjonen for å dytte den ut, sett den deretter inn riktig.
+
+---
+
+## Steg 4: Gult kors
+
+Lag et **gult kors** på toppen. Du trenger ikke matche sidefarger ennå — bare få 4 gule kanter til å peke oppover.
+
+Du vil se ett av tre mønstre på toppen:
+
+- **Prikk** (ingen gule kanter opp) — Utfør algoritmen én gang → L-form.
+- **L-form** (to tilstøtende kanter) — Hold L-en i bakre venstre hjørne, utfør algoritmen → linje.
+- **Linje** (to motstående kanter) — Hold linjen vannrett, utfør algoritmen → kors.
+
+**Algoritme: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Steg 5: Gul side
+
+Orienter alle gule hjørner slik at **hele toppen er gul**.
+
+Hold kuben slik at et **gult hjørne som trenger å roteres** er i fremre høyre posisjon. Bruk algoritmen. Etter hver bruk, sjekk om fremre høyre hjørne nå er gult på toppen. Hvis ikke, bruk den igjen **uten å rotere kuben**. Når det hjørnet er løst, drei U-siden for å bringe neste uløste hjørne til fremre høyre og gjenta.
+
+**Algoritme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Du må kanskje bruke denne algoritmen flere ganger. Ikke bekymre deg hvis resten av kuben ser rotete ut under dette steget — det ordner seg.
+
+---
+
+## Steg 6: Plasser gule hjørner
+
+Flytt de gule hjørnene til deres **riktige posisjoner** (matchende sidefarger). Hjørnene kan være roterte — det er greit, vi trenger bare at de er på riktig sted.
+
+Se på topplag-hjørnene. Finn et hjørne som allerede er mellom de riktige to sidefargene. Plasser det hjørnet **fremre høyre** og bruk algoritmen. Hvis ingen hjørner er riktig plassert, bruk algoritmen én gang fra en vilkårlig posisjon.
+
+**Algoritme: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Gjenta til alle 4 hjørner er i sine riktige posisjoner.
+
+---
+
+## Steg 7: Plasser gule kanter
+
+Det siste steget! Flytt det siste lagets **kanter** til sine riktige posisjoner for å løse kuben.
+
+Finn en kant som allerede er riktig (fargen matcher sidesenteret). Plasser den siden mot deg som **fronten**. Bruk deretter en av disse algoritmene for å sykle de andre tre kantene:
+
+**Syklus med klokken: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Syklus mot klokken: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Hvis ingen kant er i riktig posisjon, bruk en vilkårlig algoritme én gang — dette vil skape én riktig plassert kant. Fortsett deretter som ovenfor.
+
+---
+
+**Gratulerer!** Du har løst Rubiks kube! Øv på hver seksjon til det blir naturlig. Med tiden vil du kunne løse hele kuben på under 2 minutter.

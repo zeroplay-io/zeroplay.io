@@ -1,0 +1,178 @@
+---
+title: Cara Menyelesaikan Kiub Rubik 3x3
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Cara Menyelesaikan Kiub Rubik 3x3
+
+Pelajari cara menyelesaikan Kiub Rubik menggunakan kaedah **lapisan demi lapisan** — kaedah permulaan paling popular. Kita akan menyelesaikan kiub dari bawah ke atas dalam 7 langkah.
+
+## Notasi
+
+Pergerakan Kiub Rubik ditulis menggunakan huruf. Setiap huruf merujuk kepada satu muka kiub:
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+
+Huruf sahaja bermaksud **90° ikut arah jam**. Menambah **'** bermaksud **lawan arah jam**. Menambah **2** bermaksud **180°**.
+
+Contoh: **R** = pusing muka kanan ikut arah jam, **R'** = lawan arah jam, **R2** = 180°.
+
+Pegang kiub dengan **pusat putih di bawah** dan **pusat kuning di atas** untuk semua langkah.
+
+---
+
+## Langkah 1: Salib Putih
+
+Bina **salib putih** di muka bawah. Setiap tepi putih juga mesti sepadan dengan warna pusat sisi bersebelahan.
+
+Langkah ini **intuitif** — tiada algoritma tetap. Cari setiap tepi putih dan gerakkannya ke kedudukan yang betul di bawah.
+
+**Kes 1: Tepi putih di lapisan atas** — Sejajarkan warna sisi dengan pusatnya, kemudian pusing muka itu dua kali.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Kes 2: Tepi putih di lapisan tengah** — Bawa ke atas dahulu, kemudian kendalikan seperti Kes 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Kes 3: Tepi putih di bawah tetapi terbalik** — Keluarkan dan masukkan semula dengan betul.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Petua:** Sentiasa pastikan warna sisi setiap tepi putih sepadan dengan pusatnya. Bekerja di sekitar tepi yang sudah di tempatnya.
+
+---
+
+## Langkah 2: Sudut Putih
+
+Lengkapkan **lapisan pertama** dengan memasukkan 4 sudut putih.
+
+Cari sudut putih di lapisan atas. Letakkan di atas kedudukan sasarannya (sudut antara dua warna sisi yang sepadan). Kemudian ulang algoritma berikut sehingga sudut masuk ke tempatnya — mungkin memerlukan 1, 3, atau 5 ulangan:
+
+**Algoritma: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Jika sudut putih tersekat di lapisan bawah tetapi orientasinya salah, gunakan **R U R' U'** untuk mengeluarkannya ke atas, kemudian masukkan semula.
+
+Ulang untuk semua 4 sudut. Keseluruhan lapisan pertama (muka putih + sisi yang sepadan) sepatutnya lengkap sekarang.
+
+---
+
+## Langkah 3: Lapisan Kedua
+
+Selesaikan **tepi lapisan tengah**. Kekalkan putih di bawah. Cari tepi di lapisan atas yang **tidak** mempunyai kuning.
+
+Sejajarkan warna depan tepi dengan pusat yang sepadan, kemudian tentukan arah mana tepi perlu pergi:
+
+**Masukkan tepi ke kanan: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Masukkan tepi ke kiri: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Jika tepi lapisan tengah berada di slot yang betul tetapi terbalik, masukkan sebarang tepi lapisan atas ke slot itu untuk mengeluarkannya, kemudian masukkan semula dengan betul.
+
+---
+
+## Langkah 4: Salib Kuning
+
+Bentuk **salib kuning** di muka atas. Anda tidak perlu memadankan warna sisi lagi — cuma dapatkan 4 tepi kuning menghadap ke atas.
+
+Anda akan melihat salah satu daripada tiga corak di atas:
+
+- **Titik** (tiada tepi kuning ke atas) — Lakukan algoritma sekali → bentuk L.
+- **Bentuk L** (dua tepi bersebelahan) — Pegang L di sudut kiri belakang, lakukan algoritma → garisan.
+- **Garisan** (dua tepi bertentangan) — Pegang garisan mendatar, lakukan algoritma → salib.
+
+**Algoritma: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Langkah 5: Muka Kuning
+
+Orientasikan semua sudut kuning supaya **keseluruhan muka atas kuning**.
+
+Pegang kiub supaya **sudut kuning yang perlu diputar** berada di kedudukan depan kanan. Gunakan algoritma. Selepas setiap penggunaan, semak sama ada sudut depan kanan kini kuning di atas. Jika tidak, gunakan lagi **tanpa memusingkan kiub**. Setelah sudut itu selesai, pusing muka U untuk membawa sudut seterusnya yang belum selesai ke depan kanan dan ulang.
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Anda mungkin perlu menggunakan algoritma ini beberapa kali. Jangan risau jika bahagian lain kiub kelihatan bercampur semasa langkah ini — semuanya akan kembali teratur.
+
+---
+
+## Langkah 6: Posisikan Sudut Kuning
+
+Pindahkan sudut kuning ke **kedudukan yang betul** (sepadan dengan warna sisi). Sudut mungkin terpusing — tidak mengapa, kita cuma perlu mereka di tempat yang betul.
+
+Lihat sudut lapisan atas. Cari sudut yang sudah berada di antara dua warna sisi yang betul. Letakkan sudut itu di **depan kanan** dan gunakan algoritma. Jika tiada sudut yang betul kedudukannya, gunakan algoritma sekali dari mana-mana kedudukan.
+
+**Algoritma: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Ulang sehingga semua 4 sudut berada di kedudukan yang betul.
+
+---
+
+## Langkah 7: Posisikan Tepi Kuning
+
+Langkah terakhir! Pindahkan **tepi** lapisan terakhir ke kedudukan yang betul untuk menyelesaikan kiub.
+
+Cari tepi yang sudah betul (warnanya sepadan dengan pusat sisi). Letakkan muka itu menghadap anda sebagai **depan**. Kemudian gunakan salah satu algoritma ini untuk mengitarkan tiga tepi yang lain:
+
+**Kitaran ikut arah jam: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Kitaran lawan arah jam: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Jika tiada tepi di kedudukan yang betul, gunakan mana-mana algoritma sekali — ini akan mencipta satu tepi yang betul kedudukannya. Kemudian teruskan seperti di atas.
+
+---
+
+**Tahniah!** Anda telah menyelesaikan Kiub Rubik! Latih setiap bahagian sehingga menjadi semula jadi. Lama-kelamaan, anda akan dapat menyelesaikan keseluruhan kiub dalam masa kurang daripada 2 minit.

@@ -1,0 +1,178 @@
+---
+title: Come risolvere il cubo di Rubik 3x3
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Come risolvere il cubo di Rubik 3x3
+
+Impara a risolvere il cubo di Rubik con il metodo **strato per strato** — il metodo per principianti più diffuso. Risolveremo il cubo dal basso verso l'alto in 7 passaggi.
+
+## Notazione
+
+Le mosse del cubo di Rubik si scrivono con lettere. Ogni lettera si riferisce a una faccia del cubo:
+
+- **R** = Destra &nbsp;&nbsp; **L** = Sinistra &nbsp;&nbsp; **U** = Alto &nbsp;&nbsp; **D** = Basso &nbsp;&nbsp; **F** = Fronte &nbsp;&nbsp; **B** = Retro
+
+Una lettera da sola significa **90° in senso orario**. L'aggiunta di **'** significa **in senso antiorario**. L'aggiunta di **2** significa **180°**.
+
+Ad esempio: **R** = ruotare la faccia destra in senso orario, **R'** = in senso antiorario, **R2** = 180°.
+
+Tieni il cubo con il **centro bianco in basso** e il **centro giallo in alto** per tutti i passaggi.
+
+---
+
+## Passaggio 1: Croce bianca
+
+Costruisci una **croce bianca** sulla faccia inferiore. Ogni spigolo bianco deve anche corrispondere al colore del centro del lato adiacente.
+
+Questo passaggio è **intuitivo** — nessun algoritmo fisso. Trova ogni pezzo spigolo bianco e spostalo nella posizione corretta in basso.
+
+**Caso 1: Spigolo bianco nello strato superiore** — Allinea il colore laterale con il suo centro, poi ruota quella faccia due volte.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Caso 2: Spigolo bianco nello strato intermedio** — Portalo prima in alto, poi trattalo come il Caso 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Caso 3: Spigolo bianco in basso ma capovolto** — Estrailo e reinseriscilo correttamente.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Consigli:** Controlla sempre che il colore laterale di ogni spigolo bianco corrisponda al suo centro. Lavora attorno agli spigoli già al loro posto.
+
+---
+
+## Passaggio 2: Angoli bianchi
+
+Completa il **primo strato** inserendo i 4 pezzi angolo bianchi.
+
+Trova un angolo bianco nello strato superiore. Posizionalo sopra il suo posto target (l'angolo tra i due colori laterali corrispondenti). Poi ripeti il seguente algoritmo finché l'angolo non va al suo posto — potrebbe richiedere 1, 3 o 5 ripetizioni:
+
+**Algoritmo: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Se un angolo bianco è bloccato nello strato inferiore ma orientato male, usa **R U R' U'** per tirarlo fuori in alto, poi reinseriscilo.
+
+Ripeti per tutti e 4 gli angoli. L'intero primo strato (faccia bianca + lati corrispondenti) dovrebbe ora essere completo.
+
+---
+
+## Passaggio 3: Secondo strato
+
+Risolvi gli **spigoli dello strato intermedio**. Mantieni il bianco in basso. Trova uno spigolo nello strato superiore che **non** abbia il giallo.
+
+Allinea il colore frontale dello spigolo con il suo centro corrispondente, poi decidi in quale direzione deve andare lo spigolo:
+
+**Inserire spigolo a destra: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Inserire spigolo a sinistra: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Se uno spigolo dello strato intermedio è nella posizione corretta ma capovolto, inserisci qualsiasi spigolo dello strato superiore in quel posto per estrarlo, poi reinseriscilo correttamente.
+
+---
+
+## Passaggio 4: Croce gialla
+
+Forma una **croce gialla** sulla faccia superiore. Non devi ancora far corrispondere i colori laterali — basta ottenere 4 spigoli gialli rivolti verso l'alto.
+
+Vedrai uno di tre pattern in alto:
+
+- **Punto** (nessuno spigolo giallo in alto) — Esegui l'algoritmo una volta → forma a L.
+- **Forma a L** (due spigoli adiacenti) — Tieni la L nell'angolo posteriore sinistro, esegui l'algoritmo → linea.
+- **Linea** (due spigoli opposti) — Tieni la linea orizzontale, esegui l'algoritmo → croce.
+
+**Algoritmo: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Passaggio 5: Faccia gialla
+
+Orienta tutti gli angoli gialli in modo che l'**intera faccia superiore sia gialla**.
+
+Tieni il cubo in modo che un **angolo giallo da ruotare** sia nella posizione frontale destra. Applica l'algoritmo. Dopo ogni applicazione, controlla se l'angolo frontale destro è ora giallo in alto. Se non lo è, applicalo di nuovo **senza ruotare il cubo**. Una volta risolto quell'angolo, ruota la faccia U per portare il prossimo angolo non risolto nella posizione frontale destra e ripeti.
+
+**Algoritmo: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Potresti dover applicare questo algoritmo più volte. Non preoccuparti se il resto del cubo sembra mescolato durante questo passaggio — si ricomporrà.
+
+---
+
+## Passaggio 6: Posizionare gli angoli gialli
+
+Sposta gli angoli gialli nelle loro **posizioni corrette** (corrispondenti ai colori laterali). Gli angoli potrebbero essere ruotati — va bene, ci serve solo che siano nel posto giusto.
+
+Guarda gli angoli dello strato superiore. Trova un angolo che è già tra i due colori laterali corretti. Metti quell'angolo nella posizione **frontale destra** e applica l'algoritmo. Se nessun angolo è posizionato correttamente, applica l'algoritmo una volta da qualsiasi posizione.
+
+**Algoritmo: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Ripeti finché tutti e 4 gli angoli non sono nelle loro posizioni corrette.
+
+---
+
+## Passaggio 7: Posizionare gli spigoli gialli
+
+L'ultimo passaggio! Sposta gli **spigoli** dell'ultimo strato nelle loro posizioni corrette per risolvere il cubo.
+
+Trova uno spigolo già corretto (il suo colore corrisponde al centro del lato). Posiziona quella faccia verso di te come il **fronte**. Poi applica uno di questi algoritmi per ciclare gli altri tre spigoli:
+
+**Ciclo orario: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Ciclo antiorario: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Se nessuno spigolo è nella posizione corretta, applica qualsiasi algoritmo una volta — questo creerà uno spigolo posizionato correttamente. Poi procedi come sopra.
+
+---
+
+**Congratulazioni!** Hai risolto il cubo di Rubik! Pratica ogni sezione finché non diventa naturale. Con il tempo, sarai in grado di risolvere l'intero cubo in meno di 2 minuti.

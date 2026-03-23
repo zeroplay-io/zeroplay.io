@@ -1,0 +1,178 @@
+---
+title: Kako složiti 3x3 Rubikovu kocku
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Kako složiti 3x3 Rubikovu kocku
+
+Naučite složiti Rubikovu kocku metodom **sloj po sloj** — najpopularnijom metodom za početnike. Kocku ćemo složiti odozdo prema gore u 7 koraka.
+
+## Notacija
+
+Potezi Rubikove kocke zapisuju se slovima. Svako slovo označava jednu stranu kocke:
+
+- **R** = Desna &nbsp;&nbsp; **L** = Lijeva &nbsp;&nbsp; **U** = Gornja &nbsp;&nbsp; **D** = Donja &nbsp;&nbsp; **F** = Prednja &nbsp;&nbsp; **B** = Stražnja
+
+Samo slovo znači **90° u smjeru kazaljke**. Dodavanje **'** znači **u suprotnom smjeru**. Dodavanje **2** znači **180°**.
+
+Na primjer: **R** = okrenuti desnu stranu u smjeru kazaljke, **R'** = u suprotnom smjeru, **R2** = 180°.
+
+Držite kocku s **bijelim centrom dolje** i **žutim centrom gore** u svim koracima.
+
+---
+
+## Korak 1: Bijeli križ
+
+Napravite **bijeli križ** na donjoj strani. Svaki bijeli rub mora odgovarati i boji centra susjedne strane.
+
+Ovaj korak je **intuitivan** — nema fiksnih algoritama. Pronađite svaki bijeli rubni dio i premjestite ga na ispravnu poziciju na dnu.
+
+**Slučaj 1: Bijeli rub u gornjem sloju** — Poravnajte bočnu boju s njezinim centrom, zatim okrenite tu stranu dvaput.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Slučaj 2: Bijeli rub u srednjem sloju** — Prvo ga podignite gore, zatim postupite kao u Slučaju 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Slučaj 3: Bijeli rub dolje ali okrenut** — Izvadite ga i pravilno vratite.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Savjeti:** Uvijek provjerite da bočna boja svakog bijelog ruba odgovara njegovom centru. Radite oko rubova koji su već na mjestu.
+
+---
+
+## Korak 2: Bijeli kutovi
+
+Dovršite **prvi sloj** umetanjem 4 bijela kutna dijela.
+
+Pronađite bijeli kut u gornjem sloju. Postavite ga iznad ciljne pozicije (kut između dva odgovarajuća bočna boja). Zatim ponavljajte sljedeći algoritam dok kut ne sjedne na mjesto — može trebati 1, 3 ili 5 ponavljanja:
+
+**Algoritam: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Ako je bijeli kut zaglavljen u donjem sloju ali krivo orijentiran, koristite **R U R' U'** da ga izvadite gore, zatim ga ponovno umetnite.
+
+Ponovite za sva 4 kuta. Cijeli prvi sloj (bijela strana + odgovarajuće strane) sada bi trebao biti gotov.
+
+---
+
+## Korak 3: Drugi sloj
+
+Riješite **rubove srednjeg sloja**. Držite bijelo dolje. Pronađite rubni dio u gornjem sloju koji **nema** žutu boju.
+
+Poravnajte prednju boju ruba s odgovarajućim centrom, zatim odlučite u kojem smjeru rub treba ići:
+
+**Umetni rub desno: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Umetni rub lijevo: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Ako je rub srednjeg sloja na ispravnom mjestu ali okrenut, umetnite bilo koji rub iz gornjeg sloja na to mjesto da ga izvadite, zatim ga pravilno vratite.
+
+---
+
+## Korak 4: Žuti križ
+
+Napravite **žuti križ** na gornjoj strani. Ne trebate još uskladiti bočne boje — samo dobijte 4 žuta ruba prema gore.
+
+Vidjet ćete jedan od tri uzorka na vrhu:
+
+- **Točka** (nema žutih rubova gore) — Izvedite algoritam jednom → L oblik.
+- **L oblik** (dva susjedna ruba) — Držite L u stražnjem lijevom kutu, izvedite algoritam → linija.
+- **Linija** (dva nasuprotna ruba) — Držite liniju vodoravno, izvedite algoritam → križ.
+
+**Algoritam: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Korak 5: Žuta strana
+
+Orijentirajte sve žute kutove tako da **cijela gornja strana bude žuta**.
+
+Držite kocku tako da **žuti kut koji treba okrenuti** bude na prednjem desnom položaju. Primijenite algoritam. Nakon svake primjene provjerite je li prednji desni kut sada žut na vrhu. Ako nije, primijenite ga ponovno **bez okretanja kocke**. Kada je taj kut riješen, okrenite U stranu da dovedete sljedeći neriješeni kut na prednji desni položaj i ponovite.
+
+**Algoritam: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Možda ćete morati primijeniti ovaj algoritam više puta. Ne brinite ako ostatak kocke izgleda pomiješano tijekom ovog koraka — sve će se složiti.
+
+---
+
+## Korak 6: Pozicioniranje žutih kutova
+
+Premjestite žute kutove na njihove **ispravne pozicije** (podudarajući se s bočnim bojama). Kutovi mogu biti okrenuti — to je u redu, samo ih trebamo na pravom mjestu.
+
+Pogledajte kutove gornjeg sloja. Pronađite kut koji je već između ispravnih dviju bočnih boja. Postavite taj kut na **prednji desni** položaj i primijenite algoritam. Ako nijedan kut nije ispravno pozicioniran, primijenite algoritam jednom s bilo kojeg položaja.
+
+**Algoritam: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Ponavljajte dok sva 4 kuta ne budu na ispravnim pozicijama.
+
+---
+
+## Korak 7: Pozicioniranje žutih rubova
+
+Posljednji korak! Premjestite **rubove** zadnjeg sloja na njihove ispravne pozicije da složite kocku.
+
+Pronađite rub koji je već ispravan (njegova boja odgovara centru strane). Postavite tu stranu prema sebi kao **prednju**. Zatim primijenite jedan od ovih algoritama za ciklično pomicanje preostalih triju rubova:
+
+**Ciklus u smjeru kazaljke: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Ciklus u suprotnom smjeru: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Ako nijedan rub nije na ispravnoj poziciji, primijenite bilo koji algoritam jednom — to će stvoriti jedan ispravno smješten rub. Zatim nastavite kao gore.
+
+---
+
+**Čestitamo!** Složili ste Rubikovu kocku! Vježbajte svaki dio dok ne postane prirodan. S vremenom ćete moći složiti cijelu kocku za manje od 2 minute.

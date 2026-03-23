@@ -1,0 +1,178 @@
+---
+title: "Hur man löser en 3x3 Rubiks kub"
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Hur man löser en 3x3 Rubiks kub
+
+Lär dig lösa Rubiks kub med **lager-för-lager**-metoden — den populäraste nybörjarmetoden. Vi löser kuben från botten till toppen i 7 steg.
+
+## Notation
+
+Rubiks kub-drag skrivs med bokstäver. Varje bokstav hänvisar till en sida av kuben:
+
+- **R** = Höger &nbsp;&nbsp; **L** = Vänster &nbsp;&nbsp; **U** = Upp &nbsp;&nbsp; **D** = Ner &nbsp;&nbsp; **F** = Fram &nbsp;&nbsp; **B** = Bak
+
+En bokstav ensam betyder **90° medurs**. Ett **'** betyder **moturs**. Ett **2** betyder **180°**.
+
+Till exempel: **R** = vrid höger sida medurs, **R'** = moturs, **R2** = 180°.
+
+Håll kuben med **vitt center nedåt** och **gult center uppåt** för alla steg.
+
+---
+
+## Steg 1: Vitt kors
+
+Bygg ett **vitt kors** på undersidan. Varje vit kantbit måste också matcha centerfärgen på den angränsande sidan.
+
+Detta steg är **intuitivt** — inga fasta algoritmer. Hitta varje vit kantbit och flytta den till rätt position på botten.
+
+**Fall 1: Vit kant i översta lagret** — Rikta in sidfärgen med dess center, vrid sedan den sidan två gånger.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Fall 2: Vit kant i mellanlagret** — Flytta den uppåt först, hantera sedan som Fall 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Fall 3: Vit kant på botten men vänd** — Ta ut den och sätt in den rätt.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Tips:** Kontrollera alltid att sidfärgen på varje vit kant matchar dess center. Arbeta runt kanter som redan är på plats.
+
+---
+
+## Steg 2: Vita hörn
+
+Slutför det **första lagret** genom att sätta in de 4 vita hörnbitarna.
+
+Hitta ett vitt hörn i översta lagret. Placera det ovanför sin målposition (hörnet mellan de två matchande sidfärgerna). Upprepa sedan följande algoritm tills hörnet faller på plats — det kan ta 1, 3 eller 5 upprepningar:
+
+**Algoritm: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Om ett vitt hörn sitter fast i bottenlagret men är felaktigt orienterat, använd **R U R' U'** för att putta ut det uppåt, sätt sedan in det igen.
+
+Upprepa för alla 4 hörn. Hela det första lagret (vit sida + matchande sidor) bör nu vara klart.
+
+---
+
+## Steg 3: Andra lagret
+
+Lös **mellanlagrets kanter**. Håll vitt nedåt. Hitta en kantbit i översta lagret som **inte** har gult.
+
+Rikta in kantens framfärg med dess matchande center, bestäm sedan vilken riktning kanten ska:
+
+**Sätt in kant åt höger: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Sätt in kant åt vänster: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Om en mellanlagerskant är på rätt plats men vänd, sätt in valfri kant från översta lagret i den positionen för att putta ut den, sätt sedan in den rätt.
+
+---
+
+## Steg 4: Gult kors
+
+Bilda ett **gult kors** på ovansidan. Du behöver inte matcha sidfärger ännu — se bara till att 4 gula kanter pekar uppåt.
+
+Du ser ett av tre mönster på toppen:
+
+- **Prick** (inga gula kanter uppåt) — Utför algoritmen en gång → L-form.
+- **L-form** (två angränsande kanter) — Håll L:et i bakre vänstra hörnet, utför algoritmen → linje.
+- **Linje** (två motstående kanter) — Håll linjen horisontell, utför algoritmen → kors.
+
+**Algoritm: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Steg 5: Gul sida
+
+Orientera alla gula hörn så att **hela ovansidan är gul**.
+
+Håll kuben så att ett **gult hörn som behöver roteras** är i främre högra positionen. Tillämpa algoritmen. Efter varje tillämpning, kontrollera om det främre högra hörnet nu är gult på toppen. Om inte, tillämpa igen **utan att rotera kuben**. När det hörnet är löst, vrid U-sidan för att föra nästa olösta hörn till främre höger och upprepa.
+
+**Algoritm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Du kan behöva tillämpa denna algoritm flera gånger. Oroa dig inte om resten av kuben ser blandad ut under detta steg — det ordnar sig.
+
+---
+
+## Steg 6: Placera gula hörn
+
+Flytta de gula hörnen till sina **rätta positioner** (matchande sidfärger). Hörnen kan vara roterade — det är okej, vi behöver bara att de är på rätt plats.
+
+Titta på översta lagrets hörn. Hitta ett hörn som redan är mellan de rätta två sidfärgerna. Placera det hörnet **främre höger** och tillämpa algoritmen. Om inget hörn är korrekt placerat, tillämpa algoritmen en gång från valfri position.
+
+**Algoritm: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Upprepa tills alla 4 hörn är i sina rätta positioner.
+
+---
+
+## Steg 7: Placera gula kanter
+
+Det sista steget! Flytta det sista lagrets **kanter** till sina rätta positioner för att lösa kuben.
+
+Hitta en kant som redan är rätt (dess färg matchar sidans center). Placera den sidan mot dig som **framsidan**. Tillämpa sedan en av dessa algoritmer för att cykla de andra tre kanterna:
+
+**Medurs cykel: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Moturs cykel: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Om ingen kant är på rätt position, tillämpa valfri algoritm en gång — detta skapar en korrekt placerad kant. Fortsätt sedan som ovan.
+
+---
+
+**Grattis!** Du har löst Rubiks kub! Öva varje avsnitt tills det blir naturligt. Med tiden kommer du att kunna lösa hela kuben på under 2 minuter.

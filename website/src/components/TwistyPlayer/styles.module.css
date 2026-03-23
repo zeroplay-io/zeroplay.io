@@ -1,0 +1,20 @@
+.playerContainer {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3 / 2;
+  margin: 1rem auto;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3 / 2;
+  margin: 1rem auto;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,178 @@
+---
+title: Como resolver um cubo mágico 3x3
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Como resolver um cubo mágico 3x3
+
+Aprenda a resolver o cubo mágico usando o método **camada por camada** — o método para iniciantes mais popular. Vamos resolver o cubo de baixo para cima em 7 etapas.
+
+## Notação
+
+Os movimentos do cubo mágico são escritos com letras. Cada letra se refere a uma face do cubo:
+
+- **R** = Direita &nbsp;&nbsp; **L** = Esquerda &nbsp;&nbsp; **U** = Cima &nbsp;&nbsp; **D** = Baixo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Trás
+
+Uma letra sozinha significa **90° no sentido horário**. Adicionar **'** significa **no sentido anti-horário**. Adicionar **2** significa **180°**.
+
+Por exemplo: **R** = girar a face direita no sentido horário, **R'** = no sentido anti-horário, **R2** = 180°.
+
+Segure o cubo com o **centro branco embaixo** e o **centro amarelo em cima** em todas as etapas.
+
+---
+
+## Etapa 1: Cruz branca
+
+Construa uma **cruz branca** na face inferior. Cada aresta branca também deve corresponder à cor do centro do lado adjacente.
+
+Esta etapa é **intuitiva** — sem algoritmos fixos. Encontre cada peça de aresta branca e mova-a para a posição correta embaixo.
+
+**Caso 1: Aresta branca na camada superior** — Alinhe a cor lateral com seu centro, depois gire essa face duas vezes.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Caso 2: Aresta branca na camada do meio** — Leve-a para cima primeiro, depois trate como o Caso 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Caso 3: Aresta branca embaixo mas virada** — Retire-a e reinsira corretamente.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Dicas:** Sempre verifique se a cor lateral de cada aresta branca corresponde ao seu centro. Trabalhe ao redor das arestas que já estão no lugar.
+
+---
+
+## Etapa 2: Cantos brancos
+
+Complete a **primeira camada** inserindo as 4 peças de canto brancas.
+
+Encontre um canto branco na camada superior. Posicione-o acima do seu lugar alvo (o canto entre as duas cores laterais correspondentes). Depois repita o seguinte algoritmo até o canto encaixar — pode levar 1, 3 ou 5 repetições:
+
+**Algoritmo: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Se um canto branco estiver preso na camada inferior mas com orientação errada, use **R U R' U'** para tirá-lo para cima, depois reinsira-o.
+
+Repita para todos os 4 cantos. A primeira camada inteira (face branca + lados correspondentes) deve estar completa agora.
+
+---
+
+## Etapa 3: Segunda camada
+
+Resolva as **arestas da camada do meio**. Mantenha o branco embaixo. Encontre uma aresta na camada superior que **não** tenha amarelo.
+
+Alinhe a cor frontal da aresta com seu centro correspondente, depois decida em qual direção a aresta deve ir:
+
+**Inserir aresta para a direita: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Inserir aresta para a esquerda: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Se uma aresta da camada do meio estiver no lugar certo mas virada, insira qualquer aresta da camada superior naquele lugar para tirá-la, depois reinsira corretamente.
+
+---
+
+## Etapa 4: Cruz amarela
+
+Forme uma **cruz amarela** na face superior. Você não precisa combinar as cores laterais ainda — apenas consiga 4 arestas amarelas viradas para cima.
+
+Você verá um de três padrões no topo:
+
+- **Ponto** (nenhuma aresta amarela para cima) — Faça o algoritmo uma vez → formato de L.
+- **Formato de L** (duas arestas adjacentes) — Segure o L no canto traseiro esquerdo, faça o algoritmo → linha.
+- **Linha** (duas arestas opostas) — Segure a linha horizontal, faça o algoritmo → cruz.
+
+**Algoritmo: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Etapa 5: Face amarela
+
+Oriente todos os cantos amarelos para que a **face superior inteira seja amarela**.
+
+Segure o cubo de modo que um **canto amarelo que precisa ser girado** esteja na posição frontal direita. Aplique o algoritmo. Após cada aplicação, verifique se o canto frontal direito agora é amarelo em cima. Se não, aplique novamente **sem girar o cubo**. Quando esse canto estiver resolvido, gire a face U para trazer o próximo canto não resolvido para a posição frontal direita e repita.
+
+**Algoritmo: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Você pode precisar aplicar este algoritmo várias vezes. Não se preocupe se o resto do cubo parecer embaralhado durante esta etapa — tudo vai se encaixar.
+
+---
+
+## Etapa 6: Posicionar cantos amarelos
+
+Mova os cantos amarelos para suas **posições corretas** (correspondendo às cores laterais). Os cantos podem estar girados — tudo bem, só precisamos que estejam no lugar certo.
+
+Olhe os cantos da camada superior. Encontre um canto que já esteja entre as duas cores laterais corretas. Coloque esse canto na posição **frontal direita** e aplique o algoritmo. Se nenhum canto estiver corretamente posicionado, aplique o algoritmo uma vez de qualquer posição.
+
+**Algoritmo: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Repita até que todos os 4 cantos estejam em suas posições corretas.
+
+---
+
+## Etapa 7: Posicionar arestas amarelas
+
+A etapa final! Mova as **arestas** da última camada para suas posições corretas para resolver o cubo.
+
+Encontre uma aresta que já esteja correta (sua cor corresponde ao centro do lado). Coloque essa face virada para você como a **frente**. Depois aplique um destes algoritmos para ciclar as outras três arestas:
+
+**Ciclo no sentido horário: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Ciclo no sentido anti-horário: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Se nenhuma aresta estiver na posição correta, aplique qualquer algoritmo uma vez — isso criará uma aresta corretamente posicionada. Depois continue como acima.
+
+---
+
+**Parabéns!** Você resolveu o cubo mágico! Pratique cada seção até que se torne natural. Com o tempo, você conseguirá resolver o cubo inteiro em menos de 2 minutos.

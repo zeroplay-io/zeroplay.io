@@ -29,6 +29,11 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "Rubik's Cube",
+      items: ["rubik/tutorials/index"],
+    },
   ],
 };
 

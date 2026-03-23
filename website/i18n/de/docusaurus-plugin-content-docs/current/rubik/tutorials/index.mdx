@@ -1,0 +1,178 @@
+---
+title: Wie man einen 3x3 Rubik's Cube löst
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Wie man einen 3x3 Rubik's Cube löst
+
+Lerne den Rubik's Cube mit der **Schicht-für-Schicht**-Methode zu lösen — der beliebtesten Anfängermethode. Wir lösen den Würfel von unten nach oben in 7 Schritten.
+
+## Notation
+
+Züge des Rubik's Cube werden mit Buchstaben geschrieben. Jeder Buchstabe bezieht sich auf eine Seite des Würfels:
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Oben &nbsp;&nbsp; **D** = Unten &nbsp;&nbsp; **F** = Vorne &nbsp;&nbsp; **B** = Hinten
+
+Ein Buchstabe allein bedeutet **90° im Uhrzeigersinn**. Ein **'** bedeutet **gegen den Uhrzeigersinn**. Eine **2** bedeutet **180°**.
+
+Zum Beispiel: **R** = rechte Seite im Uhrzeigersinn drehen, **R'** = gegen den Uhrzeigersinn, **R2** = 180°.
+
+Halte den Würfel mit dem **weißen Center unten** und dem **gelben Center oben** für alle Schritte.
+
+---
+
+## Schritt 1: Weißes Kreuz
+
+Baue ein **weißes Kreuz** auf der Unterseite. Jede weiße Kante muss auch zur Centerfarbe der angrenzenden Seite passen.
+
+Dieser Schritt ist **intuitiv** — keine festen Algorithmen. Finde jedes weiße Kantenstück und bringe es an die richtige Position unten.
+
+**Fall 1: Weiße Kante in der oberen Schicht** — Richte die Seitenfarbe mit ihrem Center aus, dann drehe diese Seite zweimal.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Fall 2: Weiße Kante in der mittleren Schicht** — Bringe sie zuerst nach oben, dann behandle sie wie Fall 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Fall 3: Weiße Kante unten, aber falsch orientiert** — Nimm sie heraus und setze sie richtig ein.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Tipps:** Überprüfe immer, dass die Seitenfarbe jeder weißen Kante mit ihrem Center übereinstimmt. Arbeite um bereits platzierte Kanten herum.
+
+---
+
+## Schritt 2: Weiße Ecken
+
+Vervollständige die **erste Schicht** durch Einsetzen der 4 weißen Eckstücke.
+
+Finde eine weiße Ecke in der oberen Schicht. Positioniere sie über ihrem Zielplatz (die Ecke zwischen den zwei passenden Seitenfarben). Wiederhole dann den folgenden Algorithmus, bis die Ecke einrastet — es kann 1, 3 oder 5 Wiederholungen dauern:
+
+**Algorithmus: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Wenn eine weiße Ecke in der unteren Schicht feststeckt, aber falsch orientiert ist, verwende **R U R' U'**, um sie nach oben zu bringen, und setze sie dann erneut ein.
+
+Wiederhole für alle 4 Ecken. Die gesamte erste Schicht (weiße Seite + passende Seiten) sollte jetzt fertig sein.
+
+---
+
+## Schritt 3: Zweite Schicht
+
+Löse die **Kanten der mittleren Schicht**. Halte Weiß unten. Finde ein Kantenstück in der oberen Schicht, das **kein** Gelb hat.
+
+Richte die Vorderfarbe der Kante mit ihrem passenden Center aus, dann entscheide, in welche Richtung die Kante muss:
+
+**Kante nach rechts einsetzen: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Kante nach links einsetzen: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Wenn eine Kante der mittleren Schicht am richtigen Platz, aber falsch orientiert ist, setze eine beliebige obere Kante an diesen Platz, um sie herauszudrücken, und setze sie dann richtig ein.
+
+---
+
+## Schritt 4: Gelbes Kreuz
+
+Bilde ein **gelbes Kreuz** auf der Oberseite. Die Seitenfarben müssen noch nicht passen — bringe einfach 4 gelbe Kanten nach oben.
+
+Du siehst eines von drei Mustern oben:
+
+- **Punkt** (keine gelben Kanten oben) — Führe den Algorithmus einmal aus → L-Form.
+- **L-Form** (zwei benachbarte Kanten) — Halte das L in der hinteren linken Ecke, führe den Algorithmus aus → Linie.
+- **Linie** (zwei gegenüberliegende Kanten) — Halte die Linie waagerecht, führe den Algorithmus aus → Kreuz.
+
+**Algorithmus: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Schritt 5: Gelbe Seite
+
+Orientiere alle gelben Ecken, sodass die **gesamte Oberseite gelb** ist.
+
+Halte den Würfel so, dass eine **gelbe Ecke, die gedreht werden muss**, vorne rechts ist. Wende den Algorithmus an. Prüfe nach jeder Anwendung, ob die vordere rechte Ecke jetzt oben gelb ist. Wenn nicht, wende ihn erneut an, **ohne den Würfel zu drehen**. Sobald diese Ecke gelöst ist, drehe die U-Seite, um die nächste ungelöste Ecke nach vorne rechts zu bringen, und wiederhole.
+
+**Algorithmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Möglicherweise musst du diesen Algorithmus mehrmals anwenden. Keine Sorge, wenn der Rest des Würfels während dieses Schritts durcheinander aussieht — er wird sich zusammenfügen.
+
+---
+
+## Schritt 6: Gelbe Ecken positionieren
+
+Bringe die gelben Ecken an ihre **richtigen Positionen** (passend zu den Seitenfarben). Die Ecken können verdreht sein — das ist in Ordnung, wir brauchen sie nur am richtigen Platz.
+
+Schau dir die Ecken der oberen Schicht an. Finde eine Ecke, die bereits zwischen den richtigen zwei Seitenfarben liegt. Platziere diese Ecke **vorne rechts** und wende den Algorithmus an. Wenn keine Ecke richtig positioniert ist, wende den Algorithmus einmal von einer beliebigen Position aus an.
+
+**Algorithmus: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Wiederhole, bis alle 4 Ecken an ihren richtigen Positionen sind.
+
+---
+
+## Schritt 7: Gelbe Kanten positionieren
+
+Der letzte Schritt! Bringe die **Kanten** der letzten Schicht an ihre richtigen Positionen, um den Würfel zu lösen.
+
+Finde eine Kante, die bereits richtig ist (ihre Farbe stimmt mit dem Seitencenter überein). Platziere diese Seite zu dir als **Vorderseite**. Wende dann einen dieser Algorithmen an, um die anderen drei Kanten zu rotieren:
+
+**Zyklus im Uhrzeigersinn: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Zyklus gegen den Uhrzeigersinn: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Wenn keine Kante an der richtigen Position ist, wende einen beliebigen Algorithmus einmal an — das erzeugt eine richtig platzierte Kante. Fahre dann wie oben fort.
+
+---
+
+**Herzlichen Glückwunsch!** Du hast den Rubik's Cube gelöst! Übe jeden Abschnitt, bis er dir in Fleisch und Blut übergeht. Mit der Zeit wirst du den gesamten Würfel in unter 2 Minuten lösen können.

@@ -1,0 +1,178 @@
+---
+title: "Jak ułożyć kostkę Rubika 3x3"
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Jak ułożyć kostkę Rubika 3x3
+
+Naucz się układać kostkę Rubika metodą **warstwa po warstwie** — najpopularniejszą metodą dla początkujących. Ułożymy kostkę od dołu do góry w 7 krokach.
+
+## Notacja
+
+Ruchy kostki Rubika zapisuje się za pomocą liter. Każda litera oznacza jedną ścianę kostki:
+
+- **R** = Prawa &nbsp;&nbsp; **L** = Lewa &nbsp;&nbsp; **U** = Górna &nbsp;&nbsp; **D** = Dolna &nbsp;&nbsp; **F** = Przednia &nbsp;&nbsp; **B** = Tylna
+
+Sama litera oznacza **obrót o 90° zgodnie z ruchem wskazówek zegara**. Dodanie **'** oznacza **przeciwnie do ruchu wskazówek**. Dodanie **2** oznacza **180°**.
+
+Na przykład: **R** = obrót prawej ściany zgodnie z ruchem wskazówek, **R'** = przeciwnie, **R2** = 180°.
+
+Trzymaj kostkę z **białym środkiem na dole** i **żółtym środkiem na górze** we wszystkich krokach.
+
+---
+
+## Krok 1: Biały krzyż
+
+Zbuduj **biały krzyż** na dolnej ścianie. Każda biała krawędź musi również pasować do koloru środka sąsiedniej ściany.
+
+Ten krok jest **intuicyjny** — brak stałych algorytmów. Znajdź każdy biały klocek krawędziowy i przesuń go na właściwą pozycję na dole.
+
+**Przypadek 1: Biała krawędź w górnej warstwie** — Wyrównaj kolor boczny z jego środkiem, następnie obróć tę ścianę dwa razy.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Przypadek 2: Biała krawędź w środkowej warstwie** — Najpierw wynieś ją do góry, następnie postępuj jak w Przypadku 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Przypadek 3: Biała krawędź na dole, ale odwrócona** — Wyjmij ją i włóż poprawnie.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Wskazówki:** Zawsze sprawdzaj, czy kolor boczny każdej białej krawędzi pasuje do jej środka. Pracuj wokół krawędzi, które już są na swoim miejscu.
+
+---
+
+## Krok 2: Białe narożniki
+
+Dokończ **pierwszą warstwę**, wstawiając 4 białe narożniki.
+
+Znajdź biały narożnik w górnej warstwie. Umieść go nad pozycją docelową (narożnik pomiędzy dwoma pasującymi kolorami bocznymi). Następnie powtarzaj poniższy algorytm, aż narożnik wpadnie na miejsce — może to zająć 1, 3 lub 5 powtórzeń:
+
+**Algorytm: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Jeśli biały narożnik utknął w dolnej warstwie, ale jest źle zorientowany, użyj **R U R' U'**, aby go wyjąć do góry, a następnie włóż ponownie.
+
+Powtórz dla wszystkich 4 narożników. Cała pierwsza warstwa (biała ściana + pasujące boki) powinna być teraz gotowa.
+
+---
+
+## Krok 3: Druga warstwa
+
+Rozwiąż **krawędzie środkowej warstwy**. Trzymaj białą na dole. Znajdź krawędź w górnej warstwie, która **nie** ma żółtego koloru.
+
+Wyrównaj przedni kolor krawędzi z pasującym środkiem, następnie zdecyduj, w którym kierunku musi pójść krawędź:
+
+**Wstaw krawędź w prawo: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Wstaw krawędź w lewo: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Jeśli krawędź środkowej warstwy jest na właściwym miejscu, ale odwrócona, wstaw dowolną krawędź z górnej warstwy w to miejsce, aby ją wypchnąć, a następnie wstaw poprawnie.
+
+---
+
+## Krok 4: Żółty krzyż
+
+Utwórz **żółty krzyż** na górnej ścianie. Nie musisz jeszcze dopasowywać kolorów bocznych — wystarczy, że 4 żółte krawędzie będą skierowane do góry.
+
+Na górze zobaczysz jeden z trzech wzorów:
+
+- **Kropka** (brak żółtych krawędzi do góry) — Wykonaj algorytm raz → kształt L.
+- **Kształt L** (dwie sąsiednie krawędzie) — Trzymaj L w lewym tylnym rogu, wykonaj algorytm → linia.
+- **Linia** (dwie przeciwległe krawędzie) — Trzymaj linię poziomo, wykonaj algorytm → krzyż.
+
+**Algorytm: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Krok 5: Żółta ściana
+
+Zorientuj wszystkie żółte narożniki, aby **cała górna ściana była żółta**.
+
+Trzymaj kostkę tak, aby **żółty narożnik wymagający obrotu** był w prawej przedniej pozycji. Zastosuj algorytm. Po każdym zastosowaniu sprawdź, czy prawy przedni narożnik jest teraz żółty na górze. Jeśli nie, zastosuj ponownie **bez obracania kostki**. Gdy ten narożnik jest rozwiązany, obróć ścianę U, aby przesunąć następny nierozwiązany narożnik na prawą przednią pozycję i powtórz.
+
+**Algorytm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Być może będziesz musiał zastosować ten algorytm wiele razy. Nie martw się, jeśli reszta kostki wygląda na pomieszaną podczas tego kroku — wszystko się ułoży.
+
+---
+
+## Krok 6: Pozycjonowanie żółtych narożników
+
+Przesuń żółte narożniki na ich **właściwe pozycje** (pasujące do kolorów bocznych). Narożniki mogą być obrócone — to w porządku, potrzebujemy tylko, aby były we właściwym miejscu.
+
+Spójrz na narożniki górnej warstwy. Znajdź narożnik, który jest już pomiędzy właściwymi dwoma kolorami bocznymi. Umieść ten narożnik w **prawej przedniej** pozycji i zastosuj algorytm. Jeśli żaden narożnik nie jest prawidłowo umieszczony, zastosuj algorytm raz z dowolnej pozycji.
+
+**Algorytm: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Powtarzaj, aż wszystkie 4 narożniki będą na swoich właściwych pozycjach.
+
+---
+
+## Krok 7: Pozycjonowanie żółtych krawędzi
+
+Ostatni krok! Przesuń **krawędzie** ostatniej warstwy na ich właściwe pozycje, aby ułożyć kostkę.
+
+Znajdź krawędź, która jest już prawidłowa (jej kolor pasuje do środka boku). Ustaw tę ścianę w swoją stronę jako **przednią**. Następnie zastosuj jeden z tych algorytmów, aby cyklicznie przesunąć trzy pozostałe krawędzie:
+
+**Cykl zgodnie z ruchem wskazówek: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Cykl przeciwnie do ruchu wskazówek: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Jeśli żadna krawędź nie jest na właściwej pozycji, zastosuj dowolny algorytm raz — to stworzy jedną prawidłowo umieszczoną krawędź. Następnie kontynuuj jak wyżej.
+
+---
+
+**Gratulacje!** Ułożyłeś kostkę Rubika! Ćwicz każdą sekcję, aż stanie się naturalna. Z czasem będziesz w stanie ułożyć całą kostkę w mniej niż 2 minuty.

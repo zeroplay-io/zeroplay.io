@@ -1,0 +1,178 @@
+---
+title: "Ako poskladať Rubikovu kocku 3x3"
+sidebar_position: 0
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+# Ako poskladať Rubikovu kocku 3x3
+
+Naučte sa poskladať Rubikovu kocku metódou **vrstva po vrstve** — najpopulárnejšou metódou pre začiatočníkov. Kocku budeme skladať odspodu nahor v 7 krokoch.
+
+## Notácia
+
+Ťahy Rubikovej kocky sa zapisujú pomocou písmen. Každé písmeno označuje jednu stenu kocky:
+
+- **R** = Pravá &nbsp;&nbsp; **L** = Ľavá &nbsp;&nbsp; **U** = Horná &nbsp;&nbsp; **D** = Dolná &nbsp;&nbsp; **F** = Predná &nbsp;&nbsp; **B** = Zadná
+
+Písmeno samotné znamená **otočenie o 90° v smere hodinových ručičiek**. Pridanie **'** znamená **proti smeru hodinových ručičiek**. Pridanie **2** znamená **180°**.
+
+Napríklad: **R** = otočiť pravú stenu v smere hodinových ručičiek, **R'** = proti smeru, **R2** = 180°.
+
+Držte kocku s **bielym stredom dole** a **žltým stredom hore** vo všetkých krokoch.
+
+---
+
+## Krok 1: Biely kríž
+
+Zostavte **biely kríž** na spodnej stene. Každá biela hrana musí zároveň zodpovedať farbe stredu susednej strany.
+
+Tento krok je **intuitívny** — žiadne pevné algoritmy. Nájdite každý biely hranový dielik a presuňte ho na správne miesto na spodku.
+
+**Prípad 1: Biela hrana v hornej vrstve** — Zarovnajte bočnú farbu s jej stredom, potom otočte danú stenu dvakrát.
+
+<TwistyPlayer
+  setupAlg="x2 F2"
+  alg="F2"
+/>
+
+**Prípad 2: Biela hrana v strednej vrstve** — Najskôr ju presuňte nahor, potom riešte ako Prípad 1.
+
+<TwistyPlayer
+  setupAlg="x2 F2 U F"
+  alg="F' U' F2"
+/>
+
+**Prípad 3: Biela hrana dole, ale preklopená** — Vyberte ju a vložte správne.
+
+<TwistyPlayer
+  setupAlg="x2 F' R U' R'"
+  alg="R U R' F"
+/>
+
+**Tipy:** Vždy skontrolujte, že bočná farba každej bielej hrany zodpovedá jej stredu. Pracujte okolo hrán, ktoré už sú na svojom mieste.
+
+---
+
+## Krok 2: Biele rohy
+
+Dokončite **prvú vrstvu** vložením 4 bielych rohových dielikov.
+
+Nájdite biely roh v hornej vrstve. Umiestnite ho nad jeho cieľovú pozíciu (roh medzi dvoma zodpovedajúcimi bočnými farbami). Potom opakujte nasledujúci algoritmus, kým roh nezapadne na miesto — môže to trvať 1, 3 alebo 5 opakovaní:
+
+**Algoritmus: R U R' U'**
+
+<TwistyPlayer
+  setupAlg="x2 U R U' R'"
+  alg="R U R' U'"
+/>
+
+Ak je biely roh zaseknutý v spodnej vrstve, ale zle orientovaný, použite **R U R' U'** na jeho vybratie nahor, potom ho znovu vložte.
+
+Opakujte pre všetky 4 rohy. Celá prvá vrstva (biela stena + zodpovedajúce strany) by mala byť teraz hotová.
+
+---
+
+## Krok 3: Druhá vrstva
+
+Vyriešte **hrany strednej vrstvy**. Bielu ponechajte dole. Nájdite hranový dielik v hornej vrstve, ktorý **nemá** žltú farbu.
+
+Zarovnajte prednú farbu hrany s zodpovedajúcim stredom, potom rozhodnite, ktorým smerom musí hrana ísť:
+
+**Vložiť hranu doprava: U R U' R' U' F' U F**
+
+<TwistyPlayer
+  setupAlg="x2 F' U F U R U' R' U'"
+  alg="U R U' R' U' F' U F"
+/>
+
+**Vložiť hranu doľava: U' L' U L U F U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U' F' U' L' U L U"
+  alg="U' L' U L U F U' F'"
+/>
+
+Ak je hrana strednej vrstvy na správnom mieste, ale preklopená, vložte do tohto miesta akúkoľvek hranu z hornej vrstvy, aby ju vytlačila, a potom ju vložte správne.
+
+---
+
+## Krok 4: Žltý kríž
+
+Vytvorte **žltý kríž** na hornej stene. Zatiaľ nemusíte zladiť bočné farby — stačí mať 4 žlté hrany smerom nahor.
+
+Na hornej stene uvidíte jeden z troch vzorov:
+
+- **Bodka** (žiadne žlté hrany nahor) — Vykonajte algoritmus jedenkrát → tvar L.
+- **Tvar L** (dve susedné hrany) — Držte L v zadnom ľavom rohu, vykonajte algoritmus → čiara.
+- **Čiara** (dve protiľahlé hrany) — Držte čiaru vodorovne, vykonajte algoritmus → kríž.
+
+**Algoritmus: F R U R' U' F'**
+
+<TwistyPlayer
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+---
+
+## Krok 5: Žltá stena
+
+Zorientujte všetky žlté rohy tak, aby **celá horná stena bola žltá**.
+
+Držte kocku tak, aby **žltý roh, ktorý treba otočiť**, bol v pravej prednej pozícii. Aplikujte algoritmus. Po každej aplikácii skontrolujte, či je pravý predný roh teraz žltý hore. Ak nie, aplikujte ho znova **bez otáčania kocky**. Keď je tento roh vyriešený, otočte stenu U, aby ste presunuli ďalší nevyriešený roh do pravej prednej pozície, a opakujte.
+
+**Algoritmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+Možno budete musieť tento algoritmus aplikovať viackrát. Nebojte sa, ak zvyšok kocky vyzerá počas tohto kroku pomiešane — všetko sa poskladá.
+
+---
+
+## Krok 6: Umiestnenie žltých rohov
+
+Presuňte žlté rohy na ich **správne pozície** (zodpovedajúce bočným farbám). Rohy môžu byť otočené — to nevadí, potrebujeme ich len na správnom mieste.
+
+Pozrite sa na rohy hornej vrstvy. Nájdite roh, ktorý je už medzi správnymi dvoma bočnými farbami. Umiestnite tento roh do **pravej prednej** pozície a aplikujte algoritmus. Ak žiadny roh nie je správne umiestnený, aplikujte algoritmus jedenkrát z akejkoľvek pozície.
+
+**Algoritmus: U R U' L' U R' U' L**
+
+<TwistyPlayer
+  setupAlg="x2 L' U R U' L U R' U'"
+  alg="U R U' L' U R' U' L"
+/>
+
+Opakujte, kým nebudú všetky 4 rohy na svojich správnych pozíciách.
+
+---
+
+## Krok 7: Umiestnenie žltých hrán
+
+Posledný krok! Presuňte **hrany** poslednej vrstvy na ich správne pozície a poskladajte kocku.
+
+Nájdite hranu, ktorá je už správne (jej farba zodpovedá stredu strany). Umiestnite túto stenu k sebe ako **prednú**. Potom aplikujte jeden z týchto algoritmov na cyklické presunutie ostatných troch hrán:
+
+**Cyklus v smere hodinových ručičiek: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Cyklus proti smeru hodinových ručičiek: R2 U R U R' U' R' U' R' U R'**
+
+<TwistyPlayer
+  setupAlg="x2 R U' R U R U R U' R' U' R2"
+  alg="R2 U R U R' U' R' U' R' U R'"
+/>
+
+Ak žiadna hrana nie je na správnej pozícii, aplikujte akýkoľvek algoritmus jedenkrát — tým sa vytvorí jedna správne umiestnená hrana. Potom pokračujte ako vyššie.
+
+---
+
+**Gratulujeme!** Poskladali ste Rubikovu kocku! Precvičujte každú sekciu, kým sa nestane prirodzenou. Časom budete schopní poskladať celú kocku za menej ako 2 minúty.
