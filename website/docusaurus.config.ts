@@ -111,7 +111,6 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -121,7 +120,24 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  plugins: [],
+  plugins: [
+    function hmrFixPlugin() {
+      return {
+        name: "hmr-fix",
+        configureWebpack(config, isServer) {
+          if (isServer || process.env.NODE_ENV !== "development") return {};
+          const webpack = require("webpack");
+          const hasHMR = (config.plugins || []).some(
+            (p: any) => p instanceof webpack.HotModuleReplacementPlugin,
+          );
+          if (!hasHMR) {
+            return { plugins: [new webpack.HotModuleReplacementPlugin()] };
+          }
+          return {};
+        },
+      };
+    },
+  ],
 
   customFields: customFields,
 
