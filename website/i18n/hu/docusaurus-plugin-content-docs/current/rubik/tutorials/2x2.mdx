@@ -1,0 +1,136 @@
+---
+title: Hogyan rakjuk ki a 2×2-es Rubik-kockát
+sidebar_position: 1
+description: Tanuld meg a 2×2-es Rubik-kockát lépésről lépésre kirakni az Ortega módszerrel.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hogyan rakjuk ki a 2×2-es Rubik-kockát
+
+Tanuld meg a 2×2-es Rubik-kockát kirakni az **Ortega módszerrel** — egy gyors és hatékony 3 lépéses megközelítéssel. A 2×2-esnek nincsenek közép- vagy éldarabjai, csak sarkok, ami kiváló feladvánnyá teszi kezdők számára.
+
+## Jelölés
+
+A 2×2 ugyanazt a jelölést használja, mint a 3×3, de középső réteg mozgások nélkül:
+
+- **R** = Jobb &nbsp;&nbsp; **L** = Bal &nbsp;&nbsp; **U** = Felső &nbsp;&nbsp; **D** = Alsó &nbsp;&nbsp; **F** = Elülső &nbsp;&nbsp; **B** = Hátsó
+
+Egy betű önmagában **90° az óramutató járásával megegyezően** jelent. A **'** hozzáadása **az óramutató járásával ellentétest** jelent. A **2** hozzáadása **180°**-ot jelent.
+
+Például: **R** = jobb oldal forgatása az óramutató irányába, **R'** = ellentétesen, **R2** = 180°.
+
+Mivel a 2×2-nek nincsenek rögzített középpontjai, válaszd a **fehéret** kezdő színnek és tartsd **alul**.
+
+---
+
+## 1. lépés: Az első oldal kirakása
+
+Építs egy teljes **fehér oldalt** az alján. A 3×3-mal ellentétben **nem** kell az oldalsó színeket illeszteni — csak rakd mind a 4 fehér matricát ugyanarra az oldalra.
+
+Ez a lépés **intuitív** — nincsenek rögzített algoritmusok. Keresd meg minden egyes fehér sarokdarabot és mozgasd az alsó oldalra.
+
+**1. eset: Fehér sarok a felső rétegben** — Vidd le egyszerű behelyezéssel.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**2. eset: Fehér sarok alul, de rosszul orientált** — Vedd ki és helyezd vissza helyesen.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tippek:** Csak arra koncentrálj, hogy 4 fehér matrica legyen egy oldalon. Az oldalsó színek még nem számítanak — ez különbözteti meg az Ortegát a 3×3 kezdő módszertől.
+
+---
+
+## 2. lépés: Az utolsó réteg orientálása (OLL)
+
+Tedd az **ellenkező oldalt** (sárga) teljesen egyszínűvé. Most mind a 4 sárga matricának felfelé kell néznie.
+
+Nézd meg a felső oldalt és állapítsd meg, melyik eset áll fenn:
+
+**1. eset: Egy sárga sarok néz felfelé (Sune)** — Tartsd a kockát úgy, hogy a megoldott sarok az elülső bal pozícióban legyen.
+
+**Algoritmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**2. eset: Egyetlen sárga sarok sem néz felfelé** — Alkalmazd a Sune-t kétszer az összes sarok orientálásához.
+
+**Algoritmus: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**3. eset: Két átlós sárga sarok néz felfelé** — Tartsd a kockát úgy, hogy a két megoldott sarok az elülső bal és hátsó jobb pozícióban legyen.
+
+**Algoritmus: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tippek:** Ha két **szomszédos** sárga sarok néz felfelé, használd a Sune-t egyszer, hogy elérd az 1. vagy 3. esetet.
+
+---
+
+## 3. lépés: Mindkét réteg permutálása (PBL)
+
+Az utolsó lépés! Rendezd el az összes sarokdarabot a helyes pozícióba a kocka megoldásához. Nézd meg a felső és alsó réteg **oldalsó színeit**, hogy meghatározd a szükséges cserét.
+
+**Ellenőrzés módja:** Nézd meg a felső réteg oldalait. Ha két szomszédos matrica egy oldalon azonos színű, nincs szükség cserére vagy szomszédos cserére van szükség. Ha minden oldalon két különböző szín van, átlós cserére van szükség.
+
+**1. eset: Átlós csere felül** — Két szemben lévő sarkot kell cserélni.
+
+**Algoritmus: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**2. eset: Szomszédos csere felül** — Két szomszédos sarkot kell cserélni.
+
+**Algoritmus: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**3. eset: Átlós csere mindkét rétegben** — Használd ezt a gyors algoritmust.
+
+**Algoritmus: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+A felső réteg megoldása után lehet, hogy el kell forgatnod az alsó oldalt (D vagy D') a végső színek igazításához. Ha az alsó rétegnek is cserére van szüksége, alkalmazd az átlós csere algoritmust úgy, hogy a megoldatlan réteg legyen felül.
+
+---
+
+**Gratulálunk!** Kiraktad a 2×2-es Rubik-kockát! Az Ortega módszer gyors és hatékony — gyakorlással 5 másodperc alatt is ki tudod rakni a 2×2-est.

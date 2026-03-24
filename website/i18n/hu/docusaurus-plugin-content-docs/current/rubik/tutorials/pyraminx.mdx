@@ -1,0 +1,128 @@
+---
+title: Hogyan rakd ki a Pyraminx-et
+sidebar_position: 2
+description: Tanuld meg lépésről lépésre kirakni a Pyraminx-et a rétegről rétegre módszerrel kezdőknek.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hogyan rakd ki a Pyraminx-et
+
+Tanuld meg kirakni a Pyraminx-et a **rétegről rétegre** módszerrel — a legegyszerűbb megközelítés kezdőknek. A Pyraminx egy tetraéder alakú kirakós 4 csúccsal, 6 éllel és 4 középső elemmel. 4 egyszerű lépésben rakjuk ki.
+
+## Jelölés
+
+A Pyraminx egyedülálló jelölési rendszert használ, ahol a **nagybetűk** a rétegeket, a **kisbetűk** a csúcsokat jelölik:
+
+**Rétegek (nagybetűk)** — a teljes réteg forgatása (csúcs nélkül):
+
+- **U** = Felső réteg &nbsp;&nbsp; **R** = Jobb réteg &nbsp;&nbsp; **L** = Bal réteg &nbsp;&nbsp; **B** = Hátsó réteg
+
+**Csúcsok (kisbetűk)** — csak a csúcs forgatása:
+
+- **u** = Felső csúcs &nbsp;&nbsp; **r** = Jobb csúcs &nbsp;&nbsp; **l** = Bal csúcs &nbsp;&nbsp; **b** = Hátsó csúcs
+
+Egy betű önmagában **120° az óramutató járásával megegyező irányba** jelent. A **'** hozzáadása **120° az óramutató járásával ellentétes irányba** jelent.
+
+Például: **R** = jobb réteg forgatása az óramutató járásával megegyezően, **R'** = ellentétesen, **l** = bal csúcs forgatása az óramutató járásával megegyezően, **l'** = ellentétesen.
+
+Tartsd a Pyraminx-et **egy oldallal magad felé** és **egy csúccsal felfelé** minden lépésnél.
+
+---
+
+## 1. lépés: Csúcsok kirakása
+
+Igazítsd a **3 látható csúcsot** úgy, hogy minden csúcs színe megegyezzen a szomszédos középső elemmel. A 4. csúcs alul van, és később kerül sorra.
+
+Ez a lépés **intuitív** — minden csúcsnak csak 3 lehetséges állása van, így legfeljebb 2 forgatás megoldja. Egyszerűen forgasd minden csúcsot, amíg színe meg nem egyezik a szomszédos középső elemmel.
+
+**Példa: Mind a három látható csúcs kirakása**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tippek:** Mindig ezzel a lépéssel kezdj — ingyenes és azonnali. Miután a csúcsok igazodnak, soha nem kell hozzájuk nyúlnod.
+
+---
+
+## 2. lépés: Első réteg élei
+
+Építs egy teljes **első réteget** a 3 alsó él helyes pozícióba helyezésével. Válassz egy oldalt aljnak (javasoljuk, hogy azzal az oldallal kezdj, amelyiknek már a legtöbb egyező színe van).
+
+Ez a lépés nagyrészt intuitív. Keresd meg az alsó réteghez tartozó éleket, és egyszerű rétegforgatásokkal illeszd be őket.
+
+**1. eset: Él a felső rétegben, helyesen orientálva** — Egyetlen rétegforgatás közvetlenül beilleszti.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**2. eset: Él a felső rétegben, megfordítva** — Használj két rétegforgatást a megfordításhoz és beillesztéshez.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tippek:** Ha egy él már az alsó rétegben van, de rossz helyen, használj egy rétegforgatást a felfelé kiemeléshez, majd helyesen illeszd be.
+
+---
+
+## 3. lépés: Utolsó réteg élei
+
+Helyezd a **3 felső réteg élt** a helyes pozícióba. E lépés után minden él a két helyes középső elem között lesz, de még mindig megfordítva lehet.
+
+Nézd meg a felső réteget, és határozd meg, melyik irányba kell az éleknek ciklikusan mozogniuk:
+
+**1. eset: Óramutató járása szerinti 3-ciklus** — Mind a három élnek egy pozícióval az óramutató járásával megegyezően kell elmozdulnia.
+
+**Algoritmus: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**2. eset: Óramutató járásával ellentétes 3-ciklus** — Mind a három élnek egy pozícióval az óramutató járásával ellentétesen kell elmozdulnia.
+
+**Algoritmus: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tippek:** Ha csak 2 élt kell cserélni, ezen 3-ciklus algoritmusok egyike megoldja — figyeld meg gondosan a ciklus irányát.
+
+---
+
+## 4. lépés: Utolsó réteg éleinek orientálása
+
+Az utolsó lépés! Ha az utolsó réteg élei a helyes pozícióban vannak, de **megfordítva** (rossz szín kifelé), használd ezt az algoritmust a megfordításukhoz.
+
+**2 él megfordítása: R U R' U R U R'**
+
+Tartsd a Pyraminx-et úgy, hogy az az él, amelyet **nem kell** megfordítani, feléd nézzen. Majd alkalmazd az algoritmust.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Ha mind a 3 élt meg kell fordítani, alkalmazd ezt az algoritmust egyszer — megfordít 2-t, majd forgasd a tetejét a beállításhoz, és fordítsd meg a maradék 2-t (az egyik korábban megfordított plusz az utolsó).
+
+---
+
+**Gratulálunk!** Kiraktad a Pyraminx-et! Gyakorlással a Pyraminx mindössze néhány másodperc alatt kirakható. Ez az egyik leggyorsabban elsajátítható kirakós — gyakorolj tovább, és 10 másodperc alatt fogod kirakni.

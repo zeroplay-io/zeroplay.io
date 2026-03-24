@@ -1,0 +1,120 @@
+---
+title: Cum să rezolvi Skewb-ul
+sidebar_position: 3
+description: Învață să rezolvi Skewb-ul pas cu pas folosind metoda pentru începători a Sarahei.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cum să rezolvi Skewb-ul
+
+Învață să rezolvi Skewb-ul folosind **metoda pentru începători a Sarahei** — o abordare simplă și eficientă pentru începători. Skewb-ul este un puzzle cu rotire pe colțuri, unde fiecare mișcare rotește un colț și cele trei fețe adiacente. Îl vom rezolva în doar 3 pași folosind un algoritm principal: Sledgehammer.
+
+## Notație
+
+Spre deosebire de cubul Rubik standard, Skewb-ul se rotește în jurul **colțurilor** în loc de fețe. Fiecare mișcare rotește un colț și cele trei centre de fețe adiacente:
+
+- **R** = Colțul frontal drept în sensul acelor de ceasornic &nbsp;&nbsp; **R'** = Colțul frontal drept în sens invers
+- **L** = Colțul frontal stâng în sensul acelor de ceasornic &nbsp;&nbsp; **L'** = Colțul frontal stâng în sens invers
+- **U** = Colțul frontal superior drept în sensul acelor de ceasornic &nbsp;&nbsp; **U'** = Colțul frontal superior drept în sens invers
+- **B** = Colțul posterior drept în sensul acelor de ceasornic &nbsp;&nbsp; **B'** = Colțul posterior drept în sens invers
+
+O literă singură înseamnă o rotire **în sensul acelor de ceasornic**. Adăugarea **'** înseamnă **în sens invers**.
+
+Ține Skewb-ul cu **centrul alb în jos** pentru toți pașii.
+
+---
+
+## Pasul 1: Rezolvă o față
+
+Construiește o **față albă** completă pe partea de jos. Asta înseamnă că toate cele 4 colțuri din jurul centrului alb trebuie să fie la locul lor cu albul orientat în jos, iar culorile laterale adiacente trebuie să se potrivească.
+
+Acest pas este semi-intuitiv. Instrumentul cheie este **Sledgehammer** — cel mai important algoritm pentru Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Folosește Sledgehammer și mișcări de pregătire pentru a plasa fiecare colț alb în stratul inferior. Iată un exemplu de inserare a unui colț:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Sfaturi:**
+- Începe prin a plasa centrul alb în jos.
+- Rezolvă colțurile unul câte unul, având grijă să nu deranjezi piesele deja plasate.
+- După acest pas, fața de jos trebuie să fie complet albă, iar fiecare latură adiacentă trebuie să aibă o culoare de colț potrivită.
+
+---
+
+## Pasul 2: Poziționează centrele opuse
+
+Ajustează **centrul superior și cele 4 centre laterale** astfel încât toate să fie în pozițiile corecte. Fața de jos rămâne rezolvată.
+
+Sledgehammer este din nou algoritmul cheie. Schimbă centrul superior cu un centru lateral:
+
+**Cazul 1: Schimbă 2 centre** — Folosește Sledgehammer pentru a schimba centrele superior și frontal.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Cazul 2: Ciclul de 3 centre** — Când trei centre trebuie rotite, aplică Sledgehammer de două ori (Sledgehammer Dublu):
+
+**Sledgehammer Dublu: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Sfaturi:**
+- Rotește puzzle-ul pentru a pregăti centrele corecte în pozițiile frontală și superioară înainte de a aplica algoritmul.
+- Dacă doar 2 centre trebuie schimbate, un Sledgehammer este suficient. Dacă 3 centre trebuie ciclate, folosește Sledgehammer Dublu.
+
+---
+
+## Pasul 3: Orientează colțurile ultimului strat
+
+Ultimul pas! Rotește cele **4 colțuri ale stratului superior** astfel încât culorile lor să fie orientate corect, completând rezolvarea.
+
+**Cazul 1: Toate cele 4 colțuri necesită o rotire în sensul acelor de ceasornic** — Aplică acest algoritm:
+
+**Algoritm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Cazul 2: Unele colțuri necesită ajustare** — Folosește Sledgehammer cu mișcări de pregătire pentru a orienta colțuri individuale:
+
+**Algoritm: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Sfaturi:**
+- Dacă doar unele colțuri trebuie rotite, folosește mișcări de pregătire (U sau U') pentru a aduce colțurile nerezolvate în poziție, aplică algoritmul, apoi anulează mișcarea de pregătire.
+- S-ar putea să fie nevoie să repeți procesul pentru colțurile rămase.
+
+---
+
+**Felicitări!** Ai rezolvat Skewb-ul! Skewb-ul este unul dintre cele mai satisfăcătoare puzzle-uri deoarece ai nevoie de foarte puține algoritme. Cu practică, îl vei rezolva în mai puțin de 10 secunde. Continuă să exersezi Sledgehammer — este cheia pentru a stăpâni acest puzzle.

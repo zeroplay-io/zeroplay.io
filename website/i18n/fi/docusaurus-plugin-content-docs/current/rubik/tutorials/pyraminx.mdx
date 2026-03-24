@@ -1,0 +1,128 @@
+---
+title: Kuinka ratkaista Pyraminx
+sidebar_position: 2
+description: Opi ratkaisemaan Pyraminx vaihe vaiheelta kerros kerrallaan -menetelmällä aloittelijoille.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kuinka ratkaista Pyraminx
+
+Opi ratkaisemaan Pyraminx **kerros kerrallaan** -menetelmällä — helpoin tapa aloittelijoille. Pyraminx on tetraedrin muotoinen palapeli, jossa on 4 kärkeä, 6 reunaa ja 4 keskustaa. Ratkaisemme sen 4 yksinkertaisessa vaiheessa.
+
+## Merkintätapa
+
+Pyraminx käyttää ainutlaatuista merkintäjärjestelmää, jossa **isot** kirjaimet tarkoittavat kerroksia ja **pienet** kirjaimet kärkiä:
+
+**Kerrokset (isot kirjaimet)** — käännä koko kerrosta (ilman kärkeä):
+
+- **U** = Yläkerros &nbsp;&nbsp; **R** = Oikea kerros &nbsp;&nbsp; **L** = Vasen kerros &nbsp;&nbsp; **B** = Takakerros
+
+**Kärjet (pienet kirjaimet)** — käännä vain kärkeä:
+
+- **u** = Yläkärki &nbsp;&nbsp; **r** = Oikea kärki &nbsp;&nbsp; **l** = Vasen kärki &nbsp;&nbsp; **b** = Takakärki
+
+Kirjain yksinään tarkoittaa **120° myötäpäivään**. **'** lisääminen tarkoittaa **120° vastapäivään**.
+
+Esimerkiksi: **R** = käännä oikea kerros myötäpäivään, **R'** = vastapäivään, **l** = käännä vasen kärki myötäpäivään, **l'** = vastapäivään.
+
+Pidä Pyraminxia **yksi sivu itseäsi kohti** ja **yksi kärki ylöspäin** kaikissa vaiheissa.
+
+---
+
+## Vaihe 1: Ratkaise kärjet
+
+Kohdista **3 näkyvää kärkeä** niin, että kunkin kärjen väri vastaa viereistä keskustaa. 4. kärki on pohjassa ja ratkaistaan myöhemmin.
+
+Tämä vaihe on **intuitiivinen** — jokaisella kärjellä on vain 3 mahdollista asentoa, joten korkeintaan 2 käännöstä ratkaisee sen. Käännä yksinkertaisesti jokaista kärkeä, kunnes sen väri vastaa viereistä keskustaa.
+
+**Esimerkki: Kaikkien kolmen näkyvän kärjen ratkaiseminen**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Vinkkejä:** Aloita aina tästä vaiheesta — se on ilmainen ja välitön. Kun kärjet on kohdistettu, niihin ei tarvitse enää koskea.
+
+---
+
+## Vaihe 2: Ensimmäisen kerroksen reunat
+
+Rakenna täydellinen **ensimmäinen kerros** asettamalla 3 alareunaa oikeisiin paikkoihinsa. Valitse yksi sivu pohjaksi (suosittelemme aloittamaan sivusta, jolla on jo eniten vastaavia värejä).
+
+Tämä vaihe on pääosin intuitiivinen. Etsi jokainen alakerrokseen kuuluva reuna ja aseta se yksinkertaisilla kerroskäännöksillä.
+
+**Tapaus 1: Reuna yläkerroksessa, oikein suunnattu** — Yksi kerroskäännös asettaa sen suoraan.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Tapaus 2: Reuna yläkerroksessa, käännetty** — Käytä kahta kerroskäännöstä kääntämiseen ja asettamiseen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Vinkkejä:** Jos reuna on jo alakerroksessa mutta väärässä paikassa, käytä kerroskäännöstä nostaaksesi sen ylös ja aseta se sitten oikein.
+
+---
+
+## Vaihe 3: Viimeisen kerroksen reunat
+
+Aseta **3 yläkerroksen reunaa** oikeisiin paikkoihinsa. Tämän vaiheen jälkeen jokainen reuna on kahden oikean keskustan välissä, mutta saattaa olla vielä käännetty.
+
+Katso yläkerrosta ja määritä, mihin suuntaan reunojen täytyy kiertää:
+
+**Tapaus 1: Myötäpäiväinen 3-kierto** — Kaikki kolme reunaa täytyy siirtää yksi paikka myötäpäivään.
+
+**Algoritmi: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Tapaus 2: Vastapäiväinen 3-kierto** — Kaikki kolme reunaa täytyy siirtää yksi paikka vastapäivään.
+
+**Algoritmi: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Vinkkejä:** Jos vain 2 reunaa täytyy vaihtaa, yksi näistä 3-kiertoalgoritmeista ratkaisee sen — katso tarkasti, mihin suuntaan kierto menee.
+
+---
+
+## Vaihe 4: Viimeisen kerroksen reunojen suuntaus
+
+Viimeinen vaihe! Jos viimeisen kerroksen reunat ovat oikeissa paikoissa mutta **käännettyinä** (väärä väri ulospäin), käytä tätä algoritmia kääntämiseen.
+
+**Käännä 2 reunaa: R U R' U R U R'**
+
+Pidä Pyraminxia niin, että reuna, jota **ei tarvitse** kääntää, osoittaa sinua kohti. Käytä sitten algoritmia.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Jos kaikki 3 reunaa täytyy kääntää, käytä tätä algoritmia kerran — se kääntää 2 niistä, käännä sitten yläosa asetusta varten ja käännä loput 2 (yksi aiemmin käännetyistä plus viimeinen).
+
+---
+
+**Onnittelut!** Olet ratkaissut Pyraminxin! Harjoittelulla Pyraminx voidaan ratkaista muutamassa sekunnissa. Se on yksi nopeimmin hallittavista palapeleistä — jatka harjoittelua ja ratkaiset sen alle 10 sekunnissa.

@@ -1,0 +1,136 @@
+---
+title: Kako složiti 2×2 Rubikovu kocku
+sidebar_position: 1
+description: Naučite složiti 2×2 Rubikovu kocku korak po korak Ortega metodom.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kako složiti 2×2 Rubikovu kocku
+
+Naučite složiti 2×2 Rubikovu kocku koristeći **Ortega metodu** — brz i učinkovit pristup u 3 koraka. Kocka 2×2 nema središnjih ni rubnih dijelova, samo kutove, što je čini izvrsnom slagalicom za početnike.
+
+## Notacija
+
+Kocka 2×2 koristi istu notaciju kao 3×3, ali bez pokreta srednjeg sloja:
+
+- **R** = Desno &nbsp;&nbsp; **L** = Lijevo &nbsp;&nbsp; **U** = Gore &nbsp;&nbsp; **D** = Dolje &nbsp;&nbsp; **F** = Naprijed &nbsp;&nbsp; **B** = Natrag
+
+Samo slovo znači **90° u smjeru kazaljke na satu**. Dodavanje **'** znači **u suprotnom smjeru**. Dodavanje **2** znači **180°**.
+
+Na primjer: **R** = okrenuti desnu stranu u smjeru kazaljke, **R'** = u suprotnom smjeru, **R2** = 180°.
+
+Budući da 2×2 nema fiksne centre, odaberite **bijelu** kao početnu boju i držite je **dolje**.
+
+---
+
+## Korak 1: Složite prvu stranu
+
+Izgradite potpunu **bijelu stranu** na dnu. Za razliku od 3×3, **ne** trebate podudarati bočne boje — samo stavite sve 4 bijele naljepnice na istu stranu.
+
+Ovaj korak je **intuitivan** — nema fiksnih algoritama. Pronađite svaki bijeli kutni dio i pomaknite ga na donju stranu.
+
+**Slučaj 1: Bijeli kut u gornjem sloju** — Spustite ga jednostavnim umetanjem.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Slučaj 2: Bijeli kut na dnu ali krivo orijentiran** — Izvadite ga i pravilno umetnite.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Savjeti:** Fokusirajte se samo na stavljanje 4 bijelih naljepnica na jednu stranu. Bočne boje još nisu bitne — to je ono što Ortegu razlikuje od početničke metode za 3×3.
+
+---
+
+## Korak 2: Orijentacija zadnjeg sloja (OLL)
+
+Učinite **suprotnu stranu** (žutu) potpuno jednobojanom. Sada trebate sva 4 žuta naljepnice okrenuta prema gore.
+
+Pogledajte gornju stranu i odredite koji slučaj imate:
+
+**Slučaj 1: Jedan žuti kut okrenut prema gore (Sune)** — Držite kocku tako da je riješeni kut na prednjoj lijevoj poziciji.
+
+**Algoritam: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Slučaj 2: Nijedan žuti kut nije okrenut prema gore** — Primijenite Sune dvaput za orijentaciju svih kutova.
+
+**Algoritam: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Slučaj 3: Dva dijagonalna žuta kuta okrenuta prema gore** — Držite kocku tako da su dva riješena kuta na prednjoj lijevoj i stražnjoj desnoj poziciji.
+
+**Algoritam: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Savjeti:** Ako imate dva **susjedna** žuta kuta okrenuta prema gore, upotrijebite Sune jednom da dođete do Slučaja 1 ili Slučaja 3.
+
+---
+
+## Korak 3: Permutacija oba sloja (PBL)
+
+Posljednji korak! Rasporedite sve kutne dijelove na njihove ispravne pozicije za rješavanje kocke. Pogledajte **bočne boje** gornjeg i donjeg sloja da odredite koja zamjena je potrebna.
+
+**Kako provjeriti:** Pogledajte strane gornjeg sloja. Ako su dvije susjedne naljepnice na jednoj strani iste boje, zamjena nije potrebna ili je potrebna susjedna zamjena. Ako svaka strana ima dvije različite boje, potrebna je dijagonalna zamjena.
+
+**Slučaj 1: Dijagonalna zamjena na vrhu** — Dva suprotna kuta trebaju se zamijeniti.
+
+**Algoritam: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Slučaj 2: Susjedna zamjena na vrhu** — Dva susjedna kuta trebaju se zamijeniti.
+
+**Algoritam: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Slučaj 3: Dijagonalna zamjena u oba sloja** — Upotrijebite ovaj brzi algoritam.
+
+**Algoritam: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Nakon rješavanja gornjeg sloja, možda ćete trebati okrenuti donju stranu (D ili D') da poravnate završne boje. Ako donji sloj također treba zamjenu, primijenite algoritam dijagonalne zamjene držeći neriješeni sloj na vrhu.
+
+---
+
+**Čestitamo!** Složili ste 2×2 Rubikovu kocku! Ortega metoda je brza i učinkovita — s vježbom možete složiti 2×2 za manje od 5 sekundi.

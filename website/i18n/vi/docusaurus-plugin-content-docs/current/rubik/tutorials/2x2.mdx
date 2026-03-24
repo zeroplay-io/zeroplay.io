@@ -1,0 +1,136 @@
+---
+title: Cách giải Rubik 2×2
+sidebar_position: 1
+description: Học cách giải Rubik 2×2 từng bước bằng phương pháp Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cách giải Rubik 2×2
+
+Học cách giải Rubik 2×2 bằng **phương pháp Ortega** — cách tiếp cận nhanh và hiệu quả gồm 3 bước. Rubik 2×2 không có mảnh trung tâm hay mảnh cạnh, chỉ có các mảnh góc, khiến nó trở thành câu đố tuyệt vời cho người mới bắt đầu.
+
+## Ký hiệu
+
+Rubik 2×2 sử dụng cùng ký hiệu với 3×3, nhưng không có chuyển động tầng giữa:
+
+- **R** = Phải &nbsp;&nbsp; **L** = Trái &nbsp;&nbsp; **U** = Trên &nbsp;&nbsp; **D** = Dưới &nbsp;&nbsp; **F** = Trước &nbsp;&nbsp; **B** = Sau
+
+Chữ cái đơn lẻ nghĩa là **xoay 90° theo chiều kim đồng hồ**. Thêm **'** nghĩa là **ngược chiều kim đồng hồ**. Thêm **2** nghĩa là **180°**.
+
+Ví dụ: **R** = xoay mặt phải theo chiều kim đồng hồ, **R'** = ngược chiều kim đồng hồ, **R2** = 180°.
+
+Vì Rubik 2×2 không có tâm cố định, hãy chọn **trắng** làm màu bắt đầu và giữ nó ở **dưới**.
+
+---
+
+## Bước 1: Giải mặt đầu tiên
+
+Tạo một mặt **trắng** hoàn chỉnh ở dưới cùng. Khác với 3×3, bạn **không** cần khớp màu các cạnh — chỉ cần đặt cả 4 miếng dán trắng lên cùng một mặt.
+
+Bước này là **trực giác** — không có thuật toán cố định. Tìm từng mảnh góc trắng và di chuyển nó xuống mặt dưới.
+
+**Trường hợp 1: Góc trắng ở tầng trên** — Đưa nó xuống bằng cách chèn đơn giản.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Trường hợp 2: Góc trắng ở dưới nhưng sai hướng** — Lấy ra và chèn lại đúng cách.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Mẹo:** Chỉ tập trung vào việc đặt 4 miếng dán trắng lên một mặt. Màu các cạnh chưa quan trọng — đây là điểm khác biệt của Ortega so với phương pháp cơ bản của 3×3.
+
+---
+
+## Bước 2: Định hướng tầng cuối (OLL)
+
+Làm cho **mặt đối diện** (vàng) hoàn toàn cùng một màu. Bây giờ bạn cần cả 4 miếng dán vàng hướng lên trên.
+
+Nhìn mặt trên và xác định trường hợp của bạn:
+
+**Trường hợp 1: Một góc vàng hướng lên (Sune)** — Cầm khối Rubik sao cho góc đã giải ở vị trí trước trái.
+
+**Thuật toán: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Trường hợp 2: Không có góc vàng nào hướng lên** — Áp dụng Sune hai lần để định hướng tất cả các góc.
+
+**Thuật toán: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Trường hợp 3: Hai góc vàng đường chéo hướng lên** — Cầm khối Rubik sao cho hai góc đã giải ở vị trí trước trái và sau phải.
+
+**Thuật toán: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Mẹo:** Nếu bạn có hai góc vàng **liền kề** hướng lên, sử dụng Sune một lần để đạt Trường hợp 1 hoặc Trường hợp 3.
+
+---
+
+## Bước 3: Hoán vị cả hai tầng (PBL)
+
+Bước cuối cùng! Sắp xếp tất cả mảnh góc vào đúng vị trí để giải khối Rubik. Nhìn **màu các cạnh** của tầng trên và tầng dưới để xác định cần hoán đổi gì.
+
+**Cách kiểm tra:** Nhìn các cạnh của tầng trên. Nếu hai miếng dán liền kề trên một cạnh cùng màu, không cần hoán đổi hoặc cần hoán đổi liền kề. Nếu mỗi cạnh có hai màu khác nhau, cần hoán đổi đường chéo.
+
+**Trường hợp 1: Hoán đổi đường chéo ở trên** — Hai góc đối diện cần được hoán đổi.
+
+**Thuật toán: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Trường hợp 2: Hoán đổi liền kề ở trên** — Hai góc cạnh nhau cần được hoán đổi.
+
+**Thuật toán: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Trường hợp 3: Hoán đổi đường chéo ở cả hai tầng** — Sử dụng thuật toán nhanh này.
+
+**Thuật toán: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Sau khi giải tầng trên, bạn có thể cần xoay mặt dưới (D hoặc D') để căn chỉnh các màu cuối cùng. Nếu tầng dưới cũng cần hoán đổi, áp dụng thuật toán hoán đổi đường chéo với tầng chưa giải ở trên.
+
+---
+
+**Chúc mừng!** Bạn đã giải xong Rubik 2×2! Phương pháp Ortega nhanh và hiệu quả — với luyện tập, bạn có thể giải 2×2 trong dưới 5 giây.

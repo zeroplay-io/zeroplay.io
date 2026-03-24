@@ -1,0 +1,158 @@
+---
+title: Kuinka ratkaista 4x4 Rubikin kuutio
+sidebar_position: 4
+description: Opi ratkaisemaan 4x4 Rubikin kuutio vaihe vaiheelta pelkistysmenetelmällä.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kuinka ratkaista 4x4 Rubikin kuutio
+
+Opi ratkaisemaan 4x4 Rubikin kuutio (tunnetaan myös nimellä **Rubik's Revenge**) **pelkistysmenetelmällä** — suosituin lähestymistapa suurempiin kuutioihin. Idea on yksinkertainen: pelkistä ensin 4x4 näyttämään 3x3:lta ja ratkaise se sitten 3x3:na. Käymme läpi 4 vaihetta plus erityiset pariteettitapaukset.
+
+## Merkintätapa
+
+4x4 käyttää kaikkia 3x3:n vakiomerkintöjä plus lisäsiirtoja sisäkerroksille:
+
+**Vakiosiirrot** (vain ulkokerros):
+- **R** = Oikea &nbsp;&nbsp; **L** = Vasen &nbsp;&nbsp; **U** = Ylä &nbsp;&nbsp; **D** = Ala &nbsp;&nbsp; **F** = Etu &nbsp;&nbsp; **B** = Taka
+
+**Leveät siirrot** (kaksi ulkokerrosta yhdessä):
+- **Rw** = Oikea leveä (oikeat kaksi kerrosta) &nbsp;&nbsp; **Lw** = Vasen leveä
+- **Uw** = Ylä leveä (ylimmät kaksi kerrosta) &nbsp;&nbsp; **Dw** = Ala leveä
+- **Fw** = Etu leveä &nbsp;&nbsp; **Bw** = Taka leveä
+
+Pelkkä kirjain tarkoittaa **90° myötäpäivään**. **'** tarkoittaa **vastapäivään**. **2** tarkoittaa **180°**.
+
+Esimerkiksi: **Rw** = oikeat kaksi kerrosta myötäpäivään, **Uw'** = ylimmät kaksi kerrosta vastapäivään, **Rw2** = oikeat kaksi kerrosta 180°.
+
+Pidä kuutiota **valkoinen keskus alaspäin** ja **keltainen keskus ylöspäin** kaikissa vaiheissa.
+
+---
+
+## Vaihe 1: Ratkaise keskustat
+
+Rakenna **keskuslohkot** jokaiselle sivulle. 4x4:n jokaisella sivulla on 4 keskuspalaa (2x2-lohko), joiden on vastattava toisiaan. Toisin kuin 3x3:ssa, 4x4:n keskustat voivat liikkua — joten ne on ratkaistava ensin.
+
+**Suositeltu järjestys:** Aloita **valkoisesta** (pohja), sitten **keltainen** (vastakkainen), sitten loput 4 sivua.
+
+Tämä vaihe on pääosin **intuitiivinen**. Avaintekniikka on käyttää leveitä siirtoja keskuspalojen kokoamiseen samalla suojaten jo ratkaistuja sivuja ulkokerroksen käännöksillä.
+
+**Perus keskustan lisäys** — Käytä leveää siirtoa tuodaksesi keskuspalan ylös, käännä yläkerrosta kohdistamiseksi ja palauta leveä siirto:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Keskusten vaihto rikkomatta ratkaistuja sivuja** — Kun sinun täytyy lisätä keskuspala mutta suojata muita valmiita keskustoja:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Vinkkejä:**
+- Ratkaise aina vastakkaiset sivut ensin (valkoinen/keltainen), sitten loput 4 sivua.
+- Keskuspalan lisäämiseksi käytä leveää siirtoa (kuten Rw) sen nostamiseksi, säädä U-kerrosta ja palauta leveä siirto.
+- Varo, ettet riko valmiita keskustoja työskennellessäsi uusien parissa.
+
+---
+
+## Vaihe 2: Pariliita reunat
+
+Yhdistä jokainen **reunapalojen** pari niin, että 4x4 käyttäytyy kuin 3x3. 4x4:n jokainen reuna koostuu 2 palasta, jotka on pariliitettävä. Pariliitettäviä reunoja on 12.
+
+Ydintekniikka on **Slice-Flip-Slice**: käytä leveää siirtoa (Uw) reunojen kohdistamiseen, suorita ulkokerroksen siirto pariliittämiseksi ja palauta leveä siirto.
+
+**Perus reunapariliitos** — Aseta yksi reunapala etuoikealle ja sen pari ylös. Käytä Uw:tä kohdistamiseen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Käännetty pariliitos** — Kun reunapari täytyy kääntää pariliitoksen aikana:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Viimeisten reunojen pariliitos** — Viimeisten 3 reunan kohdalla Uw:tä ei voi vapaasti käyttää rikkomatta jo pariliitettyjä reunoja. Käytä sen sijaan tätä tekniikkaa:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Vinkkejä:**
+- Ensimmäiset 8-9 reunaa voi vapaasti pariliittää Slice-Flip-Slice-tekniikalla.
+- Viimeisille 3 reunalle käytä Dw-pohjaisia siirtoja tai kääntötekniikoita välttääksesi jo pariliitettyjen reunojen rikkomisen.
+- Jos reunapari on oikeassa paikassa mutta käännetty, se täytyy irrottaa ja pariliittää uudelleen oikein.
+
+---
+
+## Vaihe 3: Ratkaise kuin 3x3
+
+Kun kaikki keskustat on ratkaistu ja kaikki reunat pariliitetty, 4x4 on nyt 3x3:n kaltainen! Käytä mitä tahansa **3x3:n ratkaisumenetelmää** (kuten kerros kerrokselta -menetelmää) viimeistelyyn.
+
+**Tärkeää:** Tässä vaiheessa käytä vain ulkokerroksen siirtoja (R, U, F, L, D, B). **Älä** käytä leveitä siirtoja (Rw, Uw jne.), sillä ne rikkoisivat pariliitetyt reunat ja ratkaistut keskustat.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Katso [3x3-oppaastamme](./index.mdx) täydellinen kerros kerrokselta -opas. Samat 7 vaihetta pätevät — valkoinen risti, valkoiset kulmat, toinen kerros, keltainen risti, keltainen sivu, kulmien sijoittelu ja reunojen sijoittelu.
+
+---
+
+## Vaihe 4: Pariteettialgoritmit
+
+4x4:ssä on kaksi erityistilannetta, jotka **eivät koskaan esiinny 3x3:ssa**. Näitä kutsutaan **pariteettitapauksiksi** ja kumpikin esiintyy noin 50% ajasta. Jos kohtaat sellaisen 3x3-vaiheessa, käytä vastaavaa algoritmia ja jatka ratkaisua.
+
+### OLL-pariteetti (yksittäisen reunan kääntö)
+
+**Miltä se näyttää:** Viimeisessä kerroksessa yksi reuna on käännetty — mahdotonta oikeassa 3x3:ssa. Keltaista ristiä ei voi muodostaa normaalisti.
+
+**Algoritmi: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Tämä algoritmi on pitkä, mutta sitä tarvitsee käyttää vain kerran. Suorituksen jälkeen reuna on oikein suunnattu ja voit jatkaa normaaleja 3x3:n viimeisen kerroksen vaiheita.
+
+### PLL-pariteetti (kahden reunan vaihto)
+
+**Miltä se näyttää:** Lopussa tarkalleen kaksi reunaa täytyy vaihtaa keskenään — jälleen mahdotonta 3x3:ssa.
+
+**Algoritmi: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Tämä lyhyt algoritmi vaihtaa kaksi vastakkaista reunaa viimeisessä kerroksessa. Käytön jälkeen kuution pitäisi olla täysin ratkaistu.
+
+**Vinkkejä:**
+- Älä panikoi pariteetista — se on täysin normaalia 4x4-kuutioissa.
+- OLL-pariteetti ilmenee keltaisen ristin vaiheessa. PLL-pariteetti ilmenee aivan lopussa.
+- Yhdessä ratkaisussa voi kohdata molemmat, vain toisen tai ei kumpaakaan pariteettia.
+
+---
+
+**Onnittelut!** Olet ratkaissut 4x4 Rubikin kuution! Pelkistysmenetelmä skaalautuu hyvin vielä suurempiin kuutioihin (5x5, 6x6 jne.) — ydinkäsitteet keskustojen ratkaisemisesta, reunojen pariliittämisestä ja 3x3:na ratkaisemisesta pysyvät samoina. Harjoittelulla pystyt ratkaisemaan 4x4:n alle 3 minuutissa.

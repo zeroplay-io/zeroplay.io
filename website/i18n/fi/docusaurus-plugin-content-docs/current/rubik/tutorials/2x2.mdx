@@ -1,0 +1,136 @@
+---
+title: Kuinka ratkaista 2×2 Rubikin kuutio
+sidebar_position: 1
+description: Opi ratkaisemaan 2×2 Rubikin kuutio vaihe vaiheelta Ortega-menetelmällä.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kuinka ratkaista 2×2 Rubikin kuutio
+
+Opi ratkaisemaan 2×2 Rubikin kuutio **Ortega-menetelmällä** — nopealla ja tehokkaalla 3 vaiheen lähestymistavalla. 2×2-kuutiossa ei ole keski- eikä reunapaloja, vain kulmia, mikä tekee siitä loistavan pulman aloittelijoille.
+
+## Merkintätapa
+
+2×2 käyttää samaa merkintätapaa kuin 3×3, mutta ilman keskikerroksen liikkeitä:
+
+- **R** = Oikea &nbsp;&nbsp; **L** = Vasen &nbsp;&nbsp; **U** = Ylä &nbsp;&nbsp; **D** = Ala &nbsp;&nbsp; **F** = Etu &nbsp;&nbsp; **B** = Taka
+
+Kirjain yksinään tarkoittaa **90° myötäpäivään**. **'** tarkoittaa **vastapäivään**. **2** tarkoittaa **180°**.
+
+Esimerkiksi: **R** = käännä oikea sivu myötäpäivään, **R'** = vastapäivään, **R2** = 180°.
+
+Koska 2×2-kuutiossa ei ole kiinteitä keskipaloja, valitse **valkoinen** aloitusväriksi ja pidä se **alhaalla**.
+
+---
+
+## Vaihe 1: Ratkaise ensimmäinen sivu
+
+Rakenna täydellinen **valkoinen sivu** pohjaan. Toisin kuin 3×3:ssa, sinun **ei** tarvitse sovittaa sivuvärejä — saa vain kaikki 4 valkoista tarraa samalle sivulle.
+
+Tämä vaihe on **intuitiivinen** — kiinteitä algoritmeja ei ole. Etsi jokainen valkoinen kulmapala ja siirrä se pohjasivulle.
+
+**Tapaus 1: Valkoinen kulma yläkerroksessa** — Tuo se alas yksinkertaisella lisäyksellä.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Tapaus 2: Valkoinen kulma pohjassa mutta väärin suunnattuna** — Poista se ja aseta uudelleen oikein.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Vinkkejä:** Keskity vain saamaan 4 valkoista tarraa yhdelle sivulle. Sivuväreillä ei ole vielä merkitystä — tämä erottaa Ortegan 3×3:n aloittelijamenetelmästä.
+
+---
+
+## Vaihe 2: Viimeisen kerroksen suuntaus (OLL)
+
+Tee **vastakkaisesta sivusta** (keltainen) kokonaan samanvärinen. Nyt tarvitset kaikki 4 keltaista tarraa osoittamaan ylös.
+
+Katso yläsivua ja tunnista mikä tapaus sinulla on:
+
+**Tapaus 1: Yksi keltainen kulma osoittaa ylös (Sune)** — Pidä kuutiota niin, että ratkaistu kulma on vasemmassa etuasennossa.
+
+**Algoritmi: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Tapaus 2: Yksikään keltainen kulma ei osoita ylös** — Käytä Sunea kahdesti kaikkien kulmien suuntaamiseen.
+
+**Algoritmi: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Tapaus 3: Kaksi diagonaalista keltaista kulmaa osoittaa ylös** — Pidä kuutiota niin, että kaksi ratkaistua kulmaa ovat vasemmassa etu- ja oikeassa taka-asennossa.
+
+**Algoritmi: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Vinkkejä:** Jos sinulla on kaksi **vierekkäistä** keltaista kulmaa osoittamassa ylös, käytä Sunea kerran päästäksesi Tapaukseen 1 tai Tapaukseen 3.
+
+---
+
+## Vaihe 3: Molempien kerrosten permutaatio (PBL)
+
+Viimeinen vaihe! Järjestä kaikki kulmapalat oikeille paikoilleen kuution ratkaisemiseksi. Katso ylä- ja alakerroksen **sivuvärejä** tarvittavan vaihdon määrittämiseksi.
+
+**Tarkistustapa:** Katso yläkerroksen sivuja. Jos kaksi vierekkäistä tarraa samalla sivulla ovat samanvärisiä, vaihtoa ei tarvita tai tarvitaan vierekkäinen vaihto. Jos jokaisella sivulla on kaksi eri väriä, tarvitaan diagonaalinen vaihto.
+
+**Tapaus 1: Diagonaalinen vaihto ylhäällä** — Kaksi vastakkaista kulmaa täytyy vaihtaa.
+
+**Algoritmi: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Tapaus 2: Vierekkäinen vaihto ylhäällä** — Kaksi naapurikulmaa täytyy vaihtaa.
+
+**Algoritmi: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Tapaus 3: Diagonaalinen vaihto molemmissa kerroksissa** — Käytä tätä nopeaa algoritmia.
+
+**Algoritmi: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Yläkerroksen ratkaisemisen jälkeen saatat joutua kääntämään alasivua (D tai D') viimeisten värien kohdistamiseksi. Jos alakerros tarvitsee myös vaihdon, käytä diagonaalisen vaihdon algoritmia pitäen ratkaisematon kerros ylhäällä.
+
+---
+
+**Onnittelut!** Olet ratkaissut 2×2 Rubikin kuution! Ortega-menetelmä on nopea ja tehokas — harjoittelulla voit ratkaista 2×2:n alle 5 sekunnissa.

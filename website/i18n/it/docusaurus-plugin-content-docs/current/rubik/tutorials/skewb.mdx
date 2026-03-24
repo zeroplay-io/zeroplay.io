@@ -1,0 +1,120 @@
+---
+title: Come risolvere lo Skewb
+sidebar_position: 3
+description: Impara a risolvere lo Skewb passo dopo passo con il metodo per principianti di Sarah.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Come risolvere lo Skewb
+
+Impara a risolvere lo Skewb con il **metodo per principianti di Sarah** — un approccio semplice ed efficiente per principianti. Lo Skewb è un puzzle a rotazione angolare dove ogni mossa ruota un angolo e le tre facce adiacenti. Lo risolveremo in soli 3 passaggi usando un algoritmo principale: lo Sledgehammer.
+
+## Notazione
+
+A differenza del cubo di Rubik standard, lo Skewb ruota attorno agli **angoli** anziché alle facce. Ogni mossa ruota un angolo e i tre centri delle facce adiacenti:
+
+- **R** = Angolo anteriore destro in senso orario &nbsp;&nbsp; **R'** = Angolo anteriore destro in senso antiorario
+- **L** = Angolo anteriore sinistro in senso orario &nbsp;&nbsp; **L'** = Angolo anteriore sinistro in senso antiorario
+- **U** = Angolo anteriore superiore destro in senso orario &nbsp;&nbsp; **U'** = Angolo anteriore superiore destro in senso antiorario
+- **B** = Angolo posteriore destro in senso orario &nbsp;&nbsp; **B'** = Angolo posteriore destro in senso antiorario
+
+Una lettera da sola significa una rotazione **in senso orario**. L'aggiunta di **'** significa **in senso antiorario**.
+
+Tieni lo Skewb con il **centro bianco in basso** per tutti i passaggi.
+
+---
+
+## Passaggio 1: Risolvere una faccia
+
+Costruisci una **faccia bianca** completa sul fondo. Questo significa che tutti i 4 angoli attorno al centro bianco devono essere al loro posto con il bianco rivolto verso il basso, e i colori laterali adiacenti devono corrispondere.
+
+Questo passaggio è semi-intuitivo. Lo strumento chiave è lo **Sledgehammer** — l'algoritmo più importante per lo Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Usa lo Sledgehammer e le mosse di preparazione per posizionare ogni angolo bianco nello strato inferiore. Ecco un esempio di inserimento di un angolo:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Consigli:**
+- Inizia posizionando il centro bianco in basso.
+- Risolvi gli angoli uno alla volta, facendo attenzione a non disturbare i pezzi già posizionati.
+- Dopo questo passaggio, la faccia inferiore deve essere completamente bianca, e ogni lato adiacente deve avere un colore angolare corrispondente.
+
+---
+
+## Passaggio 2: Posizionare i centri opposti
+
+Regola il **centro superiore e i 4 centri laterali** in modo che siano tutti nelle posizioni corrette. La faccia inferiore rimane risolta.
+
+Lo Sledgehammer è di nuovo l'algoritmo chiave. Scambia il centro superiore con un centro laterale:
+
+**Caso 1: Scambiare 2 centri** — Usa lo Sledgehammer per scambiare i centri superiore e frontale.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Caso 2: Ciclo di 3 centri** — Quando tre centri devono ruotare, applica lo Sledgehammer due volte (Doppio Sledgehammer):
+
+**Doppio Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Consigli:**
+- Ruota il puzzle per posizionare i centri corretti nelle posizioni frontale e superiore prima di applicare l'algoritmo.
+- Se solo 2 centri devono essere scambiati, uno Sledgehammer è sufficiente. Se 3 centri devono ciclare, usa il Doppio Sledgehammer.
+
+---
+
+## Passaggio 3: Orientare gli angoli dell'ultimo strato
+
+L'ultimo passaggio! Ruota i **4 angoli dello strato superiore** in modo che i loro colori siano orientati correttamente, completando la risoluzione.
+
+**Caso 1: Tutti e 4 gli angoli necessitano di una rotazione in senso orario** — Applica questo algoritmo:
+
+**Algoritmo: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Caso 2: Alcuni angoli necessitano di regolazione** — Usa lo Sledgehammer con mosse di preparazione per orientare singoli angoli:
+
+**Algoritmo: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Consigli:**
+- Se solo alcuni angoli devono essere ruotati, usa mosse di preparazione (U o U') per portare gli angoli non risolti in posizione, applica l'algoritmo, poi annulla la mossa di preparazione.
+- Potrebbe essere necessario ripetere il processo per gli angoli rimanenti.
+
+---
+
+**Congratulazioni!** Hai risolto lo Skewb! Lo Skewb è uno dei puzzle più soddisfacenti da risolvere perché servono pochissimi algoritmi. Con la pratica, lo risolverai in meno di 10 secondi. Continua a praticare lo Sledgehammer — è la chiave per padroneggiare questo puzzle.

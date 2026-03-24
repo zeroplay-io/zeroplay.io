@@ -1,0 +1,158 @@
+---
+title: Jak ułożyć kostkę Rubika 4x4
+sidebar_position: 4
+description: Naucz się układać kostkę Rubika 4x4 krok po kroku metodą redukcji.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Jak ułożyć kostkę Rubika 4x4
+
+Naucz się układać kostkę Rubika 4x4 (zwaną także **Rubik's Revenge**) przy użyciu **metody redukcji** — najpopularniejszego podejścia do większych kostek. Pomysł jest prosty: najpierw zredukuj 4x4 tak, aby wyglądała jak 3x3, a następnie ułóż ją jak 3x3. Omówimy 4 kroki plus specjalne przypadki parzystości.
+
+## Notacja
+
+Kostka 4x4 używa całej standardowej notacji 3x3 plus dodatkowe ruchy dla warstw wewnętrznych:
+
+**Ruchy standardowe** (tylko warstwa zewnętrzna):
+- **R** = Prawo &nbsp;&nbsp; **L** = Lewo &nbsp;&nbsp; **U** = Góra &nbsp;&nbsp; **D** = Dół &nbsp;&nbsp; **F** = Przód &nbsp;&nbsp; **B** = Tył
+
+**Ruchy szerokie** (dwie warstwy zewnętrzne razem):
+- **Rw** = Prawo szeroki (dwie prawe warstwy) &nbsp;&nbsp; **Lw** = Lewo szeroki
+- **Uw** = Góra szeroki (dwie górne warstwy) &nbsp;&nbsp; **Dw** = Dół szeroki
+- **Fw** = Przód szeroki &nbsp;&nbsp; **Bw** = Tył szeroki
+
+Sama litera oznacza **90° zgodnie z ruchem wskazówek zegara**. Z **'** oznacza **przeciwnie do ruchu wskazówek**. Z **2** oznacza **180°**.
+
+Na przykład: **Rw** = dwie prawe warstwy zgodnie z ruchem wskazówek, **Uw'** = dwie górne warstwy przeciwnie, **Rw2** = dwie prawe warstwy 180°.
+
+Trzymaj kostkę z **białym środkiem na dole** i **żółtym środkiem na górze** we wszystkich krokach.
+
+---
+
+## Krok 1: Ułożenie środków
+
+Zbuduj **bloki środkowe** na każdej ścianie. Każda ściana 4x4 ma 4 elementy środkowe (blok 2x2), które muszą pasować. W przeciwieństwie do 3x3, środki 4x4 mogą się przemieszczać — dlatego trzeba je ułożyć jako pierwsze.
+
+**Zalecana kolejność:** Zacznij od **białego** (dół), potem **żółty** (naprzeciwko), następnie pozostałe 4 ściany.
+
+Ten krok jest głównie **intuicyjny**. Kluczowa technika to używanie szerokich ruchów do zbierania elementów środkowych, jednocześnie chroniąc już ułożone ściany obrotami warstwy zewnętrznej.
+
+**Podstawowe wstawianie środka** — Użyj szerokiego ruchu, aby podnieść element środkowy do góry, obróć górną warstwę, aby wyrównać, potem odwróć szeroki ruch:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Zamiana środka bez niszczenia ułożonych ścian** — Gdy musisz wstawić element środkowy, ale chronić inne ukończone środki:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Wskazówki:**
+- Zawsze najpierw układaj przeciwległe ściany (biała/żółta), potem pozostałe 4.
+- Przy wstawianiu środka użyj szerokiego ruchu (jak Rw) do podniesienia go, dostosuj warstwę U, potem odwróć szeroki ruch.
+- Uważaj, aby nie zniszczyć ukończonych środków podczas pracy nad nowymi.
+
+---
+
+## Krok 2: Parowanie krawędzi
+
+Dopasuj każdą parę **elementów krawędziowych**, aby 4x4 zachowywała się jak 3x3. Każda krawędź 4x4 składa się z 2 elementów, które trzeba sparować. Jest 12 krawędzi do sparowania.
+
+Główna technika to **Slice-Flip-Slice**: użyj szerokiego ruchu (Uw) do wyrównania krawędzi, wykonaj ruch warstwy zewnętrznej do sparowania, potem odwróć szeroki ruch.
+
+**Podstawowe parowanie krawędzi** — Umieść jeden element krawędziowy w pozycji przedniej prawej, a jego partnera na górze. Użyj Uw do wyrównania:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Parowanie z odwróceniem** — Gdy para krawędzi musi być odwrócona podczas parowania:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Parowanie ostatnich krawędzi** — Dla ostatnich 3 krawędzi nie możesz swobodnie używać Uw bez niszczenia już sparowanych krawędzi. Użyj zamiast tego tej techniki:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Wskazówki:**
+- Pierwsze 8-9 krawędzi można swobodnie parować techniką Slice-Flip-Slice.
+- Dla ostatnich 3 krawędzi użyj ruchów opartych na Dw lub technik odwracania, aby nie niszczyć już sparowanych krawędzi.
+- Jeśli para krawędzi jest na właściwej pozycji, ale odwrócona, musisz ją wyciągnąć i sparować ponownie.
+
+---
+
+## Krok 3: Układanie jak 3x3
+
+Po ułożeniu wszystkich środków i sparowaniu wszystkich krawędzi, 4x4 jest teraz równoważna z 3x3! Użyj dowolnej **metody układania 3x3** (jak metoda warstwa po warstwie), aby zakończyć.
+
+**Ważne:** W tej fazie używaj tylko ruchów warstwy zewnętrznej (R, U, F, L, D, B). **Nie** używaj szerokich ruchów (Rw, Uw itp.), ponieważ zniszczyłyby sparowane krawędzie i ułożone środki.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Zobacz nasz [poradnik 3x3](./index.mdx) po pełny przewodnik metody warstwa po warstwie. Te same 7 kroków obowiązuje — biały krzyż, białe rogi, druga warstwa, żółty krzyż, żółta ściana, pozycjonowanie rogów i pozycjonowanie krawędzi.
+
+---
+
+## Krok 4: Algorytmy parzystości
+
+Kostka 4x4 ma dwie specjalne sytuacje, które **nigdy nie występują w 3x3**. Nazywane są przypadkami **parzystości** i każdy występuje w około 50% przypadków. Jeśli napotkasz jeden podczas fazy 3x3, zastosuj odpowiedni algorytm i kontynuuj układanie.
+
+### Parzystość OLL (odwrócenie jednej krawędzi)
+
+**Jak to wygląda:** W ostatniej warstwie jedna krawędź jest odwrócona — niemożliwe w prawdziwej 3x3. Żółty krzyż nie może być normalnie ukończony.
+
+**Algorytm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Ten algorytm jest długi, ale wystarczy go zastosować raz. Po wykonaniu krawędź będzie prawidłowo zorientowana i możesz kontynuować normalne kroki ostatniej warstwy 3x3.
+
+### Parzystość PLL (zamiana dwóch krawędzi)
+
+**Jak to wygląda:** Na samym końcu dokładnie dwie krawędzie muszą być zamienione — ponownie niemożliwe w 3x3.
+
+**Algorytm: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Ten krótki algorytm zamienia dwie przeciwległe krawędzie w ostatniej warstwie. Po zastosowaniu kostka powinna być całkowicie ułożona.
+
+**Wskazówki:**
+- Nie panikuj przy parzystości — to zupełnie normalne w kostkach 4x4.
+- Parzystość OLL pojawia się podczas kroku żółtego krzyża. Parzystość PLL pojawia się na samym końcu.
+- Możesz napotkać obie, tylko jedną lub żadną parzystość w jednym układaniu.
+
+---
+
+**Gratulacje!** Ułożyłeś kostkę Rubika 4x4! Metoda redukcji dobrze skaluje się na jeszcze większe kostki (5x5, 6x6 itp.) — podstawowe koncepcje układania środków, parowania krawędzi i układania jak 3x3 pozostają takie same. Z praktyką będziesz w stanie ułożyć 4x4 w mniej niż 3 minuty.

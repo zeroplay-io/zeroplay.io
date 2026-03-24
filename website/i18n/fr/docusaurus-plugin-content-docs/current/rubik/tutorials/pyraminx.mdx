@@ -1,0 +1,128 @@
+---
+title: Comment résoudre le Pyraminx
+sidebar_position: 2
+description: Apprenez à résoudre le Pyraminx étape par étape avec la méthode couche par couche pour débutants.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Comment résoudre le Pyraminx
+
+Apprenez à résoudre le Pyraminx avec la méthode **couche par couche** — l'approche la plus simple pour les débutants. Le Pyraminx est un puzzle en forme de tétraèdre avec 4 pointes, 6 arêtes et 4 centres. Nous le résoudrons en 4 étapes simples.
+
+## Notation
+
+Le Pyraminx utilise un système de notation unique avec des **majuscules** pour les couches et des **minuscules** pour les pointes :
+
+**Couches (majuscules)** — rotation de la couche entière (sans la pointe) :
+
+- **U** = Couche supérieure &nbsp;&nbsp; **R** = Couche droite &nbsp;&nbsp; **L** = Couche gauche &nbsp;&nbsp; **B** = Couche arrière
+
+**Pointes (minuscules)** — rotation de la pointe uniquement :
+
+- **u** = Pointe supérieure &nbsp;&nbsp; **r** = Pointe droite &nbsp;&nbsp; **l** = Pointe gauche &nbsp;&nbsp; **b** = Pointe arrière
+
+Une lettre seule signifie **120° dans le sens horaire**. L'ajout de **'** signifie **120° dans le sens antihoraire**.
+
+Par exemple : **R** = rotation de la couche droite dans le sens horaire, **R'** = sens antihoraire, **l** = rotation de la pointe gauche dans le sens horaire, **l'** = sens antihoraire.
+
+Tenez le Pyraminx avec **une face vers vous** et **une pointe vers le haut** pour toutes les étapes.
+
+---
+
+## Étape 1 : Résoudre les pointes
+
+Alignez les **3 pointes visibles** pour que la couleur de chaque pointe corresponde au centre adjacent. La 4e pointe est en bas et sera traitée plus tard.
+
+Cette étape est **intuitive** — chaque pointe n'a que 3 positions possibles, donc au maximum 2 rotations suffisent. Tournez simplement chaque pointe jusqu'à ce que sa couleur corresponde au centre voisin.
+
+**Exemple : Résoudre les trois pointes visibles**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Conseils :** Commencez toujours par cette étape — c'est gratuit et instantané. Une fois les pointes alignées, vous n'avez plus besoin de les toucher.
+
+---
+
+## Étape 2 : Arêtes de la première couche
+
+Construisez une **première couche** complète en plaçant les 3 arêtes inférieures dans leurs positions correctes. Choisissez une face comme base (nous recommandons de commencer par la face qui a déjà le plus de couleurs correspondantes).
+
+Cette étape est principalement intuitive. Trouvez chaque arête appartenant à la couche inférieure et insérez-la par de simples rotations de couche.
+
+**Cas 1 : Arête dans la couche supérieure, correctement orientée** — Une seule rotation de couche l'insère directement.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Cas 2 : Arête dans la couche supérieure, retournée** — Utilisez deux rotations de couche pour retourner et insérer.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Conseils :** Si une arête est déjà dans la couche inférieure mais à la mauvaise position, utilisez une rotation de couche pour la sortir vers le haut, puis réinsérez-la correctement.
+
+---
+
+## Étape 3 : Arêtes de la dernière couche
+
+Placez les **3 arêtes de la couche supérieure** dans leurs positions correctes. Après cette étape, chaque arête sera entre les deux centres corrects, mais peut encore être retournée.
+
+Observez la couche supérieure et déterminez dans quelle direction les arêtes doivent cycler :
+
+**Cas 1 : Cycle horaire** — Les trois arêtes doivent avancer d'une position dans le sens horaire.
+
+**Algorithme : R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Cas 2 : Cycle antihoraire** — Les trois arêtes doivent avancer d'une position dans le sens antihoraire.
+
+**Algorithme : L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Conseils :** Si seulement 2 arêtes doivent être échangées, l'un de ces algorithmes de 3-cycle résoudra le problème — observez attentivement la direction du cycle.
+
+---
+
+## Étape 4 : Orienter les arêtes de la dernière couche
+
+La dernière étape ! Si les arêtes de la dernière couche sont aux bonnes positions mais **retournées** (mauvaise couleur visible), utilisez cet algorithme pour les retourner.
+
+**Retourner 2 arêtes : R U R' U R U R'**
+
+Tenez le Pyraminx de façon que l'arête qui n'a **pas** besoin d'être retournée soit face à vous. Puis appliquez l'algorithme.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Si les 3 arêtes doivent être retournées, appliquez cet algorithme une fois — il en retournera 2, puis tournez le haut pour positionner et retourner les 2 restantes (une des précédemment retournées plus la dernière).
+
+---
+
+**Félicitations !** Vous avez résolu le Pyraminx ! Avec de la pratique, le Pyraminx peut être résolu en quelques secondes seulement. C'est l'un des puzzles les plus rapides à maîtriser — continuez à vous entraîner et vous le résoudrez en moins de 10 secondes.

@@ -1,0 +1,136 @@
+---
+title: Cum să rezolvi cubul Rubik 2×2
+sidebar_position: 1
+description: Învață să rezolvi cubul Rubik 2×2 pas cu pas folosind metoda Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cum să rezolvi cubul Rubik 2×2
+
+Învață să rezolvi cubul Rubik 2×2 folosind **metoda Ortega** — o abordare rapidă și eficientă în 3 pași. Cubul 2×2 nu are piese centrale sau de margine, doar colțuri, ceea ce îl face un puzzle excelent pentru începători.
+
+## Notație
+
+Cubul 2×2 folosește aceeași notație ca 3×3, dar fără mișcări ale stratului de mijloc:
+
+- **R** = Dreapta &nbsp;&nbsp; **L** = Stânga &nbsp;&nbsp; **U** = Sus &nbsp;&nbsp; **D** = Jos &nbsp;&nbsp; **F** = Față &nbsp;&nbsp; **B** = Spate
+
+O literă singură înseamnă **90° în sensul acelor de ceasornic**. Adăugarea **'** înseamnă **în sens invers**. Adăugarea **2** înseamnă **180°**.
+
+De exemplu: **R** = rotirea feței drepte în sensul acelor de ceasornic, **R'** = în sens invers, **R2** = 180°.
+
+Deoarece cubul 2×2 nu are centre fixe, alege **albul** ca culoare de start și ține-l **jos**.
+
+---
+
+## Pasul 1: Rezolvă prima față
+
+Construiește o față **albă** completă în partea de jos. Spre deosebire de 3×3, **nu** trebuie să potrivești culorile laterale — doar pune toate cele 4 autocolante albe pe aceeași față.
+
+Acest pas este **intuitiv** — nu există algoritmi ficși. Găsește fiecare piesă de colț albă și mută-o pe fața inferioară.
+
+**Cazul 1: Colț alb în stratul superior** — Coboară-l cu o inserție simplă.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Cazul 2: Colț alb jos dar orientat greșit** — Scoate-l și reinserează-l corect.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Sfaturi:** Concentrează-te doar pe a pune 4 autocolante albe pe o față. Culorile laterale nu contează încă — asta diferențiază Ortega de metoda pentru începători a cubului 3×3.
+
+---
+
+## Pasul 2: Orientarea ultimului strat (OLL)
+
+Fă **fața opusă** (galbenă) toată de aceeași culoare. Acum ai nevoie ca toate cele 4 autocolante galbene să fie orientate în sus.
+
+Uită-te la fața superioară și identifică ce caz ai:
+
+**Cazul 1: Un colț galben orientat în sus (Sune)** — Ține cubul cu colțul rezolvat în poziția din stânga față.
+
+**Algoritm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Cazul 2: Niciun colț galben orientat în sus** — Aplică Sune de două ori pentru a orienta toate colțurile.
+
+**Algoritm: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Cazul 3: Două colțuri galbene diagonale orientate în sus** — Ține cubul cu cele două colțuri rezolvate în pozițiile din stânga față și dreapta spate.
+
+**Algoritm: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Sfaturi:** Dacă ai două colțuri galbene **adiacente** orientate în sus, folosește Sune o dată pentru a ajunge la Cazul 1 sau Cazul 3.
+
+---
+
+## Pasul 3: Permutarea ambelor straturi (PBL)
+
+Ultimul pas! Aranjează toate piesele de colț în pozițiile lor corecte pentru a rezolva cubul. Uită-te la **culorile laterale** ale straturilor superior și inferior pentru a determina ce schimb este necesar.
+
+**Cum verifici:** Uită-te la laturile stratului superior. Dacă două autocolante adiacente de pe o latură sunt de aceeași culoare, nu este necesar niciun schimb sau este necesar un schimb adiacent. Dacă fiecare latură are două culori diferite, este necesar un schimb diagonal.
+
+**Cazul 1: Schimb diagonal sus** — Două colțuri opuse trebuie schimbate.
+
+**Algoritm: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Cazul 2: Schimb adiacent sus** — Două colțuri vecine trebuie schimbate.
+
+**Algoritm: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Cazul 3: Schimb diagonal în ambele straturi** — Folosește acest algoritm rapid.
+
+**Algoritm: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+După rezolvarea stratului superior, s-ar putea să fie nevoie să rotești fața inferioară (D sau D') pentru a alinia culorile finale. Dacă stratul inferior are nevoie și el de un schimb, aplică algoritmul de schimb diagonal ținând stratul nerezolvat sus.
+
+---
+
+**Felicitări!** Ai rezolvat cubul Rubik 2×2! Metoda Ortega este rapidă și eficientă — cu practică, poți rezolva cubul 2×2 în mai puțin de 5 secunde.

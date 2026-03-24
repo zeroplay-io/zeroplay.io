@@ -1,0 +1,120 @@
+---
+title: Como resolver o Skewb
+sidebar_position: 3
+description: Aprenda a resolver o Skewb passo a passo usando o Método para Iniciantes da Sarah.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Como resolver o Skewb
+
+Aprenda a resolver o Skewb com o **Método para Iniciantes da Sarah** — uma abordagem simples e eficiente para iniciantes. O Skewb é um quebra-cabeça de rotação por cantos, onde cada movimento gira um canto e as três faces adjacentes. Vamos resolvê-lo em apenas 3 passos usando um algoritmo principal: o Sledgehammer.
+
+## Notação
+
+Diferente do Cubo Mágico padrão, o Skewb gira em torno dos **cantos** em vez das faces. Cada movimento gira um canto e os três centros de faces adjacentes:
+
+- **R** = Canto frontal direito no sentido horário &nbsp;&nbsp; **R'** = Canto frontal direito no sentido anti-horário
+- **L** = Canto frontal esquerdo no sentido horário &nbsp;&nbsp; **L'** = Canto frontal esquerdo no sentido anti-horário
+- **U** = Canto frontal superior direito no sentido horário &nbsp;&nbsp; **U'** = Canto frontal superior direito no sentido anti-horário
+- **B** = Canto traseiro direito no sentido horário &nbsp;&nbsp; **B'** = Canto traseiro direito no sentido anti-horário
+
+Uma letra sozinha significa giro **no sentido horário**. Adicionar **'** significa **no sentido anti-horário**.
+
+Segure o Skewb com o **centro branco para baixo** em todos os passos.
+
+---
+
+## Passo 1: Resolver uma face
+
+Construa uma **face branca** completa na parte inferior. Isso significa que todos os 4 cantos ao redor do centro branco devem estar no lugar com o branco voltado para baixo, e as cores laterais adjacentes devem combinar.
+
+Este passo é semi-intuitivo. A ferramenta principal é o **Sledgehammer** — o algoritmo mais importante para o Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Use o Sledgehammer e movimentos de preparação para colocar cada canto branco na camada inferior. Aqui está um exemplo de inserção de um canto:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Dicas:**
+- Comece colocando o centro branco para baixo.
+- Resolva os cantos um de cada vez, tomando cuidado para não mover as peças já posicionadas.
+- Após este passo, a face inferior deve ser toda branca, e cada lado adjacente deve ter uma cor de canto correspondente.
+
+---
+
+## Passo 2: Posicionar os centros opostos
+
+Ajuste o **centro superior e os 4 centros laterais** para que todos estejam em suas posições corretas. A face inferior permanece resolvida.
+
+O Sledgehammer é novamente o algoritmo chave. Ele troca o centro superior com um centro lateral:
+
+**Caso 1: Trocar 2 centros** — Use o Sledgehammer para trocar os centros superior e frontal.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Caso 2: Ciclo de 3 centros** — Quando três centros precisam girar, aplique o Sledgehammer duas vezes (Sledgehammer Duplo):
+
+**Sledgehammer Duplo: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Dicas:**
+- Gire o quebra-cabeça para preparar os centros corretos nas posições frontal e superior antes de aplicar o algoritmo.
+- Se apenas 2 centros precisam ser trocados, um Sledgehammer é suficiente. Se 3 centros precisam ser ciclados, use o Sledgehammer Duplo.
+
+---
+
+## Passo 3: Orientar os cantos da última camada
+
+O último passo! Gire os **4 cantos da camada superior** para que suas cores apontem na direção correta, completando a resolução.
+
+**Caso 1: Todos os 4 cantos precisam de giro no sentido horário** — Aplique este algoritmo:
+
+**Algoritmo: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Caso 2: Alguns cantos precisam de ajuste** — Use o Sledgehammer com movimentos de preparação para orientar cantos individuais:
+
+**Algoritmo: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Dicas:**
+- Se apenas alguns cantos precisam ser girados, use movimentos de preparação (U ou U') para trazer os cantos não resolvidos à posição, aplique o algoritmo e depois desfaça o movimento de preparação.
+- Pode ser necessário repetir o processo para os cantos restantes.
+
+---
+
+**Parabéns!** Você resolveu o Skewb! O Skewb é um dos quebra-cabeças mais satisfatórios de resolver porque você precisa de muito poucos algoritmos. Com prática, você vai resolvê-lo em menos de 10 segundos. Continue praticando o Sledgehammer — é a chave para dominar este quebra-cabeça.

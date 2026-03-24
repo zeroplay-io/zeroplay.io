@@ -1,0 +1,136 @@
+---
+title: Jak ułożyć kostkę Rubika 2×2
+sidebar_position: 1
+description: Naucz się układać kostkę Rubika 2×2 krok po kroku metodą Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Jak ułożyć kostkę Rubika 2×2
+
+Naucz się układać kostkę Rubika 2×2 za pomocą **metody Ortega** — szybkiego i wydajnego podejścia w 3 krokach. Kostka 2×2 nie ma środkowych ani krawędziowych elementów, tylko narożniki, co czyni ją świetną łamigłówką na początek.
+
+## Notacja
+
+Kostka 2×2 używa tej samej notacji co 3×3, ale bez ruchów środkowej warstwy:
+
+- **R** = Prawa &nbsp;&nbsp; **L** = Lewa &nbsp;&nbsp; **U** = Górna &nbsp;&nbsp; **D** = Dolna &nbsp;&nbsp; **F** = Przednia &nbsp;&nbsp; **B** = Tylna
+
+Sama litera oznacza **90° zgodnie z ruchem wskazówek zegara**. Dodanie **'** oznacza **przeciwnie do ruchu wskazówek**. Dodanie **2** oznacza **180°**.
+
+Na przykład: **R** = obrót prawej ściany zgodnie ze wskazówkami, **R'** = przeciwnie, **R2** = 180°.
+
+Ponieważ kostka 2×2 nie ma stałych środków, wybierz **biały** jako kolor startowy i trzymaj go na **dole**.
+
+---
+
+## Krok 1: Ułóż pierwszą ścianę
+
+Zbuduj kompletną **białą ścianę** na dole. W przeciwieństwie do 3×3, **nie** musisz dopasowywać kolorów bocznych — po prostu umieść wszystkie 4 białe naklejki na tej samej ścianie.
+
+Ten krok jest **intuicyjny** — nie ma stałych algorytmów. Znajdź każdy biały narożnik i przesuń go na dolną ścianę.
+
+**Przypadek 1: Biały narożnik w górnej warstwie** — Sprowadź go w dół prostym wstawieniem.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Przypadek 2: Biały narożnik na dole, ale źle zorientowany** — Wyjmij go i wstaw ponownie prawidłowo.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Wskazówki:** Skup się tylko na umieszczeniu 4 białych naklejek na jednej ścianie. Kolory boczne jeszcze nie mają znaczenia — to właśnie odróżnia Ortegę od metody początkującej 3×3.
+
+---
+
+## Krok 2: Orientacja ostatniej warstwy (OLL)
+
+Spraw, aby **przeciwna ściana** (żółta) była cała jednokolorowa. Teraz potrzebujesz, aby wszystkie 4 żółte naklejki były skierowane do góry.
+
+Spójrz na górną ścianę i zidentyfikuj, który przypadek masz:
+
+**Przypadek 1: Jeden żółty narożnik skierowany do góry (Sune)** — Trzymaj kostkę tak, aby rozwiązany narożnik był w pozycji przedniej lewej.
+
+**Algorytm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Przypadek 2: Żaden żółty narożnik nie jest skierowany do góry** — Zastosuj Sune dwa razy, aby zorientować wszystkie narożniki.
+
+**Algorytm: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Przypadek 3: Dwa przekątne żółte narożniki skierowane do góry** — Trzymaj kostkę tak, aby dwa rozwiązane narożniki były w pozycjach przedniej lewej i tylnej prawej.
+
+**Algorytm: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Wskazówki:** Jeśli masz dwa **sąsiednie** żółte narożniki skierowane do góry, użyj Sune raz, aby osiągnąć Przypadek 1 lub Przypadek 3.
+
+---
+
+## Krok 3: Permutacja obu warstw (PBL)
+
+Ostatni krok! Ułóż wszystkie narożniki na ich prawidłowych pozycjach, aby rozwiązać kostkę. Spójrz na **kolory boczne** górnej i dolnej warstwy, aby określić, jaka zamiana jest potrzebna.
+
+**Jak sprawdzić:** Spójrz na boki górnej warstwy. Jeśli dwie sąsiednie naklejki na jednym boku mają ten sam kolor, zamiana nie jest potrzebna lub potrzebna jest zamiana sąsiednia. Jeśli każdy bok ma dwa różne kolory, potrzebna jest zamiana przekątna.
+
+**Przypadek 1: Zamiana przekątna na górze** — Dwa przeciwne narożniki muszą zostać zamienione.
+
+**Algorytm: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Przypadek 2: Zamiana sąsiednia na górze** — Dwa sąsiednie narożniki muszą zostać zamienione.
+
+**Algorytm: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Przypadek 3: Zamiana przekątna w obu warstwach** — Użyj tego szybkiego algorytmu.
+
+**Algorytm: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Po rozwiązaniu górnej warstwy może być konieczne obrócenie dolnej ściany (D lub D'), aby wyrównać końcowe kolory. Jeśli dolna warstwa również wymaga zamiany, zastosuj algorytm zamiany przekątnej, trzymając nierozwiązaną warstwę na górze.
+
+---
+
+**Gratulacje!** Ułożyłeś kostkę Rubika 2×2! Metoda Ortega jest szybka i wydajna — z praktyką możesz ułożyć 2×2 w mniej niż 5 sekund.

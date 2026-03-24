@@ -1,0 +1,120 @@
+---
+title: How to Solve the Skewb
+sidebar_position: 3
+description: Learn to solve the Skewb step by step using Sarah's Beginner Method.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# How to Solve the Skewb
+
+Learn to solve the Skewb using **Sarah's Beginner Method** — a simple and efficient approach for beginners. The Skewb is a corner-turning puzzle where each move rotates a corner and the three faces around it. We'll solve it in just 3 steps using one core algorithm: the Sledgehammer.
+
+## Notation
+
+Unlike the standard Rubik's Cube, the Skewb turns around **corners** rather than faces. Each move rotates one corner and the three adjacent face centers:
+
+- **R** = Right front corner clockwise &nbsp;&nbsp; **R'** = Right front corner counter-clockwise
+- **L** = Left front corner clockwise &nbsp;&nbsp; **L'** = Left front corner counter-clockwise
+- **U** = Upper right front corner clockwise &nbsp;&nbsp; **U'** = Upper right front corner counter-clockwise
+- **B** = Back right corner clockwise &nbsp;&nbsp; **B'** = Back right corner counter-clockwise
+
+A letter alone means a **clockwise** turn. Adding **'** means **counter-clockwise**.
+
+Hold the Skewb with **white center on the bottom** for all steps.
+
+---
+
+## Step 1: Solve One Face
+
+Build a complete **white face** on the bottom. This means all 4 corners around the white center must be in place with white facing down, and the adjacent side colors must match.
+
+This step is semi-intuitive. The key tool is the **Sledgehammer** — the most important algorithm for the Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Use the Sledgehammer and its setup moves to place each white corner into the bottom layer. Here's an example of inserting a corner:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Start by placing the white center on the bottom.
+- Solve corners one at a time, being careful not to disturb pieces already in place.
+- After this step, the bottom face should be all white, and each adjacent side should have a matching corner color.
+
+---
+
+## Step 2: Position Opposite Centers
+
+Adjust the **top center and the 4 side centers** so they are all in their correct positions. The bottom face stays solved.
+
+The Sledgehammer is again the key algorithm. It swaps the top center with a side center:
+
+**Case 1: Swap 2 centers** — Use the Sledgehammer to swap the top and front centers.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Case 2: 3-cycle of centers** — When three centers need to rotate, apply the Sledgehammer twice (Double Sledgehammer):
+
+**Double Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tips:**
+- Rotate the puzzle to set up the correct centers in the front and top positions before applying the algorithm.
+- If only 2 centers need swapping, one Sledgehammer is enough. If 3 centers need cycling, use the Double Sledgehammer.
+
+---
+
+## Step 3: Orient Last Layer Corners
+
+The final step! Twist the **4 top-layer corners** so their colors face the correct direction, completing the solve.
+
+**Case 1: All 4 corners need a clockwise twist** — Apply this algorithm:
+
+**Algorithm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Case 2: Some corners need adjustment** — Use the Sledgehammer with setup moves to orient individual corners:
+
+**Algorithm: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tips:**
+- If only some corners need twisting, use setup moves (U or U') to bring the unsolved corners into position, apply the algorithm, then undo the setup move.
+- You may need to repeat the process for remaining corners.
+
+---
+
+**Congratulations!** You've solved the Skewb! The Skewb is one of the most satisfying puzzles to solve because of how few algorithms you need. With practice, you'll be solving it in under 10 seconds. Keep practicing the Sledgehammer — it's the key to mastering this puzzle.

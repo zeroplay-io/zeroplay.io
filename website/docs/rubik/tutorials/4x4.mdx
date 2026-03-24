@@ -1,0 +1,158 @@
+---
+title: How to Solve a 4x4 Rubik's Cube
+sidebar_position: 4
+description: Learn to solve the 4x4 Rubik's Cube step by step using the Reduction method.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# How to Solve a 4x4 Rubik's Cube
+
+Learn to solve the 4x4 Rubik's Cube (also called the **Rubik's Revenge**) using the **Reduction method** — the most popular approach for bigger cubes. The idea is simple: first reduce the 4x4 into what looks like a 3x3, then solve it as a 3x3. We'll cover 4 steps plus special parity cases.
+
+## Notation
+
+The 4x4 uses all standard 3x3 notation plus additional moves for the inner layers:
+
+**Standard moves** (outer layer only):
+- **R** = Right &nbsp;&nbsp; **L** = Left &nbsp;&nbsp; **U** = Up &nbsp;&nbsp; **D** = Down &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Back
+
+**Wide moves** (outer two layers together):
+- **Rw** = Right wide (right two layers) &nbsp;&nbsp; **Lw** = Left wide
+- **Uw** = Up wide (top two layers) &nbsp;&nbsp; **Dw** = Down wide
+- **Fw** = Front wide &nbsp;&nbsp; **Bw** = Back wide
+
+A letter alone means **clockwise 90°**. Adding **'** means **counter-clockwise**. Adding **2** means **180°**.
+
+For example: **Rw** = turn right two layers clockwise, **Uw'** = turn top two layers counter-clockwise, **Rw2** = turn right two layers 180°.
+
+Hold the cube with **white center on bottom** and **yellow center on top** for all steps.
+
+---
+
+## Step 1: Solve Centers
+
+Build the **center blocks** on each face. Each face of the 4x4 has 4 center pieces (a 2x2 block) that need to match. Unlike a 3x3, centers on a 4x4 can move — so you must solve them first.
+
+**Recommended order:** Start with **white** (bottom), then **yellow** (opposite), then the remaining 4 sides.
+
+This step is mostly **intuitive**. The key technique is using wide moves to bring center pieces together while protecting already-solved faces with outer-layer turns.
+
+**Basic center insertion** — Use a wide move to bring a center piece up, turn the top to align, then reverse the wide move:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Center swap without breaking solved faces** — When you need to insert a center piece but must protect other completed centers:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tips:**
+- Always solve opposite faces first (white/yellow), then the remaining 4 sides.
+- When inserting a center piece, use a wide move (like Rw) to bring it to the top, make your U-layer adjustment, then undo the wide move.
+- Be careful not to disrupt completed centers when working on new ones.
+
+---
+
+## Step 2: Pair Edges
+
+Match each pair of **edge pieces** so the 4x4 behaves like a 3x3. Each edge on a 4x4 consists of 2 pieces that need to be paired together. There are 12 edges to pair.
+
+The core technique is **Slice-Flip-Slice**: use a wide move (Uw) to bring edges together, perform an outer-layer move to pair them, then undo the wide move.
+
+**Basic edge pairing** — Place one edge piece in the front-right position and its partner in the top. Use Uw to align them:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Flipped edge pairing** — When the edge pair needs to be flipped during pairing:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Last edges pairing** — For the final 3 edges, you cannot freely use Uw without breaking paired edges. Use this technique instead:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tips:**
+- Work through edges freely at first — the first 8-9 edges are straightforward with the Slice-Flip-Slice technique.
+- For the last 3 edges, use Dw-based moves or flipping techniques to avoid breaking already-paired edges.
+- If an edge pair is in the right position but flipped, you'll need to break it out and re-pair it correctly.
+
+---
+
+## Step 3: Solve as 3x3
+
+Once all centers are solved and all edges are paired, the 4x4 is now equivalent to a 3x3! Use any **3x3 solving method** (such as the Layer-by-Layer method) to finish the solve.
+
+**Important:** During this phase, use only outer-layer moves (R, U, F, L, D, B). Do **not** use wide moves (Rw, Uw, etc.) as they would break your paired edges and solved centers.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Refer to our [3x3 tutorial](./index.mdx) for the full Layer-by-Layer guide. The same 7 steps apply — white cross, white corners, second layer, yellow cross, yellow face, position corners, and position edges.
+
+---
+
+## Step 4: Parity Algorithms
+
+The 4x4 has two special situations that **never occur on a 3x3**. These are called **parity** cases and happen about 50% of the time each. If you encounter one during the 3x3 phase, apply the corresponding algorithm and then continue solving.
+
+### OLL Parity (Single Edge Flip)
+
+**What it looks like:** During the last layer, you have a single edge that is flipped — something impossible on a real 3x3. The yellow cross cannot be completed normally.
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+This algorithm is long, but it only needs to be applied once. After executing it, the edge will be correctly oriented and you can continue with the normal 3x3 last-layer steps.
+
+### PLL Parity (Two Edges Swap)
+
+**What it looks like:** At the very end, you have exactly two edges that need to be swapped — again, impossible on a 3x3.
+
+**Algorithm: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+This short algorithm swaps two opposite edges in the last layer. After applying it, the cube should be fully solved.
+
+**Tips:**
+- Don't panic when you encounter parity — it's completely normal on 4x4 cubes.
+- OLL parity appears during the yellow cross step. PLL parity appears at the very end.
+- You may encounter both, one, or neither parity case in a single solve.
+
+---
+
+**Congratulations!** You've solved the 4x4 Rubik's Cube! The Reduction method scales well to even bigger cubes (5x5, 6x6, etc.) — the core concepts of solving centers, pairing edges, and then solving as 3x3 remain the same. With practice, you'll be able to solve the 4x4 in under 3 minutes.

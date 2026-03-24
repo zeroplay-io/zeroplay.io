@@ -1,0 +1,136 @@
+---
+title: 2×2 Rubik Küpü Nasıl Çözülür
+sidebar_position: 1
+description: Ortega yöntemiyle 2×2 Rubik Küpünü adım adım çözmeyi öğrenin.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2×2 Rubik Küpü Nasıl Çözülür
+
+**Ortega yöntemiyle** 2×2 Rubik Küpünü çözmeyi öğrenin — 3 adımlık hızlı ve verimli bir yaklaşım. 2×2'nin merkez veya kenar parçası yoktur, sadece köşeler vardır, bu da onu başlamak için harika bir bulmaca yapar.
+
+## Notasyon
+
+2×2, 3×3 ile aynı notasyonu kullanır, ancak orta katman hareketleri yoktur:
+
+- **R** = Sağ &nbsp;&nbsp; **L** = Sol &nbsp;&nbsp; **U** = Üst &nbsp;&nbsp; **D** = Alt &nbsp;&nbsp; **F** = Ön &nbsp;&nbsp; **B** = Arka
+
+Tek bir harf **saat yönünde 90°** anlamına gelir. **'** eklemek **saat yönünün tersine** anlamına gelir. **2** eklemek **180°** anlamına gelir.
+
+Örneğin: **R** = sağ yüzü saat yönünde çevir, **R'** = saat yönünün tersine, **R2** = 180°.
+
+2×2'nin sabit merkezleri olmadığından, **beyazı** başlangıç rengi olarak seçin ve **altta** tutun.
+
+---
+
+## Adım 1: İlk Yüzü Çözün
+
+Altta eksiksiz bir **beyaz yüz** oluşturun. 3×3'ten farklı olarak, yan renkleri eşleştirmenize **gerek yok** — sadece 4 beyaz çıkartmayı aynı yüze koyun.
+
+Bu adım **sezgiseldir** — sabit algoritmalar yoktur. Her beyaz köşe parçasını bulun ve alt yüze taşıyın.
+
+**Durum 1: Beyaz köşe üst katmanda** — Basit bir yerleştirmeyle aşağı indirin.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Durum 2: Beyaz köşe altta ama yanlış yönde** — Çıkarın ve doğru şekilde tekrar yerleştirin.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**İpuçları:** Sadece 4 beyaz çıkartmayı bir yüze koymaya odaklanın. Yan renkler henüz önemli değil — Ortega'yı 3×3 başlangıç yönteminden farklı kılan budur.
+
+---
+
+## Adım 2: Son Katmanı Yönlendirme (OLL)
+
+**Karşı yüzü** (sarı) tamamen tek renk yapın. Şimdi 4 sarı çıkartmanın tamamının yukarı bakması gerekiyor.
+
+Üst yüze bakın ve hangi durumda olduğunuzu belirleyin:
+
+**Durum 1: Bir sarı köşe yukarı bakıyor (Sune)** — Küpü çözülmüş köşe sol ön pozisyonda olacak şekilde tutun.
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Durum 2: Hiçbir sarı köşe yukarı bakmıyor** — Tüm köşeleri yönlendirmek için Sune'yi iki kez uygulayın.
+
+**Algoritma: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Durum 3: İki çapraz sarı köşe yukarı bakıyor** — Küpü iki çözülmüş köşe sol ön ve sağ arka pozisyonlarda olacak şekilde tutun.
+
+**Algoritma: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**İpuçları:** İki **bitişik** sarı köşe yukarı bakıyorsa, Durum 1 veya Durum 3'e ulaşmak için Sune'yi bir kez kullanın.
+
+---
+
+## Adım 3: Her İki Katmanı Permütasyon (PBL)
+
+Son adım! Küpü çözmek için tüm köşe parçalarını doğru pozisyonlarına yerleştirin. Hangi takasın gerekli olduğunu belirlemek için üst ve alt katmanların **yan renklerine** bakın.
+
+**Nasıl kontrol edilir:** Üst katmanın yanlarına bakın. Bir yandaki iki bitişik çıkartma aynı renkteyse, takas gerekli değil veya bitişik takas gerekli. Her yanda iki farklı renk varsa, çapraz takas gerekli.
+
+**Durum 1: Üstte çapraz takas** — İki karşı köşenin yer değiştirmesi gerekiyor.
+
+**Algoritma: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Durum 2: Üstte bitişik takas** — İki komşu köşenin yer değiştirmesi gerekiyor.
+
+**Algoritma: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Durum 3: Her iki katmanda çapraz takas** — Bu hızlı algoritmayı kullanın.
+
+**Algoritma: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Üst katmanı çözdükten sonra, son renkleri hizalamak için alt yüzü çevirmeniz gerekebilir (D veya D'). Alt katman da takas gerektiriyorsa, çözülmemiş katmanı üstte tutarak çapraz takas algoritmasını uygulayın.
+
+---
+
+**Tebrikler!** 2×2 Rubik Küpünü çözdünüz! Ortega yöntemi hızlı ve verimlidir — pratik yaparak 2×2'yi 5 saniyenin altında çözebilirsiniz.

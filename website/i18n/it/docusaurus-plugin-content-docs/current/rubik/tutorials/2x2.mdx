@@ -1,0 +1,136 @@
+---
+title: Come risolvere il cubo di Rubik 2×2
+sidebar_position: 1
+description: Impara a risolvere il cubo di Rubik 2×2 passo dopo passo con il metodo Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Come risolvere il cubo di Rubik 2×2
+
+Impara a risolvere il cubo di Rubik 2×2 con il **metodo Ortega** — un approccio rapido ed efficiente in 3 passaggi. Il 2×2 non ha pezzi centrali né spigoli, solo angoli, rendendolo un ottimo puzzle per iniziare.
+
+## Notazione
+
+Il 2×2 usa la stessa notazione del 3×3, ma senza movimenti dello strato centrale:
+
+- **R** = Destra &nbsp;&nbsp; **L** = Sinistra &nbsp;&nbsp; **U** = Alto &nbsp;&nbsp; **D** = Basso &nbsp;&nbsp; **F** = Fronte &nbsp;&nbsp; **B** = Retro
+
+Una lettera da sola significa **90° in senso orario**. Aggiungere **'** significa **in senso antiorario**. Aggiungere **2** significa **180°**.
+
+Per esempio: **R** = ruotare la faccia destra in senso orario, **R'** = in senso antiorario, **R2** = 180°.
+
+Poiché il 2×2 non ha centri fissi, scegli il **bianco** come colore iniziale e tienilo in **basso**.
+
+---
+
+## Passaggio 1: Risolvere la prima faccia
+
+Costruisci una faccia **bianca** completa in basso. A differenza del 3×3, **non** devi far corrispondere i colori laterali — basta mettere tutti e 4 gli adesivi bianchi sulla stessa faccia.
+
+Questo passaggio è **intuitivo** — non ci sono algoritmi fissi. Trova ogni pezzo angolare bianco e spostalo sulla faccia inferiore.
+
+**Caso 1: Angolo bianco nello strato superiore** — Portalo giù con un inserimento semplice.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Caso 2: Angolo bianco in basso ma orientato male** — Estrailo e reinseriscilo correttamente.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Consigli:** Concentrati solo sul mettere 4 adesivi bianchi su una faccia. I colori laterali non contano ancora — questo è ciò che rende Ortega diverso dal metodo principiante del 3×3.
+
+---
+
+## Passaggio 2: Orientare l'ultimo strato (OLL)
+
+Rendi la **faccia opposta** (gialla) tutta dello stesso colore. Ora hai bisogno che tutti e 4 gli adesivi gialli puntino verso l'alto.
+
+Guarda la faccia superiore e identifica quale caso hai:
+
+**Caso 1: Un angolo giallo punta verso l'alto (Sune)** — Tieni il cubo con l'angolo risolto nella posizione anteriore sinistra.
+
+**Algoritmo: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Caso 2: Nessun angolo giallo punta verso l'alto** — Applica Sune due volte per orientare tutti gli angoli.
+
+**Algoritmo: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Caso 3: Due angoli gialli diagonali puntano verso l'alto** — Tieni il cubo con i due angoli risolti nelle posizioni anteriore sinistra e posteriore destra.
+
+**Algoritmo: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Consigli:** Se hai due angoli gialli **adiacenti** che puntano verso l'alto, usa Sune una volta per raggiungere il Caso 1 o il Caso 3.
+
+---
+
+## Passaggio 3: Permutare entrambi gli strati (PBL)
+
+L'ultimo passaggio! Disponi tutti i pezzi angolari nelle loro posizioni corrette per risolvere il cubo. Guarda i **colori laterali** degli strati superiore e inferiore per determinare quale scambio è necessario.
+
+**Come verificare:** Guarda i lati dello strato superiore. Se due adesivi adiacenti su un lato sono dello stesso colore, non è necessario alcuno scambio o è necessario uno scambio adiacente. Se ogni lato ha due colori diversi, è necessario uno scambio diagonale.
+
+**Caso 1: Scambio diagonale in alto** — Due angoli opposti devono essere scambiati.
+
+**Algoritmo: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Caso 2: Scambio adiacente in alto** — Due angoli vicini devono essere scambiati.
+
+**Algoritmo: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Caso 3: Scambio diagonale in entrambi gli strati** — Usa questo algoritmo rapido.
+
+**Algoritmo: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Dopo aver risolto lo strato superiore, potresti dover ruotare la faccia inferiore (D o D') per allineare i colori finali. Se anche lo strato inferiore necessita di uno scambio, applica l'algoritmo di scambio diagonale mantenendo lo strato non risolto in alto.
+
+---
+
+**Congratulazioni!** Hai risolto il cubo di Rubik 2×2! Il metodo Ortega è rapido ed efficiente — con la pratica, puoi risolvere il 2×2 in meno di 5 secondi.

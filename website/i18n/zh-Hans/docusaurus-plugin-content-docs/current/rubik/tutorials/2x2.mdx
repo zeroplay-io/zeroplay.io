@@ -1,0 +1,136 @@
+---
+title: 如何还原二阶魔方
+sidebar_position: 1
+description: 使用 Ortega 方法逐步学习还原二阶魔方。
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 如何还原二阶魔方
+
+使用 **Ortega 方法**学习还原二阶魔方——一种快速高效的三步法。二阶魔方没有中心块和棱块，只有角块，非常适合入门。
+
+## 符号说明
+
+二阶魔方使用与三阶相同的符号，但没有中层转动：
+
+- **R** = 右 &nbsp;&nbsp; **L** = 左 &nbsp;&nbsp; **U** = 上 &nbsp;&nbsp; **D** = 下 &nbsp;&nbsp; **F** = 前 &nbsp;&nbsp; **B** = 后
+
+单独的字母表示**顺时针旋转 90°**。加 **'** 表示**逆时针**。加 **2** 表示 **180°**。
+
+例如：**R** = 右面顺时针旋转，**R'** = 逆时针，**R2** = 180°。
+
+由于二阶魔方没有固定中心，选择**白色**作为起始颜色，并将其保持在**底部**。
+
+---
+
+## 第 1 步：还原第一面
+
+在底部构建一个完整的**白色面**。与三阶不同，你**不需要**匹配侧面颜色——只需将 4 个白色贴纸放在同一面上。
+
+这一步是**直觉式的**——没有固定公式。找到每个白色角块，将其移到底面。
+
+**情况 1：白色角块在顶层** —— 用简单的插入将其放下。
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**情况 2：白色角块在底部但方向不对** —— 取出后重新正确插入。
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**提示：** 只需专注于将 4 个白色贴纸放在一个面上。侧面颜色暂时不重要——这就是 Ortega 与三阶初学者方法的不同之处。
+
+---
+
+## 第 2 步：顶面朝向（OLL）
+
+使**对面**（黄色）全部变成同一颜色。现在需要 4 个黄色贴纸全部朝上。
+
+观察顶面，判断你属于哪种情况：
+
+**情况 1：一个黄色角块朝上（Sune）** —— 将魔方握持为已完成的角块在左前位置。
+
+**公式：R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**情况 2：没有黄色角块朝上** —— 连续使用 Sune 两次来完成所有角块的朝向。
+
+**公式：R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**情况 3：两个对角黄色角块朝上** —— 将魔方握持为两个已完成的角块分别在左前和右后位置。
+
+**公式：R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**提示：** 如果有两个**相邻的**黄色角块朝上，使用一次 Sune 转换到情况 1 或情况 3。
+
+---
+
+## 第 3 步：双层排列（PBL）
+
+最后一步！将所有角块调整到正确位置来完成还原。观察上下两层的**侧面颜色**来判断需要哪种交换。
+
+**检查方法：** 观察顶层的侧面。如果一面的两个相邻贴纸颜色相同，则不需要交换或需要相邻交换。如果每一面都有两种不同颜色，则需要对角交换。
+
+**情况 1：顶层对角交换** —— 两个对角的角块需要互换。
+
+**公式：R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**情况 2：顶层相邻交换** —— 两个相邻的角块需要互换。
+
+**公式：R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**情况 3：双层对角交换** —— 使用这个快速公式。
+
+**公式：R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+还原顶层后，你可能需要旋转底面（D 或 D'）来对齐最终颜色。如果底层也需要交换，将未完成的层保持在顶部，然后执行对角交换公式。
+
+---
+
+**恭喜！** 你已经成功还原了二阶魔方！Ortega 方法快速高效——通过练习，你可以在 5 秒内还原二阶魔方。

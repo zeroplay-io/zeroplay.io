@@ -1,0 +1,128 @@
+---
+title: Com resoldre el Pyraminx
+sidebar_position: 2
+description: Aprèn a resoldre el Pyraminx pas a pas amb el mètode capa per capa per a principiants.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Com resoldre el Pyraminx
+
+Aprèn a resoldre el Pyraminx amb el mètode **capa per capa** — l'enfocament més senzill per a principiants. El Pyraminx és un trencaclosques en forma de tetraedre amb 4 puntes, 6 arestes i 4 centres. El resoldrem en 4 passos senzills.
+
+## Notació
+
+El Pyraminx utilitza un sistema de notació únic amb **majúscules** per a les capes i **minúscules** per a les puntes:
+
+**Capes (majúscules)** — girar tota la capa (sense la punta):
+
+- **U** = Capa superior &nbsp;&nbsp; **R** = Capa dreta &nbsp;&nbsp; **L** = Capa esquerra &nbsp;&nbsp; **B** = Capa posterior
+
+**Puntes (minúscules)** — girar només la punta:
+
+- **u** = Punta superior &nbsp;&nbsp; **r** = Punta dreta &nbsp;&nbsp; **l** = Punta esquerra &nbsp;&nbsp; **b** = Punta posterior
+
+Una lletra sola significa **120° en sentit horari**. Afegir **'** significa **120° en sentit antihorari**.
+
+Per exemple: **R** = girar la capa dreta en sentit horari, **R'** = sentit antihorari, **l** = girar la punta esquerra en sentit horari, **l'** = sentit antihorari.
+
+Mantén el Pyraminx amb **una cara cap a tu** i **una punta cap amunt** en tots els passos.
+
+---
+
+## Pas 1: Resoldre les puntes
+
+Alinea les **3 puntes visibles** perquè el color de cada punta coincideixi amb el centre adjacent. La 4a punta és a baix i es resoldrà després.
+
+Aquest pas és **intuïtiu** — cada punta té només 3 posicions possibles, així que com a màxim 2 girs la resolen. Simplement gira cada punta fins que el seu color coincideixi amb el centre veí.
+
+**Exemple: Resoldre les tres puntes visibles**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Consells:** Sempre comença per aquest pas — és gratuït i instantani. Un cop les puntes estan alineades, no cal tornar-les a tocar.
+
+---
+
+## Pas 2: Arestes de la primera capa
+
+Construeix una **primera capa** completa col·locant les 3 arestes inferiors a les seves posicions correctes. Tria una cara com a base (recomanem començar per la cara que ja tingui més colors coincidents).
+
+Aquest pas és principalment intuïtiu. Troba cada aresta que pertanyi a la capa inferior i insereix-la amb girs de capa simples.
+
+**Cas 1: Aresta a la capa superior, correctament orientada** — Un sol gir de capa la insereix directament.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Cas 2: Aresta a la capa superior, girada** — Utilitza dos girs de capa per girar i inserir.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Consells:** Si una aresta ja és a la capa inferior però en la posició incorrecta, utilitza un gir de capa per treure-la cap amunt i després reinsereix-la correctament.
+
+---
+
+## Pas 3: Arestes de l'última capa
+
+Col·loca les **3 arestes de la capa superior** als seus llocs correctes. Després d'aquest pas, cada aresta estarà entre els dos centres correctes, però pot estar encara girada.
+
+Observa la capa superior i determina en quina direcció han de ciclar les arestes:
+
+**Cas 1: Cicle en sentit horari** — Les tres arestes necessiten moure's una posició en sentit horari.
+
+**Algorisme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Cas 2: Cicle en sentit antihorari** — Les tres arestes necessiten moure's una posició en sentit antihorari.
+
+**Algorisme: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Consells:** Si només 2 arestes necessiten intercanviar-se, un d'aquests algorismes de 3 cicles ho resoldrà — observa atentament la direcció del cicle.
+
+---
+
+## Pas 4: Orientar les arestes de l'última capa
+
+L'últim pas! Si les arestes de l'última capa estan a les posicions correctes però **girades** (color incorrecte cap enfora), utilitza aquest algorisme per girar-les.
+
+**Girar 2 arestes: R U R' U R U R'**
+
+Mantén el Pyraminx de manera que l'aresta que **no** necessita ser girada estigui cap a tu. Després aplica l'algorisme.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Si les 3 arestes necessiten ser girades, aplica aquest algorisme un cop — en girarà 2, després gira la part superior per preparar i girar les 2 restants (una de les prèviament girades més l'última).
+
+---
+
+**Felicitats!** Has resolt el Pyraminx! Amb pràctica, el Pyraminx es pot resoldre en només uns segons. És un dels trencaclosques més ràpids de dominar — continua practicant i el resoldràs en menys de 10 segons.

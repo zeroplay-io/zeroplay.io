@@ -1,0 +1,158 @@
+---
+title: Comment résoudre un Rubik's Cube 4x4
+sidebar_position: 4
+description: Apprenez à résoudre le Rubik's Cube 4x4 étape par étape avec la méthode de réduction.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Comment résoudre un Rubik's Cube 4x4
+
+Apprenez à résoudre le Rubik's Cube 4x4 (aussi appelé **Rubik's Revenge**) avec la **méthode de réduction** — l'approche la plus populaire pour les gros cubes. L'idée est simple : d'abord réduire le 4x4 pour qu'il ressemble à un 3x3, puis le résoudre comme un 3x3. Nous couvrons 4 étapes plus des cas de parité spéciaux.
+
+## Notation
+
+Le 4x4 utilise toute la notation standard du 3x3 plus des mouvements supplémentaires pour les couches internes :
+
+**Mouvements standard** (couche externe uniquement) :
+- **R** = Droite &nbsp;&nbsp; **L** = Gauche &nbsp;&nbsp; **U** = Haut &nbsp;&nbsp; **D** = Bas &nbsp;&nbsp; **F** = Face &nbsp;&nbsp; **B** = Arrière
+
+**Mouvements larges** (deux couches externes ensemble) :
+- **Rw** = Droite large (deux couches droites) &nbsp;&nbsp; **Lw** = Gauche large
+- **Uw** = Haut large (deux couches supérieures) &nbsp;&nbsp; **Dw** = Bas large
+- **Fw** = Face large &nbsp;&nbsp; **Bw** = Arrière large
+
+Une lettre seule signifie **90° dans le sens horaire**. Avec **'** signifie **sens antihoraire**. Avec **2** signifie **180°**.
+
+Par exemple : **Rw** = deux couches droites dans le sens horaire, **Uw'** = deux couches supérieures dans le sens antihoraire, **Rw2** = deux couches droites 180°.
+
+Tenez le cube avec le **centre blanc en bas** et le **centre jaune en haut** pour toutes les étapes.
+
+---
+
+## Étape 1 : Résoudre les centres
+
+Construisez les **blocs centraux** sur chaque face. Chaque face du 4x4 a 4 pièces centrales (un bloc 2x2) qui doivent correspondre. Contrairement au 3x3, les centres d'un 4x4 peuvent bouger — il faut donc les résoudre en premier.
+
+**Ordre recommandé :** Commencez par le **blanc** (bas), puis le **jaune** (opposé), puis les 4 côtés restants.
+
+Cette étape est principalement **intuitive**. La technique clé est d'utiliser des mouvements larges pour rassembler les pièces centrales tout en protégeant les faces déjà résolues avec des rotations de la couche externe.
+
+**Insertion basique de centre** — Utilisez un mouvement large pour amener une pièce centrale en haut, tournez le haut pour aligner, puis inversez le mouvement large :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Échange de centre sans casser les faces résolues** — Quand vous devez insérer une pièce centrale mais protéger d'autres centres terminés :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Conseils :**
+- Résolvez toujours les faces opposées en premier (blanc/jaune), puis les 4 côtés restants.
+- Pour insérer une pièce centrale, utilisez un mouvement large (comme Rw) pour la monter, ajustez la couche U, puis annulez le mouvement large.
+- Faites attention à ne pas perturber les centres terminés en travaillant sur les nouveaux.
+
+---
+
+## Étape 2 : Apparier les arêtes
+
+Associez chaque paire de **pièces d'arête** pour que le 4x4 se comporte comme un 3x3. Chaque arête d'un 4x4 est composée de 2 pièces qui doivent être appariées. Il y a 12 arêtes à apparier.
+
+La technique principale est le **Slice-Flip-Slice** : utilisez un mouvement large (Uw) pour aligner les arêtes, effectuez un mouvement de couche externe pour les apparier, puis annulez le mouvement large.
+
+**Appariement basique d'arête** — Placez une pièce d'arête en position avant-droite et son partenaire en haut. Utilisez Uw pour aligner :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Appariement avec retournement** — Quand la paire d'arêtes doit être retournée pendant l'appariement :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Appariement des dernières arêtes** — Pour les 3 dernières arêtes, vous ne pouvez pas utiliser Uw librement sans casser les arêtes déjà appariées. Utilisez cette technique à la place :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Conseils :**
+- Les 8-9 premières arêtes se font facilement avec la technique Slice-Flip-Slice.
+- Pour les 3 dernières arêtes, utilisez des mouvements basés sur Dw ou des techniques de retournement pour éviter de casser les arêtes déjà appariées.
+- Si une paire d'arêtes est à la bonne position mais retournée, il faut la sortir et la réapparier correctement.
+
+---
+
+## Étape 3 : Résoudre comme un 3x3
+
+Une fois tous les centres résolus et toutes les arêtes appariées, le 4x4 est maintenant équivalent à un 3x3 ! Utilisez n'importe quelle **méthode de résolution 3x3** (comme la méthode couche par couche) pour terminer.
+
+**Important :** Durant cette phase, utilisez uniquement les mouvements de la couche externe (R, U, F, L, D, B). N'utilisez **pas** les mouvements larges (Rw, Uw, etc.) car ils casseraient vos arêtes appariées et centres résolus.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Consultez notre [tutoriel 3x3](./index.mdx) pour le guide complet couche par couche. Les mêmes 7 étapes s'appliquent — croix blanche, coins blancs, deuxième couche, croix jaune, face jaune, positionnement des coins et positionnement des arêtes.
+
+---
+
+## Étape 4 : Algorithmes de parité
+
+Le 4x4 présente deux situations spéciales qui **n'arrivent jamais sur un 3x3**. On les appelle des cas de **parité** et chacun se produit environ 50% du temps. Si vous en rencontrez un pendant la phase 3x3, appliquez l'algorithme correspondant et continuez à résoudre.
+
+### Parité OLL (retournement d'une seule arête)
+
+**À quoi ça ressemble :** Durant la dernière couche, une seule arête est retournée — impossible sur un vrai 3x3. La croix jaune ne peut pas être complétée normalement.
+
+**Algorithme : Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Cet algorithme est long, mais il suffit de l'appliquer une seule fois. Après exécution, l'arête sera correctement orientée et vous pourrez continuer avec les étapes normales de la dernière couche du 3x3.
+
+### Parité PLL (échange de deux arêtes)
+
+**À quoi ça ressemble :** À la toute fin, exactement deux arêtes doivent être échangées — encore une fois, impossible sur un 3x3.
+
+**Algorithme : 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Ce court algorithme échange deux arêtes opposées dans la dernière couche. Après application, le cube devrait être entièrement résolu.
+
+**Conseils :**
+- Ne paniquez pas face à la parité — c'est tout à fait normal sur les cubes 4x4.
+- La parité OLL apparaît lors de l'étape de la croix jaune. La parité PLL apparaît tout à la fin.
+- Vous pouvez rencontrer les deux, une seule, ou aucune parité dans une même résolution.
+
+---
+
+**Félicitations !** Vous avez résolu le Rubik's Cube 4x4 ! La méthode de réduction s'adapte bien aux cubes encore plus grands (5x5, 6x6, etc.) — les concepts fondamentaux de résolution des centres, appariement des arêtes et résolution comme un 3x3 restent les mêmes. Avec de la pratique, vous pourrez résoudre le 4x4 en moins de 3 minutes.

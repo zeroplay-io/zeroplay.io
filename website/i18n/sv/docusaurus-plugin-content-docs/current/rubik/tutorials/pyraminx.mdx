@@ -1,0 +1,128 @@
+---
+title: Hur man löser Pyraminx
+sidebar_position: 2
+description: Lär dig lösa Pyraminx steg för steg med lager-för-lager-metoden för nybörjare.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hur man löser Pyraminx
+
+Lär dig lösa Pyraminx med **lager-för-lager**-metoden — det enklaste sättet för nybörjare. Pyraminx är ett tetraederformat pussel med 4 toppar, 6 kanter och 4 center. Vi löser det i 4 enkla steg.
+
+## Notation
+
+Pyraminx använder ett unikt notationssystem med **versaler** för lager och **gemener** för toppar:
+
+**Lager (versaler)** — vrid hela lagret (utan topp):
+
+- **U** = Övre lager &nbsp;&nbsp; **R** = Höger lager &nbsp;&nbsp; **L** = Vänster lager &nbsp;&nbsp; **B** = Bakre lager
+
+**Toppar (gemener)** — vrid bara toppen:
+
+- **u** = Övre topp &nbsp;&nbsp; **r** = Höger topp &nbsp;&nbsp; **l** = Vänster topp &nbsp;&nbsp; **b** = Bakre topp
+
+En bokstav ensam betyder **120° medurs**. Att lägga till **'** betyder **120° moturs**.
+
+Till exempel: **R** = vrid höger lager medurs, **R'** = moturs, **l** = vrid vänster topp medurs, **l'** = moturs.
+
+Håll Pyraminx med **en sida mot dig** och **en topp uppåt** i alla steg.
+
+---
+
+## Steg 1: Lös topparna
+
+Justera de **3 synliga topparna** så att varje topps färg matchar det intilliggande centret. Den 4:e toppen är på botten och löses senare.
+
+Detta steg är **intuitivt** — varje topp har bara 3 möjliga positioner, så högst 2 vridningar löser den. Vrid helt enkelt varje topp tills dess färg matchar det närliggande centret.
+
+**Exempel: Lösa alla tre synliga toppar**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tips:** Börja alltid med detta steg — det är gratis och omedelbart. När topparna är justerade behöver du aldrig röra dem igen.
+
+---
+
+## Steg 2: Kanter i första lagret
+
+Bygg ett komplett **första lager** genom att placera de 3 nedre kanterna i sina korrekta positioner. Välj en sida som botten (vi rekommenderar att börja med sidan som redan har flest matchande färger).
+
+Detta steg är huvudsakligen intuitivt. Hitta varje kant som tillhör det nedre lagret och sätt in den med enkla lagervridningar.
+
+**Fall 1: Kant i övre lagret, korrekt orienterad** — En enda lagervridning sätter in den direkt.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Fall 2: Kant i övre lagret, vänd** — Använd två lagervridningar för att vända och sätta in.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tips:** Om en kant redan är i det nedre lagret men på fel position, använd en lagervridning för att ta ut den uppåt och sätt sedan in den korrekt.
+
+---
+
+## Steg 3: Kanter i sista lagret
+
+Placera de **3 kanterna i övre lagret** på sina korrekta platser. Efter detta steg kommer varje kant att vara mellan de två korrekta centren, men kan fortfarande vara vänd.
+
+Titta på det övre lagret och bestäm åt vilken riktning kanterna behöver cykla:
+
+**Fall 1: Cykel medurs** — Alla tre kanterna behöver flytta en position medurs.
+
+**Algoritm: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Fall 2: Cykel moturs** — Alla tre kanterna behöver flytta en position moturs.
+
+**Algoritm: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tips:** Om bara 2 kanter behöver bytas, löser en av dessa 3-cykelalgoritmer det — titta noga åt vilken riktning cykeln går.
+
+---
+
+## Steg 4: Orientera kanter i sista lagret
+
+Det sista steget! Om kanterna i sista lagret är på korrekta positioner men **vända** (fel färg utåt), använd denna algoritm för att vända dem.
+
+**Vänd 2 kanter: R U R' U R U R'**
+
+Håll Pyraminx så att kanten som **inte** behöver vändas pekar mot dig. Tillämpa sedan algoritmen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Om alla 3 kanterna behöver vändas, tillämpa denna algoritm en gång — den vänder 2, vrid sedan toppen för att ställa in och vänd de återstående 2 (en av de tidigare vända plus den sista).
+
+---
+
+**Grattis!** Du har löst Pyraminx! Med övning kan Pyraminx lösas på bara några sekunder. Det är ett av de snabbaste pusslen att bemästra — fortsätt öva och du kommer att lösa det på under 10 sekunder.

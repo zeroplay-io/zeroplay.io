@@ -1,0 +1,120 @@
+---
+title: Skewb Nasıl Çözülür
+sidebar_position: 3
+description: Sarah'ın Başlangıç Yöntemi ile Skewb'ı adım adım çözmeyi öğrenin.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Skewb Nasıl Çözülür
+
+**Sarah'ın Başlangıç Yöntemi** ile Skewb'ı çözmeyi öğrenin — yeni başlayanlar için basit ve etkili bir yaklaşım. Skewb, her hamlenin bir köşeyi ve üç bitişik yüzü döndürdüğü köşe döndürmeli bir bulmacadır. Tek bir temel algoritma kullanarak sadece 3 adımda çözeceğiz: Sledgehammer.
+
+## Notasyon
+
+Standart Rubik Küpü'nden farklı olarak, Skewb yüzler yerine **köşeler** etrafında döner. Her hamle bir köşeyi ve üç bitişik merkez parçasını döndürür:
+
+- **R** = Sağ ön köşe saat yönünde &nbsp;&nbsp; **R'** = Sağ ön köşe saat yönünün tersine
+- **L** = Sol ön köşe saat yönünde &nbsp;&nbsp; **L'** = Sol ön köşe saat yönünün tersine
+- **U** = Üst sağ ön köşe saat yönünde &nbsp;&nbsp; **U'** = Üst sağ ön köşe saat yönünün tersine
+- **B** = Arka sağ köşe saat yönünde &nbsp;&nbsp; **B'** = Arka sağ köşe saat yönünün tersine
+
+Tek başına bir harf **saat yönünde** dönüş anlamına gelir. **'** eklemek **saat yönünün tersine** anlamına gelir.
+
+Tüm adımlarda Skewb'ı **beyaz merkez altta** olacak şekilde tutun.
+
+---
+
+## Adım 1: Bir Yüzü Çözün
+
+Alt kısımda eksiksiz bir **beyaz yüz** oluşturun. Bu, beyaz merkezin etrafındaki 4 köşenin tamamının beyaz aşağı bakacak şekilde yerinde olması ve bitişik yan renklerin eşleşmesi gerektiği anlamına gelir.
+
+Bu adım yarı sezgiseldir. Temel araç **Sledgehammer** — Skewb için en önemli algoritmadır:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Her beyaz köşeyi alt katmana yerleştirmek için Sledgehammer ve hazırlık hamlelerini kullanın. İşte bir köşe yerleştirme örneği:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**İpuçları:**
+- Beyaz merkezi alta koyarak başlayın.
+- Köşeleri teker teker çözün, zaten yerleştirilmiş parçaları bozmamaya dikkat edin.
+- Bu adımdan sonra alt yüz tamamen beyaz olmalı ve her bitişik yanda eşleşen bir köşe rengi olmalıdır.
+
+---
+
+## Adım 2: Karşı Merkezleri Konumlandırın
+
+**Üst merkez ve 4 yan merkezi** hepsinin doğru konumlarda olacağı şekilde ayarlayın. Alt yüz çözülmüş olarak kalır.
+
+Sledgehammer yine anahtar algoritmadır. Üst merkezi bir yan merkezle değiştirir:
+
+**Durum 1: 2 merkez değiştirme** — Üst ve ön merkezi değiştirmek için Sledgehammer kullanın.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Durum 2: 3 merkezin döngüsü** — Üç merkezin dönmesi gerektiğinde, Sledgehammer'ı iki kez uygulayın (Çift Sledgehammer):
+
+**Çift Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**İpuçları:**
+- Algoritmayı uygulamadan önce bulmacayı döndürerek doğru merkezleri ön ve üst konumlara yerleştirin.
+- Sadece 2 merkez değiştirilmesi gerekiyorsa, bir Sledgehammer yeterlidir. 3 merkez döngüye alınması gerekiyorsa, Çift Sledgehammer kullanın.
+
+---
+
+## Adım 3: Son Katman Köşelerini Yönlendirin
+
+Son adım! **Üst katmanın 4 köşesini** renkleri doğru yöne bakacak şekilde döndürün ve çözümü tamamlayın.
+
+**Durum 1: 4 köşenin tamamı saat yönünde dönüş gerektiriyor** — Bu algoritmayı uygulayın:
+
+**Algoritma: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Durum 2: Bazı köşeler ayarlama gerektiriyor** — Tek tek köşeleri yönlendirmek için hazırlık hamleleriyle Sledgehammer kullanın:
+
+**Algoritma: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**İpuçları:**
+- Sadece bazı köşelerin döndürülmesi gerekiyorsa, çözülmemiş köşeleri konuma getirmek için hazırlık hamleleri (U veya U') kullanın, algoritmayı uygulayın, sonra hazırlık hamlesini geri alın.
+- Kalan köşeler için işlemi tekrarlamanız gerekebilir.
+
+---
+
+**Tebrikler!** Skewb'ı çözdünüz! Skewb, çok az algoritmaya ihtiyaç duyduğunuz için çözülmesi en tatmin edici bulmacalardan biridir. Pratikle, 10 saniyenin altında çözeceksiniz. Sledgehammer'ı pratik etmeye devam edin — bu bulmacada ustalaşmanın anahtarı budur.

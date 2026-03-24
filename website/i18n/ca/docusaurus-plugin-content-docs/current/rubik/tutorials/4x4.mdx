@@ -1,0 +1,158 @@
+---
+title: Com resoldre un cub de Rubik 4x4
+sidebar_position: 4
+description: Aprèn a resoldre el cub de Rubik 4x4 pas a pas amb el mètode de reducció.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Com resoldre un cub de Rubik 4x4
+
+Aprèn a resoldre el cub de Rubik 4x4 (també anomenat **Rubik's Revenge**) amb el **mètode de reducció** — l'enfocament més popular per a cubs grans. La idea és senzilla: primer redueix el 4x4 perquè sembli un 3x3, després resol-lo com un 3x3. Cobrim 4 passos més casos especials de paritat.
+
+## Notació
+
+El 4x4 utilitza tota la notació estàndard del 3x3 més moviments addicionals per a les capes internes:
+
+**Moviments estàndard** (només capa externa):
+- **R** = Dreta &nbsp;&nbsp; **L** = Esquerra &nbsp;&nbsp; **U** = Dalt &nbsp;&nbsp; **D** = Baix &nbsp;&nbsp; **F** = Davant &nbsp;&nbsp; **B** = Darrere
+
+**Moviments amples** (dues capes externes juntes):
+- **Rw** = Dreta ample (dues capes dretes) &nbsp;&nbsp; **Lw** = Esquerra ample
+- **Uw** = Dalt ample (dues capes superiors) &nbsp;&nbsp; **Dw** = Baix ample
+- **Fw** = Davant ample &nbsp;&nbsp; **Bw** = Darrere ample
+
+Una lletra sola significa **90° en sentit horari**. Amb **'** significa **sentit antihorari**. Amb **2** significa **180°**.
+
+Per exemple: **Rw** = dues capes dretes en sentit horari, **Uw'** = dues capes superiors en sentit antihorari, **Rw2** = dues capes dretes 180°.
+
+Mantén el cub amb el **centre blanc a baix** i el **centre groc a dalt** per a tots els passos.
+
+---
+
+## Pas 1: Resoldre els centres
+
+Construeix els **blocs centrals** a cada cara. Cada cara del 4x4 té 4 peces centrals (un bloc 2x2) que han de coincidir. A diferència del 3x3, els centres d'un 4x4 es poden moure — per això cal resoldre'ls primer.
+
+**Ordre recomanat:** Comença amb **blanc** (baix), després **groc** (oposat), després els 4 costats restants.
+
+Aquest pas és principalment **intuïtiu**. La tècnica clau és utilitzar moviments amples per agrupar peces centrals mentre es protegeixen les cares ja resoltes amb girs de la capa externa.
+
+**Inserció bàsica de centre** — Utilitza un moviment ample per portar una peça central amunt, gira la capa superior per alinear, després inverteix el moviment ample:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Intercanvi de centre sense trencar cares resoltes** — Quan necessites inserir una peça central però has de protegir altres centres completats:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Consells:**
+- Sempre resol les cares oposades primer (blanc/groc), després els 4 costats restants.
+- En inserir una peça central, utilitza un moviment ample (com Rw) per portar-la amunt, ajusta la capa U, i després desfés el moviment ample.
+- Vigila de no alterar els centres completats en treballar amb nous.
+
+---
+
+## Pas 2: Aparellar arestes
+
+Aparella cada parell de **peces d'aresta** perquè el 4x4 es comporti com un 3x3. Cada aresta d'un 4x4 consta de 2 peces que s'han d'aparellar. Hi ha 12 arestes per aparellar.
+
+La tècnica principal és **Slice-Flip-Slice**: utilitza un moviment ample (Uw) per alinear les arestes, fes un moviment de capa externa per aparellar-les, després inverteix el moviment ample.
+
+**Aparellament bàsic d'arestes** — Col·loca una peça d'aresta a la posició frontal dreta i la seva parella a dalt. Utilitza Uw per alinear:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Aparellament amb gir** — Quan el parell d'arestes necessita girar-se durant l'aparellament:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Aparellament de les últimes arestes** — Per a les últimes 3 arestes, no pots utilitzar Uw lliurement sense trencar arestes ja aparellades. Utilitza aquesta tècnica:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Consells:**
+- Les primeres 8-9 arestes es poden aparellar lliurement amb la tècnica Slice-Flip-Slice.
+- Per a les últimes 3 arestes, utilitza moviments basats en Dw o tècniques de gir per evitar trencar arestes ja aparellades.
+- Si un parell d'arestes està a la posició correcta però girat, cal treure'l i reaparellar-lo correctament.
+
+---
+
+## Pas 3: Resoldre com un 3x3
+
+Un cop resolts tots els centres i aparellades totes les arestes, el 4x4 ara és equivalent a un 3x3! Utilitza qualsevol **mètode de resolució de 3x3** (com el mètode capa per capa) per acabar.
+
+**Important:** Durant aquesta fase, utilitza només moviments de capa externa (R, U, F, L, D, B). **No** utilitzis moviments amples (Rw, Uw, etc.) ja que trencarien les arestes aparellades i centres resolts.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Consulta el nostre [tutorial de 3x3](./index.mdx) per a la guia completa del mètode capa per capa. S'apliquen els mateixos 7 passos — creu blanca, cantonades blanques, segona capa, creu groga, cara groga, posicionar cantonades i posicionar arestes.
+
+---
+
+## Pas 4: Algoritmes de paritat
+
+El 4x4 té dues situacions especials que **mai no ocorren en un 3x3**. S'anomenen casos de **paritat** i cadascun ocorre aproximadament el 50% de les vegades. Si en trobes un durant la fase 3x3, aplica l'algoritme corresponent i continua resolent.
+
+### Paritat OLL (gir d'una sola aresta)
+
+**Com es veu:** Durant l'última capa, una sola aresta està girada — impossible en un 3x3 real. La creu groga no es pot completar normalment.
+
+**Algoritme: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Aquest algoritme és llarg, però només cal aplicar-lo un cop. Després de l'execució, l'aresta estarà correctament orientada i podràs continuar amb els passos normals de l'última capa del 3x3.
+
+### Paritat PLL (intercanvi de dues arestes)
+
+**Com es veu:** Al final, exactament dues arestes necessiten intercanviar-se — de nou, impossible en un 3x3.
+
+**Algoritme: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Aquest curt algoritme intercanvia dues arestes oposades a l'última capa. Després d'aplicar-lo, el cub hauria d'estar completament resolt.
+
+**Consells:**
+- No et posis nerviós amb la paritat — és completament normal en cubs 4x4.
+- La paritat OLL apareix durant el pas de la creu groga. La paritat PLL apareix al final.
+- Pots trobar ambdues, només una, o cap paritat en una mateixa resolució.
+
+---
+
+**Felicitats!** Has resolt el cub de Rubik 4x4! El mètode de reducció s'adapta bé a cubs encara més grans (5x5, 6x6, etc.) — els conceptes fonamentals de resoldre centres, aparellar arestes i resoldre com un 3x3 romanen iguals. Amb pràctica, podràs resoldre el 4x4 en menys de 3 minuts.

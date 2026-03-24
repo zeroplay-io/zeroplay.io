@@ -1,0 +1,128 @@
+---
+title: Cum să rezolvi Pyraminx-ul
+sidebar_position: 2
+description: Învață să rezolvi Pyraminx-ul pas cu pas folosind metoda strat cu strat pentru începători.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cum să rezolvi Pyraminx-ul
+
+Învață să rezolvi Pyraminx-ul folosind metoda **strat cu strat** — cea mai simplă abordare pentru începători. Pyraminx-ul este un puzzle în formă de tetraedru cu 4 vârfuri, 6 muchii și 4 centre. Îl vom rezolva în 4 pași simpli.
+
+## Notație
+
+Pyraminx-ul folosește un sistem de notație unic cu **majuscule** pentru straturi și **minuscule** pentru vârfuri:
+
+**Straturi (majuscule)** — rotește întregul strat (fără vârf):
+
+- **U** = Stratul superior &nbsp;&nbsp; **R** = Stratul drept &nbsp;&nbsp; **L** = Stratul stâng &nbsp;&nbsp; **B** = Stratul din spate
+
+**Vârfuri (minuscule)** — rotește doar vârful:
+
+- **u** = Vârful superior &nbsp;&nbsp; **r** = Vârful drept &nbsp;&nbsp; **l** = Vârful stâng &nbsp;&nbsp; **b** = Vârful din spate
+
+O literă singură înseamnă **120° în sensul acelor de ceasornic**. Adăugarea **'** înseamnă **120° în sens invers**.
+
+De exemplu: **R** = rotește stratul drept în sensul acelor de ceasornic, **R'** = în sens invers, **l** = rotește vârful stâng în sensul acelor de ceasornic, **l'** = în sens invers.
+
+Ține Pyraminx-ul cu **o față spre tine** și **un vârf în sus** pentru toți pașii.
+
+---
+
+## Pasul 1: Rezolvă vârfurile
+
+Aliniază cele **3 vârfuri vizibile** astfel încât culoarea fiecărui vârf să se potrivească cu centrul adiacent. Al 4-lea vârf este în partea de jos și va fi rezolvat mai târziu.
+
+Acest pas este **intuitiv** — fiecare vârf are doar 3 poziții posibile, deci cel mult 2 rotiri îl rezolvă. Pur și simplu rotește fiecare vârf până când culoarea lui se potrivește cu centrul vecin.
+
+**Exemplu: Rezolvarea celor trei vârfuri vizibile**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Sfaturi:** Începe întotdeauna cu acest pas — este gratuit și instantaneu. Odată ce vârfurile sunt aliniate, nu mai trebuie să le atingi.
+
+---
+
+## Pasul 2: Muchiile primului strat
+
+Construiește un **prim strat** complet plasând cele 3 muchii inferioare în pozițiile lor corecte. Alege o față ca bază (recomandăm să începi cu fața care are deja cele mai multe culori potrivite).
+
+Acest pas este în mare parte intuitiv. Găsește fiecare muchie care aparține stratului inferior și inserează-o cu rotiri simple de strat.
+
+**Cazul 1: Muchie în stratul superior, orientată corect** — O singură rotire de strat o inserează direct.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Cazul 2: Muchie în stratul superior, inversată** — Folosește două rotiri de strat pentru a inversa și insera.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Sfaturi:** Dacă o muchie este deja în stratul inferior dar în poziția greșită, folosește o rotire de strat pentru a o scoate sus, apoi reinserează-o corect.
+
+---
+
+## Pasul 3: Muchiile ultimului strat
+
+Plasează cele **3 muchii ale stratului superior** în locurile lor corecte. După acest pas, fiecare muchie va fi între cele două centre corecte, dar poate fi încă inversată.
+
+Privește stratul superior și determină în ce direcție trebuie să cicleze muchiile:
+
+**Cazul 1: Ciclu în sensul acelor de ceasornic** — Toate trei muchiile trebuie să se mute cu o poziție în sensul acelor de ceasornic.
+
+**Algoritm: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Cazul 2: Ciclu în sens invers** — Toate trei muchiile trebuie să se mute cu o poziție în sens invers.
+
+**Algoritm: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Sfaturi:** Dacă doar 2 muchii trebuie schimbate, unul dintre acești algoritmi de 3-ciclu va rezolva problema — observă cu atenție direcția ciclului.
+
+---
+
+## Pasul 4: Orientarea muchiilor ultimului strat
+
+Ultimul pas! Dacă muchiile ultimului strat sunt în pozițiile corecte dar **inversate** (culoarea greșită spre exterior), folosește acest algoritm pentru a le inversa.
+
+**Inversează 2 muchii: R U R' U R U R'**
+
+Ține Pyraminx-ul astfel încât muchia care **nu** trebuie inversată să fie spre tine. Apoi aplică algoritmul.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Dacă toate 3 muchiile trebuie inversate, aplică acest algoritm o dată — va inversa 2, apoi rotește partea superioară pentru poziționare și inversează cele 2 rămase (una dintre cele inversate anterior plus ultima).
+
+---
+
+**Felicitări!** Ai rezolvat Pyraminx-ul! Cu practică, Pyraminx-ul poate fi rezolvat în doar câteva secunde. Este unul dintre cele mai rapide puzzle-uri de stăpânit — continuă să exersezi și îl vei rezolva în mai puțin de 10 secunde.

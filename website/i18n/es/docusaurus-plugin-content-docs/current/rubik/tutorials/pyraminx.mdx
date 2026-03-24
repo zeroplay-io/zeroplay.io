@@ -1,0 +1,128 @@
+---
+title: Cómo resolver el Pyraminx
+sidebar_position: 2
+description: Aprende a resolver el Pyraminx paso a paso con el método capa por capa para principiantes.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cómo resolver el Pyraminx
+
+Aprende a resolver el Pyraminx con el método **capa por capa** — el enfoque más sencillo para principiantes. El Pyraminx es un rompecabezas en forma de tetraedro con 4 puntas, 6 aristas y 4 centros. Lo resolveremos en 4 simples pasos.
+
+## Notación
+
+El Pyraminx utiliza un sistema de notación único con **mayúsculas** para las capas y **minúsculas** para las puntas:
+
+**Capas (mayúsculas)** — rotar toda la capa (sin la punta):
+
+- **U** = Capa superior &nbsp;&nbsp; **R** = Capa derecha &nbsp;&nbsp; **L** = Capa izquierda &nbsp;&nbsp; **B** = Capa trasera
+
+**Puntas (minúsculas)** — rotar solo la punta:
+
+- **u** = Punta superior &nbsp;&nbsp; **r** = Punta derecha &nbsp;&nbsp; **l** = Punta izquierda &nbsp;&nbsp; **b** = Punta trasera
+
+Una letra sola significa **120° en sentido horario**. Agregar **'** significa **120° en sentido antihorario**.
+
+Por ejemplo: **R** = rotar la capa derecha en sentido horario, **R'** = sentido antihorario, **l** = rotar la punta izquierda en sentido horario, **l'** = sentido antihorario.
+
+Sostén el Pyraminx con **una cara hacia ti** y **una punta hacia arriba** en todos los pasos.
+
+---
+
+## Paso 1: Resolver las puntas
+
+Alinea las **3 puntas visibles** para que el color de cada punta coincida con el centro adyacente. La 4ª punta está abajo y se resolverá después.
+
+Este paso es **intuitivo** — cada punta tiene solo 3 posiciones posibles, así que como máximo 2 giros la resuelven. Simplemente gira cada punta hasta que su color coincida con el centro vecino.
+
+**Ejemplo: Resolver las tres puntas visibles**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Consejos:** Siempre empieza por este paso — es gratis e instantáneo. Una vez alineadas las puntas, no necesitas volver a tocarlas.
+
+---
+
+## Paso 2: Aristas de la primera capa
+
+Construye una **primera capa** completa colocando las 3 aristas inferiores en sus posiciones correctas. Elige una cara como base (recomendamos empezar por la cara que ya tenga más colores coincidentes).
+
+Este paso es mayormente intuitivo. Encuentra cada arista que pertenece a la capa inferior e insértala con giros simples de capa.
+
+**Caso 1: Arista en la capa superior, correctamente orientada** — Un solo giro de capa la inserta directamente.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Caso 2: Arista en la capa superior, volteada** — Usa dos giros de capa para voltear e insertar.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Consejos:** Si una arista ya está en la capa inferior pero en la posición incorrecta, usa un giro de capa para sacarla hacia arriba y luego reinsértala correctamente.
+
+---
+
+## Paso 3: Aristas de la última capa
+
+Coloca las **3 aristas de la capa superior** en sus posiciones correctas. Después de este paso, cada arista estará entre los dos centros correctos, pero puede estar aún volteada.
+
+Observa la capa superior y determina en qué dirección deben ciclar las aristas:
+
+**Caso 1: Ciclo en sentido horario** — Las tres aristas necesitan moverse una posición en sentido horario.
+
+**Algoritmo: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Caso 2: Ciclo en sentido antihorario** — Las tres aristas necesitan moverse una posición en sentido antihorario.
+
+**Algoritmo: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Consejos:** Si solo 2 aristas necesitan intercambiarse, uno de estos algoritmos de 3 ciclos lo resolverá — observa cuidadosamente la dirección del ciclo.
+
+---
+
+## Paso 4: Orientar las aristas de la última capa
+
+¡El último paso! Si las aristas de la última capa están en las posiciones correctas pero **volteadas** (color incorrecto hacia afuera), usa este algoritmo para voltearlas.
+
+**Voltear 2 aristas: R U R' U R U R'**
+
+Sostén el Pyraminx de modo que la arista que **no** necesita voltearse esté frente a ti. Luego aplica el algoritmo.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Si las 3 aristas necesitan voltearse, aplica este algoritmo una vez — volteará 2 de ellas, luego gira la parte superior para preparar y voltear las 2 restantes (una de las previamente volteadas más la última).
+
+---
+
+**¡Felicidades!** ¡Has resuelto el Pyraminx! Con práctica, el Pyraminx se puede resolver en solo unos segundos. Es uno de los rompecabezas más rápidos de dominar — sigue practicando y lo resolverás en menos de 10 segundos.

@@ -1,0 +1,120 @@
+---
+title: Hur man löser Skewb
+sidebar_position: 3
+description: Lär dig lösa Skewb steg för steg med Sarahs nybörjarmetod.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hur man löser Skewb
+
+Lär dig lösa Skewb med **Sarahs nybörjarmetod** — en enkel och effektiv metod för nybörjare. Skewb är ett hörn-vridande pussel där varje drag roterar ett hörn och de tre angränsande sidorna. Vi löser det på bara 3 steg med en central algoritm: Sledgehammer.
+
+## Notation
+
+Till skillnad från en vanlig Rubiks kub vrids Skewb runt **hörn** istället för sidor. Varje drag roterar ett hörn och de tre angränsande mittbitarna:
+
+- **R** = Höger framhörn medurs &nbsp;&nbsp; **R'** = Höger framhörn moturs
+- **L** = Vänster framhörn medurs &nbsp;&nbsp; **L'** = Vänster framhörn moturs
+- **U** = Övre höger framhörn medurs &nbsp;&nbsp; **U'** = Övre höger framhörn moturs
+- **B** = Bakre höger hörn medurs &nbsp;&nbsp; **B'** = Bakre höger hörn moturs
+
+En bokstav ensam betyder en vridning **medurs**. Att lägga till **'** betyder **moturs**.
+
+Håll Skewb med **vitt centrum nedåt** för alla steg.
+
+---
+
+## Steg 1: Lös en sida
+
+Bygg en komplett **vit sida** på botten. Det betyder att alla 4 hörn runt det vita centrumet måste vara på plats med vitt nedåt, och de angränsande sidfärgerna måste stämma.
+
+Detta steg är semi-intuitivt. Det viktigaste verktyget är **Sledgehammer** — den viktigaste algoritmen för Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Använd Sledgehammer och förberedelsedrag för att placera varje vitt hörn i det nedersta lagret. Här är ett exempel på att sätta in ett hörn:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Börja med att placera det vita centrumet nedåt.
+- Lös hörnen ett i taget, och var försiktig så att du inte stör redan placerade bitar.
+- Efter detta steg ska botten vara helt vit, och varje angränsande sida ska ha en matchande hörnfärg.
+
+---
+
+## Steg 2: Positionera de motsatta centrumen
+
+Justera **toppcentrumet och de 4 sidocentrumen** så att alla är i sina korrekta positioner. Bottensidan förblir löst.
+
+Sledgehammer är återigen nyckelalgoritmen. Den byter toppcentrumet med ett sidocentrum:
+
+**Fall 1: Byt 2 centrum** — Använd Sledgehammer för att byta topp- och frontcentrumet.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Fall 2: 3-cykel av centrum** — När tre centrum behöver roteras, tillämpa Sledgehammer två gånger (Dubbel Sledgehammer):
+
+**Dubbel Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tips:**
+- Rotera pusslet för att ställa in de korrekta centrumen i fram- och topppositionerna innan du tillämpar algoritmen.
+- Om bara 2 centrum behöver bytas räcker en Sledgehammer. Om 3 centrum behöver cyklas, använd Dubbel Sledgehammer.
+
+---
+
+## Steg 3: Orientera sista lagrets hörn
+
+Det sista steget! Vrid de **4 hörnen i det översta lagret** så att deras färger pekar åt rätt håll, och slutför lösningen.
+
+**Fall 1: Alla 4 hörn behöver vridning medurs** — Tillämpa denna algoritm:
+
+**Algoritm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Fall 2: Vissa hörn behöver justering** — Använd Sledgehammer med förberedelsedrag för att orientera enskilda hörn:
+
+**Algoritm: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tips:**
+- Om bara vissa hörn behöver vridas, använd förberedelsedrag (U eller U') för att föra de olösta hörnen till position, tillämpa algoritmen och ångra sedan förberedelsedraget.
+- Du kan behöva upprepa processen för de återstående hörnen.
+
+---
+
+**Grattis!** Du har löst Skewb! Skewb är ett av de mest tillfredsställande pusslen att lösa eftersom du behöver så få algoritmer. Med övning löser du det på under 10 sekunder. Fortsätt öva Sledgehammer — det är nyckeln till att bemästra detta pussel.

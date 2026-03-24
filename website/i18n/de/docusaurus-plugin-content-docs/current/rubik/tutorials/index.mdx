@@ -1,10 +1,12 @@
 ---
 title: Wie man einen 3x3 Rubik's Cube löst
 sidebar_position: 0
-image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg
 ---
 
 import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
 
 # Wie man einen 3x3 Rubik's Cube löst
 
@@ -33,6 +35,7 @@ Dieser Schritt ist **intuitiv** — keine festen Algorithmen. Finde jedes weiße
 **Fall 1: Weiße Kante in der oberen Schicht** — Richte die Seitenfarbe mit ihrem Center aus, dann drehe diese Seite zweimal.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2"
   alg="F2"
 />
@@ -40,6 +43,7 @@ Dieser Schritt ist **intuitiv** — keine festen Algorithmen. Finde jedes weiße
 **Fall 2: Weiße Kante in der mittleren Schicht** — Bringe sie zuerst nach oben, dann behandle sie wie Fall 1.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2 U F"
   alg="F' U' F2"
 />
@@ -47,6 +51,7 @@ Dieser Schritt ist **intuitiv** — keine festen Algorithmen. Finde jedes weiße
 **Fall 3: Weiße Kante unten, aber falsch orientiert** — Nimm sie heraus und setze sie richtig ein.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' R U' R'"
   alg="R U R' F"
 />
@@ -64,6 +69,7 @@ Finde eine weiße Ecke in der oberen Schicht. Positioniere sie über ihrem Zielp
 **Algorithmus: R U R' U'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 U R U' R'"
   alg="R U R' U'"
 />
@@ -83,6 +89,7 @@ Richte die Vorderfarbe der Kante mit ihrem passenden Center aus, dann entscheide
 **Kante nach rechts einsetzen: U R U' R' U' F' U F**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' U F U R U' R' U'"
   alg="U R U' R' U' F' U F"
 />
@@ -90,6 +97,7 @@ Richte die Vorderfarbe der Kante mit ihrem passenden Center aus, dann entscheide
 **Kante nach links einsetzen: U' L' U L U F U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U' F' U' L' U L U"
   alg="U' L' U L U F U' F'"
 />
@@ -111,6 +119,7 @@ Du siehst eines von drei Mustern oben:
 **Algorithmus: F R U R' U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U R U' R' F'"
   alg="F R U R' U' F'"
 />
@@ -126,6 +135,7 @@ Halte den Würfel so, dass eine **gelbe Ecke, die gedreht werden muss**, vorne r
 **Algorithmus: R U R' U R U2 R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U2' R' U' R U' R'"
   alg="R U R' U R U2 R'"
 />
@@ -143,6 +153,7 @@ Schau dir die Ecken der oberen Schicht an. Finde eine Ecke, die bereits zwischen
 **Algorithmus: U R U' L' U R' U' L**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 L' U R U' L U R' U'"
   alg="U R U' L' U R' U' L"
 />
@@ -160,6 +171,7 @@ Finde eine Kante, die bereits richtig ist (ihre Farbe stimmt mit dem Seitencente
 **Zyklus im Uhrzeigersinn: R U' R U R U R U' R' U' R2**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
   alg="R U' R U R U R U' R' U' R2"
 />
@@ -167,6 +179,7 @@ Finde eine Kante, die bereits richtig ist (ihre Farbe stimmt mit dem Seitencente
 **Zyklus gegen den Uhrzeigersinn: R2 U R U R' U' R' U' R' U R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U' R U R U R U' R' U' R2"
   alg="R2 U R U R' U' R' U' R' U R'"
 />

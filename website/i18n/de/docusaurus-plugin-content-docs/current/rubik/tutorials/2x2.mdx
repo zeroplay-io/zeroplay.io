@@ -1,0 +1,136 @@
+---
+title: Wie man den 2×2 Zauberwürfel löst
+sidebar_position: 1
+description: Lerne den 2×2 Zauberwürfel Schritt für Schritt mit der Ortega-Methode zu lösen.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Wie man den 2×2 Zauberwürfel löst
+
+Lerne den 2×2 Zauberwürfel mit der **Ortega-Methode** zu lösen — ein schneller und effizienter 3-Schritte-Ansatz. Der 2×2 hat keine Mittel- oder Kantensteine, nur Ecken, was ihn zu einem großartigen Puzzle für den Einstieg macht.
+
+## Notation
+
+Der 2×2 verwendet dieselbe Notation wie der 3×3, aber ohne Bewegungen der mittleren Ebene:
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Oben &nbsp;&nbsp; **D** = Unten &nbsp;&nbsp; **F** = Vorne &nbsp;&nbsp; **B** = Hinten
+
+Ein Buchstabe allein bedeutet **90° im Uhrzeigersinn**. Mit **'** bedeutet **gegen den Uhrzeigersinn**. Mit **2** bedeutet **180°**.
+
+Zum Beispiel: **R** = rechte Seite im Uhrzeigersinn drehen, **R'** = gegen den Uhrzeigersinn, **R2** = 180°.
+
+Da der 2×2 keine festen Mittelpunkte hat, wähle **Weiß** als Startfarbe und halte sie **unten**.
+
+---
+
+## Schritt 1: Die erste Seite lösen
+
+Baue eine vollständige **weiße Seite** unten auf. Anders als beim 3×3 musst du die Seitenfarben **nicht** anpassen — bringe einfach alle 4 weißen Aufkleber auf dieselbe Seite.
+
+Dieser Schritt ist **intuitiv** — es gibt keine festen Algorithmen. Finde jedes weiße Eckstück und bewege es zur Unterseite.
+
+**Fall 1: Weiße Ecke in der oberen Ebene** — Bringe sie mit einer einfachen Einfügung nach unten.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Fall 2: Weiße Ecke unten, aber falsch orientiert** — Nimm sie heraus und setze sie richtig ein.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tipps:** Konzentriere dich nur darauf, 4 weiße Aufkleber auf eine Seite zu bekommen. Seitenfarben spielen noch keine Rolle — das ist es, was Ortega von der 3×3 Anfängermethode unterscheidet.
+
+---
+
+## Schritt 2: Letzte Ebene orientieren (OLL)
+
+Mache die **gegenüberliegende Seite** (gelb) komplett einfarbig. Du brauchst jetzt alle 4 gelben Aufkleber nach oben zeigend.
+
+Schau dir die Oberseite an und bestimme, welchen Fall du hast:
+
+**Fall 1: Eine gelbe Ecke zeigt nach oben (Sune)** — Halte den Würfel so, dass die gelöste Ecke vorne links ist.
+
+**Algorithmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Fall 2: Keine gelbe Ecke zeigt nach oben** — Wende Sune zweimal an, um alle Ecken zu orientieren.
+
+**Algorithmus: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Fall 3: Zwei diagonale gelbe Ecken zeigen nach oben** — Halte den Würfel so, dass die zwei gelösten Ecken vorne links und hinten rechts sind.
+
+**Algorithmus: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tipps:** Wenn du zwei **benachbarte** gelbe Ecken nach oben zeigend hast, verwende Sune einmal, um Fall 1 oder Fall 3 zu erreichen.
+
+---
+
+## Schritt 3: Beide Ebenen permutieren (PBL)
+
+Der letzte Schritt! Ordne alle Eckstücke an ihren richtigen Positionen an, um den Würfel zu lösen. Schau dir die **Seitenfarben** der oberen und unteren Ebene an, um den nötigen Tausch zu bestimmen.
+
+**So überprüfst du:** Schau dir die Seiten der oberen Ebene an. Wenn zwei benachbarte Aufkleber auf einer Seite die gleiche Farbe haben, ist kein Tausch oder ein benachbarter Tausch nötig. Wenn jede Seite zwei verschiedene Farben hat, ist ein diagonaler Tausch nötig.
+
+**Fall 1: Diagonaler Tausch oben** — Zwei gegenüberliegende Ecken müssen getauscht werden.
+
+**Algorithmus: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Fall 2: Benachbarter Tausch oben** — Zwei benachbarte Ecken müssen getauscht werden.
+
+**Algorithmus: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Fall 3: Diagonaler Tausch in beiden Ebenen** — Verwende diesen schnellen Algorithmus.
+
+**Algorithmus: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Nach dem Lösen der oberen Ebene musst du möglicherweise die Unterseite drehen (D oder D'), um die letzten Farben auszurichten. Wenn die untere Ebene ebenfalls einen Tausch braucht, wende den diagonalen Tausch-Algorithmus an, während die ungelöste Ebene oben ist.
+
+---
+
+**Herzlichen Glückwunsch!** Du hast den 2×2 Zauberwürfel gelöst! Die Ortega-Methode ist schnell und effizient — mit Übung kannst du den 2×2 in unter 5 Sekunden lösen.

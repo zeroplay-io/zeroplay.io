@@ -1,0 +1,158 @@
+---
+title: Hoe los je een 4x4 Rubik's Cube op
+sidebar_position: 4
+description: Leer stap voor stap de 4x4 Rubik's Cube op te lossen met de reductiemethode.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hoe los je een 4x4 Rubik's Cube op
+
+Leer de 4x4 Rubik's Cube (ook wel **Rubik's Revenge** genoemd) op te lossen met de **reductiemethode** — de populairste aanpak voor grotere kubussen. Het idee is simpel: reduceer eerst de 4x4 zodat hij eruitziet als een 3x3, en los hem dan op als een 3x3. We behandelen 4 stappen plus speciale pariteitsgevallen.
+
+## Notatie
+
+De 4x4 gebruikt alle standaard 3x3-notatie plus extra zetten voor de binnenste lagen:
+
+**Standaardzetten** (alleen buitenste laag):
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Boven &nbsp;&nbsp; **D** = Onder &nbsp;&nbsp; **F** = Voor &nbsp;&nbsp; **B** = Achter
+
+**Brede zetten** (buitenste twee lagen samen):
+- **Rw** = Rechts breed (rechter twee lagen) &nbsp;&nbsp; **Lw** = Links breed
+- **Uw** = Boven breed (bovenste twee lagen) &nbsp;&nbsp; **Dw** = Onder breed
+- **Fw** = Voor breed &nbsp;&nbsp; **Bw** = Achter breed
+
+Een letter alleen betekent **90° met de klok mee**. Met **'** betekent **tegen de klok in**. Met **2** betekent **180°**.
+
+Bijvoorbeeld: **Rw** = rechter twee lagen met de klok mee, **Uw'** = bovenste twee lagen tegen de klok in, **Rw2** = rechter twee lagen 180°.
+
+Houd de kubus met het **witte centrum onderaan** en het **gele centrum bovenaan** voor alle stappen.
+
+---
+
+## Stap 1: Centra oplossen
+
+Bouw de **centrumblokken** op elk vlak. Elk vlak van de 4x4 heeft 4 centrumstukken (een 2x2-blok) die moeten overeenkomen. Anders dan bij de 3x3 kunnen de centra van een 4x4 bewegen — daarom moeten ze eerst worden opgelost.
+
+**Aanbevolen volgorde:** Begin met **wit** (onder), dan **geel** (tegenover), dan de overige 4 zijden.
+
+Deze stap is voornamelijk **intuïtief**. De sleuteltechniek is brede zetten gebruiken om centrumstukken samen te brengen terwijl je al opgeloste vlakken beschermt met buitenste laagdraaien.
+
+**Basis centruminvoeging** — Gebruik een brede zet om een centrumstuk omhoog te brengen, draai de bovenste laag om uit te lijnen, en draai dan de brede zet terug:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Centrumwissel zonder opgeloste vlakken te breken** — Wanneer je een centrumstuk moet invoegen maar andere voltooide centra moet beschermen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tips:**
+- Los altijd eerst de tegenoverliggende vlakken op (wit/geel), dan de overige 4 zijden.
+- Bij het invoegen van een centrumstuk, gebruik een brede zet (zoals Rw) om het omhoog te brengen, pas de U-laag aan en draai dan de brede zet terug.
+- Pas op dat je voltooide centra niet verstoort bij het werken aan nieuwe.
+
+---
+
+## Stap 2: Randen koppelen
+
+Koppel elk paar **randstukken** zodat de 4x4 zich als een 3x3 gedraagt. Elke rand van een 4x4 bestaat uit 2 stukken die gekoppeld moeten worden. Er zijn 12 randen om te koppelen.
+
+De kerntechniek is **Slice-Flip-Slice**: gebruik een brede zet (Uw) om randen uit te lijnen, voer een buitenste laagzet uit om ze te koppelen, en draai dan de brede zet terug.
+
+**Basis randkoppeling** — Plaats één randstuk in de rechtervoorpositie en zijn partner bovenaan. Gebruik Uw om uit te lijnen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Omgekeerde koppeling** — Wanneer het randpaar moet worden omgekeerd tijdens het koppelen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Laatste randen koppelen** — Voor de laatste 3 randen kun je Uw niet vrij gebruiken zonder gekoppelde randen te breken. Gebruik in plaats daarvan deze techniek:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tips:**
+- De eerste 8-9 randen kunnen vrij worden gekoppeld met de Slice-Flip-Slice-techniek.
+- Voor de laatste 3 randen, gebruik Dw-gebaseerde zetten of omslagtechnieken om al gekoppelde randen niet te breken.
+- Als een randpaar op de juiste positie staat maar omgekeerd is, moet je het eruit halen en correct opnieuw koppelen.
+
+---
+
+## Stap 3: Oplossen als 3x3
+
+Zodra alle centra zijn opgelost en alle randen zijn gekoppeld, is de 4x4 nu gelijk aan een 3x3! Gebruik elke **3x3-oplosmethode** (zoals de laag-voor-laag-methode) om af te maken.
+
+**Belangrijk:** Gebruik tijdens deze fase alleen buitenste laagzetten (R, U, F, L, D, B). Gebruik **geen** brede zetten (Rw, Uw, enz.) want die zouden je gekoppelde randen en opgeloste centra breken.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Bekijk onze [3x3-tutorial](./index.mdx) voor de volledige laag-voor-laag-gids. Dezelfde 7 stappen gelden — wit kruis, witte hoeken, tweede laag, geel kruis, geel vlak, hoeken positioneren en randen positioneren.
+
+---
+
+## Stap 4: Pariteitsalgoritmen
+
+De 4x4 heeft twee speciale situaties die **nooit voorkomen bij een 3x3**. Deze worden **pariteit** genoemd en komen elk ongeveer 50% van de tijd voor. Als je er een tegenkomt tijdens de 3x3-fase, pas het bijbehorende algoritme toe en ga verder met oplossen.
+
+### OLL-pariteit (enkele randomkering)
+
+**Hoe het eruitziet:** Tijdens de laatste laag is een enkele rand omgekeerd — onmogelijk op een echte 3x3. Het gele kruis kan niet normaal worden voltooid.
+
+**Algoritme: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Dit algoritme is lang, maar hoeft slechts één keer te worden toegepast. Na uitvoering is de rand correct georiënteerd en kun je doorgaan met de normale 3x3 laatste laagstappen.
+
+### PLL-pariteit (twee randen wisselen)
+
+**Hoe het eruitziet:** Aan het einde moeten precies twee randen worden gewisseld — opnieuw onmogelijk bij een 3x3.
+
+**Algoritme: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Dit korte algoritme wisselt twee tegenoverliggende randen in de laatste laag. Na toepassing zou de kubus volledig opgelost moeten zijn.
+
+**Tips:**
+- Raak niet in paniek bij pariteit — het is volkomen normaal bij 4x4-kubussen.
+- OLL-pariteit verschijnt tijdens de gele kruisstap. PLL-pariteit verschijnt helemaal aan het einde.
+- Je kunt beide, slechts één, of geen pariteit tegenkomen in een enkele oplossing.
+
+---
+
+**Gefeliciteerd!** Je hebt de 4x4 Rubik's Cube opgelost! De reductiemethode schaalt goed naar nog grotere kubussen (5x5, 6x6, enz.) — de kernconcepten van centra oplossen, randen koppelen en oplossen als 3x3 blijven hetzelfde. Met oefening kun je de 4x4 in minder dan 3 minuten oplossen.

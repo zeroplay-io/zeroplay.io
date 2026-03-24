@@ -1,0 +1,136 @@
+---
+title: Slik løser du en 2×2 Rubiks kube
+sidebar_position: 1
+description: Lær å løse 2×2 Rubiks kube steg for steg med Ortega-metoden.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Slik løser du en 2×2 Rubiks kube
+
+Lær å løse 2×2 Rubiks kube med **Ortega-metoden** — en rask og effektiv tilnærming i 3 steg. 2×2-kuben har ingen senter- eller kantbrikker, bare hjørner, noe som gjør den til et flott puslespill å starte med.
+
+## Notasjon
+
+2×2 bruker samme notasjon som 3×3, men uten bevegelser av midtlaget:
+
+- **R** = Høyre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Opp &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bak
+
+En bokstav alene betyr **90° med klokken**. Å legge til **'** betyr **mot klokken**. Å legge til **2** betyr **180°**.
+
+For eksempel: **R** = drei høyre side med klokken, **R'** = mot klokken, **R2** = 180°.
+
+Siden 2×2 ikke har faste sentre, velg **hvit** som startfarge og hold den i **bunnen**.
+
+---
+
+## Steg 1: Løs den første siden
+
+Bygg en komplett **hvit side** i bunnen. I motsetning til 3×3 trenger du **ikke** å matche sidefargene — bare få alle 4 hvite klistremerker på samme side.
+
+Dette steget er **intuitivt** — det er ingen faste algoritmer. Finn hvert hvitt hjørnestykke og flytt det til bunnsiden.
+
+**Tilfelle 1: Hvitt hjørne i topplaget** — Bring det ned med en enkel innsetting.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Tilfelle 2: Hvitt hjørne i bunnen men feil orientert** — Ta det ut og sett det inn riktig igjen.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tips:** Fokuser kun på å få 4 hvite klistremerker på én side. Sidefarger spiller ingen rolle ennå — det er dette som gjør Ortega annerledes enn 3×3 nybegynnermetoden.
+
+---
+
+## Steg 2: Orienter det siste laget (OLL)
+
+Gjør den **motsatte siden** (gul) helt ensfarget. Du trenger nå alle 4 gule klistremerker pekende oppover.
+
+Se på toppsiden og identifiser hvilket tilfelle du har:
+
+**Tilfelle 1: Ett gult hjørne peker oppover (Sune)** — Hold kuben slik at det løste hjørnet er i fremre venstre posisjon.
+
+**Algoritme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Tilfelle 2: Ingen gule hjørner peker oppover** — Bruk Sune to ganger for å orientere alle hjørnene.
+
+**Algoritme: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Tilfelle 3: To diagonale gule hjørner peker oppover** — Hold kuben slik at de to løste hjørnene er i fremre venstre og bakre høyre posisjon.
+
+**Algoritme: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tips:** Hvis du har to **tilstøtende** gule hjørner pekende oppover, bruk Sune én gang for å nå Tilfelle 1 eller Tilfelle 3.
+
+---
+
+## Steg 3: Permuter begge lagene (PBL)
+
+Det siste steget! Arranger alle hjørnestykkene til deres korrekte posisjoner for å løse kuben. Se på **sidefargene** til topp- og bunnlagene for å bestemme hvilken bytting som trengs.
+
+**Slik sjekker du:** Se på sidene av topplaget. Hvis to tilstøtende klistremerker på én side har samme farge, trengs ingen bytting eller en tilstøtende bytting trengs. Hvis hver side har to forskjellige farger, trengs en diagonal bytting.
+
+**Tilfelle 1: Diagonal bytting på toppen** — To motsatte hjørner må byttes.
+
+**Algoritme: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Tilfelle 2: Tilstøtende bytting på toppen** — To nabohjørner må byttes.
+
+**Algoritme: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Tilfelle 3: Diagonal bytting i begge lagene** — Bruk denne raske algoritmen.
+
+**Algoritme: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Etter å ha løst topplaget, må du kanskje dreie bunnsiden (D eller D') for å justere de endelige fargene. Hvis bunnlaget også trenger en bytting, bruk den diagonale byttingsalgoritmen mens du holder det uløste laget på toppen.
+
+---
+
+**Gratulerer!** Du har løst 2×2 Rubiks kube! Ortega-metoden er rask og effektiv — med øvelse kan du løse 2×2 på under 5 sekunder.

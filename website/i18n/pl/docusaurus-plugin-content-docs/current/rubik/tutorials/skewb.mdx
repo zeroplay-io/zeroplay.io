@@ -1,0 +1,120 @@
+---
+title: Jak ułożyć Skewb
+sidebar_position: 3
+description: Naucz się układać Skewb krok po kroku metodą Sarah dla początkujących.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Jak ułożyć Skewb
+
+Naucz się układać Skewb **metodą Sarah dla początkujących** — prostym i skutecznym podejściem. Skewb to łamigłówka obracana narożnikami, w której każdy ruch obraca narożnik i trzy sąsiednie ściany. Ułożymy go w zaledwie 3 krokach za pomocą jednego kluczowego algorytmu: Sledgehammer.
+
+## Notacja
+
+W przeciwieństwie do standardowej kostki Rubika, Skewb obraca się wokół **narożników** zamiast ścian. Każdy ruch obraca jeden narożnik i trzy sąsiednie elementy centralne:
+
+- **R** = Prawy przedni narożnik zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **R'** = Prawy przedni narożnik przeciwnie do ruchu wskazówek zegara
+- **L** = Lewy przedni narożnik zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **L'** = Lewy przedni narożnik przeciwnie do ruchu wskazówek zegara
+- **U** = Górny prawy przedni narożnik zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **U'** = Górny prawy przedni narożnik przeciwnie do ruchu wskazówek zegara
+- **B** = Prawy tylny narożnik zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **B'** = Prawy tylny narożnik przeciwnie do ruchu wskazówek zegara
+
+Sama litera oznacza obrót **zgodnie z ruchem wskazówek zegara**. Dodanie **'** oznacza **przeciwnie do ruchu wskazówek zegara**.
+
+Trzymaj Skewb z **białym centrum na dole** przez wszystkie kroki.
+
+---
+
+## Krok 1: Ułóż jedną ścianę
+
+Zbuduj kompletną **białą ścianę** na dole. Oznacza to, że wszystkie 4 narożniki wokół białego centrum muszą być na swoim miejscu z białym skierowanym w dół, a sąsiednie kolory boczne muszą się zgadzać.
+
+Ten krok jest pół-intuicyjny. Kluczowym narzędziem jest **Sledgehammer** — najważniejszy algorytm do Skewba:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Użyj Sledgehammera i ruchów przygotowawczych, aby umieścić każdy biały narożnik w dolnej warstwie. Oto przykład wstawiania narożnika:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Wskazówki:**
+- Zacznij od umieszczenia białego centrum na dole.
+- Układaj narożniki po jednym, uważając, aby nie naruszyć już umieszczonych elementów.
+- Po tym kroku dolna ściana powinna być cała biała, a każda sąsiednia strona powinna mieć odpowiedni kolor narożnika.
+
+---
+
+## Krok 2: Ustaw przeciwległe centra
+
+Dostosuj **górne centrum i 4 centra boczne** tak, aby wszystkie były na właściwych pozycjach. Dolna ściana pozostaje ułożona.
+
+Sledgehammer jest ponownie kluczowym algorytmem. Zamienia górne centrum z bocznym centrum:
+
+**Przypadek 1: Zamiana 2 centrów** — Użyj Sledgehammera, aby zamienić górne i przednie centrum.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Przypadek 2: 3-cykl centrów** — Gdy trzy centra muszą się obracać, zastosuj Sledgehammer dwa razy (Podwójny Sledgehammer):
+
+**Podwójny Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Wskazówki:**
+- Obróć łamigłówkę, aby ustawić odpowiednie centra na pozycjach przedniej i górnej przed zastosowaniem algorytmu.
+- Jeśli tylko 2 centra trzeba zamienić, jeden Sledgehammer wystarczy. Jeśli 3 centra trzeba cyklicznie przemieścić, użyj Podwójnego Sledgehammera.
+
+---
+
+## Krok 3: Orientacja narożników ostatniej warstwy
+
+Ostatni krok! Obróć **4 narożniki górnej warstwy** tak, aby ich kolory były skierowane we właściwym kierunku, kończąc układanie.
+
+**Przypadek 1: Wszystkie 4 narożniki wymagają obrotu zgodnie z ruchem wskazówek zegara** — Zastosuj ten algorytm:
+
+**Algorytm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Przypadek 2: Niektóre narożniki wymagają korekty** — Użyj Sledgehammera z ruchami przygotowawczymi do orientacji pojedynczych narożników:
+
+**Algorytm: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Wskazówki:**
+- Jeśli tylko niektóre narożniki wymagają obrotu, użyj ruchów przygotowawczych (U lub U'), aby doprowadzić nieułożone narożniki na pozycję, zastosuj algorytm, a następnie cofnij ruch przygotowawczy.
+- Może być konieczne powtórzenie procesu dla pozostałych narożników.
+
+---
+
+**Gratulacje!** Ułożyłeś Skewba! Skewb to jedna z najbardziej satysfakcjonujących łamigłówek, ponieważ wymaga bardzo niewielu algorytmów. Z praktyką będziesz go układać w mniej niż 10 sekund. Ćwicz dalej Sledgehammer — to klucz do opanowania tej łamigłówki.

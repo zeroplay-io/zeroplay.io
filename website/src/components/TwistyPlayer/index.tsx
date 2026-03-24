@@ -8,7 +8,7 @@ interface TwistyPlayerProps {
   puzzle?: string;
   stickering?: string;
   hintFacelets?: "floating" | "none";
-  controlPanel?: "bottom" | "none";
+  controlPanel?: "none";
   background?: "checkered" | "none";
   visualization?: "3D" | "2D";
 }
@@ -38,15 +38,19 @@ function TwistyPlayerInner(props: TwistyPlayerProps) {
 
       containerRef.current.innerHTML = "";
 
-      const player = new TwistyPlayerClass({
+      const config: Record<string, any> = {
         puzzle: props.puzzle || "3x3x3",
         alg: props.alg || "",
         experimentalSetupAlg: props.setupAlg || "",
         hintFacelets: props.hintFacelets || "floating",
-        controlPanel: props.controlPanel || "bottom",
         background: props.background || "none",
         visualization: props.visualization || "3D",
-      });
+      };
+      // controlPanel 只在明确传 "none" 时设置
+      if (props.controlPanel === "none") {
+        config.controlPanel = "none";
+      }
+      const player = new TwistyPlayerClass(config);
 
       if (props.stickering) {
         player.experimentalStickering = props.stickering;

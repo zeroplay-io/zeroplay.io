@@ -1,10 +1,12 @@
 ---
 title: Slik løser du en 3x3 Rubiks kube
 sidebar_position: 0
-image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg
 ---
 
 import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
 
 # Slik løser du en 3x3 Rubiks kube
 
@@ -33,6 +35,7 @@ Dette steget er **intuitivt** — ingen faste algoritmer. Finn hver hvit kantbri
 **Tilfelle 1: Hvit kant i topplag** — Juster sidefargen med senteret, drei deretter den siden to ganger.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2"
   alg="F2"
 />
@@ -40,6 +43,7 @@ Dette steget er **intuitivt** — ingen faste algoritmer. Finn hver hvit kantbri
 **Tilfelle 2: Hvit kant i midtlag** — Bring den opp først, håndter deretter som Tilfelle 1.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2 U F"
   alg="F' U' F2"
 />
@@ -47,6 +51,7 @@ Dette steget er **intuitivt** — ingen faste algoritmer. Finn hver hvit kantbri
 **Tilfelle 3: Hvit kant på bunnen men snudd** — Ta den ut og sett den inn riktig.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' R U' R'"
   alg="R U R' F"
 />
@@ -64,6 +69,7 @@ Finn et hvitt hjørne i topplaget. Plasser det over målposisjonen (hjørnet mel
 **Algoritme: R U R' U'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 U R U' R'"
   alg="R U R' U'"
 />
@@ -83,6 +89,7 @@ Juster kantens frontfarge med det matchende senteret, avgjør deretter hvilken r
 **Sett inn kant til høyre: U R U' R' U' F' U F**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' U F U R U' R' U'"
   alg="U R U' R' U' F' U F"
 />
@@ -90,6 +97,7 @@ Juster kantens frontfarge med det matchende senteret, avgjør deretter hvilken r
 **Sett inn kant til venstre: U' L' U L U F U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U' F' U' L' U L U"
   alg="U' L' U L U F U' F'"
 />
@@ -111,6 +119,7 @@ Du vil se ett av tre mønstre på toppen:
 **Algoritme: F R U R' U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U R U' R' F'"
   alg="F R U R' U' F'"
 />
@@ -126,6 +135,7 @@ Hold kuben slik at et **gult hjørne som trenger å roteres** er i fremre høyre
 **Algoritme: R U R' U R U2 R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U2' R' U' R U' R'"
   alg="R U R' U R U2 R'"
 />
@@ -143,6 +153,7 @@ Se på topplag-hjørnene. Finn et hjørne som allerede er mellom de riktige to s
 **Algoritme: U R U' L' U R' U' L**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 L' U R U' L U R' U'"
   alg="U R U' L' U R' U' L"
 />
@@ -160,6 +171,7 @@ Finn en kant som allerede er riktig (fargen matcher sidesenteret). Plasser den s
 **Syklus med klokken: R U' R U R U R U' R' U' R2**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
   alg="R U' R U R U R U' R' U' R2"
 />
@@ -167,6 +179,7 @@ Finn en kant som allerede er riktig (fargen matcher sidesenteret). Plasser den s
 **Syklus mot klokken: R2 U R U R' U' R' U' R' U R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U' R U R U R U' R' U' R2"
   alg="R2 U R U R' U' R' U' R' U R'"
 />

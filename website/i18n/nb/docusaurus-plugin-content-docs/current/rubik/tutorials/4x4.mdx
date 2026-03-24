@@ -1,0 +1,158 @@
+---
+title: Hvordan løse en 4x4 Rubiks kube
+sidebar_position: 4
+description: Lær å løse 4x4 Rubiks kube trinn for trinn med reduksjonsmetoden.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hvordan løse en 4x4 Rubiks kube
+
+Lær å løse 4x4 Rubiks kube (også kalt **Rubik's Revenge**) med **reduksjonsmetoden** — den mest populære tilnærmingen for større kuber. Ideen er enkel: først reduser 4x4 slik at den ser ut som en 3x3, og løs den deretter som en 3x3. Vi dekker 4 trinn pluss spesielle paritetstilfeller.
+
+## Notasjon
+
+4x4 bruker all standard 3x3-notasjon pluss ekstra trekk for de indre lagene:
+
+**Standardtrekk** (kun ytterste lag):
+- **R** = Høyre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Opp &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bak
+
+**Brede trekk** (ytterste to lag sammen):
+- **Rw** = Høyre bred (høyre to lag) &nbsp;&nbsp; **Lw** = Venstre bred
+- **Uw** = Opp bred (øverste to lag) &nbsp;&nbsp; **Dw** = Ned bred
+- **Fw** = Front bred &nbsp;&nbsp; **Bw** = Bak bred
+
+En bokstav alene betyr **90° med klokken**. Med **'** betyr **mot klokken**. Med **2** betyr **180°**.
+
+For eksempel: **Rw** = høyre to lag med klokken, **Uw'** = øverste to lag mot klokken, **Rw2** = høyre to lag 180°.
+
+Hold kuben med **hvitt senter ned** og **gult senter opp** for alle trinn.
+
+---
+
+## Trinn 1: Løs sentrene
+
+Bygg **senterblokkene** på hver side. Hver side av 4x4 har 4 senterbrikker (en 2x2-blokk) som må matche. I motsetning til 3x3 kan sentrene på en 4x4 flyttes — så de må løses først.
+
+**Anbefalt rekkefølge:** Start med **hvit** (bunn), deretter **gul** (motsatt), deretter de gjenværende 4 sidene.
+
+Dette trinnet er hovedsakelig **intuitivt**. Nøkkelteknikken er å bruke brede trekk for å samle senterbrikker mens allerede løste sider beskyttes med ytre lagdreininger.
+
+**Grunnleggende senterinnsetting** — Bruk et bredt trekk for å bringe en senterbrikke opp, drei det øverste laget for å justere, og reverser deretter det brede trekket:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Senterbytte uten å ødelegge løste sider** — Når du trenger å sette inn en senterbrikke men beskytte andre ferdige sentre:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tips:**
+- Løs alltid motsatte sider først (hvit/gul), deretter de gjenværende 4.
+- Når du setter inn en senterbrikke, bruk et bredt trekk (som Rw) for å bringe den opp, juster U-laget, og reverser deretter det brede trekket.
+- Vær forsiktig så du ikke ødelegger ferdige sentre når du jobber med nye.
+
+---
+
+## Trinn 2: Par kantene
+
+Match hvert par av **kantbrikker** slik at 4x4 oppfører seg som en 3x3. Hver kant på en 4x4 består av 2 brikker som må pares. Det er 12 kanter å pare.
+
+Kjerneteknikken er **Slice-Flip-Slice**: bruk et bredt trekk (Uw) for å justere kanter, utfør et ytre lagtrekk for å pare dem, og reverser deretter det brede trekket.
+
+**Grunnleggende kantparing** — Plasser en kantbrikke i fremre høyre posisjon og partneren opp. Bruk Uw for å justere:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Snudd paring** — Når kantparet må snus under paringen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Paring av de siste kantene** — For de siste 3 kantene kan du ikke fritt bruke Uw uten å ødelegge allerede parede kanter. Bruk denne teknikken i stedet:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tips:**
+- De første 8-9 kantene kan fritt pares med Slice-Flip-Slice-teknikken.
+- For de siste 3 kantene, bruk Dw-baserte trekk eller snueteknikker for å unngå å ødelegge allerede parede kanter.
+- Hvis et kantpar er på rett plass men snudd, må du ta det ut og pare det korrekt på nytt.
+
+---
+
+## Trinn 3: Løs som 3x3
+
+Når alle sentre er løst og alle kanter er paret, er 4x4 nå ekvivalent med en 3x3! Bruk en hvilken som helst **3x3-løsningsmetode** (som lag-for-lag-metoden) for å fullføre.
+
+**Viktig:** I denne fasen, bruk kun ytre lagtrekk (R, U, F, L, D, B). Bruk **ikke** brede trekk (Rw, Uw, osv.) da de ville ødelegge dine parede kanter og løste sentre.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Se vår [3x3-guide](./index.mdx) for den fullstendige lag-for-lag-guiden. De samme 7 trinnene gjelder — hvitt kors, hvite hjørner, andre lag, gult kors, gul side, plasser hjørner og plasser kanter.
+
+---
+
+## Trinn 4: Paritetsalgoritmer
+
+4x4 har to spesielle situasjoner som **aldri forekommer på en 3x3**. Disse kalles **paritetstilfeller** og hver oppstår omtrent 50% av tiden. Hvis du støter på en under 3x3-fasen, bruk den tilsvarende algoritmen og fortsett å løse.
+
+### OLL-paritet (enkelt kantsnuing)
+
+**Hvordan det ser ut:** I det siste laget er en enkelt kant snudd — umulig på en ekte 3x3. Det gule korset kan ikke fullføres normalt.
+
+**Algoritme: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Denne algoritmen er lang, men trenger bare brukes én gang. Etter utførelse vil kanten være korrekt orientert, og du kan fortsette med de normale 3x3 siste lagtrinnene.
+
+### PLL-paritet (bytte av to kanter)
+
+**Hvordan det ser ut:** Til slutt må nøyaktig to kanter byttes — igjen, umulig på en 3x3.
+
+**Algoritme: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Denne korte algoritmen bytter to motsatte kanter i det siste laget. Etter bruk bør kuben være helt løst.
+
+**Tips:**
+- Ikke få panikk over paritet — det er helt normalt på 4x4-kuber.
+- OLL-paritet dukker opp under det gule korstrinnet. PLL-paritet dukker opp helt til slutt.
+- Du kan støte på begge, bare én, eller ingen paritet i en enkelt løsning.
+
+---
+
+**Gratulerer!** Du har løst 4x4 Rubiks kube! Reduksjonsmetoden skalerer godt til enda større kuber (5x5, 6x6, osv.) — kjernekonseptene å løse sentre, pare kanter og løse som 3x3 forblir de samme. Med øvelse vil du kunne løse 4x4 på under 3 minutter.

@@ -1,0 +1,136 @@
+---
+title: Cara Menyelesaikan Kiub Rubik 2×2
+sidebar_position: 1
+description: Belajar menyelesaikan Kiub Rubik 2×2 langkah demi langkah menggunakan kaedah Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cara Menyelesaikan Kiub Rubik 2×2
+
+Belajar menyelesaikan Kiub Rubik 2×2 menggunakan **kaedah Ortega** — pendekatan pantas dan cekap dalam 3 langkah. Kiub 2×2 tidak mempunyai bahagian tengah atau tepi, hanya sudut, menjadikannya teka-teki yang bagus untuk bermula.
+
+## Notasi
+
+Kiub 2×2 menggunakan notasi yang sama dengan 3×3, tetapi tanpa pergerakan lapisan tengah:
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+
+Huruf sahaja bermaksud **90° ikut arah jam**. Menambah **'** bermaksud **lawan arah jam**. Menambah **2** bermaksud **180°**.
+
+Contoh: **R** = putar muka kanan ikut arah jam, **R'** = lawan arah jam, **R2** = 180°.
+
+Oleh kerana kiub 2×2 tidak mempunyai pusat tetap, pilih **putih** sebagai warna permulaan dan kekalkan di **bawah**.
+
+---
+
+## Langkah 1: Selesaikan Muka Pertama
+
+Bina muka **putih** lengkap di bahagian bawah. Tidak seperti 3×3, anda **tidak** perlu memadankan warna sisi — hanya letakkan semua 4 pelekat putih pada muka yang sama.
+
+Langkah ini **intuitif** — tiada algoritma tetap. Cari setiap bahagian sudut putih dan alihkan ke muka bawah.
+
+**Kes 1: Sudut putih di lapisan atas** — Turunkannya dengan sisipan mudah.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Kes 2: Sudut putih di bawah tetapi orientasi salah** — Keluarkan dan masukkan semula dengan betul.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Petua:** Fokus hanya pada meletakkan 4 pelekat putih pada satu muka. Warna sisi belum penting — inilah yang membezakan Ortega daripada kaedah pemula 3×3.
+
+---
+
+## Langkah 2: Orientasi Lapisan Terakhir (OLL)
+
+Jadikan **muka bertentangan** (kuning) semuanya satu warna. Sekarang anda perlukan semua 4 pelekat kuning menghadap ke atas.
+
+Lihat muka atas dan kenal pasti kes mana yang anda ada:
+
+**Kes 1: Satu sudut kuning menghadap ke atas (Sune)** — Pegang kiub dengan sudut yang sudah selesai di posisi kiri depan.
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Kes 2: Tiada sudut kuning menghadap ke atas** — Gunakan Sune dua kali untuk mengorientasi semua sudut.
+
+**Algoritma: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Kes 3: Dua sudut kuning pepenjuru menghadap ke atas** — Pegang kiub dengan dua sudut yang sudah selesai di posisi kiri depan dan kanan belakang.
+
+**Algoritma: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Petua:** Jika anda mempunyai dua sudut kuning **bersebelahan** menghadap ke atas, gunakan Sune sekali untuk mencapai Kes 1 atau Kes 3.
+
+---
+
+## Langkah 3: Permutasi Kedua-dua Lapisan (PBL)
+
+Langkah terakhir! Susun semua bahagian sudut ke posisi yang betul untuk menyelesaikan kiub. Lihat **warna sisi** lapisan atas dan bawah untuk menentukan pertukaran yang diperlukan.
+
+**Cara memeriksa:** Lihat sisi-sisi lapisan atas. Jika dua pelekat bersebelahan pada satu sisi berwarna sama, tiada pertukaran diperlukan atau pertukaran bersebelahan diperlukan. Jika setiap sisi mempunyai dua warna berbeza, pertukaran pepenjuru diperlukan.
+
+**Kes 1: Pertukaran pepenjuru di atas** — Dua sudut bertentangan perlu ditukar.
+
+**Algoritma: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Kes 2: Pertukaran bersebelahan di atas** — Dua sudut bersebelahan perlu ditukar.
+
+**Algoritma: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Kes 3: Pertukaran pepenjuru di kedua-dua lapisan** — Gunakan algoritma pantas ini.
+
+**Algoritma: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Selepas menyelesaikan lapisan atas, anda mungkin perlu memutar muka bawah (D atau D') untuk menjajarkan warna akhir. Jika lapisan bawah juga memerlukan pertukaran, gunakan algoritma pertukaran pepenjuru dengan mengekalkan lapisan yang belum selesai di atas.
+
+---
+
+**Tahniah!** Anda telah menyelesaikan Kiub Rubik 2×2! Kaedah Ortega pantas dan cekap — dengan latihan, anda boleh menyelesaikan 2×2 dalam masa kurang dari 5 saat.

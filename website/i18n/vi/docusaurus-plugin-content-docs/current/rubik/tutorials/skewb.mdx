@@ -1,0 +1,120 @@
+---
+title: Cách giải Skewb
+sidebar_position: 3
+description: Học cách giải Skewb từng bước với Phương pháp Dành cho Người mới của Sarah.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cách giải Skewb
+
+Học cách giải Skewb với **Phương pháp Dành cho Người mới của Sarah** — cách tiếp cận đơn giản và hiệu quả cho người mới bắt đầu. Skewb là câu đố xoay theo góc, trong đó mỗi bước di chuyển xoay một góc và ba mặt liền kề. Chúng ta sẽ giải nó chỉ trong 3 bước với một thuật toán cốt lõi: Sledgehammer.
+
+## Ký hiệu
+
+Khác với Rubik's Cube tiêu chuẩn, Skewb xoay quanh **các góc** thay vì các mặt. Mỗi bước di chuyển xoay một góc và ba tâm mặt liền kề:
+
+- **R** = Góc trước phải theo chiều kim đồng hồ &nbsp;&nbsp; **R'** = Góc trước phải ngược chiều kim đồng hồ
+- **L** = Góc trước trái theo chiều kim đồng hồ &nbsp;&nbsp; **L'** = Góc trước trái ngược chiều kim đồng hồ
+- **U** = Góc trước phải trên theo chiều kim đồng hồ &nbsp;&nbsp; **U'** = Góc trước phải trên ngược chiều kim đồng hồ
+- **B** = Góc sau phải theo chiều kim đồng hồ &nbsp;&nbsp; **B'** = Góc sau phải ngược chiều kim đồng hồ
+
+Chữ cái đơn có nghĩa là xoay **theo chiều kim đồng hồ**. Thêm **'** có nghĩa là **ngược chiều kim đồng hồ**.
+
+Giữ Skewb với **tâm trắng ở dưới** cho tất cả các bước.
+
+---
+
+## Bước 1: Giải một mặt
+
+Xây dựng một **mặt trắng** hoàn chỉnh ở dưới cùng. Điều này có nghĩa là cả 4 góc xung quanh tâm trắng phải ở đúng vị trí với màu trắng hướng xuống, và các màu cạnh liền kề phải khớp.
+
+Bước này mang tính nửa trực giác. Công cụ chính là **Sledgehammer** — thuật toán quan trọng nhất cho Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Sử dụng Sledgehammer và các bước chuẩn bị để đặt mỗi góc trắng vào lớp dưới. Đây là ví dụ về việc lắp một góc:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Mẹo:**
+- Bắt đầu bằng cách đặt tâm trắng ở dưới.
+- Giải từng góc một, cẩn thận không làm xáo trộn các mảnh đã được đặt.
+- Sau bước này, mặt dưới phải hoàn toàn trắng, và mỗi cạnh liền kề phải có màu góc tương ứng.
+
+---
+
+## Bước 2: Đặt vị trí các tâm đối diện
+
+Điều chỉnh **tâm trên và 4 tâm cạnh** sao cho tất cả đều ở vị trí đúng. Mặt dưới vẫn được giữ nguyên.
+
+Sledgehammer lại là thuật toán chính. Nó hoán đổi tâm trên với tâm cạnh:
+
+**Trường hợp 1: Hoán đổi 2 tâm** — Sử dụng Sledgehammer để hoán đổi tâm trên và tâm trước.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Trường hợp 2: Chu trình 3 tâm** — Khi ba tâm cần xoay, áp dụng Sledgehammer hai lần (Sledgehammer Đôi):
+
+**Sledgehammer Đôi: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Mẹo:**
+- Xoay câu đố để chuẩn bị các tâm đúng ở vị trí trước và trên trước khi áp dụng thuật toán.
+- Nếu chỉ cần hoán đổi 2 tâm, một Sledgehammer là đủ. Nếu 3 tâm cần chu trình, sử dụng Sledgehammer Đôi.
+
+---
+
+## Bước 3: Định hướng các góc lớp cuối
+
+Bước cuối cùng! Xoay **4 góc của lớp trên** sao cho màu sắc hướng đúng chiều, hoàn thành việc giải.
+
+**Trường hợp 1: Cả 4 góc cần xoay theo chiều kim đồng hồ** — Áp dụng thuật toán này:
+
+**Thuật toán: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Trường hợp 2: Một số góc cần điều chỉnh** — Sử dụng Sledgehammer với các bước chuẩn bị để định hướng từng góc:
+
+**Thuật toán: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Mẹo:**
+- Nếu chỉ một số góc cần xoay, sử dụng các bước chuẩn bị (U hoặc U') để đưa các góc chưa giải vào vị trí, áp dụng thuật toán, rồi hoàn tác bước chuẩn bị.
+- Bạn có thể cần lặp lại quy trình cho các góc còn lại.
+
+---
+
+**Chúc mừng!** Bạn đã giải xong Skewb! Skewb là một trong những câu đố thỏa mãn nhất vì bạn cần rất ít thuật toán. Với luyện tập, bạn sẽ giải nó trong dưới 10 giây. Tiếp tục luyện tập Sledgehammer — đó là chìa khóa để thành thạo câu đố này.

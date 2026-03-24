@@ -1,0 +1,128 @@
+---
+title: Sådan løser du Pyraminx
+sidebar_position: 2
+description: Lær at løse Pyraminx trin for trin med lag-for-lag-metoden for begyndere.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Sådan løser du Pyraminx
+
+Lær at løse Pyraminx med **lag-for-lag**-metoden — den nemmeste tilgang for begyndere. Pyraminx er et tetraederformet puslespil med 4 spidser, 6 kanter og 4 centre. Vi løser det i 4 enkle trin.
+
+## Notation
+
+Pyraminx bruger et unikt notationssystem med **store** bogstaver for lag og **små** bogstaver for spidser:
+
+**Lag (store bogstaver)** — drej hele laget (uden spids):
+
+- **U** = Øverste lag &nbsp;&nbsp; **R** = Højre lag &nbsp;&nbsp; **L** = Venstre lag &nbsp;&nbsp; **B** = Bagerste lag
+
+**Spidser (små bogstaver)** — drej kun spidsen:
+
+- **u** = Øverste spids &nbsp;&nbsp; **r** = Højre spids &nbsp;&nbsp; **l** = Venstre spids &nbsp;&nbsp; **b** = Bagerste spids
+
+Et bogstav alene betyder **120° med uret**. Tilføjelse af **'** betyder **120° mod uret**.
+
+For eksempel: **R** = drej højre lag med uret, **R'** = mod uret, **l** = drej venstre spids med uret, **l'** = mod uret.
+
+Hold Pyraminx med **én side mod dig** og **én spids opad** i alle trin.
+
+---
+
+## Trin 1: Løs spidserne
+
+Justér de **3 synlige spidser**, så farven på hver spids matcher det tilstødende center. Den 4. spids er i bunden og løses senere.
+
+Dette trin er **intuitivt** — hver spids har kun 3 mulige positioner, så højst 2 drejninger løser den. Drej simpelthen hver spids, indtil dens farve matcher det nærliggende center.
+
+**Eksempel: Løs alle tre synlige spidser**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tips:** Start altid med dette trin — det er gratis og øjeblikkeligt. Når spidserne er justeret, behøver du ikke røre dem igen.
+
+---
+
+## Trin 2: Kanter i første lag
+
+Byg et komplet **første lag** ved at placere de 3 nederste kanter i deres korrekte positioner. Vælg en side som bund (vi anbefaler at starte med den side, der allerede har flest matchende farver).
+
+Dette trin er hovedsageligt intuitivt. Find hver kant, der hører til det nederste lag, og indsæt den med simple lagdrejninger.
+
+**Tilfælde 1: Kant i øverste lag, korrekt orienteret** — En enkelt lagdrejning indsætter den direkte.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Tilfælde 2: Kant i øverste lag, vendt** — Brug to lagdrejninger til at vende og indsætte.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tips:** Hvis en kant allerede er i det nederste lag men i forkert position, brug en lagdrejning til at tage den op, og indsæt den derefter korrekt.
+
+---
+
+## Trin 3: Kanter i sidste lag
+
+Placér de **3 kanter i øverste lag** i deres korrekte positioner. Efter dette trin vil hver kant være mellem de to korrekte centre, men kan stadig være vendt.
+
+Kig på det øverste lag og bestem, hvilken retning kanterne skal cykle:
+
+**Tilfælde 1: Cyklus med uret** — Alle tre kanter skal flytte én position med uret.
+
+**Algoritme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Tilfælde 2: Cyklus mod uret** — Alle tre kanter skal flytte én position mod uret.
+
+**Algoritme: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tips:** Hvis kun 2 kanter skal byttes, vil en af disse 3-cyklus algoritmer løse det — kig nøje på, hvilken retning cyklusen går.
+
+---
+
+## Trin 4: Orientér kanter i sidste lag
+
+Det sidste trin! Hvis kanterne i sidste lag er i de korrekte positioner men **vendt** (forkert farve udad), brug denne algoritme til at vende dem.
+
+**Vend 2 kanter: R U R' U R U R'**
+
+Hold Pyraminx, så kanten, der **ikke** skal vendes, peger mod dig. Anvend derefter algoritmen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Hvis alle 3 kanter skal vendes, anvend denne algoritme én gang — den vender 2 af dem, drej derefter toppen for at opstille og vende de resterende 2 (én af de tidligere vendte plus den sidste).
+
+---
+
+**Tillykke!** Du har løst Pyraminx! Med øvelse kan Pyraminx løses på bare få sekunder. Det er et af de hurtigste puslespil at mestre — bliv ved med at øve, og du vil løse det på under 10 sekunder.

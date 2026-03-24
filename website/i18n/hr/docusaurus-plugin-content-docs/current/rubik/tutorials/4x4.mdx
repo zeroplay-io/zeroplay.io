@@ -1,0 +1,151 @@
+---
+title: Kako složiti 4x4 Rubikovu kocku
+sidebar_position: 4
+description: Naučite korak po korak složiti 4x4 Rubikovu kocku metodom redukcije.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kako složiti 4x4 Rubikovu kocku
+
+Naučite složiti 4x4 Rubikovu kocku (poznatu i kao **Rubik's Revenge**) koristeći **metodu redukcije** — najpopularniji pristup za veće kocke. Ideja je jednostavna: prvo reducirajte 4x4 da izgleda kao 3x3, zatim je riješite kao 3x3. Pokrit ćemo 4 koraka plus posebne slučajeve pariteta.
+
+## Notacija
+
+4x4 koristi svu standardnu 3x3 notaciju plus dodatne poteze za unutarnje slojeve:
+
+**Standardni potezi** (samo vanjski sloj):
+- **R** = Desno &nbsp;&nbsp; **L** = Lijevo &nbsp;&nbsp; **U** = Gore &nbsp;&nbsp; **D** = Dolje &nbsp;&nbsp; **F** = Naprijed &nbsp;&nbsp; **B** = Natrag
+
+**Široki potezi** (vanjska dva sloja zajedno):
+- **Rw** = Desno široko (desna dva sloja) &nbsp;&nbsp; **Lw** = Lijevo široko
+- **Uw** = Gore široko (gornja dva sloja) &nbsp;&nbsp; **Dw** = Dolje široko
+- **Fw** = Naprijed široko &nbsp;&nbsp; **Bw** = Natrag široko
+
+Samo slovo znači **90° u smjeru kazaljke**. S **'** znači **u suprotnom smjeru**. S **2** znači **180°**.
+
+Na primjer: **Rw** = desna dva sloja u smjeru kazaljke, **Uw'** = gornja dva sloja u suprotnom smjeru, **Rw2** = desna dva sloja 180°.
+
+Držite kocku s **bijelim centrom dolje** i **žutim centrom gore** za sve korake.
+
+---
+
+## Korak 1: Složite centre
+
+Izgradite **središnje blokove** na svakoj strani. Svaka strana 4x4 ima 4 središnja dijela (blok 2x2) koji se moraju poklopiti. Za razliku od 3x3, centri 4x4 se mogu pomicati — pa ih treba složiti prvo.
+
+**Preporučeni redoslijed:** Počnite s **bijelom** (dno), zatim **žutom** (nasuprotna), zatim preostale 4 strane.
+
+Ovaj korak je uglavnom **intuitivan**. Ključna tehnika je korištenje širokih poteza za skupljanje središnjih dijelova dok se već složene strane štite okretanjem vanjskog sloja.
+
+**Osnovno umetanje centra**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Zamjena centra bez kvarenja složenih strana**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Savjeti:**
+- Uvijek prvo složite nasuprotne strane (bijela/žuta), zatim preostale 4.
+- Kod umetanja središnjeg dijela, koristite široki potez (poput Rw) za podizanje, prilagodite U sloj, zatim poništite široki potez.
+
+---
+
+## Korak 2: Uparite rubove
+
+Uparite svaki par **rubnih dijelova** tako da se 4x4 ponaša kao 3x3. Svaki rub 4x4 sastoji se od 2 dijela koja treba upariti. Ukupno je 12 rubova za uparivanje.
+
+Osnovna tehnika je **Slice-Flip-Slice**: koristite široki potez (Uw) za poravnanje rubova, izvršite potez vanjskog sloja za uparivanje, zatim poništite široki potez.
+
+**Osnovno uparivanje rubova**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Uparivanje s okretanjem**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Uparivanje posljednjih rubova**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Savjeti:**
+- Prvih 8-9 rubova mogu se slobodno upariti Slice-Flip-Slice tehnikom.
+- Za posljednja 3 ruba koristite Dw poteze kako ne biste pokvarili već uparene rubove.
+
+---
+
+## Korak 3: Riješite kao 3x3
+
+Nakon što su svi centri složeni i svi rubovi upareni, 4x4 je sada ekvivalentna 3x3! Koristite bilo koju **metodu za 3x3** za završetak.
+
+**Važno:** U ovoj fazi koristite samo poteze vanjskog sloja (R, U, F, L, D, B). **Ne** koristite široke poteze (Rw, Uw itd.).
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Pogledajte naš [vodič za 3x3](./index.mdx) za potpuni vodič.
+
+---
+
+## Korak 4: Algoritmi pariteta
+
+4x4 ima dvije posebne situacije koje se **nikad ne pojavljuju na 3x3**. Zovu se **paritet** i svaka se pojavljuje otprilike 50% vremena.
+
+### OLL paritet (okretanje jednog ruba)
+
+**Kako izgleda:** U zadnjem sloju jedan rub je okrenut — nemoguće na pravom 3x3.
+
+**Algoritam: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+### PLL paritet (zamjena dva ruba)
+
+**Kako izgleda:** Na kraju, točno dva ruba moraju zamijeniti mjesta.
+
+**Algoritam: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+**Savjeti:**
+- Ne paničarite kod pariteta — potpuno je normalno za 4x4 kocke.
+- OLL paritet se pojavljuje kod žutog križa. PLL paritet se pojavljuje na kraju.
+
+---
+
+**Čestitamo!** Složili ste 4x4 Rubikovu kocku! Metoda redukcije dobro funkcionira i za veće kocke (5x5, 6x6 itd.). S vježbom ćete moći složiti 4x4 za manje od 3 minute.

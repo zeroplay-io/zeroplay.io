@@ -1,0 +1,120 @@
+---
+title: Com resoldre l'Skewb
+sidebar_position: 3
+description: Aprèn a resoldre l'Skewb pas a pas amb el mètode per a principiants de Sarah.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Com resoldre l'Skewb
+
+Aprèn a resoldre l'Skewb amb el **mètode per a principiants de Sarah** — un enfocament senzill i eficient per a principiants. L'Skewb és un trencaclosques de gir per cantonades on cada moviment gira una cantonada i les tres cares adjacents. El resoldrem en només 3 passos amb un únic algorisme clau: el Sledgehammer.
+
+## Notació
+
+A diferència del cub de Rubik estàndard, l'Skewb gira al voltant de les **cantonades** en lloc de les cares. Cada moviment gira una cantonada i els tres centres de cares adjacents:
+
+- **R** = Cantonada frontal dreta en sentit horari &nbsp;&nbsp; **R'** = Cantonada frontal dreta en sentit antihorari
+- **L** = Cantonada frontal esquerra en sentit horari &nbsp;&nbsp; **L'** = Cantonada frontal esquerra en sentit antihorari
+- **U** = Cantonada frontal superior dreta en sentit horari &nbsp;&nbsp; **U'** = Cantonada frontal superior dreta en sentit antihorari
+- **B** = Cantonada posterior dreta en sentit horari &nbsp;&nbsp; **B'** = Cantonada posterior dreta en sentit antihorari
+
+Una lletra sola significa un gir **en sentit horari**. Afegir **'** significa **en sentit antihorari**.
+
+Agafa l'Skewb amb el **centre blanc a la part inferior** per a tots els passos.
+
+---
+
+## Pas 1: Resoldre una cara
+
+Construeix una **cara blanca** completa a la part inferior. Això vol dir que les 4 cantonades al voltant del centre blanc han d'estar al seu lloc amb el blanc cap avall, i els colors laterals adjacents han de coincidir.
+
+Aquest pas és semi-intuïtiu. L'eina clau és el **Sledgehammer** — l'algorisme més important per a l'Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Utilitza el Sledgehammer i moviments de preparació per col·locar cada cantonada blanca a la capa inferior. Aquí tens un exemple d'inserció d'una cantonada:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Consells:**
+- Comença col·locant el centre blanc a la part inferior.
+- Resol les cantonades una per una, anant amb compte de no moure les peces ja col·locades.
+- Després d'aquest pas, la cara inferior ha de ser tota blanca, i cada costat adjacent ha de tenir un color de cantonada coincident.
+
+---
+
+## Pas 2: Posicionar els centres oposats
+
+Ajusta el **centre superior i els 4 centres laterals** perquè estiguin tots a les posicions correctes. La cara inferior es manté resolta.
+
+El Sledgehammer torna a ser l'algorisme clau. Intercanvia el centre superior amb un centre lateral:
+
+**Cas 1: Intercanviar 2 centres** — Utilitza el Sledgehammer per intercanviar els centres superior i frontal.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Cas 2: Cicle de 3 centres** — Quan tres centres necessiten girar, aplica el Sledgehammer dues vegades (Doble Sledgehammer):
+
+**Doble Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Consells:**
+- Gira el trencaclosques per preparar els centres correctes a les posicions frontal i superior abans d'aplicar l'algorisme.
+- Si només cal intercanviar 2 centres, un Sledgehammer és suficient. Si cal ciclar 3 centres, utilitza el Doble Sledgehammer.
+
+---
+
+## Pas 3: Orientar les cantonades de l'última capa
+
+L'últim pas! Gira les **4 cantonades de la capa superior** perquè els seus colors mirin en la direcció correcta, completant la resolució.
+
+**Cas 1: Les 4 cantonades necessiten un gir en sentit horari** — Aplica aquest algorisme:
+
+**Algorisme: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Cas 2: Algunes cantonades necessiten ajust** — Utilitza el Sledgehammer amb moviments de preparació per orientar cantonades individuals:
+
+**Algorisme: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Consells:**
+- Si només algunes cantonades necessiten girar, utilitza moviments de preparació (U o U') per portar les cantonades no resoltes a la posició, aplica l'algorisme i després desfés el moviment de preparació.
+- Pot ser que hagis de repetir el procés per a les cantonades restants.
+
+---
+
+**Felicitats!** Has resolt l'Skewb! L'Skewb és un dels trencaclosques més satisfactoris de resoldre perquè necessites molt pocs algorismes. Amb pràctica, el resoldràs en menys de 10 segons. Continua practicant el Sledgehammer — és la clau per dominar aquest trencaclosques.

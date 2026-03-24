@@ -1,0 +1,136 @@
+---
+title: Com resoldre el cub de Rubik 2×2
+sidebar_position: 1
+description: Aprèn a resoldre el cub de Rubik 2×2 pas a pas amb el mètode Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Com resoldre el cub de Rubik 2×2
+
+Aprèn a resoldre el cub de Rubik 2×2 amb el **mètode Ortega** — un enfocament ràpid i eficient de 3 passos. El 2×2 no té peces centrals ni arestes, només cantonades, cosa que el fa un gran trencaclosques per començar.
+
+## Notació
+
+El 2×2 utilitza la mateixa notació que el 3×3, però sense moviments de la capa central:
+
+- **R** = Dreta &nbsp;&nbsp; **L** = Esquerra &nbsp;&nbsp; **U** = Dalt &nbsp;&nbsp; **D** = Baix &nbsp;&nbsp; **F** = Davant &nbsp;&nbsp; **B** = Darrere
+
+Una lletra sola significa **90° en sentit horari**. Afegir **'** significa **en sentit antihorari**. Afegir **2** significa **180°**.
+
+Per exemple: **R** = girar la cara dreta en sentit horari, **R'** = en sentit antihorari, **R2** = 180°.
+
+Com que el 2×2 no té centres fixos, tria el **blanc** com a color inicial i mantén-lo a **baix**.
+
+---
+
+## Pas 1: Resoldre la primera cara
+
+Construeix una cara **blanca** completa a la part inferior. A diferència del 3×3, **no** cal fer coincidir els colors laterals — només cal posar els 4 adhesius blancs a la mateixa cara.
+
+Aquest pas és **intuïtiu** — no hi ha algorismes fixos. Troba cada peça de cantonada blanca i mou-la a la cara inferior.
+
+**Cas 1: Cantonada blanca a la capa superior** — Baixa-la amb una inserció senzilla.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Cas 2: Cantonada blanca a baix però mal orientada** — Treu-la i torna a inserir-la correctament.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Consells:** Concentra't només en posar 4 adhesius blancs en una cara. Els colors laterals encara no importen — això és el que fa diferent l'Ortega del mètode de principiant del 3×3.
+
+---
+
+## Pas 2: Orientar l'última capa (OLL)
+
+Fes que la **cara oposada** (groga) sigui tota del mateix color. Ara necessites que els 4 adhesius grocs mirin cap amunt.
+
+Mira la cara superior i identifica quin cas tens:
+
+**Cas 1: Una cantonada groga mirant cap amunt (Sune)** — Aguanta el cub amb la cantonada resolta a la posició davantera esquerra.
+
+**Algorisme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Cas 2: Cap cantonada groga mirant cap amunt** — Aplica Sune dues vegades per orientar totes les cantonades.
+
+**Algorisme: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Cas 3: Dues cantonades grogues diagonals mirant cap amunt** — Aguanta el cub amb les dues cantonades resoltes a les posicions davantera esquerra i posterior dreta.
+
+**Algorisme: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Consells:** Si tens dues cantonades grogues **adjacents** mirant cap amunt, utilitza Sune una vegada per arribar al Cas 1 o al Cas 3.
+
+---
+
+## Pas 3: Permutar ambdues capes (PBL)
+
+L'últim pas! Col·loca totes les peces de cantonada a les seves posicions correctes per resoldre el cub. Mira els **colors laterals** de les capes superior i inferior per determinar quin intercanvi cal.
+
+**Com comprovar-ho:** Mira els costats de la capa superior. Si dos adhesius adjacents d'un costat són del mateix color, no cal intercanvi o cal un intercanvi adjacent. Si cada costat té dos colors diferents, cal un intercanvi diagonal.
+
+**Cas 1: Intercanvi diagonal a dalt** — Dues cantonades oposades han d'intercanviar-se.
+
+**Algorisme: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Cas 2: Intercanvi adjacent a dalt** — Dues cantonades veïnes han d'intercanviar-se.
+
+**Algorisme: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Cas 3: Intercanvi diagonal a ambdues capes** — Utilitza aquest algorisme ràpid.
+
+**Algorisme: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Després de resoldre la capa superior, potser hauràs de girar la cara inferior (D o D') per alinear els colors finals. Si la capa inferior també necessita un intercanvi, aplica l'algorisme d'intercanvi diagonal mantenint la capa no resolta a dalt.
+
+---
+
+**Felicitats!** Has resolt el cub de Rubik 2×2! El mètode Ortega és ràpid i eficient — amb pràctica, pots resoldre el 2×2 en menys de 5 segons.

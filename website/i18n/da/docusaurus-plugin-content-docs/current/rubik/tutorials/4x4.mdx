@@ -1,0 +1,158 @@
+---
+title: Sådan løser du en 4x4 Rubiks terning
+sidebar_position: 4
+description: Lær at løse 4x4 Rubiks terning trin for trin med reduktionsmetoden.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Sådan løser du en 4x4 Rubiks terning
+
+Lær at løse 4x4 Rubiks terning (også kaldet **Rubik's Revenge**) med **reduktionsmetoden** — den mest populære tilgang til større terninger. Idéen er enkel: reducer først 4x4 så den ligner en 3x3, og løs den derefter som en 3x3. Vi gennemgår 4 trin plus specielle paritetstilfælde.
+
+## Notation
+
+4x4 bruger al standard 3x3-notation plus ekstra træk for de indre lag:
+
+**Standardtræk** (kun yderste lag):
+- **R** = Højre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Op &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bag
+
+**Brede træk** (yderste to lag sammen):
+- **Rw** = Højre bred (højre to lag) &nbsp;&nbsp; **Lw** = Venstre bred
+- **Uw** = Op bred (øverste to lag) &nbsp;&nbsp; **Dw** = Ned bred
+- **Fw** = Front bred &nbsp;&nbsp; **Bw** = Bag bred
+
+Et bogstav alene betyder **90° med uret**. Med **'** betyder **mod uret**. Med **2** betyder **180°**.
+
+For eksempel: **Rw** = højre to lag med uret, **Uw'** = øverste to lag mod uret, **Rw2** = højre to lag 180°.
+
+Hold terningen med **hvidt center nedad** og **gult center opad** for alle trin.
+
+---
+
+## Trin 1: Løs centrene
+
+Byg **centerblokkene** på hver side. Hver side af 4x4 har 4 centerbrikker (en 2x2-blok) der skal matche. I modsætning til 3x3 kan centrene på en 4x4 bevæge sig — så de skal løses først.
+
+**Anbefalet rækkefølge:** Start med **hvid** (bund), derefter **gul** (modsat), derefter de resterende 4 sider.
+
+Dette trin er primært **intuitivt**. Nøgleteknikken er at bruge brede træk til at samle centerbrikker, mens allerede løste sider beskyttes med ydre lagdrejninger.
+
+**Grundlæggende centerindsættelse** — Brug et bredt træk til at bringe en centerbrik op, drej det øverste lag for at justere, og vend derefter det brede træk:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Centerbytning uden at ødelægge løste sider** — Når du skal indsætte en centerbrik men beskytte andre færdige centre:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tips:**
+- Løs altid modsatte sider først (hvid/gul), derefter de resterende 4.
+- Når du indsætter en centerbrik, brug et bredt træk (som Rw) for at bringe den op, juster U-laget, og vend derefter det brede træk.
+- Pas på ikke at ødelægge færdige centre, når du arbejder med nye.
+
+---
+
+## Trin 2: Par kanterne
+
+Match hvert par af **kantbrikker** så 4x4 opfører sig som en 3x3. Hver kant på en 4x4 består af 2 brikker der skal parres. Der er 12 kanter at parre.
+
+Kerneteknikken er **Slice-Flip-Slice**: brug et bredt træk (Uw) til at justere kanter, udfør et ydre lagtræk for at parre dem, og vend derefter det brede træk.
+
+**Grundlæggende kantparring** — Placer en kantbrik i den forreste højre position og dens partner opad. Brug Uw til at justere:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Vendt parring** — Når kantparret skal vendes under parringen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Parring af de sidste kanter** — For de sidste 3 kanter kan du ikke frit bruge Uw uden at ødelægge allerede parrede kanter. Brug denne teknik i stedet:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tips:**
+- De første 8-9 kanter kan frit parres med Slice-Flip-Slice-teknikken.
+- For de sidste 3 kanter, brug Dw-baserede træk eller vendeteknikker for at undgå at ødelægge allerede parrede kanter.
+- Hvis et kantpar er på den rigtige plads men vendt, skal du tage det ud og parre det korrekt igen.
+
+---
+
+## Trin 3: Løs som 3x3
+
+Når alle centre er løst og alle kanter er parret, er 4x4 nu ækvivalent med en 3x3! Brug enhver **3x3-løsningsmetode** (som lag-for-lag-metoden) for at afslutte.
+
+**Vigtigt:** I denne fase, brug kun ydre lagtræk (R, U, F, L, D, B). Brug **ikke** brede træk (Rw, Uw, osv.) da de ville ødelægge dine parrede kanter og løste centre.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Se vores [3x3-guide](./index.mdx) for den fulde lag-for-lag-guide. De samme 7 trin gælder — hvidt kors, hvide hjørner, andet lag, gult kors, gul side, placer hjørner og placer kanter.
+
+---
+
+## Trin 4: Paritetsalgoritmer
+
+4x4 har to specielle situationer der **aldrig forekommer på en 3x3**. Disse kaldes **paritetstilfælde** og hver opstår cirka 50% af tiden. Hvis du støder på en under 3x3-fasen, anvend den tilsvarende algoritme og fortsæt med at løse.
+
+### OLL-paritet (enkelt kantvending)
+
+**Hvordan det ser ud:** I det sidste lag er en enkelt kant vendt — umuligt på en ægte 3x3. Det gule kors kan ikke fuldføres normalt.
+
+**Algoritme: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Denne algoritme er lang, men behøver kun anvendes én gang. Efter udførelsen vil kanten være korrekt orienteret, og du kan fortsætte med de normale 3x3 sidste lagtrin.
+
+### PLL-paritet (bytte af to kanter)
+
+**Hvordan det ser ud:** Til sidst skal præcis to kanter byttes — igen, umuligt på en 3x3.
+
+**Algoritme: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Denne korte algoritme bytter to modsatte kanter i det sidste lag. Efter anvendelse bør terningen være helt løst.
+
+**Tips:**
+- Gå ikke i panik over paritet — det er helt normalt på 4x4-terninger.
+- OLL-paritet dukker op under det gule korstrin. PLL-paritet dukker op til allersidst.
+- Du kan støde på begge, kun én, eller ingen paritet i en enkelt løsning.
+
+---
+
+**Tillykke!** Du har løst 4x4 Rubiks terning! Reduktionsmetoden skalerer godt til endnu større terninger (5x5, 6x6, osv.) — kernebegreberne at løse centre, parre kanter og løse som 3x3 forbliver de samme. Med øvelse vil du kunne løse 4x4 på under 3 minutter.

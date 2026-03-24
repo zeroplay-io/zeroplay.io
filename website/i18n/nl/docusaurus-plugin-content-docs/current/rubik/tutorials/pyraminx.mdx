@@ -1,0 +1,128 @@
+---
+title: Hoe los je de Pyraminx op
+sidebar_position: 2
+description: Leer stap voor stap de Pyraminx op te lossen met de laag-voor-laag methode voor beginners.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hoe los je de Pyraminx op
+
+Leer de Pyraminx op te lossen met de **laag-voor-laag** methode — de eenvoudigste aanpak voor beginners. De Pyraminx is een tetraëdervormige puzzel met 4 punten, 6 ribben en 4 centra. We lossen hem op in 4 eenvoudige stappen.
+
+## Notatie
+
+De Pyraminx gebruikt een uniek notatiesysteem met **hoofdletters** voor lagen en **kleine letters** voor punten:
+
+**Lagen (hoofdletters)** — draai de hele laag (zonder punt):
+
+- **U** = Bovenlaag &nbsp;&nbsp; **R** = Rechterlaag &nbsp;&nbsp; **L** = Linkerlaag &nbsp;&nbsp; **B** = Achterlaag
+
+**Punten (kleine letters)** — draai alleen de punt:
+
+- **u** = Bovenpunt &nbsp;&nbsp; **r** = Rechterpunt &nbsp;&nbsp; **l** = Linkerpunt &nbsp;&nbsp; **b** = Achterpunt
+
+Een letter alleen betekent **120° met de klok mee**. Het toevoegen van **'** betekent **120° tegen de klok in**.
+
+Bijvoorbeeld: **R** = rechterlaag met de klok mee draaien, **R'** = tegen de klok in, **l** = linkerpunt met de klok mee draaien, **l'** = tegen de klok in.
+
+Houd de Pyraminx met **één zijde naar je toe** en **één punt naar boven** bij alle stappen.
+
+---
+
+## Stap 1: De punten oplossen
+
+Lijn de **3 zichtbare punten** uit zodat de kleur van elke punt overeenkomt met het aangrenzende centrum. De 4e punt zit onderaan en wordt later behandeld.
+
+Deze stap is **intuïtief** — elke punt heeft slechts 3 mogelijke posities, dus maximaal 2 draaien lossen het op. Draai elke punt totdat de kleur overeenkomt met het naburige centrum.
+
+**Voorbeeld: Alle drie zichtbare punten oplossen**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tips:** Begin altijd met deze stap — het is gratis en onmiddellijk. Zodra de punten zijn uitgelijnd, hoef je ze niet meer aan te raken.
+
+---
+
+## Stap 2: Ribben van de eerste laag
+
+Bouw een volledige **eerste laag** door de 3 onderste ribben op hun juiste posities te plaatsen. Kies een zijde als onderkant (we raden aan te beginnen met de zijde die al de meeste overeenkomende kleuren heeft).
+
+Deze stap is grotendeels intuïtief. Zoek elke rib die bij de onderste laag hoort en voeg deze in met eenvoudige laagdraaien.
+
+**Geval 1: Rib in de bovenlaag, correct georiënteerd** — Eén laagdraai voegt hem direct in.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Geval 2: Rib in de bovenlaag, omgedraaid** — Gebruik twee laagdraaien om om te draaien en in te voegen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tips:** Als een rib al in de onderste laag zit maar op de verkeerde positie, gebruik dan een laagdraai om hem naar boven te halen en voeg hem dan correct in.
+
+---
+
+## Stap 3: Ribben van de laatste laag
+
+Plaats de **3 ribben van de bovenlaag** op hun juiste posities. Na deze stap zit elke rib tussen de twee juiste centra, maar kan nog omgedraaid zijn.
+
+Kijk naar de bovenlaag en bepaal in welke richting de ribben moeten cycleren:
+
+**Geval 1: Cyclus met de klok mee** — Alle drie ribben moeten één positie met de klok mee opschuiven.
+
+**Algoritme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Geval 2: Cyclus tegen de klok in** — Alle drie ribben moeten één positie tegen de klok in opschuiven.
+
+**Algoritme: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tips:** Als slechts 2 ribben verwisseld moeten worden, lost een van deze 3-cyclus algoritmes het probleem op — kijk goed in welke richting de cyclus gaat.
+
+---
+
+## Stap 4: Ribben van de laatste laag oriënteren
+
+De laatste stap! Als de ribben van de laatste laag op de juiste posities staan maar **omgedraaid** zijn (verkeerde kleur naar buiten), gebruik dan dit algoritme om ze om te draaien.
+
+**2 ribben omdraaien: R U R' U R U R'**
+
+Houd de Pyraminx zo dat de rib die **niet** omgedraaid hoeft te worden naar je toe wijst. Pas dan het algoritme toe.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Als alle 3 ribben omgedraaid moeten worden, pas dit algoritme één keer toe — het draait er 2 om, draai dan de bovenkant om op te stellen en draai de overige 2 om (één van de eerder omgedraaide plus de laatste).
+
+---
+
+**Gefeliciteerd!** Je hebt de Pyraminx opgelost! Met oefening kan de Pyraminx in slechts een paar seconden worden opgelost. Het is een van de snelst te beheersen puzzels — blijf oefenen en je lost hem op in minder dan 10 seconden.

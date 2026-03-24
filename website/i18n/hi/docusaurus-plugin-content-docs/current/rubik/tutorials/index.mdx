@@ -1,10 +1,12 @@
 ---
 title: "3x3 रूबिक्स क्यूब कैसे सॉल्व करें"
 sidebar_position: 0
-image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg
 ---
 
 import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
 
 # 3x3 रूबिक्स क्यूब कैसे सॉल्व करें
 
@@ -33,6 +35,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **केस 1: ऊपरी लेयर में सफेद एज** — साइड के रंग को उसके सेंटर से मिलाएं, फिर उस फेस को दो बार घुमाएं।
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2"
   alg="F2"
 />
@@ -40,6 +43,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **केस 2: मध्य लेयर में सफेद एज** — पहले इसे ऊपर लाएं, फिर केस 1 की तरह करें।
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2 U F"
   alg="F' U' F2"
 />
@@ -47,6 +51,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **केस 3: सफेद एज नीचे है लेकिन उलटा** — इसे बाहर निकालें और सही ढंग से वापस डालें।
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' R U' R'"
   alg="R U R' F"
 />
@@ -64,6 +69,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **एल्गोरिदम: R U R' U'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 U R U' R'"
   alg="R U R' U'"
 />
@@ -83,6 +89,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **एज को दाएं डालें: U R U' R' U' F' U F**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' U F U R U' R' U'"
   alg="U R U' R' U' F' U F"
 />
@@ -90,6 +97,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **एज को बाएं डालें: U' L' U L U F U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U' F' U' L' U L U"
   alg="U' L' U L U F U' F'"
 />
@@ -111,6 +119,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **एल्गोरिदम: F R U R' U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U R U' R' F'"
   alg="F R U R' U' F'"
 />
@@ -126,6 +135,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **एल्गोरिदम: R U R' U R U2 R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U2' R' U' R U' R'"
   alg="R U R' U R U2 R'"
 />
@@ -143,6 +153,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **एल्गोरिदम: U R U' L' U R' U' L**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 L' U R U' L U R' U'"
   alg="U R U' L' U R' U' L"
 />
@@ -160,6 +171,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **घड़ी की दिशा में चक्र: R U' R U R U R U' R' U' R2**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
   alg="R U' R U R U R U' R' U' R2"
 />
@@ -167,6 +179,7 @@ import TwistyPlayer from '@site/src/components/TwistyPlayer';
 **घड़ी की विपरीत दिशा में चक्र: R2 U R U R' U' R' U' R' U R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U' R U R U R U' R' U' R2"
   alg="R2 U R U R' U' R' U' R' U R'"
 />

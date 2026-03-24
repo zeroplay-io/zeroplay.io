@@ -1,0 +1,128 @@
+---
+title: Ako poskladať Pyraminx
+sidebar_position: 2
+description: Naučte sa poskladať Pyraminx krok za krokom pomocou metódy vrstva po vrstve pre začiatočníkov.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Ako poskladať Pyraminx
+
+Naučte sa poskladať Pyraminx pomocou metódy **vrstva po vrstve** — najjednoduchšieho prístupu pre začiatočníkov. Pyraminx je hlavolam v tvare štvorstenu so 4 špičkami, 6 hranami a 4 stredmi. Poskladáme ho v 4 jednoduchých krokoch.
+
+## Notácia
+
+Pyraminx používa jedinečný systém notácie s **veľkými** písmenami pre vrstvy a **malými** písmenami pre špičky:
+
+**Vrstvy (veľké písmená)** — otáčať celú vrstvu (bez špičky):
+
+- **U** = Horná vrstva &nbsp;&nbsp; **R** = Pravá vrstva &nbsp;&nbsp; **L** = Ľavá vrstva &nbsp;&nbsp; **B** = Zadná vrstva
+
+**Špičky (malé písmená)** — otáčať iba špičku:
+
+- **u** = Horná špička &nbsp;&nbsp; **r** = Pravá špička &nbsp;&nbsp; **l** = Ľavá špička &nbsp;&nbsp; **b** = Zadná špička
+
+Samotné písmeno znamená **120° v smere hodinových ručičiek**. Pridanie **'** znamená **120° proti smeru hodinových ručičiek**.
+
+Napríklad: **R** = otočiť pravú vrstvu v smere hodinových ručičiek, **R'** = proti smeru, **l** = otočiť ľavú špičku v smere hodinových ručičiek, **l'** = proti smeru.
+
+Držte Pyraminx s **jednou stranou k sebe** a **jednou špičkou nahor** vo všetkých krokoch.
+
+---
+
+## Krok 1: Poskladajte špičky
+
+Zarovnajte **3 viditeľné špičky** tak, aby farba každej špičky zodpovedala susednému stredu. 4. špička je dole a bude vyriešená neskôr.
+
+Tento krok je **intuitívny** — každá špička má len 3 možné pozície, takže maximálne 2 otočenia ju vyriešia. Jednoducho otáčajte každú špičku, kým jej farba nebude zodpovedať susednému stredu.
+
+**Príklad: Poskladanie troch viditeľných špičiek**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tipy:** Vždy začnite týmto krokom — je to zadarmo a okamžité. Keď sú špičky zarovnané, už sa ich nemusíte dotýkať.
+
+---
+
+## Krok 2: Hrany prvej vrstvy
+
+Zostavte kompletnú **prvú vrstvu** umiestnením 3 spodných hrán na správne pozície. Vyberte jednu stranu ako spodnú (odporúčame začať so stranou, ktorá už má najviac zodpovedajúcich farieb).
+
+Tento krok je prevažne intuitívny. Nájdite každú hranu patriacu k spodnej vrstve a vložte ju jednoduchými otočeniami vrstvy.
+
+**Prípad 1: Hrana v hornej vrstve, správne orientovaná** — Jedno otočenie vrstvy ju priamo vloží.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Prípad 2: Hrana v hornej vrstve, preklopená** — Použite dve otočenia vrstvy na preklopenie a vloženie.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tipy:** Ak je hrana už v spodnej vrstve, ale na zlej pozícii, použite otočenie vrstvy na jej vytiahnutie nahor a potom ju správne vložte späť.
+
+---
+
+## Krok 3: Hrany poslednej vrstvy
+
+Umiestnite **3 hrany hornej vrstvy** na správne miesta. Po tomto kroku bude každá hrana medzi dvomi správnymi stredmi, ale môže byť stále preklopená.
+
+Pozrite sa na hornú vrstvu a určte, ktorým smerom sa hrany musia cyklicky presunúť:
+
+**Prípad 1: Cyklus v smere hodinových ručičiek** — Všetky tri hrany sa musia posunúť o jednu pozíciu v smere hodinových ručičiek.
+
+**Algoritmus: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Prípad 2: Cyklus proti smeru hodinových ručičiek** — Všetky tri hrany sa musia posunúť o jednu pozíciu proti smeru hodinových ručičiek.
+
+**Algoritmus: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tipy:** Ak je potrebné vymeniť len 2 hrany, jeden z týchto algoritmov 3-cyklu problém vyrieši — pozorne sledujte smer cyklu.
+
+---
+
+## Krok 4: Orientácia hrán poslednej vrstvy
+
+Posledný krok! Ak sú hrany poslednej vrstvy na správnych pozíciách, ale **preklopené** (zlá farba smerom von), použite tento algoritmus na ich preklopenie.
+
+**Preklopiť 2 hrany: R U R' U R U R'**
+
+Držte Pyraminx tak, aby hrana, ktorú **nie je** potrebné preklopiť, smerovala k vám. Potom aplikujte algoritmus.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Ak je potrebné preklopiť všetky 3 hrany, aplikujte tento algoritmus raz — preklopí 2 z nich, potom otočte hornú vrstvu na nastavenie a preklopte zostávajúce 2 (jednu z predtým preklopených plus poslednú).
+
+---
+
+**Gratulujeme!** Poskladali ste Pyraminx! S praxou sa Pyraminx dá poskladať za pár sekúnd. Je to jeden z najrýchlejšie zvládnuteľných hlavolamov — pokračujte v tréningu a budete ho skladať za menej ako 10 sekúnd.

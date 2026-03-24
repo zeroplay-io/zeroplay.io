@@ -1,0 +1,158 @@
+---
+title: Cómo resolver un cubo de Rubik 4x4
+sidebar_position: 4
+description: Aprende a resolver el cubo de Rubik 4x4 paso a paso con el método de reducción.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cómo resolver un cubo de Rubik 4x4
+
+Aprende a resolver el cubo de Rubik 4x4 (también llamado **Rubik's Revenge**) usando el **método de reducción** — el enfoque más popular para cubos grandes. La idea es simple: primero reducir el 4x4 para que parezca un 3x3, luego resolverlo como un 3x3. Cubrimos 4 pasos más casos especiales de paridad.
+
+## Notación
+
+El 4x4 usa toda la notación estándar del 3x3 más movimientos adicionales para las capas internas:
+
+**Movimientos estándar** (solo capa externa):
+- **R** = Derecha &nbsp;&nbsp; **L** = Izquierda &nbsp;&nbsp; **U** = Arriba &nbsp;&nbsp; **D** = Abajo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Atrás
+
+**Movimientos anchos** (dos capas externas juntas):
+- **Rw** = Derecha ancho (dos capas derechas) &nbsp;&nbsp; **Lw** = Izquierda ancho
+- **Uw** = Arriba ancho (dos capas superiores) &nbsp;&nbsp; **Dw** = Abajo ancho
+- **Fw** = Frente ancho &nbsp;&nbsp; **Bw** = Atrás ancho
+
+Una letra sola significa **90° en sentido horario**. Con **'** significa **sentido antihorario**. Con **2** significa **180°**.
+
+Por ejemplo: **Rw** = dos capas derechas en sentido horario, **Uw'** = dos capas superiores en sentido antihorario, **Rw2** = dos capas derechas 180°.
+
+Sostén el cubo con el **centro blanco abajo** y el **centro amarillo arriba** para todos los pasos.
+
+---
+
+## Paso 1: Resolver los centros
+
+Construye los **bloques centrales** en cada cara. Cada cara del 4x4 tiene 4 piezas centrales (un bloque 2x2) que deben coincidir. A diferencia del 3x3, los centros de un 4x4 pueden moverse — por eso hay que resolverlos primero.
+
+**Orden recomendado:** Empieza con **blanco** (abajo), luego **amarillo** (opuesto), y después los 4 lados restantes.
+
+Este paso es principalmente **intuitivo**. La técnica clave es usar movimientos anchos para juntar piezas centrales mientras se protegen las caras ya resueltas con giros de la capa externa.
+
+**Inserción básica de centro** — Usa un movimiento ancho para llevar una pieza central arriba, gira la capa superior para alinear, luego invierte el movimiento ancho:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Intercambio de centro sin romper caras resueltas** — Cuando necesitas insertar una pieza central pero debes proteger otros centros completados:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Consejos:**
+- Siempre resuelve las caras opuestas primero (blanco/amarillo), luego los 4 lados restantes.
+- Al insertar una pieza central, usa un movimiento ancho (como Rw) para llevarla arriba, ajusta la capa U, y luego deshaz el movimiento ancho.
+- Ten cuidado de no alterar los centros completados al trabajar en nuevos.
+
+---
+
+## Paso 2: Emparejar aristas
+
+Empareja cada par de **piezas de arista** para que el 4x4 se comporte como un 3x3. Cada arista de un 4x4 consiste en 2 piezas que necesitan emparejarse. Hay 12 aristas que emparejar.
+
+La técnica principal es **Slice-Flip-Slice**: usa un movimiento ancho (Uw) para alinear las aristas, realiza un movimiento de capa externa para emparejarlas, luego invierte el movimiento ancho.
+
+**Emparejamiento básico de aristas** — Coloca una pieza de arista en la posición frontal derecha y su pareja arriba. Usa Uw para alinear:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Emparejamiento con volteo** — Cuando el par de aristas necesita voltearse durante el emparejamiento:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Emparejamiento de las últimas aristas** — Para las últimas 3 aristas, no puedes usar Uw libremente sin romper aristas ya emparejadas. Usa esta técnica en su lugar:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Consejos:**
+- Las primeras 8-9 aristas se pueden emparejar libremente con la técnica Slice-Flip-Slice.
+- Para las últimas 3 aristas, usa movimientos basados en Dw o técnicas de volteo para evitar romper aristas ya emparejadas.
+- Si un par de aristas está en la posición correcta pero volteado, necesitas sacarlo y volver a emparejarlo correctamente.
+
+---
+
+## Paso 3: Resolver como 3x3
+
+Una vez resueltos todos los centros y emparejadas todas las aristas, ¡el 4x4 es ahora equivalente a un 3x3! Usa cualquier **método de resolución de 3x3** (como el método capa por capa) para terminar.
+
+**Importante:** Durante esta fase, usa solo movimientos de capa externa (R, U, F, L, D, B). **No** uses movimientos anchos (Rw, Uw, etc.) ya que romperían tus aristas emparejadas y centros resueltos.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Consulta nuestro [tutorial de 3x3](./index.mdx) para la guía completa del método capa por capa. Se aplican los mismos 7 pasos — cruz blanca, esquinas blancas, segunda capa, cruz amarilla, cara amarilla, posicionar esquinas y posicionar aristas.
+
+---
+
+## Paso 4: Algoritmos de paridad
+
+El 4x4 tiene dos situaciones especiales que **nunca ocurren en un 3x3**. Se llaman casos de **paridad** y cada uno ocurre aproximadamente el 50% de las veces. Si encuentras uno durante la fase 3x3, aplica el algoritmo correspondiente y continúa resolviendo.
+
+### Paridad OLL (volteo de una sola arista)
+
+**Cómo se ve:** Durante la última capa, una sola arista está volteada — algo imposible en un 3x3 real. La cruz amarilla no se puede completar normalmente.
+
+**Algoritmo: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Este algoritmo es largo, pero solo necesita aplicarse una vez. Después de ejecutarlo, la arista estará correctamente orientada y podrás continuar con los pasos normales de la última capa del 3x3.
+
+### Paridad PLL (intercambio de dos aristas)
+
+**Cómo se ve:** Al final, exactamente dos aristas necesitan intercambiarse — de nuevo, imposible en un 3x3.
+
+**Algoritmo: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Este corto algoritmo intercambia dos aristas opuestas en la última capa. Después de aplicarlo, el cubo debería estar completamente resuelto.
+
+**Consejos:**
+- No entres en pánico con la paridad — es completamente normal en cubos 4x4.
+- La paridad OLL aparece durante el paso de la cruz amarilla. La paridad PLL aparece al final.
+- Puedes encontrar ambas, solo una, o ninguna paridad en una misma resolución.
+
+---
+
+**¡Felicidades!** ¡Has resuelto el cubo de Rubik 4x4! El método de reducción se adapta bien a cubos aún más grandes (5x5, 6x6, etc.) — los conceptos fundamentales de resolver centros, emparejar aristas y resolver como 3x3 permanecen iguales. Con práctica, podrás resolver el 4x4 en menos de 3 minutos.

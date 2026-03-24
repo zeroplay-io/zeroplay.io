@@ -1,0 +1,136 @@
+---
+title: Hoe los je een 2×2 Rubik's Cube op
+sidebar_position: 1
+description: Leer de 2×2 Rubik's Cube stap voor stap op te lossen met de Ortega-methode.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hoe los je een 2×2 Rubik's Cube op
+
+Leer de 2×2 Rubik's Cube op te lossen met de **Ortega-methode** — een snelle en efficiënte aanpak in 3 stappen. De 2×2 heeft geen midden- of randstukken, alleen hoeken, waardoor het een geweldige puzzel is om mee te beginnen.
+
+## Notatie
+
+De 2×2 gebruikt dezelfde notatie als de 3×3, maar zonder bewegingen van de middelste laag:
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Boven &nbsp;&nbsp; **D** = Onder &nbsp;&nbsp; **F** = Voor &nbsp;&nbsp; **B** = Achter
+
+Een letter alleen betekent **90° met de klok mee**. Met **'** betekent **tegen de klok in**. Met **2** betekent **180°**.
+
+Bijvoorbeeld: **R** = draai de rechterkant met de klok mee, **R'** = tegen de klok in, **R2** = 180°.
+
+Omdat de 2×2 geen vaste middelpunten heeft, kies **wit** als startkleur en houd deze **onder**.
+
+---
+
+## Stap 1: Los de eerste zijde op
+
+Bouw een volledige **witte zijde** aan de onderkant. Anders dan bij de 3×3 hoef je de zijkleuren **niet** te laten overeenkomen — zet gewoon alle 4 witte stickers op dezelfde zijde.
+
+Deze stap is **intuïtief** — er zijn geen vaste algoritmen. Zoek elk wit hoekstuk en verplaats het naar de onderzijde.
+
+**Geval 1: Witte hoek in de bovenste laag** — Breng het naar beneden met een simpele invoeging.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Geval 2: Witte hoek onderaan maar verkeerd georiënteerd** — Haal het eruit en voeg het correct weer in.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tips:** Richt je alleen op het plaatsen van 4 witte stickers op één zijde. Zijkleuren doen er nog niet toe — dit is wat Ortega anders maakt dan de 3×3 beginnersmethode.
+
+---
+
+## Stap 2: Oriënteer de laatste laag (OLL)
+
+Maak de **tegenoverliggende zijde** (geel) helemaal één kleur. Je hebt nu alle 4 gele stickers nodig die naar boven wijzen.
+
+Kijk naar de bovenzijde en identificeer welk geval je hebt:
+
+**Geval 1: Eén gele hoek wijst naar boven (Sune)** — Houd de kubus zo dat de opgeloste hoek links voor zit.
+
+**Algoritme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Geval 2: Geen gele hoeken wijzen naar boven** — Pas Sune twee keer toe om alle hoeken te oriënteren.
+
+**Algoritme: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Geval 3: Twee diagonale gele hoeken wijzen naar boven** — Houd de kubus zo dat de twee opgeloste hoeken links voor en rechts achter zitten.
+
+**Algoritme: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tips:** Als je twee **aangrenzende** gele hoeken naar boven hebt wijzen, gebruik Sune één keer om Geval 1 of Geval 3 te bereiken.
+
+---
+
+## Stap 3: Permuteer beide lagen (PBL)
+
+De laatste stap! Rangschik alle hoekstukken op hun juiste posities om de kubus op te lossen. Kijk naar de **zijkleuren** van de bovenste en onderste lagen om te bepalen welke ruil nodig is.
+
+**Hoe te controleren:** Kijk naar de zijkanten van de bovenste laag. Als twee aangrenzende stickers op één kant dezelfde kleur hebben, is er geen ruil nodig of is een aangrenzende ruil nodig. Als elke kant twee verschillende kleuren heeft, is een diagonale ruil nodig.
+
+**Geval 1: Diagonale ruil bovenaan** — Twee tegenoverliggende hoeken moeten worden geruild.
+
+**Algoritme: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Geval 2: Aangrenzende ruil bovenaan** — Twee naburige hoeken moeten worden geruild.
+
+**Algoritme: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Geval 3: Diagonale ruil in beide lagen** — Gebruik dit snelle algoritme.
+
+**Algoritme: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Na het oplossen van de bovenste laag moet je misschien de onderzijde draaien (D of D') om de laatste kleuren uit te lijnen. Als de onderste laag ook een ruil nodig heeft, pas het diagonale ruilalgoritme toe terwijl je de onopgeloste laag bovenaan houdt.
+
+---
+
+**Gefeliciteerd!** Je hebt de 2×2 Rubik's Cube opgelost! De Ortega-methode is snel en efficiënt — met oefening kun je de 2×2 in minder dan 5 seconden oplossen.

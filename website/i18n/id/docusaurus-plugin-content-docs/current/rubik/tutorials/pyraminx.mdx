@@ -1,0 +1,128 @@
+---
+title: Cara Menyelesaikan Pyraminx
+sidebar_position: 2
+description: Pelajari cara menyelesaikan Pyraminx langkah demi langkah menggunakan metode lapis demi lapis untuk pemula.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cara Menyelesaikan Pyraminx
+
+Pelajari cara menyelesaikan Pyraminx menggunakan metode **lapis demi lapis** — pendekatan termudah untuk pemula. Pyraminx adalah puzzle berbentuk tetrahedron dengan 4 ujung, 6 sisi, dan 4 pusat. Kita akan menyelesaikannya dalam 4 langkah sederhana.
+
+## Notasi
+
+Pyraminx menggunakan sistem notasi unik dengan huruf **besar** untuk lapisan dan huruf **kecil** untuk ujung:
+
+**Lapisan (huruf besar)** — putar seluruh lapisan (tanpa ujung):
+
+- **U** = Lapisan atas &nbsp;&nbsp; **R** = Lapisan kanan &nbsp;&nbsp; **L** = Lapisan kiri &nbsp;&nbsp; **B** = Lapisan belakang
+
+**Ujung (huruf kecil)** — putar ujung saja:
+
+- **u** = Ujung atas &nbsp;&nbsp; **r** = Ujung kanan &nbsp;&nbsp; **l** = Ujung kiri &nbsp;&nbsp; **b** = Ujung belakang
+
+Huruf saja berarti **120° searah jarum jam**. Menambahkan **'** berarti **120° berlawanan arah jarum jam**.
+
+Contoh: **R** = putar lapisan kanan searah jarum jam, **R'** = berlawanan arah, **l** = putar ujung kiri searah jarum jam, **l'** = berlawanan arah.
+
+Pegang Pyraminx dengan **satu sisi menghadap Anda** dan **satu ujung mengarah ke atas** untuk semua langkah.
+
+---
+
+## Langkah 1: Selesaikan Ujung
+
+Sejajarkan **3 ujung yang terlihat** sehingga warna setiap ujung cocok dengan pusat yang berdekatan. Ujung ke-4 ada di bawah dan akan ditangani nanti.
+
+Langkah ini bersifat **intuitif** — setiap ujung hanya memiliki 3 posisi yang mungkin, jadi paling banyak 2 putaran untuk menyelesaikannya. Cukup putar setiap ujung sampai warnanya cocok dengan pusat di sebelahnya.
+
+**Contoh: Menyelesaikan ketiga ujung yang terlihat**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tips:** Selalu mulai dengan langkah ini — gratis dan instan. Setelah ujung disejajarkan, Anda tidak perlu menyentuhnya lagi.
+
+---
+
+## Langkah 2: Sisi Lapisan Pertama
+
+Bangun **lapisan pertama** yang lengkap dengan menempatkan 3 sisi bawah di posisi yang benar. Pilih satu muka sebagai dasar (kami sarankan mulai dengan muka yang sudah memiliki warna paling cocok).
+
+Langkah ini sebagian besar intuitif. Temukan setiap sisi yang termasuk lapisan bawah dan masukkan dengan putaran lapisan sederhana.
+
+**Kasus 1: Sisi di lapisan atas, orientasi benar** — Satu putaran lapisan langsung memasukkannya.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Kasus 2: Sisi di lapisan atas, terbalik** — Gunakan dua putaran lapisan untuk membalik dan memasukkan.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tips:** Jika sisi sudah ada di lapisan bawah tapi di posisi yang salah, gunakan putaran lapisan untuk mengeluarkannya ke atas terlebih dahulu, lalu masukkan kembali dengan benar.
+
+---
+
+## Langkah 3: Sisi Lapisan Terakhir
+
+Tempatkan **3 sisi lapisan atas** di posisi yang benar. Setelah langkah ini, setiap sisi akan berada di antara dua pusat yang benar, tetapi mungkin masih terbalik.
+
+Lihat lapisan atas dan tentukan arah mana sisi-sisi perlu berputar:
+
+**Kasus 1: Siklus searah jarum jam** — Ketiga sisi perlu bergerak satu posisi searah jarum jam.
+
+**Algoritma: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Kasus 2: Siklus berlawanan arah jarum jam** — Ketiga sisi perlu bergerak satu posisi berlawanan arah jarum jam.
+
+**Algoritma: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tips:** Jika hanya 2 sisi yang perlu ditukar, salah satu algoritma 3-siklus ini akan menyelesaikannya — perhatikan dengan cermat arah siklusnya.
+
+---
+
+## Langkah 4: Orientasi Sisi Lapisan Terakhir
+
+Langkah terakhir! Jika sisi lapisan terakhir sudah di posisi yang benar tapi **terbalik** (warna salah menghadap keluar), gunakan algoritma ini untuk membaliknya.
+
+**Balik 2 sisi: R U R' U R U R'**
+
+Pegang Pyraminx sehingga sisi yang **tidak** perlu dibalik menghadap Anda. Lalu terapkan algoritmanya.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Jika ketiga sisi perlu dibalik, terapkan algoritma ini sekali — akan membalik 2, lalu putar bagian atas untuk mengatur posisi dan balik 2 sisanya (satu dari yang sudah dibalik sebelumnya ditambah yang terakhir).
+
+---
+
+**Selamat!** Anda telah menyelesaikan Pyraminx! Dengan latihan, Pyraminx bisa diselesaikan dalam hitungan detik. Ini adalah salah satu puzzle tercepat untuk dikuasai — terus berlatih dan Anda akan menyelesaikannya dalam waktu kurang dari 10 detik.

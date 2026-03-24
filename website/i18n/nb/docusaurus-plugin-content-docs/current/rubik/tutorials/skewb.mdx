@@ -1,0 +1,120 @@
+---
+title: Hvordan løse Skewb
+sidebar_position: 3
+description: Lær å løse Skewb steg for steg med Sarahs nybegynnermetode.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hvordan løse Skewb
+
+Lær å løse Skewb med **Sarahs nybegynnermetode** — en enkel og effektiv tilnærming for nybegynnere. Skewb er et hjørne-vridende puslespill der hvert trekk roterer et hjørne og de tre tilstøtende sidene. Vi løser det på bare 3 trinn med én kjernalgoritme: Sledgehammer.
+
+## Notasjon
+
+I motsetning til en standard Rubiks kube dreier Skewb rundt **hjørner** i stedet for sider. Hvert trekk roterer ett hjørne og de tre tilstøtende sentrene:
+
+- **R** = Høyre fronthjørne med klokken &nbsp;&nbsp; **R'** = Høyre fronthjørne mot klokken
+- **L** = Venstre fronthjørne med klokken &nbsp;&nbsp; **L'** = Venstre fronthjørne mot klokken
+- **U** = Øvre høyre fronthjørne med klokken &nbsp;&nbsp; **U'** = Øvre høyre fronthjørne mot klokken
+- **B** = Bakre høyre hjørne med klokken &nbsp;&nbsp; **B'** = Bakre høyre hjørne mot klokken
+
+En bokstav alene betyr en vridning **med klokken**. Å legge til **'** betyr **mot klokken**.
+
+Hold Skewb med **hvitt senter nederst** for alle trinn.
+
+---
+
+## Trinn 1: Løs én side
+
+Bygg en komplett **hvit side** på bunnen. Det betyr at alle 4 hjørnene rundt det hvite senteret må være på plass med hvitt ned, og de tilstøtende sidefargene må stemme.
+
+Dette trinnet er semi-intuitivt. Det viktigste verktøyet er **Sledgehammer** — den viktigste algoritmen for Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Bruk Sledgehammer og oppsettstrekk for å plassere hvert hvitt hjørne i det nederste laget. Her er et eksempel på innsetting av et hjørne:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Start med å plassere det hvite senteret nederst.
+- Løs hjørnene ett om gangen, og pass på å ikke forstyrre brikker som allerede er på plass.
+- Etter dette trinnet skal bunnsiden være helt hvit, og hver tilstøtende side skal ha en matchende hjørnefarge.
+
+---
+
+## Trinn 2: Plasser de motsatte sentrene
+
+Juster **toppsenteret og de 4 sidesentrene** slik at alle er i riktige posisjoner. Bunnsiden forblir løst.
+
+Sledgehammer er igjen nøkkelalgoritmen. Den bytter toppsenteret med et sidesenter:
+
+**Tilfelle 1: Bytt 2 sentre** — Bruk Sledgehammer for å bytte topp- og frontsenteret.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tilfelle 2: 3-syklus av sentre** — Når tre sentre må roteres, bruk Sledgehammer to ganger (Dobbel Sledgehammer):
+
+**Dobbel Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tips:**
+- Roter puslespillet for å sette opp de riktige sentrene i front- og topposisjonene før du bruker algoritmen.
+- Hvis bare 2 sentre må byttes, er én Sledgehammer nok. Hvis 3 sentre må sykles, bruk Dobbel Sledgehammer.
+
+---
+
+## Trinn 3: Orienter siste lags hjørner
+
+Det siste trinnet! Vri de **4 hjørnene i det øverste laget** slik at fargene peker riktig vei, og fullfør løsningen.
+
+**Tilfelle 1: Alle 4 hjørnene trenger vridning med klokken** — Bruk denne algoritmen:
+
+**Algoritme: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Tilfelle 2: Noen hjørner trenger justering** — Bruk Sledgehammer med oppsettstrekk for å orientere individuelle hjørner:
+
+**Algoritme: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tips:**
+- Hvis bare noen hjørner trenger vridning, bruk oppsettstrekk (U eller U') for å bringe de uløste hjørnene i posisjon, bruk algoritmen, og angre deretter oppsettstrekket.
+- Du må kanskje gjenta prosessen for de gjenværende hjørnene.
+
+---
+
+**Gratulerer!** Du har løst Skewb! Skewb er et av de mest tilfredsstillende puslespillene å løse fordi du trenger svært få algoritmer. Med øvelse vil du løse det på under 10 sekunder. Fortsett å øve på Sledgehammer — det er nøkkelen til å mestre dette puslespillet.

@@ -338,6 +338,19 @@ pre[class*="language-"] {
   -o-tab-size: 4;
 }
 
+/* Tutorial banner - full width, no screenshot styling */
+.markdown img.tutorial-banner {
+  max-width: 100% !important;
+  box-shadow: none !important;
+  border: none !important;
+  display: block;
+}
+
+.markdown img.tutorial-banner:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 /* Screenshots styling for documentation pages */
 .markdown img {
   max-width: 380px;

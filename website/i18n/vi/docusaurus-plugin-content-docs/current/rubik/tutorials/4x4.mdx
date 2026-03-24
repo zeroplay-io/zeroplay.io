@@ -1,0 +1,143 @@
+---
+title: Cách giải Rubik 4x4
+sidebar_position: 4
+description: Học cách giải Rubik 4x4 từng bước với phương pháp rút gọn.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cách giải Rubik 4x4
+
+Học cách giải Rubik 4x4 (còn gọi là **Rubik's Revenge**) bằng **phương pháp rút gọn** — cách tiếp cận phổ biến nhất cho các khối lớn. Ý tưởng rất đơn giản: trước tiên rút gọn 4x4 để trông giống 3x3, sau đó giải như 3x3. Chúng ta sẽ đi qua 4 bước cộng với các trường hợp chẵn lẻ đặc biệt.
+
+## Ký hiệu
+
+Rubik 4x4 sử dụng tất cả ký hiệu tiêu chuẩn của 3x3 cộng thêm các bước di chuyển cho tầng bên trong:
+
+**Bước di chuyển tiêu chuẩn** (chỉ tầng ngoài):
+- **R** = Phải &nbsp;&nbsp; **L** = Trái &nbsp;&nbsp; **U** = Trên &nbsp;&nbsp; **D** = Dưới &nbsp;&nbsp; **F** = Trước &nbsp;&nbsp; **B** = Sau
+
+**Bước di chuyển rộng** (hai tầng ngoài cùng):
+- **Rw** = Phải rộng (hai tầng phải) &nbsp;&nbsp; **Lw** = Trái rộng
+- **Uw** = Trên rộng (hai tầng trên) &nbsp;&nbsp; **Dw** = Dưới rộng
+- **Fw** = Trước rộng &nbsp;&nbsp; **Bw** = Sau rộng
+
+Chữ cái đơn nghĩa là **90° theo chiều kim đồng hồ**. Thêm **'** nghĩa là **ngược chiều kim đồng hồ**. Thêm **2** nghĩa là **180°**.
+
+Ví dụ: **Rw** = hai tầng phải theo chiều kim, **Uw'** = hai tầng trên ngược chiều kim, **Rw2** = hai tầng phải 180°.
+
+Giữ khối với **tâm trắng hướng xuống** và **tâm vàng hướng lên** trong tất cả các bước.
+
+---
+
+## Bước 1: Giải các tâm
+
+Xây dựng **khối tâm** trên mỗi mặt. Mỗi mặt của Rubik 4x4 có 4 mảnh tâm (khối 2x2) cần khớp nhau. Khác với 3x3, các tâm của 4x4 có thể di chuyển — nên phải giải chúng trước.
+
+**Thứ tự khuyến nghị:** Bắt đầu với **trắng** (dưới), rồi **vàng** (đối diện), rồi 4 mặt còn lại.
+
+Bước này chủ yếu **theo trực giác**. Kỹ thuật chính là dùng bước di chuyển rộng để gom các mảnh tâm trong khi bảo vệ các mặt đã giải bằng xoay tầng ngoài.
+
+**Chèn tâm cơ bản**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Đổi tâm mà không phá các mặt đã giải**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+---
+
+## Bước 2: Ghép cạnh
+
+Ghép từng cặp **mảnh cạnh** để 4x4 hoạt động như 3x3. Mỗi cạnh của 4x4 gồm 2 mảnh cần ghép. Có 12 cạnh cần ghép.
+
+Kỹ thuật cốt lõi là **Slice-Flip-Slice**: dùng bước di chuyển rộng (Uw) để căn chỉnh cạnh, thực hiện bước di chuyển tầng ngoài để ghép, rồi hoàn tác bước di chuyển rộng.
+
+**Ghép cạnh cơ bản**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Ghép với lật**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Ghép các cạnh cuối cùng**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+---
+
+## Bước 3: Giải như 3x3
+
+Khi tất cả tâm đã giải và tất cả cạnh đã ghép, 4x4 bây giờ tương đương với 3x3! Sử dụng bất kỳ **phương pháp giải 3x3** nào để hoàn thành.
+
+**Quan trọng:** Trong giai đoạn này, chỉ sử dụng bước di chuyển tầng ngoài (R, U, F, L, D, B). **Không** sử dụng bước di chuyển rộng (Rw, Uw, v.v.).
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Xem [hướng dẫn 3x3](./index.mdx) của chúng tôi để biết hướng dẫn đầy đủ.
+
+---
+
+## Bước 4: Thuật toán chẵn lẻ
+
+Rubik 4x4 có hai tình huống đặc biệt **không bao giờ xảy ra trên 3x3**. Chúng được gọi là **chẵn lẻ** và mỗi trường hợp xảy ra khoảng 50%.
+
+### Chẵn lẻ OLL (lật một cạnh)
+
+**Trông như thế nào:** Ở tầng cuối, một cạnh bị lật — không thể xảy ra trên 3x3 thật.
+
+**Thuật toán: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+### Chẵn lẻ PLL (đổi hai cạnh)
+
+**Trông như thế nào:** Cuối cùng, đúng hai cạnh cần đổi chỗ.
+
+**Thuật toán: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+**Mẹo:**
+- Đừng hoảng sợ khi gặp chẵn lẻ — hoàn toàn bình thường với Rubik 4x4.
+- Chẵn lẻ OLL xuất hiện ở bước chữ thập vàng. Chẵn lẻ PLL xuất hiện ở cuối.
+
+---
+
+**Chúc mừng!** Bạn đã giải thành công Rubik 4x4! Phương pháp rút gọn cũng áp dụng tốt cho các khối lớn hơn (5x5, 6x6, v.v.). Với luyện tập, bạn sẽ giải được 4x4 trong dưới 3 phút.

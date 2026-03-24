@@ -1,0 +1,158 @@
+---
+title: Wie man einen 4x4 Zauberwürfel löst
+sidebar_position: 4
+description: Lernen Sie Schritt für Schritt, den 4x4 Zauberwürfel mit der Reduktionsmethode zu lösen.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Wie man einen 4x4 Zauberwürfel löst
+
+Lernen Sie, den 4x4 Zauberwürfel (auch **Rubik's Revenge** genannt) mit der **Reduktionsmethode** zu lösen — dem beliebtesten Ansatz für größere Würfel. Die Idee ist einfach: Zuerst den 4x4 so reduzieren, dass er wie ein 3x3 aussieht, dann als 3x3 lösen. Wir behandeln 4 Schritte plus spezielle Paritätsfälle.
+
+## Notation
+
+Der 4x4 verwendet alle Standard-3x3-Notationen plus zusätzliche Züge für die inneren Schichten:
+
+**Standardzüge** (nur äußere Schicht):
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Oben &nbsp;&nbsp; **D** = Unten &nbsp;&nbsp; **F** = Vorne &nbsp;&nbsp; **B** = Hinten
+
+**Breite Züge** (äußere zwei Schichten zusammen):
+- **Rw** = Rechts breit (rechte zwei Schichten) &nbsp;&nbsp; **Lw** = Links breit
+- **Uw** = Oben breit (obere zwei Schichten) &nbsp;&nbsp; **Dw** = Unten breit
+- **Fw** = Vorne breit &nbsp;&nbsp; **Bw** = Hinten breit
+
+Ein Buchstabe allein bedeutet **90° im Uhrzeigersinn**. Mit **'** bedeutet **gegen den Uhrzeigersinn**. Mit **2** bedeutet **180°**.
+
+Zum Beispiel: **Rw** = rechte zwei Schichten im Uhrzeigersinn, **Uw'** = obere zwei Schichten gegen den Uhrzeigersinn, **Rw2** = rechte zwei Schichten 180°.
+
+Halten Sie den Würfel bei allen Schritten mit dem **weißen Zentrum unten** und dem **gelben Zentrum oben**.
+
+---
+
+## Schritt 1: Zentren lösen
+
+Bauen Sie die **Zentrumsblöcke** auf jeder Seite auf. Jede Seite des 4x4 hat 4 Zentrumsteile (ein 2x2-Block), die übereinstimmen müssen. Anders als beim 3x3 können sich die Zentren eines 4x4 bewegen — daher müssen sie zuerst gelöst werden.
+
+**Empfohlene Reihenfolge:** Beginnen Sie mit **Weiß** (unten), dann **Gelb** (gegenüber), dann die verbleibenden 4 Seiten.
+
+Dieser Schritt ist hauptsächlich **intuitiv**. Die Schlüsseltechnik besteht darin, breite Züge zu verwenden, um Zentrumsteile zusammenzubringen, während bereits gelöste Seiten durch Züge der äußeren Schicht geschützt werden.
+
+**Grundlegende Zentrumseinfügung** — Verwenden Sie einen breiten Zug, um ein Zentrumsteil nach oben zu bringen, drehen Sie die obere Schicht zum Ausrichten, dann machen Sie den breiten Zug rückgängig:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Zentrumstausch ohne gelöste Seiten zu zerstören** — Wenn Sie ein Zentrumsteil einfügen müssen, aber andere fertige Zentren schützen müssen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tipps:**
+- Lösen Sie immer zuerst die gegenüberliegenden Seiten (Weiß/Gelb), dann die restlichen 4 Seiten.
+- Beim Einfügen eines Zentrumsteils verwenden Sie einen breiten Zug (wie Rw), um es nach oben zu bringen, passen Sie die U-Schicht an und machen Sie dann den breiten Zug rückgängig.
+- Achten Sie darauf, fertige Zentren nicht zu zerstören, wenn Sie an neuen arbeiten.
+
+---
+
+## Schritt 2: Kanten paaren
+
+Ordnen Sie jedes Paar von **Kantenteilen** zu, damit der 4x4 sich wie ein 3x3 verhält. Jede Kante eines 4x4 besteht aus 2 Teilen, die zusammengepaart werden müssen. Es gibt 12 Kanten zu paaren.
+
+Die Kerntechnik ist **Slice-Flip-Slice**: Verwenden Sie einen breiten Zug (Uw), um Kanten zusammenzubringen, führen Sie einen äußeren Schichtzug zum Paaren aus und machen Sie dann den breiten Zug rückgängig.
+
+**Grundlegendes Kantenpaaren** — Platzieren Sie ein Kantenteil in der vorderen rechten Position und seinen Partner oben. Verwenden Sie Uw zum Ausrichten:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Umgekehrtes Paaren** — Wenn das Kantenpaar beim Paaren umgedreht werden muss:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Letzte Kanten paaren** — Bei den letzten 3 Kanten können Sie Uw nicht frei verwenden, ohne gepaarte Kanten zu zerstören. Verwenden Sie stattdessen diese Technik:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tipps:**
+- Die ersten 8-9 Kanten können frei mit der Slice-Flip-Slice-Technik gepaart werden.
+- Für die letzten 3 Kanten verwenden Sie Dw-basierte Züge oder Umkehrtechniken, um bereits gepaarte Kanten nicht zu zerstören.
+- Wenn ein Kantenpaar an der richtigen Position ist, aber umgedreht, müssen Sie es herausnehmen und korrekt neu paaren.
+
+---
+
+## Schritt 3: Als 3x3 lösen
+
+Sobald alle Zentren gelöst und alle Kanten gepaart sind, ist der 4x4 nun einem 3x3 gleichwertig! Verwenden Sie eine beliebige **3x3-Lösungsmethode** (wie die Schicht-für-Schicht-Methode), um den Würfel fertigzustellen.
+
+**Wichtig:** Verwenden Sie in dieser Phase nur Züge der äußeren Schicht (R, U, F, L, D, B). Verwenden Sie **keine** breiten Züge (Rw, Uw usw.), da diese Ihre gepaarten Kanten und gelösten Zentren zerstören würden.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Sehen Sie sich unser [3x3-Tutorial](./index.mdx) für die vollständige Schicht-für-Schicht-Anleitung an. Die gleichen 7 Schritte gelten — weißes Kreuz, weiße Ecken, zweite Schicht, gelbes Kreuz, gelbe Seite, Ecken positionieren und Kanten positionieren.
+
+---
+
+## Schritt 4: Paritätsalgorithmen
+
+Der 4x4 hat zwei besondere Situationen, die **beim 3x3 nie vorkommen**. Diese werden **Parität** genannt und treten jeweils mit etwa 50% Wahrscheinlichkeit auf. Wenn Sie während der 3x3-Phase auf eine treffen, wenden Sie den entsprechenden Algorithmus an und lösen Sie weiter.
+
+### OLL-Parität (einzelne Kantenumkehr)
+
+**Wie es aussieht:** In der letzten Schicht ist eine einzelne Kante umgedreht — bei einem echten 3x3 unmöglich. Das gelbe Kreuz kann nicht normal vervollständigt werden.
+
+**Algorithmus: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Dieser Algorithmus ist lang, muss aber nur einmal angewendet werden. Danach ist die Kante korrekt orientiert und Sie können mit den normalen 3x3-Schritten der letzten Schicht fortfahren.
+
+### PLL-Parität (Zwei-Kanten-Tausch)
+
+**Wie es aussieht:** Am Ende müssen genau zwei Kanten getauscht werden — ebenfalls beim 3x3 unmöglich.
+
+**Algorithmus: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Dieser kurze Algorithmus tauscht zwei gegenüberliegende Kanten in der letzten Schicht. Danach sollte der Würfel vollständig gelöst sein.
+
+**Tipps:**
+- Keine Panik bei Parität — das ist beim 4x4-Würfel völlig normal.
+- OLL-Parität tritt beim gelben Kreuz-Schritt auf. PLL-Parität tritt ganz am Ende auf.
+- Sie können beide, eine oder keine Parität in einer einzigen Lösung antreffen.
+
+---
+
+**Herzlichen Glückwunsch!** Sie haben den 4x4 Zauberwürfel gelöst! Die Reduktionsmethode lässt sich gut auf noch größere Würfel (5x5, 6x6 usw.) übertragen — die Kernkonzepte Zentren lösen, Kanten paaren und als 3x3 lösen bleiben gleich. Mit Übung werden Sie den 4x4 in unter 3 Minuten lösen können.

@@ -1,0 +1,136 @@
+---
+title: Como resolver o cubo mágico 2×2
+sidebar_position: 1
+description: Aprenda a resolver o cubo mágico 2×2 passo a passo usando o método Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Como resolver o cubo mágico 2×2
+
+Aprenda a resolver o cubo mágico 2×2 usando o **método Ortega** — uma abordagem rápida e eficiente em 3 passos. O 2×2 não tem peças centrais nem arestas, apenas cantos, tornando-o um excelente quebra-cabeça para começar.
+
+## Notação
+
+O 2×2 usa a mesma notação do 3×3, mas sem movimentos da camada do meio:
+
+- **R** = Direita &nbsp;&nbsp; **L** = Esquerda &nbsp;&nbsp; **U** = Cima &nbsp;&nbsp; **D** = Baixo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Trás
+
+Uma letra sozinha significa **90° no sentido horário**. Adicionar **'** significa **no sentido anti-horário**. Adicionar **2** significa **180°**.
+
+Por exemplo: **R** = girar a face direita no sentido horário, **R'** = no sentido anti-horário, **R2** = 180°.
+
+Como o 2×2 não tem centros fixos, escolha o **branco** como cor inicial e mantenha-o **embaixo**.
+
+---
+
+## Passo 1: Resolver a primeira face
+
+Construa uma face **branca** completa embaixo. Diferente do 3×3, você **não** precisa combinar as cores laterais — apenas coloque os 4 adesivos brancos na mesma face.
+
+Este passo é **intuitivo** — não há algoritmos fixos. Encontre cada peça de canto branca e mova-a para a face inferior.
+
+**Caso 1: Canto branco na camada superior** — Traga-o para baixo com uma inserção simples.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Caso 2: Canto branco embaixo mas orientado errado** — Retire-o e reinsira corretamente.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Dicas:** Foque apenas em colocar 4 adesivos brancos em uma face. As cores laterais ainda não importam — é isso que torna o Ortega diferente do método iniciante do 3×3.
+
+---
+
+## Passo 2: Orientar a última camada (OLL)
+
+Faça a **face oposta** (amarela) ficar toda da mesma cor. Agora você precisa que todos os 4 adesivos amarelos apontem para cima.
+
+Olhe para a face superior e identifique qual caso você tem:
+
+**Caso 1: Um canto amarelo apontando para cima (Sune)** — Segure o cubo com o canto resolvido na posição frontal esquerda.
+
+**Algoritmo: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Caso 2: Nenhum canto amarelo apontando para cima** — Aplique Sune duas vezes para orientar todos os cantos.
+
+**Algoritmo: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Caso 3: Dois cantos amarelos diagonais apontando para cima** — Segure o cubo com os dois cantos resolvidos nas posições frontal esquerda e traseira direita.
+
+**Algoritmo: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Dicas:** Se você tem dois cantos amarelos **adjacentes** apontando para cima, use Sune uma vez para chegar ao Caso 1 ou ao Caso 3.
+
+---
+
+## Passo 3: Permutar ambas as camadas (PBL)
+
+O último passo! Arranje todas as peças de canto nas suas posições corretas para resolver o cubo. Olhe as **cores laterais** das camadas superior e inferior para determinar qual troca é necessária.
+
+**Como verificar:** Olhe os lados da camada superior. Se dois adesivos adjacentes em um lado são da mesma cor, não é necessária troca ou é necessária uma troca adjacente. Se cada lado tem duas cores diferentes, é necessária uma troca diagonal.
+
+**Caso 1: Troca diagonal em cima** — Dois cantos opostos precisam ser trocados.
+
+**Algoritmo: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Caso 2: Troca adjacente em cima** — Dois cantos vizinhos precisam ser trocados.
+
+**Algoritmo: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Caso 3: Troca diagonal em ambas as camadas** — Use este algoritmo rápido.
+
+**Algoritmo: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Depois de resolver a camada superior, você pode precisar girar a face inferior (D ou D') para alinhar as cores finais. Se a camada inferior também precisar de uma troca, aplique o algoritmo de troca diagonal mantendo a camada não resolvida em cima.
+
+---
+
+**Parabéns!** Você resolveu o cubo mágico 2×2! O método Ortega é rápido e eficiente — com prática, você pode resolver o 2×2 em menos de 5 segundos.

@@ -1,0 +1,158 @@
+---
+title: Jak složit Rubikovu kostku 4x4
+sidebar_position: 4
+description: Naučte se krok za krokem složit Rubikovu kostku 4x4 metodou redukce.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Jak složit Rubikovu kostku 4x4
+
+Naučte se složit Rubikovu kostku 4x4 (také známou jako **Rubik's Revenge**) pomocí **metody redukce** — nejoblíbenějšího přístupu pro větší kostky. Myšlenka je jednoduchá: nejprve zredukujte 4x4 tak, aby vypadala jako 3x3, a poté ji složte jako 3x3. Probereme 4 kroky plus speciální případy parity.
+
+## Notace
+
+Kostka 4x4 používá veškerou standardní notaci 3x3 plus dodatečné tahy pro vnitřní vrstvy:
+
+**Standardní tahy** (pouze vnější vrstva):
+- **R** = Pravá &nbsp;&nbsp; **L** = Levá &nbsp;&nbsp; **U** = Horní &nbsp;&nbsp; **D** = Dolní &nbsp;&nbsp; **F** = Přední &nbsp;&nbsp; **B** = Zadní
+
+**Široké tahy** (vnější dvě vrstvy dohromady):
+- **Rw** = Pravá široká (pravé dvě vrstvy) &nbsp;&nbsp; **Lw** = Levá široká
+- **Uw** = Horní široká (horní dvě vrstvy) &nbsp;&nbsp; **Dw** = Dolní široká
+- **Fw** = Přední široká &nbsp;&nbsp; **Bw** = Zadní široká
+
+Samotné písmeno znamená **90° po směru hodinových ručiček**. S **'** znamená **proti směru**. S **2** znamená **180°**.
+
+Například: **Rw** = pravé dvě vrstvy po směru, **Uw'** = horní dvě vrstvy proti směru, **Rw2** = pravé dvě vrstvy 180°.
+
+Držte kostku s **bílým středem dole** a **žlutým středem nahoře** ve všech krocích.
+
+---
+
+## Krok 1: Složení středů
+
+Sestavte **středové bloky** na každé straně. Každá strana 4x4 má 4 středové díly (blok 2x2), které musí souhlasit. Na rozdíl od 3x3 se středy 4x4 mohou pohybovat — proto je třeba je složit jako první.
+
+**Doporučené pořadí:** Začněte **bílou** (spodek), pak **žlutou** (protější), pak zbývající 4 strany.
+
+Tento krok je převážně **intuitivní**. Klíčová technika je používat široké tahy ke shromáždění středových dílů a zároveň chránit již složené strany otáčením vnější vrstvy.
+
+**Základní vložení středu** — Použijte široký tah k přenesení středového dílu nahoru, otočte horní vrstvu k zarovnání a vraťte široký tah:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Výměna středu bez rozbití složených stran** — Když potřebujete vložit středový díl, ale chránit ostatní hotové středy:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tipy:**
+- Vždy nejprve složte protější strany (bílá/žlutá), pak zbývající 4.
+- Při vkládání středového dílu použijte široký tah (jako Rw) k jeho zvednutí, upravte vrstvu U a vraťte široký tah.
+- Dávejte pozor, abyste neporušili hotové středy při práci na nových.
+
+---
+
+## Krok 2: Párování hran
+
+Spárujte každý pár **hranových dílů**, aby se 4x4 chovala jako 3x3. Každá hrana 4x4 se skládá ze 2 dílů, které je třeba spárovat. Celkem je 12 hran k spárování.
+
+Základní technika je **Slice-Flip-Slice**: použijte široký tah (Uw) k zarovnání hran, proveďte tah vnější vrstvou k spárování a vraťte široký tah.
+
+**Základní párování hran** — Umístěte jeden hranový díl do přední pravé pozice a jeho partnera nahoru. Použijte Uw k zarovnání:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Překlopené párování** — Když je třeba hranový pár překlopit během párování:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Párování posledních hran** — U posledních 3 hran nemůžete volně používat Uw bez rozbití již spárovaných hran. Použijte tuto techniku:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tipy:**
+- Prvních 8-9 hran lze volně párovat technikou Slice-Flip-Slice.
+- Pro poslední 3 hrany použijte tahy založené na Dw nebo překlopovací techniky, abyste nerozbili již spárované hrany.
+- Pokud je hranový pár na správném místě, ale překlopený, musíte ho vytáhnout a správně znovu spárovat.
+
+---
+
+## Krok 3: Složení jako 3x3
+
+Po složení všech středů a spárování všech hran je 4x4 nyní ekvivalentní 3x3! Použijte jakoukoli **metodu skládání 3x3** (jako metodu vrstva po vrstvě) k dokončení.
+
+**Důležité:** V této fázi používejte pouze tahy vnější vrstvy (R, U, F, L, D, B). **Nepoužívejte** široké tahy (Rw, Uw atd.), protože by rozbily vaše spárované hrany a složené středy.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Podívejte se na náš [návod na 3x3](./index.mdx) pro kompletní průvodce metodou vrstva po vrstvě. Platí stejných 7 kroků — bílý kříž, bílé rohy, druhá vrstva, žlutý kříž, žlutá strana, umístění rohů a umístění hran.
+
+---
+
+## Krok 4: Paritní algoritmy
+
+Kostka 4x4 má dvě speciální situace, které **nikdy nenastávají u 3x3**. Říká se jim **parita** a každá nastává přibližně v 50 % případů. Pokud na ni narazíte během fáze 3x3, aplikujte odpovídající algoritmus a pokračujte ve skládání.
+
+### OLL parita (překlopení jedné hrany)
+
+**Jak to vypadá:** V poslední vrstvě je jedna hrana překlopená — u skutečné 3x3 nemožné. Žlutý kříž nelze normálně dokončit.
+
+**Algoritmus: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Tento algoritmus je dlouhý, ale stačí ho aplikovat jednou. Po provedení bude hrana správně orientovaná a můžete pokračovat normálními kroky poslední vrstvy 3x3.
+
+### PLL parita (výměna dvou hran)
+
+**Jak to vypadá:** Na konci je třeba vyměnit přesně dvě hrany — opět u 3x3 nemožné.
+
+**Algoritmus: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Tento krátký algoritmus vymění dvě protilehlé hrany v poslední vrstvě. Po aplikaci by kostka měla být zcela složená.
+
+**Tipy:**
+- Nepanikařte při paritě — je to u kostek 4x4 zcela normální.
+- OLL parita se objevuje při kroku žlutého kříže. PLL parita se objevuje na samém konci.
+- V jednom složení můžete narazit na obě, pouze jednu, nebo žádnou paritu.
+
+---
+
+**Gratulujeme!** Složili jste Rubikovu kostku 4x4! Metoda redukce se dobře škáluje na ještě větší kostky (5x5, 6x6 atd.) — základní koncepty skládání středů, párování hran a skládání jako 3x3 zůstávají stejné. S praxí budete schopni složit 4x4 za méně než 3 minuty.

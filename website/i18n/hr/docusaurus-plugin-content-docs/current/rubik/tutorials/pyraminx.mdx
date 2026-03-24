@@ -1,0 +1,128 @@
+---
+title: Kako riješiti Pyraminx
+sidebar_position: 2
+description: Naučite riješiti Pyraminx korak po korak metodom sloj po sloj za početnike.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kako riješiti Pyraminx
+
+Naučite riješiti Pyraminx metodom **sloj po sloj** — najlakšim pristupom za početnike. Pyraminx je slagalica u obliku tetraedra s 4 vrha, 6 bridova i 4 centra. Riješit ćemo ga u 4 jednostavna koraka.
+
+## Notacija
+
+Pyraminx koristi jedinstveni sustav notacije s **velikim** slovima za slojeve i **malim** slovima za vrhove:
+
+**Slojevi (velika slova)** — rotirati cijeli sloj (bez vrha):
+
+- **U** = Gornji sloj &nbsp;&nbsp; **R** = Desni sloj &nbsp;&nbsp; **L** = Lijevi sloj &nbsp;&nbsp; **B** = Stražnji sloj
+
+**Vrhovi (mala slova)** — rotirati samo vrh:
+
+- **u** = Gornji vrh &nbsp;&nbsp; **r** = Desni vrh &nbsp;&nbsp; **l** = Lijevi vrh &nbsp;&nbsp; **b** = Stražnji vrh
+
+Samo slovo znači **120° u smjeru kazaljke na satu**. Dodavanje **'** znači **120° u smjeru suprotnom od kazaljke**.
+
+Na primjer: **R** = rotirati desni sloj u smjeru kazaljke, **R'** = suprotno, **l** = rotirati lijevi vrh u smjeru kazaljke, **l'** = suprotno.
+
+Držite Pyraminx s **jednom stranom prema sebi** i **jednim vrhom prema gore** u svim koracima.
+
+---
+
+## Korak 1: Riješite vrhove
+
+Poravnajte **3 vidljiva vrha** tako da boja svakog vrha odgovara susjednom centru. 4. vrh je na dnu i bit će riješen kasnije.
+
+Ovaj korak je **intuitivan** — svaki vrh ima samo 3 moguća položaja, pa su potrebna najviše 2 okretaja. Jednostavno okrećite svaki vrh dok mu boja ne odgovara susjednom centru.
+
+**Primjer: Rješavanje sva tri vidljiva vrha**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Savjeti:** Uvijek počnite s ovim korakom — besplatan je i trenutan. Kad su vrhovi poravnati, ne trebate ih više dirati.
+
+---
+
+## Korak 2: Bridovi prvog sloja
+
+Izgradite potpuni **prvi sloj** postavljajući 3 donja brida na njihove ispravne pozicije. Odaberite jednu stranu kao dno (preporučujemo početi sa stranom koja već ima najviše podudarnih boja).
+
+Ovaj korak je uglavnom intuitivan. Pronađite svaki brid koji pripada donjem sloju i umetnite ga jednostavnim okretajima sloja.
+
+**Slučaj 1: Brid u gornjem sloju, ispravno orijentiran** — Jedan okretaj sloja ga izravno umeće.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Slučaj 2: Brid u gornjem sloju, okrenut** — Koristite dva okretaja sloja za okretanje i umetanje.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Savjeti:** Ako je brid već u donjem sloju ali na krivom mjestu, koristite okretaj sloja da ga izvadite prema gore, pa ga zatim ispravno umetnite.
+
+---
+
+## Korak 3: Bridovi zadnjeg sloja
+
+Postavite **3 brida gornjeg sloja** na njihova ispravna mjesta. Nakon ovog koraka, svaki brid bit će između dva ispravna centra, ali može još biti okrenut.
+
+Pogledajte gornji sloj i odredite u kojem smjeru bridovi trebaju ciklično rotirati:
+
+**Slučaj 1: Ciklus u smjeru kazaljke** — Sva tri brida trebaju se pomaknuti za jednu poziciju u smjeru kazaljke.
+
+**Algoritam: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Slučaj 2: Ciklus u smjeru suprotnom od kazaljke** — Sva tri brida trebaju se pomaknuti za jednu poziciju u suprotnom smjeru.
+
+**Algoritam: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Savjeti:** Ako samo 2 brida trebaju zamijeniti mjesta, jedan od ovih algoritama 3-ciklusa će to riješiti — pažljivo promatrajte smjer ciklusa.
+
+---
+
+## Korak 4: Orijentacija bridova zadnjeg sloja
+
+Posljednji korak! Ako su bridovi zadnjeg sloja na ispravnim pozicijama ali **okrenuti** (kriva boja prema van), koristite ovaj algoritam za njihovo okretanje.
+
+**Okrenuti 2 brida: R U R' U R U R'**
+
+Držite Pyraminx tako da brid koji **ne treba** biti okrenut bude prema vama. Zatim primijenite algoritam.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Ako sva 3 brida trebaju biti okrenuta, primijenite ovaj algoritam jednom — okrenut će 2, zatim okrenite vrh za postavljanje i okrenite preostala 2 (jedan od prethodno okrenutih plus posljednji).
+
+---
+
+**Čestitamo!** Riješili ste Pyraminx! S vježbom, Pyraminx se može riješiti za samo nekoliko sekundi. To je jedna od najbrže savladivih slagalica — nastavite vježbati i riješit ćete ga za manje od 10 sekundi.

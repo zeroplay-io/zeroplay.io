@@ -1,0 +1,128 @@
+---
+title: Cách giải Pyraminx
+sidebar_position: 2
+description: Học cách giải Pyraminx từng bước bằng phương pháp lớp từng lớp dành cho người mới bắt đầu.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cách giải Pyraminx
+
+Học cách giải Pyraminx bằng phương pháp **lớp từng lớp** — cách tiếp cận dễ nhất cho người mới. Pyraminx là một câu đố hình tứ diện với 4 đỉnh, 6 cạnh và 4 tâm. Chúng ta sẽ giải nó trong 4 bước đơn giản.
+
+## Ký hiệu
+
+Pyraminx sử dụng hệ thống ký hiệu riêng biệt với chữ **in hoa** cho lớp và chữ **thường** cho đỉnh:
+
+**Lớp (chữ in hoa)** — xoay toàn bộ lớp (không gồm đỉnh):
+
+- **U** = Lớp trên &nbsp;&nbsp; **R** = Lớp phải &nbsp;&nbsp; **L** = Lớp trái &nbsp;&nbsp; **B** = Lớp sau
+
+**Đỉnh (chữ thường)** — chỉ xoay đỉnh:
+
+- **u** = Đỉnh trên &nbsp;&nbsp; **r** = Đỉnh phải &nbsp;&nbsp; **l** = Đỉnh trái &nbsp;&nbsp; **b** = Đỉnh sau
+
+Chữ cái đơn lẻ có nghĩa **xoay 120° theo chiều kim đồng hồ**. Thêm **'** có nghĩa **120° ngược chiều kim đồng hồ**.
+
+Ví dụ: **R** = xoay lớp phải theo chiều kim đồng hồ, **R'** = ngược chiều, **l** = xoay đỉnh trái theo chiều kim đồng hồ, **l'** = ngược chiều.
+
+Cầm Pyraminx với **một mặt hướng về phía bạn** và **một đỉnh chỉ lên trên** trong tất cả các bước.
+
+---
+
+## Bước 1: Giải các đỉnh
+
+Căn chỉnh **3 đỉnh nhìn thấy được** sao cho màu của mỗi đỉnh khớp với tâm liền kề. Đỉnh thứ 4 ở dưới đáy và sẽ được xử lý sau.
+
+Bước này mang tính **trực giác** — mỗi đỉnh chỉ có 3 vị trí có thể, nên tối đa 2 lần xoay là giải được. Chỉ cần xoay mỗi đỉnh cho đến khi màu của nó khớp với tâm bên cạnh.
+
+**Ví dụ: Giải cả ba đỉnh nhìn thấy được**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Mẹo:** Luôn bắt đầu với bước này — miễn phí và tức thì. Khi các đỉnh đã được căn chỉnh, bạn không cần chạm vào chúng nữa.
+
+---
+
+## Bước 2: Cạnh lớp đầu tiên
+
+Xây dựng **lớp đầu tiên** hoàn chỉnh bằng cách đặt 3 cạnh dưới vào vị trí đúng. Chọn một mặt làm đáy (chúng tôi khuyên bắt đầu với mặt đã có nhiều màu khớp nhất).
+
+Bước này chủ yếu dựa vào trực giác. Tìm mỗi cạnh thuộc lớp dưới và chèn vào bằng các lượt xoay lớp đơn giản.
+
+**Trường hợp 1: Cạnh ở lớp trên, hướng đúng** — Một lượt xoay lớp chèn trực tiếp.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Trường hợp 2: Cạnh ở lớp trên, bị lật** — Dùng hai lượt xoay lớp để lật và chèn.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Mẹo:** Nếu một cạnh đã ở lớp dưới nhưng sai vị trí, dùng lượt xoay lớp để đẩy nó lên trên trước, rồi chèn lại đúng cách.
+
+---
+
+## Bước 3: Cạnh lớp cuối
+
+Đặt **3 cạnh lớp trên** vào vị trí đúng. Sau bước này, mỗi cạnh sẽ nằm giữa hai tâm đúng, nhưng có thể vẫn bị lật.
+
+Nhìn lớp trên và xác định hướng các cạnh cần xoay vòng:
+
+**Trường hợp 1: Vòng xoay theo chiều kim đồng hồ** — Cả ba cạnh cần di chuyển một vị trí theo chiều kim đồng hồ.
+
+**Công thức: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Trường hợp 2: Vòng xoay ngược chiều kim đồng hồ** — Cả ba cạnh cần di chuyển một vị trí ngược chiều kim đồng hồ.
+
+**Công thức: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Mẹo:** Nếu chỉ cần hoán đổi 2 cạnh, một trong các công thức vòng 3 này sẽ giải quyết — quan sát kỹ hướng vòng xoay.
+
+---
+
+## Bước 4: Định hướng cạnh lớp cuối
+
+Bước cuối cùng! Nếu các cạnh lớp cuối ở đúng vị trí nhưng **bị lật** (màu sai hướng ra ngoài), dùng công thức này để lật chúng.
+
+**Lật 2 cạnh: R U R' U R U R'**
+
+Cầm Pyraminx sao cho cạnh **không** cần lật hướng về phía bạn. Sau đó áp dụng công thức.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Nếu cả 3 cạnh đều cần lật, áp dụng công thức này một lần — sẽ lật 2, sau đó xoay phần trên để thiết lập và lật 2 cạnh còn lại (một trong số đã lật trước đó cộng với cạnh cuối).
+
+---
+
+**Chúc mừng!** Bạn đã giải xong Pyraminx! Với luyện tập, Pyraminx có thể được giải chỉ trong vài giây. Đây là một trong những câu đố nhanh nhất để thành thạo — tiếp tục luyện tập và bạn sẽ giải được trong dưới 10 giây.

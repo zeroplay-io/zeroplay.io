@@ -1,0 +1,136 @@
+---
+title: Cómo resolver el cubo de Rubik 2×2
+sidebar_position: 1
+description: Aprende a resolver el cubo de Rubik 2×2 paso a paso con el método Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cómo resolver el cubo de Rubik 2×2
+
+Aprende a resolver el cubo de Rubik 2×2 con el **método Ortega** — un enfoque rápido y eficiente de 3 pasos. El 2×2 no tiene piezas centrales ni aristas, solo esquinas, lo que lo convierte en un excelente rompecabezas para empezar.
+
+## Notación
+
+El 2×2 usa la misma notación que el 3×3, pero sin movimientos de la capa central:
+
+- **R** = Derecha &nbsp;&nbsp; **L** = Izquierda &nbsp;&nbsp; **U** = Arriba &nbsp;&nbsp; **D** = Abajo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Atrás
+
+Una letra sola significa **90° en sentido horario**. Agregar **'** significa **en sentido antihorario**. Agregar **2** significa **180°**.
+
+Por ejemplo: **R** = girar la cara derecha en sentido horario, **R'** = en sentido antihorario, **R2** = 180°.
+
+Como el 2×2 no tiene centros fijos, elige el **blanco** como color inicial y mantenlo **abajo**.
+
+---
+
+## Paso 1: Resolver la primera cara
+
+Construye una cara **blanca** completa en la parte inferior. A diferencia del 3×3, **no** necesitas hacer coincidir los colores laterales — solo pon las 4 pegatinas blancas en la misma cara.
+
+Este paso es **intuitivo** — no hay algoritmos fijos. Encuentra cada pieza de esquina blanca y muévela a la cara inferior.
+
+**Caso 1: Esquina blanca en la capa superior** — Bájala con una inserción simple.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Caso 2: Esquina blanca abajo pero mal orientada** — Sácala y vuelve a insertarla correctamente.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Consejos:** Concéntrate solo en poner 4 pegatinas blancas en una cara. Los colores laterales no importan todavía — esto es lo que hace diferente al método Ortega del método principiante del 3×3.
+
+---
+
+## Paso 2: Orientar la última capa (OLL)
+
+Haz que la **cara opuesta** (amarilla) sea toda del mismo color. Ahora necesitas que las 4 pegatinas amarillas apunten hacia arriba.
+
+Mira la cara superior e identifica qué caso tienes:
+
+**Caso 1: Una esquina amarilla apuntando hacia arriba (Sune)** — Sostén el cubo con la esquina resuelta en la posición delantera izquierda.
+
+**Algoritmo: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Caso 2: Ninguna esquina amarilla apuntando hacia arriba** — Aplica Sune dos veces para orientar todas las esquinas.
+
+**Algoritmo: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Caso 3: Dos esquinas amarillas diagonales apuntando hacia arriba** — Sostén el cubo con las dos esquinas resueltas en las posiciones delantera izquierda y trasera derecha.
+
+**Algoritmo: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Consejos:** Si tienes dos esquinas amarillas **adyacentes** apuntando hacia arriba, usa Sune una vez para llegar al Caso 1 o al Caso 3.
+
+---
+
+## Paso 3: Permutar ambas capas (PBL)
+
+¡El último paso! Coloca todas las piezas de esquina en sus posiciones correctas para resolver el cubo. Mira los **colores laterales** de las capas superior e inferior para determinar qué intercambio se necesita.
+
+**Cómo verificar:** Mira los lados de la capa superior. Si dos pegatinas adyacentes en un lado son del mismo color, no se necesita intercambio o se necesita un intercambio adyacente. Si cada lado tiene dos colores diferentes, se necesita un intercambio diagonal.
+
+**Caso 1: Intercambio diagonal arriba** — Dos esquinas opuestas necesitan intercambiarse.
+
+**Algoritmo: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Caso 2: Intercambio adyacente arriba** — Dos esquinas vecinas necesitan intercambiarse.
+
+**Algoritmo: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Caso 3: Intercambio diagonal en ambas capas** — Usa este algoritmo rápido.
+
+**Algoritmo: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Después de resolver la capa superior, puede que necesites girar la cara inferior (D o D') para alinear los colores finales. Si la capa inferior también necesita un intercambio, aplica el algoritmo de intercambio diagonal manteniendo la capa sin resolver arriba.
+
+---
+
+**¡Felicidades!** ¡Has resuelto el cubo de Rubik 2×2! El método Ortega es rápido y eficiente — con práctica, puedes resolver el 2×2 en menos de 5 segundos.

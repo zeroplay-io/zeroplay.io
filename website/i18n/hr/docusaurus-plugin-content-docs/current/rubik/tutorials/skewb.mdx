@@ -1,0 +1,120 @@
+---
+title: Kako riješiti Skewb
+sidebar_position: 3
+description: Naučite riješiti Skewb korak po korak koristeći Sarahinu metodu za početnike.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kako riješiti Skewb
+
+Naučite riješiti Skewb koristeći **Sarahinu metodu za početnike** — jednostavan i učinkovit pristup za početnike. Skewb je slagalica s okretanjem kutova gdje svaki potez rotira kut i tri susjedne strane. Riješit ćemo ga u samo 3 koraka koristeći jedan ključni algoritam: Sledgehammer.
+
+## Notacija
+
+Za razliku od standardne Rubikove kocke, Skewb se okreće oko **kutova** umjesto strana. Svaki potez rotira jedan kut i tri susjedna središta:
+
+- **R** = Desni prednji kut u smjeru kazaljke &nbsp;&nbsp; **R'** = Desni prednji kut u smjeru suprotnom od kazaljke
+- **L** = Lijevi prednji kut u smjeru kazaljke &nbsp;&nbsp; **L'** = Lijevi prednji kut u smjeru suprotnom od kazaljke
+- **U** = Gornji desni prednji kut u smjeru kazaljke &nbsp;&nbsp; **U'** = Gornji desni prednji kut u smjeru suprotnom od kazaljke
+- **B** = Stražnji desni kut u smjeru kazaljke &nbsp;&nbsp; **B'** = Stražnji desni kut u smjeru suprotnom od kazaljke
+
+Samo slovo znači okret **u smjeru kazaljke**. Dodavanje **'** znači **u smjeru suprotnom od kazaljke**.
+
+Držite Skewb s **bijelim središtem na dnu** za sve korake.
+
+---
+
+## Korak 1: Riješite jednu stranu
+
+Izgradite potpunu **bijelu stranu** na dnu. To znači da sva 4 kuta oko bijelog središta moraju biti na svom mjestu s bijelom stranom prema dolje, a susjedne bočne boje moraju odgovarati.
+
+Ovaj korak je polu-intuitivan. Ključni alat je **Sledgehammer** — najvažniji algoritam za Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Koristite Sledgehammer i pripremne poteze za postavljanje svakog bijelog kuta u donji sloj. Evo primjera umetanja kuta:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Savjeti:**
+- Počnite postavljanjem bijelog središta na dno.
+- Rješavajte kutove jedan po jedan, pazeći da ne pomaknete već postavljene dijelove.
+- Nakon ovog koraka, donja strana treba biti potpuno bijela, a svaka susjedna strana treba imati odgovarajuću boju kuta.
+
+---
+
+## Korak 2: Pozicionirajte suprotna središta
+
+Prilagodite **gornje središte i 4 bočna središta** tako da sva budu na ispravnim pozicijama. Donja strana ostaje riješena.
+
+Sledgehammer je opet ključni algoritam. Zamjenjuje gornje središte s bočnim središtem:
+
+**Slučaj 1: Zamjena 2 središta** — Koristite Sledgehammer za zamjenu gornjeg i prednjeg središta.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Slučaj 2: Ciklus 3 središta** — Kada tri središta trebaju rotirati, primijenite Sledgehammer dva puta (Dvostruki Sledgehammer):
+
+**Dvostruki Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Savjeti:**
+- Okrenite slagalicu kako biste postavili ispravna središta u prednju i gornju poziciju prije primjene algoritma.
+- Ako samo 2 središta trebaju zamjenu, jedan Sledgehammer je dovoljan. Ako 3 središta trebaju ciklus, koristite Dvostruki Sledgehammer.
+
+---
+
+## Korak 3: Orijentirajte kutove zadnjeg sloja
+
+Posljednji korak! Okrenite **4 kuta gornjeg sloja** tako da njihove boje budu usmjerene u ispravnom smjeru, dovršavajući rješenje.
+
+**Slučaj 1: Sva 4 kuta trebaju okret u smjeru kazaljke** — Primijenite ovaj algoritam:
+
+**Algoritam: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Slučaj 2: Neki kutovi trebaju prilagodbu** — Koristite Sledgehammer s pripremnim potezima za orijentaciju pojedinih kutova:
+
+**Algoritam: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Savjeti:**
+- Ako samo neki kutovi trebaju okretanje, koristite pripremne poteze (U ili U') da dovedete neriješene kutove u poziciju, primijenite algoritam, pa poništite pripremni potez.
+- Možda ćete morati ponoviti postupak za preostale kutove.
+
+---
+
+**Čestitamo!** Riješili ste Skewb! Skewb je jedna od najzadovoljnijih slagalica jer trebate vrlo malo algoritama. S vježbom ćete ga rješavati za manje od 10 sekundi. Nastavite vježbati Sledgehammer — to je ključ za savladavanje ove slagalice.

@@ -1,0 +1,120 @@
+---
+title: Hogyan rakjuk ki a Skewb-öt
+sidebar_position: 3
+description: Tanuld meg lépésről lépésre kirakni a Skewb-öt Sarah kezdő módszerével.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hogyan rakjuk ki a Skewb-öt
+
+Tanuld meg kirakni a Skewb-öt **Sarah kezdő módszerével** — egy egyszerű és hatékony megközelítéssel kezdőknek. A Skewb egy sarok-forgató kirakós, ahol minden lépés egy sarkot és a három szomszédos oldalt forgatja. Mindössze 3 lépésben rakjuk ki egyetlen alapalgoritmussal: a Sledgehammerrel.
+
+## Jelölésrendszer
+
+A hagyományos Rubik-kockával ellentétben a Skewb a **sarkok** körül forog az oldalak helyett. Minden lépés egy sarkot és a három szomszédos középső elemet forgatja:
+
+- **R** = Jobb első sarok óramutató járása szerint &nbsp;&nbsp; **R'** = Jobb első sarok óramutató járásával ellentétesen
+- **L** = Bal első sarok óramutató járása szerint &nbsp;&nbsp; **L'** = Bal első sarok óramutató járásával ellentétesen
+- **U** = Felső jobb első sarok óramutató járása szerint &nbsp;&nbsp; **U'** = Felső jobb első sarok óramutató járásával ellentétesen
+- **B** = Hátsó jobb sarok óramutató járása szerint &nbsp;&nbsp; **B'** = Hátsó jobb sarok óramutató járásával ellentétesen
+
+Egy betű önmagában **óramutató járása szerinti** forgatást jelent. A **'** hozzáadása **óramutató járásával ellentétes** forgatást jelent.
+
+Tartsd a Skewb-öt a **fehér középső elemmel lefelé** minden lépésnél.
+
+---
+
+## 1. lépés: Egy oldal kirakása
+
+Építs egy teljes **fehér oldalt** az alján. Ez azt jelenti, hogy mind a 4 saroknak a fehér középső elem körül a helyén kell lennie, fehérrel lefelé, és a szomszédos oldalszíneknek egyezniük kell.
+
+Ez a lépés félig intuitív. A legfontosabb eszköz a **Sledgehammer** — a Skewb legfontosabb algoritmusa:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Használd a Sledgehammert és előkészítő lépéseket, hogy minden fehér sarkot az alsó rétegbe helyezz. Íme egy példa sarok behelyezésére:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tippek:**
+- Kezdd a fehér középső elem lefelé helyezésével.
+- Rakd ki a sarkokat egyenként, ügyelve arra, hogy ne mozdítsd el a már elhelyezett darabokat.
+- E lépés után az alsó oldalnak teljesen fehérnek kell lennie, és minden szomszédos oldalon egyező sarokszínnek kell lennie.
+
+---
+
+## 2. lépés: A szemközti középső elemek pozicionálása
+
+Állítsd be a **felső középső elemet és a 4 oldalsó középső elemet** úgy, hogy mindegyik a helyes pozícióban legyen. Az alsó oldal kirakva marad.
+
+A Sledgehammer ismét a kulcsalgoritmus. A felső középső elemet egy oldalsó középső elemmel cseréli:
+
+**1. eset: 2 középső elem cseréje** — Használd a Sledgehammert a felső és elülső középső elem cseréjéhez.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**2. eset: 3 középső elem ciklusa** — Ha három középső elemnek kell forognia, alkalmazd a Sledgehammert kétszer (Dupla Sledgehammer):
+
+**Dupla Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tippek:**
+- Forgasd el a kirakóst, hogy a helyes középső elemek az elülső és felső pozícióba kerüljenek az algoritmus alkalmazása előtt.
+- Ha csak 2 középső elemet kell cserélni, egy Sledgehammer elég. Ha 3 középső elemnek kell ciklikusan forognia, használd a Dupla Sledgehammert.
+
+---
+
+## 3. lépés: Az utolsó réteg sarkainak orientálása
+
+Az utolsó lépés! Forgasd el a **felső réteg 4 sarkát** úgy, hogy színeik a helyes irányba nézzenek, befejezve a kirakást.
+
+**1. eset: Mind a 4 saroknak óramutató járása szerinti forgatás kell** — Alkalmazd ezt az algoritmust:
+
+**Algoritmus: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**2. eset: Egyes sarkok kiigazítást igényelnek** — Használd a Sledgehammert előkészítő lépésekkel az egyes sarkok orientálásához:
+
+**Algoritmus: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tippek:**
+- Ha csak néhány saroknak kell forognia, használj előkészítő lépéseket (U vagy U') a megoldatlan sarkok pozícióba hozásához, alkalmazd az algoritmust, majd vondd vissza az előkészítő lépést.
+- Lehet, hogy meg kell ismételned a folyamatot a fennmaradó sarkok esetében.
+
+---
+
+**Gratulálunk!** Kiraktad a Skewb-öt! A Skewb az egyik legkielégítőbb kirakós, mert nagyon kevés algoritmusra van szükséged. Gyakorlással 10 másodperc alatt fogod kirakni. Gyakorold tovább a Sledgehammert — ez a kulcs ennek a kirakósnak az elsajátításához.

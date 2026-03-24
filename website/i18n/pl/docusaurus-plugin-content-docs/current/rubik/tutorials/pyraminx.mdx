@@ -1,0 +1,128 @@
+---
+title: Jak ułożyć Pyraminx
+sidebar_position: 2
+description: Naucz się układać Pyraminx krok po kroku metodą warstwa po warstwie dla początkujących.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Jak ułożyć Pyraminx
+
+Naucz się układać Pyraminx metodą **warstwa po warstwie** — najprostszym podejściem dla początkujących. Pyraminx to łamigłówka w kształcie czworościanu z 4 wierzchołkami, 6 krawędziami i 4 centrami. Ułożymy go w 4 prostych krokach.
+
+## Notacja
+
+Pyraminx używa unikalnego systemu notacji z **dużymi** literami dla warstw i **małymi** literami dla wierzchołków:
+
+**Warstwy (duże litery)** — obrót całej warstwy (bez wierzchołka):
+
+- **U** = Górna warstwa &nbsp;&nbsp; **R** = Prawa warstwa &nbsp;&nbsp; **L** = Lewa warstwa &nbsp;&nbsp; **B** = Tylna warstwa
+
+**Wierzchołki (małe litery)** — obrót samego wierzchołka:
+
+- **u** = Górny wierzchołek &nbsp;&nbsp; **r** = Prawy wierzchołek &nbsp;&nbsp; **l** = Lewy wierzchołek &nbsp;&nbsp; **b** = Tylny wierzchołek
+
+Sama litera oznacza **120° zgodnie z ruchem wskazówek zegara**. Dodanie **'** oznacza **120° przeciwnie do ruchu wskazówek zegara**.
+
+Na przykład: **R** = obrót prawej warstwy zgodnie z ruchem wskazówek, **R'** = przeciwnie, **l** = obrót lewego wierzchołka zgodnie z ruchem wskazówek, **l'** = przeciwnie.
+
+Trzymaj Pyraminx z **jedną ścianą do siebie** i **jednym wierzchołkiem do góry** we wszystkich krokach.
+
+---
+
+## Krok 1: Ułóż wierzchołki
+
+Wyrównaj **3 widoczne wierzchołki** tak, aby kolor każdego wierzchołka odpowiadał sąsiedniemu centrum. 4. wierzchołek jest na dole i zostanie ułożony później.
+
+Ten krok jest **intuicyjny** — każdy wierzchołek ma tylko 3 możliwe pozycje, więc maksymalnie 2 obroty go rozwiążą. Po prostu obracaj każdy wierzchołek, aż jego kolor będzie pasował do sąsiedniego centrum.
+
+**Przykład: Ułożenie trzech widocznych wierzchołków**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Wskazówki:** Zawsze zaczynaj od tego kroku — jest darmowy i natychmiastowy. Po wyrównaniu wierzchołków nie trzeba ich już dotykać.
+
+---
+
+## Krok 2: Krawędzie pierwszej warstwy
+
+Zbuduj kompletną **pierwszą warstwę** umieszczając 3 dolne krawędzie na właściwych pozycjach. Wybierz jedną ścianę jako dolną (zalecamy zacząć od ściany, która ma już najwięcej pasujących kolorów).
+
+Ten krok jest głównie intuicyjny. Znajdź każdą krawędź należącą do dolnej warstwy i wstaw ją prostymi obrotami warstwy.
+
+**Przypadek 1: Krawędź w górnej warstwie, prawidłowo zorientowana** — Jeden obrót warstwy wstawia ją bezpośrednio.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Przypadek 2: Krawędź w górnej warstwie, odwrócona** — Użyj dwóch obrotów warstwy do odwrócenia i wstawienia.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Wskazówki:** Jeśli krawędź jest już w dolnej warstwie, ale na złej pozycji, użyj obrotu warstwy, aby wyciągnąć ją do góry, a następnie wstaw poprawnie.
+
+---
+
+## Krok 3: Krawędzie ostatniej warstwy
+
+Umieść **3 krawędzie górnej warstwy** na właściwych miejscach. Po tym kroku każda krawędź będzie między dwoma właściwymi centrami, ale może być nadal odwrócona.
+
+Spójrz na górną warstwę i określ, w którym kierunku krawędzie muszą cyklicznie się przemieszczać:
+
+**Przypadek 1: Cykl zgodnie z ruchem wskazówek** — Wszystkie trzy krawędzie muszą przesunąć się o jedną pozycję zgodnie z ruchem wskazówek.
+
+**Algorytm: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Przypadek 2: Cykl przeciwnie do ruchu wskazówek** — Wszystkie trzy krawędzie muszą przesunąć się o jedną pozycję przeciwnie do ruchu wskazówek.
+
+**Algorytm: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Wskazówki:** Jeśli tylko 2 krawędzie wymagają zamiany, jeden z tych algorytmów 3-cyklu rozwiąże problem — uważnie obserwuj kierunek cyklu.
+
+---
+
+## Krok 4: Orientacja krawędzi ostatniej warstwy
+
+Ostatni krok! Jeśli krawędzie ostatniej warstwy są na właściwych pozycjach, ale **odwrócone** (zły kolor na zewnątrz), użyj tego algorytmu do ich odwrócenia.
+
+**Odwróć 2 krawędzie: R U R' U R U R'**
+
+Trzymaj Pyraminx tak, aby krawędź, która **nie** wymaga odwrócenia, była zwrócona do ciebie. Następnie zastosuj algorytm.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Jeśli wszystkie 3 krawędzie wymagają odwrócenia, zastosuj ten algorytm raz — odwróci 2, następnie obróć górną część do ustawienia i odwróć pozostałe 2 (jedną z wcześniej odwróconych plus ostatnią).
+
+---
+
+**Gratulacje!** Ułożyłeś Pyraminx! Z praktyką Pyraminx można ułożyć w zaledwie kilka sekund. To jedna z najszybciej opanowywanych łamigłówek — ćwicz dalej, a będziesz go układać w mniej niż 10 sekund.

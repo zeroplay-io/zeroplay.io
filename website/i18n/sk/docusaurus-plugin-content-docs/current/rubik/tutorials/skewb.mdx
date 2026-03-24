@@ -1,0 +1,120 @@
+---
+title: Ako poskladať Skewb
+sidebar_position: 3
+description: Naučte sa poskladať Skewb krok za krokom pomocou Sarahinej metódy pre začiatočníkov.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Ako poskladať Skewb
+
+Naučte sa poskladať Skewb pomocou **Sarahinej metódy pre začiatočníkov** — jednoduchého a efektívneho prístupu. Skewb je hlavolam s otáčaním rohov, kde každý ťah otočí roh a tri susedné steny. Poskladáme ho len v 3 krokoch pomocou jedného základného algoritmu: Sledgehammer.
+
+## Notácia
+
+Na rozdiel od štandardnej Rubikovej kocky sa Skewb otáča okolo **rohov** namiesto stien. Každý ťah otočí jeden roh a tri susedné stredové dieliky:
+
+- **R** = Pravý predný roh v smere hodinových ručičiek &nbsp;&nbsp; **R'** = Pravý predný roh proti smeru hodinových ručičiek
+- **L** = Ľavý predný roh v smere hodinových ručičiek &nbsp;&nbsp; **L'** = Ľavý predný roh proti smeru hodinových ručičiek
+- **U** = Horný pravý predný roh v smere hodinových ručičiek &nbsp;&nbsp; **U'** = Horný pravý predný roh proti smeru hodinových ručičiek
+- **B** = Zadný pravý roh v smere hodinových ručičiek &nbsp;&nbsp; **B'** = Zadný pravý roh proti smeru hodinových ručičiek
+
+Samotné písmeno znamená otočenie **v smere hodinových ručičiek**. Pridanie **'** znamená **proti smeru hodinových ručičiek**.
+
+Držte Skewb s **bielym stredom dole** počas všetkých krokov.
+
+---
+
+## Krok 1: Poskladajte jednu stenu
+
+Zostavte kompletnú **bielu stenu** na spodnej strane. To znamená, že všetky 4 rohy okolo bieleho stredu musia byť na svojom mieste s bielou stranou nadol a susedné bočné farby sa musia zhodovať.
+
+Tento krok je polo-intuitívny. Kľúčovým nástrojom je **Sledgehammer** — najdôležitejší algoritmus pre Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Použite Sledgehammer a prípravné ťahy na umiestnenie každého bieleho rohu do spodnej vrstvy. Tu je príklad vloženia rohu:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tipy:**
+- Začnite umiestnením bieleho stredu dole.
+- Riešte rohy jeden po druhom a dávajte pozor, aby ste nenarušili už umiestnené dieliky.
+- Po tomto kroku by mala byť spodná stena celá biela a každá susedná strana by mala mať zodpovedajúcu farbu rohu.
+
+---
+
+## Krok 2: Umiestnenie protiľahlých stredov
+
+Upravte **horný stred a 4 bočné stredy** tak, aby boli všetky na správnych pozíciách. Spodná stena zostáva poskladaná.
+
+Sledgehammer je opäť kľúčový algoritmus. Vymení horný stred s bočným stredom:
+
+**Prípad 1: Výmena 2 stredov** — Použite Sledgehammer na výmenu horného a predného stredu.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Prípad 2: 3-cyklus stredov** — Keď tri stredy potrebujú rotovať, aplikujte Sledgehammer dvakrát (Dvojitý Sledgehammer):
+
+**Dvojitý Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tipy:**
+- Otočte hlavolam tak, aby správne stredy boli v prednej a hornej pozícii, než aplikujete algoritmus.
+- Ak treba vymeniť iba 2 stredy, stačí jeden Sledgehammer. Ak treba cyklovať 3 stredy, použite Dvojitý Sledgehammer.
+
+---
+
+## Krok 3: Orientácia rohov poslednej vrstvy
+
+Posledný krok! Otočte **4 rohy hornej vrstvy** tak, aby ich farby smerovali správnym smerom, a dokončite poskladanie.
+
+**Prípad 1: Všetky 4 rohy potrebujú otočenie v smere hodinových ručičiek** — Aplikujte tento algoritmus:
+
+**Algoritmus: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Prípad 2: Niektoré rohy potrebujú úpravu** — Použite Sledgehammer s prípravnými ťahmi na orientáciu jednotlivých rohov:
+
+**Algoritmus: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tipy:**
+- Ak len niektoré rohy potrebujú otočenie, použite prípravné ťahy (U alebo U') na presunutie nevyriešených rohov do pozície, aplikujte algoritmus a potom zrušte prípravný ťah.
+- Možno budete musieť proces opakovať pre zostávajúce rohy.
+
+---
+
+**Gratulujeme!** Poskladali ste Skewb! Skewb je jedným z najuspokojivejších hlavolamov, pretože potrebujete len veľmi málo algoritmov. S praxou ho budete skladať za menej ako 10 sekúnd. Pokračujte v precvičovaní Sledgehammera — je kľúčom k zvládnutiu tohto hlavolamu.

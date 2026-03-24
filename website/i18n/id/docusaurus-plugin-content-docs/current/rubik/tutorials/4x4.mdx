@@ -1,0 +1,151 @@
+---
+title: Cara Menyelesaikan Rubik's Cube 4x4
+sidebar_position: 4
+description: Pelajari cara menyelesaikan Rubik's Cube 4x4 langkah demi langkah dengan metode reduksi.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cara Menyelesaikan Rubik's Cube 4x4
+
+Pelajari cara menyelesaikan Rubik's Cube 4x4 (juga dikenal sebagai **Rubik's Revenge**) menggunakan **metode reduksi** — pendekatan paling populer untuk kubus besar. Idenya sederhana: pertama reduksi 4x4 agar terlihat seperti 3x3, lalu selesaikan sebagai 3x3. Kita akan membahas 4 langkah ditambah kasus paritas khusus.
+
+## Notasi
+
+4x4 menggunakan semua notasi standar 3x3 ditambah gerakan tambahan untuk lapisan dalam:
+
+**Gerakan standar** (hanya lapisan luar):
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+
+**Gerakan lebar** (dua lapisan luar bersamaan):
+- **Rw** = Kanan lebar (dua lapisan kanan) &nbsp;&nbsp; **Lw** = Kiri lebar
+- **Uw** = Atas lebar (dua lapisan atas) &nbsp;&nbsp; **Dw** = Bawah lebar
+- **Fw** = Depan lebar &nbsp;&nbsp; **Bw** = Belakang lebar
+
+Huruf sendiri berarti **searah jarum jam 90°**. Dengan **'** berarti **berlawanan jarum jam**. Dengan **2** berarti **180°**.
+
+Contoh: **Rw** = dua lapisan kanan searah jarum jam, **Uw'** = dua lapisan atas berlawanan jarum jam, **Rw2** = dua lapisan kanan 180°.
+
+Pegang kubus dengan **pusat putih di bawah** dan **pusat kuning di atas** untuk semua langkah.
+
+---
+
+## Langkah 1: Selesaikan Pusat
+
+Bangun **blok pusat** di setiap sisi. Setiap sisi 4x4 memiliki 4 potongan pusat (blok 2x2) yang harus cocok. Berbeda dengan 3x3, pusat 4x4 bisa bergerak — jadi harus diselesaikan terlebih dahulu.
+
+**Urutan yang disarankan:** Mulai dengan **putih** (bawah), lalu **kuning** (berlawanan), lalu 4 sisi lainnya.
+
+Langkah ini sebagian besar **intuitif**. Teknik kuncinya adalah menggunakan gerakan lebar untuk mengumpulkan potongan pusat sambil melindungi sisi yang sudah selesai dengan putaran lapisan luar.
+
+**Penyisipan pusat dasar**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Pertukaran pusat tanpa merusak sisi yang selesai**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tips:**
+- Selalu selesaikan sisi berlawanan terlebih dahulu (putih/kuning), lalu 4 sisi lainnya.
+- Saat menyisipkan potongan pusat, gunakan gerakan lebar (seperti Rw) untuk mengangkatnya, sesuaikan lapisan U, lalu kembalikan gerakan lebar.
+
+---
+
+## Langkah 2: Pasangkan Tepi
+
+Pasangkan setiap pasang **potongan tepi** agar 4x4 berperilaku seperti 3x3. Setiap tepi 4x4 terdiri dari 2 potongan yang perlu dipasangkan. Ada 12 tepi yang harus dipasangkan.
+
+Teknik inti adalah **Slice-Flip-Slice**: gunakan gerakan lebar (Uw) untuk menyelaraskan tepi, lakukan gerakan lapisan luar untuk memasangkan, lalu kembalikan gerakan lebar.
+
+**Pemasangan tepi dasar**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Pemasangan dengan membalik**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Pemasangan tepi terakhir**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tips:**
+- 8-9 tepi pertama bisa dipasangkan dengan bebas menggunakan teknik Slice-Flip-Slice.
+- Untuk 3 tepi terakhir, gunakan gerakan berbasis Dw agar tidak merusak tepi yang sudah dipasangkan.
+
+---
+
+## Langkah 3: Selesaikan sebagai 3x3
+
+Setelah semua pusat selesai dan semua tepi dipasangkan, 4x4 sekarang setara dengan 3x3! Gunakan **metode penyelesaian 3x3** apa pun untuk menyelesaikannya.
+
+**Penting:** Dalam fase ini, gunakan hanya gerakan lapisan luar (R, U, F, L, D, B). **Jangan** gunakan gerakan lebar (Rw, Uw, dll.).
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Lihat [tutorial 3x3](./index.mdx) kami untuk panduan lengkap.
+
+---
+
+## Langkah 4: Algoritma Paritas
+
+4x4 memiliki dua situasi khusus yang **tidak pernah terjadi pada 3x3**. Ini disebut **paritas** dan masing-masing terjadi sekitar 50% dari waktu.
+
+### Paritas OLL (Membalik Satu Tepi)
+
+**Tampilannya:** Di lapisan terakhir, satu tepi terbalik — tidak mungkin pada 3x3 asli.
+
+**Algoritma: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+### Paritas PLL (Menukar Dua Tepi)
+
+**Tampilannya:** Di akhir, tepat dua tepi perlu ditukar.
+
+**Algoritma: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+**Tips:**
+- Jangan panik saat menemui paritas — ini sangat normal pada kubus 4x4.
+- Paritas OLL muncul saat langkah salib kuning. Paritas PLL muncul di akhir.
+
+---
+
+**Selamat!** Anda telah menyelesaikan Rubik's Cube 4x4! Metode reduksi juga cocok untuk kubus yang lebih besar (5x5, 6x6, dll.). Dengan latihan, Anda bisa menyelesaikan 4x4 dalam waktu kurang dari 3 menit.

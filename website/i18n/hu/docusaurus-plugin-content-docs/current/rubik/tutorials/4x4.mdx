@@ -1,0 +1,151 @@
+---
+title: "Hogyan rakjuk ki a 4x4-es Rubik-kockát"
+sidebar_position: 4
+description: "Tanuld meg lépésről lépésre kirakni a 4x4-es Rubik-kockát a redukciós módszerrel."
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hogyan rakjuk ki a 4x4-es Rubik-kockát
+
+Tanuld meg kirakni a 4x4-es Rubik-kockát (más néven **Rubik's Revenge**) a **redukciós módszerrel** — a legnagyobb kockák legnépszerűbb megközelítésével. Az ötlet egyszerű: először redukáld a 4x4-et úgy, hogy 3x3-asnak nézzen ki, majd oldd meg 3x3-asként. 4 lépést és speciális paritás-eseteket tárgyalunk.
+
+## Jelölések
+
+A 4x4 az összes standard 3x3-as jelölést használja, kiegészítve a belső rétegek mozgásaival:
+
+**Standard mozgások** (csak külső réteg):
+- **R** = Jobb &nbsp;&nbsp; **L** = Bal &nbsp;&nbsp; **U** = Felső &nbsp;&nbsp; **D** = Alsó &nbsp;&nbsp; **F** = Első &nbsp;&nbsp; **B** = Hátsó
+
+**Széles mozgások** (külső két réteg együtt):
+- **Rw** = Jobb széles (jobb két réteg) &nbsp;&nbsp; **Lw** = Bal széles
+- **Uw** = Felső széles (felső két réteg) &nbsp;&nbsp; **Dw** = Alsó széles
+- **Fw** = Első széles &nbsp;&nbsp; **Bw** = Hátsó széles
+
+Egy betű önmagában **90° az óramutató járásával megegyezően**. **'** jelöléssel **az óramutató járásával ellentétesen**. **2** jelöléssel **180°**.
+
+Például: **Rw** = jobb két réteg az óramutató járása szerint, **Uw'** = felső két réteg az óramutató járása ellen, **Rw2** = jobb két réteg 180°.
+
+Tartsd a kockát úgy, hogy a **fehér közép alul** és a **sárga közép felül** legyen minden lépésnél.
+
+---
+
+## 1. lépés: Középek kirakása
+
+Építsd fel a **középső blokkokat** minden oldalon. A 4x4 minden oldalán 4 középső darab (2x2-es blokk) van, amelyeknek egyezniük kell. A 3x3-mal ellentétben a 4x4 középei mozoghatnak — ezért kell őket először kirakni.
+
+**Ajánlott sorrend:** Kezd a **fehérrel** (alul), aztán **sárga** (szemben), aztán a maradék 4 oldal.
+
+Ez a lépés főleg **intuitív**. A kulcstechnika a széles mozgások használata a középső darabok összegyűjtéséhez, miközben a már kirakott oldalakat a külső réteg forgatásával véded.
+
+**Alap középbeillesztés**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Középcsere a kirakott oldalak megőrzésével**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tippek:**
+- Mindig először a szemben lévő oldalakat rakd ki (fehér/sárga), aztán a maradék 4-et.
+- Középső darab beillesztésekor használj széles mozgást (pl. Rw) a felemeléshez, igazítsd az U réteget, majd fordítsd vissza a széles mozgást.
+
+---
+
+## 2. lépés: Élek párosítása
+
+Párosítsd minden **éldarab** párját, hogy a 4x4 úgy viselkedjen, mint egy 3x3. A 4x4 minden éle 2 darabból áll, amelyeket párosítani kell. 12 élt kell párosítani.
+
+Az alaptechnika a **Slice-Flip-Slice**: használj széles mozgást (Uw) az élek igazításához, végezz külső réteg mozgást a párosításhoz, majd fordítsd vissza a széles mozgást.
+
+**Alap élpárosítás**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Fordított párosítás**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Utolsó élek párosítása**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tippek:**
+- Az első 8-9 élt szabadon párosíthatod a Slice-Flip-Slice technikával.
+- Az utolsó 3 élhez Dw alapú mozgásokat használj, hogy ne rontsd el a már párosított éleket.
+
+---
+
+## 3. lépés: Megoldás 3x3-ként
+
+Ha minden közép kirakott és minden él párosított, a 4x4 most egyenértékű egy 3x3-mal! Használj bármilyen **3x3-as megoldási módszert** a befejezéshez.
+
+**Fontos:** Ebben a fázisban csak külső réteg mozgásokat használj (R, U, F, L, D, B). **Ne** használj széles mozgásokat (Rw, Uw stb.).
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Nézd meg a [3x3-as útmutatónkat](./index.mdx) a teljes rétegről rétegre módszerhez.
+
+---
+
+## 4. lépés: Paritás-algoritmusok
+
+A 4x4-nek két speciális helyzete van, amely **soha nem fordul elő 3x3-nál**. Ezeket **paritásnak** hívják, és mindegyik kb. 50%-os eséllyel jelentkezik.
+
+### OLL paritás (egyetlen él fordítása)
+
+**Hogy néz ki:** Az utolsó rétegben egyetlen él van fordítva — valódi 3x3-on lehetetlen.
+
+**Algoritmus: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+### PLL paritás (két él cseréje)
+
+**Hogy néz ki:** A végén pontosan két élt kell cserélni.
+
+**Algoritmus: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+**Tippek:**
+- Ne ess pánikba a paritásnál — teljesen normális a 4x4-es kockáknál.
+- Az OLL paritás a sárga kereszt lépésnél jelenik meg. A PLL paritás a legvégén.
+
+---
+
+**Gratulálunk!** Kiraktad a 4x4-es Rubik-kockát! A redukciós módszer jól skálázódik még nagyobb kockákra is (5x5, 6x6 stb.). Gyakorlással 3 perc alatt ki tudod majd rakni a 4x4-et.

@@ -1,0 +1,120 @@
+---
+title: Wie man den Skewb löst
+sidebar_position: 3
+description: Lerne Schritt für Schritt, den Skewb mit Sarahs Anfängermethode zu lösen.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Wie man den Skewb löst
+
+Lerne den Skewb mit **Sarahs Anfängermethode** zu lösen — ein einfacher und effizienter Ansatz für Anfänger. Der Skewb ist ein Ecken-drehendes Puzzle, bei dem jeder Zug eine Ecke und die drei angrenzenden Flächen dreht. Wir lösen ihn in nur 3 Schritten mit einem einzigen Kernalgorithmus: dem Sledgehammer.
+
+## Notation
+
+Im Gegensatz zum Standard-Rubik's-Cube dreht sich der Skewb um **Ecken** statt um Flächen. Jeder Zug dreht eine Ecke und die drei angrenzenden Flächenmitten:
+
+- **R** = Rechte Vorderecke im Uhrzeigersinn &nbsp;&nbsp; **R'** = Rechte Vorderecke gegen den Uhrzeigersinn
+- **L** = Linke Vorderecke im Uhrzeigersinn &nbsp;&nbsp; **L'** = Linke Vorderecke gegen den Uhrzeigersinn
+- **U** = Obere rechte Vorderecke im Uhrzeigersinn &nbsp;&nbsp; **U'** = Obere rechte Vorderecke gegen den Uhrzeigersinn
+- **B** = Hintere rechte Ecke im Uhrzeigersinn &nbsp;&nbsp; **B'** = Hintere rechte Ecke gegen den Uhrzeigersinn
+
+Ein Buchstabe allein bedeutet eine Drehung **im Uhrzeigersinn**. Das Hinzufügen von **'** bedeutet **gegen den Uhrzeigersinn**.
+
+Halte den Skewb mit dem **weißen Zentrum unten** für alle Schritte.
+
+---
+
+## Schritt 1: Eine Seite lösen
+
+Baue eine vollständige **weiße Seite** auf der Unterseite. Das bedeutet, dass alle 4 Ecken um das weiße Zentrum an ihrem Platz sein müssen, mit Weiß nach unten zeigend, und die angrenzenden Seitenfarben übereinstimmen müssen.
+
+Dieser Schritt ist halb-intuitiv. Das wichtigste Werkzeug ist der **Sledgehammer** — der wichtigste Algorithmus für den Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Verwende den Sledgehammer und Vorbereitungszüge, um jede weiße Ecke in die untere Schicht zu setzen. Hier ist ein Beispiel für das Einsetzen einer Ecke:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tipps:**
+- Beginne damit, das weiße Zentrum nach unten zu setzen.
+- Löse die Ecken eine nach der anderen und achte darauf, bereits platzierte Teile nicht zu stören.
+- Nach diesem Schritt sollte die Unterseite komplett weiß sein und jede angrenzende Seite eine passende Eckenfarbe haben.
+
+---
+
+## Schritt 2: Gegenüberliegende Zentren positionieren
+
+Passe das **obere Zentrum und die 4 Seitenzentren** an, damit sie alle an ihren korrekten Positionen sind. Die Unterseite bleibt gelöst.
+
+Der Sledgehammer ist wieder der Schlüsselalgorithmus. Er tauscht das obere Zentrum mit einem Seitenzentrum:
+
+**Fall 1: 2 Zentren tauschen** — Verwende den Sledgehammer, um das obere und vordere Zentrum zu tauschen.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Fall 2: 3er-Zyklus der Zentren** — Wenn drei Zentren rotieren müssen, wende den Sledgehammer zweimal an (Doppelter Sledgehammer):
+
+**Doppelter Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tipps:**
+- Drehe das Puzzle, um die richtigen Zentren in die vordere und obere Position zu bringen, bevor du den Algorithmus anwendest.
+- Wenn nur 2 Zentren getauscht werden müssen, reicht ein Sledgehammer. Wenn 3 Zentren zyklisch getauscht werden müssen, verwende den Doppelten Sledgehammer.
+
+---
+
+## Schritt 3: Ecken der letzten Schicht orientieren
+
+Der letzte Schritt! Drehe die **4 Ecken der oberen Schicht** so, dass ihre Farben in die richtige Richtung zeigen, und vervollständige die Lösung.
+
+**Fall 1: Alle 4 Ecken müssen im Uhrzeigersinn gedreht werden** — Wende diesen Algorithmus an:
+
+**Algorithmus: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Fall 2: Einige Ecken müssen angepasst werden** — Verwende den Sledgehammer mit Vorbereitungszügen, um einzelne Ecken zu orientieren:
+
+**Algorithmus: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tipps:**
+- Wenn nur einige Ecken gedreht werden müssen, verwende Vorbereitungszüge (U oder U'), um die ungelösten Ecken in Position zu bringen, wende den Algorithmus an und mache dann den Vorbereitungszug rückgängig.
+- Möglicherweise musst du den Vorgang für die verbleibenden Ecken wiederholen.
+
+---
+
+**Herzlichen Glückwunsch!** Du hast den Skewb gelöst! Der Skewb ist eines der befriedigendsten Puzzles, weil du so wenige Algorithmen brauchst. Mit Übung wirst du ihn in unter 10 Sekunden lösen. Übe weiter den Sledgehammer — er ist der Schlüssel zur Meisterung dieses Puzzles.

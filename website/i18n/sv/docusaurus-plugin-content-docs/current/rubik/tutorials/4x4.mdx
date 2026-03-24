@@ -1,0 +1,158 @@
+---
+title: Hur man löser en 4x4 Rubiks kub
+sidebar_position: 4
+description: Lär dig att lösa 4x4 Rubiks kub steg för steg med reduktionsmetoden.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hur man löser en 4x4 Rubiks kub
+
+Lär dig att lösa 4x4 Rubiks kub (även kallad **Rubik's Revenge**) med **reduktionsmetoden** — det populäraste tillvägagångssättet för större kuber. Idén är enkel: reducera först 4x4-kuben så att den ser ut som en 3x3, och lös den sedan som en 3x3. Vi går igenom 4 steg plus speciella paritetsfall.
+
+## Notation
+
+4x4-kuben använder all standard 3x3-notation plus extra drag för de inre lagren:
+
+**Standarddrag** (bara yttre lagret):
+- **R** = Höger &nbsp;&nbsp; **L** = Vänster &nbsp;&nbsp; **U** = Upp &nbsp;&nbsp; **D** = Ner &nbsp;&nbsp; **F** = Fram &nbsp;&nbsp; **B** = Bak
+
+**Breda drag** (yttre två lager tillsammans):
+- **Rw** = Höger bred (höger två lager) &nbsp;&nbsp; **Lw** = Vänster bred
+- **Uw** = Upp bred (övre två lager) &nbsp;&nbsp; **Dw** = Ner bred
+- **Fw** = Fram bred &nbsp;&nbsp; **Bw** = Bak bred
+
+En bokstav ensam betyder **90° medurs**. Med **'** betyder **moturs**. Med **2** betyder **180°**.
+
+Till exempel: **Rw** = höger två lager medurs, **Uw'** = övre två lager moturs, **Rw2** = höger två lager 180°.
+
+Håll kuben med **vitt centrum nedåt** och **gult centrum uppåt** för alla steg.
+
+---
+
+## Steg 1: Lösa centrumen
+
+Bygg **centrumblocken** på varje sida. Varje sida på 4x4 har 4 centrumbitar (ett 2x2-block) som måste matcha. Till skillnad från 3x3 kan centrumen på en 4x4 flytta sig — så de måste lösas först.
+
+**Rekommenderad ordning:** Börja med **vitt** (botten), sedan **gult** (motsatt), sedan de återstående 4 sidorna.
+
+Detta steg är främst **intuitivt**. Nyckeltekniken är att använda breda drag för att samla centrumbitar medan redan lösta sidor skyddas med yttre lagerrotationer.
+
+**Grundläggande centruminsättning** — Använd ett brett drag för att flytta en centrumbit uppåt, vrid övre lagret för att rikta in, och vänd sedan det breda draget:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Centrumbyte utan att förstöra lösta sidor** — När du behöver sätta in en centrumbit men måste skydda andra färdiga centrum:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Tips:**
+- Lös alltid motsatta sidor först (vit/gul), sedan de återstående 4 sidorna.
+- När du sätter in en centrumbit, använd ett brett drag (som Rw) för att flytta den uppåt, justera U-lagret och vänd sedan det breda draget.
+- Var försiktig så att du inte förstör färdiga centrum när du arbetar med nya.
+
+---
+
+## Steg 2: Para ihop kanter
+
+Matcha varje par av **kantbitar** så att 4x4 beter sig som en 3x3. Varje kant på en 4x4 består av 2 bitar som behöver paras ihop. Det finns 12 kanter att para ihop.
+
+Kärntekniken är **Slice-Flip-Slice**: använd ett brett drag (Uw) för att rikta in kanter, utför ett yttre lagerdrag för att para ihop dem, och vänd sedan det breda draget.
+
+**Grundläggande kantparning** — Placera en kantbit i främre höger position och dess partner uppåt. Använd Uw för att rikta in:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Vänd parning** — När kantparet behöver vändas under parningen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Sista kanternas parning** — För de sista 3 kanterna kan du inte fritt använda Uw utan att förstöra redan parade kanter. Använd denna teknik istället:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Tips:**
+- De första 8-9 kanterna kan fritt paras ihop med Slice-Flip-Slice-tekniken.
+- För de sista 3 kanterna, använd Dw-baserade drag eller vändtekniker för att undvika att förstöra redan parade kanter.
+- Om ett kantpar är på rätt plats men vänt, måste du ta ut det och para ihop det korrekt igen.
+
+---
+
+## Steg 3: Lösa som 3x3
+
+När alla centrum är lösta och alla kanter är parade, är 4x4 nu ekvivalent med en 3x3! Använd vilken **3x3-lösningsmetod** som helst (som lager-för-lager-metoden) för att avsluta.
+
+**Viktigt:** Under denna fas, använd bara yttre lagerdrag (R, U, F, L, D, B). Använd **inte** breda drag (Rw, Uw, etc.) eftersom de skulle förstöra dina parade kanter och lösta centrum.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Se vår [3x3-guide](./index.mdx) för den fullständiga lager-för-lager-guiden. Samma 7 steg gäller — vitt kors, vita hörn, andra lagret, gult kors, gul sida, placera hörn och placera kanter.
+
+---
+
+## Steg 4: Paritetsalgoritmer
+
+4x4 har två speciella situationer som **aldrig uppstår på en 3x3**. Dessa kallas **paritetsfall** och var och en inträffar ungefär 50% av tiden. Om du stöter på en under 3x3-fasen, tillämpa motsvarande algoritm och fortsätt lösa.
+
+### OLL-paritet (enkel kantvändning)
+
+**Hur det ser ut:** Under sista lagret är en enda kant vänd — omöjligt på en riktig 3x3. Det gula korset kan inte fullbordas normalt.
+
+**Algoritm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Denna algoritm är lång, men behöver bara tillämpas en gång. Efter utförandet kommer kanten att vara korrekt orienterad och du kan fortsätta med de normala 3x3 sista lagerstegen.
+
+### PLL-paritet (byte av två kanter)
+
+**Hur det ser ut:** I slutet behöver exakt två kanter bytas — igen, omöjligt på en 3x3.
+
+**Algoritm: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Denna korta algoritm byter två motsatta kanter i sista lagret. Efter tillämpning bör kuben vara helt löst.
+
+**Tips:**
+- Få inte panik vid paritet — det är helt normalt på 4x4-kuber.
+- OLL-paritet dyker upp under det gula korssteget. PLL-paritet dyker upp i slutet.
+- Du kan stöta på båda, bara en, eller ingen paritet i en enda lösning.
+
+---
+
+**Grattis!** Du har löst 4x4 Rubiks kub! Reduktionsmetoden skalar bra till ännu större kuber (5x5, 6x6, etc.) — kärnkoncepten att lösa centrum, para ihop kanter och lösa som 3x3 förblir desamma. Med övning kommer du att kunna lösa 4x4 på under 3 minuter.

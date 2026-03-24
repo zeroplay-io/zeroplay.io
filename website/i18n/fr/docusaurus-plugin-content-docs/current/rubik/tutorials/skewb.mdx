@@ -1,0 +1,120 @@
+---
+title: Comment résoudre le Skewb
+sidebar_position: 3
+description: Apprenez à résoudre le Skewb étape par étape avec la méthode pour débutants de Sarah.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Comment résoudre le Skewb
+
+Apprenez à résoudre le Skewb avec la **méthode pour débutants de Sarah** — une approche simple et efficace pour les débutants. Le Skewb est un puzzle à rotation par coins où chaque mouvement fait tourner un coin et les trois faces adjacentes. Nous le résoudrons en seulement 3 étapes avec un algorithme principal : le Sledgehammer.
+
+## Notation
+
+Contrairement au Rubik's Cube standard, le Skewb tourne autour des **coins** plutôt que des faces. Chaque mouvement fait tourner un coin et les trois centres de faces adjacents :
+
+- **R** = Coin avant droit dans le sens horaire &nbsp;&nbsp; **R'** = Coin avant droit dans le sens antihoraire
+- **L** = Coin avant gauche dans le sens horaire &nbsp;&nbsp; **L'** = Coin avant gauche dans le sens antihoraire
+- **U** = Coin avant supérieur droit dans le sens horaire &nbsp;&nbsp; **U'** = Coin avant supérieur droit dans le sens antihoraire
+- **B** = Coin arrière droit dans le sens horaire &nbsp;&nbsp; **B'** = Coin arrière droit dans le sens antihoraire
+
+Une lettre seule signifie une rotation **dans le sens horaire**. L'ajout de **'** signifie **dans le sens antihoraire**.
+
+Tenez le Skewb avec le **centre blanc en bas** pour toutes les étapes.
+
+---
+
+## Étape 1 : Résoudre une face
+
+Construisez une **face blanche** complète en bas. Cela signifie que les 4 coins autour du centre blanc doivent être en place avec le blanc vers le bas, et les couleurs latérales adjacentes doivent correspondre.
+
+Cette étape est semi-intuitive. L'outil clé est le **Sledgehammer** — l'algorithme le plus important pour le Skewb :
+
+**Sledgehammer : R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Utilisez le Sledgehammer et des mouvements de préparation pour placer chaque coin blanc dans la couche inférieure. Voici un exemple d'insertion d'un coin :
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Conseils :**
+- Commencez par placer le centre blanc en bas.
+- Résolvez les coins un par un, en faisant attention à ne pas déranger les pièces déjà en place.
+- Après cette étape, la face inférieure doit être entièrement blanche, et chaque côté adjacent doit avoir une couleur de coin correspondante.
+
+---
+
+## Étape 2 : Positionner les centres opposés
+
+Ajustez le **centre supérieur et les 4 centres latéraux** pour qu'ils soient tous dans leurs positions correctes. La face inférieure reste résolue.
+
+Le Sledgehammer est à nouveau l'algorithme clé. Il échange le centre supérieur avec un centre latéral :
+
+**Cas 1 : Échanger 2 centres** — Utilisez le Sledgehammer pour échanger les centres supérieur et frontal.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Cas 2 : Cycle de 3 centres** — Quand trois centres doivent tourner, appliquez le Sledgehammer deux fois (Double Sledgehammer) :
+
+**Double Sledgehammer : R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Conseils :**
+- Tournez le puzzle pour placer les bons centres en position frontale et supérieure avant d'appliquer l'algorithme.
+- Si seulement 2 centres doivent être échangés, un Sledgehammer suffit. Si 3 centres doivent être cyclés, utilisez le Double Sledgehammer.
+
+---
+
+## Étape 3 : Orienter les coins de la dernière couche
+
+La dernière étape ! Tournez les **4 coins de la couche supérieure** pour que leurs couleurs soient orientées correctement, complétant ainsi la résolution.
+
+**Cas 1 : Les 4 coins doivent tourner dans le sens horaire** — Appliquez cet algorithme :
+
+**Algorithme : R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Cas 2 : Certains coins nécessitent un ajustement** — Utilisez le Sledgehammer avec des mouvements de préparation pour orienter des coins individuels :
+
+**Algorithme : R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Conseils :**
+- Si seuls certains coins doivent être tournés, utilisez des mouvements de préparation (U ou U') pour amener les coins non résolus en position, appliquez l'algorithme, puis annulez le mouvement de préparation.
+- Vous devrez peut-être répéter le processus pour les coins restants.
+
+---
+
+**Félicitations !** Vous avez résolu le Skewb ! Le Skewb est l'un des puzzles les plus satisfaisants à résoudre car il nécessite très peu d'algorithmes. Avec de la pratique, vous le résoudrez en moins de 10 secondes. Continuez à pratiquer le Sledgehammer — c'est la clé pour maîtriser ce puzzle.

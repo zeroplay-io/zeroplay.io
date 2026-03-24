@@ -1,10 +1,12 @@
 ---
 title: Com resoldre un cub de Rubik 3x3
 sidebar_position: 0
-image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-1.jpg
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg
 ---
 
 import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-3x3.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
 
 # Com resoldre un cub de Rubik 3x3
 
@@ -33,6 +35,7 @@ Aquest pas és **intuïtiu** — no hi ha algorismes fixos. Troba cada peça d'a
 **Cas 1: Aresta blanca a la capa superior** — Alinea el color lateral amb el seu centre, després gira aquella cara dues vegades.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2"
   alg="F2"
 />
@@ -40,6 +43,7 @@ Aquest pas és **intuïtiu** — no hi ha algorismes fixos. Troba cada peça d'a
 **Cas 2: Aresta blanca a la capa del mig** — Porta-la a dalt primer, després tracta-la com el Cas 1.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F2 U F"
   alg="F' U' F2"
 />
@@ -47,6 +51,7 @@ Aquest pas és **intuïtiu** — no hi ha algorismes fixos. Troba cada peça d'a
 **Cas 3: Aresta blanca a baix però girada** — Treu-la i reinserta-la correctament.
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' R U' R'"
   alg="R U R' F"
 />
@@ -64,6 +69,7 @@ Troba una cantonada blanca a la capa superior. Col·loca-la sobre el seu lloc ob
 **Algorisme: R U R' U'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 U R U' R'"
   alg="R U R' U'"
 />
@@ -83,6 +89,7 @@ Alinea el color frontal de l'aresta amb el seu centre coincident, després decid
 **Inserir aresta a la dreta: U R U' R' U' F' U F**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F' U F U R U' R' U'"
   alg="U R U' R' U' F' U F"
 />
@@ -90,6 +97,7 @@ Alinea el color frontal de l'aresta amb el seu centre coincident, després decid
 **Inserir aresta a l'esquerra: U' L' U L U F U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U' F' U' L' U L U"
   alg="U' L' U L U F U' F'"
 />
@@ -111,6 +119,7 @@ Veuràs un de tres patrons a dalt:
 **Algorisme: F R U R' U' F'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 F U R U' R' F'"
   alg="F R U R' U' F'"
 />
@@ -126,6 +135,7 @@ Aguanta el cub de manera que una **cantonada groga que necessiti ser girada** es
 **Algorisme: R U R' U R U2 R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U2' R' U' R U' R'"
   alg="R U R' U R U2 R'"
 />
@@ -143,6 +153,7 @@ Mira les cantonades de la capa superior. Troba una cantonada que ja estigui entr
 **Algorisme: U R U' L' U R' U' L**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 L' U R U' L U R' U'"
   alg="U R U' L' U R' U' L"
 />
@@ -160,6 +171,7 @@ Troba una aresta que ja sigui correcta (el seu color coincideix amb el centre de
 **Cicle en sentit horari: R U' R U R U R U' R' U' R2**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
   alg="R U' R U R U R U' R' U' R2"
 />
@@ -167,6 +179,7 @@ Troba una aresta que ja sigui correcta (el seu color coincideix amb el centre de
 **Cicle en sentit antihorari: R2 U R U R' U' R' U' R' U R'**
 
 <TwistyPlayer
+  puzzle="3x3x3"
   setupAlg="x2 R U' R U R U R U' R' U' R2"
   alg="R2 U R U R' U' R' U' R' U R'"
 />

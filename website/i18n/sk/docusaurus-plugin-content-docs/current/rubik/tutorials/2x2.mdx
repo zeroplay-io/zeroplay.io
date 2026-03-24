@@ -1,0 +1,136 @@
+---
+title: Ako poskladať Rubikovu kocku 2×2
+sidebar_position: 1
+description: Naučte sa poskladať Rubikovu kocku 2×2 krok za krokom metódou Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Ako poskladať Rubikovu kocku 2×2
+
+Naučte sa poskladať Rubikovu kocku 2×2 pomocou **metódy Ortega** — rýchleho a efektívneho prístupu v 3 krokoch. Kocka 2×2 nemá stredové ani hranové diely, iba rohy, čo z nej robí skvelý hlavolam pre začiatočníkov.
+
+## Notácia
+
+Kocka 2×2 používa rovnakú notáciu ako 3×3, ale bez ťahov strednej vrstvy:
+
+- **R** = Pravá &nbsp;&nbsp; **L** = Ľavá &nbsp;&nbsp; **U** = Horná &nbsp;&nbsp; **D** = Dolná &nbsp;&nbsp; **F** = Predná &nbsp;&nbsp; **B** = Zadná
+
+Samotné písmeno znamená **90° v smere hodinových ručičiek**. Pridanie **'** znamená **proti smeru hodinových ručičiek**. Pridanie **2** znamená **180°**.
+
+Napríklad: **R** = otočiť pravú stranu v smere hodinových ručičiek, **R'** = proti smeru, **R2** = 180°.
+
+Keďže kocka 2×2 nemá pevné stredy, zvoľte **bielu** ako východiskovú farbu a držte ju **dole**.
+
+---
+
+## Krok 1: Poskladajte prvú stranu
+
+Zostavte kompletnú **bielu stranu** na spodku. Na rozdiel od 3×3 **nepotrebujete** zladiť farby strán — stačí dostať všetky 4 biele nálepky na rovnakú stranu.
+
+Tento krok je **intuitívny** — nie sú žiadne pevné algoritmy. Nájdite každý biely rohový diel a presuňte ho na spodnú stranu.
+
+**Prípad 1: Biely roh v hornej vrstve** — Presuňte ho dole jednoduchým vložením.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Prípad 2: Biely roh na spodku, ale zle orientovaný** — Vyberte ho a znova správne vložte.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tipy:** Sústreďte sa len na umiestnenie 4 bielych nálepiek na jednu stranu. Farby strán zatiaľ neriešte — to je to, čo odlišuje Ortegu od metódy pre začiatočníkov 3×3.
+
+---
+
+## Krok 2: Orientácia poslednej vrstvy (OLL)
+
+Urobte **protiľahlú stranu** (žltú) celú jednofarebnou. Teraz potrebujete, aby všetky 4 žlté nálepky smerovali nahor.
+
+Pozrite sa na hornú stranu a zistite, ktorý prípad máte:
+
+**Prípad 1: Jeden žltý roh smeruje nahor (Sune)** — Držte kocku tak, aby poskladaný roh bol v prednej ľavej pozícii.
+
+**Algoritmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Prípad 2: Žiadny žltý roh nesmeruje nahor** — Použite Sune dvakrát na orientáciu všetkých rohov.
+
+**Algoritmus: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Prípad 3: Dva diagonálne žlté rohy smerujú nahor** — Držte kocku tak, aby dva poskladané rohy boli v prednej ľavej a zadnej pravej pozícii.
+
+**Algoritmus: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tipy:** Ak máte dva **susedné** žlté rohy smerujúce nahor, použite Sune raz na dosiahnutie Prípadu 1 alebo Prípadu 3.
+
+---
+
+## Krok 3: Permutácia oboch vrstiev (PBL)
+
+Posledný krok! Usporiadajte všetky rohové diely na ich správne pozície na vyriešenie kocky. Pozrite sa na **farby strán** hornej a dolnej vrstvy na určenie potrebnej výmeny.
+
+**Ako skontrolovať:** Pozrite sa na strany hornej vrstvy. Ak dve susedné nálepky na jednej strane majú rovnakú farbu, výmena nie je potrebná alebo je potrebná susedná výmena. Ak má každá strana dve rôzne farby, je potrebná diagonálna výmena.
+
+**Prípad 1: Diagonálna výmena hore** — Dva protiľahlé rohy sa musia vymeniť.
+
+**Algoritmus: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Prípad 2: Susedná výmena hore** — Dva susedné rohy sa musia vymeniť.
+
+**Algoritmus: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Prípad 3: Diagonálna výmena v oboch vrstvách** — Použite tento rýchly algoritmus.
+
+**Algoritmus: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Po vyriešení hornej vrstvy možno budete musieť otočiť spodnú stranu (D alebo D') na zarovnanie konečných farieb. Ak dolná vrstva tiež potrebuje výmenu, použite algoritmus diagonálnej výmeny s nevyriešenou vrstvou hore.
+
+---
+
+**Gratulujeme!** Poskladali ste Rubikovu kocku 2×2! Metóda Ortega je rýchla a efektívna — s praxou dokážete poskladať 2×2 pod 5 sekúnd.

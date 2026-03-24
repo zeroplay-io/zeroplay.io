@@ -1,0 +1,158 @@
+---
+title: Como resolver um cubo mágico 4x4
+sidebar_position: 4
+description: Aprenda a resolver o cubo mágico 4x4 passo a passo com o método de redução.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Como resolver um cubo mágico 4x4
+
+Aprenda a resolver o cubo mágico 4x4 (também chamado de **Rubik's Revenge**) usando o **método de redução** — a abordagem mais popular para cubos maiores. A ideia é simples: primeiro reduza o 4x4 para que pareça um 3x3, depois resolva como um 3x3. Cobrimos 4 etapas mais casos especiais de paridade.
+
+## Notação
+
+O 4x4 usa toda a notação padrão do 3x3 mais movimentos adicionais para as camadas internas:
+
+**Movimentos padrão** (apenas camada externa):
+- **R** = Direita &nbsp;&nbsp; **L** = Esquerda &nbsp;&nbsp; **U** = Cima &nbsp;&nbsp; **D** = Baixo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Trás
+
+**Movimentos largos** (duas camadas externas juntas):
+- **Rw** = Direita largo (duas camadas direitas) &nbsp;&nbsp; **Lw** = Esquerda largo
+- **Uw** = Cima largo (duas camadas superiores) &nbsp;&nbsp; **Dw** = Baixo largo
+- **Fw** = Frente largo &nbsp;&nbsp; **Bw** = Trás largo
+
+Uma letra sozinha significa **90° no sentido horário**. Com **'** significa **sentido anti-horário**. Com **2** significa **180°**.
+
+Por exemplo: **Rw** = duas camadas direitas no sentido horário, **Uw'** = duas camadas superiores no sentido anti-horário, **Rw2** = duas camadas direitas 180°.
+
+Segure o cubo com o **centro branco embaixo** e o **centro amarelo em cima** para todas as etapas.
+
+---
+
+## Etapa 1: Resolver os centros
+
+Monte os **blocos centrais** em cada face. Cada face do 4x4 tem 4 peças centrais (um bloco 2x2) que precisam combinar. Diferente do 3x3, os centros de um 4x4 podem se mover — por isso precisam ser resolvidos primeiro.
+
+**Ordem recomendada:** Comece com **branco** (baixo), depois **amarelo** (oposto), e então os 4 lados restantes.
+
+Esta etapa é principalmente **intuitiva**. A técnica chave é usar movimentos largos para juntar peças centrais enquanto protege faces já resolvidas com giros da camada externa.
+
+**Inserção básica de centro** — Use um movimento largo para trazer uma peça central para cima, gire a camada superior para alinhar, depois inverta o movimento largo:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Troca de centro sem quebrar faces resolvidas** — Quando você precisa inserir uma peça central mas deve proteger outros centros completados:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Dicas:**
+- Sempre resolva as faces opostas primeiro (branco/amarelo), depois os 4 lados restantes.
+- Ao inserir uma peça central, use um movimento largo (como Rw) para trazê-la para cima, ajuste a camada U, e depois desfaça o movimento largo.
+- Cuidado para não perturbar centros completados ao trabalhar em novos.
+
+---
+
+## Etapa 2: Emparelhar arestas
+
+Combine cada par de **peças de aresta** para que o 4x4 se comporte como um 3x3. Cada aresta de um 4x4 consiste em 2 peças que precisam ser emparelhadas. São 12 arestas para emparelhar.
+
+A técnica principal é **Slice-Flip-Slice**: use um movimento largo (Uw) para alinhar as arestas, execute um movimento da camada externa para emparelhá-las, depois inverta o movimento largo.
+
+**Emparelhamento básico de arestas** — Coloque uma peça de aresta na posição frontal direita e sua parceira em cima. Use Uw para alinhar:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Emparelhamento com inversão** — Quando o par de arestas precisa ser invertido durante o emparelhamento:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Emparelhamento das últimas arestas** — Para as últimas 3 arestas, você não pode usar Uw livremente sem quebrar arestas já emparelhadas. Use esta técnica:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Dicas:**
+- As primeiras 8-9 arestas podem ser emparelhadas livremente com a técnica Slice-Flip-Slice.
+- Para as últimas 3 arestas, use movimentos baseados em Dw ou técnicas de inversão para evitar quebrar arestas já emparelhadas.
+- Se um par de arestas está na posição correta mas invertido, você precisa retirá-lo e re-emparelhar corretamente.
+
+---
+
+## Etapa 3: Resolver como 3x3
+
+Depois que todos os centros estão resolvidos e todas as arestas emparelhadas, o 4x4 agora é equivalente a um 3x3! Use qualquer **método de resolução de 3x3** (como o método camada por camada) para finalizar.
+
+**Importante:** Durante esta fase, use apenas movimentos da camada externa (R, U, F, L, D, B). **Não** use movimentos largos (Rw, Uw, etc.) pois eles quebrariam suas arestas emparelhadas e centros resolvidos.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Consulte nosso [tutorial de 3x3](./index.mdx) para o guia completo do método camada por camada. Os mesmos 7 passos se aplicam — cruz branca, cantos brancos, segunda camada, cruz amarela, face amarela, posicionar cantos e posicionar arestas.
+
+---
+
+## Etapa 4: Algoritmos de paridade
+
+O 4x4 tem duas situações especiais que **nunca ocorrem em um 3x3**. São chamadas de casos de **paridade** e cada uma ocorre cerca de 50% das vezes. Se encontrar uma durante a fase 3x3, aplique o algoritmo correspondente e continue resolvendo.
+
+### Paridade OLL (inversão de uma única aresta)
+
+**Como aparece:** Durante a última camada, uma única aresta está invertida — algo impossível em um 3x3 real. A cruz amarela não pode ser completada normalmente.
+
+**Algoritmo: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Este algoritmo é longo, mas só precisa ser aplicado uma vez. Após a execução, a aresta estará corretamente orientada e você pode continuar com os passos normais da última camada do 3x3.
+
+### Paridade PLL (troca de duas arestas)
+
+**Como aparece:** No final, exatamente duas arestas precisam ser trocadas — novamente, impossível em um 3x3.
+
+**Algoritmo: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Este curto algoritmo troca duas arestas opostas na última camada. Após aplicá-lo, o cubo deve estar completamente resolvido.
+
+**Dicas:**
+- Não entre em pânico com a paridade — é completamente normal em cubos 4x4.
+- A paridade OLL aparece durante a etapa da cruz amarela. A paridade PLL aparece no final.
+- Você pode encontrar ambas, apenas uma, ou nenhuma paridade em uma mesma resolução.
+
+---
+
+**Parabéns!** Você resolveu o cubo mágico 4x4! O método de redução se adapta bem a cubos ainda maiores (5x5, 6x6, etc.) — os conceitos fundamentais de resolver centros, emparelhar arestas e resolver como 3x3 permanecem os mesmos. Com prática, você conseguirá resolver o 4x4 em menos de 3 minutos.

@@ -1,0 +1,128 @@
+---
+title: Como resolver o Pyraminx
+sidebar_position: 2
+description: Aprenda a resolver o Pyraminx passo a passo usando o método camada por camada para iniciantes.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Como resolver o Pyraminx
+
+Aprenda a resolver o Pyraminx usando o método **camada por camada** — a abordagem mais simples para iniciantes. O Pyraminx é um quebra-cabeça em forma de tetraedro com 4 pontas, 6 arestas e 4 centros. Vamos resolvê-lo em 4 passos simples.
+
+## Notação
+
+O Pyraminx usa um sistema de notação único com **maiúsculas** para camadas e **minúsculas** para pontas:
+
+**Camadas (maiúsculas)** — girar a camada inteira (sem a ponta):
+
+- **U** = Camada superior &nbsp;&nbsp; **R** = Camada direita &nbsp;&nbsp; **L** = Camada esquerda &nbsp;&nbsp; **B** = Camada traseira
+
+**Pontas (minúsculas)** — girar apenas a ponta:
+
+- **u** = Ponta superior &nbsp;&nbsp; **r** = Ponta direita &nbsp;&nbsp; **l** = Ponta esquerda &nbsp;&nbsp; **b** = Ponta traseira
+
+Uma letra sozinha significa **120° no sentido horário**. Adicionar **'** significa **120° no sentido anti-horário**.
+
+Por exemplo: **R** = girar a camada direita no sentido horário, **R'** = sentido anti-horário, **l** = girar a ponta esquerda no sentido horário, **l'** = sentido anti-horário.
+
+Segure o Pyraminx com **uma face voltada para você** e **uma ponta apontando para cima** em todos os passos.
+
+---
+
+## Passo 1: Resolver as pontas
+
+Alinhe as **3 pontas visíveis** para que a cor de cada ponta corresponda ao centro adjacente. A 4ª ponta está embaixo e será resolvida depois.
+
+Este passo é **intuitivo** — cada ponta tem apenas 3 posições possíveis, então no máximo 2 giros a resolvem. Simplesmente gire cada ponta até que sua cor corresponda ao centro vizinho.
+
+**Exemplo: Resolver as três pontas visíveis**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Dicas:** Sempre comece por este passo — é gratuito e instantâneo. Uma vez alinhadas as pontas, você não precisa mais tocá-las.
+
+---
+
+## Passo 2: Arestas da primeira camada
+
+Construa uma **primeira camada** completa colocando as 3 arestas inferiores em suas posições corretas. Escolha uma face como base (recomendamos começar pela face que já tem mais cores correspondentes).
+
+Este passo é principalmente intuitivo. Encontre cada aresta que pertence à camada inferior e insira-a com giros simples de camada.
+
+**Caso 1: Aresta na camada superior, corretamente orientada** — Um único giro de camada a insere diretamente.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Caso 2: Aresta na camada superior, invertida** — Use dois giros de camada para inverter e inserir.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Dicas:** Se uma aresta já está na camada inferior mas na posição errada, use um giro de camada para tirá-la para cima e depois reinsira-a corretamente.
+
+---
+
+## Passo 3: Arestas da última camada
+
+Posicione as **3 arestas da camada superior** em seus lugares corretos. Após este passo, cada aresta estará entre os dois centros corretos, mas pode ainda estar invertida.
+
+Observe a camada superior e determine em qual direção as arestas precisam ciclar:
+
+**Caso 1: Ciclo horário** — As três arestas precisam mover uma posição no sentido horário.
+
+**Algoritmo: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Caso 2: Ciclo anti-horário** — As três arestas precisam mover uma posição no sentido anti-horário.
+
+**Algoritmo: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Dicas:** Se apenas 2 arestas precisam ser trocadas, um destes algoritmos de 3 ciclos resolverá o problema — observe cuidadosamente a direção do ciclo.
+
+---
+
+## Passo 4: Orientar as arestas da última camada
+
+O último passo! Se as arestas da última camada estão nas posições corretas mas **invertidas** (cor errada voltada para fora), use este algoritmo para invertê-las.
+
+**Inverter 2 arestas: R U R' U R U R'**
+
+Segure o Pyraminx de modo que a aresta que **não** precisa ser invertida fique voltada para você. Então aplique o algoritmo.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Se todas as 3 arestas precisam ser invertidas, aplique este algoritmo uma vez — ele inverterá 2 delas, depois gire o topo para posicionar e inverter as 2 restantes (uma das previamente invertidas mais a última).
+
+---
+
+**Parabéns!** Você resolveu o Pyraminx! Com prática, o Pyraminx pode ser resolvido em apenas alguns segundos. É um dos quebra-cabeças mais rápidos de dominar — continue praticando e você o resolverá em menos de 10 segundos.

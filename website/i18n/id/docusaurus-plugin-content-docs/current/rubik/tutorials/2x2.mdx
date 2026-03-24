@@ -1,0 +1,136 @@
+---
+title: Cara Menyelesaikan Rubik's Cube 2×2
+sidebar_position: 1
+description: Pelajari cara menyelesaikan Rubik's Cube 2×2 langkah demi langkah menggunakan metode Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cara Menyelesaikan Rubik's Cube 2×2
+
+Pelajari cara menyelesaikan Rubik's Cube 2×2 menggunakan **metode Ortega** — pendekatan cepat dan efisien dalam 3 langkah. Kubus 2×2 tidak memiliki bagian tengah atau tepi, hanya sudut, menjadikannya puzzle yang bagus untuk pemula.
+
+## Notasi
+
+Kubus 2×2 menggunakan notasi yang sama dengan 3×3, tetapi tanpa gerakan lapisan tengah:
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+
+Huruf sendiri berarti **90° searah jarum jam**. Menambahkan **'** berarti **berlawanan arah jarum jam**. Menambahkan **2** berarti **180°**.
+
+Contoh: **R** = putar sisi kanan searah jarum jam, **R'** = berlawanan arah jarum jam, **R2** = 180°.
+
+Karena kubus 2×2 tidak memiliki pusat tetap, pilih **putih** sebagai warna awal dan pertahankan di **bawah**.
+
+---
+
+## Langkah 1: Selesaikan Sisi Pertama
+
+Buat sisi **putih** lengkap di bawah. Berbeda dengan 3×3, Anda **tidak** perlu mencocokkan warna samping — cukup taruh semua 4 stiker putih di sisi yang sama.
+
+Langkah ini **intuitif** — tidak ada algoritma tetap. Temukan setiap bagian sudut putih dan pindahkan ke sisi bawah.
+
+**Kasus 1: Sudut putih di lapisan atas** — Turunkan dengan penyisipan sederhana.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Kasus 2: Sudut putih di bawah tapi orientasinya salah** — Keluarkan dan masukkan kembali dengan benar.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tips:** Fokus hanya pada menempatkan 4 stiker putih di satu sisi. Warna samping belum penting — inilah yang membedakan Ortega dari metode pemula 3×3.
+
+---
+
+## Langkah 2: Orientasi Lapisan Terakhir (OLL)
+
+Buat **sisi berlawanan** (kuning) menjadi satu warna. Sekarang Anda perlu semua 4 stiker kuning menghadap ke atas.
+
+Lihat sisi atas dan identifikasi kasus mana yang Anda miliki:
+
+**Kasus 1: Satu sudut kuning menghadap ke atas (Sune)** — Pegang kubus dengan sudut yang sudah selesai di posisi kiri depan.
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Kasus 2: Tidak ada sudut kuning menghadap ke atas** — Terapkan Sune dua kali untuk mengorientasi semua sudut.
+
+**Algoritma: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Kasus 3: Dua sudut kuning diagonal menghadap ke atas** — Pegang kubus dengan dua sudut yang sudah selesai di posisi kiri depan dan kanan belakang.
+
+**Algoritma: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tips:** Jika Anda memiliki dua sudut kuning **bersebelahan** menghadap ke atas, gunakan Sune sekali untuk mencapai Kasus 1 atau Kasus 3.
+
+---
+
+## Langkah 3: Permutasi Kedua Lapisan (PBL)
+
+Langkah terakhir! Atur semua bagian sudut ke posisi yang benar untuk menyelesaikan kubus. Lihat **warna samping** lapisan atas dan bawah untuk menentukan pertukaran yang diperlukan.
+
+**Cara memeriksa:** Lihat sisi-sisi lapisan atas. Jika dua stiker bersebelahan di satu sisi berwarna sama, tidak perlu pertukaran atau perlu pertukaran bersebelahan. Jika setiap sisi memiliki dua warna berbeda, perlu pertukaran diagonal.
+
+**Kasus 1: Pertukaran diagonal di atas** — Dua sudut berlawanan perlu ditukar.
+
+**Algoritma: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Kasus 2: Pertukaran bersebelahan di atas** — Dua sudut bersebelahan perlu ditukar.
+
+**Algoritma: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Kasus 3: Pertukaran diagonal di kedua lapisan** — Gunakan algoritma cepat ini.
+
+**Algoritma: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Setelah menyelesaikan lapisan atas, Anda mungkin perlu memutar sisi bawah (D atau D') untuk menyelaraskan warna akhir. Jika lapisan bawah juga perlu pertukaran, terapkan algoritma pertukaran diagonal dengan menjaga lapisan yang belum selesai di atas.
+
+---
+
+**Selamat!** Anda telah menyelesaikan Rubik's Cube 2×2! Metode Ortega cepat dan efisien — dengan latihan, Anda bisa menyelesaikan 2×2 dalam waktu kurang dari 5 detik.

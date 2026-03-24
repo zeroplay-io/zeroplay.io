@@ -1,0 +1,158 @@
+---
+title: 4x4 Rubik Küpü Nasıl Çözülür
+sidebar_position: 4
+description: İndirgeme yöntemiyle 4x4 Rubik Küpünü adım adım çözmeyi öğrenin.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Rubik Küpü Nasıl Çözülür
+
+**İndirgeme yöntemi** ile 4x4 Rubik Küpünü (**Rubik'in İntikamı** olarak da bilinir) çözmeyi öğrenin — büyük küpler için en popüler yaklaşım. Fikir basit: önce 4x4'ü 3x3 gibi görünecek şekilde indirgeyin, sonra 3x3 olarak çözün. 4 adım artı özel parite durumlarını ele alacağız.
+
+## Notasyon
+
+4x4, tüm standart 3x3 notasyonuna ek olarak iç katmanlar için ekstra hareketler kullanır:
+
+**Standart hareketler** (yalnızca dış katman):
+- **R** = Sağ &nbsp;&nbsp; **L** = Sol &nbsp;&nbsp; **U** = Üst &nbsp;&nbsp; **D** = Alt &nbsp;&nbsp; **F** = Ön &nbsp;&nbsp; **B** = Arka
+
+**Geniş hareketler** (dış iki katman birlikte):
+- **Rw** = Sağ geniş (sağ iki katman) &nbsp;&nbsp; **Lw** = Sol geniş
+- **Uw** = Üst geniş (üst iki katman) &nbsp;&nbsp; **Dw** = Alt geniş
+- **Fw** = Ön geniş &nbsp;&nbsp; **Bw** = Arka geniş
+
+Tek başına bir harf **saat yönünde 90°** anlamına gelir. **'** ile **saat yönünün tersine**. **2** ile **180°**.
+
+Örneğin: **Rw** = sağ iki katman saat yönünde, **Uw'** = üst iki katman saat yönünün tersine, **Rw2** = sağ iki katman 180°.
+
+Tüm adımlarda küpü **beyaz merkez altta** ve **sarı merkez üstte** olacak şekilde tutun.
+
+---
+
+## Adım 1: Merkezleri Çözme
+
+Her yüzdeki **merkez bloklarını** oluşturun. 4x4'ün her yüzünde eşleşmesi gereken 4 merkez parça (2x2 blok) vardır. 3x3'ten farklı olarak, 4x4'ün merkezleri hareket edebilir — bu yüzden önce çözülmeleri gerekir.
+
+**Önerilen sıra:** **Beyaz** (alt) ile başlayın, sonra **sarı** (karşı), sonra kalan 4 yüz.
+
+Bu adım ağırlıklı olarak **sezgiseldir**. Anahtar teknik, zaten çözülmüş yüzleri dış katman dönüşleriyle korurken merkez parçaları bir araya getirmek için geniş hareketler kullanmaktır.
+
+**Temel merkez yerleştirme** — Bir merkez parçayı yukarı taşımak için geniş hareket kullanın, hizalamak için üst katmanı döndürün, sonra geniş hareketi geri alın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Çözülmüş yüzleri bozmadan merkez değişimi** — Bir merkez parça yerleştirmeniz gerekiyor ama diğer tamamlanmış merkezleri korumanız gerektiğinde:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**İpuçları:**
+- Her zaman önce karşılıklı yüzleri çözün (beyaz/sarı), sonra kalan 4 yüzü.
+- Merkez parça yerleştirirken, geniş hareket (Rw gibi) ile yukarı taşıyın, U katmanını ayarlayın, sonra geniş hareketi geri alın.
+- Yenileri üzerinde çalışırken tamamlanmış merkezleri bozmamaya dikkat edin.
+
+---
+
+## Adım 2: Kenarları Eşleştirme
+
+Her **kenar parçası** çiftini eşleştirerek 4x4'ün 3x3 gibi davranmasını sağlayın. 4x4'ün her kenarı eşleştirilmesi gereken 2 parçadan oluşur. Eşleştirilecek 12 kenar vardır.
+
+Temel teknik **Slice-Flip-Slice**: kenarları hizalamak için geniş hareket (Uw) kullanın, eşleştirmek için dış katman hareketi yapın, sonra geniş hareketi geri alın.
+
+**Temel kenar eşleştirme** — Bir kenar parçayı ön sağ konuma, eşini üste yerleştirin. Hizalamak için Uw kullanın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Çevirme ile eşleştirme** — Kenar çifti eşleştirme sırasında çevrilmesi gerektiğinde:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Son kenarları eşleştirme** — Son 3 kenar için, eşleştirilmiş kenarları bozmadan Uw'yi serbestçe kullanamazsınız. Bunun yerine bu tekniği kullanın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**İpuçları:**
+- İlk 8-9 kenar Slice-Flip-Slice tekniğiyle serbestçe eşleştirilebilir.
+- Son 3 kenar için, eşleştirilmiş kenarları bozmamak adına Dw tabanlı hareketler veya çevirme teknikleri kullanın.
+- Bir kenar çifti doğru konumdaysa ama ters dönmüşse, çıkarıp doğru şekilde yeniden eşleştirmeniz gerekir.
+
+---
+
+## Adım 3: 3x3 Olarak Çözme
+
+Tüm merkezler çözüldüğünde ve tüm kenarlar eşleştirildiğinde, 4x4 artık 3x3'e eşdeğerdir! Tamamlamak için herhangi bir **3x3 çözüm yöntemi** (katman katman yöntemi gibi) kullanın.
+
+**Önemli:** Bu aşamada yalnızca dış katman hareketlerini kullanın (R, U, F, L, D, B). Geniş hareketler (Rw, Uw vb.) **kullanmayın** çünkü eşleştirilmiş kenarlarınızı ve çözülmüş merkezlerinizi bozarlar.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Tam katman katman kılavuzu için [3x3 eğitimimize](./index.mdx) bakın. Aynı 7 adım geçerli — beyaz haç, beyaz köşeler, ikinci katman, sarı haç, sarı yüz, köşeleri konumlandırma ve kenarları konumlandırma.
+
+---
+
+## Adım 4: Parite Algoritmaları
+
+4x4'te **3x3'te asla oluşmayan** iki özel durum vardır. Bunlara **parite** denir ve her biri yaklaşık %50 olasılıkla gerçekleşir. 3x3 aşamasında karşılaşırsanız, ilgili algoritmayı uygulayın ve çözmeye devam edin.
+
+### OLL Paritesi (Tek Kenar Çevirme)
+
+**Nasıl görünür:** Son katmanda tek bir kenar ters dönmüş — gerçek bir 3x3'te imkansız. Sarı haç normal şekilde tamamlanamaz.
+
+**Algoritma: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Bu algoritma uzun ama sadece bir kez uygulanması yeterli. Uyguladıktan sonra kenar doğru yönlendirilecek ve normal 3x3 son katman adımlarına devam edebilirsiniz.
+
+### PLL Paritesi (İki Kenar Değişimi)
+
+**Nasıl görünür:** En sonda tam olarak iki kenarın yer değiştirmesi gerekiyor — yine 3x3'te imkansız.
+
+**Algoritma: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Bu kısa algoritma son katmandaki iki karşılıklı kenarı değiştirir. Uyguladıktan sonra küp tamamen çözülmüş olmalıdır.
+
+**İpuçları:**
+- Parite ile karşılaştığınızda panik yapmayın — 4x4 küplerde tamamen normaldir.
+- OLL paritesi sarı haç adımında ortaya çıkar. PLL paritesi en sonda ortaya çıkar.
+- Tek bir çözümde her ikisiyle, sadece biriyle veya hiçbiriyle karşılaşabilirsiniz.
+
+---
+
+**Tebrikler!** 4x4 Rubik Küpünü çözdünüz! İndirgeme yöntemi daha büyük küplere (5x5, 6x6 vb.) de iyi uyum sağlar — merkezleri çözme, kenarları eşleştirme ve 3x3 olarak çözme temel kavramları aynı kalır. Pratikle, 4x4'ü 3 dakikanın altında çözebileceksiniz.

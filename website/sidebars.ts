@@ -32,7 +32,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Rubik's Cube",
-      items: ["rubik/tutorials/index"],
+      items: ["rubik/tutorials/index", "rubik/tutorials/2x2", "rubik/tutorials/pyraminx", "rubik/tutorials/skewb", "rubik/tutorials/4x4"],
     },
   ],
 };

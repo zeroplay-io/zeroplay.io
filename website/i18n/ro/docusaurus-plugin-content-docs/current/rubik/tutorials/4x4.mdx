@@ -1,0 +1,143 @@
+---
+title: Cum să rezolvi cubul Rubik 4x4
+sidebar_position: 4
+description: Învață să rezolvi cubul Rubik 4x4 pas cu pas folosind metoda reducției.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cum să rezolvi cubul Rubik 4x4
+
+Învață să rezolvi cubul Rubik 4x4 (cunoscut și ca **Rubik's Revenge**) folosind **metoda reducției** — cea mai populară abordare pentru cuburi mari. Ideea este simplă: mai întâi reduci 4x4 să arate ca un 3x3, apoi îl rezolvi ca pe un 3x3. Acoperim 4 pași plus cazuri speciale de paritate.
+
+## Notație
+
+4x4 folosește toată notația standard 3x3 plus mișcări suplimentare pentru straturile interioare:
+
+**Mișcări standard** (doar stratul exterior):
+- **R** = Dreapta &nbsp;&nbsp; **L** = Stânga &nbsp;&nbsp; **U** = Sus &nbsp;&nbsp; **D** = Jos &nbsp;&nbsp; **F** = Față &nbsp;&nbsp; **B** = Spate
+
+**Mișcări largi** (două straturi exterioare împreună):
+- **Rw** = Dreapta larg (două straturi din dreapta) &nbsp;&nbsp; **Lw** = Stânga larg
+- **Uw** = Sus larg (două straturi de sus) &nbsp;&nbsp; **Dw** = Jos larg
+- **Fw** = Față larg &nbsp;&nbsp; **Bw** = Spate larg
+
+O literă singură înseamnă **90° în sensul acelor de ceasornic**. Cu **'** înseamnă **în sens invers**. Cu **2** înseamnă **180°**.
+
+De exemplu: **Rw** = două straturi din dreapta în sensul acelor, **Uw'** = două straturi de sus în sens invers, **Rw2** = două straturi din dreapta 180°.
+
+Ține cubul cu **centrul alb jos** și **centrul galben sus** pentru toți pașii.
+
+---
+
+## Pasul 1: Rezolvă centrele
+
+Construiește **blocurile centrale** pe fiecare față. Fiecare față a cubului 4x4 are 4 piese centrale (un bloc 2x2) care trebuie să se potrivească. Spre deosebire de 3x3, centrele unui 4x4 se pot mișca — deci trebuie rezolvate primele.
+
+**Ordine recomandată:** Începe cu **alb** (jos), apoi **galben** (opus), apoi cele 4 fețe rămase.
+
+Acest pas este în mare parte **intuitiv**. Tehnica cheie este utilizarea mișcărilor largi pentru a aduna piesele centrale protejând fețele deja rezolvate cu rotiri ale stratului exterior.
+
+**Inserare de bază a centrului**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Schimb de centru fără a strica fețele rezolvate**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+---
+
+## Pasul 2: Împerechează muchiile
+
+Împerechează fiecare pereche de **piese de muchie** astfel încât 4x4 să se comporte ca un 3x3. Fiecare muchie a unui 4x4 este formată din 2 piese care trebuie împerecheate. Sunt 12 muchii de împerecheat.
+
+Tehnica de bază este **Slice-Flip-Slice**: folosește o mișcare largă (Uw) pentru a alinia muchiile, execută o mișcare a stratului exterior pentru a le împerechea, apoi inversează mișcarea largă.
+
+**Împerechere de bază**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Împerechere cu inversare**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Împerecherea ultimelor muchii**:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+---
+
+## Pasul 3: Rezolvă ca 3x3
+
+Odată ce toate centrele sunt rezolvate și toate muchiile împerecheate, 4x4 este acum echivalent cu un 3x3! Folosește orice **metodă de rezolvare 3x3** pentru a termina.
+
+**Important:** În această fază, folosește doar mișcări ale stratului exterior (R, U, F, L, D, B). **Nu** folosi mișcări largi (Rw, Uw, etc.).
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Consultă [tutorialul nostru 3x3](./index.mdx) pentru ghidul complet.
+
+---
+
+## Pasul 4: Algoritmi de paritate
+
+4x4 are două situații speciale care **nu apar niciodată la 3x3**. Se numesc **paritate** și fiecare apare în aproximativ 50% din cazuri.
+
+### Paritate OLL (inversarea unei singure muchii)
+
+**Cum arată:** În ultimul strat, o singură muchie este inversată — imposibil pe un 3x3 real.
+
+**Algoritm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+### Paritate PLL (schimbarea a două muchii)
+
+**Cum arată:** La final, exact două muchii trebuie schimbate între ele.
+
+**Algoritm: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+**Sfaturi:**
+- Nu intra în panică la paritate — este complet normal la cuburile 4x4.
+- Paritatea OLL apare la pasul crucii galbene. Paritatea PLL apare la final.
+
+---
+
+**Felicitări!** Ai rezolvat cubul Rubik 4x4! Metoda reducției funcționează bine și pentru cuburi mai mari (5x5, 6x6, etc.). Cu practică, vei putea rezolva 4x4 în mai puțin de 3 minute.

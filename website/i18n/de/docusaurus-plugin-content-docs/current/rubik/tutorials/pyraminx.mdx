@@ -1,0 +1,128 @@
+---
+title: Wie man den Pyraminx löst
+sidebar_position: 2
+description: Lernen Sie Schritt für Schritt, den Pyraminx mit der Schicht-für-Schicht-Methode zu lösen.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Wie man den Pyraminx löst
+
+Lernen Sie, den Pyraminx mit der **Schicht-für-Schicht-Methode** zu lösen — dem einfachsten Anfänger-Ansatz. Der Pyraminx ist ein tetraederförmiges Puzzle mit 4 Spitzen, 6 Kanten und 4 Zentren. Wir lösen ihn in 4 einfachen Schritten.
+
+## Notation
+
+Der Pyraminx verwendet ein einzigartiges Notationssystem mit **Großbuchstaben** für Schichten und **Kleinbuchstaben** für Spitzen:
+
+**Schichten (Großbuchstaben)** — die gesamte Schicht drehen (ohne Spitze):
+
+- **U** = Obere Schicht &nbsp;&nbsp; **R** = Rechte Schicht &nbsp;&nbsp; **L** = Linke Schicht &nbsp;&nbsp; **B** = Hintere Schicht
+
+**Spitzen (Kleinbuchstaben)** — nur die Spitze drehen:
+
+- **u** = Obere Spitze &nbsp;&nbsp; **r** = Rechte Spitze &nbsp;&nbsp; **l** = Linke Spitze &nbsp;&nbsp; **b** = Hintere Spitze
+
+Ein Buchstabe allein bedeutet **120° im Uhrzeigersinn**. Ein **'** bedeutet **120° gegen den Uhrzeigersinn**.
+
+Zum Beispiel: **R** = rechte Schicht im Uhrzeigersinn drehen, **R'** = gegen den Uhrzeigersinn, **l** = linke Spitze im Uhrzeigersinn drehen, **l'** = gegen den Uhrzeigersinn.
+
+Halten Sie den Pyraminx bei allen Schritten mit **einer Seite zu Ihnen** und **einer Spitze nach oben**.
+
+---
+
+## Schritt 1: Spitzen lösen
+
+Richten Sie die **3 sichtbaren Spitzen** so aus, dass die Farbe jeder Spitze mit dem angrenzenden Zentrum übereinstimmt. Die 4. Spitze befindet sich unten und wird später behandelt.
+
+Dieser Schritt ist **intuitiv** — jede Spitze hat nur 3 mögliche Positionen, sodass maximal 2 Drehungen zum Lösen genügen. Drehen Sie einfach jede Spitze, bis ihre Farbe mit dem benachbarten Zentrum übereinstimmt.
+
+**Beispiel: Alle drei sichtbaren Spitzen lösen**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tipps:** Beginnen Sie immer mit diesem Schritt — er ist einfach und sofort erledigt. Sobald die Spitzen ausgerichtet sind, müssen Sie sie nicht mehr berühren.
+
+---
+
+## Schritt 2: Kanten der ersten Schicht
+
+Bauen Sie eine vollständige **erste Schicht** auf, indem Sie die 3 unteren Kanten in ihre richtigen Positionen bringen. Wählen Sie eine Seite als Unterseite (wir empfehlen, mit der Seite zu beginnen, die bereits die meisten passenden Farben hat).
+
+Dieser Schritt ist größtenteils intuitiv. Finden Sie jede Kante, die zur unteren Schicht gehört, und setzen Sie sie mit einfachen Schichtdrehungen ein.
+
+**Fall 1: Kante in der oberen Schicht, richtig orientiert** — Eine einzelne Schichtdrehung setzt sie direkt ein.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Fall 2: Kante in der oberen Schicht, gewendet** — Verwenden Sie zwei Schichtdrehungen zum Wenden und Einsetzen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tipps:** Wenn eine Kante bereits in der unteren Schicht ist, aber an der falschen Position, verwenden Sie eine Schichtdrehung, um sie nach oben herauszuholen, und setzen Sie sie dann richtig ein.
+
+---
+
+## Schritt 3: Kanten der letzten Schicht
+
+Bringen Sie die **3 Kanten der oberen Schicht** in ihre richtigen Positionen. Nach diesem Schritt befindet sich jede Kante zwischen den zwei richtigen Zentren, kann aber noch gewendet sein.
+
+Schauen Sie auf die obere Schicht und bestimmen Sie, in welche Richtung die Kanten zyklisch getauscht werden müssen:
+
+**Fall 1: Zyklus im Uhrzeigersinn** — Alle drei Kanten müssen eine Position im Uhrzeigersinn weiterrücken.
+
+**Algorithmus: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Fall 2: Zyklus gegen den Uhrzeigersinn** — Alle drei Kanten müssen eine Position gegen den Uhrzeigersinn weiterrücken.
+
+**Algorithmus: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tipps:** Wenn nur 2 Kanten getauscht werden müssen, löst einer dieser 3-Zyklus-Algorithmen das Problem — schauen Sie genau hin, in welche Richtung der Zyklus geht.
+
+---
+
+## Schritt 4: Kanten der letzten Schicht orientieren
+
+Der letzte Schritt! Wenn die Kanten der letzten Schicht an den richtigen Positionen sind, aber **gewendet** (falsche Farbe zeigt nach außen), verwenden Sie diesen Algorithmus zum Wenden.
+
+**2 Kanten wenden: R U R' U R U R'**
+
+Halten Sie den Pyraminx so, dass die Kante, die **nicht** gewendet werden muss, zu Ihnen zeigt. Dann wenden Sie den Algorithmus an.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Wenn alle 3 Kanten gewendet werden müssen, wenden Sie diesen Algorithmus einmal an — er wendet 2 davon, dann drehen Sie die obere Schicht zur Einrichtung und wenden die verbleibenden 2 (eine der zuvor gewendeten plus die letzte).
+
+---
+
+**Herzlichen Glückwunsch!** Sie haben den Pyraminx gelöst! Mit Übung kann der Pyraminx in nur wenigen Sekunden gelöst werden. Er ist eines der am schnellsten zu meisternden Puzzles — üben Sie weiter und Sie werden ihn in unter 10 Sekunden lösen.

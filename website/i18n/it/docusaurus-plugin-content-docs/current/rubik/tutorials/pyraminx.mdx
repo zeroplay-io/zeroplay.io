@@ -1,0 +1,128 @@
+---
+title: Come risolvere il Pyraminx
+sidebar_position: 2
+description: Impara a risolvere il Pyraminx passo dopo passo con il metodo strato per strato per principianti.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Come risolvere il Pyraminx
+
+Impara a risolvere il Pyraminx con il metodo **strato per strato** — l'approccio più semplice per principianti. Il Pyraminx è un puzzle a forma di tetraedro con 4 punte, 6 spigoli e 4 centri. Lo risolveremo in 4 semplici passaggi.
+
+## Notazione
+
+Il Pyraminx utilizza un sistema di notazione unico con **maiuscole** per gli strati e **minuscole** per le punte:
+
+**Strati (maiuscole)** — ruotare l'intero strato (esclusa la punta):
+
+- **U** = Strato superiore &nbsp;&nbsp; **R** = Strato destro &nbsp;&nbsp; **L** = Strato sinistro &nbsp;&nbsp; **B** = Strato posteriore
+
+**Punte (minuscole)** — ruotare solo la punta:
+
+- **u** = Punta superiore &nbsp;&nbsp; **r** = Punta destra &nbsp;&nbsp; **l** = Punta sinistra &nbsp;&nbsp; **b** = Punta posteriore
+
+Una lettera da sola significa **120° in senso orario**. Aggiungere **'** significa **120° in senso antiorario**.
+
+Per esempio: **R** = ruotare lo strato destro in senso orario, **R'** = senso antiorario, **l** = ruotare la punta sinistra in senso orario, **l'** = senso antiorario.
+
+Tieni il Pyraminx con **una faccia verso di te** e **una punta verso l'alto** per tutti i passaggi.
+
+---
+
+## Passaggio 1: Risolvere le punte
+
+Allinea le **3 punte visibili** in modo che il colore di ogni punta corrisponda al centro adiacente. La 4ª punta è sotto e sarà risolta dopo.
+
+Questo passaggio è **intuitivo** — ogni punta ha solo 3 posizioni possibili, quindi al massimo 2 rotazioni la risolvono. Ruota semplicemente ogni punta finché il suo colore corrisponde al centro vicino.
+
+**Esempio: Risolvere le tre punte visibili**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Suggerimenti:** Inizia sempre con questo passaggio — è gratuito e istantaneo. Una volta allineate le punte, non devi più toccarle.
+
+---
+
+## Passaggio 2: Spigoli del primo strato
+
+Costruisci un **primo strato** completo posizionando i 3 spigoli inferiori nelle loro posizioni corrette. Scegli una faccia come base (consigliamo di iniziare con la faccia che ha già più colori corrispondenti).
+
+Questo passaggio è principalmente intuitivo. Trova ogni spigolo che appartiene allo strato inferiore e inseriscilo con semplici rotazioni di strato.
+
+**Caso 1: Spigolo nello strato superiore, orientato correttamente** — Una singola rotazione di strato lo inserisce direttamente.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Caso 2: Spigolo nello strato superiore, capovolto** — Usa due rotazioni di strato per capovolgere e inserire.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Suggerimenti:** Se uno spigolo è già nello strato inferiore ma nella posizione sbagliata, usa una rotazione di strato per estrarlo verso l'alto, poi reinseriscilo correttamente.
+
+---
+
+## Passaggio 3: Spigoli dell'ultimo strato
+
+Posiziona i **3 spigoli dello strato superiore** nei loro posti corretti. Dopo questo passaggio, ogni spigolo sarà tra i due centri corretti, ma potrebbe essere ancora capovolto.
+
+Osserva lo strato superiore e determina in quale direzione gli spigoli devono ciclare:
+
+**Caso 1: Ciclo orario** — Tutti e tre gli spigoli devono spostarsi di una posizione in senso orario.
+
+**Algoritmo: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Caso 2: Ciclo antiorario** — Tutti e tre gli spigoli devono spostarsi di una posizione in senso antiorario.
+
+**Algoritmo: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Suggerimenti:** Se solo 2 spigoli devono essere scambiati, uno di questi algoritmi a 3 cicli risolverà il problema — osserva attentamente la direzione del ciclo.
+
+---
+
+## Passaggio 4: Orientare gli spigoli dell'ultimo strato
+
+L'ultimo passaggio! Se gli spigoli dell'ultimo strato sono nelle posizioni corrette ma **capovolti** (colore sbagliato rivolto verso l'esterno), usa questo algoritmo per capovolgerli.
+
+**Capovolgere 2 spigoli: R U R' U R U R'**
+
+Tieni il Pyraminx in modo che lo spigolo che **non** deve essere capovolto sia rivolto verso di te. Poi applica l'algoritmo.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Se tutti e 3 gli spigoli devono essere capovolti, applica questo algoritmo una volta — ne capovolgerà 2, poi ruota la parte superiore per posizionare e capovolgere i 2 rimanenti (uno dei precedentemente capovolti più l'ultimo).
+
+---
+
+**Congratulazioni!** Hai risolto il Pyraminx! Con la pratica, il Pyraminx può essere risolto in pochi secondi. È uno dei puzzle più veloci da padroneggiare — continua a esercitarti e lo risolverai in meno di 10 secondi.

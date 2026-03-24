@@ -1,0 +1,136 @@
+---
+title: Sådan løser du en 2×2 Rubiks terning
+sidebar_position: 1
+description: Lær at løse 2×2 Rubiks terning trin for trin med Ortega-metoden.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Sådan løser du en 2×2 Rubiks terning
+
+Lær at løse 2×2 Rubiks terning med **Ortega-metoden** — en hurtig og effektiv tilgang i 3 trin. 2×2-terningen har ingen center- eller kantbrikker, kun hjørner, hvilket gør den til et fantastisk puslespil at starte med.
+
+## Notation
+
+2×2 bruger samme notation som 3×3, men uden bevægelser af midterlaget:
+
+- **R** = Højre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Op &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bag
+
+Et bogstav alene betyder **90° med uret**. Tilføjelse af **'** betyder **mod uret**. Tilføjelse af **2** betyder **180°**.
+
+For eksempel: **R** = drej højre side med uret, **R'** = mod uret, **R2** = 180°.
+
+Da 2×2 ikke har faste centre, vælg **hvid** som startfarve og hold den i **bunden**.
+
+---
+
+## Trin 1: Løs den første side
+
+Byg en komplet **hvid side** i bunden. I modsætning til 3×3 behøver du **ikke** at matche sidefarver — bare få alle 4 hvide klistermærker på samme side.
+
+Dette trin er **intuitivt** — der er ingen faste algoritmer. Find hvert hvidt hjørnestykke og flyt det til bundsiden.
+
+**Tilfælde 1: Hvidt hjørne i topplaget** — Bring det ned med en simpel indsætning.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Tilfælde 2: Hvidt hjørne i bunden men forkert orienteret** — Tag det ud og sæt det rigtigt ind igen.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tips:** Fokuser kun på at få 4 hvide klistermærker på én side. Sidefarver er ligegyldige endnu — det er det, der gør Ortega anderledes end 3×3 begyndermetoden.
+
+---
+
+## Trin 2: Orienter det sidste lag (OLL)
+
+Gør den **modsatte side** (gul) helt ensfarvet. Du skal nu have alle 4 gule klistermærker pegende opad.
+
+Se på topsiden og identificer hvilken situation du har:
+
+**Tilfælde 1: Ét gult hjørne peger opad (Sune)** — Hold terningen så det løste hjørne er i forreste venstre position.
+
+**Algoritme: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Tilfælde 2: Ingen gule hjørner peger opad** — Anvend Sune to gange for at orientere alle hjørner.
+
+**Algoritme: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Tilfælde 3: To diagonale gule hjørner peger opad** — Hold terningen så de to løste hjørner er i forreste venstre og bagerste højre position.
+
+**Algoritme: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tips:** Hvis du har to **tilstødende** gule hjørner pegende opad, brug Sune én gang for at nå Tilfælde 1 eller Tilfælde 3.
+
+---
+
+## Trin 3: Permuter begge lag (PBL)
+
+Det sidste trin! Arranger alle hjørnestykker til deres korrekte positioner for at løse terningen. Se på **sidefarver** af top- og bundlagene for at bestemme hvilken bytning der er nødvendig.
+
+**Sådan tjekker du:** Se på siderne af toplaget. Hvis to tilstødende klistermærker på én side har samme farve, er der ingen bytning nødvendig eller en tilstødende bytning er nødvendig. Hvis hver side har to forskellige farver, er en diagonal bytning nødvendig.
+
+**Tilfælde 1: Diagonal bytning i toppen** — To modsatte hjørner skal byttes.
+
+**Algoritme: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Tilfælde 2: Tilstødende bytning i toppen** — To nabohjørner skal byttes.
+
+**Algoritme: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Tilfælde 3: Diagonal bytning i begge lag** — Brug denne hurtige algoritme.
+
+**Algoritme: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Efter at have løst toplaget skal du muligvis dreje bundsiden (D eller D') for at justere de endelige farver. Hvis bundlaget også har brug for en bytning, anvend den diagonale bytningsalgoritme mens du holder det uløste lag i toppen.
+
+---
+
+**Tillykke!** Du har løst 2×2 Rubiks terning! Ortega-metoden er hurtig og effektiv — med øvelse kan du løse 2×2 på under 5 sekunder.

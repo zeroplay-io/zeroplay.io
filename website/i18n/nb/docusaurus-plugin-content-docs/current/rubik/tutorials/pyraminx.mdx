@@ -1,0 +1,128 @@
+---
+title: Hvordan løse Pyraminx
+sidebar_position: 2
+description: Lær å løse Pyraminx steg for steg med lag-for-lag-metoden for nybegynnere.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hvordan løse Pyraminx
+
+Lær å løse Pyraminx med **lag-for-lag**-metoden — den enkleste tilnærmingen for nybegynnere. Pyraminx er et tetraederformet puslespill med 4 spisser, 6 kanter og 4 sentre. Vi løser det i 4 enkle trinn.
+
+## Notasjon
+
+Pyraminx bruker et unikt notasjonssystem med **store** bokstaver for lag og **små** bokstaver for spisser:
+
+**Lag (store bokstaver)** — drei hele laget (uten spiss):
+
+- **U** = Øvre lag &nbsp;&nbsp; **R** = Høyre lag &nbsp;&nbsp; **L** = Venstre lag &nbsp;&nbsp; **B** = Bakre lag
+
+**Spisser (små bokstaver)** — drei bare spissen:
+
+- **u** = Øvre spiss &nbsp;&nbsp; **r** = Høyre spiss &nbsp;&nbsp; **l** = Venstre spiss &nbsp;&nbsp; **b** = Bakre spiss
+
+En bokstav alene betyr **120° med klokka**. Å legge til **'** betyr **120° mot klokka**.
+
+For eksempel: **R** = drei høyre lag med klokka, **R'** = mot klokka, **l** = drei venstre spiss med klokka, **l'** = mot klokka.
+
+Hold Pyraminx med **én side mot deg** og **én spiss oppover** i alle trinn.
+
+---
+
+## Trinn 1: Løs spissene
+
+Juster de **3 synlige spissene** slik at fargen på hver spiss matcher det tilstøtende senteret. Den 4. spissen er på bunnen og løses senere.
+
+Dette trinnet er **intuitivt** — hver spiss har bare 3 mulige posisjoner, så maksimalt 2 dreininger løser den. Drei bare hver spiss til fargen matcher det nærliggende senteret.
+
+**Eksempel: Løse alle tre synlige spisser**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**Tips:** Start alltid med dette trinnet — det er gratis og øyeblikkelig. Når spissene er justert, trenger du aldri å røre dem igjen.
+
+---
+
+## Trinn 2: Kanter i første lag
+
+Bygg et komplett **første lag** ved å plassere de 3 nederste kantene i sine korrekte posisjoner. Velg en side som bunn (vi anbefaler å starte med siden som allerede har flest matchende farger).
+
+Dette trinnet er hovedsakelig intuitivt. Finn hver kant som hører til det nederste laget og sett den inn med enkle lagdreininger.
+
+**Tilfelle 1: Kant i øvre lag, korrekt orientert** — En enkelt lagdreining setter den rett inn.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Tilfelle 2: Kant i øvre lag, snudd** — Bruk to lagdreininger for å snu og sette inn.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**Tips:** Hvis en kant allerede er i det nederste laget men i feil posisjon, bruk en lagdreining for å ta den opp, og sett den deretter korrekt inn.
+
+---
+
+## Trinn 3: Kanter i siste lag
+
+Plasser de **3 kantene i øvre lag** i sine korrekte posisjoner. Etter dette trinnet vil hver kant være mellom de to korrekte sentrene, men kan fortsatt være snudd.
+
+Se på det øvre laget og bestem hvilken retning kantene må sykle:
+
+**Tilfelle 1: Syklus med klokka** — Alle tre kantene må flytte én posisjon med klokka.
+
+**Algoritme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Tilfelle 2: Syklus mot klokka** — Alle tre kantene må flytte én posisjon mot klokka.
+
+**Algoritme: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**Tips:** Hvis bare 2 kanter trenger å byttes, vil en av disse 3-syklus algoritmene løse det — se nøye etter hvilken retning syklusen går.
+
+---
+
+## Trinn 4: Orienter kanter i siste lag
+
+Det siste trinnet! Hvis kantene i siste lag er i korrekte posisjoner men **snudd** (feil farge utover), bruk denne algoritmen for å snu dem.
+
+**Snu 2 kanter: R U R' U R U R'**
+
+Hold Pyraminx slik at kanten som **ikke** trenger å snues peker mot deg. Bruk deretter algoritmen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+Hvis alle 3 kantene trenger å snues, bruk denne algoritmen én gang — den snur 2, drei deretter toppen for å stille opp og snu de resterende 2 (én av de tidligere snudde pluss den siste).
+
+---
+
+**Gratulerer!** Du har løst Pyraminx! Med øvelse kan Pyraminx løses på bare noen sekunder. Det er et av de raskeste puslespillene å mestre — fortsett å øve, og du vil løse det på under 10 sekunder.

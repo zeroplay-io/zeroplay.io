@@ -1,0 +1,158 @@
+---
+title: Come risolvere il cubo di Rubik 4x4
+sidebar_position: 4
+description: Impara a risolvere il cubo di Rubik 4x4 passo dopo passo con il metodo di riduzione.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Come risolvere il cubo di Rubik 4x4
+
+Impara a risolvere il cubo di Rubik 4x4 (chiamato anche **Rubik's Revenge**) usando il **metodo di riduzione** — l'approccio più popolare per i cubi grandi. L'idea è semplice: prima riduci il 4x4 in modo che sembri un 3x3, poi risolvilo come un 3x3. Copriamo 4 passaggi più casi speciali di parità.
+
+## Notazione
+
+Il 4x4 usa tutta la notazione standard del 3x3 più movimenti aggiuntivi per gli strati interni:
+
+**Movimenti standard** (solo strato esterno):
+- **R** = Destra &nbsp;&nbsp; **L** = Sinistra &nbsp;&nbsp; **U** = Su &nbsp;&nbsp; **D** = Giù &nbsp;&nbsp; **F** = Fronte &nbsp;&nbsp; **B** = Retro
+
+**Movimenti ampi** (due strati esterni insieme):
+- **Rw** = Destra ampio (due strati destri) &nbsp;&nbsp; **Lw** = Sinistra ampio
+- **Uw** = Su ampio (due strati superiori) &nbsp;&nbsp; **Dw** = Giù ampio
+- **Fw** = Fronte ampio &nbsp;&nbsp; **Bw** = Retro ampio
+
+Una lettera da sola significa **90° in senso orario**. Con **'** significa **senso antiorario**. Con **2** significa **180°**.
+
+Per esempio: **Rw** = due strati destri in senso orario, **Uw'** = due strati superiori in senso antiorario, **Rw2** = due strati destri 180°.
+
+Tieni il cubo con il **centro bianco in basso** e il **centro giallo in alto** per tutti i passaggi.
+
+---
+
+## Passaggio 1: Risolvere i centri
+
+Costruisci i **blocchi centrali** su ogni faccia. Ogni faccia del 4x4 ha 4 pezzi centrali (un blocco 2x2) che devono combaciare. A differenza del 3x3, i centri di un 4x4 possono muoversi — quindi devono essere risolti per primi.
+
+**Ordine consigliato:** Inizia con il **bianco** (sotto), poi il **giallo** (opposto), poi i 4 lati rimanenti.
+
+Questo passaggio è principalmente **intuitivo**. La tecnica chiave è usare movimenti ampi per riunire i pezzi centrali proteggendo le facce già risolte con rotazioni dello strato esterno.
+
+**Inserimento base del centro** — Usa un movimento ampio per portare un pezzo centrale in alto, gira lo strato superiore per allineare, poi inverti il movimento ampio:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Scambio di centro senza rompere le facce risolte** — Quando devi inserire un pezzo centrale ma devi proteggere altri centri completati:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Suggerimenti:**
+- Risolvi sempre prima le facce opposte (bianco/giallo), poi i 4 lati restanti.
+- Per inserire un pezzo centrale, usa un movimento ampio (come Rw) per portarlo in alto, aggiusta lo strato U, poi annulla il movimento ampio.
+- Fai attenzione a non disturbare i centri completati quando lavori su quelli nuovi.
+
+---
+
+## Passaggio 2: Accoppiare gli spigoli
+
+Abbina ogni coppia di **pezzi spigolo** in modo che il 4x4 si comporti come un 3x3. Ogni spigolo di un 4x4 è composto da 2 pezzi che devono essere accoppiati. Ci sono 12 spigoli da accoppiare.
+
+La tecnica principale è **Slice-Flip-Slice**: usa un movimento ampio (Uw) per allineare gli spigoli, esegui un movimento dello strato esterno per accoppiarli, poi annulla il movimento ampio.
+
+**Accoppiamento base degli spigoli** — Posiziona un pezzo spigolo nella posizione frontale destra e il suo partner in alto. Usa Uw per allineare:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+**Accoppiamento con ribaltamento** — Quando la coppia di spigoli deve essere ribaltata durante l'accoppiamento:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Accoppiamento degli ultimi spigoli** — Per gli ultimi 3 spigoli, non puoi usare Uw liberamente senza rompere gli spigoli già accoppiati. Usa questa tecnica:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw F' R U' F R' Dw'"
+  alg="Dw R F' U R' F Dw'"
+/>
+
+**Suggerimenti:**
+- I primi 8-9 spigoli si possono accoppiare liberamente con la tecnica Slice-Flip-Slice.
+- Per gli ultimi 3 spigoli, usa movimenti basati su Dw o tecniche di ribaltamento per evitare di rompere gli spigoli già accoppiati.
+- Se una coppia di spigoli è nella posizione corretta ma ribaltata, devi estrarla e riaccoppiarla correttamente.
+
+---
+
+## Passaggio 3: Risolvere come un 3x3
+
+Una volta risolti tutti i centri e accoppiati tutti gli spigoli, il 4x4 è ora equivalente a un 3x3! Usa qualsiasi **metodo di risoluzione del 3x3** (come il metodo strato per strato) per completare.
+
+**Importante:** Durante questa fase, usa solo movimenti dello strato esterno (R, U, F, L, D, B). **Non** usare movimenti ampi (Rw, Uw, ecc.) poiché romperebbero i tuoi spigoli accoppiati e centri risolti.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Consulta il nostro [tutorial del 3x3](./index.mdx) per la guida completa del metodo strato per strato. Si applicano gli stessi 7 passaggi — croce bianca, angoli bianchi, secondo strato, croce gialla, faccia gialla, posizionare angoli e posizionare spigoli.
+
+---
+
+## Passaggio 4: Algoritmi di parità
+
+Il 4x4 ha due situazioni speciali che **non si verificano mai su un 3x3**. Si chiamano casi di **parità** e ciascuno si verifica circa il 50% delle volte. Se ne incontri uno durante la fase 3x3, applica l'algoritmo corrispondente e continua a risolvere.
+
+### Parità OLL (ribaltamento di un singolo spigolo)
+
+**Come appare:** Durante l'ultimo strato, un singolo spigolo è ribaltato — impossibile su un vero 3x3. La croce gialla non può essere completata normalmente.
+
+**Algoritmo: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw' U2 Rw U2' Lw' U2 Rw U2' Rw' U2 Rw U2' Rw' x' U2' Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Questo algoritmo è lungo, ma deve essere applicato solo una volta. Dopo l'esecuzione, lo spigolo sarà correttamente orientato e potrai continuare con i normali passaggi dell'ultimo strato del 3x3.
+
+### Parità PLL (scambio di due spigoli)
+
+**Come appare:** Alla fine, esattamente due spigoli devono essere scambiati — di nuovo, impossibile su un 3x3.
+
+**Algoritmo: 2R2 U2 2R2 Uw2 2R2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 2R2 Uw2 2R2 U2 2R2"
+  alg="2R2 U2 2R2 Uw2 2R2 Uw2"
+/>
+
+Questo breve algoritmo scambia due spigoli opposti nell'ultimo strato. Dopo l'applicazione, il cubo dovrebbe essere completamente risolto.
+
+**Suggerimenti:**
+- Non farti prendere dal panico con la parità — è completamente normale sui cubi 4x4.
+- La parità OLL appare durante il passaggio della croce gialla. La parità PLL appare alla fine.
+- Puoi incontrare entrambe, solo una, o nessuna parità in una singola risoluzione.
+
+---
+
+**Congratulazioni!** Hai risolto il cubo di Rubik 4x4! Il metodo di riduzione si adatta bene a cubi ancora più grandi (5x5, 6x6, ecc.) — i concetti fondamentali di risolvere i centri, accoppiare gli spigoli e risolvere come un 3x3 rimangono gli stessi. Con la pratica, sarai in grado di risolvere il 4x4 in meno di 3 minuti.

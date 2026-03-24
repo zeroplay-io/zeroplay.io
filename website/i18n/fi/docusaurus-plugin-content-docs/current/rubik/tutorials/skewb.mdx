@@ -1,0 +1,120 @@
+---
+title: Kuinka ratkaista Skewb
+sidebar_position: 3
+description: Opi ratkaisemaan Skewb vaihe vaiheelta Sarahin aloittelijamenetelmällä.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kuinka ratkaista Skewb
+
+Opi ratkaisemaan Skewb **Sarahin aloittelijamenetelmällä** — yksinkertainen ja tehokas lähestymistapa aloittelijoille. Skewb on kulma-käännettävä palapeli, jossa jokainen siirto kääntää kulman ja kolme viereistä sivua. Ratkaisemme sen vain 3 vaiheessa käyttäen yhtä ydinalgoritimia: Sledgehammeria.
+
+## Merkintätapa
+
+Toisin kuin tavallisessa Rubikin kuutiossa, Skewb kääntyy **kulmien** ympäri sivujen sijaan. Jokainen siirto kääntää yhden kulman ja kolme viereistä keskipalaa:
+
+- **R** = Oikea etukulma myötäpäivään &nbsp;&nbsp; **R'** = Oikea etukulma vastapäivään
+- **L** = Vasen etukulma myötäpäivään &nbsp;&nbsp; **L'** = Vasen etukulma vastapäivään
+- **U** = Ylempi oikea etukulma myötäpäivään &nbsp;&nbsp; **U'** = Ylempi oikea etukulma vastapäivään
+- **B** = Takaoikea kulma myötäpäivään &nbsp;&nbsp; **B'** = Takaoikea kulma vastapäivään
+
+Pelkkä kirjain tarkoittaa **myötäpäivään** käännöstä. **'** -merkin lisääminen tarkoittaa **vastapäivään**.
+
+Pidä Skewbiä siten, että **valkoinen keskipala on alhaalla** kaikissa vaiheissa.
+
+---
+
+## Vaihe 1: Ratkaise yksi sivu
+
+Rakenna täydellinen **valkoinen sivu** alaosaan. Tämä tarkoittaa, että kaikkien 4 kulman valkoisen keskipalkan ympärillä tulee olla paikoillaan valkoinen alaspäin, ja viereisten sivujen värien tulee täsmätä.
+
+Tämä vaihe on puoli-intuitiivinen. Avaintyökalu on **Sledgehammer** — Skewbin tärkein algoritmi:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Käytä Sledgehammeria ja valmistelusiirotoja asettaaksesi jokaisen valkoisen kulman alakerrokseen. Tässä esimerkki kulman asettamisesta:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Vinkit:**
+- Aloita asettamalla valkoinen keskipala alas.
+- Ratkaise kulmat yksi kerrallaan, varoen ettet häiritse jo paikallaan olevia paloja.
+- Tämän vaiheen jälkeen alapuolen tulee olla kokonaan valkoinen, ja jokaisella viereisellä sivulla tulee olla vastaava kulmaväri.
+
+---
+
+## Vaihe 2: Vastakkaisten keskipalojen sijoittaminen
+
+Säädä **yläkeskipala ja 4 sivukeskipalaa** niin, että ne kaikki ovat oikeissa paikoissaan. Alasivu pysyy ratkaistuna.
+
+Sledgehammer on jälleen avainalgoritmi. Se vaihtaa yläkeskipalkan sivukeskipalkaan:
+
+**Tapaus 1: Vaihda 2 keskipalaa** — Käytä Sledgehammeria vaihtaaksesi ylä- ja etukeskipalat.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tapaus 2: 3 keskipalan kierrätys** — Kun kolme keskipalaa tarvitsee kierrättää, käytä Sledgehammeria kahdesti (Tuplä-Sledgehammer):
+
+**Tupla-Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Vinkit:**
+- Käännä palapelia asettaaksesi oikeat keskipalat etu- ja yläasemiin ennen algoritmin käyttöä.
+- Jos vain 2 keskipalaa tarvitsee vaihtaa, yksi Sledgehammer riittää. Jos 3 keskipalaa tarvitsee kierrättää, käytä Tupla-Sledgehammeria.
+
+---
+
+## Vaihe 3: Viimeisen kerroksen kulmien suuntaaminen
+
+Viimeinen vaihe! Käännä **4 yläkerroksen kulmaa** niin, että niiden värit osoittavat oikeaan suuntaan, ja viimeistele ratkaisu.
+
+**Tapaus 1: Kaikki 4 kulmaa tarvitsevat myötäpäivään käännöksen** — Käytä tätä algoritmia:
+
+**Algoritmi: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Tapaus 2: Jotkut kulmat tarvitsevat säätöä** — Käytä Sledgehammeria valmistelusiitojen kanssa yksittäisten kulmien suuntaamiseen:
+
+**Algoritmi: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Vinkit:**
+- Jos vain jotkin kulmat tarvitsevat kääntöä, käytä valmistelusiirotoja (U tai U') tuodaksesi ratkaisemattomat kulmat paikoilleen, käytä algoritmia ja kumoa sitten valmistelusiirrto.
+- Saatat joutua toistamaan prosessin jäljellä oleville kulmille.
+
+---
+
+**Onnittelut!** Olet ratkaissut Skewbin! Skewb on yksi tyydyttävimmistä palapeleistä, koska tarvitset niin vähän algoritmeja. Harjoittelulla ratkaiset sen alle 10 sekunnissa. Jatka Sledgehammerin harjoittelua — se on avain tämän palapelin hallitsemiseen.

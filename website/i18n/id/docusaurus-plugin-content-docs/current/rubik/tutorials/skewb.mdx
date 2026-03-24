@@ -1,0 +1,120 @@
+---
+title: Cara Menyelesaikan Skewb
+sidebar_position: 3
+description: Pelajari cara menyelesaikan Skewb langkah demi langkah menggunakan Metode Pemula Sarah.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cara Menyelesaikan Skewb
+
+Pelajari cara menyelesaikan Skewb menggunakan **Metode Pemula Sarah** — pendekatan yang sederhana dan efisien untuk pemula. Skewb adalah puzzle putar-sudut di mana setiap gerakan memutar satu sudut dan tiga sisi yang berdekatan. Kita akan menyelesaikannya hanya dalam 3 langkah menggunakan satu algoritma inti: Sledgehammer.
+
+## Notasi
+
+Berbeda dengan Rubik's Cube standar, Skewb berputar di sekitar **sudut** bukan sisi. Setiap gerakan memutar satu sudut dan tiga pusat sisi yang berdekatan:
+
+- **R** = Sudut depan kanan searah jarum jam &nbsp;&nbsp; **R'** = Sudut depan kanan berlawanan jarum jam
+- **L** = Sudut depan kiri searah jarum jam &nbsp;&nbsp; **L'** = Sudut depan kiri berlawanan jarum jam
+- **U** = Sudut depan kanan atas searah jarum jam &nbsp;&nbsp; **U'** = Sudut depan kanan atas berlawanan jarum jam
+- **B** = Sudut belakang kanan searah jarum jam &nbsp;&nbsp; **B'** = Sudut belakang kanan berlawanan jarum jam
+
+Huruf saja berarti putaran **searah jarum jam**. Menambahkan **'** berarti **berlawanan jarum jam**.
+
+Pegang Skewb dengan **pusat putih di bawah** untuk semua langkah.
+
+---
+
+## Langkah 1: Selesaikan Satu Sisi
+
+Bangun **sisi putih** yang lengkap di bagian bawah. Ini berarti semua 4 sudut di sekitar pusat putih harus berada di tempatnya dengan putih menghadap ke bawah, dan warna sisi yang berdekatan harus cocok.
+
+Langkah ini semi-intuitif. Alat utama adalah **Sledgehammer** — algoritma terpenting untuk Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Gunakan Sledgehammer dan gerakan persiapan untuk menempatkan setiap sudut putih ke lapisan bawah. Berikut contoh memasukkan sudut:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Mulailah dengan menempatkan pusat putih di bawah.
+- Selesaikan sudut satu per satu, berhati-hati agar tidak menggeser bagian yang sudah terpasang.
+- Setelah langkah ini, sisi bawah harus seluruhnya putih, dan setiap sisi yang berdekatan harus memiliki warna sudut yang cocok.
+
+---
+
+## Langkah 2: Posisikan Pusat yang Berlawanan
+
+Sesuaikan **pusat atas dan 4 pusat sisi** agar semuanya berada di posisi yang benar. Sisi bawah tetap terselesaikan.
+
+Sledgehammer sekali lagi menjadi algoritma kunci. Algoritma ini menukar pusat atas dengan pusat sisi:
+
+**Kasus 1: Tukar 2 pusat** — Gunakan Sledgehammer untuk menukar pusat atas dan depan.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Kasus 2: Siklus 3 pusat** — Ketika tiga pusat perlu diputar, terapkan Sledgehammer dua kali (Sledgehammer Ganda):
+
+**Sledgehammer Ganda: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tips:**
+- Putar puzzle untuk mempersiapkan pusat yang benar di posisi depan dan atas sebelum menerapkan algoritma.
+- Jika hanya 2 pusat yang perlu ditukar, satu Sledgehammer sudah cukup. Jika 3 pusat perlu disiklus, gunakan Sledgehammer Ganda.
+
+---
+
+## Langkah 3: Orientasikan Sudut Lapisan Terakhir
+
+Langkah terakhir! Putar **4 sudut lapisan atas** agar warnanya menghadap arah yang benar, menyelesaikan puzzle.
+
+**Kasus 1: Semua 4 sudut perlu putaran searah jarum jam** — Terapkan algoritma ini:
+
+**Algoritma: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Kasus 2: Beberapa sudut perlu penyesuaian** — Gunakan Sledgehammer dengan gerakan persiapan untuk mengorientasikan sudut individual:
+
+**Algoritma: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tips:**
+- Jika hanya beberapa sudut yang perlu diputar, gunakan gerakan persiapan (U atau U') untuk membawa sudut yang belum terselesaikan ke posisi, terapkan algoritma, lalu batalkan gerakan persiapan.
+- Anda mungkin perlu mengulangi proses untuk sudut yang tersisa.
+
+---
+
+**Selamat!** Anda telah menyelesaikan Skewb! Skewb adalah salah satu puzzle yang paling memuaskan untuk diselesaikan karena Anda hanya memerlukan sedikit algoritma. Dengan latihan, Anda akan menyelesaikannya dalam waktu kurang dari 10 detik. Terus berlatih Sledgehammer — itulah kunci untuk menguasai puzzle ini.

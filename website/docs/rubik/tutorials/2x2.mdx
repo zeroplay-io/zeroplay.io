@@ -1,0 +1,136 @@
+---
+title: How to Solve a 2x2 Rubik's Cube
+sidebar_position: 1
+description: Learn to solve the 2x2 Rubik's Cube step by step using the Ortega method.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# How to Solve a 2x2 Rubik's Cube
+
+Learn to solve the 2x2 Rubik's Cube using the **Ortega method** — a fast and efficient 3-step approach. The 2x2 has no center or edge pieces, only corners, making it a great puzzle to start with.
+
+## Notation
+
+The 2x2 uses the same notation as the 3x3, but there are no middle-layer moves:
+
+- **R** = Right &nbsp;&nbsp; **L** = Left &nbsp;&nbsp; **U** = Up &nbsp;&nbsp; **D** = Down &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Back
+
+A letter alone means **clockwise 90°**. Adding **'** means **counter-clockwise**. Adding **2** means **180°**.
+
+For example: **R** = turn right face clockwise, **R'** = counter-clockwise, **R2** = 180°.
+
+Since the 2x2 has no fixed centers, choose **white** as your starting color and keep it on the **bottom**.
+
+---
+
+## Step 1: Solve the First Face
+
+Build a complete **white face** on the bottom. Unlike the 3x3, you do **not** need to match side colors — just get all 4 white stickers on the same face.
+
+This step is **intuitive** — there are no fixed algorithms. Find each white corner piece and move it to the bottom face.
+
+**Case 1: White corner on top layer** — Bring it down with a simple insertion.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Case 2: White corner on bottom but oriented wrong** — Pop it out and re-insert correctly.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Tips:** Focus only on getting 4 white stickers on one face. Side colors don't matter yet — this is what makes Ortega different from the beginner 3x3 method.
+
+---
+
+## Step 2: Orient the Last Layer (OLL)
+
+Make the **opposite face** (yellow) all the same color. You now need all 4 yellow stickers facing up.
+
+Look at the top face and identify which case you have:
+
+**Case 1: One yellow corner facing up (Sune)** — Hold the cube so the solved corner is at the front-left position.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Case 2: No yellow corners facing up** — Apply Sune twice to orient all corners.
+
+**Algorithm: R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Case 3: Two diagonal yellow corners facing up** — Hold the cube so the two solved corners are at the front-left and back-right positions.
+
+**Algorithm: R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Tips:** If you have two **adjacent** yellow corners facing up, use Sune once to reach either Case 1 or Case 3.
+
+---
+
+## Step 3: Permute Both Layers (PBL)
+
+The final step! Arrange all corner pieces into their correct positions to solve the cube. Look at the **side colors** of the top and bottom layers to determine which swap is needed.
+
+**How to check:** Look at the sides of the top layer. If two adjacent stickers on one side are the same color, no swap or an adjacent swap is needed. If each side has two different colors, a diagonal swap is needed.
+
+**Case 1: Diagonal swap on top** — Two opposite corners need to swap.
+
+**Algorithm: R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Case 2: Adjacent swap on top** — Two neighboring corners need to swap.
+
+**Algorithm: R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Case 3: Diagonal swap on both layers** — Use this quick algorithm.
+
+**Algorithm: R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+After solving the top layer, you may need to rotate the bottom face (D or D') to align the final colors. If the bottom layer also needs a swap, apply the diagonal swap algorithm while holding the unsolved layer on top.
+
+---
+
+**Congratulations!** You've solved the 2x2 Rubik's Cube! The Ortega method is fast and efficient — with practice, you can solve the 2x2 in under 5 seconds.

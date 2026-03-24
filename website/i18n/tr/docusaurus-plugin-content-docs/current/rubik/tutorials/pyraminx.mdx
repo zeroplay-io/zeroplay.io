@@ -1,0 +1,128 @@
+---
+title: Pyraminx Nasıl Çözülür
+sidebar_position: 2
+description: Yeni başlayanlar için katman katman yöntemiyle Pyraminx'i adım adım çözmeyi öğrenin.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pyraminx Nasıl Çözülür
+
+**Katman katman** yöntemiyle Pyraminx'i çözmeyi öğrenin — yeni başlayanlar için en kolay yaklaşım. Pyraminx, 4 uç, 6 kenar ve 4 merkezden oluşan bir dörtyüzlü şeklinde bulmacadır. 4 basit adımda çözeceğiz.
+
+## Notasyon
+
+Pyraminx, **büyük** harflerle katmanları ve **küçük** harflerle uçları gösteren benzersiz bir notasyon sistemi kullanır:
+
+**Katmanlar (büyük harfler)** — tüm katmanı döndür (uç hariç):
+
+- **U** = Üst katman &nbsp;&nbsp; **R** = Sağ katman &nbsp;&nbsp; **L** = Sol katman &nbsp;&nbsp; **B** = Arka katman
+
+**Uçlar (küçük harfler)** — sadece ucu döndür:
+
+- **u** = Üst uç &nbsp;&nbsp; **r** = Sağ uç &nbsp;&nbsp; **l** = Sol uç &nbsp;&nbsp; **b** = Arka uç
+
+Tek başına bir harf **saat yönünde 120°** anlamına gelir. **'** eklemek **saat yönünün tersine 120°** anlamına gelir.
+
+Örneğin: **R** = sağ katmanı saat yönünde döndür, **R'** = saat yönünün tersine, **l** = sol ucu saat yönünde döndür, **l'** = saat yönünün tersine.
+
+Tüm adımlarda Pyraminx'i **bir yüzü size bakacak** ve **bir ucu yukarı gösterecek** şekilde tutun.
+
+---
+
+## Adım 1: Uçları Çözün
+
+**3 görünen ucu** hizalayarak her ucun renginin bitişik merkeze eşleşmesini sağlayın. 4. uç alttadır ve daha sonra çözülecektir.
+
+Bu adım **sezgiseldir** — her ucun sadece 3 olası konumu vardır, bu yüzden en fazla 2 çevirme çözer. Her ucu renginin komşu merkeze uyması için döndürün.
+
+**Örnek: Üç görünen ucun çözülmesi**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R' L"
+  alg="L' R U'"
+/>
+
+**İpuçları:** Her zaman bu adımla başlayın — ücretsiz ve anlıktır. Uçlar hizalandığında bir daha dokunmanıza gerek yoktur.
+
+---
+
+## Adım 2: İlk Katman Kenarları
+
+3 alt kenarı doğru pozisyonlarına yerleştirerek eksiksiz bir **ilk katman** oluşturun. Bir yüzü taban olarak seçin (zaten en çok eşleşen renklere sahip yüzle başlamanızı öneririz).
+
+Bu adım çoğunlukla sezgiseldir. Alt katmana ait her kenarı bulun ve basit katman döndürmeleriyle yerleştirin.
+
+**Durum 1: Kenar üst katmanda, doğru yönlenmiş** — Tek bir katman döndürme doğrudan yerleştirir.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="l'"
+  alg="l"
+/>
+
+**Durum 2: Kenar üst katmanda, ters** — Çevirmek ve yerleştirmek için iki katman döndürme kullanın.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="r l'"
+  alg="l r'"
+/>
+
+**İpuçları:** Bir kenar zaten alt katmanda ama yanlış pozisyondaysa, önce yukarı çıkarmak için bir katman döndürme kullanın, sonra doğru şekilde yerleştirin.
+
+---
+
+## Adım 3: Son Katman Kenarları
+
+**3 üst katman kenarını** doğru yerlerine yerleştirin. Bu adımdan sonra her kenar iki doğru merkez arasında olacak, ama hâlâ ters olabilir.
+
+Üst katmana bakın ve kenarların hangi yönde döngüye girmesi gerektiğini belirleyin:
+
+**Durum 1: Saat yönünde 3-döngü** — Her üç kenar saat yönünde bir pozisyon hareket etmelidir.
+
+**Algoritma: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+**Durum 2: Saat yönünün tersine 3-döngü** — Her üç kenar saat yönünün tersine bir pozisyon hareket etmelidir.
+
+**Algoritma: L' U L U' L' U L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U' L U L' U' L"
+  alg="L' U L U' L' U L"
+/>
+
+**İpuçları:** Sadece 2 kenarın yer değiştirmesi gerekiyorsa, bu 3-döngü algoritmalarından biri çözecektir — döngünün yönünü dikkatle gözlemleyin.
+
+---
+
+## Adım 4: Son Katman Kenarlarını Yönlendirme
+
+Son adım! Son katman kenarları doğru pozisyonlardaysa ama **ters** ise (yanlış renk dışarı bakıyor), çevirmek için bu algoritmayı kullanın.
+
+**2 kenarı çevir: R U R' U R U R'**
+
+Pyraminx'i çevrilmesi **gerekmeyen** kenar size bakacak şekilde tutun. Sonra algoritmayı uygulayın.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+3 kenarın da çevrilmesi gerekiyorsa, bu algoritmayı bir kez uygulayın — 2'sini çevirir, sonra ayarlamak için üstü döndürün ve kalan 2'yi çevirin (daha önce çevrilenlerden biri artı sonuncu).
+
+---
+
+**Tebrikler!** Pyraminx'i çözdünüz! Pratikle Pyraminx sadece birkaç saniyede çözülebilir. Ustalaşılması en hızlı bulmacalardan biridir — pratik yapmaya devam edin ve 10 saniyenin altında çözeceksiniz.

@@ -1,0 +1,136 @@
+---
+title: Comment résoudre le Rubik's Cube 2×2
+sidebar_position: 1
+description: Apprenez à résoudre le Rubik's Cube 2×2 étape par étape avec la méthode Ortega.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Comment résoudre le Rubik's Cube 2×2
+
+Apprenez à résoudre le Rubik's Cube 2×2 avec la **méthode Ortega** — une approche rapide et efficace en 3 étapes. Le 2×2 n'a pas de pièces centrales ni d'arêtes, seulement des coins, ce qui en fait un excellent puzzle pour débuter.
+
+## Notation
+
+Le 2×2 utilise la même notation que le 3×3, mais sans mouvements de la couche centrale :
+
+- **R** = Droite &nbsp;&nbsp; **L** = Gauche &nbsp;&nbsp; **U** = Haut &nbsp;&nbsp; **D** = Bas &nbsp;&nbsp; **F** = Face &nbsp;&nbsp; **B** = Arrière
+
+Une lettre seule signifie **90° dans le sens horaire**. Ajouter **'** signifie **dans le sens antihoraire**. Ajouter **2** signifie **180°**.
+
+Par exemple : **R** = tourner la face droite dans le sens horaire, **R'** = sens antihoraire, **R2** = 180°.
+
+Comme le 2×2 n'a pas de centres fixes, choisissez le **blanc** comme couleur de départ et gardez-le en **bas**.
+
+---
+
+## Étape 1 : Résoudre la première face
+
+Construisez une face **blanche** complète en bas. Contrairement au 3×3, vous n'avez **pas** besoin de faire correspondre les couleurs latérales — placez simplement les 4 autocollants blancs sur la même face.
+
+Cette étape est **intuitive** — il n'y a pas d'algorithmes fixes. Trouvez chaque pièce de coin blanche et déplacez-la vers la face inférieure.
+
+**Cas 1 : Coin blanc dans la couche supérieure** — Descendez-le avec une insertion simple.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**Cas 2 : Coin blanc en bas mais mal orienté** — Sortez-le et réinsérez-le correctement.
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**Conseils :** Concentrez-vous uniquement sur le placement de 4 autocollants blancs sur une face. Les couleurs latérales n'ont pas encore d'importance — c'est ce qui différencie Ortega de la méthode débutant du 3×3.
+
+---
+
+## Étape 2 : Orienter la dernière couche (OLL)
+
+Faites en sorte que la **face opposée** (jaune) soit entièrement de la même couleur. Vous devez maintenant avoir les 4 autocollants jaunes orientés vers le haut.
+
+Regardez la face supérieure et identifiez quel cas vous avez :
+
+**Cas 1 : Un coin jaune orienté vers le haut (Sune)** — Tenez le cube avec le coin résolu en position avant gauche.
+
+**Algorithme : R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**Cas 2 : Aucun coin jaune orienté vers le haut** — Appliquez Sune deux fois pour orienter tous les coins.
+
+**Algorithme : R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**Cas 3 : Deux coins jaunes diagonaux orientés vers le haut** — Tenez le cube avec les deux coins résolus en positions avant gauche et arrière droite.
+
+**Algorithme : R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**Conseils :** Si vous avez deux coins jaunes **adjacents** orientés vers le haut, utilisez Sune une fois pour atteindre le Cas 1 ou le Cas 3.
+
+---
+
+## Étape 3 : Permuter les deux couches (PBL)
+
+La dernière étape ! Placez toutes les pièces de coin à leurs positions correctes pour résoudre le cube. Regardez les **couleurs latérales** des couches supérieure et inférieure pour déterminer quel échange est nécessaire.
+
+**Comment vérifier :** Regardez les côtés de la couche supérieure. Si deux autocollants adjacents sur un côté sont de la même couleur, aucun échange n'est nécessaire ou un échange adjacent est nécessaire. Si chaque côté a deux couleurs différentes, un échange diagonal est nécessaire.
+
+**Cas 1 : Échange diagonal en haut** — Deux coins opposés doivent être échangés.
+
+**Algorithme : R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**Cas 2 : Échange adjacent en haut** — Deux coins voisins doivent être échangés.
+
+**Algorithme : R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**Cas 3 : Échange diagonal dans les deux couches** — Utilisez cet algorithme rapide.
+
+**Algorithme : R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+Après avoir résolu la couche supérieure, vous devrez peut-être tourner la face inférieure (D ou D') pour aligner les couleurs finales. Si la couche inférieure nécessite également un échange, appliquez l'algorithme d'échange diagonal en gardant la couche non résolue en haut.
+
+---
+
+**Félicitations !** Vous avez résolu le Rubik's Cube 2×2 ! La méthode Ortega est rapide et efficace — avec de la pratique, vous pouvez résoudre le 2×2 en moins de 5 secondes.

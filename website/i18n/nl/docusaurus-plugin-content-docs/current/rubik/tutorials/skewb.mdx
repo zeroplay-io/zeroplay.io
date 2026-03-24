@@ -1,0 +1,120 @@
+---
+title: Hoe los je de Skewb op
+sidebar_position: 3
+description: Leer de Skewb stap voor stap oplossen met Sarah's beginnersmethode.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hoe los je de Skewb op
+
+Leer de Skewb oplossen met **Sarah's beginnersmethode** — een eenvoudige en efficiënte aanpak voor beginners. De Skewb is een hoek-draaiende puzzel waarbij elke zet een hoek en de drie aangrenzende vlakken draait. We lossen hem op in slechts 3 stappen met één kernalgoritme: de Sledgehammer.
+
+## Notatie
+
+In tegenstelling tot de standaard Rubik's Cube draait de Skewb rond **hoeken** in plaats van vlakken. Elke zet draait één hoek en de drie aangrenzende centra:
+
+- **R** = Rechter voorhoek met de klok mee &nbsp;&nbsp; **R'** = Rechter voorhoek tegen de klok in
+- **L** = Linker voorhoek met de klok mee &nbsp;&nbsp; **L'** = Linker voorhoek tegen de klok in
+- **U** = Bovenste rechter voorhoek met de klok mee &nbsp;&nbsp; **U'** = Bovenste rechter voorhoek tegen de klok in
+- **B** = Rechter achterhoek met de klok mee &nbsp;&nbsp; **B'** = Rechter achterhoek tegen de klok in
+
+Een letter alleen betekent een draaiing **met de klok mee**. Het toevoegen van **'** betekent **tegen de klok in**.
+
+Houd de Skewb met het **witte centrum onderaan** voor alle stappen.
+
+---
+
+## Stap 1: Los één vlak op
+
+Bouw een volledig **wit vlak** aan de onderkant. Dit betekent dat alle 4 hoeken rond het witte centrum op hun plaats moeten zitten met wit naar beneden, en de aangrenzende zijkleuren moeten overeenkomen.
+
+Deze stap is semi-intuïtief. Het belangrijkste hulpmiddel is de **Sledgehammer** — het belangrijkste algoritme voor de Skewb:
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Gebruik de Sledgehammer en opzetzetten om elke witte hoek in de onderste laag te plaatsen. Hier is een voorbeeld van het invoegen van een hoek:
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Begin met het witte centrum onderaan te plaatsen.
+- Los de hoeken één voor één op, en zorg ervoor dat je al geplaatste stukken niet verstoort.
+- Na deze stap moet het onderste vlak volledig wit zijn, en elke aangrenzende zijde moet een bijpassende hoekkleur hebben.
+
+---
+
+## Stap 2: Positioneer de tegenoverliggende centra
+
+Pas het **bovenste centrum en de 4 zijcentra** aan zodat ze allemaal op hun juiste positie staan. Het onderste vlak blijft opgelost.
+
+De Sledgehammer is opnieuw het sleutelalgoritme. Het wisselt het bovenste centrum met een zijcentrum:
+
+**Geval 1: Wissel 2 centra** — Gebruik de Sledgehammer om het bovenste en voorste centrum te wisselen.
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Geval 2: 3-cyclus van centra** — Wanneer drie centra moeten roteren, pas de Sledgehammer twee keer toe (Dubbele Sledgehammer):
+
+**Dubbele Sledgehammer: R' L R L' R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+**Tips:**
+- Draai de puzzel om de juiste centra in de voor- en bovenpositie te zetten voordat je het algoritme toepast.
+- Als slechts 2 centra gewisseld moeten worden, is één Sledgehammer voldoende. Als 3 centra gecycled moeten worden, gebruik de Dubbele Sledgehammer.
+
+---
+
+## Stap 3: Oriënteer de hoeken van de laatste laag
+
+De laatste stap! Draai de **4 hoeken van de bovenste laag** zodat hun kleuren de juiste richting op wijzen, en voltooi de oplossing.
+
+**Geval 1: Alle 4 hoeken moeten met de klok mee gedraaid worden** — Pas dit algoritme toe:
+
+**Algoritme: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+**Geval 2: Sommige hoeken moeten aangepast worden** — Gebruik de Sledgehammer met opzetzetten om individuele hoeken te oriënteren:
+
+**Algoritme: R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R'"
+  alg="R L' R' L"
+/>
+
+**Tips:**
+- Als slechts enkele hoeken gedraaid moeten worden, gebruik opzetzetten (U of U') om de onopgeloste hoeken in positie te brengen, pas het algoritme toe en maak dan de opzetzet ongedaan.
+- Je moet het proces mogelijk herhalen voor de resterende hoeken.
+
+---
+
+**Gefeliciteerd!** Je hebt de Skewb opgelost! De Skewb is een van de meest bevredigende puzzels om op te lossen omdat je zo weinig algoritmes nodig hebt. Met oefening los je hem op in minder dan 10 seconden. Blijf de Sledgehammer oefenen — het is de sleutel tot het beheersen van deze puzzel.

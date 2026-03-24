@@ -1,0 +1,136 @@
+---
+title: 如何還原二階魔術方塊
+sidebar_position: 1
+description: 使用 Ortega 方法逐步學習還原二階魔術方塊。
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 如何還原二階魔術方塊
+
+使用 **Ortega 方法**學習還原二階魔術方塊——一種快速高效的三步法。二階魔術方塊沒有中心塊和稜塊，只有角塊，非常適合入門。
+
+## 符號說明
+
+二階魔術方塊使用與三階相同的符號，但沒有中層轉動：
+
+- **R** = 右 &nbsp;&nbsp; **L** = 左 &nbsp;&nbsp; **U** = 上 &nbsp;&nbsp; **D** = 下 &nbsp;&nbsp; **F** = 前 &nbsp;&nbsp; **B** = 後
+
+單獨的字母表示**順時針旋轉 90°**。加 **'** 表示**逆時針**。加 **2** 表示 **180°**。
+
+例如：**R** = 右面順時針旋轉，**R'** = 逆時針，**R2** = 180°。
+
+由於二階魔術方塊沒有固定中心，選擇**白色**作為起始顏色，並將其保持在**底部**。
+
+---
+
+## 第 1 步：還原第一面
+
+在底部建構一個完整的**白色面**。與三階不同，你**不需要**匹配側面顏色——只需將 4 個白色貼紙放在同一面上。
+
+這一步是**直覺式的**——沒有固定公式。找到每個白色角塊，將其移到底面。
+
+**情況 1：白色角塊在頂層** —— 用簡單的插入將其放下。
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R'"
+  alg="R U' R'"
+/>
+
+**情況 2：白色角塊在底部但方向不對** —— 取出後重新正確插入。
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U2' R'"
+  alg="R U2 R' U' R U R'"
+/>
+
+**提示：** 只需專注於將 4 個白色貼紙放在一個面上。側面顏色暫時不重要——這就是 Ortega 與三階初學者方法的不同之處。
+
+---
+
+## 第 2 步：頂面朝向（OLL）
+
+使**對面**（黃色）全部變成同一顏色。現在需要 4 個黃色貼紙全部朝上。
+
+觀察頂面，判斷你屬於哪種情況：
+
+**情況 1：一個黃色角塊朝上（Sune）** —— 將魔術方塊握持為已完成的角塊在左前位置。
+
+**公式：R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+**情況 2：沒有黃色角塊朝上** —— 連續使用 Sune 兩次來完成所有角塊的朝向。
+
+**公式：R U R' U R U2 R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2' R' U' R U' R' U2' R U2' R' U' R U' R'"
+  alg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+/>
+
+**情況 3：兩個對角黃色角塊朝上** —— 將魔術方塊握持為兩個已完成的角塊分別在左前和右後位置。
+
+**公式：R U R' F2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' F2 R U' R'"
+  alg="R U R' F2 R U' R'"
+/>
+
+**提示：** 如果有兩個**相鄰的**黃色角塊朝上，使用一次 Sune 轉換到情況 1 或情況 3。
+
+---
+
+## 第 3 步：雙層排列（PBL）
+
+最後一步！將所有角塊調整到正確位置來完成還原。觀察上下兩層的**側面顏色**來判斷需要哪種交換。
+
+**檢查方法：** 觀察頂層的側面。如果一面的兩個相鄰貼紙顏色相同，則不需要交換或需要相鄰交換。如果每一面都有兩種不同顏色，則需要對角交換。
+
+**情況 1：頂層對角交換** —— 兩個對角的角塊需要互換。
+
+**公式：R U' R F2 R' U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R F2 R' U R'"
+  alg="R U' R F2 R' U R'"
+/>
+
+**情況 2：頂層相鄰交換** —— 兩個相鄰的角塊需要互換。
+
+**公式：R U' R' U' F2 U' R U R' U F2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F2 U' R U' R' U F2 U R U R'"
+  alg="R U' R' U' F2 U' R U R' U F2"
+/>
+
+**情況 3：雙層對角交換** —— 使用這個快速公式。
+
+**公式：R2 F2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 F2 R2"
+  alg="R2 F2 R2"
+/>
+
+還原頂層後，你可能需要旋轉底面（D 或 D'）來對齊最終顏色。如果底層也需要交換，將未完成的層保持在頂部，然後執行對角交換公式。
+
+---
+
+**恭喜！** 你已經成功還原了二階魔術方塊！Ortega 方法快速高效——透過練習，你可以在 5 秒內還原二階魔術方塊。
