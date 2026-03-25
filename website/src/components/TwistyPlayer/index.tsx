@@ -59,7 +59,6 @@ function TwistyPlayerInner(props: TwistyPlayerProps) {
       // 让 twisty-player 填满外层容器，由容器控制尺寸
       player.style.display = "block";
       player.style.width = "100%";
-      player.style.height = "100%";
 
       containerRef.current.appendChild(player);
     }

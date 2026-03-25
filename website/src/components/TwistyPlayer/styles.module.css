@@ -1,8 +1,7 @@
 .playerContainer {
   width: 100%;
   max-width: 400px;
-  aspect-ratio: 3 / 2;
-  margin: 1rem auto;
+  margin: 1.5rem auto 3rem;
 }
 
 .placeholder {
@@ -12,7 +11,7 @@
   width: 100%;
   max-width: 400px;
   aspect-ratio: 3 / 2;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   background: var(--ifm-color-emphasis-100);
   border-radius: 8px;
   color: var(--ifm-color-emphasis-500);
