@@ -1,0 +1,374 @@
+---
+title: "2x2 Zaawansowany: Metoda CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Zaawansowany: Metoda CLL
+
+Przenieś rozwiązywanie kostki 2x2 na wyższy poziom dzięki metodzie **CLL (Narożniki Ostatniej Warstwy)**. Podczas gdy metoda Ortega rozwiązuje ostatnią warstwę w dwóch krokach (OLL, potem PBL), CLL rozwiązuje **orientację i permutację** narożników w **jednym algorytmie**. Mniej patrzenia i szybsze rozwiązania.
+
+## Dlaczego CLL?
+
+| Metoda | Kroki ost. warstwy | Algorytmy | Typowa szybkość |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 sekund |
+| **CLL** | 1 (jedno spojrzenie) | ~40 | 2–4 sekund |
+
+CLL to standardowa metoda najlepszych speedcuberów 2x2. Ucząc się wszystkich 40 przypadków, eliminujesz cały krok.
+
+## Jak działa CLL
+
+1. **Rozwiąż pierwszą ścianę** — jak w Ortedze, zbuduj białą ścianę na dole (kolory boczne nie muszą pasować).
+2. **Rozpoznaj przypadek CLL** — spójrz na górną ścianę i kolory boczne, aby zidentyfikować przypadek.
+3. **Zastosuj jeden algorytm** — orientuje i permutuje jednocześnie wszystkie górne narożniki.
+4. **AUF + korekta dołu** — co najwyżej jeden obrót U i jeden obrót D.
+
+## Przypomnienie notacji
+
+- **R** = Prawa &nbsp;&nbsp; **L** = Lewa &nbsp;&nbsp; **U** = Góra &nbsp;&nbsp; **D** = Dół &nbsp;&nbsp; **F** = Przód &nbsp;&nbsp; **B** = Tył
+- Sama litera = **90° zgodnie z zegarem**. Z **'** = **przeciwnie do zegara**. Z **2** = **180°**.
+
+---
+
+## Grupy przypadków CLL
+
+40 przypadków CLL jest zorganizowanych w 7 grup na podstawie wzoru orientacji górnej ściany. Poniżej najważniejsze przypadki z każdej grupy.
+
+---
+
+## Przypadki Sune (4 z 6)
+
+Jeden narożnik jest zorientowany (żółty do góry), pozostałe trzy wymagają obrotu. Najczęstsza grupa.
+
+### Sune 1 — Zamiana sąsiednia
+
+Trzymaj rozwiązany narożnik z przodu po lewej. Trzy nierozwiązane narożniki obracają się zgodnie z zegarem.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Zamiana przekątna
+
+Ten sam wzór orientacji, ale narożniki wymagają zamiany przekątnej.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Czysty (bez zamiany)
+
+Orientacja rozwiązana bez potrzeby zmiany pozycji.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Zamiana sąsiednia (Lustro)
+
+Trzymaj rozwiązany narożnik z przodu po prawej.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Przypadki Anti-Sune (3 z 6)
+
+Lustro Sune — jeden narożnik zorientowany, pozostałe trzy obracają się przeciwnie do zegara.
+
+### Anti-Sune 1 — Zamiana sąsiednia
+
+Trzymaj rozwiązany narożnik z przodu po prawej. Trzy nierozwiązane narożniki obracają się przeciwnie do zegara.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Zamiana przekątna
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Czysty (bez zamiany)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Przypadki H (4 z 4)
+
+Dwa przeciwległe narożniki zorientowane (żółty do góry), pozostałe dwa mają żółty na bokach.
+
+### H 1 — Zamiana sąsiednia
+
+Dwie żółte naklejki na górze w przekątnych pozycjach.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Zamiana przekątna
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Bez zamiany
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Kolumny
+
+Obie pary narożników przekątnych wymagają zamiany.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Przypadki Pi (4 z 6)
+
+Dwa sąsiednie narożniki mają żółty na górze, pozostałe dwa mają żółty na bokach. Górna ściana wygląda jak grecka litera Pi.
+
+### Pi 1 — Zamiana przekątna
+
+Trzymaj dwa zorientowane narożniki z tyłu.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Zamiana sąsiednia (Prawa)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Zamiana sąsiednia (Lewa)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Bez zamiany
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Przypadki T (3 z 6)
+
+Górna ściana pokazuje wzór w kształcie T — jeden narożnik zorientowany, jeden sąsiedni z żółtym z przodu, dwa pozostałe z żółtym na bokach.
+
+### T 1 — Zamiana sąsiednia
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Zamiana przekątna
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Bez zamiany
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Przypadki U (3 z 6)
+
+Jeden narożnik prawidłowo zorientowany, pozostałe trzy w wzorze U na bokach.
+
+### U 1 — Zamiana sąsiednia
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Zamiana przekątna
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Bez zamiany
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Przypadki L (3 z 6)
+
+Dwa sąsiednie narożniki obrócone w tym samym kierunku — górna ściana pokazuje wzór L.
+
+### L 1 — Zamiana sąsiednia
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Zamiana przekątna
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Bez zamiany
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Po CLL: Dokończenie rozwiązania
+
+Po zastosowaniu algorytmu CLL górna ściana jest w pełni rozwiązana. Możesz potrzebować:
+
+1. **AUF (Dopasuj ścianę U)** — jeden obrót U lub U' do wyrównania.
+2. **Korekta dolnej warstwy** — jeśli przesunięta, jeden obrót D lub D' to naprawia.
+3. **Zamiana dolnej warstwy** — rzadko, może potrzebować zamiany sąsiedniej lub przekątnej. Użyj algorytmów PBL z metody Ortega:
+   - **Zamiana przekątna:** R2 F2 R2
+   - **Zamiana sąsiednia:** R U' R F2 R' U R'
+
+---
+
+## Strategia nauki
+
+Nauka 40 przypadków naraz jest przytłaczająca. Zalecana kolejność:
+
+1. **Zacznij od Sune i Anti-Sune** (12 przypadków) — najczęstsze, wiele krótkich algorytmów.
+2. **Dodaj przypadki T i U** (12 przypadków) — stosunkowo łatwe do rozpoznania.
+3. **Naucz się przypadków Pi** (6 przypadków) — wyróżniający się wzór orientacji.
+4. **Naucz się przypadków L** (6 przypadków) — podobne rozpoznawanie jak Pi, inny kierunek.
+5. **Zakończ przypadkami H** (4 przypadki) — najrzadsza grupa.
+
+## Wskazówki rozpoznawania
+
+- **Najpierw spójrz na górną ścianę** aby zidentyfikować grupę orientacji.
+- **Potem sprawdź kolory boczne** aby określić konkretny przypadek.
+- **Ćwicz grupami** — jedna grupa do momentu natychmiastowego rozpoznania.
+- **Używaj odwróconych scramble** — przygotuj przypadek, rozwiąż, przewidź odwrotność.
+
+---
+
+**Z opanowanym CLL możesz osiągnąć średnie poniżej 3 sekund na 2x2.** Podejście jednego spojrzenia eliminuje pauzę między OLL a PBL. Ćwicz rozpoznawanie — szybkość pochodzi z natychmiastowej identyfikacji.

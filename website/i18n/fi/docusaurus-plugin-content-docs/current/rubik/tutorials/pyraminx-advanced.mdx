@@ -1,0 +1,325 @@
+---
+title: "Pyraminx edistyneet tekniikat"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pyraminx edistyneet tekniikat
+
+Oletko valmis viemään Pyraminx-ratkaisusi seuraavalle tasolle? Tämä opas kattaa edistyneet menetelmät, joita huippu-Pyraminx-nopeuskuutioijat käyttävät alle 5 sekunnin keskiarvojen saavuttamiseen. Keskitymme **L4E (Viimeiset 4 reunaa)** -menetelmään, **Keyhole**-tekniikkaan ja **Ylhäältä ensin** -lähestymistapaan.
+
+## Merkintämuistutus
+
+**Kerrokset (isot kirjaimet)** — käännä koko kerros (ilman kärkeä):
+- **U** = Yläkerros &nbsp;&nbsp; **R** = Oikea kerros &nbsp;&nbsp; **L** = Vasen kerros &nbsp;&nbsp; **B** = Takakerros
+
+**Kärjet (pienet kirjaimet)** — käännä vain kärki:
+- **u** = Yläkärki &nbsp;&nbsp; **r** = Oikea kärki &nbsp;&nbsp; **l** = Vasen kärki &nbsp;&nbsp; **b** = Takakärki
+
+Kirjain yksinään tarkoittaa **120° myötäpäivään**. **'** lisääminen tarkoittaa **120° vastapäivään**.
+
+---
+
+## L4E-menetelmä (Viimeiset 4 reunaa)
+
+L4E-menetelmä on suosituin edistynyt Pyraminx-menetelmä. Kerros kerrallaan ratkaisemisen sijaan ratkaiset ensin yhden lohkon ja sitten **viimeiset 4 reunaa** yhdessä vaiheessa algoritmien avulla.
+
+### Yleiskatsaus
+
+| Vaihe | Kuvaus | Tekniikka |
+|------|-------------|-----------|
+| 1 | Ratkaise kärjet | Intuitiivinen (sama kuin aloittelija) |
+| 2 | Ratkaise V | Intuitiivinen — yksi keskus + kaksi reunaa |
+| 3 | Ratkaise viimeiset 4 reunaa | Algoritminen — yksi katsaus |
+
+### Vaihe 1: Ratkaise kärjet
+
+Sama kuin aloittelijamenetelmässä. Kohdista kaikki 4 kärkeä vastaamaan viereisiä keskuksiaan. Tämä vaihe on triviaali — jokaisella kärjellä on vain 3 asentoa.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Vaihe 2: Ratkaise V
+
+Valitse alapuoli ja rakenna **V-muoto**: yksi keskuspala ja sen kaksi viereistä reunaa oikein paikoillaan. Tämä antaa sinulle ratkaistun 1×1×2-lohkon alareunassa.
+
+Pidä Pyraminxiä V alhaalla vasemmalla. V koostuu alakeskuksesta ja kahdesta reunasta, jotka yhdistävät sen vasempaan ja oikeaan puoleen.
+
+**V:n rakentaminen** — tämä vaihe on intuitiivinen. Etsi kaksi reunaa, jotka kuuluvat valitsemasi keskuksen viereen, ja aseta ne kerrosten käännöillä:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V käännetyllä reunalla** — jos yksi reuna on paikallaan mutta käännetty, poista se ja aseta uudelleen:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Vinkkejä:**
+- Valitse V, joka vaatii vähiten siirtoja — tarkista kaikki 4 mahdollista V-asentoa ennen aloittamista.
+- V pitäisi suunnitella kokonaan tarkastuksen aikana (15 sekuntia on enemmän kuin tarpeeksi Pyraminxille).
+
+### Vaihe 3: Ratkaise viimeiset 4 reunaa
+
+V:n ratkaisun jälkeen jäljellä on 4 reunaa. Tunnista tapaus ja sovella vastaavaa algoritmia. L4E-tapauksia on noin 30, mutta monet ovat toistensa peilikuvia, mikä vähentää opittavien ainutlaatuisten tapausten määrää.
+
+Pidä Pyraminxiä **V alhaalla vasemmalla** (ratkaistu lohko osoittaa sinua kohti vasemmalta puolelta).
+
+---
+
+#### L4E-tapaus 1: Kaikki 4 reunaa tarvitsevat myötäpäiväisen kierron
+
+**Algoritmi: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E-tapaus 2: Kaikki 4 reunaa tarvitsevat vastapäiväisen kierron
+
+**Algoritmi: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E-tapaus 3: Kaksi reunaa vaihtuu (vierekkäiset, edessä)
+
+**Algoritmi: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E-tapaus 4: Kaksi reunaa vaihtuu (vierekkäiset, takana)
+
+**Algoritmi: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E-tapaus 5: Kaksi reunaa kääntyy paikoillaan (etupari)
+
+**Algoritmi: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E-tapaus 6: Kaksi reunaa kääntyy paikoillaan (takapari)
+
+**Algoritmi: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E-tapaus 7: Kolmen reunan myötäpäiväinen kierto + yksi kääntö
+
+**Algoritmi: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E-tapaus 8: Kolmen reunan vastapäiväinen kierto + yksi kääntö
+
+**Algoritmi: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E-tapaus 9: Kaikki 4 reunaa kääntyvät
+
+**Algoritmi: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E-tapaus 10: Kaksi vastakkaista reunaa vaihtuu
+
+**Algoritmi: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E-tapaus 11: Kierto + kaksoiskääntö
+
+**Algoritmi: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E-tapaus 12: Viereinen vaihto käännöllä
+
+**Algoritmi: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Keyhole-menetelmä
+
+Keyhole-menetelmä on intuitiivisempi vaihtoehto L4E:lle. Algoritmien oppimisen sijaan jokaiselle tapaukselle käytät yhtä ratkaisematonta reunapaikkaa **avaimenreikänä** muiden palojen vapaaseen asettamiseen.
+
+### Miten se toimii
+
+1. **Ratkaise kärjet** (kuten aina).
+2. **Ratkaise yksi reuna** — aseta yksi alareuna oikein.
+3. **Käytä tyhjää paikkaa avaimenreikänä** — toinen alareuna jätetään tyhjäksi, mikä antaa sinulle vapauden asettaa reunoja yläkerrokseen ilman rajoituksia.
+4. **Ratkaise yläkerroksen reunat** — käytä avaimenreikää jokaisen yläreunan asettamiseen yksi kerrallaan.
+5. **Sulje avaimenreikä** — aseta viimeinen alareuna viimeisenä.
+
+### Keyhole-asennusesimerkki
+
+Avaimenreiän ollessa alareunakerroksen oikealla puolella voit vapaasti asettaa yläkerroksen reunan:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Käännetty asennus** — jos reuna pitää kääntää ennen asennusta:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Vinkkejä:**
+- Keyhole-menetelmä on erinomainen aloittelijoille, jotka siirtyvät edistyneeseen ratkaisuun.
+- Se vaatii vähemmän algoritmeja kuin L4E, mutta on hieman hitaampi korkeimmalla tasolla.
+- Käytä Keyholea ponnahduslautana L4E:hen — tässä rakentamasi intuitio auttaa L4E-tunnistuksessa.
+
+---
+
+## Ylhäältä ensin -menetelmä
+
+Ylhäältä ensin -menetelmä kääntää tyypillisen ratkaisujärjestyksen: ratkaise **yläkerros ensin** ja viimeistele sitten alaosa.
+
+### Yleiskatsaus
+
+1. **Ratkaise kärjet.**
+2. **Ratkaise koko yläkerros** — kaikki 3 yläreunaa suunnattu ja permutoitu oikein yläkeskuksen ympärillä.
+3. **Ratkaise alakerros** — aseta loput 3 alareunaa.
+
+### Yläkerroksen ratkaiseminen
+
+Rakenna yläkerros intuitiivisesti. Koska aloitat ylhäältä, rajoituksia ei ole — voit kääntää mitä tahansa kerrosta vapaasti.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Alaosan ratkaiseminen
+
+Yläkerroksen ollessa valmis 3 alareunaa voidaan ratkaista pienellä joukolla algoritmeja, jotka ovat samankaltaisia kuin L4E-tapaukset mutta rajoitettuja alaosaan.
+
+**Alareunojen myötäpäiväinen kierto:**
+
+**Algoritmi: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Vastapäiväinen kierto:**
+
+**Algoritmi: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Vinkkejä:**
+- Ylhäältä ensin -menetelmä on harvinaisempi kilpailuissa, mutta voi olla erittäin nopea tietyille sekoituksille.
+- Se toimii parhaiten, kun yläkerros on jo osittain ratkaistu sekoituksen jälkeen.
+- Yhdistä tarkastussuunnitteluun — jos näet helpon yläkerroksen, valitse Ylhäältä ensin.
+
+---
+
+## Nopeusratkaisuvinkkejä
+
+### Tarkastussuunnittelu
+
+Pyraminxissä on vähemmän paloja kuin missään muussa WCA-pulmapelissä, mikä tarkoittaa, että voit **suunnitella enemmän ratkaisusta tarkastuksen aikana**:
+
+- **Suunnittele aina kärjet + V** 15 sekunnin tarkastuksen aikana.
+- Edistyneet ratkaisijat voivat suunnitella **koko ratkaisun** helpoille sekoituksille.
+- Harjoittele suunnittelusi laajentamista — aloita kärjistä, lisää V ja yritä sitten ennustaa L4E-tapauksia.
+
+### Kääntötekniikka
+
+- Käytä **sormenpäitä** tarkkoihin, nopeisiin käännöksiin — ei koko käden pyörityksiä.
+- Pyraminx hyötyy kevyistä, nopeista käännöksistä voimakkaiden sijaan.
+- Harjoittele **R**- ja **L**-kerrosten käännöksiä etusormilla ja **U**-käännöksiä peukaloilla.
+
+### Värineutraalius
+
+- Toisin kuin 3×3-kuutiossa, **värineutraalius** Pyraminxissä on hyvin saavutettavissa.
+- Harjoittele aloittamista millä tahansa 4 puolella pohjana — tämä antaa sinulle 4-kertaisesti helppoja V-vaihtoehtoja.
+- Värineutraalius on lähes pakollista alle 5 sekunnin ratkaisuun.
+
+### Harjoittelurutiini
+
+1. **Harjoittele L4E-tapauksia** — aseta jokainen tapaus käänteisellään, ratkaise se, toista. Tavoittele välitöntä tunnistusta.
+2. **Ajastetut ratkaisut** — tee 12 ratkaisun sarjoja ja seuraa keskiarvoasi.
+3. **Yhden katsauksen harjoittelu** — yritä tunnistaa L4E-tapaus V:n rakennusvaiheen aikana, ennen sen viimeistelyä.
+4. **Hitaat ratkaisut** — harjoittele puolella nopeudella keskittyen sulaviin käännöksiin ja nollaan taukoihin.
+
+---
+
+**L4E:n hallinnalla ja hyvällä tarkastussuunnittelulla alle 4 sekunnin Pyraminx-keskiarvot ovat saavutettavissa.** Pyraminx palkitsee suunnittelun ja tunnistuksen enemmän kuin raakaa kääntönopeutta. Keskity ennustamaan L4E-tapauksesi aikaisin, ja ratkaisut tuntuvat vaivattomilta.

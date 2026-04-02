@@ -1,0 +1,317 @@
+---
+title: "Zaawansowane techniki Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Zaawansowane techniki Skewb
+
+Podnieś swoje umiejętności rozwiązywania Skewba z poziomu początkującego na poziom zawodniczy. Ten przewodnik obejmuje **metodę pośrednią Sarah**, która ulepsza metodę początkującą poprzez rozwiązywanie wszystkich pozostałych centrów w jednym kroku, a także zaawansowane algorytmy i strategie szybkiego składania stosowane przez najlepszych zawodników Skewb.
+
+## Przypomnienie notacji
+
+Skewb obraca się wokół **rogów**, a nie ścian:
+
+- **R** = Prawy przedni róg zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **R'** = przeciwnie do ruchu wskazówek
+- **L** = Lewy przedni róg zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **L'** = przeciwnie do ruchu wskazówek
+- **U** = Prawy górny przedni róg zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **U'** = przeciwnie do ruchu wskazówek
+- **B** = Prawy tylny róg zgodnie z ruchem wskazówek zegara &nbsp;&nbsp; **B'** = przeciwnie do ruchu wskazówek
+
+Trzymaj Skewba z **białym centrum na dole** we wszystkich krokach.
+
+---
+
+## Metoda pośrednia Sarah
+
+Metoda początkująca Sarah rozwiązuje Skewba w 3 krokach: pierwsza ściana, potem centra, potem rogi ostatniej warstwy. Ulepszona wersja pośrednia **łączy kroki centrów i rogów**, rozwiązując wszystkie 5 pozostałych centrów JEDNYM algorytmem po ukończeniu pierwszej ściany.
+
+### Przegląd
+
+| Krok | Początkujący | Pośredni |
+|------|----------|-------------|
+| 1 | Ułożyć jedną ścianę | Ułożyć jedną ścianę (tak samo) |
+| 2 | Ustawić centra | **Rozwiązać wszystkie 5 centrów w jednym kroku** |
+| 3 | Zorientować rogi ostatniej warstwy | Zorientować rogi ostatniej warstwy (tak samo) |
+
+Kluczowe ulepszenie to Krok 2: zamiast wielokrotnie używać Sledgehammera do ustawiania centrów pojedynczo, uczysz się zestawu algorytmów, które rozwiązują wszystkie centra jednocześnie.
+
+### Krok 1: Ułożyć jedną ścianę
+
+Zbuduj kompletną **białą ścianę** na dole — wszystkie 4 rogi wokół białego centrum muszą być na swoim miejscu z białym skierowanym w dół, a sąsiednie kolory boczne muszą się zgadzać. Ten krok jest identyczny z metodą początkującą.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Użyj Sledgehammera z ruchami przygotowawczymi, aby umieścić każdy biały róg. Z praktyką ten krok stanie się szybki i intuicyjny.
+
+### Krok 2: Rozwiązać wszystkie 5 centrów (One-Look)
+
+Po rozwiązaniu pierwszej ściany spójrz na **5 pozostałych centrów** (górny + 4 boczne) i zidentyfikuj swój przypadek. Zastosuj jeden algorytm, aby rozwiązać je wszystkie naraz.
+
+Jest kilka przypadków w zależności od tego, ile centrów jest w prawidłowej pozycji:
+
+---
+
+#### Przypadek 1: Sąsiedni 4-cykl
+
+Cztery centra muszą się cyklicznie przemieścić. Górny centr jest prawidłowy, ale 4 boczne centra muszą się obrócić.
+
+**Algorytm: R' L R L' R' L R L'** (Podwójny Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Przypadek 2: Przeciwległa 2-zamiana
+
+Dwa przeciwległe boczne centra muszą się zamienić.
+
+**Algorytm: R L' R' L R L' R' L** (Odwrotny podwójny Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Przypadek 3: Sąsiednia 2-zamiana
+
+Dwa sąsiednie boczne centra muszą się zamienić. Ustaw dwa centra do zamiany z przodu i po prawej.
+
+**Algorytm: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Przypadek 4: Zamiana góra-bok + cykl
+
+Górny centr musi się zamienić z bocznym centrum, a pozostałe boczne centra cyklicznie się przemieszczają.
+
+**Algorytm: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Przypadek 5: Potrójny cykl
+
+Trzy centra muszą się cyklicznie przemieścić (górny zostaje, 3 boczne rotują). Ustaw nieruchomy boczny centr z tyłu.
+
+**Algorytm: R' L R L'** (Pojedynczy Sledgehammer — z właściwym ustawieniem)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Wskazówki:**
+- Naucz się szybko identyfikować przypadki centrów, sprawdzając najpierw górny centr, a potem skanując 4 boki.
+- Wiele z nich to wariacje Sledgehammera — jeśli dobrze znasz Sledgehammera, te algorytmy będą naturalne.
+- Ćwicz rozpoznawanie, mieszając Skewba, rozwiązując pierwszą ścianę i identyfikując przypadek centrów przed wykonaniem.
+
+### Krok 3: Zorientować rogi ostatniej warstwy
+
+Po rozwiązaniu wszystkich centrów rogi ostatniej warstwy mogą wymagać obrócenia. Ten krok jest taki sam jak w metodzie początkującej.
+
+#### Wszystkie 4 rogi wymagają obrotu zgodnie z ruchem wskazówek
+
+**Algorytm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Wszystkie 4 rogi wymagają obrotu przeciwnie do ruchu wskazówek
+
+**Algorytm: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 rogi wymagają obrotu (sąsiednie)
+
+Ustaw dwa nierozwiązane rogi z przodu. Użyj U, aby je ustawić, wykonaj algorytm, a następnie cofnij U.
+
+**Algorytm: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 rogi wymagają obrotu (po przekątnej)
+
+**Algorytm: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Zaawansowane algorytmy
+
+Poza metodą pośrednią, oto dodatkowe algorytmy, które efektywniej obsługują rzadsze przypadki.
+
+### Odpowiednik Z-Perm
+
+Gdy dwie pary rogów muszą się zamienić (jak wzór w kształcie Z):
+
+**Algorytm: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Przypadek Pi
+
+Górna ściana pokazuje wzór Pi — dwa sąsiednie rogi zorientowane, dwa nie:
+
+**Algorytm: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Ustawienie i orientacja rogów
+
+Gdy róg wymaga reorientacji, użyj ruchów przygotowawczych, aby sprzężyć cykl Sledgehammera, który obróci go na miejsce:
+
+**Algorytm: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Szybka zamiana przeciwległych centrów
+
+Bardziej efektywny algorytm zamiany dwóch przeciwległych centrów:
+
+**Algorytm: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Potrójna orientacja rogów
+
+Trzy rogi wymagają obrotu (jeden pozostaje prawidłowy):
+
+**Algorytm: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Zamiana sąsiednich rogów
+
+Dwa sąsiednie rogi muszą zamienić się pozycjami (nie tylko obrócić):
+
+**Algorytm: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Koncepcje rozwiązywania One-Look
+
+Ostatecznym celem w zawodniczym rozwiązywaniu Skewba jest przewidywanie ostatniej warstwy podczas rozwiązywania pierwszej ściany.
+
+### Przewidywanie ostatniej warstwy
+
+Podczas Kroku 1, budując białą ścianę, zwracaj uwagę na **centra i rogi górnej warstwy**. Z praktyką możesz zidentyfikować przypadki Kroku 2 i 3 przed ukończeniem Kroku 1.
+
+- **Obserwuj górny centr** — czy przesuwa się na właściwą pozycję, gdy wstawiasz ostatni biały róg?
+- **Śledź boczne centra** — zauważ, które boczne centra są już prawidłowe.
+- **Zaplanuj całe rozwiązanie** — zaawansowani zawodnicy mogą zaplanować całe rozwiązanie podczas inspekcji.
+
+### Wpływanie na ostatnią warstwę
+
+Gdy masz wiele sposobów na wstawienie ostatniego białego rogu, wybierz wstawienie, które daje **łatwiejszy przypadek Kroku 2**:
+
+- Jeśli dwa wstawienia rozwiązują róg, wybierz to, które ustawia więcej centrów prawidłowo.
+- Czasem nieco dłuższy Krok 1 prowadzi do pominięcia Kroku 2 lub 3.
+
+---
+
+## Wskazówki dotyczące szybkiego składania
+
+### Chwyt i obracanie
+
+- Trzymaj Skewba **końcami palców na rogach** — obracasz rogi, nie ściany.
+- Użyj **palca wskazującego i kciuka** każdej ręki, aby chwycić przeciwległe rogi.
+- Ćwicz płynne, kontrolowane obroty rogów — Skewb nagradza precyzję, a nie surową szybkość.
+- **Minimalizuj zmiany chwytu** — staraj się wykonać cały Sledgehammer bez zmiany chwytu.
+
+### Neutralność kolorystyczna
+
+Neutralność kolorystyczna na Skewbie oznacza, że możesz zacząć od **dowolnej ściany** jako pierwszej, nie tylko białej. To niezwykle potężne:
+
+- Z neutralnością kolorystyczną masz **6 możliwych pierwszych ścian** do wyboru.
+- Wybierz ścianę najbliższą rozwiązaniu — czasem 2-3 rogi są już na miejscu.
+- Neutralność kolorystyczna jest prawie obowiązkowa przy składaniu poniżej 4 sekund.
+
+**Jak ćwiczyć:**
+1. Zacznij od neutralności między 2 przeciwległymi kolorami (np. biały i żółty).
+2. Stopniowo dodawaj więcej kolorów startowych, aż będziesz mógł zacząć od dowolnej ściany.
+3. Podczas inspekcji szybko skanuj wszystkie 6 ścian i wybierz najłatwiejszą.
+
+### Planowanie inspekcji
+
+Skewb ma tylko 14 widocznych elementów (6 centrów + 8 rogów), co czyni planowanie pełnego rozwiązania realistycznym:
+
+- **Zawsze w pełni planuj pierwszą ścianę** podczas inspekcji.
+- **Zidentyfikuj przypadek centrów** przed rozpoczęciem rozwiązywania.
+- **Zaawansowane:** zaplanuj do Kroku 2 — wiedz, którego algorytmu użyjesz, zanim dotkniesz układanki.
+
+### Rutyna ćwiczeń
+
+1. **Ćwiczenia pierwszej ściany** — pomieszaj i ułóż tylko pierwszą ścianę, cel poniżej 2 sekund.
+2. **Rozpoznawanie centrów** — po ułożeniu pierwszej ściany, zidentyfikuj przypadek centrów tak szybko, jak to możliwe, bez wykonywania go.
+3. **Pełne rozwiązania** — serie 12 mierzonych czasowo rozwiązań, śledząc średnią z 5 i średnią z 12.
+4. **Ćwiczenie algorytmów** — przećwicz każdy algorytm centrów i rogów 20 razy z rzędu dla pamięci mięśniowej.
+5. **Ćwiczenie neutralności kolorystycznej** — zmuszaj się do rozpoczynania od innego koloru przy każdym rozwiązaniu.
+
+---
+
+**Z metodą pośrednią Sarah i oddanym treningiem, średnie Skewba poniżej 5 sekund są w zasięgu.** Skewb jest jedną z najbardziej przyjaznych planowaniu układanek w speedcubingu — mniej elementów oznacza, że możesz przewidzieć więcej podczas inspekcji. Skup się na szybkości rozpoznawania i płynnym obracaniu, a zobaczysz szybki postęp.

@@ -1,0 +1,312 @@
+---
+title: "F2L: Prva dva sloja"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Prva dva sloja
+
+F2L (First Two Layers, prva dva sloja) je **najvažniji korak** u CFOP metodi. Umjesto rješavanja kutova prvog sloja i bridova drugog sloja u dva odvojena koraka (kao u početničkoj metodi), F2L sparuje kut s odgovarajućim bridom i umeće ih zajedno u ispravni utor. Time se štedi ogroman broj poteza i tu dolaze najveća poboljšanja brzine.
+
+Postoje **4 utora** za popuniti, po jedan u svakom kutu donja dva sloja. Svaki utor se sastoji od jednog kutnog i jednog bridnog komadića.
+
+## Koncept
+
+Svaki F2L slučaj uključuje dva komadića:
+- **Kutni komadić** koji pripada donjem sloju (ima bijelu/naljepnicu boje dna)
+- **Bridni komadić** koji pripada srednjem sloju (povezuje dvije bočne boje)
+
+Cilj je **spariti** ova dva komadića u gornjem sloju, zatim **umetnuti** par u ispravan utor jednim glatkim pokretom.
+
+## Podsjetnik na notaciju
+
+- **R** = Desno &nbsp;&nbsp; **L** = Lijevo &nbsp;&nbsp; **U** = Gore &nbsp;&nbsp; **D** = Dolje &nbsp;&nbsp; **F** = Naprijed &nbsp;&nbsp; **B** = Natrag
+- Samo slovo = **90° u smjeru kazaljke** &nbsp;&nbsp; **'** = **suprotno od kazaljke** &nbsp;&nbsp; **2** = **180°**
+
+Držite kocku s **bijelom dolje**. Utor u koji umećemo je uvijek **prednji desni utor** (između F i R strana).
+
+---
+
+## Intuitivni F2L
+
+Prije memoriranja algoritama, naučite **logiku** F2L-a. Svaki slučaj slijedi isti obrazac:
+
+1. **Pronađite** par kut-brid koji pripadaju zajedno
+2. **Razdvojite** ih ako su pogrešno spojeni
+3. **Pozicionirajte** jedan komadić, zatim **dovedite** drugi da ga sretne
+4. **Sparite** ih u gornjem sloju tako da bijela gleda van ili dolje
+5. **Umetnite** spojeni par u utor
+
+**Ključni princip:** Koristite R i U poteze za vađenje kuta iz prednjeg desnog utora ili umetanje u njega, i U poteze za pozicioniranje brida. Nikad ne remetite već riješene utore.
+
+---
+
+Ukupno postoji **41 standardni F2L slučaj**. U nastavku pokrivamo **15 najvažnijih slučajeva** koji čine temelj. Kada ih savladate, moći ćete preostale slučajeve rješavati intuitivno ili ih potražiti po potrebi.
+
+## Osnovni slučajevi: oba komadića u gornjem sloju
+
+Ovo su najjednostavniji i najčešći slučajevi. I kut i brid su u U sloju, a ciljni utor je prazan.
+
+### Slučaj 1: Lako umetanje — Bijela kuta gleda desno, brid spreman
+
+Kut ima bijelu prema R strani, a brid je već pozicioniran tako da ga jedan U-potez sparuje. Ovo je najosnovnije F2L umetanje.
+
+**Algoritam: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Slučaj 2: Lako umetanje — Bijela kuta gleda naprijed, brid spreman
+
+Kut ima bijelu prema F strani, a brid je pozicioniran za sparivanje s umetanjem suprotnim od kazaljke.
+
+**Algoritam: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Slučaj 3: Bijela kuta gleda gore, boje odgovaraju prednjem centru
+
+Kut ima bijelu gore i njegova prednja boja odgovara prednjem centru. Brid je nasuprot. Trebamo ih spojiti i umetnuti.
+
+**Algoritam: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Slučaj 4: Bijela kuta gleda gore, boje odgovaraju desnom centru
+
+Kut ima bijelu gore i njegova desna boja odgovara desnom centru. Brid treba spariti s suprotne strane.
+
+**Algoritam: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Slučaj 5: Kut i brid daleko, bijela gleda desno
+
+Kut ima bijelu desno i brid je na suprotnoj strani gornjeg sloja. Približavamo brid, zatim sparujemo i umećemo.
+
+**Algoritam: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Slučaj 6: Kut i brid daleko, bijela gleda naprijed
+
+Zrcalna verzija slučaja 5. Kut ima bijelu naprijed i brid je na dalekoj strani.
+
+**Algoritam: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Slučaj 7: Kut i brid susjedni, bijela gleda desno — Par spojen ali krivo
+
+Kut i brid su jedan pored drugog i spojeni, ali umetnuti bi bili krivo. Razdvajamo ih i ponovo pravilno spajamo.
+
+**Algoritam: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Slučaj 8: Kut i brid susjedni, bijela gleda naprijed — Par spojen ali krivo
+
+Zrcalna verzija slučaja 7 na F strani.
+
+**Algoritam: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Srednji slučajevi: brid u utoru, kut u gornjem sloju
+
+Ponekad je brid već zaglavljen u utoru (ispravno ili neispravno), a kut je u gornjem sloju. Moramo izvaditi brid bez remetenja drugih riješenih parova.
+
+### Slučaj 9: Brid u ispravnom utoru ali kut gore — Bijela gleda desno
+
+Brid je u ispravnom utoru, a kut je u U sloju s bijelom desno. Vadimo brid i sparujemo ga s kutom.
+
+**Algoritam: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Slučaj 10: Brid u krivom utoru, kut gore — Bijela gleda gore
+
+Brid je u krivom utoru. Vadimo ga dok istovremeno pripremamo sparivanje s kutom.
+
+**Algoritam: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Napredni slučajevi: kut u utoru
+
+Ovi slučajevi se javljaju kada je kut već u ispravnom utoru ali pogrešno orijentiran, ili u ispravnom utoru s pogrešno postavljenim bridom.
+
+### Slučaj 11: Kut u utoru, zakrenut — Brid u gornjem sloju
+
+Kut je u prednjem desnom utoru ali s bijelom naprijed (ne dolje). Brid je u U sloju. Vadimo kut, sparujemo s bridom i ponovno umećemo.
+
+**Algoritam: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Slučaj 12: Kut u utoru, zakrenut — Brid u krivom utoru
+
+Oba komadića su u donja dva sloja ali nijedan nije ispravan. Izbacujemo kut i istovremeno vadimo brid.
+
+**Algoritam: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Posebni slučajevi: oba komadića u utoru
+
+### Slučaj 13: Par spojen u utoru ali zakrenut
+
+Kut i brid su spareni i u utoru, ali kut je zakrenut (bijela gleda naprijed, ne dolje). Vadimo par, razdvajamo i ponovo ispravno umećemo.
+
+**Algoritam: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Slučaj 14: Kut ispravno u utoru, brid okrenut u utoru
+
+Kut je ispravno postavljen ali brid iznad njega je okrenut. Ovo je jedan od najtežih slučajeva. Vadimo oboje, pravilno sparujemo i ponovo umećemo.
+
+**Algoritam: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Slučaj 15: Oba u utoru, oba krivo — Križna greška
+
+Kut i brid su oba u utoru ali nijedan ne odgovara. Potpuno vađenje i ponovna izgradnja.
+
+**Algoritam: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Savjeti za brži F2L
+
+### 1. Prvo učite intuitivno
+
+Ne žurite s memoriranjem svih 41 algoritamskih slučajeva. Posvetite vrijeme razumijevanju **zašto** svaki potez funkcionira. Ako znate da R U R' vadi kut i vraća ga, možete sami riješiti većinu slučajeva. Algoritmi dolaze kasnije za optimizaciju.
+
+### 2. Razvijte lookahead
+
+**Lookahead** je sposobnost praćenja sljedećeg para dok umećete trenutni. Ovo je najveći faktor koji odvaja rješavače od 20 sekundi od onih od 15 sekundi.
+
+Savjeti za vježbu:
+- Usporite okretanje i natjerajte se tražiti sljedeći par tijekom umetanja
+- Vježbajte rješavanje F2L zatvorenih očiju tijekom umetanja (znate poteze, pa gledajte unaprijed)
+- Radite rješavanja bez mjerenja vremena fokusirani isključivo na nula pauza između parova
+
+### 3. Smanjite rotacije
+
+Svaki put kad rotirate cijelu kocku, gubite vrijeme. Najbolji F2L rješavači rijetko rotiraju više od jednom ili dvaput u cijeloj F2L fazi.
+
+- Naučite umetati u **stražnje utore** koristeći R i U poteze (npr. R U' R' za umetanje u stražnji desni)
+- Vježbajte korištenje **L, F i B** poteza za utore na suprotnoj strani
+- Koristite široke poteze (r, l) za istovremeno rotiranje i umetanje
+
+### 4. Brzo prepoznajte slučajeve
+
+Trenirajte se da odmah prepoznate koji slučaj gledate:
+- **Gdje je bijela na kutu?** (Gore, Naprijed ili Desno)
+- **Gdje je brid u odnosu na kut?** (Susjedni, nasuprot ili u utoru)
+- **Jesu li već spareni?** (Ispravno spojeni, krivo spojeni ili odvojeni)
+
+### 5. Rješavajte učinkovitim redoslijedom
+
+Ne morate rješavati 4 para bilo kojim fiksnim redoslijedom. Pogledajte sva 4 para i počnite s **najlakšim** — onim koji zahtijeva najmanje poteza. Iskusni rješavači planiraju svoj prvi par tijekom inspekcije zajedno s križem.
+
+### 6. Trikovi s praznim utorom
+
+Kada je utor prazan, možete ga koristiti kao privremeno skladište. Na primjer, stavite brid u prazan utor (R U R') da ga maknete s puta dok radite na drugom paru. Početnici često previđaju ovu moćnu tehniku.
+
+---
+
+## Rutina za vježbu
+
+1. **Pomiješajte kocku i riješite križ**
+2. **Pronađite sva 4 para kut-brid** — identificirajte gdje je svaki kut i njegov odgovarajući brid
+3. **Riješite svaki par jedan po jedan** — počnite s lakim slučajevima, teške ostavite za kraj
+4. **Mjerite vrijeme samo F2L faze** — koristite tajmer. Cilj: ispod 15 sekundi za sva 4 para
+5. **Pregledajte** — nakon svakog rješavanja, pitajte se: jesam li mogao neki par riješiti s manje poteza?
+
+S dosljednom vježbom, F2L će postati druga priroda i vidjet ćete dramatična poboljšanja u ukupnim vremenima rješavanja.
+
+---
+
+## Što dalje?
+
+Nakon savladavanja F2L-a, nastavite s posljednjim slojem:
+
+- [**Pregled CFOP metode**](./cfop) — Pogledajte kako se F2L uklapa u potpunu CFOP metodu
+- [**OLL algoritmi**](./oll) — Napravite gornju stranu potpuno žutom (57 slučajeva + 2-Look OLL)
+- [**PLL algoritmi**](./pll) — Rasporedite posljednje komadiće za završetak rješavanja (21 slučaj)
+- [**Vodič za finger trikove**](./finger-tricks) — Izvedite F2L triggere brže i glađe

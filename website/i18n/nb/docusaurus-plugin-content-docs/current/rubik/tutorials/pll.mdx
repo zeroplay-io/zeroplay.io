@@ -1,0 +1,466 @@
+---
+title: PLL-algoritmer
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL-algoritmer
+
+**PLL (Permutasjon av siste lag)** er det siste steget i CFOP-metoden. Etter at OLL har orientert alle klistremerkene pa oversiden, omorganiserer PLL brikkene til sine loste posisjoner. Det er totalt **21 PLL-tilfeller**.
+
+Hvis du er nybegynner, start med **2-Look PLL** -- en forenklet tilnaerming som bare krever **6 algoritmer** i stedet for alle 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL deler permutasjonssteget i to mindre steg:
+
+1. **Permuter hjornene** -- plasser alle 4 hjorner i riktig posisjon (2 tilfeller)
+2. **Permuter kantene** -- plasser alle 4 kanter i riktig posisjon (4 tilfeller)
+
+Det betyr at du bare trenger a laere **6 algoritmer** totalt.
+
+### Steg 1: Permuter hjornene
+
+Se pa hjornene i det overste laget. Sjekk om noe **par av tilstotende hjorner** tilhorer samme side (matchende frontlys).
+
+#### Tilstotende hjornebytte
+
+Ett par tilstotende hjorner er allerede riktig. Hold det loste paret **bak** og bruk:
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Dette er **T-Perm** -- den bytter de to fremre hjornene (og to kanter, som vi fikser i steg 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Diagonalt hjornebytte
+
+Ingen tilstotende hjorner matcher. Bruk **Y-Perm** for a bytte hjorner diagonalt:
+
+**Algoritme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Steg 2: Permuter kantene
+
+Alle hjorner er na lost. Se pa kantene og bestem hvilke som trenger a sykles.
+
+#### Ua Perm (3-kantsyklus med klokken)
+
+Tre kanter trenger a sykles med klokken. Hold den loste kanten **bak**.
+
+**Algoritme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (3-kantsyklus mot klokken)
+
+Tre kanter trenger a sykles mot klokken. Hold den loste kanten **bak**.
+
+**Algoritme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Bytt motstatte kantpar)
+
+To par motstatte kanter trenger a byttes.
+
+**Algoritme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Bytt tilstotende kantpar)
+
+To par tilstotende kanter trenger a byttes. Hold slik at de to parene er foran/hoyre og bak/venstre.
+
+**Algoritme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Fullstendig PLL -- Alle 21 tilfeller
+
+### Kun kanter (4 tilfeller)
+
+Disse PLL-ene flytter bare kanter; hjornene er allerede lost.
+
+#### Ua Perm
+
+Kantene sykler med klokken. Den loste kanten er bak.
+
+**Gjenkjenning:** En lost soyle (kant + to hjorner) synlig bakfra.
+
+**Algoritme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Kantene sykler mot klokken. Den loste kanten er bak.
+
+**Gjenkjenning:** En lost soyle synlig bakfra; kantfargene sykler i motsatt retning av Ua.
+
+**Algoritme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+To par motstatte kanter bytter.
+
+**Gjenkjenning:** Hver side har den motstatte fargen i senterkanten. Sjakkbrettmonster pa alle fire sider.
+
+**Algoritme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+To par tilstotende kanter bytter.
+
+**Gjenkjenning:** To tilstotende sider har hverandres farge i kantposisjonen. Ingen side er helt lost.
+
+**Algoritme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Kun hjorner (3 tilfeller)
+
+Disse PLL-ene flytter bare hjorner; kantene er allerede lost.
+
+#### Aa Perm
+
+Tre hjorner sykler. Frontlys pa venstre side.
+
+**Gjenkjenning:** Frontlys pa en side, soylen (3 matchende klistremerker) er pa den motstatte siden.
+
+**Algoritme: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tre hjorner sykler (motsatt retning av Aa). Frontlys pa hoyre side.
+
+**Gjenkjenning:** Speilbilde av Aa -- frontlys pa den motstatte siden.
+
+**Algoritme: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+To par diagonale hjorner bytter. Ingen kanter flyttes.
+
+**Gjenkjenning:** Ingen frontlys pa noen side. Hver side har to forskjellige hjornefarger.
+
+**Algoritme: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Tilstotende hjornebytte (6 tilfeller)
+
+Disse PLL-ene bytter ett par tilstotende hjorner sammen med kantpermutasjoner.
+
+#### T Perm
+
+**Gjenkjenning:** Frontlys foran og bak. De to sidene uten frontlys har byttede farger.
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Gjenkjenning:** Frontlys pa bare en side (foran). De tre andre sidene har ingen matchende par.
+
+**Algoritme: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Gjenkjenning:** En lost 1x1x3-blokk pa venstre side. Hoyre side har tilstotende brikker byttet.
+
+**Algoritme: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Gjenkjenning:** En lost 1x1x3-blokk pa hoyre side. Speilbilde av Ja.
+
+**Algoritme: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Gjenkjenning:** Frontlys foran. Tilstotende hjorne- og kantbytte pa hoyre side.
+
+**Algoritme: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Gjenkjenning:** Frontlys bak. Speilbilde av Ra.
+
+**Algoritme: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Diagonalt hjornebytte (4 tilfeller)
+
+Disse PLL-ene bytter to diagonalt motstatte hjorner.
+
+#### V Perm
+
+**Gjenkjenning:** Ingen frontlys pa noen side. En side har et 2-farget monster der kanten matcher et hjorne.
+
+**Algoritme: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Gjenkjenning:** Ingen frontlys. En side har to matchende hjorner men kanten mellom dem er feil.
+
+**Algoritme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Gjenkjenning:** To motstatte sider er helt lost (en lost soyle pa hver), men de to andre sidene har brikkene helt byttet.
+
+**Algoritme: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Gjenkjenning:** Speilbilde av Na. To motstatte soyler men byttet annerledes.
+
+**Algoritme: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 tilfeller)
+
+G-permutasjonene er vanskeligst a gjenkjenne. De flytter bade ett par tilstotende hjorner og sykler tre kanter.
+
+#### Ga Perm
+
+**Gjenkjenning:** Frontlys til venstre. Det fremre hoyre hjornet matcher den hoyre kanten.
+
+**Algoritme: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Gjenkjenning:** Frontlys foran. Det bakre venstre hjornet matcher den venstre kanten.
+
+**Algoritme: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Gjenkjenning:** Frontlys til hoyre. Det fremre venstre hjornet matcher den venstre kanten.
+
+**Algoritme: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Gjenkjenning:** Frontlys bak. Det fremre hoyre hjornet matcher den hoyre kanten.
+
+**Algoritme: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Gjenkjenningstips
+
+Effektiv PLL-gjenkjenning er nokkelen til raske losninger. Her er generelle strategier:
+
+1. **Se etter frontlys** -- et par matchende hjorner pa en side. Dette innsnevrer tilfellet umiddelbart.
+2. **Tell loste soyler** -- en soyle er tre matchende klistremerker pa rad (hjorne-kant-hjorne). Soyler indikerer spesifikke PLL-er.
+3. **Sjekk to sider** -- a se pa forsiden og hoyre side er vanligvis nok til a identifisere tilfellet.
+4. **Laer motstatte monstre** -- mange PLL-er kommer i speilpar (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Hva du ser | Mulige PLL-er |
+|:---|:---|
+| 4 sider med frontlys | H, Ua, Ub, Z |
+| 2 motstatte sider med frontlys | T, F, Ja, Jb, Ra, Rb |
+| 1 side med frontlys | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 sider med frontlys | E, V, Y, Na, Nb |
+
+## Laeringsrekkefolge
+
+En anbefalt rekkefolge for a laere alle 21 PLL-er:
+
+1. **2-Look forst:** T, Y (hjorner) + Ua, Ub, H, Z (kanter) -- 6 algoritmer
+2. **Tilstotende bytter:** Ja, Jb, F, Ra, Rb -- 5 flere algoritmer
+3. **Kun hjorner:** Aa, Ab, E -- 3 flere algoritmer
+4. **Diagonale bytter:** V, Na, Nb -- 3 flere algoritmer
+5. **G Perms sist:** Ga, Gb, Gc, Gd -- 4 siste algoritmer
+
+:::tip
+Ov gjenkjenning ved a blande, lose til PLL, og deretter dekke kuben og prove a identifisere tilfellet fra hukommelsen. Hastighet kommer fra ojeblikkelig gjenkjenning, ikke bare raske fingerbevegelser.
+:::

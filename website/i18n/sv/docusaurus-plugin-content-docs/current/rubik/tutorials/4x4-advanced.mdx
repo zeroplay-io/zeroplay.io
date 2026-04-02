@@ -1,0 +1,249 @@
+---
+title: "4x4 Avancerat: Yau-metoden"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Avancerat: Yau-metoden
+
+**Yau-metoden**, uppfunnen av Robert Yau, är ett snabbare alternativ till standard Reduction-metoden för 4x4 Rubiks kub. Den avgörande skillnaden: Yau löser korskanter **tidigt**, vilket ger bättre framförhållning och en smidigare övergång till 3x3-fasen. De flesta topp-4x4-speedcubers använder Yau eller en variant av den.
+
+## Yau vs standard Reduction
+
+| Aspekt | Reduction | Yau |
+|--------|-----------|-----|
+| **Stegordning** | Alla center, sedan alla kanter | 2 center, 3 korskanter, 4 center, resterande kanter |
+| **Kors** | Byggs efter reduktion | Redan delvis klart under reduktionen |
+| **Framförhållning** | Måste hitta korskanter efter parning | Korset nästan klart, övergång till F2L sömlös |
+| **Hastighetstak** | Bra | Högre — färre pauser mellan faser |
+
+## Notationspåminnelse
+
+**Standarddrag** (bara ytterlagret):
+- **R** = Höger &nbsp;&nbsp; **L** = Vänster &nbsp;&nbsp; **U** = Upp &nbsp;&nbsp; **D** = Ner &nbsp;&nbsp; **F** = Fram &nbsp;&nbsp; **B** = Bak
+
+**Breda drag** (två ytterlager tillsammans):
+- **Rw** = Höger bred &nbsp;&nbsp; **Lw** = Vänster bred &nbsp;&nbsp; **Uw** = Upp bred &nbsp;&nbsp; **Dw** = Ner bred &nbsp;&nbsp; **Fw** = Fram bred &nbsp;&nbsp; **Bw** = Bak bred
+
+En bokstav ensam betyder **90° medurs**. Med **'** betyder **moturs**. Med **2** betyder **180°**.
+
+---
+
+## Steg 1: Lös två motstående center
+
+Börja med att lösa de **vita** och **gula** centerblocken (topp och botten). Detta är samma som första delen av standard Reduction-metoden.
+
+Varje center är ett 2x2-block. Använd breda drag för att samla centerbitar medan du skyddar redan placerade bitar med ytterlagsvridningar.
+
+**Grundläggande centerbygge** — ta upp en centerbit med ett brett drag, placera den och vänd tillbaka:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Sammanfogning av två centerhalvor** — när du har två 1x2-centerremsor som behöver slås ihop:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tips:**
+- Lös vita centret först (nere), sedan gula centret (uppe).
+- Håll vitt nere hela tiden — använd bara Rw, Lw, Fw, Bw-drag för att hantera center utan att störa botten.
+- Oroa dig inte för sidocentren ännu. Lämna dem till steg 3.
+
+---
+
+## Steg 2: Lös 3 av 4 korskanter
+
+Här skiljer sig Yau från Reduction. Innan du löser återstående center, **para och placera 3 vita korskanter** i bottenlagret.
+
+En korskant består av två bitar (t.ex. vit-röd och vit-röd) som behöver paras och placeras i D-lagret. Lämna en korskant olöst tills vidare — detta ger frihet att använda breda drag i nästa steg.
+
+**Parning av korskant med freeslice** — freeslice-tekniken parar kanter utan att störa center. Placera ena halvan i fram-höger position och hämta partnern från en annan plats:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Insättning av parad korskant i botten** — efter parning, placera kanten i rätt D-lagsposition:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice med breda drag** — använd Dw för att lyfta en kantbit för parning utan att bryta korskanter som redan är på plats:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tips:**
+- Du behöver bara 3 korskanter lösta nu. Lämna medvetet en plats tom.
+- Använd den tomma D-lagsplatsen fritt — den saknade korskanten ger mer frihet för breda drag.
+- Välj vilken korskant du lämnar baserat på vilken som är svårast att hitta eller para.
+
+---
+
+## Steg 3: Lös de återstående 4 centren
+
+Lös nu de **4 sidocentren** (röd, orange, blå, grön). Vita och gula center är redan klara från steg 1.
+
+Eftersom du har en olöst korskantplats kan du fortfarande använda vissa breda drag fritt. Detta är en nyckelfördel med Yau — det delvis lösta korset begränsar inte centerbygget så mycket som man kan tro.
+
+**Bygga sidocenter** — använd breda drag för att samla centerbitar, placera dem sedan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Centerkommutator** — när du behöver byta en centerbit utan att störa andra, använd en kommutator-sekvens:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tips:**
+- Lös center i motstående par när möjligt (t.ex. röd sedan orange, blå sedan grön).
+- Utnyttja den olösta korskantplatsen — breda drag genom den platsen bryter inte korskanter.
+- Var uppmärksam på de 3 korskanter som redan finns i D-lagret. Kontrollera före breda drag.
+
+---
+
+## Steg 4: Sista korskanten + fullständig kantparning
+
+Detta steg har två delar: slutför den 4:e korskanten, para sedan alla återstående kanter.
+
+### Del A: Lös sista korskanten
+
+Hitta det återstående korskantparet och sammanför dem. Eftersom alla center nu är lösta måste du vara försiktigare med breda drag.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+När den är parad, sätt in den i sista D-lagsplatsen för att slutföra det vita korset.
+
+### Del B: Para återstående kanter (3-2-3-teknik)
+
+Du har nu 8 oparade kanter. **3-2-3-tekniken** är det mest effektiva sättet att para dem:
+
+1. **Första 3 kanterna** — para dem med standard slice-flip-slice-drag. Placera en oparad kant fram-höger, hitta partnern uppe, använd Uw för att sammanföra dem:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Nästa 2 kanter** — med färre kanter kvar kan du para två snabbt i följd genom att lagra en bak:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Sista 3 kanterna** — de sista kanterna kräver mer försiktighet för att undvika att bryta redan parade kanter. Använd Dw-baserade drag eller vändningstekniker:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tips:**
+- Under 3-2-3-parning, kontrollera alltid att dina breda drag inte bryter korskanter på botten.
+- Om en kant är parad men vänd, måste du ta ut den och para om den.
+- Övergången från kantparning till 3x3 bör vara sömlös — ditt kors är redan klart.
+
+---
+
+## Steg 5: Lös som 3x3 (CFOP)
+
+Med alla center lösta, alla kanter parade och korset redan klart beter sig 4x4 nu som en 3x3. Eftersom det **vita korset redan är klart** (en stor fördel med Yau) kan du hoppa direkt till **F2L** (de två första lagren).
+
+Använd bara ytterlagsdrag härifrån — inga breda drag.
+
+**Fortsätt med standard CFOP:**
+1. **F2L** — para och sätt in hörn-kant-par i de två första lagren.
+2. **OLL** — orientera sista lagret.
+3. **PLL** — permutera sista lagret.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Detta är Yau-metodens största fördel: kors-till-F2L-övergången har noll paus, eftersom korset byggdes under reduktionsfasen.
+
+---
+
+## Paritetsalgoritmer
+
+4x4 har två paritetsfall som inte kan uppstå på en 3x3. Dessa inträffar var och en ungefär 50% av tiden, oavsett om du använder Yau eller Reduction.
+
+### OLL-paritet (enkel kantvändning)
+
+En enstaka kant verkar vänd på sista lagret — omöjligt på en riktig 3x3.
+
+**Algoritm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Tillämpa denna algoritm en gång, fortsätt sedan med normal OLL/PLL.
+
+### PLL-paritet (byte av två kanter)
+
+Två motstående kanter behöver bytas — återigen omöjligt på en 3x3.
+
+**Algoritm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## När lära sig Yau
+
+- **Om ditt snitt är under 2 minuter med Reduction** har du grunderna för att byta till Yau.
+- **Om du kan CFOP för 3x3** är Yau ett naturligt val — korset är redan klart när du går in i 3x3-fasen.
+- **Om du kämpar med Reduction-till-3x3-övergången** eliminerar Yau den pausen helt.
+
+## Träningsprioriteringar
+
+1. **Bemästra freeslice-kantparning** — detta är kärntekniken som gör Yau effektiv.
+2. **Öva 2-center + 3-korskant-igenkänning** — lär dig identifiera korskanter snabbt under de två första stegen.
+3. **Drilla 3-2-3-tekniken** — smidig kantparning är där mest tid sparas.
+4. **Arbeta med kors-till-F2L-övergången** — eftersom korset är klart, öva på att upptäcka ditt första F2L-par under kantparningen.
+
+---
+
+**Yau-metoden är standarden för tävlingsmässig 4x4-lösning.** Den sömlösa övergången från reduktion till 3x3-lösning, kombinerat med bättre möjligheter till framförhållning, gör den till det föredragna valet för speedcubers som siktar på snitt under 40 sekunder. Börja med att konvertera dina Reduction-lösningar till Yau ett steg i taget.

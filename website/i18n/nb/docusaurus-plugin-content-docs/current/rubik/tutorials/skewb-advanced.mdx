@@ -1,0 +1,317 @@
+---
+title: "Avanserte Skewb-teknikker"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Avanserte Skewb-teknikker
+
+Ta Skewb-løsningen din fra nybegynnernivå til konkurransenivå. Denne guiden dekker **Sarahs mellommetode**, som oppgraderer nybegynnermetoden ved å løse alle gjenværende sentre i ett enkelt steg, pluss avanserte algoritmer og speed solving-strategier brukt av topp Skewb-løsere.
+
+## Notasjonspåminnelse
+
+Skewb roterer rundt **hjørner** i stedet for sider:
+
+- **R** = Høyre fronthjørne med klokken &nbsp;&nbsp; **R'** = mot klokken
+- **L** = Venstre fronthjørne med klokken &nbsp;&nbsp; **L'** = mot klokken
+- **U** = Øvre høyre fronthjørne med klokken &nbsp;&nbsp; **U'** = mot klokken
+- **B** = Høyre bakhjørne med klokken &nbsp;&nbsp; **B'** = mot klokken
+
+Hold Skewb med **hvitt senter i bunnen** for alle steg.
+
+---
+
+## Sarahs mellommetode
+
+Sarahs nybegynnermetode løser Skewb i 3 steg: første side, deretter sentre, deretter siste lags hjørner. Mellomoppgraderingen **kombinerer senter- og hjørnestegene** og løser alle 5 gjenværende sentre i ÉN algoritme etter at første side er ferdig.
+
+### Oversikt
+
+| Steg | Nybegynner | Mellom |
+|------|----------|-------------|
+| 1 | Løs én side | Løs én side (samme) |
+| 2 | Plasser sentre | **Løs alle 5 sentre i ett steg** |
+| 3 | Orienter siste lags hjørner | Orienter siste lags hjørner (samme) |
+
+Den viktigste forbedringen er Steg 2: i stedet for å bruke Sledgehammer gjentatte ganger for å plassere sentre ett om gangen, lærer du et sett med algoritmer som løser alle sentre samtidig.
+
+### Steg 1: Løs én side
+
+Bygg en komplett **hvit side** i bunnen — alle 4 hjørner rundt det hvite senteret må være på plass med hvitt nedover, og tilstøtende sidefarger må stemme. Dette steget er identisk med nybegynnermetoden.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Bruk Sledgehammer med oppsettbevegelser for å plassere hvert hvitt hjørne. Med øvelse blir dette steget raskt og intuitivt.
+
+### Steg 2: Løs alle 5 sentre (One-Look)
+
+Etter at første side er løst, se på de **5 gjenværende sentrene** (topp + 4 sider) og identifiser ditt tilfelle. Bruk én algoritme for å løse dem alle på en gang.
+
+Det er flere tilfeller avhengig av hvor mange sentre som er i riktig posisjon:
+
+---
+
+#### Tilfelle 1: Tilstøtende 4-syklus
+
+Fire sentre trenger å sykle. Toppsenteret er riktig, men de 4 sidesentrene trenger å rotere.
+
+**Algoritme: R' L R L' R' L R L'** (Dobbel Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Tilfelle 2: Motsatt 2-bytte
+
+To motstående sidesentre trenger å byttes.
+
+**Algoritme: R L' R' L R L' R' L** (Invers dobbel Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Tilfelle 3: Tilstøtende 2-bytte
+
+To tilstøtende sidesentre trenger å byttes. Sett de to sentrene som skal byttes foran og til høyre.
+
+**Algoritme: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Tilfelle 4: Topp-side-bytte + syklus
+
+Toppsenteret trenger å byttes med et sidesenter, og de gjenværende sidesentrene sykler.
+
+**Algoritme: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Tilfelle 5: Trippelsyklus
+
+Tre sentre trenger å sykle (topp forblir, 3 sider roterer). Sett det stasjonære sidesenteret bak.
+
+**Algoritme: R' L R L'** (Enkel Sledgehammer — med riktig oppsett)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Lær å identifisere sentertilfeller raskt ved å sjekke toppsenteret først, deretter skanne de 4 sidene.
+- Mange av disse er Sledgehammer-variasjoner — kjenner du Sledgehammer godt, føles disse algoritmene naturlige.
+- Øv gjenkjenning ved å scramble Skewb, løse første side og identifisere sentertilfellet før utførelse.
+
+### Steg 3: Orienter siste lags hjørner
+
+Etter å ha løst alle sentre kan siste lags hjørner fortsatt trenge å vris. Dette steget er det samme som nybegynnermetoden.
+
+#### Alle 4 hjørner trenger vridning med klokken
+
+**Algoritme: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Alle 4 hjørner trenger vridning mot klokken
+
+**Algoritme: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 hjørner trenger vridning (tilstøtende)
+
+Sett de to uløste hjørnene foran. Bruk U til å posisjonere dem, utfør algoritmen, deretter angre U.
+
+**Algoritme: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 hjørner trenger vridning (diagonale)
+
+**Algoritme: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Avanserte algoritmer
+
+Utover mellommetoden, her er flere algoritmer som håndterer sjeldnere tilfeller mer effektivt.
+
+### Z-Perm-ekvivalent
+
+Når to par hjørner trenger å byttes (som et Z-formet mønster):
+
+**Algoritme: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi-tilfelle
+
+Toppsiden viser et Pi-mønster — to tilstøtende hjørner orientert, to ikke:
+
+**Algoritme: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Hjørneoppsett og orientering
+
+Når et hjørne trenger reorientering, bruk oppsettbevegelser for å konjugere en Sledgehammer-syklus som vrir det på plass:
+
+**Algoritme: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Raskt motsatt senterbytte
+
+En mer effektiv algoritme for å bytte to motstående sentre:
+
+**Algoritme: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Trippel hjørneorientering
+
+Tre hjørner trenger vridning (ett forblir riktig):
+
+**Algoritme: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Tilstøtende hjørnebytte
+
+To tilstøtende hjørner trenger å bytte posisjoner (ikke bare vri):
+
+**Algoritme: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look løsningskonsepter
+
+Det ultimate målet i konkurranserettet Skewb-løsning er å forutsi siste lag mens du fortsatt løser første side.
+
+### Forutsi siste lag
+
+Under Steg 1, mens du bygger den hvite siden, vær oppmerksom på **øverste lags sentre og hjørner**. Med øvelse kan du identifisere Steg 2 og 3 tilfellene før du avslutter Steg 1.
+
+- **Se toppsenteret** — beveger det seg til riktig posisjon når du setter inn siste hvite hjørne?
+- **Følg sidesentrene** — legg merke til hvilke sidesentre som allerede er riktige.
+- **Planlegg hele løsningen** — avanserte løsere kan planlegge hele løsningen under inspeksjon.
+
+### Påvirke siste lag
+
+Når du har flere måter å sette inn siste hvite hjørne, velg innsettingen som gir deg et **enklere Steg 2-tilfelle**:
+
+- Hvis to innsettinger begge løser hjørnet, velg den som plasserer flere sentre riktig.
+- Noen ganger fører et litt lengre Steg 1 til å hoppe over Steg 2 eller 3.
+
+---
+
+## Speed solving-tips
+
+### Grep og vridning
+
+- Hold Skewb med **fingertuppene på hjørnene** — du vrir hjørner, ikke sider.
+- Bruk **pekefinger og tommel** på hver hånd for å gripe motstående hjørner.
+- Øv jevne, kontrollerte hjørnevridninger — Skewb belønner presisjon over rå hastighet.
+- **Minimer grepbytter** — prøv å utføre hele Sledgehammer uten å endre grepet.
+
+### Fargenøytralitet
+
+Fargenøytralitet på Skewb betyr at du kan starte med **hvilken som helst side** som din første side, ikke bare hvit. Dette er ekstremt kraftig:
+
+- Med fargenøytralitet har du **6 mulige første sider** å velge mellom.
+- Velg siden som er nærmest løst — noen ganger er 2-3 hjørner allerede på plass.
+- Fargenøytralitet er nesten obligatorisk for løsning under 4 sekunder.
+
+**Slik øver du:**
+1. Start med å være nøytral mellom 2 motstående farger (f.eks. hvit og gul).
+2. Legg gradvis til flere startfarger til du kan starte med hvilken som helst side.
+3. Under inspeksjon, skann raskt alle 6 sider og velg den enkleste.
+
+### Inspeksjonsplanlegging
+
+Skewb har bare 14 synlige brikker (6 sentre + 8 hjørner), noe som gjør fullstendig løsningsplanlegging realistisk:
+
+- **Planlegg alltid første side fullstendig** under inspeksjon.
+- **Identifiser sentertilfellet** før du begynner å løse.
+- **Avansert:** planlegg gjennom Steg 2 — vit hvilken algoritme du vil bruke før du berører puslespillet.
+
+### Øvelsesrutine
+
+1. **Første side-øvelser** — scramble og løs bare første side, mål under 2 sekunder.
+2. **Sentergjenkjenning** — etter å ha løst første side, identifiser sentertilfellet så raskt som mulig uten å utføre.
+3. **Fulle løsninger** — sett med 12 tidtakede løsninger, spor gjennomsnitt av 5 og gjennomsnitt av 12.
+4. **Algoritmeøving** — øv hver senter- og hjørnealgoritme 20 ganger på rad for muskelminne.
+5. **Fargenøytral øving** — tving deg selv til å starte med en annen farge hver løsning.
+
+---
+
+**Med Sarahs mellommetode og dedikert øving er sub-5-sekunders Skewb-gjennomsnitt innen rekkevidde.** Skewb er et av de mest planleggingsvennlige puslespillene i speedcubing — færre brikker betyr at du kan forutsi mer under inspeksjon. Fokuser på gjenkjennelseshastighet og jevn vridning, og du vil se rask forbedring.

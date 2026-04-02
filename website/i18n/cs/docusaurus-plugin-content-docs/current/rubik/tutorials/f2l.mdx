@@ -1,0 +1,312 @@
+---
+title: "F2L: První dvě vrstvy"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: První dvě vrstvy
+
+F2L (First Two Layers, první dvě vrstvy) je **nejdůležitější krok** metody CFOP. Místo řešení rohů první vrstvy a hran druhé vrstvy ve dvou oddělených krocích (jako u metody pro začátečníky) F2L spáruje roh s odpovídající hranou a vloží je společně do správného slotu. Tím se ušetří obrovské množství tahů a právě zde dochází k největšímu zrychlení.
+
+Jsou **4 sloty** k vyplnění, jeden v každém rohu spodních dvou vrstev. Každý slot se skládá z jednoho rohového a jednoho hranového dílku.
+
+## Koncept
+
+Každý případ F2L zahrnuje dva dílky:
+- **Rohový dílek**, který patří do spodní vrstvy (má bílou/spodní nálepku)
+- **Hranový dílek**, který patří do střední vrstvy (spojuje dvě boční barvy)
+
+Cílem je **spárovat** tyto dva dílky v horní vrstvě a poté **vložit** pár do správného slotu jedním plynulým pohybem.
+
+## Připomenutí notace
+
+- **R** = Pravá &nbsp;&nbsp; **L** = Levá &nbsp;&nbsp; **U** = Horní &nbsp;&nbsp; **D** = Dolní &nbsp;&nbsp; **F** = Přední &nbsp;&nbsp; **B** = Zadní
+- Samotné písmeno = **90° po směru hodinových ručiček** &nbsp;&nbsp; **'** = **proti směru hodinových ručiček** &nbsp;&nbsp; **2** = **180°**
+
+Držte kostku s **bílou dole**. Slot, do kterého vkládáme, je vždy **přední pravý slot** (mezi stěnami F a R).
+
+---
+
+## Intuitivní F2L
+
+Než si začnete pamatovat algoritmy, naučte se **logiku** F2L. Každý případ sleduje stejný vzorec:
+
+1. **Najděte** pár roh-hrana, který patří k sobě
+2. **Oddělte** je, pokud jsou nesprávně spojené
+3. **Umístěte** jeden dílek a poté **přiveďte** druhý k němu
+4. **Spárujte** je v horní vrstvě tak, aby bílá směřovala ven nebo dolů
+5. **Vložte** spojený pár do slotu
+
+**Klíčový princip:** Používejte tahy R a U k vyjmutí rohu z předního pravého slotu nebo jeho vložení a tahy U k umístění hrany. Nikdy nenarušujte již vyřešené sloty.
+
+---
+
+Celkem existuje **41 standardních případů F2L**. Níže pokrýváme **15 nejdůležitějších případů**, které tvoří základ. Jakmile je zvládnete, budete schopni zbývající případy řešit intuitivně nebo je vyhledat dle potřeby.
+
+## Základní případy: oba dílky v horní vrstvě
+
+Toto jsou nejjednodušší a nejčastější případy. Roh i hrana jsou ve vrstvě U a cílový slot je prázdný.
+
+### Případ 1: Snadné vložení — Bílá rohu směřuje doprava, hrana připravena
+
+Roh má bílou orientovanou ke stěně R a hrana je již umístěna tak, že jeden tah U je spáruje. Toto je nejzákladnější vložení F2L.
+
+**Algoritmus: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Případ 2: Snadné vložení — Bílá rohu směřuje dopředu, hrana připravena
+
+Roh má bílou orientovanou ke stěně F a hrana je umístěna pro spárování s vložením proti směru hodinových ručiček.
+
+**Algoritmus: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Případ 3: Bílá rohu směřuje nahoru, barvy odpovídají přednímu středu
+
+Roh má bílou nahoru a jeho přední barva odpovídá přednímu středu. Hrana je na protější straně. Potřebujeme je spojit a vložit.
+
+**Algoritmus: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Případ 4: Bílá rohu směřuje nahoru, barvy odpovídají pravému středu
+
+Roh má bílou nahoru a jeho pravá barva odpovídá pravému středu. Hrana musí být spárována z opačné strany.
+
+**Algoritmus: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Případ 5: Roh a hrana daleko od sebe, bílá směřuje doprava
+
+Roh má bílou doprava a hrana je na opačné straně horní vrstvy. Přiblížíme hranu, poté spárujeme a vložíme.
+
+**Algoritmus: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Případ 6: Roh a hrana daleko od sebe, bílá směřuje dopředu
+
+Zrcadlový případ 5. Roh má bílou dopředu a hrana je na vzdálené straně.
+
+**Algoritmus: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Případ 7: Roh a hrana vedle sebe, bílá směřuje doprava — Pár spojený, ale špatně
+
+Roh a hrana jsou vedle sebe a spojené, ale po vložení by byly špatně. Rozdělíme je a znovu správně spojíme.
+
+**Algoritmus: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Případ 8: Roh a hrana vedle sebe, bílá směřuje dopředu — Pár spojený, ale špatně
+
+Zrcadlový případ 7 na straně stěny F.
+
+**Algoritmus: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Středně pokročilé případy: hrana ve slotu, roh v horní vrstvě
+
+Někdy je hrana již zaseknutá ve slotu (správně nebo nesprávně) a roh je v horní vrstvě. Musíme hranu vyjmout, aniž bychom narušili ostatní vyřešené páry.
+
+### Případ 9: Hrana ve správném slotu, ale roh nahoře — Bílá směřuje doprava
+
+Hrana je ve správném slotu a roh je ve vrstvě U s bílou doprava. Vyjmeme hranu a spárujeme ji s rohem.
+
+**Algoritmus: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Případ 10: Hrana ve špatném slotu, roh nahoře — Bílá směřuje nahoru
+
+Hrana je ve špatném slotu. Vyjmeme ji a současně připravíme spárování s rohem.
+
+**Algoritmus: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Pokročilé případy: roh ve slotu
+
+Tyto případy nastávají, když je roh již ve správném slotu, ale špatně orientovaný, nebo ve správném slotu s chybně umístěnou hranou.
+
+### Případ 11: Roh ve slotu, překroucený — Hrana v horní vrstvě
+
+Roh je v předním pravém slotu, ale s bílou dopředu (ne dolů). Hrana je ve vrstvě U. Vyjmeme roh, spárujeme ho s hranou a znovu vložíme.
+
+**Algoritmus: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Případ 12: Roh ve slotu, překroucený — Hrana ve špatném slotu
+
+Oba dílky jsou ve spodních dvou vrstvách, ale žádný není správně. Vykopneme roh a současně vyjmeme hranu.
+
+**Algoritmus: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Speciální případy: oba dílky ve slotu
+
+### Případ 13: Pár spojený ve slotu, ale překroucený
+
+Roh a hrana jsou spárované a ve slotu, ale roh je překroucený (bílá směřuje dopředu, ne dolů). Vyjmeme pár, rozdělíme je a znovu správně vložíme.
+
+**Algoritmus: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Případ 14: Roh správně ve slotu, hrana ve slotu převrácená
+
+Roh je správně umístěn, ale hrana nad ním je převrácená. Toto je jeden z nejsložitějších případů. Vyjmeme oba, správně spárujeme a znovu vložíme.
+
+**Algoritmus: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Případ 15: Oba ve slotu, oba špatně — Křížová chyba
+
+Roh i hrana jsou ve slotu, ale žádný neodpovídá. Kompletní vyjmutí a přestavba.
+
+**Algoritmus: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tipy pro rychlejší F2L
+
+### 1. Nejprve se učte intuitivně
+
+Nespěchejte s memorováním všech 41 algoritmických případů. Věnujte čas pochopení **proč** každý tah funguje. Pokud víte, že R U R' vyjme roh a vrátí ho zpět, dokážete většinu případů vyřešit sami. Algoritmy přijdou později k optimalizaci tahů, které již chápete.
+
+### 2. Rozvíjejte lookahead
+
+**Lookahead** je schopnost sledovat další pár, zatímco vkládáte aktuální. Toto je největší faktor oddělující řešitele za 20 sekund od řešitelů za 15 sekund.
+
+Tipy pro trénink:
+- Zpomalte otáčení a donuťte se hledat další pár během vkládání
+- Trénujte řešení F2L se zavřenýma očima během vkládání (znáte tahy, tak se dívejte dopředu)
+- Provádějte neměřené sestavení zaměřené čistě na nulové pauzy mezi páry
+
+### 3. Omezte rotace
+
+Pokaždé, když otočíte celou kostkou, ztrácíte čas. Nejlepší řešitelé F2L rotují zřídka více než jednou nebo dvakrát za celou fázi F2L.
+
+- Naučte se vkládat do **zadních slotů** pomocí tahů R a U (např. R U' R' pro vložení do zadního pravého)
+- Trénujte tahy **L, F a B** pro sloty na opačné straně
+- Používejte široké tahy (r, l) pro současnou rotaci a vložení
+
+### 4. Rychle rozpoznávejte případy
+
+Trénujte se okamžitě rozpoznat, na jaký případ se díváte:
+- **Kde je bílá na rohu?** (Nahoře, Vpředu nebo Vpravo)
+- **Kde je hrana vzhledem k rohu?** (Vedle, naproti nebo ve slotu)
+- **Jsou již spárované?** (Správně spojené, špatně spojené nebo oddělené)
+
+### 5. Řešte v efektivním pořadí
+
+Nemusíte řešit 4 páry v žádném pevném pořadí. Podívejte se na všechny 4 páry a začněte tím **nejlehčím** — tím, který vyžaduje nejméně tahů. Zkušení řešitelé plánují svůj první pár během inspekce společně s křížem.
+
+### 6. Triky s prázdnými sloty
+
+Když je slot prázdný, můžete ho použít jako dočasné úložiště. Například umístěte hranu do prázdného slotu (R U R'), abyste ji dostali z cesty, zatímco pracujete na jiném páru. Začátečníci tuto mocnou techniku často přehlížejí.
+
+---
+
+## Tréninková rutina
+
+1. **Zamíchejte kostku a vyřešte kříž**
+2. **Najděte všechny 4 páry roh-hrana** — určete, kde je každý roh a jeho odpovídající hrana
+3. **Vyřešte každý pár postupně** — začněte lehkými případy, těžké nechte na konec
+4. **Měřte čas pouze fáze F2L** — použijte časovač. Cíl: pod 15 sekund pro všechny 4 páry
+5. **Zhodnoťte** — po každém sestavení se zeptejte: mohl jsem některý pár vyřešit s méně tahy?
+
+S pravidelným tréninkem se F2L stane druhou přirozeností a uvidíte dramatické zlepšení vašich celkových časů sestavení.
+
+---
+
+## Co dál?
+
+Po zvládnutí F2L pokračujte s poslední vrstvou:
+
+- [**Přehled metody CFOP**](./cfop) — Podívejte se, jak F2L zapadá do kompletní metody CFOP
+- [**Algoritmy OLL**](./oll) — Udělejte horní stěnu celou žlutou (57 případů + 2-Look OLL)
+- [**Algoritmy PLL**](./pll) — Uspořádejte poslední dílky k dokončení sestavení (21 případů)
+- [**Průvodce finger tricky**](./finger-tricks) — Provádějte F2L triggery rychleji a plynuleji

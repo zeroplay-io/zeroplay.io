@@ -1,0 +1,219 @@
+---
+title: Prezentarea metodei CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Prezentarea metodei CFOP
+
+**Metoda CFOP** (cunoscuta si ca **metoda Fridrich**) este cea mai utilizata metoda de speedcubing din lume. Marea majoritate a rezolvatorilor sub 20 de secunde si detinatorilor de recorduri mondiale folosesc CFOP. Se bazeaza pe metoda pe straturi pentru incepatori, dar este dramatic mai eficienta — reducand o rezolvare medie de la peste 100 de miscari la aproximativ 55-60 de miscari.
+
+**CFOP** reprezinta cei patru pasi:
+
+1. **C**ross — Rezolva 4 muchii pe fundul cubului
+2. **F**2L — Primele doua straturi (imperecheaza si insereaza 4 perechi colt-muchie)
+3. **O**LL — Orientarea ultimului strat (fa toata fata superioara de o singura culoare)
+4. **P**LL — Permutarea ultimului strat (asaza corect toate piesele superioare)
+
+## CFOP vs. metoda pentru incepatori
+
+| | Incepator (LBL) | CFOP |
+|---|---|---|
+| Pasi | 7 | 4 |
+| Miscari medii | 100-120 | 55-60 |
+| Algoritmi de invatat | 5-8 | 78 (complet) / 16 (2-look) |
+| Viteza tipica | 1-3 minute | 10-20 secunde |
+| Diferenta cheie | Pas cu pas, o piesa pe rand | Imperecheaza piese, mai putini pasi |
+
+Vestea buna: poti invata CFOP **treptat**. Incepe cu F2L intuitiv si 2-look OLL/PLL (doar 16 algoritmi), apoi extinde la OLL complet (57 algoritmi) si PLL complet (21 algoritmi) in timp.
+
+---
+
+## Pasul 1: Crucea
+
+Crucea este acelasi concept ca in metoda pentru incepatori — rezolva 4 muchii albe pe fata inferioara astfel incat fiecare muchie sa se potriveasca si cu centrul lateral. Diferenta in CFOP este **cum** abordezi:
+
+- **Planifica intreaga cruce in timpul inspectiei** (15 secunde inainte de inceperea rezolvarii)
+- **Rezolva crucea pe fundul cubului** — fara a intoarce cubul
+- **Tinteste 8 miscari sau mai putine** — o cruce eficienta are in medie 6-7 miscari
+
+**Exemplu: Rezolvarea unei muchii de cruce direct in jos**
+
+Aici, muchia alb-albastra este in stratul superior. O aliniam si o inseram direct in jos cu o miscare:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Exemplu: Muchia crucii are nevoie de repozitionare**
+
+Uneori o muchie este in locul gresit sau rasturnata. Aici corectam o muchie gresit plasata:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Sfaturi pentru o cruce rapida:**
+- Exerseaza planificarea crucii cu ochii inchisi
+- Invata sa o rezolvi in 8 miscari sau mai putine din orice amestecare
+- Lucreaza la rezolvarea crucii pe fund de la prima zi — evita obiceiul de a rezolva sus
+
+---
+
+## Pasul 2: F2L (Primele doua straturi)
+
+F2L este inima CFOP si sursa celei mai mari economii de timp. In loc sa rezolvi colturile primului strat si muchiile celui de-al doilea strat separat (ca in metoda pentru incepatori), **imperechezi** o piesa de colt cu muchia potrivita si le **inserezi** impreuna ca o singura unitate.
+
+Sunt 4 perechi colt-muchie (numite **sloturi**) de rezolvat. Fiecare slot se afla intre doua fete laterale in cele doua straturi inferioare.
+
+**Caz F2L de baza: Coltul si muchia ambele in stratul superior**
+
+Coltul alb-rosu-verde este in stratul superior, si muchia rosu-verde este de asemenea in stratul superior. Le imperechem si inseram:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Alt caz comun: Separarea unei perechi gresite**
+
+Uneori piesele sunt imperecheate gresit. Le separam si le reunim corect:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L poate fi invatat **intuitiv** — intelegand logica ascunderii, imperecherii si inserarii — sau **algoritmic** cu 41 de cazuri specifice. Majoritatea speedcuberilor folosesc o combinatie a ambelor.
+
+Pentru lista completa de cazuri si algoritmi F2L, vezi ghidul [**F2L: Primele doua straturi**](./f2l).
+
+---
+
+## Pasul 3: OLL (Orientarea ultimului strat)
+
+Dupa completarea primelor doua straturi, fata superioara va avea cateva autocolante galbene si cateva non-galbene. Scopul OLL este sa faci **intreaga fata superioara galbena** — inca nu ne pasa de culorile laterale.
+
+OLL complet are **57 de algoritmi**. Totusi, poti incepe cu **2-look OLL**, care foloseste doar 10 algoritmi impartind pasul in doua parti:
+
+1. **Prima privire:** Formeaza o cruce galbena sus (3 cazuri, folosind 2 algoritmi din diferite orientari)
+2. **A doua privire:** Orienteaza colturile galbene (7 algoritmi)
+
+**Exemplu: Sune (unul dintre cele mai comune cazuri OLL)**
+
+Acesta este OLL #26, numit de obicei **Sune**. Un colt galben este orientat, si celelalte trei au nevoie de rotatie:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Exemplu: Cazul cruce OLL (formarea crucii galbene)**
+
+Cand ai o forma de L din muchii galbene sus, tine L-ul in spate-stanga si aplica:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Sfaturi pentru invatarea OLL:**
+- Incepe cu 2-look OLL — adauga doar cateva secunde la rezolvare
+- Invata mai intai Sune si Anti-Sune; apar in multe cazuri OLL
+- Exerseaza recunoasterea cazurilor dupa modelul autocolantelor galbene de sus
+
+---
+
+## Pasul 4: PLL (Permutarea ultimului strat)
+
+Ultimul pas! Toate autocolantele galbene sunt acum sus, dar culorile laterale ale pieselor ultimului strat pot sa nu se potriveasca. PLL **rearanjeaza** piesele stratului superior in pozitiile lor corecte pentru a finaliza rezolvarea.
+
+PLL complet are **21 de algoritmi**. Poti incepe cu **2-look PLL**, care foloseste doar 6 algoritmi:
+
+1. **Prima privire:** Pozitioneaza colturile corect (2 algoritmi)
+2. **A doua privire:** Pozitioneaza muchiile corect (4 algoritmi)
+
+**Exemplu: T-Perm (unul dintre cei mai utili algoritmi PLL)**
+
+T-Perm schimba doua colturi si doua muchii. Apare frecvent si este folosit ca baza pentru invatarea altor PLL:
+
+**Algoritm: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Exemplu: U-Perm (a) — Ciclul a 3 muchii**
+
+U-Perm cicleaza trei muchii in sensul acelor de ceasornic in timp ce toate colturile sunt deja la locul lor:
+
+**Algoritm: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Sfaturi pentru invatarea PLL:**
+- Incepe cu T-Perm, U-Perms (a si b) si A-Perms
+- Invata sa recunosti PLL-urile dupa culorile laterale (modelul farurilor)
+- Exerseaza executarea PLL-urilor din orice unghi AUF (ajustarea fetei superioare)
+
+---
+
+## Cand sa inveti CFOP
+
+CFOP este pasul natural urmator dupa ce stapanesti metoda pe straturi pentru incepatori. Iata o progresie recomandata:
+
+### Etapa 1: De la incepator la sub 60 de secunde
+- Stapaneste metoda pentru incepatori pana cand rezolvarile tale sunt consistente
+- Invata sa rezolvi **crucea pe fund**
+- Incepe sa exersezi **F2L intuitiv** — observa cum se formeaza si insereaza perechile
+
+### Etapa 2: De la sub 60 la sub 30 de secunde
+- Foloseste **F2L intuitiv** complet pentru toate cele 4 perechi
+- Invata **2-look OLL** (10 algoritmi)
+- Invata **2-look PLL** (6 algoritmi)
+- Exerseaza **lookahead** — urmareste perechea urmatoare in timp ce inserezi pe cea curenta
+
+### Etapa 3: De la sub 30 la sub 20 de secunde
+- Invata **PLL complet** (21 algoritmi)
+- Incepe sa inveti **OLL complet** (57 algoritmi)
+- Optimizeaza solutiile F2L — invata [**cazurile algoritmice F2L**](./f2l)
+- Lucreaza la eficienta crucii (planifica intreaga cruce in timpul inspectiei)
+
+### Etapa 4: Sub 20 si mai departe
+- Completeaza **OLL complet**
+- Invata trucuri F2L avansate (tehnici de slot gol, multi-slotting)
+- Dezvolta obiceiuri puternice de **lookahead**
+- Lucreaza la viteza de rotatie si fluiditate
+
+---
+
+## Pasii urmatori
+
+Gata sa aprofundezi fiecare pas? Consulta aceste ghiduri detaliate:
+
+- [**F2L: Primele doua straturi**](./f2l) — Toate cazurile comune F2L cu algoritmi si demonstratii
+- [**Algoritmi OLL**](./oll) — Toate cele 57 cazuri OLL cu 2-Look OLL pentru incepatori
+- [**Algoritmi PLL**](./pll) — Toate cele 21 cazuri PLL cu 2-Look PLL pentru incepatori
+- [**Ghid de finger tricks**](./finger-tricks) — Executarea eficienta a miscarilor si triggere esentiale
+- [**Sfaturi de speedcubing**](./speed-tips) — Planificarea crucii, lookahead si rutine de practica
+
+**Cubing placut!** Calatoria de la incepator la sub 20 de secunde este una dintre cele mai satisfacatoare provocari din speedcubing. Ia-o pas cu pas si vei ajunge acolo.

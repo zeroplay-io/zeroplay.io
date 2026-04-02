@@ -1,0 +1,249 @@
+---
+title: "4x4 Lanjutan: Kaedah Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Lanjutan: Kaedah Yau
+
+**Kaedah Yau**, dicipta oleh Robert Yau, adalah alternatif yang lebih pantas kepada kaedah Reduction standard untuk kiub Rubik 4x4. Perbezaan utama: Yau menyelesaikan edge silang **awal**, yang memberikan pandangan ke hadapan yang lebih baik dan peralihan yang lebih lancar ke fasa 3x3. Kebanyakan speedcuber 4x4 teratas menggunakan Yau atau variasinya.
+
+## Yau vs Reduction Standard
+
+| Aspek | Reduction | Yau |
+|--------|-----------|-----|
+| **Susunan langkah** | Semua pusat, kemudian semua edge | 2 pusat, 3 cross edge, 4 pusat, edge selebihnya |
+| **Cross** | Dibina selepas pengurangan | Sudah separa siap semasa pengurangan |
+| **Pandangan ke hadapan** | Perlu mencari cross edge selepas pairing | Cross hampir siap, peralihan ke F2L lancar |
+| **Had kelajuan** | Baik | Lebih tinggi — kurang jeda antara fasa |
+
+## Peringatan Notasi
+
+**Gerakan standard** (lapisan luar sahaja):
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Hadapan &nbsp;&nbsp; **B** = Belakang
+
+**Gerakan lebar** (dua lapisan luar bersama):
+- **Rw** = Kanan lebar &nbsp;&nbsp; **Lw** = Kiri lebar &nbsp;&nbsp; **Uw** = Atas lebar &nbsp;&nbsp; **Dw** = Bawah lebar &nbsp;&nbsp; **Fw** = Hadapan lebar &nbsp;&nbsp; **Bw** = Belakang lebar
+
+Huruf sahaja bermaksud **90° ikut jam**. Tambah **'** bermaksud **lawan jam**. Tambah **2** bermaksud **180°**.
+
+---
+
+## Langkah 1: Selesaikan Dua Pusat Bertentangan
+
+Mulakan dengan menyelesaikan blok pusat **putih** dan **kuning** (atas dan bawah). Ini sama dengan bahagian pertama kaedah Reduction standard.
+
+Setiap pusat adalah blok 2x2. Gunakan gerakan lebar untuk mengumpulkan kepingan pusat sambil melindungi kepingan yang sudah ditempatkan dengan putaran lapisan luar.
+
+**Pembinaan pusat asas** — bawa kepingan pusat ke atas menggunakan gerakan lebar, letakkan, kemudian undur:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Menggabungkan dua separuh pusat** — apabila anda mempunyai dua jalur pusat 1x2 yang perlu digabungkan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tips:**
+- Selesaikan pusat putih dahulu (bawah), kemudian pusat kuning (atas).
+- Kekalkan putih di bawah sepanjang masa — gunakan hanya gerakan Rw, Lw, Fw, Bw untuk mengendalikan pusat tanpa mengganggu bahagian bawah.
+- Jangan risau tentang pusat sisi lagi. Tinggalkan untuk langkah 3.
+
+---
+
+## Langkah 2: Selesaikan 3 daripada 4 Cross Edge
+
+Di sinilah Yau berbeza daripada Reduction. Sebelum menyelesaikan pusat yang tinggal, **pasangkan dan letakkan 3 cross edge putih** ke lapisan bawah.
+
+Cross edge terdiri daripada dua kepingan (cth. putih-merah dan putih-merah) yang perlu dipasangkan dan diletakkan di lapisan D. Biarkan satu cross edge belum selesai buat masa ini — ini memberi kebebasan menggunakan gerakan lebar di langkah seterusnya.
+
+**Pairing cross edge menggunakan freeslice** — teknik freeslice memasangkan edge tanpa mengganggu pusat. Letakkan satu separuh edge di posisi hadapan-kanan dan bawa pasangannya dari slot lain:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Memasukkan cross edge yang dipasangkan ke bawah** — selepas dipasangkan, letakkan edge ke posisi D-layer yang betul:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice dengan gerakan lebar** — gunakan Dw untuk mengangkat kepingan edge untuk pairing tanpa merosakkan cross edge yang sudah ada:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tips:**
+- Anda hanya perlukan 3 cross edge selesai sekarang. Sengaja tinggalkan satu slot kosong.
+- Gunakan slot D-layer kosong dengan bebas — cross edge yang hilang memberi lebih kebebasan untuk gerakan lebar.
+- Pilih cross edge mana yang ditinggalkan berdasarkan yang paling sukar dicari atau dipasangkan.
+
+---
+
+## Langkah 3: Selesaikan 4 Pusat yang Tinggal
+
+Sekarang selesaikan **4 pusat sisi** (merah, oren, biru, hijau). Pusat putih dan kuning sudah siap dari langkah 1.
+
+Oleh kerana anda mempunyai satu slot cross edge yang belum selesai, anda masih boleh menggunakan beberapa gerakan lebar dengan bebas. Ini adalah kelebihan utama Yau — cross yang separa selesai tidak menghadkan pembinaan pusat seperti yang anda sangka.
+
+**Pembinaan pusat sisi** — gunakan gerakan lebar untuk mengumpul kepingan pusat, kemudian letakkan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Commutator pusat** — apabila perlu menukar kepingan pusat tanpa mengganggu yang lain, gunakan urutan gaya commutator:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tips:**
+- Selesaikan pusat berpasangan bertentangan jika boleh (cth. merah kemudian oren, biru kemudian hijau).
+- Manfaatkan slot cross edge yang belum selesai — gerakan lebar melalui slot itu tidak akan merosakkan cross edge.
+- Perhatikan 3 cross edge yang sudah ada di lapisan D. Periksa sebelum membuat gerakan lebar.
+
+---
+
+## Langkah 4: Cross Edge Terakhir + Penyelesaian Pairing Edge
+
+Langkah ini mempunyai dua bahagian: siapkan cross edge ke-4, kemudian pasangkan semua edge yang tinggal.
+
+### Bahagian A: Selesaikan Cross Edge Terakhir
+
+Cari pasangan cross edge yang tinggal dan satukan mereka. Oleh kerana semua pusat sudah selesai, anda perlu lebih berhati-hati dengan gerakan lebar.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Selepas dipasangkan, masukkan ke slot D-layer terakhir untuk melengkapkan cross putih.
+
+### Bahagian B: Pasangkan Edge yang Tinggal (Teknik 3-2-3)
+
+Sekarang anda mempunyai 8 edge yang belum dipasangkan. **Teknik 3-2-3** adalah cara paling efisien untuk memasangkannya:
+
+1. **3 edge pertama** — pasangkan menggunakan gerakan slice-flip-slice standard. Letakkan edge yang belum dipasangkan di hadapan-kanan, cari pasangannya di atas, gunakan Uw untuk menyatukan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **2 edge seterusnya** — dengan kurang edge tinggal, anda boleh memasangkan dua edge berturut-turut dengan pantas, menyimpan satu di belakang:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **3 edge terakhir** — edge terakhir memerlukan lebih berhati-hati untuk mengelak merosakkan edge yang sudah dipasangkan. Gunakan gerakan berasaskan Dw atau teknik flipping:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tips:**
+- Semasa pairing 3-2-3, sentiasa periksa gerakan lebar anda tidak merosakkan cross edge di bawah.
+- Jika edge sudah dipasangkan tetapi terbalik, anda perlu mengeluarkannya dan memasangkan semula.
+- Peralihan dari pairing edge ke 3x3 harus lancar — cross anda sudah siap.
+
+---
+
+## Langkah 5: Selesaikan sebagai 3x3 (CFOP)
+
+Dengan semua pusat selesai, semua edge dipasangkan, dan cross sudah lengkap, 4x4 kini berkelakuan seperti 3x3. Oleh kerana **cross putih sudah siap** (kelebihan besar Yau), anda boleh terus ke **F2L** (Dua Lapisan Pertama).
+
+Gunakan hanya gerakan lapisan luar mulai sekarang — tiada gerakan lebar.
+
+**Teruskan dengan CFOP standard:**
+1. **F2L** — pasangkan dan masukkan pasangan sudut-edge ke dua lapisan pertama.
+2. **OLL** — orientasikan lapisan terakhir.
+3. **PLL** — permutasikan lapisan terakhir.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Ini adalah kelebihan terbesar kaedah Yau: peralihan cross-ke-F2L tanpa jeda, kerana cross dibina semasa fasa pengurangan.
+
+---
+
+## Algoritma Pariti
+
+4x4 mempunyai dua kes pariti yang tidak boleh berlaku pada 3x3. Setiap satu berlaku kira-kira 50% masa, tanpa mengira sama ada anda menggunakan Yau atau Reduction.
+
+### Pariti OLL (Flip Edge Tunggal)
+
+Satu edge kelihatan terbalik pada lapisan terakhir — mustahil pada 3x3 sebenar.
+
+**Algoritma: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Gunakan algoritma ini sekali, kemudian teruskan dengan OLL/PLL biasa.
+
+### Pariti PLL (Tukar Dua Edge)
+
+Dua edge bertentangan perlu ditukar — sekali lagi mustahil pada 3x3.
+
+**Algoritma: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Bila Perlu Belajar Yau
+
+- **Jika purata anda di bawah 2 minit dengan Reduction**, anda mempunyai asas untuk beralih ke Yau.
+- **Jika anda tahu CFOP untuk 3x3**, Yau adalah pilihan semula jadi — cross sudah siap apabila memasuki fasa 3x3.
+- **Jika anda bergelut dengan peralihan Reduction-ke-3x3**, Yau menghapuskan jeda itu sepenuhnya.
+
+## Keutamaan Latihan
+
+1. **Kuasai pairing edge freeslice** — ini adalah teknik teras yang menjadikan Yau efisien.
+2. **Latih pengecaman 2-pusat + 3-cross-edge** — belajar mengenal pasti cross edge dengan pantas semasa dua langkah pertama.
+3. **Drill teknik 3-2-3** — pairing edge yang lancar adalah di mana paling banyak masa dijimatkan.
+4. **Usaha pada peralihan cross-ke-F2L** — oleh kerana cross sudah siap, latih mengesan pasangan F2L pertama anda semasa pairing edge.
+
+---
+
+**Kaedah Yau adalah standard untuk penyelesaian 4x4 kompetitif.** Peralihan lancar dari pengurangan ke penyelesaian 3x3, digabungkan dengan peluang pandangan ke hadapan yang lebih baik, menjadikannya pilihan utama bagi speedcuber yang menyasarkan purata di bawah 40 saat. Mulakan dengan menukar penyelesaian Reduction anda ke Yau satu langkah pada satu masa.

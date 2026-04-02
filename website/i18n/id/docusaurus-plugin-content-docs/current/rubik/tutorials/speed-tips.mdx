@@ -1,0 +1,129 @@
+---
+title: Tips Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Tips Speed Cubing
+
+Menjadi lebih cepat dalam menyelesaikan Rubik's Cube bukan hanya tentang memutar lebih cepat. Kemajuan terbesar datang dari perencanaan ke depan, mengurangi jeda, dan berlatih dengan tujuan. Panduan ini mencakup keterampilan inti yang memisahkan pemecah kasual dari speedcuber kompetitif.
+
+---
+
+## Perencanaan Cross
+
+Cross adalah langkah pertama penyelesaian CFOP dan satu-satunya bagian yang dapat Anda rencanakan **sepenuhnya selama inspeksi**. Menguasai perencanaan cross memberikan keunggulan gratis di setiap penyelesaian.
+
+### Gunakan seluruh 15 detik inspeksi
+
+Dalam kompetisi, Anda mendapat 15 detik inspeksi sebelum memulai timer. Gunakan setiap detik:
+- 5 detik pertama: Identifikasi posisi 4 edge cross.
+- 5 detik berikutnya: Rencanakan solusi cross lengkap (idealnya 6-8 gerakan atau kurang).
+- 5 detik terakhir: Latih urutan secara mental dan rencanakan pasangan F2L pertama.
+
+### Selesaikan cross di bawah
+
+Selalu selesaikan cross di **sisi bawah** (lapisan D). Pemula sering menyelesaikan cross di atas lalu membalik kubus, membuang 1-2 detik. Dengan menyelesaikan di bawah dari awal, Anda bisa langsung mulai mencari pasangan F2L.
+
+**Contoh: Solusi cross 6 gerakan**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Contoh: Cross efisien 5 gerakan**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Latih cross dengan mata tertutup
+
+1. Acak kubus. 2. Rencanakan seluruh solusi cross. 3. Tutup mata dan jalankan dari memori. 4. Buka mata untuk verifikasi.
+
+### Netralitas warna
+
+Pemecah **netral warna** dapat memulai dengan warna apa saja dari 6 warna, memberikan keunggulan 2-3 gerakan pada cross.
+
+---
+
+## Lookahead (Melihat ke Depan)
+
+Lookahead adalah kemampuan **melacak potongan berikutnya sambil menyelesaikan yang sekarang**. Ini keterampilan terpenting untuk menembus batas kecepatan.
+
+### Cara berlatih lookahead
+
+**Penyelesaian lambat**: metronom 1-2 putaran/detik, jangan pernah berhenti memutar. Latihan F2L buta memperkuat pelacakan mental.
+
+---
+
+## F2L Efisien
+
+Hindari rotasi yang tidak perlu.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. dengan rotasi:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+Versi pertama menghemat ~0,5 detik. Prioritaskan slot belakang. Pengaruhi pasangan berikutnya. Multi-slotting jarang tapi berharga.
+
+---
+
+## Pengenalan OLL/PLL
+
+Pengenalan cepat menghilangkan jeda antara F2L dan lapisan terakhir. Latih pengenalan dari dua sudut. Pre-AUF dan prediksi OLL adalah teknik lanjutan.
+
+---
+
+## Rutinitas Latihan
+
+Latihan yang disengaja mengalahkan penyelesaian tanpa berpikir.
+
+### Rencana harian (45-60 menit)
+
+**Latihan cross (10 menit)** - Target: di bawah 2 detik, 6 gerakan atau kurang.
+
+**F2L lambat (15 menit)** - Metronom, fokus lookahead.
+
+**Latihan algoritma (10 menit)** - 2-3 OLL/PLL, 20-30 pengulangan.
+
+**Penyelesaian berwaktu (15-20 menit)** - **Ao12** - Lacak tren.
+
+### Rata-rata: **Ao5**, **Ao12**, **Ao100**.
+
+Sepuluh penyelesaian fokus mengalahkan seratus di autopilot.
+
+---
+
+## Tips Kompetisi
+
+Pemanasan yang benar, tetap tenang, inspeksi setinggi mata, dan familiar dengan Stackmat timer.
+
+---
+
+## Perangkat Keras
+
+Speed cube yang baik membuat perbedaan nyata. Kubus magnetik dari MoYu, QiYi, dan GAN adalah standar. Corner cutting 45+ derajat, putaran halus, dan stabilitas adalah kunci. Untuk pemula: beli 3x3 magnetik modern, pertahankan ketegangan pabrik minggu pertama, tambahkan pelumas silikon jika perlu, dan sesuaikan secara bertahap.
+
+Kubus yang disetel dengan baik menghilangkan perangkat keras sebagai variabel, memungkinkan Anda sepenuhnya fokus pada peningkatan teknik.

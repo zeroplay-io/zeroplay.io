@@ -1,0 +1,312 @@
+---
+title: "F2L: Primi due strati"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Primi due strati
+
+L'F2L (First Two Layers, primi due strati) è il **passo più importante** del metodo CFOP. Invece di risolvere gli angoli del primo strato e gli spigoli del secondo strato come due passaggi separati (come nel metodo per principianti), l'F2L accoppia un angolo con il suo spigolo corrispondente e li inserisce insieme nello slot corretto. Questo risparmia un enorme numero di mosse ed è la fonte dei maggiori miglioramenti di velocità.
+
+Ci sono **4 slot** da riempire, uno in ogni angolo dei due strati inferiori. Ogni slot è composto da un pezzo angolare e un pezzo spigolo.
+
+## Il concetto
+
+Ogni caso F2L coinvolge due pezzi:
+- Un **pezzo angolare** che appartiene allo strato inferiore (ha un adesivo bianco/colore del fondo)
+- Un **pezzo spigolo** che appartiene allo strato intermedio (collega due colori laterali)
+
+L'obiettivo è **accoppiare** questi due pezzi nello strato superiore, poi **inserire** la coppia nello slot corretto con un unico movimento fluido.
+
+## Promemoria sulla notazione
+
+- **R** = Destra &nbsp;&nbsp; **L** = Sinistra &nbsp;&nbsp; **U** = Alto &nbsp;&nbsp; **D** = Basso &nbsp;&nbsp; **F** = Fronte &nbsp;&nbsp; **B** = Retro
+- Una lettera sola = **90° in senso orario** &nbsp;&nbsp; **'** = **antiorario** &nbsp;&nbsp; **2** = **180°**
+
+Tieni il cubo con il **bianco in basso**. Lo slot in cui inseriamo è sempre lo **slot anteriore destro** (tra le facce F e R).
+
+---
+
+## F2L intuitivo
+
+Prima di memorizzare gli algoritmi, impara la **logica** dell'F2L. Ogni caso segue lo stesso schema:
+
+1. **Trova** una coppia angolo-spigolo che appartengono insieme
+2. **Separali** se sono uniti in modo errato
+3. **Posiziona** un pezzo, poi **porta** l'altro a incontrarlo
+4. **Accoppiala** nello strato superiore in modo che il bianco guardi verso l'esterno o verso il basso
+5. **Inserisci** la coppia collegata nello slot
+
+**Principio chiave:** Usa le mosse R e U per estrarre l'angolo dallo slot anteriore destro o inserirlo, e le mosse U per posizionare lo spigolo. Non disturbare mai gli slot già risolti.
+
+---
+
+Ci sono **41 casi standard F2L** in totale. Di seguito copriamo i **15 casi più importanti** che formano le basi. Una volta padroneggiati, sarai in grado di gestire i casi rimanenti intuitivamente o cercandoli al bisogno.
+
+## Casi base: entrambi i pezzi nello strato superiore
+
+Questi sono i casi più semplici e comuni. Sia l'angolo che lo spigolo sono nello strato U e lo slot target è vuoto.
+
+### Caso 1: Inserimento facile — Bianco dell'angolo verso destra, spigolo pronto
+
+L'angolo ha il bianco rivolto verso la faccia R, e lo spigolo è già posizionato in modo che una mossa U li accoppi. Questo è l'inserimento F2L più basilare.
+
+**Algoritmo: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Caso 2: Inserimento facile — Bianco dell'angolo verso il fronte, spigolo pronto
+
+L'angolo ha il bianco rivolto verso la faccia F, e lo spigolo è posizionato per l'accoppiamento con un inserimento antiorario.
+
+**Algoritmo: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Caso 3: Bianco dell'angolo verso l'alto, colori corrispondenti al centro frontale
+
+L'angolo ha il bianco verso l'alto e il suo colore frontale corrisponde al centro frontale. Lo spigolo è dalla parte opposta. Dobbiamo collegarli e inserire.
+
+**Algoritmo: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Caso 4: Bianco dell'angolo verso l'alto, colori corrispondenti al centro destro
+
+L'angolo ha il bianco verso l'alto e il suo colore destro corrisponde al centro destro. Lo spigolo deve essere accoppiato dal lato opposto.
+
+**Algoritmo: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Caso 5: Angolo e spigolo lontani, bianco verso destra
+
+L'angolo ha il bianco verso destra e lo spigolo è sul lato opposto dello strato superiore. Avviciniamo lo spigolo, poi accoppiamo e inseriamo.
+
+**Algoritmo: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Caso 6: Angolo e spigolo lontani, bianco verso il fronte
+
+Specchio del Caso 5. L'angolo ha il bianco verso il fronte e lo spigolo è sul lato lontano.
+
+**Algoritmo: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Caso 7: Angolo e spigolo adiacenti, bianco verso destra — Coppia collegata ma sbagliata
+
+L'angolo e lo spigolo sono uno accanto all'altro e collegati, ma inseriti sarebbero sbagliati. Li separiamo e li riuniamo correttamente.
+
+**Algoritmo: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Caso 8: Angolo e spigolo adiacenti, bianco verso il fronte — Coppia collegata ma sbagliata
+
+Specchio del Caso 7 sul lato della faccia F.
+
+**Algoritmo: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Casi intermedi: spigolo nello slot, angolo nello strato superiore
+
+A volte lo spigolo è già bloccato in uno slot (corretto o errato), e l'angolo è nello strato superiore. Dobbiamo estrarre lo spigolo senza disturbare altre coppie già risolte.
+
+### Caso 9: Spigolo nello slot corretto ma angolo in alto — Bianco verso destra
+
+Lo spigolo è nello slot corretto, e l'angolo è nello strato U con il bianco verso destra. Estraiamo lo spigolo e lo accoppiamo con l'angolo.
+
+**Algoritmo: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Caso 10: Spigolo nello slot sbagliato, angolo in alto — Bianco verso l'alto
+
+Lo spigolo è nello slot sbagliato. Lo estraiamo preparando simultaneamente l'accoppiamento con l'angolo.
+
+**Algoritmo: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Casi avanzati: angolo nello slot
+
+Questi casi si verificano quando l'angolo è già nello slot corretto ma orientato in modo errato, o nello slot corretto con lo spigolo fuori posto.
+
+### Caso 11: Angolo nello slot, ruotato — Spigolo nello strato superiore
+
+L'angolo è nello slot anteriore destro ma con il bianco verso il fronte (non verso il basso). Lo spigolo è nello strato U. Estraiamo l'angolo, lo accoppiamo con lo spigolo e reinseriamo.
+
+**Algoritmo: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Caso 12: Angolo nello slot, ruotato — Spigolo nello slot sbagliato
+
+Entrambi i pezzi sono nei due strati inferiori ma nessuno è corretto. Espelliamo l'angolo ed estraiamo simultaneamente lo spigolo.
+
+**Algoritmo: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Casi speciali: entrambi i pezzi nello slot
+
+### Caso 13: Coppia collegata nello slot ma ruotata
+
+L'angolo e lo spigolo sono accoppiati e nello slot, ma l'angolo è ruotato (bianco verso il fronte, non verso il basso). Estraiamo la coppia, separiamo e reinseriamo correttamente.
+
+**Algoritmo: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Caso 14: Angolo corretto nello slot, spigolo capovolto nello slot
+
+L'angolo è posizionato correttamente ma lo spigolo sopra di esso è capovolto. Questo è uno dei casi più complicati. Estraiamo entrambi, accoppiamo correttamente e reinseriamo.
+
+**Algoritmo: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Caso 15: Entrambi nello slot, entrambi sbagliati — Errore incrociato
+
+L'angolo e lo spigolo sono entrambi nello slot ma nessuno corrisponde. Estrazione completa e ricostruzione.
+
+**Algoritmo: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Consigli per un F2L più veloce
+
+### 1. Impara intuitivamente prima
+
+Non avere fretta di memorizzare tutti i 41 casi algoritmici. Dedica tempo a capire **perché** ogni mossa funziona. Se sai che R U R' estrae un angolo e lo rimette, puoi risolvere la maggior parte dei casi da solo. Gli algoritmi vengono dopo per ottimizzare.
+
+### 2. Sviluppa il lookahead
+
+Il **lookahead** è la capacità di individuare la coppia successiva mentre inserisci quella attuale. È il fattore più importante che separa i risolutori da 20 secondi da quelli da 15 secondi.
+
+Consigli per la pratica:
+- Rallenta la rotazione e costringiti a cercare la coppia successiva durante gli inserimenti
+- Pratica la risoluzione F2L ad occhi chiusi durante l'inserimento (conosci le mosse, quindi guarda avanti)
+- Fai risoluzioni senza tempo focalizzate esclusivamente su zero pause tra le coppie
+
+### 3. Riduci le rotazioni
+
+Ogni volta che ruoti l'intero cubo, perdi tempo. I migliori risolutori F2L raramente ruotano più di una o due volte in un'intera fase F2L.
+
+- Impara a inserire negli **slot posteriori** usando mosse R e U (es., R U' R' per inserire nel posteriore destro)
+- Pratica l'uso di mosse **L, F e B** per gli slot sul lato opposto
+- Usa mosse larghe (r, l) per ruotare e inserire simultaneamente
+
+### 4. Riconosci i casi rapidamente
+
+Allenati a riconoscere istantaneamente quale caso stai guardando:
+- **Dove è il bianco sull'angolo?** (Alto, Fronte o Destra)
+- **Dov'è lo spigolo rispetto all'angolo?** (Adiacente, opposto o in uno slot)
+- **Sono già accoppiati?** (Collegati correttamente, collegati in modo errato o separati)
+
+### 5. Risolvi in ordine efficiente
+
+Non devi risolvere le 4 coppie in nessun ordine fisso. Guarda tutte le 4 coppie e inizia con la più **facile** — quella che richiede meno mosse. I risolutori esperti pianificano la prima coppia durante l'ispezione insieme alla croce.
+
+### 6. Trucchi dello slot vuoto
+
+Quando uno slot è vuoto, puoi usarlo come deposito temporaneo. Per esempio, posiziona uno spigolo in uno slot vuoto (R U R') per toglierlo di mezzo mentre lavori su un'altra coppia. I principianti spesso trascurano questa tecnica potente.
+
+---
+
+## Routine di pratica
+
+1. **Mescola il cubo e risolvi la croce**
+2. **Trova tutte le 4 coppie angolo-spigolo** — identifica dove si trova ogni angolo e il suo spigolo corrispondente
+3. **Risolvi ogni coppia una alla volta** — inizia con i casi facili, lascia quelli difficili per ultimi
+4. **Cronometra solo la fase F2L** — usa un timer. Obiettivo: sotto i 15 secondi per tutte le 4 coppie
+5. **Rivedi** — dopo ogni risoluzione, chiediti: avrei potuto fare qualche coppia con meno mosse?
+
+Con pratica costante, l'F2L diventerà una seconda natura e vedrai miglioramenti drammatici nei tuoi tempi di risoluzione complessivi.
+
+---
+
+## Cosa viene dopo?
+
+Dopo aver padroneggiato l'F2L, continua con l'ultimo strato:
+
+- [**Panoramica del metodo CFOP**](./cfop) — Vedi come l'F2L si inserisce nel metodo CFOP completo
+- [**Algoritmi OLL**](./oll) — Rendi la faccia superiore tutta gialla (57 casi + OLL a 2 passaggi)
+- [**Algoritmi PLL**](./pll) — Disponi gli ultimi pezzi per completare la risoluzione (21 casi)
+- [**Guida ai finger tricks**](./finger-tricks) — Esegui i trigger F2L più velocemente e fluidamente

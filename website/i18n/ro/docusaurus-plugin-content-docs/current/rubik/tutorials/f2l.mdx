@@ -1,0 +1,312 @@
+---
+title: "F2L: Primele două straturi"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Primele două straturi
+
+F2L (First Two Layers, primele două straturi) este **cel mai important pas** din metoda CFOP. În loc să rezolvi colțurile primului strat și muchiile celui de-al doilea strat ca doi pași separați (ca în metoda pentru începători), F2L împerechează un colț cu muchia sa corespunzătoare și le inserează împreună în slotul corect. Aceasta economisește un număr enorm de mișcări și este sursa celor mai mari îmbunătățiri de viteză.
+
+Sunt **4 sloturi** de completat, unul în fiecare colț al celor două straturi inferioare. Fiecare slot constă dintr-o piesă de colț și o piesă de muchie.
+
+## Conceptul
+
+Fiecare caz F2L implică două piese:
+- O **piesă de colț** care aparține stratului inferior (are un autocolant alb/culoare de bază)
+- O **piesă de muchie** care aparține stratului mijlociu (conectează două culori laterale)
+
+Scopul este de a **împerechea** aceste două piese în stratul superior, apoi de a **insera** perechea în slotul corect printr-o singură mișcare fluidă.
+
+## Reamintire a notației
+
+- **R** = Dreapta &nbsp;&nbsp; **L** = Stânga &nbsp;&nbsp; **U** = Sus &nbsp;&nbsp; **D** = Jos &nbsp;&nbsp; **F** = Față &nbsp;&nbsp; **B** = Spate
+- O literă singură = **90° în sensul acelor de ceasornic** &nbsp;&nbsp; **'** = **în sens invers** &nbsp;&nbsp; **2** = **180°**
+
+Ține cubul cu **albul jos**. Slotul în care inserăm este întotdeauna **slotul din față-dreapta** (între fețele F și R).
+
+---
+
+## F2L Intuitiv
+
+Înainte de a memora algoritmi, învață **logica** F2L-ului. Fiecare caz urmează același tipar:
+
+1. **Găsește** o pereche colț-muchie care aparțin împreună
+2. **Separă-le** dacă sunt lipite incorect
+3. **Poziționează** o piesă, apoi **adu-o** pe cealaltă să o întâlnească
+4. **Împerechează-le** în stratul superior astfel încât albul să fie orientat în afară sau în jos
+5. **Inserează** perechea conectată în slot
+
+**Principiu cheie:** Folosește mișcările R și U pentru a scoate colțul din slotul din față-dreapta sau pentru a-l insera, și mișcări U pentru a poziționa muchia. Nu deranja niciodată sloturile deja rezolvate.
+
+---
+
+Există **41 de cazuri standard F2L** în total. Mai jos acoperim **cele mai importante 15 cazuri** care formează fundația. Odată ce le stăpânești, vei putea gestiona cazurile rămase intuitiv sau le vei căuta după necesitate.
+
+## Cazuri de bază: ambele piese în stratul superior
+
+Acestea sunt cele mai simple și comune cazuri. Atât colțul cât și muchia sunt în stratul U și slotul țintă este gol.
+
+### Cazul 1: Inserare ușoară — Albul colțului orientat spre dreapta, muchie pregătită
+
+Colțul are albul orientat spre fața R, iar muchia este deja poziționată astfel încât o mișcare U le împerechează. Aceasta este cea mai de bază inserare F2L.
+
+**Algoritm: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Cazul 2: Inserare ușoară — Albul colțului orientat în față, muchie pregătită
+
+Colțul are albul orientat spre fața F, iar muchia este poziționată pentru împerechere cu o inserare în sens invers.
+
+**Algoritm: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Cazul 3: Albul colțului orientat în sus, culorile se potrivesc cu centrul din față
+
+Colțul are albul în sus și culoarea sa din față se potrivește cu centrul din față. Muchia este în partea opusă. Trebuie să le conectăm și să inserăm.
+
+**Algoritm: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Cazul 4: Albul colțului orientat în sus, culorile se potrivesc cu centrul din dreapta
+
+Colțul are albul în sus și culoarea sa din dreapta se potrivește cu centrul din dreapta. Muchia trebuie împerecheată din partea opusă.
+
+**Algoritm: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Cazul 5: Colț și muchie departe, albul orientat spre dreapta
+
+Colțul are albul spre dreapta și muchia este pe partea opusă a stratului superior. Aducem muchia mai aproape, apoi împerechem și inserăm.
+
+**Algoritm: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Cazul 6: Colț și muchie departe, albul orientat în față
+
+Oglinda cazului 5. Colțul are albul în față și muchia este pe partea îndepărtată.
+
+**Algoritm: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Cazul 7: Colț și muchie adiacente, albul orientat spre dreapta — Pereche conectată dar greșit
+
+Colțul și muchia sunt unul lângă altul și conectate, dar inserate ar fi greșit. Le separăm și le reunim corect.
+
+**Algoritm: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Cazul 8: Colț și muchie adiacente, albul orientat în față — Pereche conectată dar greșit
+
+Oglinda cazului 7 pe partea feței F.
+
+**Algoritm: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Cazuri intermediare: muchie în slot, colț în stratul superior
+
+Uneori muchia este deja blocată într-un slot (corect sau incorect), iar colțul este în stratul superior. Trebuie să extragem muchia fără a deranja alte perechi deja rezolvate.
+
+### Cazul 9: Muchie în slotul corect dar colț sus — Albul orientat spre dreapta
+
+Muchia este în slotul corect, iar colțul este în stratul U cu albul spre dreapta. Scoatem muchia și o împerechem cu colțul.
+
+**Algoritm: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Cazul 10: Muchie în slotul greșit, colț sus — Albul orientat în sus
+
+Muchia este în slotul greșit. O extragem pregătind simultan împerecherea cu colțul.
+
+**Algoritm: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Cazuri avansate: colț în slot
+
+Aceste cazuri apar când colțul este deja în slotul corect dar orientat incorect, sau în slotul corect cu muchia plasată greșit.
+
+### Cazul 11: Colț în slot, răsucit — Muchie în stratul superior
+
+Colțul este în slotul din față-dreapta dar cu albul în față (nu în jos). Muchia este în stratul U. Extragem colțul, îl împerechem cu muchia și reinseram.
+
+**Algoritm: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Cazul 12: Colț în slot, răsucit — Muchie în slotul greșit
+
+Ambele piese sunt în cele două straturi inferioare dar niciuna nu este corectă. Scoatem colțul și simultan extragem muchia.
+
+**Algoritm: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Cazuri speciale: ambele piese în slot
+
+### Cazul 13: Pereche conectată în slot dar răsucită
+
+Colțul și muchia sunt împerecheate și în slot, dar colțul este răsucit (albul în față, nu în jos). Extragem perechea, le separăm și reinseram corect.
+
+**Algoritm: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Cazul 14: Colț corect în slot, muchie răsturnată în slot
+
+Colțul este corect plasat dar muchia de deasupra este răsturnată. Acesta este unul dintre cele mai dificile cazuri. Extragem ambele, împerechem corect și reinseram.
+
+**Algoritm: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Cazul 15: Ambele în slot, ambele greșit — Eroare încrucișată
+
+Colțul și muchia sunt ambele în slot dar niciuna nu se potrivește. Extracție completă și reconstrucție.
+
+**Algoritm: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Sfaturi pentru F2L Mai Rapid
+
+### 1. Învață intuitiv mai întâi
+
+Nu te grăbi să memorezi toate cele 41 de cazuri algoritmice. Petrece timp înțelegând **de ce** funcționează fiecare mișcare. Dacă știi că R U R' scoate un colț și îl pune înapoi, poți rezolva singur majoritatea cazurilor. Algoritmii vin mai târziu pentru optimizare.
+
+### 2. Dezvoltă lookahead-ul
+
+**Lookahead-ul** este abilitatea de a urmări următoarea pereche în timp ce inserezi pe cea curentă. Acesta este cel mai mare factor care separă rezolvitorii de 20 de secunde de cei de 15 secunde.
+
+Sfaturi de practică:
+- Încetinește rotirea și obligă-te să cauți următoarea pereche în timpul inserărilor
+- Exersează rezolvarea F2L cu ochii închiși în timpul inserării (cunoști mișcările, așa că privește înainte)
+- Fă rezolvări fără cronometru concentrate exclusiv pe zero pauze între perechi
+
+### 3. Redu rotațiile
+
+De fiecare dată când rotești întregul cub, pierzi timp. Cei mai buni rezolvitori F2L rotesc rar mai mult de o dată sau de două ori într-o întreagă fază F2L.
+
+- Învață să inserezi în **sloturile din spate** folosind mișcări R și U (ex., R U' R' pentru inserare în spate-dreapta)
+- Exersează folosirea mișcărilor **L, F și B** pentru sloturile de pe partea opusă
+- Folosește mișcări largi (r, l) pentru a roti și insera simultan
+
+### 4. Recunoaște cazurile rapid
+
+Antrenează-te să recunoști instantaneu care caz îl privești:
+- **Unde este albul pe colț?** (Sus, Față sau Dreapta)
+- **Unde este muchia față de colț?** (Adiacentă, opusă sau într-un slot)
+- **Sunt deja împerecheate?** (Conectate corect, conectate greșit sau separate)
+
+### 5. Rezolvă în ordine eficientă
+
+Nu trebuie să rezolvi cele 4 perechi în nicio ordine fixă. Privește toate 4 perechile și începe cu cea mai **ușoară** — cea care necesită cele mai puține mișcări. Rezolvitorii experimentați își planifică prima pereche în timpul inspecției împreună cu crucea.
+
+### 6. Trucuri cu slotul gol
+
+Când un slot este gol, îl poți folosi ca depozit temporar. De exemplu, plasează o muchie într-un slot gol (R U R') pentru a o da la o parte în timp ce lucrezi la o altă pereche. Începătorii trec adesea cu vederea această tehnică puternică.
+
+---
+
+## Rutina de practică
+
+1. **Amestecă cubul și rezolvă crucea**
+2. **Găsește toate cele 4 perechi colț-muchie** — identifică unde este fiecare colț și muchia sa corespunzătoare
+3. **Rezolvă fiecare pereche pe rând** — începe cu cazuri ușoare, lasă-le pe cele dificile pentru final
+4. **Cronometrează doar faza F2L** — folosește un cronometru. Țintă: sub 15 secunde pentru toate cele 4 perechi
+5. **Evaluează** — după fiecare rezolvare, întreabă: aș fi putut face vreo pereche cu mai puține mișcări?
+
+Cu practică constantă, F2L va deveni a doua natură și vei vedea îmbunătățiri dramatice în timpii totali de rezolvare.
+
+---
+
+## Ce urmează?
+
+După stăpânirea F2L, continuă cu ultimul strat:
+
+- [**Prezentare generală a metodei CFOP**](./cfop) — Vezi cum se integrează F2L în metoda CFOP completă
+- [**Algoritmi OLL**](./oll) — Fă fața superioară complet galbenă (57 cazuri + 2-Look OLL)
+- [**Algoritmi PLL**](./pll) — Aranjează ultimele piese pentru a finaliza rezolvarea (21 cazuri)
+- [**Ghid de finger tricks**](./finger-tricks) — Execută trigger-ele F2L mai rapid și mai fluid

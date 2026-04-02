@@ -1,0 +1,219 @@
+---
+title: Visió general del mètode CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Visió general del mètode CFOP
+
+El **mètode CFOP** (també conegut com el **mètode Fridrich**) és el mètode de speedcubing més utilitzat al món. La gran majoria dels cubers que resolen en menys de 20 segons i els posseïdors de rècords mundials utilitzen CFOP. Es basa en el mètode de capes per a principiants però és dràsticament més eficient — reduint una resolució mitjana de més de 100 moviments a uns 55-60 moviments.
+
+**CFOP** és l'acrònim dels seus quatre passos:
+
+1. **C**ross — Resoldre 4 arestes a la part inferior
+2. **F**2L — Primeres dues capes (aparellar i inserir 4 parells de cantonada-aresta)
+3. **O**LL — Orientar l'última capa (fer que tota la cara superior sigui d'un sol color)
+4. **P**LL — Permutar l'última capa (col·locar totes les peces superiors correctament)
+
+## CFOP vs. Mètode per a principiants
+
+| | Principiant (LBL) | CFOP |
+|---|---|---|
+| Passos | 7 | 4 |
+| Moviments mitjans | 100-120 | 55-60 |
+| Algorismes per aprendre | 5-8 | 78 (complet) / 16 (2-look) |
+| Velocitat típica | 1-3 minuts | 10-20 segons |
+| Diferència clau | Pas a pas, una peça cada vegada | Aparella peces, menys passos |
+
+La bona notícia: pots aprendre CFOP **gradualment**. Comença amb F2L intuïtiu i OLL/PLL de 2-look (només 16 algorismes), després amplia a OLL complet (57 algorismes) i PLL complet (21 algorismes) amb el temps.
+
+---
+
+## Pas 1: Creu
+
+La creu és el mateix concepte que al mètode per a principiants — resoldre 4 arestes blanques a la cara inferior de manera que cada aresta coincideixi amb el centre del seu costat. La diferència a CFOP és **com** t'hi aproximes:
+
+- **Planifica tota la creu durant la inspecció** (15 segons abans que comenci la resolució)
+- **Resol la creu a la part inferior** — sense girar el cub
+- **Apunta a 8 moviments o menys** — una creu eficient fa una mitjana de 6-7 moviments
+
+**Exemple: Resoldre una aresta de creu directament a la part inferior**
+
+Aquí, l'aresta blanc-blau és a la capa superior. L'alineem i la inserim directament a la part inferior amb un moviment:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Exemple: L'aresta de creu necessita reposicionament**
+
+De vegades una aresta està en el lloc equivocat o girada. Aquí arreglem una aresta mal col·locada:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Consells per a una creu ràpida:**
+- Practica planificar la creu amb els ulls tancats
+- Aprèn a resoldre-la en 8 moviments o menys des de qualsevol barreja
+- Treballa en resoldre la creu a la part inferior des del primer dia — evita l'hàbit de resoldre-la a dalt
+
+---
+
+## Pas 2: F2L (Primeres dues capes)
+
+F2L és el cor de CFOP i d'on provenen els majors estalvis de temps. En lloc de resoldre les cantonades de la primera capa i les arestes de la segona capa per separat (com al mètode per a principiants), **aparelles** una peça de cantonada amb la seva aresta corresponent i les **insereixes** juntes com una sola unitat.
+
+Hi ha 4 parells de cantonada-aresta (anomenats **slots**) per resoldre. Cada slot se situa entre dues cares laterals a les dues capes inferiors.
+
+**Cas bàsic de F2L: Cantonada i aresta totes dues a la capa superior**
+
+La cantonada blanc-vermell-verd és a la capa superior, i l'aresta vermell-verd també és a la capa superior. Les aparellem i les inserim:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Un altre cas comú: Separar un parell incorrecte**
+
+De vegades les peces estan aparellades incorrectament. Les separem i les tornem a unir correctament:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L es pot aprendre **intuïtivament** — entenent la lògica d'amagar, aparellar i inserir — o **algorítmicament** amb 41 casos específics. La majoria dels speedcubers utilitzen una combinació d'ambdós.
+
+Per a la llista completa de casos i algorismes F2L, consulta la guia [**F2L: Primeres dues capes**](./f2l).
+
+---
+
+## Pas 3: OLL (Orientar l'última capa)
+
+Després de completar les dues primeres capes, la cara superior tindrà alguns adhesius grocs i alguns no grocs. L'objectiu de l'OLL és fer que **tota la cara superior sigui groga** — encara no ens preocupem pels colors laterals.
+
+L'OLL complet té **57 algorismes**. Tanmateix, pots començar amb **OLL de 2-look**, que utilitza només 10 algorismes dividint el pas en dues parts:
+
+1. **Primera mirada:** Formar una creu groga a dalt (3 casos, utilitzant 2 algorismes aplicats des de diferents orientacions)
+2. **Segona mirada:** Orientar les cantonades grogues (7 algorismes)
+
+**Exemple: Sune (un dels casos d'OLL més comuns)**
+
+Aquesta és l'OLL #26, comunament anomenada **Sune**. Una cantonada groga està orientada i les altres tres necessiten ser girades:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Exemple: Cas de creu OLL (formar la creu groga)**
+
+Quan tens una forma d'L d'arestes grogues a dalt, col·loca la L a la part posterior-esquerra i aplica:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Consells per aprendre OLL:**
+- Comença amb OLL de 2-look — només afegeix uns pocs segons a la teva resolució
+- Aprèn primer Sune i Anti-Sune; apareixen en molts casos d'OLL
+- Practica reconèixer casos pel patró d'adhesius grocs a dalt
+
+---
+
+## Pas 4: PLL (Permutar l'última capa)
+
+L'últim pas! Tots els adhesius grocs ara estan a dalt, però els colors laterals de les peces de l'última capa poden no coincidir. PLL **reordena** les peces de la capa superior a les seves posicions correctes per completar la resolució.
+
+El PLL complet té **21 algorismes**. Pots començar amb **PLL de 2-look**, que utilitza només 6 algorismes:
+
+1. **Primera mirada:** Posicionar les cantonades correctament (2 algorismes)
+2. **Segona mirada:** Posicionar les arestes correctament (4 algorismes)
+
+**Exemple: T-Perm (un dels algorismes de PLL més útils)**
+
+T-Perm intercanvia dues cantonades i dues arestes. Apareix freqüentment i s'utilitza com a base per aprendre altres PLLs:
+
+**Algorisme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Exemple: U-Perm (a) — Cicle de 3 arestes**
+
+U-Perm fa un cicle de tres arestes en sentit horari mentre totes les cantonades ja estan al seu lloc:
+
+**Algorisme: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Consells per aprendre PLL:**
+- Comença amb T-Perm, U-Perms (a i b) i A-Perms
+- Aprèn a reconèixer PLLs mirant els colors laterals (patró de fars)
+- Practica executar PLLs des de qualsevol angle AUF (ajust de la cara superior)
+
+---
+
+## Quan aprendre CFOP
+
+CFOP és el pas natural següent després de dominar el mètode de capes per a principiants. Aquí tens una progressió recomanada:
+
+### Etapa 1: De principiant a menys de 60 segons
+- Domina el mètode per a principiants fins que les teves resolucions siguin consistents
+- Aprèn a resoldre la **creu a la part inferior**
+- Comença a practicar **F2L intuïtiu** — observa com es formen i s'insereixen els parells
+
+### Etapa 2: De menys de 60 a menys de 30 segons
+- Utilitza **F2L intuïtiu** complet per als 4 parells
+- Aprèn **OLL de 2-look** (10 algorismes)
+- Aprèn **PLL de 2-look** (6 algorismes)
+- Practica el **lookahead** — seguir el proper parell mentre insereixes l'actual
+
+### Etapa 3: De menys de 30 a menys de 20 segons
+- Aprèn **PLL complet** (21 algorismes)
+- Comença a aprendre **OLL complet** (57 algorismes)
+- Optimitza les teves solucions F2L — aprèn els [**casos algorítmics F2L**](./f2l)
+- Treballa en l'eficiència de la creu (planifica tota la creu durant la inspecció)
+
+### Etapa 4: Menys de 20 i més enllà
+- Completa **OLL complet**
+- Aprèn trucs avançats de F2L (tècniques de slot buit, multi-slotting)
+- Desenvolupa hàbits forts de **lookahead**
+- Treballa en la velocitat de gir i la fluïdesa
+
+---
+
+## Propers passos
+
+Preparat per aprofundir en cada pas? Consulta aquestes guies detallades:
+
+- [**F2L: Primeres dues capes**](./f2l) — Tots els casos comuns de F2L amb algorismes i demostracions
+- [**Algorismes OLL**](./oll) — 57 casos d'OLL complets amb OLL de 2-look per a principiants
+- [**Algorismes PLL**](./pll) — Tots els 21 casos de PLL amb PLL de 2-look per a principiants
+- [**Guia de trucs de dits**](./finger-tricks) — Execució eficient de moviments i triggers essencials
+- [**Consells de speedcubing**](./speed-tips) — Planificació de la creu, lookahead i rutines de pràctica
+
+**Bon cubing!** El viatge de principiant a menys de 20 segons és un dels reptes més gratificants del speedcubing. Fes-ho pas a pas i ho aconseguiràs.

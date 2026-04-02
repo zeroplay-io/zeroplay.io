@@ -1,0 +1,219 @@
+---
+title: Översikt av CFOP-metoden
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Översikt av CFOP-metoden
+
+**CFOP-metoden** (även känd som **Fridrich-metoden**) är den mest använda speedcubing-metoden i världen. Den överväldigande majoriteten av lösare under 20 sekunder och världsrekordinnehavare använder CFOP. Den bygger på nybörjarens lager-för-lager-metod men är dramatiskt effektivare — den minskar en genomsnittlig lösning från över 100 drag till ungefär 55-60 drag.
+
+**CFOP** står för de fyra stegen:
+
+1. **C**ross — Lös 4 kantbitar på undersidan
+2. **F**2L — Första två lagren (para ihop och sätt in 4 hörn-kant-par)
+3. **O**LL — Orientera sista lagret (gör hela ovansidan enfärgad)
+4. **P**LL — Permutera sista lagret (placera alla övre bitar korrekt)
+
+## CFOP vs. nybörjarmetoden
+
+| | Nybörjare (LBL) | CFOP |
+|---|---|---|
+| Steg | 7 | 4 |
+| Genomsnittliga drag | 100-120 | 55-60 |
+| Algoritmer att lära | 5-8 | 78 (full) / 16 (2-look) |
+| Typisk hastighet | 1-3 minuter | 10-20 sekunder |
+| Nyckelskillnad | Steg för steg, en bit i taget | Parar ihop bitar, färre steg |
+
+De goda nyheterna: du kan lära dig CFOP **gradvis**. Börja med intuitiv F2L och 2-look OLL/PLL (bara 16 algoritmer), utöka sedan till full OLL (57 algoritmer) och full PLL (21 algoritmer) med tiden.
+
+---
+
+## Steg 1: Kors
+
+Korset är samma koncept som i nybörjarmetoden — lös 4 vita kantbitar på undersidan så att varje kant även matchar sitt sidcentrum. Skillnaden i CFOP är **hur** du angriper det:
+
+- **Planera hela korset under inspektion** (15 sekunder före lösningen börjar)
+- **Lös korset på undersidan** — utan att vända kuben
+- **Sikta på 8 drag eller färre** — ett effektivt kors är i genomsnitt 6-7 drag
+
+**Exempel: Lösa en korskant direkt till undersidan**
+
+Här är den vit-blåa kanten i översta lagret. Vi justerar den och sätter in den direkt till undersidan med ett drag:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Exempel: Korskant behöver omplaceras**
+
+Ibland är en kant på fel plats eller vänd. Här korrigerar vi en felplacerad kant:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tips för ett snabbt kors:**
+- Öva på att planera korset med slutna ögon
+- Lär dig lösa det på 8 drag eller färre från vilken blandning som helst
+- Arbeta med att lösa korset på undersidan från dag ett — undvik vanan att lösa på ovansidan
+
+---
+
+## Steg 2: F2L (Första två lagren)
+
+F2L är hjärtat av CFOP och där de största tidsbesparingarna kommer från. Istället för att lösa första lagrets hörn och andra lagrets kanter separat (som i nybörjarmetoden) **parar** du ihop en hörnbit med sin matchande kantbit och **sätter in** dem tillsammans som en enhet.
+
+Det finns 4 hörn-kant-par (kallade **slots**) att lösa. Varje slot sitter mellan två sidoytor i de två nedersta lagren.
+
+**Grundläggande F2L-fall: Hörn och kant båda i översta lagret**
+
+Det vit-röd-gröna hörnet är i översta lagret, och den röd-gröna kanten är också i översta lagret. Vi parar ihop dem och sätter in:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Ett annat vanligt fall: Separera ett felaktigt par**
+
+Ibland är bitar felparrade. Vi separerar dem och sätter ihop dem korrekt:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L kan läras **intuitivt** — genom att förstå logiken i att gömma, para ihop och sätta in — eller **algoritmiskt** med 41 specifika fall. De flesta speedcubare använder en kombination av båda.
+
+För den fullständiga listan av F2L-fall och algoritmer, se guiden [**F2L: Första två lagren**](./f2l).
+
+---
+
+## Steg 3: OLL (Orientering av sista lagret)
+
+Efter att ha slutfört de två första lagren kommer ovansidan ha några gula och några icke-gula klistermärken. Målet med OLL är att göra **hela ovansidan gul** — vi bryr oss inte om sidfärgerna ännu.
+
+Full OLL har **57 algoritmer**. Du kan dock börja med **2-look OLL**, som bara använder 10 algoritmer genom att dela steget i två delar:
+
+1. **Första blicken:** Bilda ett gult kors på toppen (3 fall, med 2 algoritmer från olika orienteringar)
+2. **Andra blicken:** Orientera de gula hörnen (7 algoritmer)
+
+**Exempel: Sune (ett av de vanligaste OLL-fallen)**
+
+Detta är OLL #26, vanligen kallad **Sune**. Ett gult hörn är orienterat, och de andra tre behöver roteras:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Exempel: OLL korsfall (bilda det gula korset)**
+
+När du har en L-form av gula kanter på toppen, håll L:et bak till vänster och tillämpa:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tips för att lära OLL:**
+- Börja med 2-look OLL — det lägger bara till några sekunder till din lösning
+- Lär dig Sune och Anti-Sune först; de dyker upp i många OLL-fall
+- Öva på att känna igen fall från mönstret av gula klistermärken på toppen
+
+---
+
+## Steg 4: PLL (Permutation av sista lagret)
+
+Sista steget! Alla gula klistermärken är nu på toppen, men sidfärgerna på sista lagrets bitar kanske inte stämmer. PLL **omarrangerar** översta lagrets bitar till sina korrekta positioner för att slutföra lösningen.
+
+Full PLL har **21 algoritmer**. Du kan börja med **2-look PLL**, som bara använder 6 algoritmer:
+
+1. **Första blicken:** Placera hörnen korrekt (2 algoritmer)
+2. **Andra blicken:** Placera kanterna korrekt (4 algoritmer)
+
+**Exempel: T-Perm (en av de mest användbara PLL-algoritmerna)**
+
+T-Perm byter två hörn och två kanter. Den dyker upp ofta och används som grund för att lära andra PLL:er:
+
+**Algoritm: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Exempel: U-Perm (a) — 3-kantcykel**
+
+U-Perm cyklar tre kanter medurs medan alla hörn redan är på plats:
+
+**Algoritm: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tips för att lära PLL:**
+- Börja med T-Perm, U-Perms (a och b) och A-Perms
+- Lär dig känna igen PLL:er genom att titta på sidfärgerna (strålkastarmönster)
+- Öva på att utföra PLL:er från vilken AUF-vinkel som helst (justering av övre ytan)
+
+---
+
+## När du bör lära CFOP
+
+CFOP är det naturliga nästa steget efter att du behärskar nybörjarens lager-för-lager-metod. Här är en rekommenderad progression:
+
+### Fas 1: Nybörjare till under 60 sekunder
+- Behärska nybörjarmetoden tills dina lösningar är konsekventa
+- Lär dig lösa **korset på undersidan**
+- Börja öva **intuitiv F2L** — se hur par bildas och sätts in
+
+### Fas 2: Under 60 till under 30 sekunder
+- Använd full **intuitiv F2L** för alla 4 par
+- Lär dig **2-look OLL** (10 algoritmer)
+- Lär dig **2-look PLL** (6 algoritmer)
+- Öva **lookahead** — spåra nästa par medan du sätter in det nuvarande
+
+### Fas 3: Under 30 till under 20 sekunder
+- Lär dig **full PLL** (21 algoritmer)
+- Börja lära dig **full OLL** (57 algoritmer)
+- Optimera dina F2L-lösningar — lär dig de [**algoritmiska F2L-fallen**](./f2l)
+- Arbeta med korseffektivitet (planera hela korset under inspektion)
+
+### Fas 4: Under 20 och vidare
+- Slutför **full OLL**
+- Lär dig avancerade F2L-trick (tomma slot-tekniker, multi-slotting)
+- Utveckla starka **lookahead**-vanor
+- Arbeta med vridningshastighet och flyt
+
+---
+
+## Nästa steg
+
+Redo att dyka djupare in i varje steg? Kolla in dessa detaljerade guider:
+
+- [**F2L: Första två lagren**](./f2l) — Alla vanliga F2L-fall med algoritmer och demos
+- [**OLL-algoritmer**](./oll) — Alla 57 OLL-fall med 2-look OLL för nybörjare
+- [**PLL-algoritmer**](./pll) — Alla 21 PLL-fall med 2-look PLL för nybörjare
+- [**Guide till fingertricks**](./finger-tricks) — Effektiv dragutförande och essentiella triggers
+- [**Speedcubing-tips**](./speed-tips) — Korsplanering, lookahead och övningsrutiner
+
+**Lycka till med kubandet!** Resan från nybörjare till under 20 sekunder är en av de mest givande utmaningarna i speedcubing. Ta det ett steg i taget så kommer du dit.

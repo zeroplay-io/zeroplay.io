@@ -1,0 +1,374 @@
+---
+title: "2x2 Gevorderd: CLL-methode"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Gevorderd: CLL-methode
+
+Breng je 2x2-oplossing naar het volgende niveau met de **CLL (Hoeken van de Laatste Laag)**-methode. Terwijl Ortega de laatste laag in twee stappen oplost (OLL dan PBL), lost CLL zowel de **oriëntatie als de permutatie** van de hoeken op in **één algoritme**. Minder kijken en snellere oplossingen.
+
+## Waarom CLL?
+
+| Methode | Laatste laag-stappen | Algoritmen | Typische snelheid |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 seconden |
+| **CLL** | 1 (één blik) | ~40 | 2–4 seconden |
+
+CLL is de standaardmethode van de beste 2x2-speedcubers. Door alle 40 gevallen te leren, elimineer je een complete stap.
+
+## Hoe CLL werkt
+
+1. **Los het eerste vlak op** — zoals bij Ortega, bouw een wit vlak onderaan (zijkleuren hoeven niet te kloppen).
+2. **Herken het CLL-geval** — kijk naar het bovenvlak en de zijkleuren om het geval te identificeren.
+3. **Pas één algoritme toe** — dit oriënteert en permuteert tegelijkertijd alle bovenste hoeken.
+4. **AUF + onderste aanpassing** — maximaal één U-draai en één D-draai.
+
+## Notatie-herinnering
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Boven &nbsp;&nbsp; **D** = Beneden &nbsp;&nbsp; **F** = Voor &nbsp;&nbsp; **B** = Achter
+- Een letter alleen = **90° met de klok mee**. Met **'** = **tegen de klok in**. Met **2** = **180°**.
+
+---
+
+## CLL-gevalgroepen
+
+De 40 CLL-gevallen zijn georganiseerd in 7 groepen op basis van het oriëntatiepatroon van het bovenvlak. Hieronder de belangrijkste gevallen per groep.
+
+---
+
+## Sune-gevallen (4 van 6)
+
+Eén hoek is georiënteerd (geel boven), de andere drie moeten gedraaid worden. De meest voorkomende groep.
+
+### Sune 1 — Aangrenzende wisseling
+
+Houd de opgeloste hoek links-voor. De drie onopgeloste hoeken draaien met de klok mee.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonale wisseling
+
+Zelfde oriëntatiepatroon, maar de hoeken hebben een diagonale wisseling nodig.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Puur (geen wisseling)
+
+Oriëntatie opgelost zonder positiewisseling nodig.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Aangrenzende wisseling (Spiegel)
+
+Houd de opgeloste hoek rechts-voor.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune-gevallen (3 van 6)
+
+Spiegelbeeld van Sune — één hoek georiënteerd, de andere drie draaien tegen de klok in.
+
+### Anti-Sune 1 — Aangrenzende wisseling
+
+Houd de opgeloste hoek rechts-voor. De drie onopgeloste hoeken draaien tegen de klok in.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonale wisseling
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Puur (geen wisseling)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H-gevallen (4 van 4)
+
+Twee tegenoverliggende hoeken georiënteerd (geel boven), de andere twee hebben geel aan de zijkanten.
+
+### H 1 — Aangrenzende wisseling
+
+Twee gele stickers bovenaan op diagonale posities.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonale wisseling
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Geen wisseling
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Kolommen
+
+Beide paren diagonale hoeken moeten gewisseld worden.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi-gevallen (4 van 6)
+
+Twee aangrenzende hoeken hebben geel boven, de andere twee hebben geel aan de zijkanten. Het bovenvlak lijkt op de Griekse letter Pi.
+
+### Pi 1 — Diagonale wisseling
+
+Houd de twee georiënteerde hoeken achter.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Aangrenzende wisseling (Rechts)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Aangrenzende wisseling (Links)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Geen wisseling
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T-gevallen (3 van 6)
+
+Het bovenvlak toont een T-patroon — één hoek georiënteerd, één aangrenzende hoek met geel aan de voorkant, de andere twee met geel aan de zijkanten.
+
+### T 1 — Aangrenzende wisseling
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonale wisseling
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Geen wisseling
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U-gevallen (3 van 6)
+
+Eén hoek correct georiënteerd, de andere drie in een U-patroon aan de zijkanten.
+
+### U 1 — Aangrenzende wisseling
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonale wisseling
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Geen wisseling
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L-gevallen (3 van 6)
+
+Twee aangrenzende hoeken in dezelfde richting gedraaid — het bovenvlak toont een L-patroon.
+
+### L 1 — Aangrenzende wisseling
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonale wisseling
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Geen wisseling
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Na CLL: De oplossing afronden
+
+Na het CLL-algoritme is het bovenvlak volledig opgelost. Je hebt mogelijk nodig:
+
+1. **AUF (U-vlak aanpassen)** — één U- of U'-draai om de bovenste laag uit te lijnen.
+2. **Onderste laag aanpassen** — bij verschuiving lost één D- of D'-draai het op.
+3. **Onderste laag wisselen** — zelden, een aangrenzende of diagonale wisseling nodig. Gebruik dezelfde PBL-algoritmen van Ortega:
+   - **Diagonale wisseling:** R2 F2 R2
+   - **Aangrenzende wisseling:** R U' R F2 R' U R'
+
+---
+
+## Leerstrategie
+
+Alle 40 gevallen tegelijk leren is overweldigend. Aanbevolen volgorde:
+
+1. **Begin met Sune en Anti-Sune** (12 gevallen) — meest voorkomend, veel korte algoritmen.
+2. **Voeg T- en U-gevallen toe** (12 gevallen) — relatief makkelijk te herkennen.
+3. **Leer Pi-gevallen** (6 gevallen) — onderscheidend oriëntatiepatroon.
+4. **Leer L-gevallen** (6 gevallen) — vergelijkbare herkenning als Pi, andere draairichting.
+5. **Eindig met H-gevallen** (4 gevallen) — de zeldzaamste groep.
+
+## Herkenningstips
+
+- **Kijk eerst naar het bovenvlak** om de oriëntatiegroep te identificeren.
+- **Controleer daarna de zijkleuren** om het specifieke geval te bepalen.
+- **Oefen per groep** — één groep tegelijk tot herkenning direct is.
+- **Gebruik inverse scrambles** — stel een geval in, los het op, voorspel het inverse.
+
+---
+
+**Met CLL onder de knie kun je gemiddelden onder 3 seconden halen op de 2x2.** De één-blik-benadering elimineert de pauze tussen OLL en PBL. Blijf herkenning oefenen — snelheid komt van directe identificatie.

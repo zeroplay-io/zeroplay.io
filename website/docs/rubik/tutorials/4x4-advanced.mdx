@@ -1,0 +1,249 @@
+---
+title: "4x4 Advanced: Yau Method"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Advanced: Yau Method
+
+The **Yau method**, invented by Robert Yau, is a faster alternative to the standard Reduction method for the 4x4 Rubik's Cube. The key difference: Yau solves cross edges **early**, which provides better lookahead and a smoother transition into the 3x3 phase. Most top 4x4 speedcubers use Yau or a variant of it.
+
+## Yau vs Standard Reduction
+
+| Aspect | Reduction | Yau |
+|--------|-----------|-----|
+| **Step order** | All centers, then all edges | 2 centers, 3 cross edges, 4 centers, remaining edges |
+| **Cross** | Built after reduction | Already partially done during reduction |
+| **Lookahead** | Must find cross edges after pairing | Cross is nearly done, transition to F2L is seamless |
+| **Speed ceiling** | Good | Higher — less pause between phases |
+
+## Notation Reminder
+
+**Standard moves** (outer layer only):
+- **R** = Right &nbsp;&nbsp; **L** = Left &nbsp;&nbsp; **U** = Up &nbsp;&nbsp; **D** = Down &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Back
+
+**Wide moves** (outer two layers together):
+- **Rw** = Right wide &nbsp;&nbsp; **Lw** = Left wide &nbsp;&nbsp; **Uw** = Up wide &nbsp;&nbsp; **Dw** = Down wide &nbsp;&nbsp; **Fw** = Front wide &nbsp;&nbsp; **Bw** = Back wide
+
+A letter alone means **clockwise 90°**. Adding **'** means **counter-clockwise**. Adding **2** means **180°**.
+
+---
+
+## Step 1: Solve Two Opposite Centers
+
+Begin by solving the **white** and **yellow** center blocks (top and bottom). This is the same as the first part of the standard Reduction method.
+
+Each center is a 2x2 block of pieces. Use wide moves to bring center pieces together while protecting already-placed pieces with outer-layer turns.
+
+**Basic center building** — bring a center piece to the top using a wide move, position it, then reverse:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Joining two center halves** — when you have two 1x2 center strips that need to be merged:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tips:**
+- Solve white center first (on bottom), then yellow center (on top).
+- Keep white on the bottom throughout — use only Rw, Lw, Fw, Bw moves to manipulate centers without disturbing the bottom.
+- Do not worry about side centers yet. Leave them for Step 3.
+
+---
+
+## Step 2: Solve 3 of 4 Cross Edges
+
+This is where Yau diverges from Reduction. Before solving the remaining centers, **pair and place 3 white cross edges** into the bottom layer.
+
+A cross edge consists of two pieces (e.g., white-red and white-red) that need to be paired and placed in the D layer. Leave one cross edge unsolved for now — this gives you freedom to use wide moves in the next step.
+
+**Pairing a cross edge using freeslice** — the freeslice technique pairs edges without disrupting centers. Place one half of the edge in the front-right position and bring its partner from another slot:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Inserting a paired cross edge into the bottom** — once paired, place the edge into its correct D-layer position:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice with wide moves** — use Dw to bring an edge piece up for pairing without breaking the bottom cross edges already in place:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tips:**
+- You only need 3 cross edges solved now. Deliberately leave one slot empty.
+- Use the empty D-layer slot freely — the missing cross edge gives you more freedom for wide moves.
+- Choose which cross edge to leave based on which is hardest to find or pair.
+
+---
+
+## Step 3: Solve Remaining 4 Centers
+
+Now solve the **4 side centers** (red, orange, blue, green). The white and yellow centers are already done from Step 1.
+
+Because you have one unsolved cross edge slot, you can still use some wide moves freely. This is a key advantage of Yau — the partially solved cross does not restrict center building as much as you might expect.
+
+**Building a side center** — use wide moves to collect center pieces, then place them:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Center commutator** — when you need to swap a center piece without disturbing others, use a commutator-style sequence:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tips:**
+- Solve centers in opposite pairs when possible (e.g., red then orange, blue then green).
+- Use the unsolved cross edge slot to your advantage — wide moves through that slot will not break cross edges.
+- Be mindful of the 3 cross edges already in the D layer. Check before doing wide moves.
+
+---
+
+## Step 4: Last Cross Edge + Complete Edge Pairing
+
+This step has two parts: finish the 4th cross edge, then pair all remaining edges.
+
+### Part A: Solve the Last Cross Edge
+
+Find the remaining cross edge pair and bring them together. Since all centers are now solved, you need to be more careful with wide moves.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Once paired, insert it into the last D-layer slot to complete the white cross.
+
+### Part B: Pair Remaining Edges (3-2-3 Technique)
+
+You now have 8 unpaired edges. The **3-2-3 technique** is the most efficient way to pair them:
+
+1. **First 3 edges** — pair them using standard slice-flip-slice moves. Place an unpaired edge in the front-right, find its partner on top, use Uw to bring them together:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Next 2 edges** — with fewer edges remaining, you can pair two edges in quick succession by storing one in the back:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Last 3 edges** — the final edges require more care to avoid breaking already-paired edges. Use Dw-based moves or flipping techniques:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tips:**
+- During 3-2-3 pairing, always check that your wide moves do not break the cross edges on the bottom.
+- If an edge is paired but flipped, you need to break it out and re-pair it.
+- The transition from edge pairing to 3x3 should be seamless — your cross is already done.
+
+---
+
+## Step 5: Solve as 3x3 (CFOP)
+
+With all centers solved, all edges paired, and the cross already complete, the 4x4 now behaves like a 3x3. Since the **white cross is already done** (a major advantage of Yau), you can jump straight into **F2L** (First Two Layers).
+
+Use only outer-layer moves from this point — no wide moves.
+
+**Proceed with standard CFOP:**
+1. **F2L** — pair and insert corner-edge pairs into the first two layers.
+2. **OLL** — orient the last layer.
+3. **PLL** — permute the last layer.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+This is the biggest advantage of the Yau method: the cross-to-F2L transition has zero pause, because the cross was built during the reduction phase.
+
+---
+
+## Parity Algorithms
+
+The 4x4 has two parity cases that cannot occur on a 3x3. These happen about 50% of the time each, regardless of whether you use Yau or Reduction.
+
+### OLL Parity (Single Edge Flip)
+
+A single edge appears flipped on the last layer — impossible on a real 3x3.
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Apply this algorithm once, then continue with normal OLL/PLL.
+
+### PLL Parity (Two Edges Swap)
+
+Two opposite edges need to be swapped — again impossible on a 3x3.
+
+**Algorithm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## When to Learn Yau
+
+- **If you average under 2 minutes with Reduction**, you have the fundamentals to switch to Yau.
+- **If you know CFOP for 3x3**, Yau is a natural fit — the cross is already done when you enter the 3x3 phase.
+- **If you struggle with the Reduction-to-3x3 transition**, Yau eliminates that pause entirely.
+
+## Practice Priorities
+
+1. **Master freeslice edge pairing** — this is the core technique that makes Yau efficient.
+2. **Practice 2-center + 3-cross-edge recognition** — learn to identify cross edges quickly during the first two steps.
+3. **Drill the 3-2-3 technique** — smooth edge pairing is where most time is saved.
+4. **Work on the cross-to-F2L transition** — since the cross is done, practice spotting your first F2L pair during edge pairing.
+
+---
+
+**The Yau method is the standard for competitive 4x4 solving.** The seamless transition from reduction to 3x3 solving, combined with better lookahead opportunities, makes it the preferred choice for speedcubers aiming for sub-40-second averages. Start by converting your Reduction solves to Yau one step at a time.

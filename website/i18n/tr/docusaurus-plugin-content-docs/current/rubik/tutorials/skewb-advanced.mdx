@@ -1,0 +1,317 @@
+---
+title: "Skewb İleri Seviye Teknikler"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Skewb İleri Seviye Teknikler
+
+Skewb çözümünüzü başlangıç seviyesinden yarışma seviyesine taşıyın. Bu kılavuz, başlangıç yöntemini kalan tüm merkezleri tek adımda çözerek yükselten **Sarah'ın Orta Seviye yöntemi**, ayrıca en iyi Skewb çözücülerin kullandığı ileri algoritmalar ve hızlı çözme stratejilerini kapsar.
+
+## Notasyon Hatırlatması
+
+Skewb yüzler yerine **köşeler** etrafında döner:
+
+- **R** = Sağ ön köşe saat yönünde &nbsp;&nbsp; **R'** = saat yönünün tersine
+- **L** = Sol ön köşe saat yönünde &nbsp;&nbsp; **L'** = saat yönünün tersine
+- **U** = Üst sağ ön köşe saat yönünde &nbsp;&nbsp; **U'** = saat yönünün tersine
+- **B** = Sağ arka köşe saat yönünde &nbsp;&nbsp; **B'** = saat yönünün tersine
+
+Tüm adımlarda Skewb'u **beyaz merkez altta** olacak şekilde tutun.
+
+---
+
+## Sarah'ın Orta Seviye Yöntemi
+
+Sarah'ın Başlangıç Yöntemi Skewb'u 3 adımda çözer: ilk yüz, sonra merkezler, sonra son katman köşeleri. Orta seviye yükseltme **merkez ve köşe adımlarını birleştirir**, ilk yüz tamamlandıktan sonra TEK bir algoritmayla kalan 5 merkezi çözer.
+
+### Genel Bakış
+
+| Adım | Başlangıç | Orta |
+|------|----------|-------------|
+| 1 | Bir yüz çöz | Bir yüz çöz (aynı) |
+| 2 | Merkezleri konumlandır | **Tüm 5 merkezi tek adımda çöz** |
+| 3 | Son katman köşelerini yönlendir | Son katman köşelerini yönlendir (aynı) |
+
+Temel iyileştirme Adım 2'dir: Merkezleri tek tek konumlandırmak için Sledgehammer'ı tekrar tekrar kullanmak yerine, tüm merkezleri aynı anda çözen bir algoritma seti öğrenirsiniz.
+
+### Adım 1: Bir Yüz Çöz
+
+Altta tam bir **beyaz yüz** oluşturun — beyaz merkez etrafındaki tüm 4 köşe, beyaz aşağı bakacak şekilde yerinde olmalı ve bitişik yan renkler eşleşmelidir. Bu adım başlangıç yöntemiyle aynıdır.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Her beyaz köşeyi yerleştirmek için Sledgehammer'ı hazırlık hamleleriyle kullanın. Pratikle bu adım hızlı ve sezgisel hale gelir.
+
+### Adım 2: Tüm 5 Merkezi Çöz (One-Look)
+
+İlk yüz çözüldükten sonra, **kalan 5 merkeze** (üst + 4 yan) bakın ve durumunuzu belirleyin. Hepsini bir kerede çözmek için tek bir algoritma uygulayın.
+
+Doğru konumdaki merkez sayısına bağlı olarak birkaç durum vardır:
+
+---
+
+#### Durum 1: Bitişik 4-Döngü
+
+Dört merkez döngüde hareket etmelidir. Üst merkez doğrudur, ancak 4 yan merkez dönmelidir.
+
+**Algoritma: R' L R L' R' L R L'** (Çift Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Durum 2: Karşı 2-Değiştirme
+
+İki karşı yan merkez değiştirilmelidir.
+
+**Algoritma: R L' R' L R L' R' L** (Ters Çift Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Durum 3: Bitişik 2-Değiştirme
+
+İki bitişik yan merkez değiştirilmelidir. Değiştirilecek iki merkezi öne ve sağa yerleştirin.
+
+**Algoritma: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Durum 4: Üst-Yan Değiştirme + Döngü
+
+Üst merkez bir yan merkezle değiştirilmeli ve kalan yan merkezler döngüde hareket etmelidir.
+
+**Algoritma: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Durum 5: Üçlü Döngü
+
+Üç merkez döngüde hareket etmelidir (üst kalır, 3 yan döner). Sabit yan merkezi arkaya yerleştirin.
+
+**Algoritma: R' L R L'** (Tekli Sledgehammer — doğru hazırlıkla)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**İpuçları:**
+- Önce üst merkezi kontrol edip sonra 4 yanı tarayarak merkez durumlarını hızla tanımayı öğrenin.
+- Bunların çoğu Sledgehammer varyasyonlarıdır — Sledgehammer'ı iyi biliyorsanız, bu algoritmalar doğal gelecektir.
+- Skewb'u karıştırarak, ilk yüzü çözerek ve çalıştırmadan önce merkez durumunu belirleyerek tanıma pratiği yapın.
+
+### Adım 3: Son Katman Köşelerini Yönlendir
+
+Tüm merkezler çözüldükten sonra, son katman köşeleri hâlâ çevrilmeye ihtiyaç duyabilir. Bu adım başlangıç yöntemiyle aynıdır.
+
+#### 4 köşenin tümü saat yönünde çevirme gerektirir
+
+**Algoritma: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### 4 köşenin tümü saat yönünün tersine çevirme gerektirir
+
+**Algoritma: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 köşe çevirme gerektirir (bitişik)
+
+İki çözülmemiş köşeyi öne yerleştirin. U ile konumlandırın, algoritmayı uygulayın, sonra U'yu geri alın.
+
+**Algoritma: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 köşe çevirme gerektirir (çapraz)
+
+**Algoritma: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## İleri Algoritmalar
+
+Orta seviye yöntemin ötesinde, daha az yaygın durumları daha verimli şekilde ele alan ek algoritmalar:
+
+### Z-Perm Eşdeğeri
+
+İki çift köşe değiştirilmesi gerektiğinde (Z şekilli desen):
+
+**Algoritma: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi Durumu
+
+Üst yüz Pi deseni gösterir — iki bitişik köşe yönlendirilmiş, ikisi yönlendirilmemiş:
+
+**Algoritma: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Köşe Hazırlığı ve Yönlendirme
+
+Bir köşenin yeniden yönlendirilmesi gerektiğinde, köşeyi yerine çeviren bir Sledgehammer döngüsünü konjuge etmek için hazırlık hamleleri kullanın:
+
+**Algoritma: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Hızlı Karşı Merkez Değiştirme
+
+İki karşı merkezi değiştirmek için daha verimli bir algoritma:
+
+**Algoritma: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Üçlü Köşe Yönlendirme
+
+Üç köşe çevrilmelidir (biri doğru kalır):
+
+**Algoritma: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Bitişik Köşe Değiştirme
+
+İki bitişik köşe konum değiştirmelidir (sadece çevrilmek değil):
+
+**Algoritma: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look Çözme Kavramları
+
+Yarışmacı Skewb çözmede nihai hedef, ilk yüzü çözerken son katmanı tahmin etmektir.
+
+### Son Katmanı Tahmin Etme
+
+Adım 1 sırasında, beyaz yüzü oluştururken, **üst katman merkezlerine ve köşelerine** dikkat edin. Pratikle, Adım 1'i bitirmeden Adım 2 ve 3 durumlarını belirleyebilirsiniz.
+
+- **Üst merkezi izleyin** — son beyaz köşeyi yerleştirirken doğru konuma mı hareket ediyor?
+- **Yan merkezleri takip edin** — hangi yan merkezlerin zaten doğru olduğunu fark edin.
+- **Tam çözümü planlayın** — ileri çözücüler inceleme sırasında tüm çözümü planlayabilir.
+
+### Son Katmanı Etkileme
+
+Son beyaz köşeyi yerleştirmenin birden fazla yolu olduğunda, size **daha kolay Adım 2 durumu** veren yerleştirmeyi seçin:
+
+- İki yerleştirme de köşeyi çözüyorsa, daha fazla merkezi doğru konumlandıranı seçin.
+- Bazen biraz daha uzun Adım 1, Adım 2 veya 3'ü atlamaya yol açar.
+
+---
+
+## Hızlı Çözme İpuçları
+
+### Tutuş ve Çevirme
+
+- Skewb'u **parmak uçlarıyla köşelerde** tutun — yüzler değil köşeler çeviriyorsunuz.
+- Her elin **işaret parmağı ve başparmağı** ile karşı köşeleri kavrayın.
+- Yumuşak, kontrollü köşe çevirmeleri pratik yapın — Skewb ham hızdan ziyade hassasiyeti ödüllendirir.
+- **Tutuş değişikliklerini en aza indirin** — tam Sledgehammer'ı tutuşunuzu değiştirmeden uygulamaya çalışın.
+
+### Renk Tarafsızlığı
+
+Skewb'da renk tarafsızlığı, sadece beyaz değil **herhangi bir yüzle** başlayabileceğiniz anlamına gelir. Bu son derece güçlüdür:
+
+- Renk tarafsızlığıyla, seçebileceğiniz **6 olası ilk yüz** vardır.
+- Çözülmeye en yakın yüzü seçin — bazen 2-3 köşe zaten yerindedir.
+- Renk tarafsızlığı 4 saniyenin altında çözmek için neredeyse zorunludur.
+
+**Nasıl pratik yapılır:**
+1. 2 karşı renk arasında tarafsız olarak başlayın (örn. beyaz ve sarı).
+2. Herhangi bir yüzle başlayabilene kadar kademeli olarak daha fazla başlangıç rengi ekleyin.
+3. İnceleme sırasında 6 yüzü hızla tarayın ve en kolayını seçin.
+
+### İnceleme Planlaması
+
+Skewb'da yalnızca 14 görünür parça vardır (6 merkez + 8 köşe), bu da tam çözüm planlamasını gerçekçi kılar:
+
+- İnceleme sırasında **her zaman ilk yüzü tamamen planlayın**.
+- Çözmeye başlamadan önce **merkez durumunu belirleyin**.
+- **İleri:** Adım 2'ye kadar planlayın — bulmacaya dokunmadan önce hangi algoritmayı kullanacağınızı bilin.
+
+### Pratik Rutini
+
+1. **İlk yüz çalışmaları** — karıştırın ve sadece ilk yüzü çözün, hedef 2 saniyenin altı.
+2. **Merkez tanıma** — ilk yüzü çözdükten sonra, uygulamadan merkez durumunu mümkün olan en hızlı şekilde belirleyin.
+3. **Tam çözümler** — 12 zamanlı çözüm seti, 5 ortalama ve 12 ortalamayı takip edin.
+4. **Algoritma çalışması** — kas hafızası için her merkez ve köşe algoritmasını art arda 20 kez pratik yapın.
+5. **Renk tarafsız pratik** — her çözümde farklı bir renkle başlamaya kendinizi zorlayın.
+
+---
+
+**Sarah'ın Orta Seviye yöntemi ve kararlı pratikle, 5 saniyenin altında Skewb ortalamaları ulaşılabilir durumdadır.** Skewb, speedcubing'deki en planlama dostu bulmacalardan biridir — daha az parça, inceleme sırasında daha fazlasını tahmin edebileceğiniz anlamına gelir. Tanıma hızına ve yumuşak çevirmeye odaklanın, hızlı gelişme göreceksiniz.

@@ -1,0 +1,317 @@
+---
+title: "斜轉魔方進階技巧"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 斜轉魔方進階技巧
+
+將你的斜轉魔方水平從入門提升到競賽級別。本指南涵蓋 **Sarah 中級方法**——在入門方法基礎上進行升級，透過單步解決所有剩餘中心塊，同時介紹頂級斜轉魔方選手使用的高級公式和速擰策略。
+
+## 符號提示
+
+斜轉魔方圍繞**角塊**而非面進行旋轉：
+
+- **R** = 右前角順時針 &nbsp;&nbsp; **R'** = 逆時針
+- **L** = 左前角順時針 &nbsp;&nbsp; **L'** = 逆時針
+- **U** = 右前上角順時針 &nbsp;&nbsp; **U'** = 逆時針
+- **B** = 右後角順時針 &nbsp;&nbsp; **B'** = 逆時針
+
+在所有步驟中，保持斜轉魔方**白色中心朝下**。
+
+---
+
+## Sarah 中級方法
+
+Sarah 入門方法分3步解決斜轉魔方：先完成一面，然後處理中心塊，最後處理頂層角塊。中級升級**將中心塊和角塊步驟合併**，在第一面完成後用一個公式解決所有5個剩餘中心塊。
+
+### 概覽
+
+| 步驟 | 入門方法 | 中級方法 |
+|------|----------|-------------|
+| 1 | 完成一面 | 完成一面（相同） |
+| 2 | 定位中心塊 | **一步解決全部5個中心塊** |
+| 3 | 調整頂層角塊朝向 | 調整頂層角塊朝向（相同） |
+
+關鍵改進在於第2步：不再反覆使用 Sledgehammer 逐個定位中心塊，而是學習一組公式來同時解決所有中心塊。
+
+### 第1步：完成一面
+
+在底部構建完整的**白色面** —— 白色中心周圍的4個角塊必須就位且白色朝下，相鄰側面顏色必須匹配。此步驟與入門方法相同。
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+使用 Sledgehammer 配合準備步驟放置每個白色角塊。經過練習，這一步應該變得快速且直覺化。
+
+### 第2步：一次解決全部5個中心塊（One-Look）
+
+第一面完成後，觀察**剩餘5個中心塊**（頂面 + 4個側面）並判斷屬於哪種情況。應用一個公式即可一次性解決所有中心塊。
+
+根據正確位置的中心塊數量，有以下幾種情況：
+
+---
+
+#### 情況1：相鄰4循環
+
+四個中心塊需要循環。頂部中心塊正確，但4個側面中心塊需要旋轉。
+
+**公式：R' L R L' R' L R L'**（雙 Sledgehammer）
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### 情況2：對面2交換
+
+兩個對面的側面中心塊需要交換。
+
+**公式：R L' R' L R L' R' L**（逆向雙 Sledgehammer）
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### 情況3：相鄰2交換
+
+兩個相鄰的側面中心塊需要交換。將需要交換的兩個中心塊設置在前面和右面。
+
+**公式：R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### 情況4：頂面-側面交換 + 循環
+
+頂部中心塊需要與一個側面中心塊交換，其餘側面中心塊循環。
+
+**公式：U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### 情況5：三循環
+
+三個中心塊需要循環（頂部不動，3個側面旋轉）。將不動的側面中心塊設置在後面。
+
+**公式：R' L R L'**（單 Sledgehammer —— 需正確設置）
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**技巧：**
+- 學會透過先檢查頂部中心塊、再掃視4個側面來快速識別中心塊情況。
+- 這些公式大多是 Sledgehammer 的變體——如果你熟練掌握了 Sledgehammer，這些公式會感覺很自然。
+- 透過打亂斜轉魔方、完成第一面、然後在執行前識別中心塊情況來練習判斷。
+
+### 第3步：調整頂層角塊朝向
+
+解決所有中心塊後，頂層角塊可能仍需要扭轉。此步驟與入門方法相同。
+
+#### 全部4個角塊需要順時針扭轉
+
+**公式：R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### 全部4個角塊需要逆時針扭轉
+
+**公式：L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2個角塊需要扭轉（相鄰）
+
+將兩個未解決的角塊設置在前面。使用 U 定位它們，執行公式，然後撤銷 U。
+
+**公式：U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2個角塊需要扭轉（對角）
+
+**公式：R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## 高級公式
+
+除了中級方法之外，以下是一些能更高效處理不常見情況的附加公式。
+
+### Z-Perm 等效公式
+
+當兩對角塊需要交換時（類似Z形圖案）：
+
+**公式：R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi 情況
+
+頂面呈現 Pi 圖案——兩個相鄰角塊已調整，兩個未調整：
+
+**公式：R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### 角塊設置與朝向調整
+
+當角塊需要重新調整朝向時，使用準備步驟配合 Sledgehammer 循環將其扭轉到位：
+
+**公式：U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### 快速對面中心塊交換
+
+交換兩個對面中心塊的更高效公式：
+
+**公式：B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### 三角塊朝向調整
+
+三個角塊需要扭轉（一個保持正確）：
+
+**公式：L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### 相鄰角塊交換
+
+兩個相鄰角塊需要交換位置（不僅僅是扭轉）：
+
+**公式：R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look 解法概念
+
+競賽級斜轉魔方解法的終極目標是在完成第一面的同時預測頂層情況。
+
+### 預測頂層
+
+在第1步構建白色面時，注意**頂層中心塊和角塊**。經過練習，你可以在完成第1步之前就識別出第2步和第3步的情況。
+
+- **觀察頂部中心塊**——當你放入最後一個白色角塊時，它是否移到正確位置？
+- **追蹤側面中心塊**——注意哪些側面中心塊已經正確。
+- **規劃完整解法**——高級選手可以在觀察時間內規劃整個解法。
+
+### 影響頂層
+
+當你有多種方式放入最後一個白色角塊時，選擇能產生**更容易的第2步情況**的放入方式：
+
+- 如果兩種放入方式都能解決角塊，選擇能使更多中心塊正確的那種。
+- 有時稍長的第1步會導致第2步或第3步被跳過。
+
+---
+
+## 速擰技巧
+
+### 握法與轉動
+
+- 用**指尖握住角塊**來持握斜轉魔方——你轉動的是角塊，不是面。
+- 每隻手用**食指和拇指**握住對角的角塊。
+- 練習平滑、可控的角塊轉動——斜轉魔方獎勵精確度而非純粹的速度。
+- **減少換手**——盡量在不改變握法的情況下執行完整的 Sledgehammer。
+
+### 色彩中立
+
+斜轉魔方的色彩中立意味著你可以用**任何面**作為第一面來開始，而不僅是白色。這極其強大：
+
+- 具備色彩中立能力後，你有**6個可選的起始面**。
+- 選擇最接近完成的面——有時2-3個角塊已經就位。
+- 色彩中立對於4秒以內的解法幾乎是必須的。
+
+**如何練習：**
+1. 先在2個相對顏色之間保持中立（例如白色和黃色）。
+2. 逐漸增加更多起始顏色，直到你能從任何面開始。
+3. 在觀察時間內，快速掃視所有6個面並選擇最簡單的。
+
+### 觀察規劃
+
+斜轉魔方只有14個可見塊（6個中心塊 + 8個角塊），使得完整解法規劃切實可行：
+
+- 在觀察時間內**始終完全規劃好第一面**。
+- 在開始解之前**識別中心塊情況**。
+- **進階**：規劃到第2步——在觸碰魔方之前就知道要使用哪個公式。
+
+### 練習計劃
+
+1. **第一面訓練**——打亂後只完成第一面，目標是2秒以內。
+2. **中心塊識別**——完成第一面後，盡快識別中心塊情況但不執行。
+3. **完整解法**——每組12次計時解法，記錄5次平均和12次平均。
+4. **公式訓練**——每個中心塊和角塊公式連續練習20次以形成肌肉記憶。
+5. **色彩中立練習**——強迫自己每次解法從不同顏色開始。
+
+---
+
+**透過 Sarah 中級方法和持續練習，5秒以內的斜轉魔方平均成績觸手可及。**斜轉魔方是速擰中最適合規劃的謎題之一——更少的塊意味著你可以在觀察時預測更多。專注於識別速度和平滑轉動，你將看到快速進步。

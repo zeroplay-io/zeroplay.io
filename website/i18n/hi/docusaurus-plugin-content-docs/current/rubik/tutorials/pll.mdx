@@ -1,0 +1,466 @@
+---
+title: PLL एल्गोरिदम
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL एल्गोरिदम
+
+**PLL (अंतिम परत का क्रमपरिवर्तन)** CFOP विधि का अंतिम चरण है। OLL द्वारा ऊपरी फलक के सभी स्टिकरों को सही दिशा में करने के बाद, PLL टुकड़ों को उनकी हल की गई स्थिति में पुनर्व्यवस्थित करता है। कुल **21 PLL मामले** हैं।
+
+यदि आप शुरुआती हैं, तो **2-Look PLL** से शुरू करें -- एक सरलीकृत तरीका जिसमें 21 के बजाय केवल **6 एल्गोरिदम** की आवश्यकता होती है।
+
+---
+
+## 2-Look PLL
+
+2-Look PLL क्रमपरिवर्तन चरण को दो छोटे चरणों में विभाजित करता है:
+
+1. **कोनों का क्रमपरिवर्तन** -- सभी 4 कोनों को सही स्थिति में रखें (2 मामले)
+2. **किनारों का क्रमपरिवर्तन** -- सभी 4 किनारों को सही स्थिति में रखें (4 मामले)
+
+इसका मतलब है कि आपको कुल मिलाकर केवल **6 एल्गोरिदम** सीखने की जरूरत है।
+
+### चरण 1: कोनों का क्रमपरिवर्तन
+
+ऊपरी परत के कोनों को देखें। जांचें कि क्या कोई **आसन्न कोनों की जोड़ी** एक ही तरफ से संबंधित है (मिलते हुए हेडलाइट्स)।
+
+#### आसन्न कोनों की अदला-बदली
+
+आसन्न कोनों की एक जोड़ी पहले से सही है। हल की गई जोड़ी को **पीछे** रखें और लागू करें:
+
+**एल्गोरिदम: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+यह **T-Perm** है -- यह दो सामने के कोनों की अदला-बदली करता है (और दो किनारे, जिन्हें हम चरण 2 में ठीक करेंगे)।
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### विकर्ण कोनों की अदला-बदली
+
+कोई आसन्न कोने मेल नहीं खाते। विकर्ण रूप से कोनों की अदला-बदली के लिए **Y-Perm** लागू करें:
+
+**एल्गोरिदम: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### चरण 2: किनारों का क्रमपरिवर्तन
+
+सभी कोने अब हल हो गए हैं। किनारों को देखें और निर्धारित करें कि किन्हें चक्रित करने की आवश्यकता है।
+
+#### Ua Perm (दक्षिणावर्त 3-किनारा चक्र)
+
+तीन किनारों को दक्षिणावर्त चक्रित करने की आवश्यकता है। हल किए गए किनारे को **पीछे** रखें।
+
+**एल्गोरिदम: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (वामावर्त 3-किनारा चक्र)
+
+तीन किनारों को वामावर्त चक्रित करने की आवश्यकता है। हल किए गए किनारे को **पीछे** रखें।
+
+**एल्गोरिदम: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (विपरीत किनारा जोड़ियों की अदला-बदली)
+
+विपरीत किनारों की दो जोड़ियों को अदला-बदली की आवश्यकता है।
+
+**एल्गोरिदम: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (आसन्न किनारा जोड़ियों की अदला-बदली)
+
+आसन्न किनारों की दो जोड़ियों को अदला-बदली की आवश्यकता है। इस तरह पकड़ें कि दो जोड़ियां सामने/दाएं और पीछे/बाएं हों।
+
+**एल्गोरिदम: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## पूर्ण PLL -- सभी 21 मामले
+
+### केवल किनारे (4 मामले)
+
+ये PLL केवल किनारों को हिलाते हैं; कोने पहले से हल हैं।
+
+#### Ua Perm
+
+किनारे दक्षिणावर्त चक्रित होते हैं। हल किया गया किनारा पीछे है।
+
+**पहचान:** एक हल की गई पट्टी (किनारा + दो कोने) पीछे से दिखाई देती है।
+
+**एल्गोरिदम: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+किनारे वामावर्त चक्रित होते हैं। हल किया गया किनारा पीछे है।
+
+**पहचान:** एक हल की गई पट्टी पीछे से दिखाई देती है; किनारे के रंग Ua से विपरीत दिशा में चक्रित होते हैं।
+
+**एल्गोरिदम: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+विपरीत किनारों की दो जोड़ियां अदला-बदली होती हैं।
+
+**पहचान:** हर तरफ केंद्रीय किनारे की स्थिति में विपरीत रंग है। चारों तरफ शतरंज का पैटर्न।
+
+**एल्गोरिदम: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+आसन्न किनारों की दो जोड़ियां अदला-बदली होती हैं।
+
+**पहचान:** दो आसन्न तरफों में से प्रत्येक में किनारे की स्थिति पर दूसरे का रंग है। कोई भी तरफ पूरी तरह से हल नहीं है।
+
+**एल्गोरिदम: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### केवल कोने (3 मामले)
+
+ये PLL केवल कोनों को हिलाते हैं; किनारे पहले से हल हैं।
+
+#### Aa Perm
+
+तीन कोने चक्रित होते हैं। बाईं तरफ हेडलाइट्स।
+
+**पहचान:** एक तरफ हेडलाइट्स, पट्टी (3 मिलते हुए स्टिकर) विपरीत तरफ है।
+
+**एल्गोरिदम: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+तीन कोने चक्रित होते हैं (Aa से विपरीत दिशा)। दाईं तरफ हेडलाइट्स।
+
+**पहचान:** Aa का दर्पण -- विपरीत तरफ हेडलाइट्स।
+
+**एल्गोरिदम: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+विकर्ण कोनों की दो जोड़ियां अदला-बदली होती हैं। कोई किनारा नहीं हिलता।
+
+**पहचान:** किसी भी तरफ कोई हेडलाइट्स नहीं। हर तरफ दो अलग-अलग कोने के रंग हैं।
+
+**एल्गोरिदम: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### आसन्न कोनों की अदला-बदली (6 मामले)
+
+ये PLL आसन्न कोनों की एक जोड़ी को किनारा क्रमपरिवर्तनों के साथ अदला-बदली करते हैं।
+
+#### T Perm
+
+**पहचान:** सामने और पीछे हेडलाइट्स। बिना हेडलाइट्स वाली दो तरफों के रंग अदला-बदली हैं।
+
+**एल्गोरिदम: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**पहचान:** केवल एक तरफ (सामने) हेडलाइट्स। अन्य तीन तरफों में कोई मिलती हुई जोड़ी नहीं।
+
+**एल्गोरिदम: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**पहचान:** बाईं तरफ एक हल किया गया 1x1x3 ब्लॉक। दाईं तरफ आसन्न टुकड़े अदला-बदली हैं।
+
+**एल्गोरिदम: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**पहचान:** दाईं तरफ एक हल किया गया 1x1x3 ब्लॉक। Ja का दर्पण।
+
+**एल्गोरिदम: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**पहचान:** सामने हेडलाइट्स। दाईं तरफ आसन्न कोने और किनारे की अदला-बदली।
+
+**एल्गोरिदम: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**पहचान:** पीछे हेडलाइट्स। Ra का दर्पण।
+
+**एल्गोरिदम: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### विकर्ण कोनों की अदला-बदली (4 मामले)
+
+ये PLL दो विकर्ण रूप से विपरीत कोनों की अदला-बदली करते हैं।
+
+#### V Perm
+
+**पहचान:** किसी भी तरफ कोई हेडलाइट्स नहीं। एक तरफ 2-रंग का पैटर्न है जहां किनारा एक कोने से मेल खाता है।
+
+**एल्गोरिदम: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**पहचान:** कोई हेडलाइट्स नहीं। एक तरफ दो मिलते हुए कोने हैं लेकिन उनके बीच का किनारा गलत है।
+
+**एल्गोरिदम: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**पहचान:** दो विपरीत तरफ पूरी तरह से हल हैं (प्रत्येक पर एक हल की गई पट्टी), लेकिन अन्य दो तरफों के टुकड़े पूरी तरह से अदला-बदली हैं।
+
+**एल्गोरिदम: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**पहचान:** Na का दर्पण। दो विपरीत पट्टियां लेकिन अलग तरीके से अदला-बदली।
+
+**एल्गोरिदम: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 मामले)
+
+G क्रमपरिवर्तन पहचानने में सबसे कठिन हैं। ये एक आसन्न कोनों की जोड़ी को हिलाते हैं और तीन किनारों को चक्रित करते हैं।
+
+#### Ga Perm
+
+**पहचान:** बाईं तरफ हेडलाइट्स। सामने दाएं कोना दाएं किनारे से मेल खाता है।
+
+**एल्गोरिदम: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**पहचान:** सामने हेडलाइट्स। पीछे बाएं कोना बाएं किनारे से मेल खाता है।
+
+**एल्गोरिदम: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**पहचान:** दाईं तरफ हेडलाइट्स। सामने बाएं कोना बाएं किनारे से मेल खाता है।
+
+**एल्गोरिदम: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**पहचान:** पीछे हेडलाइट्स। सामने दाएं कोना दाएं किनारे से मेल खाता है।
+
+**एल्गोरिदम: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## पहचान युक्तियां
+
+कुशल PLL पहचान तेज हल की कुंजी है। यहां सामान्य रणनीतियां हैं:
+
+1. **हेडलाइट्स खोजें** -- एक तरफ मिलते हुए कोनों की जोड़ी। यह तुरंत मामले को सीमित करता है।
+2. **हल की गई पट्टियां गिनें** -- एक पट्टी एक पंक्ति में तीन मिलते हुए स्टिकर है (कोना-किनारा-कोना)। पट्टियां विशिष्ट PLL इंगित करती हैं।
+3. **दो तरफ जांचें** -- सामने और दाईं तरफ देखना आमतौर पर मामले की पहचान के लिए पर्याप्त होता है।
+4. **विपरीत पैटर्न सीखें** -- कई PLL दर्पण जोड़ियों में आते हैं (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd)।
+
+| आप क्या देखते हैं | संभावित PLL |
+|:---|:---|
+| 4 तरफ हेडलाइट्स के साथ | H, Ua, Ub, Z |
+| 2 विपरीत तरफ हेडलाइट्स के साथ | T, F, Ja, Jb, Ra, Rb |
+| 1 तरफ हेडलाइट्स के साथ | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 तरफ हेडलाइट्स के साथ | E, V, Y, Na, Nb |
+
+## सीखने का क्रम
+
+सभी 21 PLL सीखने के लिए एक अनुशंसित क्रम:
+
+1. **पहले 2-Look:** T, Y (कोने) + Ua, Ub, H, Z (किनारे) -- 6 एल्गोरिदम
+2. **आसन्न अदला-बदली:** Ja, Jb, F, Ra, Rb -- 5 और एल्गोरिदम
+3. **केवल कोने:** Aa, Ab, E -- 3 और एल्गोरिदम
+4. **विकर्ण अदला-बदली:** V, Na, Nb -- 3 और एल्गोरिदम
+5. **G Perms अंत में:** Ga, Gb, Gc, Gd -- 4 अंतिम एल्गोरिदम
+
+:::tip
+मिलाकर, PLL तक हल करके, फिर क्यूब को ढककर और मामले को याद से पहचानने की कोशिश करके पहचान का अभ्यास करें। गति तात्कालिक पहचान से आती है, न कि केवल तेज उंगलियों की चालों से।
+:::

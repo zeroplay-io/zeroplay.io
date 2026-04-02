@@ -1,0 +1,466 @@
+---
+title: Algoritma PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algoritma PLL
+
+**PLL (Permutasi Lapisan Terakhir)** ialah langkah terakhir kaedah CFOP. Selepas OLL mengorientasikan semua pelekat permukaan atas, PLL menyusun semula kepingan ke kedudukan yang diselesaikan. Terdapat **21 kes PLL** secara keseluruhan.
+
+Jika anda pemula, mulakan dengan **2-Look PLL** -- pendekatan ringkas yang memerlukan hanya **6 algoritma** berbanding 21 kesemuanya.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL membahagikan langkah permutasi kepada dua langkah lebih kecil:
+
+1. **Permutasi penjuru** -- meletakkan semua 4 penjuru pada kedudukan yang betul (2 kes)
+2. **Permutasi tepi** -- meletakkan semua 4 tepi pada kedudukan yang betul (4 kes)
+
+Ini bermakna anda hanya perlu mempelajari **6 algoritma** secara keseluruhan.
+
+### Langkah 1: Permutasi Penjuru
+
+Lihat penjuru lapisan atas. Semak sama ada mana-mana **pasangan penjuru bersebelahan** berada di sisi yang sama (lampu hadapan sepadan).
+
+#### Pertukaran Penjuru Bersebelahan
+
+Satu pasangan penjuru bersebelahan sudah betul. Pegang pasangan yang diselesaikan di **belakang** dan gunakan:
+
+**Algoritma: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Ini ialah **T-Perm** -- menukar dua penjuru hadapan (dan dua tepi, yang akan kita betulkan di langkah 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Pertukaran Penjuru Pepenjuru
+
+Tiada penjuru bersebelahan yang sepadan. Gunakan **Y-Perm** untuk menukar penjuru secara pepenjuru:
+
+**Algoritma: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Langkah 2: Permutasi Tepi
+
+Semua penjuru kini diselesaikan. Lihat tepi dan tentukan yang mana perlu berputar.
+
+#### Ua Perm (kitaran 3 tepi ikut jam)
+
+Tiga tepi perlu berputar ikut jam. Pegang tepi yang diselesaikan di **belakang**.
+
+**Algoritma: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (kitaran 3 tepi lawan jam)
+
+Tiga tepi perlu berputar lawan jam. Pegang tepi yang diselesaikan di **belakang**.
+
+**Algoritma: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Tukar pasangan tepi bertentangan)
+
+Dua pasangan tepi bertentangan perlu ditukar.
+
+**Algoritma: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Tukar pasangan tepi bersebelahan)
+
+Dua pasangan tepi bersebelahan perlu ditukar. Pegang supaya dua pasangan berada di hadapan/kanan dan belakang/kiri.
+
+**Algoritma: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL Penuh -- Semua 21 Kes
+
+### Tepi Sahaja (4 kes)
+
+PLL ini hanya menggerakkan tepi; penjuru sudah diselesaikan.
+
+#### Ua Perm
+
+Tepi berputar ikut jam. Tepi yang diselesaikan di belakang.
+
+**Pengecaman:** Satu bar yang diselesaikan (tepi + dua penjuru) kelihatan dari belakang.
+
+**Algoritma: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Tepi berputar lawan jam. Tepi yang diselesaikan di belakang.
+
+**Pengecaman:** Satu bar yang diselesaikan kelihatan dari belakang; warna tepi berputar arah bertentangan dari Ua.
+
+**Algoritma: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Dua pasangan tepi bertentangan bertukar.
+
+**Pengecaman:** Setiap sisi mempunyai warna bertentangan di kedudukan tepi tengah. Corak papan dam pada keempat-empat sisi.
+
+**Algoritma: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Dua pasangan tepi bersebelahan bertukar.
+
+**Pengecaman:** Dua sisi bersebelahan masing-masing mempunyai warna yang lain di kedudukan tepi. Tiada sisi yang diselesaikan sepenuhnya.
+
+**Algoritma: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Penjuru Sahaja (3 kes)
+
+PLL ini hanya menggerakkan penjuru; tepi sudah diselesaikan.
+
+#### Aa Perm
+
+Tiga penjuru berputar. Lampu hadapan di sisi kiri.
+
+**Pengecaman:** Lampu hadapan di satu sisi, bar (3 pelekat sepadan) di sisi bertentangan.
+
+**Algoritma: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tiga penjuru berputar (arah bertentangan dari Aa). Lampu hadapan di sisi kanan.
+
+**Pengecaman:** Cermin Aa -- lampu hadapan di sisi bertentangan.
+
+**Algoritma: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Dua pasangan penjuru pepenjuru bertukar. Tiada tepi bergerak.
+
+**Pengecaman:** Tiada lampu hadapan di mana-mana sisi. Setiap sisi mempunyai dua warna penjuru berbeza.
+
+**Algoritma: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Pertukaran Penjuru Bersebelahan (6 kes)
+
+PLL ini menukar satu pasangan penjuru bersebelahan bersama permutasi tepi.
+
+#### T Perm
+
+**Pengecaman:** Lampu hadapan di hadapan dan belakang. Dua sisi tanpa lampu hadapan mempunyai warna yang ditukar.
+
+**Algoritma: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Pengecaman:** Lampu hadapan hanya di satu sisi (hadapan). Tiga sisi lain tiada pasangan sepadan.
+
+**Algoritma: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Pengecaman:** Blok 1x1x3 yang diselesaikan di sisi kiri. Sisi kanan mempunyai kepingan bersebelahan yang ditukar.
+
+**Algoritma: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Pengecaman:** Blok 1x1x3 yang diselesaikan di sisi kanan. Cermin Ja.
+
+**Algoritma: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Pengecaman:** Lampu hadapan di hadapan. Pertukaran penjuru dan tepi bersebelahan di sisi kanan.
+
+**Algoritma: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Pengecaman:** Lampu hadapan di belakang. Cermin Ra.
+
+**Algoritma: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Pertukaran Penjuru Pepenjuru (4 kes)
+
+PLL ini menukar dua penjuru yang bertentangan secara pepenjuru.
+
+#### V Perm
+
+**Pengecaman:** Tiada lampu hadapan di mana-mana sisi. Satu sisi mempunyai corak 2 warna di mana tepi sepadan dengan satu penjuru.
+
+**Algoritma: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Pengecaman:** Tiada lampu hadapan. Satu sisi mempunyai dua penjuru sepadan tetapi tepi antara mereka salah.
+
+**Algoritma: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Pengecaman:** Dua sisi bertentangan diselesaikan sepenuhnya (bar yang diselesaikan pada setiap satu), tetapi dua sisi lain mempunyai kepingan yang ditukar sepenuhnya.
+
+**Algoritma: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Pengecaman:** Cermin Na. Dua bar bertentangan tetapi ditukar secara berbeza.
+
+**Algoritma: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 kes)
+
+Permutasi G adalah yang paling sukar dikenal pasti. Ia menggerakkan satu pasangan penjuru bersebelahan dan memutar tiga tepi.
+
+#### Ga Perm
+
+**Pengecaman:** Lampu hadapan di kiri. Penjuru hadapan kanan sepadan dengan tepi kanan.
+
+**Algoritma: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Pengecaman:** Lampu hadapan di hadapan. Penjuru belakang kiri sepadan dengan tepi kiri.
+
+**Algoritma: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Pengecaman:** Lampu hadapan di kanan. Penjuru hadapan kiri sepadan dengan tepi kiri.
+
+**Algoritma: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Pengecaman:** Lampu hadapan di belakang. Penjuru hadapan kanan sepadan dengan tepi kanan.
+
+**Algoritma: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Petua Pengecaman
+
+Pengecaman PLL yang cekap adalah kunci penyelesaian pantas. Berikut strategi umum:
+
+1. **Cari lampu hadapan** -- sepasang penjuru sepadan pada satu sisi. Ini terus mengecilkan kes.
+2. **Kira bar yang diselesaikan** -- bar ialah tiga pelekat sepadan berturut-turut (penjuru-tepi-penjuru). Bar menunjukkan PLL tertentu.
+3. **Semak dua sisi** -- melihat sisi hadapan dan kanan biasanya cukup untuk mengenal pasti kes.
+4. **Pelajari corak bertentangan** -- banyak PLL datang dalam pasangan cermin (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Apa yang anda lihat | PLL yang mungkin |
+|:---|:---|
+| 4 sisi dengan lampu hadapan | H, Ua, Ub, Z |
+| 2 sisi bertentangan dengan lampu hadapan | T, F, Ja, Jb, Ra, Rb |
+| 1 sisi dengan lampu hadapan | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 sisi dengan lampu hadapan | E, V, Y, Na, Nb |
+
+## Susunan Pembelajaran
+
+Susunan yang disyorkan untuk mempelajari semua 21 PLL:
+
+1. **2-Look dahulu:** T, Y (penjuru) + Ua, Ub, H, Z (tepi) -- 6 algoritma
+2. **Pertukaran bersebelahan:** Ja, Jb, F, Ra, Rb -- 5 lagi algoritma
+3. **Penjuru sahaja:** Aa, Ab, E -- 3 lagi algoritma
+4. **Pertukaran pepenjuru:** V, Na, Nb -- 3 lagi algoritma
+5. **G Perms terakhir:** Ga, Gb, Gc, Gd -- 4 algoritma terakhir
+
+:::tip
+Latih pengecaman dengan mengocak, menyelesaikan sehingga PLL, kemudian menutup kiub dan cuba mengenal pasti kes dari ingatan. Kepantasan datang dari pengecaman serta-merta, bukan hanya helah jari yang pantas.
+:::

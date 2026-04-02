@@ -1,0 +1,249 @@
+---
+title: "4x4 Zaawansowany: Metoda Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Zaawansowany: Metoda Yau
+
+**Metoda Yau**, wynaleziona przez Roberta Yau, jest szybszą alternatywą dla standardowej metody Reduction dla kostki Rubika 4x4. Kluczowa różnica: Yau rozwiązuje krawędzie krzyża **wcześnie**, co zapewnia lepsze przewidywanie i płynniejsze przejście do fazy 3x3. Większość czołowych speedcuberów 4x4 używa metody Yau lub jej wariantu.
+
+## Yau vs standardowa Reduction
+
+| Aspekt | Reduction | Yau |
+|--------|-----------|-----|
+| **Kolejność kroków** | Wszystkie centra, potem wszystkie krawędzie | 2 centra, 3 krawędzie krzyża, 4 centra, pozostałe krawędzie |
+| **Krzyż** | Budowany po redukcji | Już częściowo gotowy podczas redukcji |
+| **Przewidywanie** | Trzeba szukać krawędzi krzyża po parowaniu | Krzyż prawie gotowy, przejście do F2L płynne |
+| **Pułap prędkości** | Dobry | Wyższy — mniej przerw między fazami |
+
+## Przypomnienie notacji
+
+**Standardowe ruchy** (tylko zewnętrzna warstwa):
+- **R** = Prawo &nbsp;&nbsp; **L** = Lewo &nbsp;&nbsp; **U** = Góra &nbsp;&nbsp; **D** = Dół &nbsp;&nbsp; **F** = Przód &nbsp;&nbsp; **B** = Tył
+
+**Szerokie ruchy** (dwie zewnętrzne warstwy razem):
+- **Rw** = Prawo szerokie &nbsp;&nbsp; **Lw** = Lewo szerokie &nbsp;&nbsp; **Uw** = Góra szerokie &nbsp;&nbsp; **Dw** = Dół szerokie &nbsp;&nbsp; **Fw** = Przód szerokie &nbsp;&nbsp; **Bw** = Tył szerokie
+
+Sama litera oznacza **90° zgodnie z ruchem wskazówek zegara**. Dodanie **'** oznacza **przeciwnie do ruchu wskazówek**. Dodanie **2** oznacza **180°**.
+
+---
+
+## Krok 1: Rozwiąż dwa przeciwległe centra
+
+Zacznij od rozwiązania bloków centralnych **białego** i **żółtego** (góra i dół). To jest to samo co pierwsza część standardowej metody Reduction.
+
+Każde centrum to blok 2x2 elementów. Używaj szerokich ruchów, aby zebrać elementy centralne, chroniąc już umieszczone elementy obrotami zewnętrznej warstwy.
+
+**Podstawowe budowanie centrum** — przenieś element centralny na górę szerokim ruchem, ustaw go, a potem odwróć:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Łączenie dwóch połówek centrum** — gdy masz dwa paski centrum 1x2, które trzeba połączyć:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Wskazówki:**
+- Najpierw rozwiąż białe centrum (na dole), potem żółte centrum (na górze).
+- Trzymaj białe na dole cały czas — używaj tylko ruchów Rw, Lw, Fw, Bw do manipulowania centrami bez zakłócania dołu.
+- Nie martw się jeszcze o centra boczne. Zostaw je na krok 3.
+
+---
+
+## Krok 2: Rozwiąż 3 z 4 krawędzi krzyża
+
+Tutaj Yau odbiega od Reduction. Przed rozwiązaniem pozostałych centrów, **sparuj i umieść 3 białe krawędzie krzyża** w dolnej warstwie.
+
+Krawędź krzyża składa się z dwóch elementów (np. biało-czerwony i biało-czerwony), które trzeba sparować i umieścić w warstwie D. Zostaw jedną krawędź krzyża nierozwiązaną na razie — to daje swobodę użycia szerokich ruchów w następnym kroku.
+
+**Parowanie krawędzi krzyża freeslice'em** — technika freeslice paruje krawędzie bez zakłócania centrów. Umieść jedną połówkę krawędzi w pozycji przód-prawo i przynieś partnera z innego slotu:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Wkładanie sparowanej krawędzi krzyża na dół** — po sparowaniu, umieść krawędź w poprawnej pozycji warstwy D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice z szerokimi ruchami** — użyj Dw do podniesienia elementu krawędzi do parowania bez łamania krawędzi krzyża już na miejscu:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Wskazówki:**
+- Teraz potrzebujesz tylko 3 rozwiązanych krawędzi krzyża. Celowo zostaw jedno miejsce puste.
+- Używaj pustego slotu warstwy D swobodnie — brakująca krawędź krzyża daje więcej swobody dla szerokich ruchów.
+- Wybierz którą krawędź krzyża zostawić na podstawie tego, którą najtrudniej znaleźć lub sparować.
+
+---
+
+## Krok 3: Rozwiąż pozostałe 4 centra
+
+Teraz rozwiąż **4 centra boczne** (czerwone, pomarańczowe, niebieskie, zielone). Białe i żółte centrum są już gotowe z kroku 1.
+
+Ponieważ masz jeden nierozwiązany slot krawędzi krzyża, nadal możesz swobodnie używać niektórych szerokich ruchów. To kluczowa zaleta Yau — częściowo rozwiązany krzyż nie ogranicza budowania centrów tak bardzo, jak mogłoby się wydawać.
+
+**Budowanie centrum bocznego** — używaj szerokich ruchów do zbierania elementów centralnych, potem je umieść:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Komutator centrum** — gdy musisz zamienić element centralny bez zakłócania innych, użyj sekwencji w stylu komutatora:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Wskazówki:**
+- Rozwiązuj centra w parach przeciwległych, gdy to możliwe (np. czerwone potem pomarańczowe, niebieskie potem zielone).
+- Wykorzystaj nierozwiązany slot krawędzi krzyża — szerokie ruchy przez ten slot nie złamią krawędzi krzyża.
+- Zwróć uwagę na 3 krawędzie krzyża już w warstwie D. Sprawdź przed wykonaniem szerokich ruchów.
+
+---
+
+## Krok 4: Ostatnia krawędź krzyża + pełne parowanie krawędzi
+
+Ten krok ma dwie części: dokończ 4. krawędź krzyża, potem sparuj wszystkie pozostałe krawędzie.
+
+### Część A: Rozwiąż ostatnią krawędź krzyża
+
+Znajdź pozostałą parę krawędzi krzyża i połącz je. Ponieważ wszystkie centra są teraz rozwiązane, musisz być ostrożniejszy z szerokimi ruchami.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Po sparowaniu, włóż ją w ostatni slot warstwy D, aby ukończyć biały krzyż.
+
+### Część B: Sparuj pozostałe krawędzie (technika 3-2-3)
+
+Masz teraz 8 niesparowanych krawędzi. **Technika 3-2-3** jest najefektywniejszym sposobem ich sparowania:
+
+1. **Pierwsze 3 krawędzie** — sparuj je standardowymi ruchami slice-flip-slice. Umieść niesparowaną krawędź przód-prawo, znajdź jej partnera na górze, użyj Uw do ich połączenia:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Następne 2 krawędzie** — z mniejszą liczbą pozostałych krawędzi możesz sparować dwie szybko po sobie, przechowując jedną z tyłu:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Ostatnie 3 krawędzie** — ostatnie krawędzie wymagają więcej ostrożności, aby nie złamać już sparowanych krawędzi. Użyj ruchów opartych na Dw lub technik odwracania:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Wskazówki:**
+- Podczas parowania 3-2-3, zawsze sprawdzaj, czy twoje szerokie ruchy nie łamią krawędzi krzyża na dole.
+- Jeśli krawędź jest sparowana, ale odwrócona, musisz ją wyjąć i sparować ponownie.
+- Przejście z parowania krawędzi do 3x3 powinno być płynne — twój krzyż jest już gotowy.
+
+---
+
+## Krok 5: Rozwiąż jak 3x3 (CFOP)
+
+Ze wszystkimi centrami rozwiązanymi, krawędziami sparowanymi i krzyżem już ukończonym, 4x4 zachowuje się teraz jak 3x3. Ponieważ **biały krzyż jest już gotowy** (wielka zaleta Yau), możesz przejść prosto do **F2L** (pierwsze dwie warstwy).
+
+Od tego momentu używaj tylko ruchów zewnętrznej warstwy — żadnych szerokich ruchów.
+
+**Kontynuuj ze standardowym CFOP:**
+1. **F2L** — sparuj i wstaw pary róg-krawędź do pierwszych dwóch warstw.
+2. **OLL** — zorientuj ostatnią warstwę.
+3. **PLL** — permutuj ostatnią warstwę.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+To jest największa zaleta metody Yau: przejście krzyż-do-F2L ma zero przerwy, ponieważ krzyż został zbudowany podczas fazy redukcji.
+
+---
+
+## Algorytmy parzystości
+
+4x4 ma dwa przypadki parzystości, które nie mogą wystąpić na 3x3. Każdy z nich występuje około 50% czasu, niezależnie od tego, czy używasz Yau czy Reduction.
+
+### Parzystość OLL (odwrócenie pojedynczej krawędzi)
+
+Pojedyncza krawędź wygląda na odwróconą na ostatniej warstwie — niemożliwe na prawdziwej 3x3.
+
+**Algorytm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Zastosuj ten algorytm raz, potem kontynuuj z normalnym OLL/PLL.
+
+### Parzystość PLL (zamiana dwóch krawędzi)
+
+Dwie przeciwległe krawędzie muszą zostać zamienione — znowu niemożliwe na 3x3.
+
+**Algorytm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Kiedy uczyć się Yau
+
+- **Jeśli twoja średnia jest poniżej 2 minut z Reduction**, masz podstawy do przejścia na Yau.
+- **Jeśli znasz CFOP dla 3x3**, Yau jest naturalnym wyborem — krzyż jest już gotowy gdy wchodzisz w fazę 3x3.
+- **Jeśli masz problem z przejściem Reduction-do-3x3**, Yau eliminuje tę przerwę całkowicie.
+
+## Priorytety treningowe
+
+1. **Opanuj parowanie krawędzi freeslice'em** — to jest kluczowa technika, która czyni Yau efektywną.
+2. **Ćwicz rozpoznawanie 2 centrów + 3 krawędzi krzyża** — naucz się szybko identyfikować krawędzie krzyża podczas pierwszych dwóch kroków.
+3. **Drilluj technikę 3-2-3** — płynne parowanie krawędzi to miejsce, gdzie oszczędza się najwięcej czasu.
+4. **Pracuj nad przejściem krzyż-do-F2L** — ponieważ krzyż jest gotowy, ćwicz zauważanie pierwszej pary F2L podczas parowania krawędzi.
+
+---
+
+**Metoda Yau jest standardem dla konkurencyjnego rozwiązywania 4x4.** Płynne przejście z redukcji do rozwiązywania 3x3, w połączeniu z lepszymi możliwościami przewidywania, czyni ją preferowanym wyborem dla speedcuberów celujących w średnie poniżej 40 sekund. Zacznij od konwersji swoich rozwiązań Reduction na Yau, jeden krok na raz.

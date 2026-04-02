@@ -1,0 +1,286 @@
+---
+title: Conseils de Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Conseils de Speed Cubing
+
+Devenir plus rapide au Rubik's Cube ne se résume pas à tourner plus vite. Les plus grands progrès viennent de la planification anticipée, de la réduction des pauses et d'un entraînement ciblé. Ce guide couvre les compétences fondamentales qui distinguent les résolveurs occasionnels des speedcubers compétitifs.
+
+---
+
+## Planification de la croix
+
+La croix est la première étape d'une résolution CFOP et c'est la seule partie que vous pouvez planifier **entièrement pendant l'inspection**. Maîtriser la planification de la croix vous donne une avance gratuite à chaque résolution.
+
+### Utilisez les 15 secondes d'inspection complètes
+
+En compétition, vous disposez de 15 secondes d'inspection avant de lancer le chronomètre. Utilisez chaque seconde :
+- Premières 5 secondes : Identifiez la position des 4 arêtes de la croix.
+- 5 secondes suivantes : Planifiez la solution complète de la croix (idéalement 6-8 mouvements ou moins).
+- Dernières 5 secondes : Répétez mentalement la séquence et planifiez votre première paire F2L.
+
+### Résolvez la croix en bas
+
+Résolvez toujours la croix sur la **face du bas** (couche D). Les débutants résolvent souvent la croix en haut puis retournent le cube, perdant 1-2 secondes et leur orientation. En résolvant en bas dès le départ, vous pouvez immédiatement commencer à chercher des paires F2L tout en terminant la croix.
+
+**Exemple : Une croix en 6 mouvements**
+
+À partir de ce mélange, la croix blanche peut être résolue en seulement 6 mouvements :
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Exemple : Une croix efficace en 5 mouvements**
+
+Avec une bonne planification, de nombreuses croix peuvent être résolues en 5 mouvements ou moins :
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Pratiquer la croix les yeux fermés
+
+C'est le meilleur exercice pour la croix :
+1. Mélangez le cube.
+2. Pendant l'inspection, planifiez la solution complète de la croix.
+3. Fermez les yeux et exécutez la croix de mémoire.
+4. Ouvrez les yeux pour vérifier.
+
+Si la croix est correcte, votre planification est solide. Sinon, identifiez où votre suivi mental a dérapé.
+
+### Neutralité des couleurs
+
+La plupart des débutants n'apprennent qu'avec la croix blanche. Les résolveurs **neutres en couleurs** peuvent commencer avec n'importe laquelle des 6 couleurs, choisissant la croix la plus facile pour chaque mélange. Cela offre typiquement un avantage de 2-3 mouvements sur la croix, ce qui représente 1-2 secondes par résolution en moyenne.
+
+Pour développer la neutralité des couleurs :
+1. Commencez par ajouter une couleur (par ex. jaune, l'opposé du blanc).
+2. Pour chaque mélange, planifiez les croix blanche et jaune et choisissez la plus courte.
+3. Ajoutez progressivement plus de couleurs jusqu'à être à l'aise avec les six.
+
+---
+
+## Lookahead (Anticipation)
+
+Le lookahead est la capacité à **suivre la prochaine pièce tout en résolvant la pièce actuelle**. C'est la compétence la plus importante pour franchir les plateaux de vitesse et ce qui sépare les résolveurs sub-15 des résolveurs sub-10.
+
+### Ce que le lookahead signifie réellement
+
+Pendant le F2L, vous résolvez toujours une paire coin-arête à la fois. Sans lookahead, la séquence est : résoudre la paire – pause – chercher la paire suivante – résoudre la paire – pause. Ces pauses s'accumulent sur plusieurs secondes par résolution.
+
+Avec le lookahead, pendant que vos mains exécutent un algorithme connu pour la paire actuelle, vos yeux scannent déjà les pièces de la prochaine paire. L'objectif est **zéro pause** entre les paires.
+
+### Comment pratiquer le lookahead
+
+Les **résolutions lentes** sont la méthode d'entraînement la plus efficace :
+
+1. Réglez un métronome à 1-2 rotations par seconde (60-120 BPM).
+2. Résolvez le F2L à ce rythme constant, en calant chaque mouvement sur le tempo.
+3. La règle : **vous pouvez tourner lentement, mais vous ne devez jamais arrêter de tourner.**
+4. Si vous devez faire une pause pour trouver la prochaine paire, vous tournez trop vite. Ralentissez encore.
+
+Au fil des semaines de pratique, vous accélérerez naturellement tout en maintenant un flux continu.
+
+### Pratique des paires F2L à l'aveugle
+
+1. Mélangez le cube.
+2. Résolvez la croix.
+3. Trouvez une paire F2L et planifiez l'insertion dans votre tête.
+4. Fermez les yeux et exécutez l'insertion.
+5. Ouvrez les yeux et répétez pour la paire suivante.
+
+Cela force votre cerveau à planifier complètement chaque insertion avant de l'exécuter, ce qui renforce le suivi mental nécessaire au vrai lookahead.
+
+---
+
+## F2L efficace
+
+L'étape F2L (First Two Layers) offre le plus de marge d'optimisation. Même de petites améliorations de l'efficacité F2L s'accumulent sur des centaines de résolutions.
+
+### Évitez les rotations inutiles
+
+Les rotations du cube entier (y, y') coûtent du temps et perturbent le lookahead. Une résolution typique de débutant comporte 6-8 rotations pendant le F2L. Un résolveur avancé en fait en moyenne 1-2.
+
+**Exemple : Insertion dans le slot arrière droit sans rotation**
+
+Au lieu de faire une rotation avec y' et d'insérer dans le slot avant droit, utilisez les insertions en slot arrière :
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. la même paire nécessitant une rotation :**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+La première version économise environ 0,5 seconde — la rotation elle-même plus le changement de prise.
+
+### Priorisez les slots arrière
+
+L'insertion des paires F2L dans les slots **arrière droit** et **arrière gauche** est généralement plus efficace car :
+- Les mouvements R et L sont plus rapides que les mouvements F.
+- Les insertions en slot arrière nécessitent souvent moins de mouvements.
+- Vous maintenez un meilleur lookahead quand les pièces non résolues sont visibles devant vous.
+
+### Influencez la prochaine paire
+
+En insérant votre paire F2L actuelle, vous pouvez parfois préparer la prochaine paire gratuitement. Par exemple, si le coin de la prochaine paire est dans la couche U, choisir un angle d'insertion spécifique pour la paire actuelle peut déplacer ce coin dans une position favorable.
+
+C'est une compétence avancée, mais en être simplement conscient aide à prendre de meilleures décisions.
+
+### Multi-slotting
+
+Dans certains cas, vous pouvez résoudre deux paires F2L simultanément ou résoudre une paire tout en préparant partiellement une autre. C'est rare en pratique mais cela vaut la peine de le reconnaître quand l'occasion se présente.
+
+---
+
+## Reconnaissance OLL/PLL
+
+La reconnaissance rapide des cas OLL et PLL élimine la pause entre le F2L et la dernière couche.
+
+### Reconnaître sous deux angles
+
+Pratiquez l'identification des cas OLL en regardant simultanément la **face du dessus** et la **face avant**. Cela vous donne toutes les informations nécessaires sans tourner le cube pour vérifier les autres faces.
+
+Pour le PLL, vérifiez les faces **avant et droite** (les deux faces visibles depuis votre angle de résolution standard). Avec la pratique, la reconnaissance à deux faces devient instantanée.
+
+### Pré-AUF
+
+L'AUF (Adjust U Face) est le mouvement U/U'/U2 que vous effectuez avant de lancer un algorithme OLL ou PLL pour aligner correctement le cas. Les résolveurs avancés effectuent l'AUF pendant le dernier mouvement du F2L ou pendant la reconnaissance, le superposant au temps de réflexion.
+
+### Prédiction OLL
+
+Pendant la dernière insertion F2L, vous connaissez souvent 2-3 des 4 orientations de coins de la face supérieure. En suivant comment votre insertion affecte le dernier coin, vous pouvez prédire le cas OLL avant de terminer le F2L et commencer à exécuter l'algorithme OLL sans aucune pause.
+
+---
+
+## Routines d'entraînement
+
+L'entraînement délibéré bat la résolution sans réflexion. Structurez vos sessions d'entraînement pour une amélioration maximale.
+
+### Plan d'entraînement quotidien (45-60 minutes)
+
+**Exercices de croix (10 minutes)**
+- Mélangez, planifiez la croix pendant l'inspection, résolvez uniquement la croix.
+- Objectif : constamment sous 2 secondes, planifiée les yeux fermés.
+- Suivez votre nombre moyen de mouvements. Visez 6 ou moins.
+
+**F2L en résolutions lentes (15 minutes)**
+- Utilisez un métronome. F2L complet à vitesse de rotation constante.
+- Concentrez-vous uniquement sur le lookahead et le flux continu.
+- Ne chronométrez pas ces résolutions. La vitesse n'est pas l'objectif ici.
+
+**Exercices d'algorithmes (10 minutes)**
+- Choisissez 2-3 algorithmes OLL ou PLL que vous apprenez encore.
+- Répétez chacun 20-30 fois jusqu'à ce que la mémoire musculaire prenne le relais.
+- Puis mélangez et pratiquez la reconnaissance + l'exécution.
+
+**Résolutions chronométrées (15-20 minutes)**
+- Faites une **moyenne de 12** — douze résolutions chronométrées, retirez la meilleure et la pire, faites la moyenne des dix restantes.
+- Notez vos résultats. Suivez les tendances sur des semaines, pas les résolutions individuelles.
+- Après chaque session, analysez votre pire résolution. Qu'est-ce qui a mal tourné ?
+
+### Moyennes et suivi
+
+- **Ao5** (Moyenne de 5) : Vérification rapide de la forme actuelle. Bon pour l'échauffement.
+- **Ao12** (Moyenne de 12) : La métrique compétitive standard. L'indicateur le plus fiable du niveau de compétence.
+- **Ao100** : Suivi des tendances à long terme. Calculez chaque semaine pour mesurer les progrès.
+
+Utilisez une application chronomètre qui suit votre historique automatiquement. Voir votre moyenne baisser au fil des semaines est une motivation puissante.
+
+### Entraînement délibéré vs. entraînement machinal
+
+Faire 200 résolutions en regardant la télé ne vous rendra pas plus rapide. L'entraînement délibéré signifie :
+- Choisir **une compétence spécifique** sur laquelle se concentrer par session (croix, lookahead, reconnaissance OLL).
+- Accorder toute votre attention à cette compétence pendant chaque résolution.
+- Analyser les erreurs au lieu de remélanger immédiatement.
+
+Dix résolutions concentrées valent mieux que cent en pilote automatique.
+
+---
+
+## Conseils pour la compétition
+
+Concourir est une compétence différente de l'entraînement à la maison. Le stress, les environnements inconnus et la pression du temps affectent tous la performance.
+
+### Échauffez-vous correctement
+
+- Arrivez tôt et faites 20-30 résolutions décontractées avant votre épreuve.
+- Faites des exercices d'algorithmes pour réveiller la mémoire musculaire.
+- N'essayez pas de battre vos records personnels pendant l'échauffement. Faites simplement bouger vos mains.
+
+### Restez calme pendant les résolutions
+
+- **Concentrez-vous sur une résolution fluide, pas rapide.** Forcer la vitesse cause des erreurs et des blocages.
+- Si vous ratez une paire ou un algorithme, respirez et continuez. Ne paniquez pas et n'essayez pas de vous précipiter pour rattraper le temps.
+- Souvenez-vous : votre moyenne en compétition exclut vos meilleur et pire résultats, donc une mauvaise résolution ne ruinera pas votre résultat.
+
+### Technique d'inspection
+
+- Tenez le cube à hauteur des yeux pendant l'inspection. Ne regardez pas la table.
+- Tournez le cube avec des mouvements y et x pour voir tous les côtés efficacement.
+- Planifiez votre croix complètement. Si le temps le permet, localisez votre première paire F2L.
+- Écoutez les avertissements à 8 secondes et 12 secondes et adaptez votre rythme en conséquence.
+
+### Familiarité avec le Stackmat timer
+
+- Entraînez-vous avec un Stackmat timer à la maison si vous comptez concourir. Le placement des mains et le mouvement de démarrage/arrêt sont différents du tapotement sur un écran de téléphone.
+- Les deux mains doivent être à plat sur les pads. Le chrono démarre quand vous levez les deux mains simultanément.
+- Pratiquez un démarrage fluide pour ne pas rater le premier mouvement de votre croix.
+
+---
+
+## Matériel
+
+Un bon speed cube fait une vraie différence. Vous n'avez pas besoin du cube le plus cher pour progresser, mais passer d'un Rubik's Cube standard à un speed cube moderne est l'une des plus grandes améliorations que vous puissiez faire.
+
+### Ce qui fait un bon speed cube
+
+- **Corner cutting** : Le cube doit tolérer de légers désalignements sans se bloquer. Les cubes modernes peuvent corner-cutter à 45 degrés ou plus.
+- **Rotation douce et contrôlable** : Ni trop rapide (cause des dépassements) ni trop lente (demande un effort supplémentaire).
+- **Stabilité** : Le cube doit garder sa forme pendant les rotations rapides sans éjecter de pièces ni se déformer.
+
+### Cubes magnétiques
+
+Presque tous les cubers compétitifs utilisent des **cubes magnétiques** aujourd'hui. De petits aimants dans chaque pièce créent un léger clic à chaque rotation de 90 degrés, offrant :
+- Un meilleur contrôle à grande vitesse
+- Moins de dépassements et de blocages
+- Une sensation plus satisfaisante
+
+Les cubes magnétiques de marques comme MoYu, QiYi et GAN sont disponibles à différents prix. Même les cubes magnétiques économiques (moins de 10 $) sont considérablement meilleurs que les non-magnétiques.
+
+### Tension et lubrification
+
+- La **tension** contrôle à quel point le cube est lâche ou serré. Une tension plus lâche permet des rotations plus rapides mais réduit la stabilité. Commencez avec une tension moyenne et ajustez selon votre style de rotation.
+- La **lubrification** réduit la friction et change la sensation du cube. Les lubrifiants à base de silicone sont le standard :
+  - **Lubrifiant rapide** sur les pièces pour la vitesse.
+  - **Lubrifiant lent/gommeux** sur le noyau pour la stabilité.
+  - Relubrifiez toutes les quelques centaines de résolutions ou quand le cube commence à gratter.
+
+### Recommandation de configuration pour débutants
+
+1. Procurez-vous n'importe quel 3x3 magnétique moderne (MoYu RS3M, QiYi Tornado ou similaire).
+2. Gardez les tensions d'usine la première semaine pour vous habituer au cube.
+3. Ajoutez une petite quantité de lubrifiant silicone si le cube semble sec.
+4. Ajustez les tensions progressivement — desserrez d'un quart de tour à la fois jusqu'à trouver votre préférence.
+
+Un cube bien réglé élimine le matériel comme variable, vous permettant de vous concentrer entièrement sur l'amélioration de votre technique.

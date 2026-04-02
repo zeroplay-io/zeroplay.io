@@ -1,0 +1,249 @@
+---
+title: "4x4 Napredno: Yau metoda"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Napredno: Yau metoda
+
+**Yau metoda**, koju je izumio Robert Yau, brža je alternativa standardnoj Reduction metodi za 4x4 Rubikovu kocku. Ključna razlika: Yau rješava križne bridove **rano**, što pruža bolji pregled unaprijed i glatkiji prijelaz u 3x3 fazu. Većina vrhunskih 4x4 speedcubera koristi Yau ili neku njenu varijaciju.
+
+## Yau naspram standardne Redukcije
+
+| Aspekt | Reduction | Yau |
+|--------|-----------|-----|
+| **Redoslijed koraka** | Svi centri, zatim svi bridovi | 2 centra, 3 križna brida, 4 centra, preostali bridovi |
+| **Križ** | Gradi se nakon redukcije | Već djelomično gotov tijekom redukcije |
+| **Pregled unaprijed** | Treba pronaći križne bridove nakon sparivanja | Križ gotovo gotov, prijelaz na F2L je besprijekoran |
+| **Gornja granica brzine** | Dobra | Viša — manje pauza između faza |
+
+## Podsjetnik za notaciju
+
+**Standardni potezi** (samo vanjski sloj):
+- **R** = Desno &nbsp;&nbsp; **L** = Lijevo &nbsp;&nbsp; **U** = Gore &nbsp;&nbsp; **D** = Dolje &nbsp;&nbsp; **F** = Prednje &nbsp;&nbsp; **B** = Stražnje
+
+**Široki potezi** (dva vanjska sloja zajedno):
+- **Rw** = Desno široko &nbsp;&nbsp; **Lw** = Lijevo široko &nbsp;&nbsp; **Uw** = Gore široko &nbsp;&nbsp; **Dw** = Dolje široko &nbsp;&nbsp; **Fw** = Prednje široko &nbsp;&nbsp; **Bw** = Stražnje široko
+
+Samo slovo znači **90° u smjeru kazaljke**. Dodavanje **'** znači **suprotno od kazaljke**. Dodavanje **2** znači **180°**.
+
+---
+
+## Korak 1: Riješite dva suprotna centra
+
+Počnite rješavanjem **bijelih** i **žutih** centralnih blokova (gornji i donji). Ovo je isto kao prvi dio standardne Reduction metode.
+
+Svaki centar je 2x2 blok dijelova. Koristite široke poteze da spojite centralne dijelove, štiteći već postavljene dijelove okretima vanjskog sloja.
+
+**Osnovna izgradnja centra** — dovedite centralni dio gore širokim potezom, pozicionirajte ga, zatim obrnite:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Spajanje dviju polovica centra** — kada imate dvije 1x2 centralne trake koje treba spojiti:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Savjeti:**
+- Prvo riješite bijeli centar (dolje), zatim žuti centar (gore).
+- Držite bijeli dolje cijelo vrijeme — koristite samo Rw, Lw, Fw, Bw poteze za manipulaciju centrima bez remećenja donjeg sloja.
+- Ne brinite o bočnim centrima još. Ostavite ih za korak 3.
+
+---
+
+## Korak 2: Riješite 3 od 4 križna brida
+
+Ovdje se Yau razlikuje od Redukcije. Prije rješavanja preostalih centara, **sparite i postavite 3 bijela križna brida** u donji sloj.
+
+Križni brid se sastoji od dva dijela (npr. bijelo-crveni i bijelo-crveni) koje treba spariti i postaviti u D sloj. Ostavite jedan križni brid neriješen za sada — to vam daje slobodu korištenja širokih poteza u sljedećem koraku.
+
+**Sparivanje križnog brida pomoću freeslicea** — freeslice tehnika sparuje bridove bez remećenja centara. Postavite jednu polovicu brida u prednji desni položaj i dovedite njenog partnera iz drugog utora:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Umetanje sparenog križnog brida u donji sloj** — nakon sparivanja, postavite brid u ispravnu poziciju D sloja:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice sa širokim potezima** — koristite Dw za podizanje bridnog dijela za sparivanje bez razbijanja križnih bridova koji su već na mjestu:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Savjeti:**
+- Sada trebate samo 3 križna brida riješena. Namjerno ostavite jedno mjesto prazno.
+- Slobodno koristite prazan D-sloj utor — križni brid koji nedostaje daje vam više slobode za široke poteze.
+- Odaberite koji križni brid ostaviti na temelju toga koji je najteže pronaći ili spariti.
+
+---
+
+## Korak 3: Riješite preostala 4 centra
+
+Sada riješite **4 bočna centra** (crveni, narančasti, plavi, zeleni). Bijeli i žuti centar su već gotovi iz koraka 1.
+
+Budući da imate jedan neriješen utor za križni brid, još uvijek možete koristiti neke široke poteze slobodno. To je ključna prednost Yau metode — djelomično riješen križ ne ograničava izgradnju centara koliko biste očekivali.
+
+**Izgradnja bočnog centra** — koristite široke poteze za prikupljanje centralnih dijelova, zatim ih postavite:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Centralni komutator** — kada trebate zamijeniti centralni dio bez remećenja ostalih, koristite sekvencu u stilu komutatora:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Savjeti:**
+- Rješavajte centre u suprotnim parovima kad je moguće (npr. crveni pa narančasti, plavi pa zeleni).
+- Iskoristite neriješeni utor za križni brid — široki potezi kroz taj utor neće razbiti križne bridove.
+- Pazite na 3 križna brida koji su već u D sloju. Provjerite prije širokih poteza.
+
+---
+
+## Korak 4: Posljednji križni brid + potpuno sparivanje bridova
+
+Ovaj korak ima dva dijela: završite 4. križni brid, zatim sparite sve preostale bridove.
+
+### Dio A: Riješite posljednji križni brid
+
+Pronađite preostali par križnih bridova i spojite ih. Budući da su svi centri sada riješeni, morate biti oprezniji sa širokim potezima.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Nakon sparivanja, umetnite ga u posljednji D-sloj utor da dovršite bijeli križ.
+
+### Dio B: Sparite preostale bridove (3-2-3 tehnika)
+
+Sada imate 8 nesparenih bridova. **3-2-3 tehnika** je najučinkovitiji način za njihovo sparivanje:
+
+1. **Prva 3 brida** — sparite ih standardnim slice-flip-slice potezima. Postavite nespareni brid na prednje desno, pronađite njegovog partnera gore, koristite Uw za njihovo spajanje:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Sljedeća 2 brida** — s manje preostalih bridova, možete spariti dva brida brzo uzastopno tako da jedan pohranite straga:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Posljednja 3 brida** — posljednji bridovi zahtijevaju više pažnje kako se ne bi razbili već spareni bridovi. Koristite Dw-bazirane poteze ili tehnike okretanja:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Savjeti:**
+- Tijekom 3-2-3 sparivanja, uvijek provjerite da vaši široki potezi ne razbijaju križne bridove na dnu.
+- Ako je brid sparen ali okrenut, trebate ga izvaditi i ponovno spariti.
+- Prijelaz iz sparivanja bridova u 3x3 trebao bi biti besprijekoran — vaš križ je već gotov.
+
+---
+
+## Korak 5: Riješite kao 3x3 (CFOP)
+
+Sa svim centrima riješenim, svim bridovima sparenim i križem već dovršenim, 4x4 se sada ponaša kao 3x3. Budući da je **bijeli križ već gotov** (velika prednost Yau metode), možete skočiti ravno na **F2L** (prva dva sloja).
+
+Od ove točke koristite samo poteze vanjskog sloja — bez širokih poteza.
+
+**Nastavite sa standardnim CFOP-om:**
+1. **F2L** — sparite i umetnite parove kut-brid u prva dva sloja.
+2. **OLL** — orijentirajte posljednji sloj.
+3. **PLL** — permutirajte posljednji sloj.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Ovo je najveća prednost Yau metode: prijelaz križ-u-F2L nema pauze, jer je križ izgrađen tijekom faze redukcije.
+
+---
+
+## Algoritmi pariteta
+
+4x4 ima dva slučaja pariteta koji se ne mogu pojaviti na 3x3. Događaju se otprilike 50% vremena svaki, bez obzira koristite li Yau ili Reduction.
+
+### OLL paritet (okretanje jednog brida)
+
+Jedan brid izgleda okrenut na posljednjem sloju — nemoguće na pravom 3x3.
+
+**Algoritam: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Primijenite ovaj algoritam jednom, zatim nastavite s normalnim OLL/PLL.
+
+### PLL paritet (zamjena dva brida)
+
+Dva suprotna brida trebaju biti zamijenjena — opet nemoguće na 3x3.
+
+**Algoritam: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Kada naučiti Yau
+
+- **Ako vam je prosjek ispod 2 minute s Reduction**, imate temelje za prelazak na Yau.
+- **Ako znate CFOP za 3x3**, Yau je prirodan izbor — križ je već gotov kada uđete u 3x3 fazu.
+- **Ako se mučite s prijelazom Reduction-u-3x3**, Yau potpuno eliminira tu pauzu.
+
+## Prioriteti vježbanja
+
+1. **Savladajte freeslice sparivanje bridova** — to je osnovna tehnika koja čini Yau učinkovitom.
+2. **Vježbajte prepoznavanje 2 centra + 3 križna brida** — naučite brzo identificirati križne bridove tijekom prva dva koraka.
+3. **Drilajte 3-2-3 tehniku** — glatko sparivanje bridova je mjesto gdje se štedi najviše vremena.
+4. **Radite na prijelazu križ-u-F2L** — budući da je križ gotov, vježbajte uočavanje prvog F2L para tijekom sparivanja bridova.
+
+---
+
+**Yau metoda je standard za natjecateljsko rješavanje 4x4.** Besprijekoran prijelaz iz redukcije u 3x3 rješavanje, u kombinaciji s boljim prilikama za pregled unaprijed, čini je preferiranim izborom za speedcubere koji ciljaju prosjeke ispod 40 sekundi. Počnite pretvarati svoja Reduction rješavanja u Yau jedan korak po korak.

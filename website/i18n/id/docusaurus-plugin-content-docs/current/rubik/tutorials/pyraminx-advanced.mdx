@@ -1,0 +1,325 @@
+---
+title: "Teknik Lanjutan Pyraminx"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Teknik Lanjutan Pyraminx
+
+Siap membawa solve Pyraminx kamu ke level berikutnya? Panduan ini membahas metode lanjutan yang digunakan speedcuber Pyraminx teratas untuk mencapai rata-rata di bawah 5 detik. Kita akan fokus pada metode **L4E (Last 4 Edges)**, teknik **Keyhole**, dan pendekatan **Top-First**.
+
+## Pengingat Notasi
+
+**Layer (huruf besar)** — putar seluruh layer (tidak termasuk ujung):
+- **U** = Layer atas &nbsp;&nbsp; **R** = Layer kanan &nbsp;&nbsp; **L** = Layer kiri &nbsp;&nbsp; **B** = Layer belakang
+
+**Ujung (huruf kecil)** — putar ujung saja:
+- **u** = Ujung atas &nbsp;&nbsp; **r** = Ujung kanan &nbsp;&nbsp; **l** = Ujung kiri &nbsp;&nbsp; **b** = Ujung belakang
+
+Huruf saja berarti **searah jarum jam 120°**. Menambahkan **'** berarti **berlawanan jarum jam 120°**.
+
+---
+
+## Metode L4E (Last 4 Edges)
+
+Metode L4E adalah metode lanjutan Pyraminx paling populer. Alih-alih menyelesaikan layer per layer, kamu menyelesaikan satu blok terlebih dahulu, lalu menyelesaikan **4 edge terakhir** dalam satu langkah menggunakan algoritma.
+
+### Ringkasan
+
+| Langkah | Deskripsi | Teknik |
+|------|-------------|-----------|
+| 1 | Selesaikan ujung | Intuitif (sama seperti pemula) |
+| 2 | Selesaikan V | Intuitif — satu center + dua edge |
+| 3 | Selesaikan 4 Edge Terakhir | Algoritmik — satu pandangan |
+
+### Langkah 1: Selesaikan Ujung
+
+Sama seperti metode pemula. Sejajarkan semua 4 ujung agar cocok dengan center yang berdekatan. Langkah ini sederhana — setiap ujung hanya memiliki 3 posisi.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Langkah 2: Selesaikan V
+
+Choose a bottom face and build a **V shape**: one center piece with its two adjacent edges correctly placed. This gives you a solved 1x1x2 block on the bottom.
+
+Hold the Pyraminx with the V on the bottom-left. The V consists of the bottom center and the two edges connecting it to the left and right faces.
+
+**Building the V** — this step is intuitive. Find the two edges that belong next to your chosen center and place them using layer turns:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V with a flipped edge** — if one edge is in place but flipped, pop it out and reinsert:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Choose the V that requires the fewest moves — inspect all 4 possible V positions before starting.
+- The V should be fully planned during inspection (15 seconds is more than enough for the Pyraminx).
+
+### Langkah 3: Selesaikan 4 Edge Terakhir
+
+With the V solved, 4 edges remain. Identify the case and apply the corresponding algorithm. There are approximately 30 L4E cases, but many are mirrors of each other, reducing the unique cases you need to learn.
+
+Hold the Pyraminx with the **V on the bottom-left** (the solved block faces you on the left side).
+
+---
+
+#### L4E Case 1: All 4 edges need a clockwise cycle
+
+**Algoritma: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E Case 2: All 4 edges need a counter-clockwise cycle
+
+**Algoritma: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E Case 3: Two edges swap (adjacent, front)
+
+**Algoritma: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E Case 4: Two edges swap (adjacent, back)
+
+**Algoritma: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E Case 5: Two edges flip in place (front pair)
+
+**Algoritma: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E Case 6: Two edges flip in place (back pair)
+
+**Algoritma: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E Case 7: Three edges cycle clockwise + one flip
+
+**Algoritma: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E Case 8: Three edges cycle counter-clockwise + one flip
+
+**Algoritma: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E Case 9: All 4 edges flip
+
+**Algoritma: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E Case 10: Two opposite edges swap
+
+**Algoritma: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E Case 11: Cycle + double flip
+
+**Algoritma: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E Case 12: Adjacent swap with flip
+
+**Algoritma: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Metode Keyhole
+
+The Keyhole method is a more intuitive alternative to L4E. Instead of learning algorithms for every case, you use one unsolved edge slot as a **keyhole** to insert other pieces freely.
+
+### How It Works
+
+1. **Solve tips** (same as always).
+2. **Solve one edge** — place one bottom edge correctly.
+3. **Use the empty slot as a keyhole** — the second bottom edge slot is left empty, giving you freedom to insert edges into the top layer without restrictions.
+4. **Solve top-layer edges** — use the keyhole to insert each top edge one at a time.
+5. **Close the keyhole** — insert the final bottom edge last.
+
+### Keyhole Insertion Example
+
+With the keyhole on the right side of the bottom layer, you can freely insert a top-layer edge:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Flipped insertion** — if the edge needs to be flipped before insertion:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Tips:**
+- The Keyhole method is excellent for beginners transitioning to advanced solving.
+- It requires fewer algorithms than L4E but is slightly slower at the highest level.
+- Use Keyhole as a stepping stone to L4E — the intuition you build here helps with L4E recognition.
+
+---
+
+## Metode Top-First
+
+The Top-First method reverses the typical solving order: solve the **top layer first**, then finish the bottom.
+
+### Ringkasan
+
+1. **Solve tips.**
+2. **Solve the entire top layer** — all 3 top edges oriented and permuted correctly around the top center.
+3. **Solve the bottom layer** — place the remaining 3 bottom edges.
+
+### Solving the Top Layer
+
+Build the top layer intuitively. Since you start with the top, there are no restrictions — you can turn any layer freely.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Solving the Bottom
+
+With the top layer complete, the bottom 3 edges can be solved using a small set of algorithms similar to the L4E cases but restricted to the bottom.
+
+**Clockwise cycle of bottom edges:**
+
+**Algoritma: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Counter-clockwise cycle:**
+
+**Algoritma: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Tips:**
+- Top-First is less common in competition but can be very fast for certain scrambles.
+- It works best when the top layer is already partially solved after scrambling.
+- Combine with inspection planning — if you see an easy top layer, go Top-First.
+
+---
+
+## Tips Speed Solving
+
+### Perencanaan Inspeksi
+
+The Pyraminx has fewer pieces than any other WCA puzzle, which means you can **plan more of the solve during inspection**:
+
+- **Always plan tips + V** during the 15-second inspection.
+- Advanced solvers can plan the **entire solve** for easy scrambles.
+- Practice extending your planning — start with tips, then add the V, then try to predict L4E cases.
+
+### Teknik Putaran
+
+- Use **fingertips** for precise, fast turns — not whole-hand rotations.
+- The Pyraminx benefits from light, flicky turns rather than forceful ones.
+- Practice **R** and **L** layer turns with your index fingers, and **U** turns with your thumbs.
+
+### Color Neutrality
+
+- Unlike the 3x3, being **color neutral** on Pyraminx is very achievable.
+- Practice starting with any of the 4 faces as your bottom — this gives you 4 times as many easy V options.
+- Color neutrality is almost mandatory for sub-5-second solving.
+
+### Rutinitas Latihan
+
+1. **Drill L4E cases** — set up each case with its inverse, solve it, repeat. Aim for instant recognition.
+2. **Timed solves** — do sets of 12 solves, tracking your average.
+3. **One-look practice** — try to identify the L4E case during the V-building step, before you finish it.
+4. **Slow solves** — practice at half speed, focusing on smooth turning and zero pauses.
+
+---
+
+**With L4E mastered and good inspection planning, sub-4-second Pyraminx averages are achievable.** The Pyraminx rewards planning and recognition more than raw turning speed. Focus on predicting your L4E case early, and the solves will feel effortless.

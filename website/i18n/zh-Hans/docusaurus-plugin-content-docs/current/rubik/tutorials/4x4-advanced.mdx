@@ -1,0 +1,249 @@
+---
+title: "四阶魔方进阶：Yau 方法"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 四阶魔方进阶：Yau 方法
+
+**Yau 方法** 由 Robert Yau 发明，是四阶魔方标准降阶法的更快替代方案。关键区别：Yau 方法 **提前** 解决十字棱块，这提供了更好的预判和更顺畅的 3x3 阶段过渡。大多数顶级四阶速拧选手使用 Yau 方法或其变体。
+
+## Yau 方法 vs 标准降阶法
+
+| 方面 | 降阶法 | Yau 方法 |
+|--------|-----------|-----|
+| **步骤顺序** | 所有中心，然后所有棱块 | 2个中心，3个十字棱，4个中心，剩余棱块 |
+| **十字** | 降阶后构建 | 在降阶过程中已部分完成 |
+| **预判** | 配对后需要寻找十字棱 | 十字几乎完成，过渡到 F2L 无缝衔接 |
+| **速度上限** | 好 | 更高 — 阶段间停顿更少 |
+
+## 记号提醒
+
+**标准转动**（仅外层）：
+- **R** = 右 &nbsp;&nbsp; **L** = 左 &nbsp;&nbsp; **U** = 上 &nbsp;&nbsp; **D** = 下 &nbsp;&nbsp; **F** = 前 &nbsp;&nbsp; **B** = 后
+
+**宽转动**（外两层一起）：
+- **Rw** = 右宽 &nbsp;&nbsp; **Lw** = 左宽 &nbsp;&nbsp; **Uw** = 上宽 &nbsp;&nbsp; **Dw** = 下宽 &nbsp;&nbsp; **Fw** = 前宽 &nbsp;&nbsp; **Bw** = 后宽
+
+单独字母表示 **顺时针 90°**。加 **'** 表示 **逆时针**。加 **2** 表示 **180°**。
+
+---
+
+## 第一步：还原两个对面中心
+
+首先还原 **白色** 和 **黄色** 中心块（上下两面）。这与标准降阶法的第一部分相同。
+
+每个中心是一个 2x2 的块组。使用宽转动将中心块聚集在一起，同时用外层转动保护已放置的块。
+
+**基础中心构建** — 使用宽转动将中心块移到顶部，定位后反转：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**合并两个中心半块** — 当你有两个 1x2 中心条需要合并时：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**提示：**
+- 先还原白色中心（在底部），然后还原黄色中心（在顶部）。
+- 始终保持白色在底部 — 仅使用 Rw、Lw、Fw、Bw 转动来操作中心而不影响底部。
+- 暂时不用担心侧面中心。留到第三步处理。
+
+---
+
+## 第二步：还原 4 个十字棱中的 3 个
+
+这是 Yau 方法与降阶法不同的地方。在还原剩余中心之前，**配对并放置 3 个白色十字棱** 到底层。
+
+一个十字棱由两个棱块组成（例如白红和白红），需要配对并放置在 D 层。暂时留一个十字棱未解 — 这给你在下一步使用宽转动的自由。
+
+**使用 freeslice 配对十字棱** — freeslice 技术在不破坏中心的情况下配对棱块。将棱块的一半放在右前位置，从另一个槽位引入其配对：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**将配对好的十字棱插入底部** — 配对后，将棱块放入正确的 D 层位置：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**宽转动 freeslice** — 使用 Dw 将棱块提起配对，同时不破坏已放置的底部十字棱：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**提示：**
+- 现在只需要 3 个十字棱完成。故意留一个槽位空着。
+- 自由利用空的 D 层槽位 — 缺少的十字棱给你更多宽转动的自由。
+- 根据哪个十字棱最难找到或配对来选择留哪个。
+
+---
+
+## 第三步：还原剩余 4 个中心
+
+现在还原 **4 个侧面中心**（红、橙、蓝、绿）。白色和黄色中心已在第一步完成。
+
+因为你有一个未解的十字棱槽位，仍然可以自由使用一些宽转动。这是 Yau 方法的关键优势 — 部分完成的十字并不会像你想象的那样限制中心构建。
+
+**构建侧面中心** — 使用宽转动收集中心块，然后放置它们：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**中心交换子** — 当你需要在不影响其他块的情况下交换中心块时，使用交换子式序列：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**提示：**
+- 尽可能按对面对还原中心（例如先红后橙，先蓝后绿）。
+- 利用未解的十字棱槽位 — 通过该槽位的宽转动不会破坏十字棱。
+- 注意 D 层已有的 3 个十字棱。做宽转动前检查。
+
+---
+
+## 第四步：最后一个十字棱 + 完成棱块配对
+
+此步骤分两部分：完成第 4 个十字棱，然后配对所有剩余棱块。
+
+### 部分 A：还原最后一个十字棱
+
+找到剩余的十字棱对并将它们合在一起。由于所有中心现在都已还原，你需要更小心地使用宽转动。
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+配对后，将其插入最后的 D 层槽位以完成白色十字。
+
+### 部分 B：配对剩余棱块（3-2-3 技术）
+
+你现在有 8 个未配对的棱块。**3-2-3 技术** 是最高效的配对方法：
+
+1. **前 3 个棱块** — 使用标准的 slice-flip-slice 动作配对。将未配对的棱块放在右前，在顶部找到其配对，使用 Uw 将它们合在一起：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **接下来 2 个棱块** — 棱块减少后，你可以通过将一个存储在后方来快速连续配对两个：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **最后 3 个棱块** — 最后的棱块需要更加小心以避免破坏已配对的棱块。使用基于 Dw 的动作或翻转技术：
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**提示：**
+- 在 3-2-3 配对过程中，始终检查你的宽转动不会破坏底部的十字棱。
+- 如果一个棱块已配对但翻转了，你需要将其拆开重新配对。
+- 从棱块配对到 3x3 的过渡应该是无缝的 — 你的十字已经完成了。
+
+---
+
+## 第五步：作为 3x3 还原（CFOP）
+
+所有中心已还原，所有棱块已配对，十字已完成，四阶现在就像一个 3x3。由于 **白色十字已经完成**（Yau 方法的主要优势），你可以直接进入 **F2L**（前两层）。
+
+从此刻起只使用外层转动 — 不要用宽转动。
+
+**按照标准 CFOP 进行：**
+1. **F2L** — 配对并插入角块-棱块对到前两层。
+2. **OLL** — 调整最后层的方向。
+3. **PLL** — 调整最后层的位置。
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+这是 Yau 方法最大的优势：十字到 F2L 的过渡完全没有停顿，因为十字是在降阶阶段构建的。
+
+---
+
+## 奇偶校验公式
+
+四阶有两种在 3x3 上不可能出现的奇偶校验情况。无论你使用 Yau 还是降阶法，每种大约有 50% 的概率出现。
+
+### OLL 奇偶校验（单棱翻转）
+
+最后层出现一个翻转的棱块 — 在真正的 3x3 上不可能出现。
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+应用此公式一次，然后继续正常的 OLL/PLL。
+
+### PLL 奇偶校验（两棱交换）
+
+两个对面棱块需要交换 — 同样在 3x3 上不可能。
+
+**Algorithm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## 何时学习 Yau 方法
+
+- **如果你使用降阶法平均在 2 分钟以下**，你已具备切换到 Yau 的基础。
+- **如果你掌握了 3x3 的 CFOP**，Yau 是自然选择 — 进入 3x3 阶段时十字已经完成。
+- **如果你在降阶到 3x3 的过渡中遇到困难**，Yau 完全消除了这个停顿。
+
+## 练习重点
+
+1. **掌握 freeslice 棱块配对** — 这是使 Yau 高效的核心技术。
+2. **练习 2 中心 + 3 十字棱的识别** — 学会在前两步中快速识别十字棱。
+3. **练习 3-2-3 技术** — 流畅的棱块配对是节省时间最多的地方。
+4. **改善十字到 F2L 的过渡** — 由于十字已完成，在棱块配对时练习发现你的第一个 F2L 对。
+
+---
+
+**Yau 方法是竞技四阶还原的标准。** 从降阶到 3x3 还原的无缝过渡，加上更好的预判机会，使其成为目标平均 40 秒以下的速拧选手的首选。从逐步将你的降阶还原转换为 Yau 开始。

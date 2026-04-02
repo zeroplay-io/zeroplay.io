@@ -1,0 +1,249 @@
+---
+title: "4x4 Avanceret: Yau-metoden"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Avanceret: Yau-metoden
+
+**Yau-metoden**, opfundet af Robert Yau, er et hurtigere alternativ til den standard Reduction-metode for 4×4 Rubiks terning. Den afgørende forskel: Yau løser krydskanter **tidligt**, hvilket giver bedre forudseenhed og en mere glidende overgang til 3×3-fasen. De fleste top 4×4-speedcubere bruger Yau eller en variant af den.
+
+## Yau vs standard Reduction
+
+| Aspekt | Reduction | Yau |
+|--------|-----------|-----|
+| **Trinrækkefølge** | Alle centre, derefter alle kanter | 2 centre, 3 krydskanter, 4 centre, resterende kanter |
+| **Kryds** | Bygges efter Reduction | Delvist færdigt under Reduction |
+| **Forudseenhed** | Skal finde krydskanter efter parring | Krydset er næsten færdigt, overgang til F2L er problemfri |
+| **Hastighedsloft** | Godt | Højere — færre pauser mellem faser |
+
+## Notationspåmindelse
+
+**Standardtræk** (kun ydre lag):
+- **R** = Højre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Op &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bag
+
+**Brede træk** (to ydre lag sammen):
+- **Rw** = Højre bred &nbsp;&nbsp; **Lw** = Venstre bred &nbsp;&nbsp; **Uw** = Op bred &nbsp;&nbsp; **Dw** = Ned bred &nbsp;&nbsp; **Fw** = Front bred &nbsp;&nbsp; **Bw** = Bag bred
+
+Et bogstav alene betyder **90° med uret**. Tilføjelse af **'** betyder **mod uret**. Tilføjelse af **2** betyder **180°**.
+
+---
+
+## Trin 1: Løs to modsatte centre
+
+Begynd med at løse de **hvide** og **gule** centerblokke (top og bund). Dette er det samme som den første del af standard Reduction-metoden.
+
+Hvert center er en 2×2-blok af brikker. Brug brede træk til at samle centerbrikker, mens du beskytter allerede placerede brikker med ydre lagdrejninger.
+
+**Grundlæggende centeropbygning** — bring en centerbrik op med et bredt træk, placer den og vend derefter tilbage:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Sammenføjning af to centerhalvdele** — når du har to 1×2-centerstrimler, der skal samles:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tips:**
+- Løs det hvide center først (i bunden), derefter det gule center (i toppen).
+- Hold hvid i bunden hele tiden — brug kun Rw-, Lw-, Fw-, Bw-træk til at manipulere centre uden at forstyrre bunden.
+- Bekymr dig ikke om sidecentre endnu. Gem dem til Trin 3.
+
+---
+
+## Trin 2: Løs 3 af 4 krydskanter
+
+Her adskiller Yau sig fra Reduction. Før du løser de resterende centre, skal du **parre og placere 3 hvide krydskanter** i bundlaget.
+
+En krydskant består af to brikker (f.eks. hvid-rød og hvid-rød), der skal parres og placeres i D-laget. Lad én krydskant være uløst for nu — dette giver dig frihed til at bruge brede træk i næste trin.
+
+**Parring af en krydskant med freeslice** — freeslice-teknikken parrer kanter uden at forstyrre centre. Placer den ene halvdel af kanten i den forreste højre position og bring dens partner fra en anden plads:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Indsæt en parret krydskant i bunden** — når den er parret, placer kanten på sin korrekte D-lagsposition:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice med brede træk** — brug Dw til at bringe en kantbrik op til parring uden at ødelægge de krydskanter, der allerede er på plads:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tips:**
+- Du behøver kun 3 krydskanter løst nu. Lad bevidst én plads være tom.
+- Brug den tomme D-lagsplads frit — den manglende krydskant giver dig mere frihed til brede træk.
+- Vælg hvilken krydskant du vil efterlade baseret på, hvilken der er sværest at finde eller parre.
+
+---
+
+## Trin 3: Løs de resterende 4 centre
+
+Løs nu de **4 sidecentre** (rød, orange, blå, grøn). De hvide og gule centre er allerede færdige fra Trin 1.
+
+Fordi du har én uløst krydskantplads, kan du stadig bruge nogle brede træk frit. Dette er en nøglefordel ved Yau — det delvist løste kryds begrænser ikke centeropbygningen så meget, som du måske forventer.
+
+**Opbygning af et sidecenter** — brug brede træk til at samle centerbrikker og placer dem derefter:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Centerkommutator** — når du skal bytte en centerbrik uden at forstyrre andre, brug en kommutator-lignende sekvens:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tips:**
+- Løs centre i modsatte par, når det er muligt (f.eks. rød derefter orange, blå derefter grøn).
+- Udnyt den uløste krydskantplads — brede træk gennem den plads vil ikke ødelægge krydskanter.
+- Vær opmærksom på de 3 krydskanter, der allerede er i D-laget. Tjek før du laver brede træk.
+
+---
+
+## Trin 4: Sidste krydskant + Komplet kantparring
+
+Dette trin har to dele: afslut den 4. krydskant og par derefter alle resterende kanter.
+
+### Del A: Løs den sidste krydskant
+
+Find det resterende krydskantpar og bring dem sammen. Da alle centre nu er løst, skal du være mere forsigtig med brede træk.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Når den er parret, indsæt den i den sidste D-lagsplads for at fuldføre det hvide kryds.
+
+### Del B: Par resterende kanter (3-2-3-teknik)
+
+Du har nu 8 uparrede kanter. **3-2-3-teknikken** er den mest effektive måde at parre dem på:
+
+1. **Første 3 kanter** — par dem med standard slice-flip-slice-træk. Placer en uparret kant forrest til højre, find dens partner på toppen og brug Uw til at bringe dem sammen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Næste 2 kanter** — med færre kanter tilbage kan du parre to kanter hurtigt efter hinanden ved at gemme én bagved:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Sidste 3 kanter** — de sidste kanter kræver mere omhu for at undgå at ødelægge allerede parrede kanter. Brug Dw-baserede træk eller vendeteknikker:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tips:**
+- Under 3-2-3-parring skal du altid kontrollere, at dine brede træk ikke ødelægger krydskanter i bunden.
+- Hvis en kant er parret men vendt, skal du bryde den ud og parre den igen.
+- Overgangen fra kantparring til 3×3 bør være problemfri — dit kryds er allerede færdigt.
+
+---
+
+## Trin 5: Løs som 3×3 (CFOP)
+
+Med alle centre løst, alle kanter parret og krydset allerede fuldført, opfører 4×4'eren sig nu som en 3×3. Da det **hvide kryds allerede er færdigt** (en stor fordel ved Yau), kan du springe direkte til **F2L** (Første To Lag).
+
+Brug kun ydre lagstræk fra dette punkt — ingen brede træk.
+
+**Fortsæt med standard CFOP:**
+1. **F2L** — par og indsæt hjørne-kant-par i de første to lag.
+2. **OLL** — orienter det sidste lag.
+3. **PLL** — permuter det sidste lag.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Dette er den største fordel ved Yau-metoden: overgangen fra kryds til F2L har nul pause, fordi krydset blev bygget under Reduction-fasen.
+
+---
+
+## Paritetsalgoritmer
+
+4×4 har to paritetstilfælde, der ikke kan forekomme på en 3×3. De sker cirka 50 % af tiden hver, uanset om du bruger Yau eller Reduction.
+
+### OLL parity (enkelt kantvending)
+
+En enkelt kant vises vendt på det sidste lag — umuligt på en rigtig 3×3.
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Anvend denne algoritme én gang og fortsæt derefter med normal OLL/PLL.
+
+### PLL parity (to-kantbytte)
+
+To modsatte kanter skal byttes — igen umuligt på en 3×3.
+
+**Algorithm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Hvornår skal man lære Yau
+
+- **Hvis du har et gennemsnit under 2 minutter med Reduction**, har du grundlaget til at skifte til Yau.
+- **Hvis du kender CFOP til 3×3**, er Yau et naturligt valg — krydset er allerede færdigt, når du går ind i 3×3-fasen.
+- **Hvis du kæmper med overgangen fra Reduction til 3×3**, eliminerer Yau den pause helt.
+
+## Træningsprioriteter
+
+1. **Mester freeslice-kantparring** — dette er kerneteknikken, der gør Yau effektiv.
+2. **Øv genkendelse af 2 centre + 3 krydskanter** — lær at identificere krydskanter hurtigt i de første to trin.
+3. **Træn 3-2-3-teknikken** — glidende kantparring er, hvor mest tid spares.
+4. **Arbejd på overgangen fra kryds til F2L** — da krydset er færdigt, øv dig i at spotte dit første F2L-par under kantparring.
+
+---
+
+**Yau-metoden er standarden for konkurrencemæssig 4×4-løsning.** Den problemfrie overgang fra Reduction til 3×3-løsning, kombineret med bedre forudseenhedsmuligheder, gør den til det foretrukne valg for speedcubere, der sigter mod gennemsnit under 40 sekunder. Start med at konvertere dine Reduction-løsninger til Yau ét trin ad gangen.

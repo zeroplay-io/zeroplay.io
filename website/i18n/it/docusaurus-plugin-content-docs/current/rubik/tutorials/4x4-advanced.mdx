@@ -1,0 +1,249 @@
+---
+title: "4x4 Avanzato: Metodo Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Avanzato: Metodo Yau
+
+Il **metodo Yau**, inventato da Robert Yau, è un'alternativa più veloce al metodo Reduction standard per il cubo di Rubik 4x4. La differenza chiave: Yau risolve gli spigoli della croce **presto**, il che fornisce una migliore anticipazione e una transizione più fluida nella fase 3x3. La maggior parte dei migliori speedcuber 4x4 usa Yau o una sua variante.
+
+## Yau vs Reduction Standard
+
+| Aspetto | Reduction | Yau |
+|--------|-----------|-----|
+| **Ordine dei passaggi** | Tutti i centri, poi tutti gli spigoli | 2 centri, 3 spigoli della croce, 4 centri, spigoli rimanenti |
+| **Croce** | Costruita dopo la riduzione | Già parzialmente fatta durante la riduzione |
+| **Anticipazione** | Bisogna trovare gli spigoli della croce dopo l'accoppiamento | Croce quasi fatta, transizione a F2L senza interruzioni |
+| **Limite di velocità** | Buono | Più alto — meno pause tra le fasi |
+
+## Promemoria Notazione
+
+**Mosse standard** (solo strato esterno):
+- **R** = Destra &nbsp;&nbsp; **L** = Sinistra &nbsp;&nbsp; **U** = Alto &nbsp;&nbsp; **D** = Basso &nbsp;&nbsp; **F** = Fronte &nbsp;&nbsp; **B** = Retro
+
+**Mosse larghe** (due strati esterni insieme):
+- **Rw** = Destra larga &nbsp;&nbsp; **Lw** = Sinistra larga &nbsp;&nbsp; **Uw** = Alto largo &nbsp;&nbsp; **Dw** = Basso largo &nbsp;&nbsp; **Fw** = Fronte largo &nbsp;&nbsp; **Bw** = Retro largo
+
+Una lettera sola significa **90° in senso orario**. Aggiungendo **'** significa **antiorario**. Aggiungendo **2** significa **180°**.
+
+---
+
+## Passo 1: Risolvere due centri opposti
+
+Inizia risolvendo i blocchi centrali **bianco** e **giallo** (alto e basso). Questo è identico alla prima parte del metodo Reduction standard.
+
+Ogni centro è un blocco 2x2 di pezzi. Usa mosse larghe per unire i pezzi centrali proteggendo quelli già posizionati con rotazioni dello strato esterno.
+
+**Costruzione base del centro** — porta un pezzo centrale in alto con una mossa larga, posizionalo, poi inverti:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Unire due metà del centro** — quando hai due strisce 1x2 di centro che devono essere unite:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Consigli:**
+- Risolvi prima il centro bianco (sotto), poi il centro giallo (sopra).
+- Mantieni il bianco sotto per tutto il tempo — usa solo mosse Rw, Lw, Fw, Bw per manipolare i centri senza disturbare la parte inferiore.
+- Non preoccuparti dei centri laterali ancora. Lasciali per il passo 3.
+
+---
+
+## Passo 2: Risolvere 3 dei 4 spigoli della croce
+
+Qui Yau diverge dalla Reduction. Prima di risolvere i centri rimanenti, **accoppia e posiziona 3 spigoli bianchi della croce** nello strato inferiore.
+
+Uno spigolo della croce è composto da due pezzi (es. bianco-rosso e bianco-rosso) che devono essere accoppiati e posizionati nello strato D. Lascia uno spigolo della croce irrisolto per ora — questo ti dà libertà di usare mosse larghe nel passo successivo.
+
+**Accoppiamento dello spigolo della croce con freeslice** — la tecnica freeslice accoppia gli spigoli senza disturbare i centri. Posiziona metà dello spigolo nella posizione fronte-destra e porta il suo partner da un altro slot:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Inserimento dello spigolo della croce accoppiato nel basso** — una volta accoppiato, posiziona lo spigolo nella posizione corretta dello strato D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice con mosse larghe** — usa Dw per sollevare un pezzo spigolo per l'accoppiamento senza rompere gli spigoli della croce già al loro posto:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Consigli:**
+- Ti servono solo 3 spigoli della croce risolti ora. Lascia deliberatamente uno slot vuoto.
+- Usa lo slot vuoto dello strato D liberamente — lo spigolo della croce mancante ti dà più libertà per le mosse larghe.
+- Scegli quale spigolo della croce lasciare in base a quale è più difficile da trovare o accoppiare.
+
+---
+
+## Passo 3: Risolvere i 4 centri rimanenti
+
+Ora risolvi i **4 centri laterali** (rosso, arancione, blu, verde). I centri bianco e giallo sono già fatti dal passo 1.
+
+Poiché hai uno slot dello spigolo della croce irrisolto, puoi ancora usare alcune mosse larghe liberamente. Questo è un vantaggio chiave di Yau — la croce parzialmente risolta non limita la costruzione dei centri quanto potresti pensare.
+
+**Costruzione del centro laterale** — usa mosse larghe per raccogliere i pezzi centrali, poi posizionali:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Commutatore del centro** — quando devi scambiare un pezzo centrale senza disturbare gli altri, usa una sequenza in stile commutatore:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Consigli:**
+- Risolvi i centri in coppie opposte quando possibile (es. rosso poi arancione, blu poi verde).
+- Sfrutta lo slot dello spigolo della croce irrisolto — le mosse larghe attraverso quello slot non romperanno gli spigoli della croce.
+- Fai attenzione ai 3 spigoli della croce già nello strato D. Controlla prima di fare mosse larghe.
+
+---
+
+## Passo 4: Ultimo spigolo della croce + accoppiamento completo degli spigoli
+
+Questo passo ha due parti: finisci il 4° spigolo della croce, poi accoppia tutti gli spigoli rimanenti.
+
+### Parte A: Risolvere l'ultimo spigolo della croce
+
+Trova la coppia di spigoli della croce rimanente e uniscili. Poiché tutti i centri sono ora risolti, devi essere più attento con le mosse larghe.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Una volta accoppiato, inseriscilo nell'ultimo slot dello strato D per completare la croce bianca.
+
+### Parte B: Accoppiare gli spigoli rimanenti (tecnica 3-2-3)
+
+Ora hai 8 spigoli non accoppiati. La **tecnica 3-2-3** è il modo più efficiente per accoppiarli:
+
+1. **Primi 3 spigoli** — accoppiali usando mosse slice-flip-slice standard. Posiziona uno spigolo non accoppiato in fronte-destra, trova il suo partner in alto, usa Uw per unirli:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Prossimi 2 spigoli** — con meno spigoli rimanenti, puoi accoppiarne due rapidamente in successione memorizzandone uno dietro:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Ultimi 3 spigoli** — gli ultimi spigoli richiedono più attenzione per evitare di rompere quelli già accoppiati. Usa mosse basate su Dw o tecniche di ribaltamento:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Consigli:**
+- Durante l'accoppiamento 3-2-3, controlla sempre che le mosse larghe non rompano gli spigoli della croce in basso.
+- Se uno spigolo è accoppiato ma ribaltato, devi estrarlo e riaccoppiarlo.
+- La transizione dall'accoppiamento degli spigoli al 3x3 dovrebbe essere fluida — la tua croce è già fatta.
+
+---
+
+## Passo 5: Risolvere come un 3x3 (CFOP)
+
+Con tutti i centri risolti, tutti gli spigoli accoppiati e la croce già completa, il 4x4 si comporta ora come un 3x3. Poiché la **croce bianca è già fatta** (un grande vantaggio di Yau), puoi saltare direttamente al **F2L** (primi due strati).
+
+Da questo punto usa solo mosse dello strato esterno — niente mosse larghe.
+
+**Prosegui con il CFOP standard:**
+1. **F2L** — accoppia e inserisci le coppie angolo-spigolo nei primi due strati.
+2. **OLL** — orienta l'ultimo strato.
+3. **PLL** — permuta l'ultimo strato.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Questo è il più grande vantaggio del metodo Yau: la transizione croce-F2L ha zero pause, perché la croce è stata costruita durante la fase di riduzione.
+
+---
+
+## Algoritmi di Parità
+
+Il 4x4 ha due casi di parità che non possono verificarsi su un 3x3. Questi accadono circa il 50% delle volte ciascuno, indipendentemente dall'uso di Yau o Reduction.
+
+### Parità OLL (ribaltamento di un singolo spigolo)
+
+Un singolo spigolo appare ribaltato sull'ultimo strato — impossibile su un vero 3x3.
+
+**Algoritmo: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Applica questo algoritmo una volta, poi continua con OLL/PLL normalmente.
+
+### Parità PLL (scambio di due spigoli)
+
+Due spigoli opposti devono essere scambiati — di nuovo impossibile su un 3x3.
+
+**Algoritmo: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Quando imparare Yau
+
+- **Se la tua media è sotto i 2 minuti con Reduction**, hai le basi per passare a Yau.
+- **Se conosci il CFOP per il 3x3**, Yau è una scelta naturale — la croce è già fatta quando entri nella fase 3x3.
+- **Se hai difficoltà con la transizione Reduction-3x3**, Yau elimina quella pausa interamente.
+
+## Priorità di allenamento
+
+1. **Padroneggia l'accoppiamento degli spigoli con freeslice** — questa è la tecnica fondamentale che rende Yau efficiente.
+2. **Pratica il riconoscimento 2 centri + 3 spigoli della croce** — impara a identificare rapidamente gli spigoli della croce durante i primi due passaggi.
+3. **Pratica la tecnica 3-2-3** — l'accoppiamento fluido degli spigoli è dove si risparmia più tempo.
+4. **Lavora sulla transizione croce-F2L** — poiché la croce è fatta, pratica l'individuazione della prima coppia F2L durante l'accoppiamento degli spigoli.
+
+---
+
+**Il metodo Yau è lo standard per la risoluzione competitiva del 4x4.** La transizione fluida dalla riduzione alla risoluzione 3x3, combinata con migliori opportunità di anticipazione, lo rende la scelta preferita per gli speedcuber che puntano a medie sotto i 40 secondi. Inizia convertendo le tue risoluzioni Reduction in Yau un passo alla volta.

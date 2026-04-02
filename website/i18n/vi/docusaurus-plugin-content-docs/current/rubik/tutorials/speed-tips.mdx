@@ -1,0 +1,129 @@
+---
+title: Mẹo Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Mẹo Speed Cubing
+
+Nhanh hơn với Rubik's Cube không chỉ là xoay nhanh hơn. Tiến bộ lớn nhất đến từ việc lập kế hoạch trước, giảm thời gian dừng và luyện tập có mục đích. Hướng dẫn này bao gồm các kỹ năng cốt lõi phân biệt người giải bình thường với speedcuber thi đấu.
+
+---
+
+## Lập kế hoạch Cross
+
+Cross là bước đầu tiên của giải CFOP và là phần duy nhất bạn có thể lập kế hoạch **hoàn toàn trong thời gian quan sát**. Thành thạo lập kế hoạch cross mang lại lợi thế miễn phí trong mỗi lần giải.
+
+### Tận dụng đủ 15 giây quan sát
+
+Trong thi đấu, bạn có 15 giây quan sát trước khi bấm đồng hồ. Tận dụng mỗi giây:
+- 5 giây đầu: Xác định vị trí 4 cạnh cross.
+- 5 giây tiếp: Lập kế hoạch giải cross đầy đủ (lý tưởng 6-8 bước hoặc ít hơn).
+- 5 giây cuối: Diễn tập trình tự trong đầu và lập kế hoạch cặp F2L đầu tiên.
+
+### Giải cross ở mặt dưới
+
+Luôn giải cross ở **mặt dưới** (tầng D). Người mới thường giải cross trên đỉnh rồi lật cube, lãng phí 1-2 giây. Giải từ dưới ngay từ đầu, bạn có thể bắt đầu tìm cặp F2L ngay.
+
+**Ví dụ: Giải cross 6 bước**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Ví dụ: Cross hiệu quả 5 bước**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Luyện cross nhắm mắt
+
+1. Xáo cube. 2. Lập kế hoạch toàn bộ cross. 3. Nhắm mắt thực hiện từ trí nhớ. 4. Mở mắt kiểm tra.
+
+### Trung lập màu sắc
+
+Người giải **trung lập màu** có thể bắt đầu với bất kỳ màu nào trong 6 màu, mang lại lợi thế 2-3 bước trên cross.
+
+---
+
+## Lookahead (Nhìn trước)
+
+Lookahead là khả năng **theo dõi mảnh tiếp theo trong khi giải mảnh hiện tại**. Đây là kỹ năng quan trọng nhất để vượt qua giới hạn tốc độ.
+
+### Cách luyện tập
+
+**Giải chậm**: metronome 1-2 vòng/giây, không bao giờ ngừng xoay. Luyện F2L nhắm mắt củng cố theo dõi tinh thần.
+
+---
+
+## F2L Hiệu quả
+
+Tránh xoay không cần thiết.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**so với phiên bản cần xoay:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+Phiên bản đầu tiết kiệm ~0.5 giây. Ưu tiên slot phía sau. Ảnh hưởng cặp tiếp theo. Multi-slotting hiếm nhưng đáng giá.
+
+---
+
+## Nhận dạng OLL/PLL
+
+Nhận dạng nhanh loại bỏ khoảng dừng giữa F2L và tầng cuối. Luyện nhận dạng từ hai góc. Pre-AUF và dự đoán OLL là kỹ thuật nâng cao.
+
+---
+
+## Lịch tập luyện
+
+Luyện tập có chủ đích thắng giải vô tư.
+
+### Kế hoạch hàng ngày (45-60 phút)
+
+**Luyện cross (10 phút)** - Mục tiêu: dưới 2 giây, 6 bước hoặc ít hơn.
+
+**F2L chậm (15 phút)** - Metronome, tập trung lookahead.
+
+**Luyện thuật toán (10 phút)** - 2-3 OLL/PLL, lặp lại 20-30 lần.
+
+**Giải tính giờ (15-20 phút)** - **Ao12** - Theo dõi xu hướng.
+
+### Trung bình: **Ao5**, **Ao12**, **Ao100**.
+
+Mười lần giải tập trung thắng trăm lần tự động.
+
+---
+
+## Mẹo thi đấu
+
+Khởi động đúng cách, giữ bình tĩnh, quan sát ngang tầm mắt, và làm quen Stackmat timer.
+
+---
+
+## Phần cứng
+
+Speed cube tốt tạo sự khác biệt thực sự. Cube từ tính từ MoYu, QiYi và GAN là tiêu chuẩn. Corner cutting 45+ độ, xoay mượt và ổn định là chìa khóa. Cho người mới: mua bất kỳ 3x3 từ tính hiện đại nào, giữ độ căng nhà máy tuần đầu, thêm dầu silicon nếu cần, và điều chỉnh dần.
+
+Cube được thiết lập tốt loại bỏ phần cứng khỏi biến số, cho phép bạn tập trung hoàn toàn vào cải thiện kỹ thuật.

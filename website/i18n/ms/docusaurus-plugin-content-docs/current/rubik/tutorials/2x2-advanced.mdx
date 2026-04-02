@@ -1,0 +1,374 @@
+---
+title: "2x2 Lanjutan: Kaedah CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Lanjutan: Kaedah CLL
+
+Tingkatkan penyelesaian kubus 2x2 anda dengan kaedah **CLL (Sudut Lapisan Terakhir)**. Sementara Ortega menyelesaikan lapisan terakhir dalam dua langkah (OLL kemudian PBL), CLL menyelesaikan **orientasi dan permutasi** sudut dalam **satu algoritma**. Kurang melihat dan penyelesaian lebih pantas.
+
+## Mengapa CLL?
+
+| Kaedah | Langkah lapisan terakhir | Algoritma | Kelajuan biasa |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 saat |
+| **CLL** | 1 (satu pandangan) | ~40 | 2–4 saat |
+
+CLL adalah kaedah standard speedcuber 2x2 teratas. Dengan mempelajari semua 40 kes, anda menghapuskan satu langkah penuh.
+
+## Cara CLL berfungsi
+
+1. **Selesaikan muka pertama** — seperti Ortega, bina muka putih di bawah (warna sisi tidak perlu sepadan).
+2. **Kenal pasti kes CLL** — lihat muka atas dan warna sisi untuk mengenal pasti kes anda.
+3. **Gunakan satu algoritma** — ini mengorientasi dan mempermutasi semua sudut atas serentak.
+4. **AUF + pelarasan bawah** — paling banyak satu pusingan U dan satu pusingan D.
+
+## Peringatan notasi
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+- Huruf sahaja = **90° ikut jam**. **'** = **lawan jam**. **2** = **180°**.
+
+---
+
+## Kumpulan kes CLL
+
+40 kes CLL diatur dalam 7 kumpulan berdasarkan corak orientasi muka atas. Berikut kes terpenting dari setiap kumpulan.
+
+---
+
+## Kes Sune (4 daripada 6)
+
+Satu sudut berorientasi (kuning menghadap atas), tiga lagi perlu dipusingkan. Kumpulan paling biasa.
+
+### Sune 1 — Pertukaran bersebelahan
+
+Pegang sudut selesai di hadapan-kiri. Tiga sudut belum selesai berpusing ikut jam.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Pertukaran pepenjuru
+
+Corak orientasi sama, tetapi sudut memerlukan pertukaran pepenjuru.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Tulen (tiada pertukaran)
+
+Orientasi selesai tanpa perlu perubahan posisi.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Pertukaran bersebelahan (Cermin)
+
+Pegang sudut selesai di hadapan-kanan.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Kes Anti-Sune (3 daripada 6)
+
+Cermin Sune — satu sudut berorientasi, tiga lagi berpusing lawan jam.
+
+### Anti-Sune 1 — Pertukaran bersebelahan
+
+Pegang sudut selesai di hadapan-kanan. Tiga sudut belum selesai berpusing lawan jam.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Pertukaran pepenjuru
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Tulen (tiada pertukaran)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Kes H (4 daripada 4)
+
+Dua sudut bertentangan berorientasi (kuning menghadap atas), dua lagi mempunyai kuning di sisi.
+
+### H 1 — Pertukaran bersebelahan
+
+Dua pelekat kuning di atas pada kedudukan pepenjuru.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Pertukaran pepenjuru
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Tiada pertukaran
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Lajur
+
+Kedua-dua pasangan sudut pepenjuru perlu ditukar.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Kes Pi (4 daripada 6)
+
+Dua sudut bersebelahan mempunyai kuning di atas, dua lagi mempunyai kuning di sisi. Muka atas kelihatan seperti huruf Yunani Pi.
+
+### Pi 1 — Pertukaran pepenjuru
+
+Pegang dua sudut berorientasi di belakang.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Pertukaran bersebelahan (Kanan)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Pertukaran bersebelahan (Kiri)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Tiada pertukaran
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Kes T (3 daripada 6)
+
+Muka atas menunjukkan corak T — satu sudut berorientasi, satu sudut bersebelahan dengan kuning di hadapan, dua lagi dengan kuning di sisi.
+
+### T 1 — Pertukaran bersebelahan
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Pertukaran pepenjuru
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Tiada pertukaran
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Kes U (3 daripada 6)
+
+Satu sudut berorientasi betul, tiga lagi dalam corak U di sisi.
+
+### U 1 — Pertukaran bersebelahan
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Pertukaran pepenjuru
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Tiada pertukaran
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Kes L (3 daripada 6)
+
+Dua sudut bersebelahan dipusingkan ke arah sama — muka atas menunjukkan corak L.
+
+### L 1 — Pertukaran bersebelahan
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Pertukaran pepenjuru
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Tiada pertukaran
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Selepas CLL: Menyelesaikan
+
+Selepas algoritma CLL, muka atas sepenuhnya selesai. Anda mungkin perlu:
+
+1. **AUF (Laras muka U)** — satu pusingan U atau U' untuk menyelaraskan lapisan atas.
+2. **Pelarasan lapisan bawah** — jika teranjak, satu pusingan D atau D' membetulkannya.
+3. **Pertukaran lapisan bawah** — jarang, mungkin perlu pertukaran bersebelahan atau pepenjuru. Gunakan algoritma PBL Ortega:
+   - **Pertukaran pepenjuru:** R2 F2 R2
+   - **Pertukaran bersebelahan:** R U' R F2 R' U R'
+
+---
+
+## Strategi pembelajaran
+
+Mempelajari 40 kes sekaligus sangat berat. Urutan yang disyorkan:
+
+1. **Mulakan dengan Sune dan Anti-Sune** (12 kes) — paling biasa, banyak algoritma pendek.
+2. **Tambah kes T dan U** (12 kes) — agak mudah dikenal pasti dan dilakukan.
+3. **Pelajari kes Pi** (6 kes) — corak orientasi tersendiri.
+4. **Pelajari kes L** (6 kes) — pengecaman mirip Pi, arah putar berbeza.
+5. **Akhiri dengan kes H** (4 kes) — kumpulan paling jarang.
+
+## Tip pengecaman
+
+- **Lihat muka atas dahulu** untuk mengenal pasti kumpulan orientasi.
+- **Kemudian semak warna sisi** untuk menentukan kes khusus.
+- **Latih mengikut kumpulan** — satu kumpulan sehingga pengecaman serta-merta.
+- **Gunakan scramble terbalik** — sediakan kes, selesaikan, ramalkan kebalikannya.
+
+---
+
+**Dengan menguasai CLL, anda boleh mencapai purata di bawah 3 saat pada 2x2.** Pendekatan satu pandangan menghapuskan jeda antara OLL dan PBL. Teruskan berlatih pengecaman — kelajuan datang dari pengenalan serta-merta.

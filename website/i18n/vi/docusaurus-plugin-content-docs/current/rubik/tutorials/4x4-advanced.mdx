@@ -1,0 +1,249 @@
+---
+title: "4x4 Nâng cao: Phương pháp Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Nâng cao: Phương pháp Yau
+
+**Phương pháp Yau**, được phát minh bởi Robert Yau, là một phương pháp thay thế nhanh hơn phương pháp Reduction tiêu chuẩn cho Rubik's Cube 4x4. Điểm khác biệt chính: Yau giải các cạnh chữ thập **sớm**, giúp nhìn trước tốt hơn và chuyển đổi mượt mà hơn sang giai đoạn 3x3. Hầu hết các tay giải nhanh 4x4 hàng đầu sử dụng Yau hoặc biến thể của nó.
+
+## Yau so với Reduction tiêu chuẩn
+
+| Khía cạnh | Reduction | Yau |
+|--------|-----------|-----|
+| **Thứ tự bước** | Tất cả tâm, rồi tất cả cạnh | 2 tâm, 3 cạnh chữ thập, 4 tâm, cạnh còn lại |
+| **Chữ thập** | Xây sau khi giảm | Đã hoàn thành một phần trong quá trình giảm |
+| **Nhìn trước** | Phải tìm cạnh chữ thập sau khi ghép | Chữ thập gần xong, chuyển sang F2L mượt mà |
+| **Giới hạn tốc độ** | Tốt | Cao hơn — ít tạm dừng giữa các giai đoạn |
+
+## Nhắc nhở ký hiệu
+
+**Nước đi tiêu chuẩn** (chỉ lớp ngoài):
+- **R** = Phải &nbsp;&nbsp; **L** = Trái &nbsp;&nbsp; **U** = Trên &nbsp;&nbsp; **D** = Dưới &nbsp;&nbsp; **F** = Trước &nbsp;&nbsp; **B** = Sau
+
+**Nước đi rộng** (hai lớp ngoài cùng nhau):
+- **Rw** = Phải rộng &nbsp;&nbsp; **Lw** = Trái rộng &nbsp;&nbsp; **Uw** = Trên rộng &nbsp;&nbsp; **Dw** = Dưới rộng &nbsp;&nbsp; **Fw** = Trước rộng &nbsp;&nbsp; **Bw** = Sau rộng
+
+Chỉ một chữ cái nghĩa là **90° theo chiều kim đồng hồ**. Thêm **'** nghĩa là **ngược chiều kim đồng hồ**. Thêm **2** nghĩa là **180°**.
+
+---
+
+## Bước 1: Giải hai tâm đối diện
+
+Bắt đầu bằng cách giải các khối tâm **trắng** và **vàng** (trên và dưới). Đây giống với phần đầu tiên của phương pháp Reduction tiêu chuẩn.
+
+Setiap center adalah blok 2x2 dari potongan. Gunakan gerakan rộng untuk menyatukan potongan center sambil melindungi potongan yang sudah ditempatkan dengan putaran layer luar.
+
+**Xây tâm cơ bản** — bawa potongan center ke atas menggunakan gerakan rộng, posisikan, lalu kembalikan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Ghép hai nửa tâm** — khi bạn có hai dải tâm 1x2 cần ghép lại:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Mẹo:**
+- Giải tâm trắng trước (ở dưới), rồi tâm vàng (ở trên).
+- Giữ trắng ở dưới suốt — chỉ dùng nước đi Rw, Lw, Fw, Bw để thao tác với tâm mà không làm xáo trộn phía dưới.
+- Chưa cần lo về các tâm bên. Để lại cho bước 3.
+
+---
+
+## Bước 2: Giải 3 trong 4 cạnh chữ thập
+
+Đây là nơi Yau khác với Reduction. Trước khi giải các tâm còn lại, **ghép và đặt 3 cạnh chữ thập trắng** vào lớp dưới.
+
+Cạnh chữ thập gồm hai mảnh (misalnya putih-merah dan putih-merah) cần được ghép và đặt vào lớp D. Để lại một cạnh chữ thập chưa giải — ini memberi kebebasan menggunakan gerakan rộng di langkah berikutnya.
+
+**Ghép cạnh chữ thập bằng freeslice** — kỹ thuật freeslice ghép cạnh mà không làm xáo trộn tâm. Đặt một nửa cạnh ở vị trí trước-phải và mang đối tác từ slot khác:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Đặt cạnh chữ thập đã ghép xuống dưới** — sau khi ghép, đặt cạnh vào vị trí đúng của lớp D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice dengan gerakan rộng** — dùng Dw để nâng mảnh cạnh lên ghép mà không phá các cạnh chữ thập đã có:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Mẹo:**
+- Bạn chỉ cần 3 cạnh chữ thập đã giải. Cố ý để trống một slot.
+- Sử dụng slot lớp D trống tự do — cross edge yang hilang memberi lebih banyak kebebasan untuk gerakan rộng.
+- Chọn cạnh chữ thập nào để lại dựa trên cạnh nào khó tìm hoặc ghép nhất.
+
+---
+
+## Bước 3: Giải 4 tâm còn lại
+
+Bây giờ giải **4 tâm bên** (đỏ, cam, xanh dương, xanh lá). Tâm trắng và vàng đã xong từ bước 1.
+
+Karena kamu memiliki satu slot cross edge yang belum terselesaikan, kamu masih bisa menggunakan beberapa gerakan rộng dengan bebas. Ini adalah keuntungan utama Yau — cross yang sebagian terselesaikan tidak membatasi pembangunan center sebanyak yang kamu pikirkan.
+
+**Xây tâm bên** — gunakan gerakan rộng untuk mengumpulkan potongan center, lalu tempatkan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Commutator tâm** — khi cần đổi mảnh tâm mà không làm xáo trộn các mảnh khác, dùng chuỗi kiểu commutator:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Mẹo:**
+- Giải tâm theo cặp đối diện nếu có thể (ví dụ đỏ rồi cam, xanh dương rồi xanh lá).
+- Tận dụng slot cạnh chữ thập chưa giải — gerakan rộng melalui slot itu tidak akan merusak cross edge.
+- Perhatikan 3 cross edge yang sudah ada di layer D. Periksa sebelum melakukan gerakan rộng.
+
+---
+
+## Bước 4: Cạnh chữ thập cuối + Hoàn tất ghép cạnh
+
+Bước này có hai phần: hoàn thành cạnh chữ thập thứ 4, rồi ghép tất cả cạnh còn lại.
+
+### Phần A: Giải cạnh chữ thập cuối
+
+Temukan pasangan cross edge yang tersisa dan satukan mereka. Karena semua center sudah terselesaikan, kamu perlu lebih hati-hati dengan gerakan rộng.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Sau khi ghép, đưa vào slot lớp D cuối cùng để hoàn thành chữ thập trắng.
+
+### Phần B: Ghép cạnh còn lại (Kỹ thuật 3-2-3)
+
+Bây giờ bạn có 8 cạnh chưa ghép. **Kỹ thuật 3-2-3** là cách hiệu quả nhất để ghép chúng:
+
+1. **3 cạnh đầu tiên** — ghép bằng nước đi slice-flip-slice tiêu chuẩn. Đặt cạnh chưa ghép ở trước-phải, tìm đối tác ở trên, dùng Uw để ghép:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **2 cạnh tiếp theo** — với ít cạnh hơn, bạn có thể ghép hai cạnh liên tiếp nhanh chóng, lưu một cạnh ở phía sau:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **3 cạnh cuối** — các cạnh cuối cần cẩn thận hơn để tránh phá các cạnh đã ghép. Dùng nước đi dựa trên Dw hoặc kỹ thuật lật:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Mẹo:**
+- Selama pairing 3-2-3, selalu periksa bahwa gerakan rộng kamu tidak merusak cross edge di bawah.
+- Nếu cạnh đã ghép nhưng bị lật, bạn cần tháo ra và ghép lại.
+- Chuyển đổi từ ghép cạnh sang 3x3 phải mượt mà — chữ thập của bạn đã xong.
+
+---
+
+## Bước 5: Giải như 3x3 (CFOP)
+
+Với tất cả tâm đã giải, tất cả cạnh đã ghép, và chữ thập đã hoàn thành, 4x4 giờ hoạt động như 3x3. Vì **chữ thập trắng đã xong** (lợi thế lớn của Yau), bạn có thể nhảy thẳng vào **F2L** (Hai lớp đầu).
+
+Gunakan hanya gerakan layer luar mulai sekarang — tanpa gerakan rộng.
+
+**Tiếp tục với CFOP tiêu chuẩn:**
+1. **F2L** — ghép và đưa các cặp góc-cạnh vào hai lớp đầu.
+2. **OLL** — định hướng lớp cuối.
+3. **PLL** — hoán vị lớp cuối.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Đây là lợi thế lớn nhất của phương pháp Yau: chuyển từ chữ thập sang F2L không có tạm dừng, vì chữ thập được xây trong giai đoạn giảm.
+
+---
+
+## Thuật toán Parity
+
+4x4 có hai trường hợp parity không thể xảy ra trên 3x3. Mỗi trường hợp xảy ra khoảng 50% thời gian, bất kể bạn dùng Yau hay Reduction.
+
+### Parity OLL (Lật một cạnh)
+
+Một cạnh trông bị lật ở lớp cuối — không thể trên 3x3 thật.
+
+**Thuật toán: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Áp dụng thuật toán này một lần, rồi tiếp tục với OLL/PLL bình thường.
+
+### Parity PLL (Đổi hai cạnh)
+
+Hai cạnh đối diện cần đổi — lại không thể trên 3x3.
+
+**Thuật toán: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Khi nào nên học Yau
+
+- **Nếu trung bình của bạn dưới 2 phút với Reduction**, bạn có nền tảng để chuyển sang Yau.
+- **Nếu bạn biết CFOP cho 3x3**, Yau là lựa chọn tự nhiên — chữ thập đã xong khi vào giai đoạn 3x3.
+- **Nếu bạn gặp khó khăn với chuyển đổi Reduction-sang-3x3**, Yau loại bỏ hoàn toàn khoảng dừng đó.
+
+## Ưu tiên luyện tập
+
+1. **Thành thạo ghép cạnh freeslice** — đây là kỹ thuật cốt lõi làm Yau hiệu quả.
+2. **Luyện nhận diện 2-tâm + 3-cạnh-chữ-thập** — học nhận diện cạnh chữ thập nhanh trong hai bước đầu.
+3. **Luyện kỹ thuật 3-2-3** — ghép cạnh mượt mà là nơi tiết kiệm thời gian nhiều nhất.
+4. **Làm việc với chuyển đổi chữ thập-sang-F2L** — vì chữ thập đã xong, luyện tìm cặp F2L đầu tiên trong khi ghép cạnh.
+
+---
+
+**Phương pháp Yau là tiêu chuẩn cho việc giải 4x4 thi đấu.** Chuyển đổi mượt mà từ giảm sang giải 3x3, kết hợp với cơ hội nhìn trước tốt hơn, khiến nó trở thành lựa chọn ưu tiên cho các tay giải nhanh nhắm đến trung bình dưới 40 giây. Bắt đầu bằng cách chuyển đổi các lần giải Reduction của bạn sang Yau từng bước một.

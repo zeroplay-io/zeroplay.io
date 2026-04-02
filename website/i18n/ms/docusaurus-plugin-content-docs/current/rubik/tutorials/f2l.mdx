@@ -1,0 +1,312 @@
+---
+title: "F2L: Dua Lapisan Pertama"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Dua Lapisan Pertama
+
+F2L (First Two Layers, dua lapisan pertama) ialah **langkah paling penting** dalam kaedah CFOP. Berbeza daripada menyelesaikan bucu lapisan pertama dan tepi lapisan kedua sebagai dua langkah berasingan (seperti kaedah pemula), F2L memadankan bucu dengan tepi yang sepadan dan memasukkannya bersama ke dalam slot yang betul. Ini menjimatkan bilangan pergerakan yang besar dan merupakan sumber peningkatan kelajuan terbesar.
+
+Terdapat **4 slot** untuk diisi, satu di setiap bucu dua lapisan bawah. Setiap slot terdiri daripada satu kepingan bucu dan satu kepingan tepi.
+
+## Konsep
+
+Setiap kes F2L melibatkan dua kepingan:
+- Satu **kepingan bucu** yang tergolong dalam lapisan bawah (mempunyai pelekat putih/warna dasar)
+- Satu **kepingan tepi** yang tergolong dalam lapisan tengah (menyambung dua warna sisi)
+
+Matlamatnya ialah **memadankan** kedua-dua kepingan ini di lapisan atas, kemudian **memasukkan** pasangan itu ke slot yang betul dalam satu gerakan lancar.
+
+## Peringatan Notasi
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Hadapan &nbsp;&nbsp; **B** = Belakang
+- Huruf sahaja = **90° ikut jam** &nbsp;&nbsp; **'** = **lawan jam** &nbsp;&nbsp; **2** = **180°**
+
+Pegang kiub dengan **putih di bawah**. Slot yang kita masukkan sentiasa **slot hadapan-kanan** (antara muka F dan R).
+
+---
+
+## F2L Intuitif
+
+Sebelum menghafal algoritma, pelajari **logik** F2L. Setiap kes mengikut corak yang sama:
+
+1. **Cari** pasangan bucu-tepi yang sepadan
+2. **Pisahkan** mereka jika terlekat bersama secara salah
+3. **Letakkan** satu kepingan, kemudian **bawa** yang lain untuk bertemu
+4. **Padankan** mereka di lapisan atas supaya putih menghadap keluar atau ke bawah
+5. **Masukkan** pasangan yang disambung ke dalam slot
+
+**Prinsip utama:** Gunakan pergerakan R dan U untuk mengeluarkan bucu dari slot hadapan-kanan atau memasukkannya, dan pergerakan U untuk meletakkan tepi. Jangan sesekali mengganggu slot yang sudah diselesaikan.
+
+---
+
+Terdapat **41 kes standard F2L** secara keseluruhan. Di bawah kami membincangkan **15 kes terpenting** yang membentuk asas. Setelah menguasainya, anda boleh menangani kes selebihnya secara intuitif atau mencarinya mengikut keperluan.
+
+## Kes Asas: Kedua-dua Kepingan di Lapisan Atas
+
+Ini ialah kes paling mudah dan paling biasa. Bucu dan tepi kedua-duanya berada di lapisan U dan slot sasaran kosong.
+
+### Kes 1: Sisipan Mudah — Putih Bucu Menghadap Kanan, Tepi Sedia
+
+Bucu mempunyai putih menghadap muka R, dan tepi sudah diletakkan supaya satu pergerakan U memadankan mereka. Ini ialah sisipan F2L paling asas.
+
+**Algoritma: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Kes 2: Sisipan Mudah — Putih Bucu Menghadap Hadapan, Tepi Sedia
+
+Bucu mempunyai putih menghadap muka F, dan tepi diletakkan untuk dipadankan dengan sisipan lawan jam.
+
+**Algoritma: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Kes 3: Putih Bucu Menghadap Atas, Warna Sepadan dengan Pusat Hadapan
+
+Bucu mempunyai putih menghadap atas dan warna hadapannya sepadan dengan pusat hadapan. Tepi berada di seberang. Kita perlu menyambung dan memasukkan.
+
+**Algoritma: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Kes 4: Putih Bucu Menghadap Atas, Warna Sepadan dengan Pusat Kanan
+
+Bucu mempunyai putih menghadap atas dan warna kanannya sepadan dengan pusat kanan. Tepi perlu dipadankan dari sebelah bertentangan.
+
+**Algoritma: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Kes 5: Bucu dan Tepi Jauh, Putih Menghadap Kanan
+
+Bucu mempunyai putih menghadap kanan dan tepi berada di sebelah bertentangan lapisan atas. Kita mendekatkan tepi, kemudian memadankan dan memasukkan.
+
+**Algoritma: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Kes 6: Bucu dan Tepi Jauh, Putih Menghadap Hadapan
+
+Cermin Kes 5. Bucu mempunyai putih menghadap hadapan dan tepi berada di sebelah jauh.
+
+**Algoritma: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Kes 7: Bucu dan Tepi Bersebelahan, Putih Menghadap Kanan — Pasangan Disambung tapi Salah
+
+Bucu dan tepi bersebelahan dan disambung, tetapi jika dimasukkan akan menjadi salah. Kita pisahkan dan sambung semula dengan betul.
+
+**Algoritma: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Kes 8: Bucu dan Tepi Bersebelahan, Putih Menghadap Hadapan — Pasangan Disambung tapi Salah
+
+Cermin Kes 7 di bahagian muka F.
+
+**Algoritma: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Kes Pertengahan: Tepi dalam Slot, Bucu di Lapisan Atas
+
+Kadangkala tepi sudah terlekat dalam slot (betul atau salah), dan bucu berada di lapisan atas. Kita perlu mengeluarkan tepi tanpa mengganggu pasangan lain yang sudah diselesaikan.
+
+### Kes 9: Tepi dalam Slot Betul tapi Bucu di Atas — Putih Menghadap Kanan
+
+Tepi berada dalam slot yang betul, dan bucu berada di lapisan U dengan putih menghadap kanan. Kita keluarkan tepi dan padankan dengan bucu.
+
+**Algoritma: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Kes 10: Tepi dalam Slot Salah, Bucu di Atas — Putih Menghadap Atas
+
+Tepi berada dalam slot yang salah. Kita keluarkan sambil menyediakan pemadanan dengan bucu secara serentak.
+
+**Algoritma: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Kes Lanjutan: Bucu dalam Slot
+
+Kes ini berlaku apabila bucu sudah berada dalam slot yang betul tetapi berorientasi salah, atau dalam slot yang betul dengan tepi salah tempat.
+
+### Kes 11: Bucu dalam Slot, Terpusing — Tepi di Lapisan Atas
+
+Bucu berada dalam slot hadapan-kanan tetapi dengan putih menghadap hadapan (bukan bawah). Tepi berada di lapisan U. Kita keluarkan bucu, padankan dengan tepi dan masukkan semula.
+
+**Algoritma: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Kes 12: Bucu dalam Slot, Terpusing — Tepi dalam Slot Salah
+
+Kedua-dua kepingan berada dalam dua lapisan bawah tetapi tiada yang betul. Kita tendang bucu keluar dan keluarkan tepi secara serentak.
+
+**Algoritma: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Kes Khas: Kedua-dua Kepingan dalam Slot
+
+### Kes 13: Pasangan Disambung dalam Slot tapi Terpusing
+
+Bucu dan tepi dipadankan dan dalam slot, tetapi bucu terpusing (putih menghadap hadapan, bukan bawah). Keluarkan pasangan, pisahkan dan masukkan semula dengan betul.
+
+**Algoritma: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Kes 14: Bucu Betul dalam Slot, Tepi Terbalik dalam Slot
+
+Bucu diletakkan dengan betul tetapi tepi di atasnya terbalik. Ini antara kes paling rumit. Kita keluarkan kedua-duanya, padankan dengan betul dan masukkan semula.
+
+**Algoritma: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Kes 15: Kedua-dua dalam Slot, Kedua-dua Salah — Ralat Bersilang
+
+Bucu dan tepi kedua-duanya dalam slot tetapi tiada yang sepadan. Pengeluaran penuh dan pembinaan semula.
+
+**Algoritma: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tips untuk F2L Lebih Pantas
+
+### 1. Belajar Secara Intuitif Dahulu
+
+Jangan tergesa-gesa menghafal semua 41 kes algoritmik. Luangkan masa untuk memahami **mengapa** setiap pergerakan berfungsi. Jika anda tahu R U R' mengeluarkan bucu dan memasukkannya semula, anda boleh menyelesaikan kebanyakan kes sendiri. Algoritma datang kemudian untuk pengoptimuman.
+
+### 2. Kembangkan Lookahead
+
+**Lookahead** ialah keupayaan menjejak pasangan seterusnya semasa memasukkan yang semasa. Ini ialah faktor terbesar yang memisahkan penyelesai 20 saat daripada penyelesai 15 saat.
+
+Tips latihan:
+- Perlahankan pusingan anda dan paksa diri untuk mencari pasangan seterusnya semasa sisipan
+- Latih penyelesaian F2L dengan mata tertutup semasa sisipan (anda tahu pergerakannya, jadi lihat ke hadapan)
+- Buat penyelesaian tanpa masa yang fokus sepenuhnya pada sifar jeda antara pasangan
+
+### 3. Kurangkan Putaran
+
+Setiap kali anda memusing seluruh kiub, anda kehilangan masa. Penyelesai F2L terbaik jarang memusing lebih daripada sekali atau dua kali dalam keseluruhan fasa F2L.
+
+- Belajar memasukkan ke **slot belakang** menggunakan pergerakan R dan U (cth., R U' R' untuk memasukkan ke belakang-kanan)
+- Latih penggunaan pergerakan **L, F dan B** untuk slot sebelah bertentangan
+- Gunakan pergerakan lebar (r, l) untuk memusing dan memasukkan secara serentak
+
+### 4. Kenal Pasti Kes dengan Pantas
+
+Latih diri anda untuk segera mengenal pasti kes yang sedang dilihat:
+- **Di mana putih pada bucu?** (Atas, Hadapan atau Kanan)
+- **Di mana tepi berbanding bucu?** (Bersebelahan, bertentangan atau dalam slot)
+- **Adakah mereka sudah dipadankan?** (Disambung betul, disambung salah atau berasingan)
+
+### 5. Selesaikan dalam Susunan Cekap
+
+Anda tidak perlu menyelesaikan 4 pasangan dalam sebarang susunan tetap. Lihat semua 4 pasangan dan mulakan dengan yang **paling mudah** — yang memerlukan paling sedikit pergerakan. Penyelesai berpengalaman merancang pasangan pertama mereka semasa pemeriksaan bersama cross.
+
+### 6. Trik Slot Kosong
+
+Apabila slot kosong, anda boleh menggunakannya sebagai storan sementara. Contohnya, letakkan tepi ke dalam slot kosong (R U R') untuk mengalihkannya semasa anda mengerjakan pasangan lain. Pemula sering terlepas pandang teknik berkuasa ini.
+
+---
+
+## Rutin Latihan
+
+1. **Kacau kiub dan selesaikan cross**
+2. **Cari semua 4 pasangan bucu-tepi** — kenal pasti di mana setiap bucu dan tepi sepadannya
+3. **Selesaikan setiap pasangan satu per satu** — mulakan dengan kes mudah, tinggalkan yang sukar untuk terakhir
+4. **Masa fasa F2L sahaja** — gunakan pemasa. Sasaran: bawah 15 saat untuk semua 4 pasangan
+5. **Semak** — selepas setiap penyelesaian, tanya: bolehkah saya menyelesaikan mana-mana pasangan dengan kurang pergerakan?
+
+Dengan latihan konsisten, F2L akan menjadi tabiat semula jadi dan anda akan melihat peningkatan dramatik dalam masa penyelesaian keseluruhan.
+
+---
+
+## Apa Seterusnya?
+
+Selepas menguasai F2L, teruskan dengan lapisan terakhir:
+
+- [**Gambaran Keseluruhan Kaedah CFOP**](./cfop) — Lihat bagaimana F2L sesuai dalam kaedah CFOP lengkap
+- [**Algoritma OLL**](./oll) — Jadikan muka atas semuanya kuning (57 kes + 2-Look OLL)
+- [**Algoritma PLL**](./pll) — Susun kepingan terakhir untuk melengkapkan penyelesaian (21 kes)
+- [**Panduan Finger Tricks**](./finger-tricks) — Laksanakan pencetus F2L dengan lebih pantas dan lancar

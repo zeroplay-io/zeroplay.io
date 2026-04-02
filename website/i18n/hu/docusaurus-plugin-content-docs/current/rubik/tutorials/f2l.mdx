@@ -1,0 +1,312 @@
+---
+title: "F2L: Első két réteg"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Első két réteg
+
+Az F2L (First Two Layers, első két réteg) a CFOP módszer **legfontosabb lépése**. Ahelyett, hogy az első réteg sarkait és a második réteg éleit két külön lépésben oldanád meg (mint a kezdő módszernél), az F2L párosít egy sarkot a hozzá tartozó éllel, és együtt illeszti be őket a megfelelő helyre. Ez hatalmas mennyiségű lépést takarít meg, és itt érhető el a legnagyobb sebességnövekedés.
+
+**4 hely** van kitöltendő, egy-egy az alsó két réteg minden sarkában. Minden hely egy sarokdarabból és egy éldarabból áll.
+
+## A koncepció
+
+Minden F2L eset két darabot érint:
+- Egy **sarokdarab**, amely az alsó rétegbe tartozik (fehér/alsó színű matrica van rajta)
+- Egy **éldarab**, amely a középső rétegbe tartozik (két oldalszínt köt össze)
+
+A cél az, hogy **párosítsd** ezt a két darabot a felső rétegben, majd **beilleszd** a párt a megfelelő helyre egyetlen sima mozdulattal.
+
+## Jelölés emlékeztető
+
+- **R** = Jobb &nbsp;&nbsp; **L** = Bal &nbsp;&nbsp; **U** = Felső &nbsp;&nbsp; **D** = Alsó &nbsp;&nbsp; **F** = Elülső &nbsp;&nbsp; **B** = Hátsó
+- Egyedülálló betű = **90° óramutató járása szerint** &nbsp;&nbsp; **'** = **óramutató járásával ellentétesen** &nbsp;&nbsp; **2** = **180°**
+
+Tartsd a kockát úgy, hogy a **fehér legyen alul**. A hely, ahová beillesztünk, mindig az **elülső jobb hely** (az F és R lapok között).
+
+---
+
+## Intuitív F2L
+
+Mielőtt algoritmusokat tanulnál meg, ismerd meg az F2L **logikáját**. Minden eset ugyanazt a mintát követi:
+
+1. **Keresd meg** a sarok-él párt, amelyek összetartoznak
+2. **Válaszd szét** őket, ha rosszul ragadtak össze
+3. **Pozícionáld** az egyik darabot, majd **hozd** a másikat hozzá
+4. **Párosítsd** őket a felső rétegben úgy, hogy a fehér kifelé vagy lefelé nézzen
+5. **Illeszd be** az összekapcsolt párt a helyre
+
+**Kulcselv:** Használj R és U mozdulatokat a sarok kiemelésére az elülső jobb helyről vagy beillesztésére, és U mozdulatokat az él pozicionálásához. Soha ne zavard meg a már megoldott helyeket.
+
+---
+
+Összesen **41 standard F2L eset** van. Az alábbiakban a **15 legfontosabb esetet** tárgyaljuk, amelyek az alapot képezik. Ha ezeket elsajátítod, a többi esetet intuitívan kezelheted, vagy szükség szerint utánanézhetsz.
+
+## Alapesetek: mindkét darab a felső rétegben
+
+Ezek a legegyszerűbb és leggyakoribb esetek. A sarok és az él egyaránt a U rétegben van, és a célhely üres.
+
+### 1. eset: Könnyű beillesztés — Sarok fehérje jobbra néz, él kész
+
+A sarok fehérje az R lap felé néz, és az él már úgy van pozicionálva, hogy egy U-mozdulat párosítja őket. Ez a legalapvetőbb F2L beillesztés.
+
+**Algoritmus: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### 2. eset: Könnyű beillesztés — Sarok fehérje előre néz, él kész
+
+A sarok fehérje az F lap felé néz, és az él óramutató járásával ellentétes beillesztéshez van pozicionálva.
+
+**Algoritmus: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### 3. eset: Sarok fehérje felfelé néz, színek az elülső középpel egyeznek
+
+A sarok fehérje felfelé néz, és az elülső színe megegyezik az elülső középpel. Az él az átellenes oldalon van. Össze kell kapcsolnunk és beillesztenünk.
+
+**Algoritmus: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### 4. eset: Sarok fehérje felfelé néz, színek a jobb középpel egyeznek
+
+A sarok fehérje felfelé néz, és a jobb színe megegyezik a jobb középpel. Az élt az ellenkező oldalról kell párosítani.
+
+**Algoritmus: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### 5. eset: Sarok és él messze egymástól, fehér jobbra néz
+
+A sarok fehérje jobbra néz, és az él a felső réteg ellenkező oldalán van. Közelebb hozzuk az élt, majd párosítunk és beillesztünk.
+
+**Algoritmus: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### 6. eset: Sarok és él messze egymástól, fehér előre néz
+
+Az 5. eset tükörképe. A sarok fehérje előre néz, és az él a távoli oldalon van.
+
+**Algoritmus: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### 7. eset: Sarok és él szomszédos, fehér jobbra néz — Pár összekapcsolva, de rosszul
+
+A sarok és az él egymás mellett vannak és összekapcsolódtak, de beillesztve rosszul lennének. Szétválasztjuk és helyesen újra összekapcsoljuk.
+
+**Algoritmus: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### 8. eset: Sarok és él szomszédos, fehér előre néz — Pár összekapcsolva, de rosszul
+
+A 7. eset tükörképe az F lap oldalán.
+
+**Algoritmus: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Közepesen haladó esetek: él a helyen, sarok a felső rétegben
+
+Néha az él már beragadt egy helyre (helyesen vagy helytelenül), és a sarok a felső rétegben van. Ki kell emelnünk az élt anélkül, hogy megzavarnánk a többi megoldott párt.
+
+### 9. eset: Él a helyes helyen, de sarok fent — Fehér jobbra néz
+
+Az él a helyes helyen van, és a sarok a U rétegben van fehérrel jobbra. Kiemeljük az élt és párosítjuk a sarokkal.
+
+**Algoritmus: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### 10. eset: Él rossz helyen, sarok fent — Fehér felfelé néz
+
+Az él rossz helyen van. Kiemeljük, miközben egyidejűleg előkészítjük a párosítást a sarokkal.
+
+**Algoritmus: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Haladó esetek: sarok a helyen
+
+Ezek az esetek akkor fordulnak elő, amikor a sarok már a helyes helyen van, de rosszul orientált, vagy a helyes helyen van rosszul elhelyezett éllel.
+
+### 11. eset: Sarok a helyen, elcsavart — Él a felső rétegben
+
+A sarok az elülső jobb helyen van, de fehérje előre néz (nem lefelé). Az él a U rétegben van. Kiemeljük a sarkot, párosítjuk az éllel és újra beillesztjük.
+
+**Algoritmus: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### 12. eset: Sarok a helyen, elcsavart — Él rossz helyen
+
+Mindkét darab az alsó két rétegben van, de egyik sem helyes. Kirúgjuk a sarkot és egyidejűleg kiemeljük az élt.
+
+**Algoritmus: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Speciális esetek: mindkét darab a helyen
+
+### 13. eset: Pár összekapcsolva a helyen, de elcsavart
+
+A sarok és az él párosítva vannak és a helyen, de a sarok elcsavart (fehér előre néz, nem lefelé). Kiemeljük a párt, szétválasztjuk és helyesen újra beillesztjük.
+
+**Algoritmus: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### 14. eset: Sarok helyesen a helyen, él megfordítva a helyen
+
+A sarok helyesen van elhelyezve, de a felette lévő él megfordított. Ez az egyik legtrükkösebb eset. Mindkettőt kiemeljük, helyesen párosítjuk és újra beillesztjük.
+
+**Algoritmus: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### 15. eset: Mindkettő a helyen, mindkettő rosszul — Kereszthiba
+
+A sarok és az él egyaránt a helyen van, de egyik sem egyezik. Teljes kiemelés és újraépítés.
+
+**Algoritmus: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tippek a gyorsabb F2L-hez
+
+### 1. Először intuitívan tanulj
+
+Ne siess az összes 41 algoritmikus eset megtanulásával. Szánj időt annak megértésére, **miért** működik minden mozdulat. Ha tudod, hogy az R U R' kiemel egy sarkot és visszateszi, a legtöbb esetet magadtól is meg tudod oldani. Az algoritmusok később jönnek az optimalizáláshoz.
+
+### 2. Fejleszd a lookahead-et
+
+A **lookahead** az a képesség, hogy követed a következő párt, miközben az aktuálisat illeszted be. Ez a legnagyobb tényező, amely a 20 másodperces megoldókat a 15 másodpercesektől elválasztja.
+
+Gyakorlási tippek:
+- Lassítsd a forgatást és kényszerítsd magad a következő pár keresésére beillesztés közben
+- Gyakorold az F2L megoldást csukott szemmel beillesztés közben (ismered a mozdulatokat, szóval nézz előre)
+- Végezz időmérés nélküli megoldásokat kizárólag a párok közötti nulla szünetekre fókuszálva
+
+### 3. Csökkentsd a forgatásokat
+
+Minden alkalommal, amikor az egész kockát elforgatod, időt veszítesz. A legjobb F2L megoldók ritkán forgatnak egynél vagy kétszernél többet egy teljes F2L fázisban.
+
+- Tanulj meg **hátsó helyekre** beilleszteni R és U mozdulatokkal (pl. R U' R' a hátsó jobbra)
+- Gyakorold az **L, F és B** mozdulatok használatát az ellenkező oldali helyekhez
+- Használj széles mozdulatokat (r, l) az egyidejű forgatáshoz és beillesztéshez
+
+### 4. Gyorsan ismerd fel az eseteket
+
+Képezd magad, hogy azonnal felismerd, melyik esetet látod:
+- **Hol van a fehér a sarkon?** (Fent, Elöl vagy Jobbra)
+- **Hol van az él a sarokhoz képest?** (Szomszédos, átellenes vagy helyen)
+- **Már párosítva vannak?** (Helyesen összekapcsolva, rosszul összekapcsolva vagy külön)
+
+### 5. Hatékony sorrendben oldj meg
+
+Nem kell a 4 párt semmilyen fix sorrendben megoldanod. Nézd meg mind a 4 párt és kezdd a **legkönnyebbel** — amelyik a legkevesebb mozdulatot igényli. A tapasztalt megoldók az első párjukat az inspekció során tervezik meg a kereszttel együtt.
+
+### 6. Üres hely trükkök
+
+Amikor egy hely üres, ideiglenes tárolóként használhatod. Például helyezz egy élt egy üres helyre (R U R'), hogy elkerüljön az útból, miközben egy másik páron dolgozol. A kezdők gyakran figyelmen kívül hagyják ezt az erős technikát.
+
+---
+
+## Gyakorlási rutin
+
+1. **Keverd össze a kockát és oldd meg a keresztet**
+2. **Keresd meg mind a 4 sarok-él párt** — azonosítsd, hol van minden sarok és a hozzá tartozó él
+3. **Oldj meg minden párt egyenként** — kezdd a könnyű esetekkel, a nehezeket hagyd utoljára
+4. **Csak az F2L fázist mérd** — használj időmérőt. Cél: 15 másodperc alatt mind a 4 párra
+5. **Értékelj** — minden megoldás után kérdezd: tudtam volna bármelyik párt kevesebb mozdulattal?
+
+Következetes gyakorlással az F2L második természeteddé válik, és drámai javulást fogsz látni az összesített megoldási időidben.
+
+---
+
+## Mi jön ezután?
+
+Az F2L elsajátítása után folytasd az utolsó réteggel:
+
+- [**CFOP módszer áttekintés**](./cfop) — Nézd meg, hogyan illeszkedik az F2L a teljes CFOP módszerbe
+- [**OLL algoritmusok**](./oll) — Tedd a felső lapot teljesen sárgává (57 eset + 2-Look OLL)
+- [**PLL algoritmusok**](./pll) — Rendezd el az utolsó darabokat a megoldás befejezéséhez (21 eset)
+- [**Finger tricks útmutató**](./finger-tricks) — Hajtsd végre az F2L triggereket gyorsabban és simábban

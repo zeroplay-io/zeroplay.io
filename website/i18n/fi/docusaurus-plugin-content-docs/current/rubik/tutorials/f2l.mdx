@@ -1,0 +1,312 @@
+---
+title: "F2L: Kaksi ensimmäistä kerrosta"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Kaksi ensimmäistä kerrosta
+
+F2L (First Two Layers, kaksi ensimmäistä kerrosta) on **tärkein vaihe** CFOP-menetelmässä. Sen sijaan, että ratkaisisit ensimmäisen kerroksen kulmat ja toisen kerroksen reunat kahtena erillisenä vaiheena (kuten aloittelijamenetelmässä), F2L yhdistää kulman vastaavaan reunaansa ja asettaa ne yhdessä oikeaan paikkaan. Tämä säästää valtavan määrän siirtoja ja on suurimman nopeusparannuksen lähde.
+
+Täytettäviä **paikkoja on 4**, yksi kahden alimman kerroksen jokaisessa kulmassa. Jokainen paikka koostuu yhdestä kulmapalasta ja yhdestä reunapalasta.
+
+## Käsite
+
+Jokainen F2L-tapaus sisältää kaksi palaa:
+- **Kulmapala**, joka kuuluu alakerrokseen (siinä on valkoinen/pohjaväritarra)
+- **Reunapala**, joka kuuluu keskikerrokseen (se yhdistää kaksi sivuväriä)
+
+Tavoitteena on **yhdistää** nämä kaksi palaa yläkerroksessa ja sitten **asettaa** pari oikeaan paikkaan yhdellä sulavalla liikkeellä.
+
+## Merkintämuistutus
+
+- **R** = Oikea &nbsp;&nbsp; **L** = Vasen &nbsp;&nbsp; **U** = Ylä &nbsp;&nbsp; **D** = Ala &nbsp;&nbsp; **F** = Etu &nbsp;&nbsp; **B** = Taka
+- Kirjain yksinään = **90° myötäpäivään** &nbsp;&nbsp; **'** = **vastapäivään** &nbsp;&nbsp; **2** = **180°**
+
+Pidä kuutiota niin, että **valkoinen on alhaalla**. Paikka, johon asetamme, on aina **etuoikea paikka** (F- ja R-sivujen välissä).
+
+---
+
+## Intuitiivinen F2L
+
+Ennen algoritmien ulkoa opettelua, opi F2L:n **logiikka**. Jokainen tapaus noudattaa samaa kaavaa:
+
+1. **Etsi** kulma-reunapari, jotka kuuluvat yhteen
+2. **Erota** ne, jos ne ovat väärin yhdessä
+3. **Sijoita** yksi pala, sitten **tuo** toinen sen luo
+4. **Yhdistä** ne yläkerroksessa niin, että valkoinen osoittaa ulospäin tai alaspäin
+5. **Aseta** yhdistetty pari paikkaan
+
+**Avainperiaate:** Käytä R- ja U-siirtoja kulman ottamiseen etuoikeasta paikasta tai asettamiseen sinne, ja U-siirtoja reunan sijoittamiseen. Älä koskaan häiritse jo ratkaistuja paikkoja.
+
+---
+
+**41 vakio-F2L-tapausta** on yhteensä. Alla käsittelemme **15 tärkeintä tapausta**, jotka muodostavat perustan. Kun hallitset nämä, pystyt käsittelemään loput tapaukset intuitiivisesti tai etsimään ne tarvittaessa.
+
+## Perustapaukset: molemmat palat yläkerroksessa
+
+Nämä ovat yksinkertaisimmat ja yleisimmät tapaukset. Sekä kulma että reuna ovat U-kerroksessa ja kohdepaikka on tyhjä.
+
+### Tapaus 1: Helppo asetus — Kulman valkoinen osoittaa oikealle, reuna valmis
+
+Kulmassa valkoinen osoittaa R-sivulle, ja reuna on jo sijoitettu niin, että yksi U-siirto yhdistää ne. Tämä on F2L:n perusasetus.
+
+**Algoritmi: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Tapaus 2: Helppo asetus — Kulman valkoinen osoittaa eteen, reuna valmis
+
+Kulmassa valkoinen osoittaa F-sivulle, ja reuna on sijoitettu yhdistettäväksi vastapäivään asetuksella.
+
+**Algoritmi: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Tapaus 3: Kulman valkoinen osoittaa ylös, värit vastaavat etukeskustaa
+
+Kulmassa valkoinen osoittaa ylös ja sen etuväri vastaa etukeskustaa. Reuna on vastapuolella. Meidän täytyy yhdistää ne ja asettaa.
+
+**Algoritmi: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Tapaus 4: Kulman valkoinen osoittaa ylös, värit vastaavat oikeaa keskustaa
+
+Kulmassa valkoinen osoittaa ylös ja sen oikea väri vastaa oikeaa keskustaa. Reuna täytyy yhdistää vastakkaiselta puolelta.
+
+**Algoritmi: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Tapaus 5: Kulma ja reuna kaukana toisistaan, valkoinen osoittaa oikealle
+
+Kulmassa valkoinen osoittaa oikealle ja reuna on yläkerroksen vastakkaisella puolella. Tuomme reunan lähemmäs, sitten yhdistämme ja asetamme.
+
+**Algoritmi: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Tapaus 6: Kulma ja reuna kaukana toisistaan, valkoinen osoittaa eteen
+
+Tapauksen 5 peilikuva. Kulmassa valkoinen osoittaa eteen ja reuna on kaukaisella puolella.
+
+**Algoritmi: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Tapaus 7: Kulma ja reuna vierekkäin, valkoinen osoittaa oikealle — Pari yhdistetty mutta väärin
+
+Kulma ja reuna ovat vierekkäin ja yhdistettyinä, mutta asetettuna ne olisivat väärin. Erotamme ne ja yhdistämme uudelleen oikein.
+
+**Algoritmi: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Tapaus 8: Kulma ja reuna vierekkäin, valkoinen osoittaa eteen — Pari yhdistetty mutta väärin
+
+Tapauksen 7 peilikuva F-sivun puolella.
+
+**Algoritmi: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Keskitason tapaukset: reuna paikassa, kulma yläkerroksessa
+
+Joskus reuna on jo juuttunut paikkaan (oikein tai väärin), ja kulma on yläkerroksessa. Meidän täytyy irrottaa reuna häiritsemättä muita ratkaistuja pareja.
+
+### Tapaus 9: Reuna oikeassa paikassa mutta kulma ylhäällä — Valkoinen osoittaa oikealle
+
+Reuna on oikeassa paikassa, ja kulma on U-kerroksessa valkoinen oikealle. Otamme reunan ulos ja yhdistämme sen kulman kanssa.
+
+**Algoritmi: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Tapaus 10: Reuna väärässä paikassa, kulma ylhäällä — Valkoinen osoittaa ylös
+
+Reuna on väärässä paikassa. Irrotamme sen samalla valmistaen yhdistämisen kulman kanssa.
+
+**Algoritmi: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Edistyneet tapaukset: kulma paikassa
+
+Nämä tapaukset syntyvät, kun kulma on jo oikeassa paikassa mutta väärin suunnattu, tai oikeassa paikassa reunan ollessa väärässä paikassa.
+
+### Tapaus 11: Kulma paikassa, vääntynyt — Reuna yläkerroksessa
+
+Kulma on etuoikeassa paikassa mutta valkoinen osoittaa eteen (ei alas). Reuna on U-kerroksessa. Irrotamme kulman, yhdistämme sen reunan kanssa ja asetamme uudelleen.
+
+**Algoritmi: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Tapaus 12: Kulma paikassa, vääntynyt — Reuna väärässä paikassa
+
+Molemmat palat ovat kahdessa alimmassa kerroksessa, mutta kumpikaan ei ole oikein. Potkaisemme kulman ulos ja irrotamme samalla reunan.
+
+**Algoritmi: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Erikoistapaukset: molemmat palat paikassa
+
+### Tapaus 13: Pari yhdistettynä paikassa mutta vääntynyt
+
+Kulma ja reuna ovat yhdistettyinä ja paikassa, mutta kulma on vääntynyt (valkoinen osoittaa eteen, ei alas). Irrotamme parin, erotamme ne ja asetamme uudelleen oikein.
+
+**Algoritmi: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Tapaus 14: Kulma oikein paikassa, reuna käännetty paikassa
+
+Kulma on oikein, mutta sen yläpuolella oleva reuna on käännetty. Tämä on yksi hankalimmista tapauksista. Irrotamme molemmat, yhdistämme oikein ja asetamme uudelleen.
+
+**Algoritmi: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Tapaus 15: Molemmat paikassa, molemmat väärin — Ristikkäisvirhe
+
+Kulma ja reuna ovat molemmat paikassa, mutta kumpikaan ei täsmää. Täydellinen irrotus ja uudelleenrakennus.
+
+**Algoritmi: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Vinkkejä nopeampaan F2L:ään
+
+### 1. Opi intuitiivisesti ensin
+
+Älä kiirehdi ulkoa opettelemaan kaikkia 41 algoritmista tapausta. Käytä aikaa ymmärtääksesi **miksi** kukin siirto toimii. Jos tiedät, että R U R' ottaa kulman ulos ja laittaa sen takaisin, voit ratkaista useimmat tapaukset itse. Algoritmit tulevat myöhemmin optimoimaan siirtoja, jotka jo ymmärrät.
+
+### 2. Kehitä lookaheadia
+
+**Lookahead** on kyky seurata seuraavaa paria samalla kun asetat nykyistä. Tämä on suurin yksittäinen tekijä, joka erottaa 20 sekunnin ratkaisijat 15 sekunnin ratkaisijoista.
+
+Harjoitteluvinkkejä:
+- Hidasta pyöritystä ja pakota itsesi etsimään seuraavaa paria asetusten aikana
+- Harjoittele F2L:n ratkaisemista silmät kiinni asetuksen aikana (tiedät siirrot, joten katso eteenpäin)
+- Tee ajastamattomia ratkaisuja keskittyen pelkästään nollataukoihin parien välillä
+
+### 3. Vähennä kiertoja
+
+Joka kerta kun kierrät koko kuutiota, menetät aikaa. Parhaat F2L-ratkaisijat kiertävät harvoin enemmän kuin kerran tai kahdesti koko F2L-vaiheen aikana.
+
+- Opi asettamaan **takapaikkoihin** käyttäen R- ja U-siirtoja (esim. R U' R' takaaoikeaan)
+- Harjoittele **L-, F- ja B-**siirtoja vastapuolen paikoille
+- Käytä leveitä siirtoja (r, l) samanaikaiseen kiertoon ja asetukseen
+
+### 4. Tunnista tapaukset nopeasti
+
+Kouluta itsesi tunnistamaan välittömästi mikä tapaus on kyseessä:
+- **Missä valkoinen on kulmassa?** (Ylhäällä, Edessä tai Oikealla)
+- **Missä reuna on suhteessa kulmaan?** (Vierekkäin, vastapäätä tai paikassa)
+- **Ovatko ne jo yhdistetty?** (Oikein yhdistetty, väärin yhdistetty tai erillään)
+
+### 5. Ratkaise tehokkaassa järjestyksessä
+
+Sinun ei tarvitse ratkaista 4 paria missään kiinteässä järjestyksessä. Katso kaikkia 4 paria ja aloita **helpoimmasta** — siitä, joka vaatii vähiten siirtoja. Kokeneet ratkaisijat suunnittelevat ensimmäisen parinsa tarkastuksen aikana yhdessä ristin kanssa.
+
+### 6. Tyhjän paikan niksit
+
+Kun paikka on tyhjä, voit käyttää sitä väliaikaisena varastona. Esimerkiksi aseta reuna tyhjään paikkaan (R U R') saadaksesi sen pois tieltä työskennellessäsi toisen parin kanssa. Aloittelijat jättävät tämän tehokkaan tekniikan usein huomiotta.
+
+---
+
+## Harjoitteluohjelma
+
+1. **Sekoita kuutio ja ratkaise risti**
+2. **Etsi kaikki 4 kulma-reunaparia** — tunnista missä kukin kulma ja sen vastaava reuna ovat
+3. **Ratkaise jokainen pari yksi kerrallaan** — aloita helpoista tapauksista, jätä vaikeat viimeiseksi
+4. **Ajasta vain F2L-vaihe** — käytä ajastinta. Tavoite: alle 15 sekuntia kaikille 4 parille
+5. **Arvioi** — jokaisen ratkaisun jälkeen kysy: olisinko voinut tehdä jonkin parin vähemmillä siirroilla?
+
+Johdonmukaisella harjoittelulla F2L:stä tulee toinen luonto ja näet dramaattisia parannuksia kokonaisratkaisuajoissasi.
+
+---
+
+## Mitä seuraavaksi?
+
+F2L:n hallinnan jälkeen jatka viimeiseen kerrokseen:
+
+- [**CFOP-menetelmän yleiskatsaus**](./cfop) — Katso miten F2L sopii täydelliseen CFOP-menetelmään
+- [**OLL-algoritmit**](./oll) — Tee yläsivusta kokonaan keltainen (57 tapausta + 2-Look OLL)
+- [**PLL-algoritmit**](./pll) — Järjestä viimeiset palat ratkaisun viimeistelemiseksi (21 tapausta)
+- [**Finger tricks -opas**](./finger-tricks) — Suorita F2L-triggerit nopeammin ja sulavammin

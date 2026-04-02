@@ -1,0 +1,374 @@
+---
+title: "2x2 Avançat: Mètode CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Avançat: Mètode CLL
+
+Porta la teva resolució del 2x2 al següent nivell amb el mètode **CLL (Cantonades de l'Última Capa)**. Mentre el mètode Ortega resol l'última capa en dos passos (OLL i després PBL), CLL resol tant l'**orientació com la permutació** de les cantonades de l'última capa en **un sol algorisme**. Això significa menys observacions i resolucions més ràpides.
+
+## Per què CLL?
+
+| Mètode | Passos última capa | Algorismes | Velocitat típica |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 segons |
+| **CLL** | 1 (una mirada) | ~40 | 2–4 segons |
+
+CLL és el mètode estàndard utilitzat pels millors speedcubers de 2x2. Aprenent a reconèixer i executar tots els 40 casos, pots eliminar un pas sencer de la teva resolució.
+
+## Com funciona CLL
+
+1. **Resoldre la primera cara** — igual que Ortega, construeix una cara blanca a la part inferior (els colors laterals no cal que coincideixin).
+2. **Reconèixer el cas CLL** — mira la cara superior i els colors laterals per identificar quin dels 40 casos tens.
+3. **Aplicar un algorisme** — això orienta i permuta simultàniament totes les cantonades de la capa superior.
+4. **AUF + ajust inferior** — com a màxim un gir de la capa U i un gir de la capa D per acabar.
+
+## Recordatori de notació
+
+- **R** = Dreta &nbsp;&nbsp; **L** = Esquerra &nbsp;&nbsp; **U** = Amunt &nbsp;&nbsp; **D** = Avall &nbsp;&nbsp; **F** = Davant &nbsp;&nbsp; **B** = Darrere
+- Una lletra sola significa **90° en sentit horari**. Afegint **'** significa **sentit antihorari**. Afegint **2** significa **180°**.
+
+---
+
+## Grups de casos CLL
+
+Els 40 casos CLL s'organitzen en 7 grups basats en el patró d'orientació de la cara superior. A continuació es mostren els casos més importants de cada grup amb els seus algorismes.
+
+---
+
+## Casos Sune (4 de 6)
+
+Una cantonada està orientada (groc cap amunt) i les altres tres necessiten ser girades. Aquest és el grup més comú.
+
+### Sune 1 — Intercanvi adjacent
+
+Col·loca la cantonada resolta a la part frontal-esquerra. Les tres cantonades no resoltes giren en sentit horari.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Intercanvi diagonal
+
+Mateix patró d'orientació, però les cantonades necessiten un intercanvi diagonal.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Pur (sense intercanvi)
+
+Orientació resolta sense necessitat de canvi de posició.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Intercanvi adjacent (Mirall)
+
+Col·loca la cantonada resolta a la part frontal-dreta.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Casos Anti-Sune (3 de 6)
+
+Mirall de Sune — una cantonada està orientada i les altres tres giren en sentit antihorari.
+
+### Anti-Sune 1 — Intercanvi adjacent
+
+Col·loca la cantonada resolta a la part frontal-dreta. Les tres cantonades no resoltes giren en sentit antihorari.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Intercanvi diagonal
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Pur (sense intercanvi)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Casos H (4 de 4)
+
+Dues cantonades oposades estan orientades (groc cap amunt) i les altres dues tenen el groc als costats.
+
+### H 1 — Intercanvi adjacent
+
+Dos adhesius grocs a la part superior en posicions diagonals.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Intercanvi diagonal
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Sense intercanvi
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Columnes
+
+Ambdós parells de cantonades diagonals necessiten intercanvi.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Casos Pi (4 de 6)
+
+Dues cantonades adjacents tenen groc a dalt, les altres dues tenen groc als costats. La cara superior sembla la lletra grega Pi.
+
+### Pi 1 — Intercanvi diagonal
+
+Col·loca les dues cantonades orientades al darrere.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Intercanvi adjacent (Dreta)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Intercanvi adjacent (Esquerra)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Sense intercanvi
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Casos T (3 de 6)
+
+La cara superior mostra un patró en forma de T d'adhesius grocs — una cantonada orientada, una cantonada adjacent amb groc al davant i les altres dues amb groc als costats.
+
+### T 1 — Intercanvi adjacent
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Intercanvi diagonal
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Sense intercanvi
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Casos U (3 de 6)
+
+Una cantonada orientada correctament amb les altres tres disposades en un patró en U als costats.
+
+### U 1 — Intercanvi adjacent
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Intercanvi diagonal
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Sense intercanvi
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Casos L (3 de 6)
+
+Dues cantonades adjacents estan girades en la mateixa direcció — la cara superior mostra un patró en forma de L.
+
+### L 1 — Intercanvi adjacent
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Intercanvi diagonal
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Sense intercanvi
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Després de CLL: Acabar la resolució
+
+Un cop aplicat l'algorisme CLL, la cara superior està completament resolta (orientada i permutada). Pot ser que necessitis:
+
+1. **AUF (Ajustar cara U)** — un sol gir U o U' per alinear la capa superior amb la inferior.
+2. **Ajust de la capa inferior** — si la capa inferior està desplaçada, un sol gir D o D' ho corregeix.
+3. **Intercanvi de la capa inferior** — rarament, la capa inferior pot necessitar un intercanvi adjacent o diagonal. Utilitza els mateixos algorismes PBL del mètode Ortega:
+   - **Intercanvi diagonal:** R2 F2 R2
+   - **Intercanvi adjacent:** R U' R F2 R' U R'
+
+---
+
+## Estratègia d'aprenentatge
+
+Aprendre tots els 40 casos CLL de cop és aclaparador. Aquí tens un ordre d'aprenentatge recomanat:
+
+1. **Comença amb Sune i Anti-Sune** (12 casos) — els més comuns i molts algorismes són curts.
+2. **Afegeix els casos T i U** (12 casos) — relativament fàcils de reconèixer i executar.
+3. **Aprèn els casos Pi** (6 casos) — patró d'orientació distintiu.
+4. **Aprèn els casos L** (6 casos) — reconeixement similar a Pi però amb diferent direcció de gir.
+5. **Acaba amb els casos H** (4 casos) — el grup més rar.
+
+## Consells de reconeixement
+
+- **Mira primer la cara superior** per identificar el grup d'orientació (quants adhesius grocs miren cap amunt i on).
+- **Després comprova els colors laterals** per determinar quin cas específic del grup tens.
+- **Practica per grups** — entrena un grup cada vegada fins que el reconeixement sigui instantani.
+- **Utilitza scrambles inversos** — prepara un cas, resol-lo i després intenta predir l'invers.
+
+---
+
+**Amb CLL dominat, pots aconseguir mitjanes inferiors a 3 segons al 2x2.** L'enfocament d'una sola mirada elimina el temps de pausa entre OLL i PBL, fent les teves resolucions més ràpides i fluides. Continua practicant el reconeixement — la velocitat ve d'identificar els casos instantàniament.

@@ -1,0 +1,325 @@
+---
+title: "金字塔魔方进阶技巧"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 金字塔魔方进阶技巧
+
+准备好将你的金字塔魔方解法提升到新水平了吗？本指南涵盖了顶级金字塔魔方速拧选手用来达到平均5秒以下成绩的进阶方法。我们将重点介绍 **L4E（最后4条棱）** 方法、**锁孔（Keyhole）** 技术和 **顶层优先（Top-First）** 方法。
+
+## 记号提醒
+
+**层（大写字母）** — 旋转整个层（不包括尖端）：
+- **U** = 上层 &nbsp;&nbsp; **R** = 右层 &nbsp;&nbsp; **L** = 左层 &nbsp;&nbsp; **B** = 后层
+
+**尖端（小写字母）** — 仅旋转尖端：
+- **u** = 上尖端 &nbsp;&nbsp; **r** = 右尖端 &nbsp;&nbsp; **l** = 左尖端 &nbsp;&nbsp; **b** = 后尖端
+
+单独字母表示**顺时针 120°**。加 **'** 表示**逆时针 120°**。
+
+---
+
+## L4E 方法（最后4条棱）
+
+L4E 方法是最流行的金字塔魔方进阶方法。与逐层解法不同，你先解决一个块，然后使用算法在一步中解决**最后4条棱**。
+
+### 概述
+
+| 步骤 | 描述 | 技术 |
+|------|-------------|-----------|
+| 1 | 解决尖端 | 直觉（与入门相同） |
+| 2 | 解决 V 形 | 直觉 — 一个中心 + 两条棱 |
+| 3 | 解决最后4条棱 | 算法 — 一看 |
+
+### 步骤1：解决尖端
+
+与入门方法相同。将所有4个尖端对齐，使其与相邻中心匹配。这一步很简单 — 每个尖端只有3个位置。
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### 步骤2：解决 V 形
+
+选择一个底面，构建一个 **V 形**：一个中心块及其两条相邻棱正确放置。这给你一个在底部已解决的 1x1x2 块。
+
+将金字塔魔方保持 V 形在左下方。V 形由底部中心和连接它到左右面的两条棱组成。
+
+**构建 V 形** — 这一步是直觉性的。找到属于你选定中心旁边的两条棱，使用层转动放置：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**翻转的棱在 V 形中** — 如果一条棱在正确位置但翻转了，弹出并重新插入：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**提示：**
+- 选择需要最少步骤的 V 形 — 开始前检查所有4个可能的 V 形位置。
+- V 形应在观察时间内完全规划好（15秒对于金字塔魔方绰绰有余）。
+
+### 步骤3：解决最后4条棱
+
+V 形解决后，剩余4条棱。识别情况并应用相应算法。大约有30种 L4E 情况，但许多是彼此的镜像，减少了需要学习的独特情况。
+
+将金字塔魔方保持 **V 形在左下方**（已解决的块面向你的左侧）。
+
+---
+
+#### L4E 情况1：所有4条棱需要顺时针循环
+
+**算法：R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E 情况2：所有4条棱需要逆时针循环
+
+**算法：L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E 情况3：两条棱交换（相邻，前方）
+
+**算法：R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E 情况4：两条棱交换（相邻，后方）
+
+**算法：L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E 情况5：两条棱原地翻转（前对）
+
+**算法：R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E 情况6：两条棱原地翻转（后对）
+
+**算法：L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E 情况7：三条棱顺时针循环 + 一条翻转
+
+**算法：R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E 情况8：三条棱逆时针循环 + 一条翻转
+
+**算法：L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E 情况9：所有4条棱翻转
+
+**算法：R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E 情况10：两条对面棱交换
+
+**算法：R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E 情况11：循环 + 双翻转
+
+**算法：R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E 情况12：相邻交换带翻转
+
+**算法：L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## 锁孔方法
+
+锁孔方法是 L4E 更直觉化的替代方案。与其为每种情况学习算法，你使用一个未解决的棱槽作为**锁孔**来自由插入其他棱块。
+
+### 工作原理
+
+1. **解决尖端**（一如既往）。
+2. **解决一条棱** — 正确放置一条底部棱。
+3. **使用空槽作为锁孔** — 第二个底部棱槽留空，给你自由地将棱插入顶层而无限制。
+4. **解决顶层棱** — 使用锁孔逐个插入每条顶层棱。
+5. **关闭锁孔** — 最后插入最后一条底部棱。
+
+### 锁孔插入示例
+
+锁孔在底层右侧时，你可以自由插入顶层棱：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**翻转插入** — 如果棱在插入前需要翻转：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**提示：**
+- 锁孔方法对于从入门过渡到进阶的解题者来说非常棒。
+- 它需要的算法比 L4E 少，但在最高水平上稍慢。
+- 将锁孔作为学习 L4E 的踏脚石 — 你在这里建立的直觉有助于 L4E 识别。
+
+---
+
+## 顶层优先方法
+
+顶层优先方法颠倒了通常的解题顺序：先解决**顶层**，然后完成底部。
+
+### 概述
+
+1. **解决尖端。**
+2. **解决整个顶层** — 所有3条顶部棱正确定向和排列在顶部中心周围。
+3. **解决底层** — 放置剩余的3条底部棱。
+
+### 解决顶层
+
+直觉性地构建顶层。由于你从顶部开始，没有限制 — 你可以自由转动任何层。
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### 解决底部
+
+顶层完成后，底部3条棱可以使用与 L4E 类似但限于底部的少量算法来解决。
+
+**底部棱顺时针循环：**
+
+**算法：R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**逆时针循环：**
+
+**算法：L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**提示：**
+- 顶层优先在比赛中不太常见，但对于某些打乱可以非常快。
+- 当打乱后顶层已经部分解决时效果最好。
+- 与观察规划结合 — 如果你看到一个简单的顶层，就用顶层优先。
+
+---
+
+## 速拧技巧
+
+### 观察规划
+
+金字塔魔方的棱块比任何其他 WCA 魔方都少，这意味着你可以在观察中**规划更多的解法**：
+
+- **始终在15秒观察中规划尖端 + V 形。**
+- 高级解题者可以在简单打乱时规划**整个解法**。
+- 练习扩展你的规划 — 从尖端开始，然后添加 V 形，然后尝试预测 L4E 情况。
+
+### 转动技术
+
+- 使用**指尖**进行精确、快速的转动 — 而不是整只手旋转。
+- 金字塔魔方受益于轻巧、弹指式的转动而非用力的转动。
+- 练习用食指做 **R** 和 **L** 层转动，用拇指做 **U** 转动。
+
+### 色彩中立
+
+- 与 3x3 不同，在金字塔魔方上实现**色彩中立**非常可行。
+- 练习以4个面中的任何一个作为底面开始 — 这给你4倍的简单 V 形选择。
+- 色彩中立对于5秒以下解法几乎是必须的。
+
+### 练习安排
+
+1. **训练 L4E 情况** — 用其逆算法设置每种情况，解决，重复。目标是即时识别。
+2. **计时解题** — 做12次解题为一组，跟踪你的平均值。
+3. **一看练习** — 尝试在构建 V 形的步骤中识别 L4E 情况，在完成之前。
+4. **慢速解题** — 以半速练习，专注于流畅转动和零停顿。
+
+---
+
+**掌握 L4E 和良好的观察规划后，金字塔魔方平均4秒以下是可以实现的。** 金字塔魔方更看重规划和识别能力而非纯粹的转动速度。专注于提前预测你的 L4E 情况，解题将会变得毫不费力。

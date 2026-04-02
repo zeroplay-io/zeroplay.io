@@ -1,0 +1,317 @@
+---
+title: "Teknik Lanjutan Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Teknik Lanjutan Skewb
+
+Tingkatkan kemampuan menyelesaikan Skewb Anda dari level pemula ke level kompetisi. Panduan ini mencakup **metode menengah Sarah**, yang meningkatkan metode pemula dengan menyelesaikan semua center yang tersisa dalam satu langkah, serta algoritma lanjutan dan strategi speed solving yang digunakan oleh pemecah Skewb terbaik.
+
+## Pengingat Notasi
+
+Skewb berputar di sekitar **sudut** bukan sisi:
+
+- **R** = Sudut depan kanan searah jarum jam &nbsp;&nbsp; **R'** = berlawanan jarum jam
+- **L** = Sudut depan kiri searah jarum jam &nbsp;&nbsp; **L'** = berlawanan jarum jam
+- **U** = Sudut depan atas kanan searah jarum jam &nbsp;&nbsp; **U'** = berlawanan jarum jam
+- **B** = Sudut belakang kanan searah jarum jam &nbsp;&nbsp; **B'** = berlawanan jarum jam
+
+Pegang Skewb dengan **center putih di bawah** untuk semua langkah.
+
+---
+
+## Metode Menengah Sarah
+
+Metode pemula Sarah menyelesaikan Skewb dalam 3 langkah: sisi pertama, lalu center, lalu sudut lapisan terakhir. Peningkatan menengah **menggabungkan langkah center dan sudut**, menyelesaikan semua 5 center yang tersisa dalam SATU algoritma setelah sisi pertama selesai.
+
+### Gambaran Umum
+
+| Langkah | Pemula | Menengah |
+|------|----------|-------------|
+| 1 | Selesaikan satu sisi | Selesaikan satu sisi (sama) |
+| 2 | Posisikan center | **Selesaikan semua 5 center dalam satu langkah** |
+| 3 | Orientasi sudut lapisan terakhir | Orientasi sudut lapisan terakhir (sama) |
+
+Peningkatan utama adalah Langkah 2: alih-alih menggunakan Sledgehammer berulang kali untuk memposisikan center satu per satu, Anda mempelajari serangkaian algoritma yang menyelesaikan semua center secara bersamaan.
+
+### Langkah 1: Selesaikan Satu Sisi
+
+Bangun **sisi putih** yang lengkap di bawah — semua 4 sudut di sekitar center putih harus berada di tempatnya dengan putih menghadap ke bawah, dan warna sisi yang berdekatan harus cocok. Langkah ini identik dengan metode pemula.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Gunakan Sledgehammer dengan gerakan persiapan untuk menempatkan setiap sudut putih. Dengan latihan, langkah ini menjadi cepat dan intuitif.
+
+### Langkah 2: Selesaikan Semua 5 Center (One-Look)
+
+Setelah sisi pertama selesai, lihat **5 center yang tersisa** (atas + 4 sisi) dan identifikasi kasus Anda. Terapkan satu algoritma untuk menyelesaikan semuanya sekaligus.
+
+Ada beberapa kasus tergantung berapa banyak center yang berada di posisi benar:
+
+---
+
+#### Kasus 1: Siklus 4 Berdekatan
+
+Empat center perlu bersiklus. Center atas benar, tetapi 4 center sisi perlu berputar.
+
+**Algoritma: R' L R L' R' L R L'** (Sledgehammer Ganda)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Kasus 2: Tukar 2 Berlawanan
+
+Dua center sisi yang berlawanan perlu ditukar.
+
+**Algoritma: R L' R' L R L' R' L** (Sledgehammer Ganda Terbalik)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Kasus 3: Tukar 2 Berdekatan
+
+Dua center sisi yang berdekatan perlu ditukar. Atur kedua center yang akan ditukar di depan dan kanan.
+
+**Algoritma: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Kasus 4: Tukar Atas-Sisi + Siklus
+
+Center atas perlu ditukar dengan center sisi, dan center sisi yang tersisa bersiklus.
+
+**Algoritma: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Kasus 5: Siklus Tiga
+
+Tiga center perlu bersiklus (atas tetap, 3 sisi berputar). Atur center sisi yang diam di belakang.
+
+**Algoritma: R' L R L'** (Sledgehammer Tunggal — dengan persiapan benar)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Pelajari cara mengidentifikasi kasus center dengan cepat dengan memeriksa center atas terlebih dahulu, lalu memindai 4 sisi.
+- Banyak dari ini adalah variasi Sledgehammer — jika Anda mengenal Sledgehammer dengan baik, algoritma ini terasa alami.
+- Latih pengenalan dengan mengacak Skewb, menyelesaikan sisi pertama, dan mengidentifikasi kasus center sebelum mengeksekusi.
+
+### Langkah 3: Orientasi Sudut Lapisan Terakhir
+
+Setelah menyelesaikan semua center, sudut lapisan terakhir mungkin masih perlu diputar. Langkah ini sama dengan metode pemula.
+
+#### Semua 4 sudut perlu putaran searah jarum jam
+
+**Algoritma: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Semua 4 sudut perlu putaran berlawanan jarum jam
+
+**Algoritma: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 sudut perlu diputar (berdekatan)
+
+Atur dua sudut yang belum selesai di depan. Gunakan U untuk memposisikannya, jalankan algoritma, lalu batalkan U.
+
+**Algoritma: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 sudut perlu diputar (diagonal)
+
+**Algoritma: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Algoritma Lanjutan
+
+Di luar metode menengah, berikut algoritma tambahan yang menangani kasus kurang umum dengan lebih efisien.
+
+### Ekuivalen Z-Perm
+
+Ketika dua pasang sudut perlu ditukar (seperti pola berbentuk Z):
+
+**Algoritma: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Kasus Pi
+
+Sisi atas menunjukkan pola Pi — dua sudut berdekatan terorientasi, dua tidak:
+
+**Algoritma: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Persiapan dan Orientasi Sudut
+
+Ketika sudut perlu reorientasi, gunakan gerakan persiapan untuk mengkonjugasi siklus Sledgehammer yang memutarnya ke tempatnya:
+
+**Algoritma: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Tukar Center Berlawanan Cepat
+
+Algoritma yang lebih efisien untuk menukar dua center berlawanan:
+
+**Algoritma: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Orientasi Tiga Sudut
+
+Tiga sudut perlu diputar (satu tetap benar):
+
+**Algoritma: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Tukar Sudut Berdekatan
+
+Dua sudut berdekatan perlu menukar posisi (bukan hanya diputar):
+
+**Algoritma: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Konsep Penyelesaian One-Look
+
+Tujuan akhir dalam penyelesaian Skewb kompetitif adalah memprediksi lapisan terakhir saat masih menyelesaikan sisi pertama.
+
+### Memprediksi Lapisan Terakhir
+
+Selama Langkah 1, saat membangun sisi putih, perhatikan **center dan sudut lapisan atas**. Dengan latihan, Anda dapat mengidentifikasi kasus Langkah 2 dan 3 sebelum menyelesaikan Langkah 1.
+
+- **Perhatikan center atas** — apakah bergerak ke posisi yang benar saat memasukkan sudut putih terakhir?
+- **Lacak center sisi** — perhatikan center sisi mana yang sudah benar.
+- **Rencanakan penyelesaian lengkap** — pemecah lanjutan dapat merencanakan seluruh penyelesaian selama inspeksi.
+
+### Mempengaruhi Lapisan Terakhir
+
+Ketika ada beberapa cara memasukkan sudut putih terakhir, pilih penyisipan yang memberikan **kasus Langkah 2 yang lebih mudah**:
+
+- Jika dua penyisipan sama-sama menyelesaikan sudut, pilih yang memposisikan lebih banyak center dengan benar.
+- Terkadang Langkah 1 yang sedikit lebih panjang menyebabkan Langkah 2 atau 3 terlewati.
+
+---
+
+## Tips Speed Solving
+
+### Pegangan dan Putaran
+
+- Pegang Skewb dengan **ujung jari di sudut** — Anda memutar sudut, bukan sisi.
+- Gunakan **jari telunjuk dan ibu jari** setiap tangan untuk memegang sudut berlawanan.
+- Latih putaran sudut yang halus dan terkontrol — Skewb menghargai presisi daripada kecepatan mentah.
+- **Minimalkan pergantian pegangan** — coba eksekusi seluruh Sledgehammer tanpa mengubah pegangan.
+
+### Netralitas Warna
+
+Netralitas warna pada Skewb berarti Anda dapat memulai dengan **sisi mana pun** sebagai sisi pertama, bukan hanya putih. Ini sangat powerful:
+
+- Dengan netralitas warna, Anda memiliki **6 kemungkinan sisi pertama** untuk dipilih.
+- Pilih sisi yang paling dekat dengan selesai — terkadang 2-3 sudut sudah di tempatnya.
+- Netralitas warna hampir wajib untuk penyelesaian di bawah 4 detik.
+
+**Cara berlatih:**
+1. Mulai dengan netral antara 2 warna berlawanan (misalnya putih dan kuning).
+2. Tambahkan warna awal secara bertahap sampai Anda bisa memulai dari sisi mana pun.
+3. Selama inspeksi, pindai semua 6 sisi dengan cepat dan pilih yang termudah.
+
+### Perencanaan Inspeksi
+
+Skewb hanya memiliki 14 bagian terlihat (6 center + 8 sudut), membuat perencanaan penyelesaian lengkap menjadi realistis:
+
+- **Selalu rencanakan sisi pertama sepenuhnya** selama inspeksi.
+- **Identifikasi kasus center** sebelum mulai menyelesaikan.
+- **Lanjutan:** rencanakan hingga Langkah 2 — ketahui algoritma mana yang akan Anda gunakan sebelum menyentuh puzzle.
+
+### Rutinitas Latihan
+
+1. **Latihan sisi pertama** — acak dan selesaikan hanya sisi pertama, target di bawah 2 detik.
+2. **Pengenalan center** — setelah menyelesaikan sisi pertama, identifikasi kasus center secepat mungkin tanpa mengeksekusi.
+3. **Penyelesaian lengkap** — set 12 penyelesaian berwaktu, lacak rata-rata 5 dan rata-rata 12.
+4. **Latihan algoritma** — latih setiap algoritma center dan sudut 20 kali berturut-turut untuk memori otot.
+5. **Latihan warna netral** — paksa diri Anda untuk memulai dengan warna berbeda setiap penyelesaian.
+
+---
+
+**Dengan metode menengah Sarah dan latihan yang tekun, rata-rata Skewb di bawah 5 detik ada dalam jangkauan.** Skewb adalah salah satu puzzle yang paling ramah perencanaan dalam speedcubing — lebih sedikit bagian berarti Anda dapat memprediksi lebih banyak selama inspeksi. Fokus pada kecepatan pengenalan dan putaran yang halus, dan Anda akan melihat kemajuan yang cepat.

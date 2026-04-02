@@ -1,0 +1,724 @@
+---
+title: Algoritma OLL
+sidebar_position: 7
+description: Rujukan algoritma OLL (Orientasi Lapisan Terakhir) untuk Kiub Rubik 3x3. 2-Look OLL untuk pemula ditambah 45 kes OLL penuh yang paling biasa.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algoritma OLL
+
+**OLL (Orientasi Lapisan Terakhir)** ialah langkah pertama lapisan terakhir dalam kaedah CFOP. Matlamatnya ialah menjadikan seluruh permukaan atas satu warna (kuning). Terdapat **57 kes OLL** secara keseluruhan.
+
+Jika anda pemula, mulakan dengan **2-Look OLL** — pendekatan yang dipermudahkan yang hanya memerlukan **10 algoritma** berbanding semua 57.
+
+Panduan ini merangkumi 2-Look OLL serta **45 kes** OLL penuh yang paling kerap ditemui, disusun mengikut kategori bentuk.
+
+---
+
+## 2-Look OLL
+
+2-Look OLL membahagikan langkah orientasi kepada dua langkah yang lebih kecil:
+
+1. **Orientasi tepi** — membuat palang kuning di atas (3 kes)
+2. **Orientasi sudut** — menjadikan seluruh permukaan atas kuning (7 kes)
+
+Ini bermakna anda hanya perlu mempelajari **10 algoritma** secara keseluruhan.
+
+### Langkah 1: Orientasi Tepi (Membuat Palang Kuning)
+
+Lihat permukaan atas. Abaikan sudut dan fokus hanya pada **tepi**. Anda akan melihat salah satu daripada tiga corak:
+
+#### Titik (Tiada tepi diorientasi)
+
+Tiada tepi kuning menghadap ke atas. Gunakan algoritma ini untuk ke bentuk L, kemudian gunakan algoritma bentuk L.
+
+**Algoritma: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Bentuk L (Dua tepi bersebelahan diorientasi)
+
+Dua tepi kuning membentuk **bentuk L**. Pegang kiub supaya L berada di kedudukan **belakang-kiri**.
+
+**Algoritma: f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f'"
+  alg="f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Garisan (Dua tepi bertentangan diorientasi)
+
+Dua tepi kuning membentuk **garisan mendatar**. Pegang kiub supaya garisan berjalan dari **kiri ke kanan**.
+
+**Algoritma: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### Langkah 2: Orientasi Sudut (7 Kes)
+
+Anda kini mempunyai palang kuning. Lihat permukaan atas dan kenal pasti berapa **sudut** yang mempunyai kuning menghadap ke atas.
+
+#### Sune (1 sudut diorientasi, kuning menghala ke kiri)
+
+Pegang kiub supaya sudut yang selesai berada di **depan-kiri**.
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Anti-Sune (1 sudut diorientasi, kuning menghala ke kanan)
+
+Pegang kiub supaya sudut yang selesai berada di **depan-kanan**.
+
+**Algoritma: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+#### H (Sune Berganda — 0 sudut diorientasi, corak papan dam)
+
+Pelekat kuning membentuk corak papan dam di atas (tiada sudut menghadap ke atas, lampu hadapan di dua sisi bertentangan).
+
+**Algoritma: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Pi (0 sudut diorientasi, lampu hadapan di satu sisi)
+
+Tiada sudut menghadap ke atas. Dua pelekat kuning di sisi yang sama (lampu hadapan di depan).
+
+**Algoritma: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+#### U (Lampu hadapan — 2 sudut diorientasi di sisi yang sama)
+
+Dua sudut selesai, kedua-duanya di **sisi yang sama**. Pegang lampu hadapan di **kiri**.
+
+**Algoritma: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+#### T (2 sudut diorientasi secara pepenjuru)
+
+Dua sudut selesai secara pepenjuru. Pelekat kuning di depan-kiri dan belakang-kanan (atau sebaliknya).
+
+**Algoritma: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+#### L (2 sudut bersebelahan diorientasi, lampu hadapan pepenjuru)
+
+Dua sudut selesai pada kedudukan bersebelahan dengan corak tertentu.
+
+**Algoritma: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## OLL Penuh — Semua Tepi Diorientasi (OCLL, OLL 21-27)
+
+Kes-kes ini mempunyai keempat-empat tepi sudah diorientasi (palang kuning sudah siap). Hanya sudut yang perlu diorientasi.
+
+### OLL 21 — H (Sune Berganda)
+
+**Algoritma: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 22 — Pi
+
+**Algoritma: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+### OLL 23 — Headlights
+
+**Algoritma: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+### OLL 24 — Chameleon
+
+**Algoritma: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 25 — Bowtie
+
+**Algoritma: F' r U R' U' r' F R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F' r U R U' r' F"
+  alg="F' r U R' U' r' F R"
+  stickering="OLL"
+/>
+
+### OLL 26 — Sune
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 27 — Anti-Sune
+
+**Algoritma: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk T
+
+### OLL 33
+
+**Algoritma: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 45
+
+**Algoritma: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Segi Empat
+
+### OLL 5
+
+**Algoritma: r' U2 R U R' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' R U' R' U2 r"
+  alg="r' U2 R U R' U r"
+  stickering="OLL"
+/>
+
+### OLL 6
+
+**Algoritma: r U2 R' U' R U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U R' U R U2 r'"
+  alg="r U2 R' U' R U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk C
+
+### OLL 34
+
+**Algoritma: R U R2 U' R' F R U R U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R' U' R' F' R U R2 U' R'"
+  alg="R U R2 U' R' F R U R U' F'"
+  stickering="OLL"
+/>
+
+### OLL 46
+
+**Algoritma: R' U' R' F R F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F R' F' R U R"
+  alg="R' U' R' F R F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk W
+
+### OLL 36
+
+**Algoritma: L' U' L U' L' U L U L F' L' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L F L' U' L' U' L U L' U L"
+  alg="L' U' L U' L' U L U L F' L' F"
+  stickering="OLL"
+/>
+
+### OLL 38
+
+**Algoritma: R U R' U R U' R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U R' U' R U' R'"
+  alg="R U R' U R U' R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk P
+
+### OLL 31
+
+**Algoritma: R' U' F U R U' R' F' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F R U R' U' F' U R"
+  alg="R' U' F U R U' R' F' R"
+  stickering="OLL"
+/>
+
+### OLL 32
+
+**Algoritma: L U F' U' L' U L F L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L F' L' U' L U F U' L'"
+  alg="L U F' U' L' U L F L'"
+  stickering="OLL"
+/>
+
+### OLL 43
+
+**Algoritma: F' U' L' U L F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L' U' L U F"
+  alg="F' U' L' U L F"
+  stickering="OLL"
+/>
+
+### OLL 44
+
+**Algoritma: F U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U R' U' F'"
+  alg="F U R U' R' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk Ikan
+
+### OLL 9
+
+**Algoritma: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 10
+
+**Algoritma: R U R' U R' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 35
+
+**Algoritma: R U2 R2 F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 37
+
+**Algoritma: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk Langkah Kuda
+
+### OLL 13
+
+**Algoritma: F U R U2 R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U2 R' U' F'"
+  alg="F U R U2 R' U' R U R' F'"
+  stickering="OLL"
+/>
+
+### OLL 14
+
+**Algoritma: R' F R U R' F' R F U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U F' R' F R U' R' F' R"
+  alg="R' F R U R' F' R F U' F'"
+  stickering="OLL"
+/>
+
+### OLL 15
+
+**Algoritma: r' U' r R' U' R U r' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' r U' R' U R r' U r"
+  alg="r' U' r R' U' R U r' U r"
+  stickering="OLL"
+/>
+
+### OLL 16
+
+**Algoritma: r U r' R U R' U' r U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U r' U R U' R' r U' r'"
+  alg="r U r' R U R' U' r U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Bentuk Sukar
+
+### OLL 29
+
+**Algoritma: R U R' U' R U' R' F' U' F R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U' R' F' U F R U R' U R U' R'"
+  alg="R U R' U' R U' R' F' U' F R U R'"
+  stickering="OLL"
+/>
+
+### OLL 30
+
+**Algoritma: F R' F R2 U' R' U' R U R' F2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F2 R U' R' U R U R2 F' R F'"
+  alg="F R' F R2 U' R' U' R U R' F2"
+  stickering="OLL"
+/>
+
+### OLL 41
+
+**Algoritma: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 42
+
+**Algoritma: R' U' R U' R' U2 R F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R' U2 R U R' U R"
+  alg="R' U' R U' R' U2 R F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Kilat
+
+### OLL 7
+
+**Algoritma: r U R' U R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' U' R U' r'"
+  alg="r U R' U R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 8
+
+**Algoritma: r' U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r"
+  alg="r' U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 11
+
+**Algoritma: r U R' U R' F R F' R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' F R' F' R U' R U' r'"
+  alg="r U R' U R' F R F' R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 12
+
+**Algoritma: F R U R' U' F' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' F U R U' R' F'"
+  alg="F R U R' U' F' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 39
+
+**Algoritma: L F' L' U' L U F U' L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L U F' U' L' U L F L'"
+  alg="L F' L' U' L U F U' L'"
+  stickering="OLL"
+/>
+
+### OLL 40
+
+**Algoritma: R' F R U R' U' F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F U R U' R' F' R"
+  alg="R' F R U R' U' F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Kes Titik
+
+Ini adalah kes OLL yang paling sukar — tiada tepi yang diorientasi.
+
+### OLL 1
+
+**Algoritma: R U2 R2 F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 2
+
+**Algoritma: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+### OLL 3
+
+**Algoritma: f R U R' U' f' U' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U f U R U' R' f'"
+  alg="f R U R' U' f' U' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 4
+
+**Algoritma: f R U R' U' f' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' f U R U' R' f'"
+  alg="f R U R' U' f' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 17
+
+**Algoritma: R U R' U R' F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 18
+
+**Algoritma: r U R' U R U2 r2 U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r2 U2 R' U' R U' r'"
+  alg="r U R' U R U2 r2 U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 19
+
+**Algoritma: r' R U R U R' U' r R2 F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R2 r' U R U' R' U' R' r"
+  alg="r' R U R U R' U' r R2 F R F'"
+  stickering="OLL"
+/>
+
+### OLL 20
+
+**Algoritma: r U R' U' r' U2 R U R U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R' U' R' U2 r U R U' r'"
+  alg="r U R' U' r' U2 R U R U' R2 U2 R"
+  stickering="OLL"
+/>
+
+---
+
+## Tips Pembelajaran
+
+1. **Mulakan dengan 2-Look OLL** — kuasai 10 algoritma sebelum menangani set penuh
+2. **Pelajari OCLL seterusnya** — kes 21-27 adalah yang paling biasa dan dibina atas 2-Look
+3. **Tambah kategori secara beransur-ansur** — bentuk T, bentuk P, dan bentuk ikan adalah langkah seterusnya yang baik
+4. **Latih pengecaman** — keupayaan mengenal pasti kes dengan cepat sama pentingnya dengan mengetahui algoritma
+5. **Gunakan helah jari** — fokus pada pelaksanaan lancar setelah algoritma dihafal
+
+:::tip
+Semasa berlatih, kacau kiub dan selesaikan semuanya hingga OLL. Kemudian latih mengenal pasti dan menyelesaikan kes OLL. Ulang sehingga pengecaman menjadi automatik.
+:::

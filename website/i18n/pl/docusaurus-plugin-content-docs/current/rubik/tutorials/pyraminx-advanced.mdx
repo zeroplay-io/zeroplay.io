@@ -1,0 +1,325 @@
+---
+title: "Pokročilé techniky Pyraminx"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pokročilé techniky Pyraminx
+
+Jste připraveni posunout své řešení Pyraminx na další úroveň? Tento průvodce pokrývá pokročilé metody, které používají nejlepší speedcubeři Pyraminx k dosažení průměrů pod 5 sekund. Zaměříme se na metodu **L4E (Poslední 4 hrany)**, techniku **Keyhole** a přístup **Shora dolů**.
+
+## Przypomnienie notacji
+
+**Vrstvy (velká písmena)** — otočení celé vrstvy (bez špičky):
+- **U** = Horní vrstva &nbsp;&nbsp; **R** = Pravá vrstva &nbsp;&nbsp; **L** = Levá vrstva &nbsp;&nbsp; **B** = Zadní vrstva
+
+**Špičky (malá písmena)** — otočení pouze špičky:
+- **u** = Horní špička &nbsp;&nbsp; **r** = Pravá špička &nbsp;&nbsp; **l** = Levá špička &nbsp;&nbsp; **b** = Zadní špička
+
+Samotné písmeno znamená **otočení o 120° ve směru hodinových ručiček**. Přidání **'** znamená **otočení o 120° proti směru hodinových ručiček**.
+
+---
+
+## Metoda L4E (Poslední 4 hrany)
+
+Metoda L4E je nejpopulárnější pokročilou metodou pro Pyraminx. Místo řešení vrstvu po vrstvě nejprve vyřešíte jeden blok a poté vyřešíte **poslední 4 hrany** v jednom kroku pomocí algoritmů.
+
+### Przegląd
+
+| Krok | Popis | Technika |
+|------|-------------|-----------|
+| 1 | Vyřešit špičky | Intuitivní (stejné jako u začátečníků) |
+| 2 | Vyřešit V | Intuitivní — jeden střed + dvě hrany |
+| 3 | Vyřešit poslední 4 hrany | Algoritmické — jeden pohled |
+
+### Krok 1: Vyřešení špiček
+
+Stejné jako u metody pro začátečníky. Zarovnejte všechny 4 špičky tak, aby odpovídaly sousedním středům. Tento krok je triviální — každá špička má pouze 3 pozice.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Krok 2: Vyřešení V
+
+Vyberte spodní stranu a sestavte **tvar V**: jeden středový dílek se dvěma správně umístěnými sousedními hranami. To vám dá vyřešený blok 1×1×2 na spodku.
+
+Držte Pyraminx s V vlevo dole. V se skládá ze spodního středu a dvou hran, které ho spojují s levou a pravou stranou.
+
+**Sestavení V** — tento krok je intuitivní. Najděte dvě hrany, které patří vedle zvoleného středu, a umístěte je pomocí otáčení vrstev:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V s převrácenou hranou** — pokud je jedna hrana na místě, ale převrácená, vyjměte ji a znovu vložte:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Wskazówki:**
+- Vyberte V, které vyžaduje nejméně tahů — prozkoumejte všechny 4 možné pozice V, než začnete.
+- V by mělo být kompletně naplánováno během inspekce (15 sekund je pro Pyraminx více než dost).
+
+### Krok 3: Vyřešení posledních 4 hran
+
+S vyřešeným V zbývají 4 hrany. Identifikujte případ a aplikujte odpovídající algoritmus. Existuje přibližně 30 případů L4E, ale mnohé z nich jsou vzájemné zrcadlové obrazy, což snižuje počet jedinečných případů, které se musíte naučit.
+
+Držte Pyraminx s **V vlevo dole** (vyřešený blok je na levé straně směrem k vám).
+
+---
+
+#### Případ L4E 1: Všechny 4 hrany potřebují cyklus ve směru hodinových ručiček
+
+**Algorytm: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### Případ L4E 2: Všechny 4 hrany potřebují cyklus proti směru hodinových ručiček
+
+**Algorytm: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### Případ L4E 3: Výměna dvou hran (sousední, přední)
+
+**Algorytm: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### Případ L4E 4: Výměna dvou hran (sousední, zadní)
+
+**Algorytm: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### Případ L4E 5: Dvě hrany se převrátí na místě (přední pár)
+
+**Algorytm: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### Případ L4E 6: Dvě hrany se převrátí na místě (zadní pár)
+
+**Algorytm: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### Případ L4E 7: Cyklus tří hran ve směru hodinových ručiček + jedno převrácení
+
+**Algorytm: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### Případ L4E 8: Cyklus tří hran proti směru hodinových ručiček + jedno převrácení
+
+**Algorytm: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### Případ L4E 9: Všechny 4 hrany se převrátí
+
+**Algorytm: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### Případ L4E 10: Výměna dvou protilehlých hran
+
+**Algorytm: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### Případ L4E 11: Cyklus + dvojité převrácení
+
+**Algorytm: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### Případ L4E 12: Sousední výměna s převrácením
+
+**Algorytm: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Metoda Keyhole
+
+Metoda Keyhole je intuitivnější alternativou k L4E. Místo učení algoritmů pro každý případ používáte jednu nevyřešenou pozici hrany jako **klíčovou dírku** pro volné vkládání ostatních dílků.
+
+### Jak to funguje
+
+1. **Vyřešte špičky** (jako vždy).
+2. **Vyřešte jednu hranu** — umístěte jednu spodní hranu správně.
+3. **Použijte prázdnou pozici jako klíčovou dírku** — druhá pozice spodní hrany zůstává prázdná, což vám dává volnost vkládat hrany do horní vrstvy bez omezení.
+4. **Vyřešte hrany horní vrstvy** — použijte klíčovou dírku k vložení každé horní hrany jednu po druhé.
+5. **Uzavřete klíčovou dírku** — vložte poslední spodní hranu nakonec.
+
+### Příklad vložení Keyhole
+
+S klíčovou dírkou na pravé straně spodní vrstvy můžete volně vložit hranu horní vrstvy:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Převrácené vložení** — pokud hranu potřebujete před vložením převrátit:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Wskazówki:**
+- Metoda Keyhole je vynikající pro začátečníky přecházející na pokročilé řešení.
+- Vyžaduje méně algoritmů než L4E, ale je na nejvyšší úrovni mírně pomalejší.
+- Použijte Keyhole jako odrazový můstek k L4E — intuice, kterou si zde vybudujete, pomáhá s rozpoznáváním L4E.
+
+---
+
+## Metoda Shora dolů
+
+Metoda Shora dolů obrací typické pořadí řešení: nejprve vyřešíte **horní vrstvu** a poté dokončíte spodek.
+
+### Przegląd
+
+1. **Vyřešte špičky.**
+2. **Vyřešte celou horní vrstvu** — všechny 3 horní hrany orientované a permutované správně kolem horního středu.
+3. **Vyřešte spodní vrstvu** — umístěte zbývající 3 spodní hrany.
+
+### Řešení horní vrstvy
+
+Sestavte horní vrstvu intuitivně. Protože začínáte shora, nejsou žádná omezení — můžete volně otáčet libovolnou vrstvou.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Řešení spodku
+
+S dokončenou horní vrstvou lze 3 spodní hrany vyřešit pomocí malé sady algoritmů podobných případům L4E, ale omezených na spodek.
+
+**Cyklus spodních hran ve směru hodinových ručiček:**
+
+**Algorytm: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Cyklus proti směru hodinových ručiček:**
+
+**Algorytm: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Wskazówki:**
+- Metoda Shora dolů je v soutěži méně běžná, ale pro některá zamíchání může být velmi rychlá.
+- Funguje nejlépe, když je horní vrstva po zamíchání již částečně vyřešená.
+- Kombinujte s plánováním během inspekce — pokud vidíte snadnou horní vrstvu, zvolte metodu Shora dolů.
+
+---
+
+## Tipy pro rychlé řešení
+
+### Plánování při inspekci
+
+Pyraminx má méně dílků než jakýkoli jiný WCA hlavolam, což znamená, že můžete **naplánovat více řešení během inspekce**:
+
+- **Vždy plánujte špičky + V** během 15sekundové inspekce.
+- Pokročilí řešitelé mohou naplánovat **celé řešení** u snadných zamíchání.
+- Procvičujte rozšiřování plánování — začněte špičkami, přidejte V a poté zkuste předpovědět případy L4E.
+
+### Technika otáčení
+
+- Používejte **špičky prstů** pro přesná, rychlá otáčení — ne otáčení celou rukou.
+- Pyraminx profituje z lehkých, rychlých otáčení místo silových.
+- Procvičujte otáčení vrstev **R** a **L** ukazováčky a otáčení **U** palci.
+
+### Barevná neutralita
+
+- Na rozdíl od kostky 3×3 je **barevná neutralita** na Pyraminx velmi dosažitelná.
+- Procvičujte začínání s libovolnou ze 4 stran jako základnou — to vám dává 4× více snadných možností V.
+- Barevná neutralita je téměř povinná pro řešení pod 5 sekund.
+
+### Tréninkový plán
+
+1. **Procvičování případů L4E** — nastavte každý případ jeho inverzem, vyřešte ho, opakujte. Cílem je okamžité rozpoznání.
+2. **Časová řešení** — dělejte série 12 řešení a sledujte svůj průměr.
+3. **Procvičování jednoho pohledu** — zkuste identifikovat případ L4E během kroku stavby V, ještě před jeho dokončením.
+4. **Pomalá řešení** — procvičujte poloviční rychlostí se zaměřením na plynulé otáčení a nulové pauzy.
+
+---
+
+**S osvojeným L4E a dobrým plánováním při inspekci jsou průměry pod 4 sekundy na Pyraminx dosažitelné.** Pyraminx odměňuje plánování a rozpoznávání více než surovou rychlost otáčení. Zaměřte se na včasné předpovídání případu L4E a řešení budou působit bez námahy.

@@ -1,0 +1,374 @@
+---
+title: "2x2 Lanjutan: Metode CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Lanjutan: Metode CLL
+
+Tingkatkan kemampuan menyelesaikan kubus 2x2 Anda dengan metode **CLL (Corners of Last Layer)**. Sementara metode Ortega menyelesaikan lapisan terakhir dalam dua langkah (OLL lalu PBL), CLL menyelesaikan **orientasi dan permutasi** sudut lapisan terakhir dalam **satu algoritma**. Lebih sedikit melihat dan penyelesaian lebih cepat.
+
+## Mengapa CLL?
+
+| Metode | Langkah lapisan terakhir | Algoritma | Kecepatan umum |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 detik |
+| **CLL** | 1 (satu pandangan) | ~40 | 2–4 detik |
+
+CLL adalah metode standar yang digunakan speedcuber 2x2 teratas. Dengan mempelajari semua 40 kasus, Anda menghilangkan satu langkah penuh.
+
+## Cara kerja CLL
+
+1. **Selesaikan sisi pertama** — seperti Ortega, buat sisi putih di bawah (warna samping tidak perlu cocok).
+2. **Kenali kasus CLL** — lihat sisi atas dan warna samping untuk mengidentifikasi kasus Anda.
+3. **Terapkan satu algoritma** — ini secara bersamaan mengorientasi dan mempermutasi semua sudut atas.
+4. **AUF + penyesuaian bawah** — paling banyak satu putaran U dan satu putaran D.
+
+## Pengingat notasi
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+- Huruf sendiri = **90° searah jarum jam**. **'** = **berlawanan jarum jam**. **2** = **180°**.
+
+---
+
+## Grup kasus CLL
+
+40 kasus CLL diorganisir dalam 7 grup berdasarkan pola orientasi sisi atas. Berikut kasus terpenting dari setiap grup.
+
+---
+
+## Kasus Sune (4 dari 6)
+
+Satu sudut berorientasi (kuning menghadap atas), tiga lainnya perlu diputar. Grup paling umum.
+
+### Sune 1 — Tukar berdekatan
+
+Pegang sudut yang sudah selesai di depan-kiri. Tiga sudut yang belum selesai berputar searah jarum jam.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Tukar diagonal
+
+Pola orientasi sama, tetapi sudut memerlukan tukar diagonal.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Murni (tanpa tukar)
+
+Orientasi selesai tanpa perlu perubahan posisi.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Tukar berdekatan (Cermin)
+
+Pegang sudut yang sudah selesai di depan-kanan.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Kasus Anti-Sune (3 dari 6)
+
+Cermin Sune — satu sudut berorientasi, tiga lainnya berputar berlawanan jarum jam.
+
+### Anti-Sune 1 — Tukar berdekatan
+
+Pegang sudut yang sudah selesai di depan-kanan. Tiga sudut yang belum selesai berputar berlawanan jarum jam.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Tukar diagonal
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Murni (tanpa tukar)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Kasus H (4 dari 4)
+
+Dua sudut berlawanan berorientasi (kuning menghadap atas), dua lainnya memiliki kuning di samping.
+
+### H 1 — Tukar berdekatan
+
+Dua stiker kuning di atas pada posisi diagonal.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Tukar diagonal
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Tanpa tukar
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Kolom
+
+Kedua pasangan sudut diagonal perlu ditukar.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Kasus Pi (4 dari 6)
+
+Dua sudut berdekatan memiliki kuning di atas, dua lainnya memiliki kuning di samping. Sisi atas terlihat seperti huruf Yunani Pi.
+
+### Pi 1 — Tukar diagonal
+
+Pegang dua sudut berorientasi di belakang.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Tukar berdekatan (Kanan)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Tukar berdekatan (Kiri)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Tanpa tukar
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Kasus T (3 dari 6)
+
+Sisi atas menunjukkan pola T dari stiker kuning — satu sudut berorientasi, satu sudut berdekatan dengan kuning di depan, dua lainnya dengan kuning di samping.
+
+### T 1 — Tukar berdekatan
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Tukar diagonal
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Tanpa tukar
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Kasus U (3 dari 6)
+
+Satu sudut berorientasi benar, tiga lainnya dalam pola U di samping.
+
+### U 1 — Tukar berdekatan
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Tukar diagonal
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Tanpa tukar
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Kasus L (3 dari 6)
+
+Dua sudut berdekatan diputar ke arah yang sama — sisi atas menunjukkan pola L.
+
+### L 1 — Tukar berdekatan
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Tukar diagonal
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Tanpa tukar
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Setelah CLL: Menyelesaikan
+
+Setelah menerapkan algoritma CLL, sisi atas sepenuhnya selesai. Anda mungkin perlu:
+
+1. **AUF (Sesuaikan sisi U)** — satu putaran U atau U' untuk menyelaraskan lapisan atas dengan bawah.
+2. **Penyesuaian lapisan bawah** — jika bergeser, satu putaran D atau D' memperbaikinya.
+3. **Tukar lapisan bawah** — jarang, mungkin perlu tukar berdekatan atau diagonal. Gunakan algoritma PBL dari metode Ortega:
+   - **Tukar diagonal:** R2 F2 R2
+   - **Tukar berdekatan:** R U' R F2 R' U R'
+
+---
+
+## Strategi belajar
+
+Mempelajari 40 kasus sekaligus sangat berat. Urutan yang direkomendasikan:
+
+1. **Mulai dengan Sune dan Anti-Sune** (12 kasus) — paling umum, banyak algoritma pendek.
+2. **Tambahkan kasus T dan U** (12 kasus) — relatif mudah dikenali dan dilakukan.
+3. **Pelajari kasus Pi** (6 kasus) — pola orientasi khas.
+4. **Pelajari kasus L** (6 kasus) — pengenalan mirip Pi, arah putar berbeda.
+5. **Akhiri dengan kasus H** (4 kasus) — grup paling langka.
+
+## Tips pengenalan
+
+- **Lihat sisi atas dulu** untuk mengidentifikasi grup orientasi.
+- **Kemudian periksa warna samping** untuk menentukan kasus spesifik.
+- **Latihan per grup** — satu grup sampai pengenalan instan.
+- **Gunakan scramble terbalik** — siapkan kasus, selesaikan, coba prediksi kebalikannya.
+
+---
+
+**Dengan menguasai CLL, Anda dapat mencapai rata-rata di bawah 3 detik pada 2x2.** Pendekatan satu pandangan menghilangkan jeda antara OLL dan PBL. Terus berlatih pengenalan — kecepatan datang dari identifikasi instan.

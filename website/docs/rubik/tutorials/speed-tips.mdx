@@ -1,0 +1,286 @@
+---
+title: Speed Cubing Tips
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Speed Cubing Tips
+
+Getting faster at the Rubik's Cube is not just about turning faster. The biggest gains come from planning ahead, reducing pauses, and practicing with intention. This guide covers the core skills that separate casual solvers from competitive speedcubers.
+
+---
+
+## Cross Planning
+
+The cross is the first step of a CFOP solve, and it is the only part you can plan **entirely during inspection**. Mastering cross planning gives you a free head start on every solve.
+
+### Use the full 15-second inspection
+
+In competition, you get 15 seconds of inspection time before starting the timer. Use every second:
+- First 5 seconds: Identify where all 4 cross edges are.
+- Next 5 seconds: Plan the full cross solution (ideally 6-8 moves or fewer).
+- Final 5 seconds: Mentally rehearse the sequence and plan your first F2L pair.
+
+### Solve cross on the bottom
+
+Always solve the cross on the **bottom face** (D layer). Beginners often solve the cross on top and then flip the cube, wasting 1-2 seconds and losing orientation. By solving on the bottom from the start, you can immediately begin scanning for F2L pairs while finishing the cross.
+
+**Example: A 6-move cross solution**
+
+Starting from this scramble, the white cross can be solved in just 6 moves:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Example: An efficient 5-move cross**
+
+With good planning, many crosses can be solved in 5 moves or fewer:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Practice cross with eyes closed
+
+This is the single best cross drill:
+1. Scramble the cube.
+2. During inspection, plan the entire cross solution.
+3. Close your eyes and execute the cross from memory.
+4. Open your eyes to verify.
+
+If the cross is correct, your planning is solid. If not, figure out where your mental tracking went wrong.
+
+### Color neutrality
+
+Most beginners learn with a white cross only. **Color-neutral** solvers can start with any of the 6 colors, choosing whichever cross is easiest for each scramble. This typically provides a 2-3 move advantage on the cross, which adds up to 1-2 seconds per solve on average.
+
+To develop color neutrality:
+1. Start by adding one color (e.g., yellow, the opposite of white).
+2. For every scramble, plan both white and yellow crosses and pick the shorter one.
+3. Gradually add more colors until you are comfortable with all six.
+
+---
+
+## Lookahead
+
+Lookahead is the ability to **track the next piece while solving the current one**. It is the most important skill for breaking through speed plateaus and what separates sub-15 solvers from sub-10 solvers.
+
+### What lookahead actually means
+
+During F2L, you are always solving one corner-edge pair at a time. Without lookahead, the sequence is: solve pair - pause - search for next pair - solve pair - pause. These pauses add up to several seconds per solve.
+
+With lookahead, while your hands are executing a known algorithm for the current pair, your eyes are already scanning for the next pair's pieces. The goal is **zero pauses** between pairs.
+
+### How to practice lookahead
+
+**Slow solves** are the most effective training method:
+
+1. Set a metronome to 1-2 turns per second (60-120 BPM).
+2. Solve F2L at that constant pace, matching every move to the beat.
+3. The rule: **you may turn slowly, but you may never stop turning.**
+4. If you have to pause to find the next pair, you are turning too fast. Slow down further.
+
+Over weeks of practice, you will naturally speed up while maintaining continuous flow.
+
+### Blind F2L pair practice
+
+1. Scramble the cube.
+2. Solve the cross.
+3. Find one F2L pair and plan the insertion in your head.
+4. Close your eyes and execute the insertion.
+5. Open your eyes and repeat for the next pair.
+
+This forces your brain to fully plan each insertion before executing, which strengthens the mental tracking needed for real lookahead.
+
+---
+
+## Efficient F2L
+
+The F2L (First Two Layers) stage has the most room for optimization. Even small improvements in F2L efficiency compound over hundreds of solves.
+
+### Avoid unnecessary rotations
+
+Whole-cube rotations (y, y') cost time and disrupt lookahead. A typical beginner solve has 6-8 rotations during F2L. An advanced solver averages 1-2.
+
+**Example: Inserting into the back-right slot without rotation**
+
+Instead of rotating with y' and inserting into the front-right slot, use back-slot insertions:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. the same pair requiring a rotation:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+The first version saves about 0.5 seconds — the rotation itself plus the regrip.
+
+### Prioritize back slots
+
+Inserting F2L pairs into the **back-right** and **back-left** slots is generally more efficient because:
+- R and L moves are faster than F moves.
+- Back-slot insertions often require fewer moves.
+- You maintain better lookahead when the unsolved pieces are visible in front of you.
+
+### Influence the next pair
+
+While inserting your current F2L pair, you can sometimes set up the next pair for free. For example, if the next pair's corner is in the U layer, choosing a specific insertion angle for the current pair may move that corner into a favorable position.
+
+This is an advanced skill, but even being aware of it helps you make better decisions.
+
+### Multi-slotting
+
+In some cases, you can solve two F2L pairs simultaneously or solve one pair while partially setting up another. This is rare in practice but worth recognizing when the opportunity arises.
+
+---
+
+## OLL/PLL Recognition
+
+Fast recognition of OLL and PLL cases eliminates the pause between F2L and the last layer.
+
+### Recognize from two angles
+
+Practice identifying OLL cases by looking at both the **top face** and the **front face** simultaneously. This gives you all the information you need without rotating the cube to check other sides.
+
+For PLL, check the **front and right** faces (the two sides visible from your standard solving angle). With practice, two-side recognition becomes instant.
+
+### Pre-AUF
+
+The AUF (Adjust U Face) is the U/U'/U2 move you do before starting an OLL or PLL algorithm to align the case correctly. Advanced solvers perform the AUF during the last move of F2L or during recognition, overlapping it with thinking time.
+
+### OLL prediction
+
+During the last F2L insertion, you often know 2-3 of the 4 top-face corner orientations. By tracking how your insertion affects the last corner, you can predict the OLL case before you finish F2L and begin executing the OLL algorithm with zero pause.
+
+---
+
+## Practice Routines
+
+Deliberate practice beats mindless solving. Structure your practice sessions for maximum improvement.
+
+### Daily practice plan (45-60 minutes)
+
+**Cross drills (10 minutes)**
+- Scramble, plan cross during inspection, solve cross only.
+- Target: consistently under 2 seconds, planned with eyes closed.
+- Track your average move count. Aim for 6 or fewer.
+
+**F2L slow solves (15 minutes)**
+- Use a metronome. Full F2L at constant turning speed.
+- Focus purely on lookahead and continuous flow.
+- Do not time these solves. Speed is not the goal here.
+
+**Algorithm drilling (10 minutes)**
+- Pick 2-3 OLL or PLL algorithms you are still learning.
+- Repeat each one 20-30 times until muscle memory takes over.
+- Then scramble and practice recognizing + executing them.
+
+**Timed solves (15-20 minutes)**
+- Do an **average of 12** — twelve timed solves, drop the best and worst, average the remaining ten.
+- Record your results. Track trends over weeks, not individual solves.
+- After each session, review your worst solve. What went wrong?
+
+### Averages and tracking
+
+- **Ao5** (Average of 5): Quick check of current form. Good for warm-up.
+- **Ao12** (Average of 12): The standard competitive metric. Most reliable indicator of skill level.
+- **Ao100**: Long-term trend tracking. Compute weekly to measure progress.
+
+Use a timer app that tracks your history automatically. Seeing your average drop over weeks is powerful motivation.
+
+### Deliberate vs. mindless practice
+
+Doing 200 solves while watching TV will not make you faster. Deliberate practice means:
+- Picking **one specific skill** to focus on per session (cross, lookahead, OLL recognition).
+- Paying full attention to that skill during every solve.
+- Analyzing mistakes instead of immediately rescrambling.
+
+Ten focused solves beat a hundred autopilot solves.
+
+---
+
+## Competition Tips
+
+Competing is a different skill from practicing at home. Nerves, unfamiliar environments, and time pressure all affect performance.
+
+### Warm up properly
+
+- Arrive early and do 20-30 casual solves before your event.
+- Do algorithm drills to wake up muscle memory.
+- Do not try to set personal bests during warm-up. Just get your hands moving.
+
+### Stay calm during solves
+
+- **Focus on solving smoothly, not solving fast.** Trying to force speed causes mistakes and lockups.
+- If you mess up a pair or algorithm, take a breath and continue. Do not panic or try to rush to make up time.
+- Remember: your competition average includes your best and worst solves thrown out, so one bad solve will not ruin your result.
+
+### Inspection technique
+
+- Hold the cube at eye level during inspection. Do not look down at the table.
+- Rotate the cube with y and x moves to see all sides efficiently.
+- Plan your cross completely. If time allows, locate your first F2L pair.
+- Listen for the 8-second and 12-second warnings and pace yourself accordingly.
+
+### Stackmat timer familiarity
+
+- Practice with a Stackmat timer at home if you plan to compete. The hand placement and start/stop motion is different from tapping a phone screen.
+- Both hands must be flat on the pads. The timer starts when you lift both hands simultaneously.
+- Practice starting smoothly so you do not fumble the first move of your cross.
+
+---
+
+## Hardware
+
+A good speed cube makes a real difference. You do not need the most expensive cube to improve, but upgrading from a stock Rubik's brand to a modern speed cube is one of the biggest single improvements you can make.
+
+### What makes a good speed cube
+
+- **Corner cutting**: The cube should tolerate slight misalignments without locking up. Modern cubes can corner-cut 45 degrees or more.
+- **Smooth, controllable turning**: Not too fast (causes overshooting) and not too slow (requires extra effort).
+- **Stability**: The cube should hold its shape during fast turning without popping or deforming.
+
+### Magnetic cubes
+
+Almost all competitive cubers use **magnetic cubes** today. Small magnets inside each piece create a subtle snap at each 90-degree turn, providing:
+- Better control at high speeds
+- Fewer overshoots and lockups
+- A more satisfying feel
+
+Magnetic cubes from brands like MoYu, QiYi, and GAN are available at various price points. Even budget magnetic cubes (under $10) are dramatically better than non-magnetic ones.
+
+### Tensioning and lubrication
+
+- **Tensions** control how loose or tight the cube feels. Looser tensions allow faster turning but reduce stability. Start with medium tensions and adjust based on your turning style.
+- **Lubrication** reduces friction and changes the feel of the cube. Silicone-based lubes are standard:
+  - **Fast lube** on the pieces for speed.
+  - **Slow/gummy lube** on the core for stability.
+  - Re-lube every few hundred solves or when the cube starts feeling scratchy.
+
+### Setup recommendation for beginners
+
+1. Get any modern magnetic 3x3 (MoYu RS3M, QiYi Tornado, or similar).
+2. Keep stock tensions for the first week to get used to the cube.
+3. Add a small amount of silicone lube if the cube feels dry.
+4. Adjust tensions gradually — loosen a quarter turn at a time until you find your preference.
+
+A well-set-up cube removes hardware as a variable, letting you focus entirely on improving your technique.

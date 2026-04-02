@@ -1,0 +1,724 @@
+---
+title: อัลกอริทึม OLL
+sidebar_position: 7
+description: คู่มืออัลกอริทึม OLL (การจัดทิศทางชั้นบนสุด) สำหรับรูบิคคิวบ์ 3x3 2-Look OLL สำหรับผู้เริ่มต้นพร้อม 45 กรณี OLL แบบเต็มที่พบบ่อยที่สุด
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# อัลกอริทึม OLL
+
+**OLL (การจัดทิศทางชั้นบนสุด)** เป็นขั้นตอนแรกของชั้นบนสุดในวิธี CFOP เป้าหมายคือทำให้หน้าบนทั้งหมดเป็นสีเดียว (เหลือง) มีทั้งหมด **57 กรณี OLL**
+
+หากคุณเป็นผู้เริ่มต้น ให้เริ่มจาก **2-Look OLL** — วิธีการที่ง่ายขึ้นซึ่งต้องการเพียง **10 อัลกอริทึม** แทนที่จะเป็นทั้ง 57
+
+คู่มือนี้ครอบคลุม 2-Look OLL พร้อมกับ **45 กรณี** OLL แบบเต็มที่พบบ่อยที่สุด จัดเรียงตามหมวดหมู่รูปร่าง
+
+---
+
+## 2-Look OLL
+
+2-Look OLL แบ่งขั้นตอนการจัดทิศทางออกเป็นสองขั้นตอนย่อย:
+
+1. **จัดทิศทางขอบ** — สร้างกากบาทสีเหลืองด้านบน (3 กรณี)
+2. **จัดทิศทางมุม** — ทำให้หน้าบนทั้งหมดเป็นสีเหลือง (7 กรณี)
+
+นี่หมายความว่าคุณต้องเรียนรู้เพียง **10 อัลกอริทึม** ทั้งหมด
+
+### ขั้นตอนที่ 1: จัดทิศทางขอบ (สร้างกากบาทสีเหลือง)
+
+มองที่หน้าบน ไม่ต้องสนใจมุมและโฟกัสที่ **ขอบเท่านั้น** คุณจะเห็นหนึ่งในสามรูปแบบ:
+
+#### จุด (ไม่มีขอบที่จัดทิศทาง)
+
+ไม่มีขอบสีเหลืองหันขึ้น ใช้อัลกอริทึมนี้เพื่อไปยังรูปตัว L แล้วใช้อัลกอริทึมรูปตัว L
+
+**อัลกอริทึม: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### รูปตัว L (ขอบสองชิ้นที่อยู่ติดกันจัดทิศทางแล้ว)
+
+ขอบสีเหลืองสองชิ้นสร้าง **รูปตัว L** ถือคิวบ์ให้ L อยู่ที่ตำแหน่ง **หลัง-ซ้าย**
+
+**อัลกอริทึม: f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f'"
+  alg="f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### เส้น (ขอบสองชิ้นตรงข้ามกันจัดทิศทางแล้ว)
+
+ขอบสีเหลืองสองชิ้นสร้าง **เส้นแนวนอน** ถือคิวบ์ให้เส้นวางจาก **ซ้ายไปขวา**
+
+**อัลกอริทึม: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### ขั้นตอนที่ 2: จัดทิศทางมุม (7 กรณี)
+
+ตอนนี้คุณมีกากบาทสีเหลืองแล้ว มองที่หน้าบนและระบุว่ามี **มุม** กี่อันที่สีเหลืองหันขึ้น
+
+#### Sune (1 มุมจัดทิศทางแล้ว, สีเหลืองชี้ไปทางซ้าย)
+
+ถือคิวบ์ให้มุมที่แก้แล้วอยู่ที่ **หน้า-ซ้าย**
+
+**อัลกอริทึม: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Anti-Sune (1 มุมจัดทิศทางแล้ว, สีเหลืองชี้ไปทางขวา)
+
+ถือคิวบ์ให้มุมที่แก้แล้วอยู่ที่ **หน้า-ขวา**
+
+**อัลกอริทึม: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+#### H (Sune คู่ — 0 มุมจัดทิศทาง, ลายตาหมากรุก)
+
+สติกเกอร์สีเหลืองสร้างลายตาหมากรุกด้านบน (ไม่มีมุมหันขึ้น, ไฟหน้าสองด้านตรงข้าม)
+
+**อัลกอริทึม: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Pi (0 มุมจัดทิศทาง, ไฟหน้าด้านเดียว)
+
+ไม่มีมุมหันขึ้น สติกเกอร์สีเหลืองสองอันอยู่ด้านเดียวกัน (ไฟหน้าด้านหน้า)
+
+**อัลกอริทึม: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+#### U (ไฟหน้า — 2 มุมจัดทิศทางด้านเดียวกัน)
+
+สองมุมแก้แล้ว ทั้งสองอยู่ **ด้านเดียวกัน** ถือไฟหน้าไว้ทาง **ซ้าย**
+
+**อัลกอริทึม: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+#### T (2 มุมจัดทิศทางแนวทแยง)
+
+สองมุมแก้แนวทแยง สติกเกอร์สีเหลืองอยู่หน้า-ซ้ายและหลัง-ขวา (หรือกลับกัน)
+
+**อัลกอริทึม: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+#### L (2 มุมติดกันจัดทิศทาง, ไฟหน้าแนวทแยง)
+
+สองมุมแก้ในตำแหน่งติดกันด้วยรูปแบบเฉพาะ
+
+**อัลกอริทึม: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## OLL เต็ม — ขอบทั้งหมดจัดทิศทางแล้ว (OCLL, OLL 21-27)
+
+กรณีเหล่านี้มีขอบทั้งสี่จัดทิศทางแล้ว (กากบาทสีเหลืองเสร็จแล้ว) เหลือเฉพาะมุมที่ต้องจัดทิศทาง
+
+### OLL 21 — H (Sune คู่)
+
+**อัลกอริทึม: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 22 — Pi
+
+**อัลกอริทึม: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+### OLL 23 — Headlights
+
+**อัลกอริทึม: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+### OLL 24 — Chameleon
+
+**อัลกอริทึม: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 25 — Bowtie
+
+**อัลกอริทึม: F' r U R' U' r' F R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F' r U R U' r' F"
+  alg="F' r U R' U' r' F R"
+  stickering="OLL"
+/>
+
+### OLL 26 — Sune
+
+**อัลกอริทึม: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 27 — Anti-Sune
+
+**อัลกอริทึม: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## รูปตัว T
+
+### OLL 33
+
+**อัลกอริทึม: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 45
+
+**อัลกอริทึม: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## สี่เหลี่ยม
+
+### OLL 5
+
+**อัลกอริทึม: r' U2 R U R' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' R U' R' U2 r"
+  alg="r' U2 R U R' U r"
+  stickering="OLL"
+/>
+
+### OLL 6
+
+**อัลกอริทึม: r U2 R' U' R U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U R' U R U2 r'"
+  alg="r U2 R' U' R U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## รูปตัว C
+
+### OLL 34
+
+**อัลกอริทึม: R U R2 U' R' F R U R U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R' U' R' F' R U R2 U' R'"
+  alg="R U R2 U' R' F R U R U' F'"
+  stickering="OLL"
+/>
+
+### OLL 46
+
+**อัลกอริทึม: R' U' R' F R F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F R' F' R U R"
+  alg="R' U' R' F R F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## รูปตัว W
+
+### OLL 36
+
+**อัลกอริทึม: L' U' L U' L' U L U L F' L' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L F L' U' L' U' L U L' U L"
+  alg="L' U' L U' L' U L U L F' L' F"
+  stickering="OLL"
+/>
+
+### OLL 38
+
+**อัลกอริทึม: R U R' U R U' R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U R' U' R U' R'"
+  alg="R U R' U R U' R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+---
+
+## รูปตัว P
+
+### OLL 31
+
+**อัลกอริทึม: R' U' F U R U' R' F' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F R U R' U' F' U R"
+  alg="R' U' F U R U' R' F' R"
+  stickering="OLL"
+/>
+
+### OLL 32
+
+**อัลกอริทึม: L U F' U' L' U L F L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L F' L' U' L U F U' L'"
+  alg="L U F' U' L' U L F L'"
+  stickering="OLL"
+/>
+
+### OLL 43
+
+**อัลกอริทึม: F' U' L' U L F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L' U' L U F"
+  alg="F' U' L' U L F"
+  stickering="OLL"
+/>
+
+### OLL 44
+
+**อัลกอริทึม: F U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U R' U' F'"
+  alg="F U R U' R' F'"
+  stickering="OLL"
+/>
+
+---
+
+## รูปปลา
+
+### OLL 9
+
+**อัลกอริทึม: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 10
+
+**อัลกอริทึม: R U R' U R' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 35
+
+**อัลกอริทึม: R U2 R2 F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 37
+
+**อัลกอริทึม: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## รูปการเดินม้า
+
+### OLL 13
+
+**อัลกอริทึม: F U R U2 R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U2 R' U' F'"
+  alg="F U R U2 R' U' R U R' F'"
+  stickering="OLL"
+/>
+
+### OLL 14
+
+**อัลกอริทึม: R' F R U R' F' R F U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U F' R' F R U' R' F' R"
+  alg="R' F R U R' F' R F U' F'"
+  stickering="OLL"
+/>
+
+### OLL 15
+
+**อัลกอริทึม: r' U' r R' U' R U r' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' r U' R' U R r' U r"
+  alg="r' U' r R' U' R U r' U r"
+  stickering="OLL"
+/>
+
+### OLL 16
+
+**อัลกอริทึม: r U r' R U R' U' r U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U r' U R U' R' r U' r'"
+  alg="r U r' R U R' U' r U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## รูปทรงยาก
+
+### OLL 29
+
+**อัลกอริทึม: R U R' U' R U' R' F' U' F R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U' R' F' U F R U R' U R U' R'"
+  alg="R U R' U' R U' R' F' U' F R U R'"
+  stickering="OLL"
+/>
+
+### OLL 30
+
+**อัลกอริทึม: F R' F R2 U' R' U' R U R' F2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F2 R U' R' U R U R2 F' R F'"
+  alg="F R' F R2 U' R' U' R U R' F2"
+  stickering="OLL"
+/>
+
+### OLL 41
+
+**อัลกอริทึม: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 42
+
+**อัลกอริทึม: R' U' R U' R' U2 R F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R' U2 R U R' U R"
+  alg="R' U' R U' R' U2 R F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## สายฟ้า
+
+### OLL 7
+
+**อัลกอริทึม: r U R' U R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' U' R U' r'"
+  alg="r U R' U R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 8
+
+**อัลกอริทึม: r' U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r"
+  alg="r' U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 11
+
+**อัลกอริทึม: r U R' U R' F R F' R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' F R' F' R U' R U' r'"
+  alg="r U R' U R' F R F' R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 12
+
+**อัลกอริทึม: F R U R' U' F' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' F U R U' R' F'"
+  alg="F R U R' U' F' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 39
+
+**อัลกอริทึม: L F' L' U' L U F U' L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L U F' U' L' U L F L'"
+  alg="L F' L' U' L U F U' L'"
+  stickering="OLL"
+/>
+
+### OLL 40
+
+**อัลกอริทึม: R' F R U R' U' F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F U R U' R' F' R"
+  alg="R' F R U R' U' F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## กรณีจุด
+
+เหล่านี้เป็นกรณี OLL ที่ยากที่สุด — ไม่มีขอบที่จัดทิศทาง
+
+### OLL 1
+
+**อัลกอริทึม: R U2 R2 F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 2
+
+**อัลกอริทึม: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+### OLL 3
+
+**อัลกอริทึม: f R U R' U' f' U' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U f U R U' R' f'"
+  alg="f R U R' U' f' U' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 4
+
+**อัลกอริทึม: f R U R' U' f' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' f U R U' R' f'"
+  alg="f R U R' U' f' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 17
+
+**อัลกอริทึม: R U R' U R' F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 18
+
+**อัลกอริทึม: r U R' U R U2 r2 U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r2 U2 R' U' R U' r'"
+  alg="r U R' U R U2 r2 U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 19
+
+**อัลกอริทึม: r' R U R U R' U' r R2 F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R2 r' U R U' R' U' R' r"
+  alg="r' R U R U R' U' r R2 F R F'"
+  stickering="OLL"
+/>
+
+### OLL 20
+
+**อัลกอริทึม: r U R' U' r' U2 R U R U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R' U' R' U2 r U R U' r'"
+  alg="r U R' U' r' U2 R U R U' R2 U2 R"
+  stickering="OLL"
+/>
+
+---
+
+## เคล็ดลับการเรียนรู้
+
+1. **เริ่มจาก 2-Look OLL** — เชี่ยวชาญ 10 อัลกอริทึมก่อนที่จะจัดการกับชุดเต็ม
+2. **เรียน OCLL ต่อ** — กรณี 21-27 เป็นกรณีที่พบบ่อยที่สุดและต่อยอดจาก 2-Look
+3. **เพิ่มหมวดหมู่ทีละน้อย** — รูปตัว T, รูปตัว P และรูปปลาเป็นขั้นตอนถัดไปที่ดี
+4. **ฝึกการจดจำ** — การระบุกรณีได้อย่างรวดเร็วสำคัญพอๆ กับการรู้อัลกอริทึม
+5. **ใช้เทคนิคนิ้ว** — โฟกัสที่การทำอย่างราบรื่นหลังจากจำอัลกอริทึมได้แล้ว
+
+:::tip
+เมื่อฝึก ให้สลับคิวบ์และแก้ทุกอย่างจนถึง OLL จากนั้นฝึกระบุและแก้กรณี OLL ทำซ้ำจนกว่าการจดจำจะเป็นอัตโนมัติ
+:::

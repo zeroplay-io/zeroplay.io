@@ -1,0 +1,466 @@
+---
+title: Algoritma PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algoritma PLL
+
+**PLL (Permutasi Lapisan Terakhir)** adalah langkah terakhir metode CFOP. Setelah OLL mengorientasikan semua stiker permukaan atas, PLL menyusun ulang bagian-bagian ke posisi yang benar. Ada **21 kasus PLL** secara keseluruhan.
+
+Jika Anda pemula, mulailah dengan **2-Look PLL** -- pendekatan yang disederhanakan yang hanya membutuhkan **6 algoritma** alih-alih 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL membagi langkah permutasi menjadi dua langkah lebih kecil:
+
+1. **Permutasi sudut** -- menempatkan 4 sudut pada posisi yang benar (2 kasus)
+2. **Permutasi sisi** -- menempatkan 4 sisi pada posisi yang benar (4 kasus)
+
+Ini berarti Anda hanya perlu mempelajari **6 algoritma** secara keseluruhan.
+
+### Langkah 1: Permutasi Sudut
+
+Lihat sudut-sudut lapisan atas. Periksa apakah ada **pasangan sudut yang berdekatan** yang berada di sisi yang sama (lampu depan yang cocok).
+
+#### Pertukaran Sudut Berdekatan
+
+Satu pasang sudut berdekatan sudah benar. Pegang pasangan yang sudah benar di **belakang** dan terapkan:
+
+**Algoritma: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Ini adalah **T-Perm** -- menukar dua sudut depan (dan dua sisi, yang akan kita perbaiki di langkah 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Pertukaran Sudut Diagonal
+
+Tidak ada sudut berdekatan yang cocok. Terapkan **Y-Perm** untuk menukar sudut secara diagonal:
+
+**Algoritma: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Langkah 2: Permutasi Sisi
+
+Semua sudut sekarang sudah terpecahkan. Lihat sisi-sisi dan tentukan mana yang perlu disiklus.
+
+#### Ua Perm (siklus 3 sisi searah jarum jam)
+
+Tiga sisi perlu disiklus searah jarum jam. Pegang sisi yang terpecahkan di **belakang**.
+
+**Algoritma: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (siklus 3 sisi berlawanan jarum jam)
+
+Tiga sisi perlu disiklus berlawanan jarum jam. Pegang sisi yang terpecahkan di **belakang**.
+
+**Algoritma: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Tukar pasangan sisi berlawanan)
+
+Dua pasang sisi berlawanan perlu ditukar.
+
+**Algoritma: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Tukar pasangan sisi berdekatan)
+
+Dua pasang sisi berdekatan perlu ditukar. Pegang sehingga dua pasangan berada di depan/kanan dan belakang/kiri.
+
+**Algoritma: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL Lengkap -- Semua 21 Kasus
+
+### Hanya Sisi (4 kasus)
+
+PLL ini hanya memindahkan sisi; sudut sudah terpecahkan.
+
+#### Ua Perm
+
+Sisi berputar searah jarum jam. Sisi yang terpecahkan ada di belakang.
+
+**Pengenalan:** Satu batang terpecahkan (sisi + dua sudut) terlihat dari belakang.
+
+**Algoritma: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Sisi berputar berlawanan jarum jam. Sisi yang terpecahkan ada di belakang.
+
+**Pengenalan:** Satu batang terpecahkan terlihat dari belakang; warna sisi berputar berlawanan dari Ua.
+
+**Algoritma: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Dua pasang sisi berlawanan bertukar.
+
+**Pengenalan:** Setiap sisi memiliki warna berlawanan di posisi sisi tengah. Pola papan catur di keempat sisi.
+
+**Algoritma: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Dua pasang sisi berdekatan bertukar.
+
+**Pengenalan:** Dua sisi berdekatan masing-masing memiliki warna yang lain di posisi sisi. Tidak ada sisi yang sepenuhnya terpecahkan.
+
+**Algoritma: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Hanya Sudut (3 kasus)
+
+PLL ini hanya memindahkan sudut; sisi sudah terpecahkan.
+
+#### Aa Perm
+
+Tiga sudut berputar. Lampu depan di sisi kiri.
+
+**Pengenalan:** Lampu depan di satu sisi, batang (3 stiker yang cocok) di sisi berlawanan.
+
+**Algoritma: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tiga sudut berputar (arah berlawanan dari Aa). Lampu depan di sisi kanan.
+
+**Pengenalan:** Cermin Aa -- lampu depan di sisi berlawanan.
+
+**Algoritma: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Dua pasang sudut diagonal bertukar. Tidak ada sisi yang bergerak.
+
+**Pengenalan:** Tidak ada lampu depan di sisi mana pun. Setiap sisi memiliki dua warna sudut berbeda.
+
+**Algoritma: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Pertukaran Sudut Berdekatan (6 kasus)
+
+PLL ini menukar satu pasang sudut berdekatan bersama dengan permutasi sisi.
+
+#### T Perm
+
+**Pengenalan:** Lampu depan di depan dan belakang. Dua sisi tanpa lampu depan memiliki warna yang tertukar.
+
+**Algoritma: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Pengenalan:** Lampu depan hanya di satu sisi (depan). Tiga sisi lainnya tidak memiliki pasangan yang cocok.
+
+**Algoritma: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Pengenalan:** Blok 1x1x3 terpecahkan di sisi kiri. Sisi kanan memiliki bagian berdekatan yang tertukar.
+
+**Algoritma: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Pengenalan:** Blok 1x1x3 terpecahkan di sisi kanan. Cermin Ja.
+
+**Algoritma: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Pengenalan:** Lampu depan di depan. Pertukaran sudut dan sisi berdekatan di sisi kanan.
+
+**Algoritma: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Pengenalan:** Lampu depan di belakang. Cermin Ra.
+
+**Algoritma: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Pertukaran Sudut Diagonal (4 kasus)
+
+PLL ini menukar dua sudut yang berlawanan secara diagonal.
+
+#### V Perm
+
+**Pengenalan:** Tidak ada lampu depan di sisi mana pun. Satu sisi memiliki pola 2 warna di mana sisi cocok dengan satu sudut.
+
+**Algoritma: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Pengenalan:** Tidak ada lampu depan. Satu sisi memiliki dua sudut yang cocok tetapi sisi di antara mereka salah.
+
+**Algoritma: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Pengenalan:** Dua sisi berlawanan sepenuhnya terpecahkan (batang terpecahkan di masing-masing), tetapi dua sisi lainnya memiliki bagian yang sepenuhnya tertukar.
+
+**Algoritma: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Pengenalan:** Cermin Na. Dua batang berlawanan tetapi tertukar secara berbeda.
+
+**Algoritma: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 kasus)
+
+Permutasi G adalah yang paling sulit dikenali. Mereka memindahkan satu pasang sudut berdekatan dan menyiklus tiga sisi.
+
+#### Ga Perm
+
+**Pengenalan:** Lampu depan di kiri. Sudut depan kanan cocok dengan sisi kanan.
+
+**Algoritma: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Pengenalan:** Lampu depan di depan. Sudut belakang kiri cocok dengan sisi kiri.
+
+**Algoritma: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Pengenalan:** Lampu depan di kanan. Sudut depan kiri cocok dengan sisi kiri.
+
+**Algoritma: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Pengenalan:** Lampu depan di belakang. Sudut depan kanan cocok dengan sisi kanan.
+
+**Algoritma: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Tips Pengenalan
+
+Pengenalan PLL yang efisien adalah kunci penyelesaian cepat. Berikut strategi umum:
+
+1. **Cari lampu depan** -- sepasang sudut yang cocok di satu sisi. Ini langsung mempersempit kasus.
+2. **Hitung batang yang terpecahkan** -- batang adalah tiga stiker yang cocok berturut-turut (sudut-sisi-sudut). Batang menunjukkan PLL tertentu.
+3. **Periksa dua sisi** -- melihat sisi depan dan kanan biasanya cukup untuk mengidentifikasi kasus.
+4. **Pelajari pola berlawanan** -- banyak PLL datang dalam pasangan cermin (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Yang Anda lihat | PLL yang mungkin |
+|:---|:---|
+| 4 sisi dengan lampu depan | H, Ua, Ub, Z |
+| 2 sisi berlawanan dengan lampu depan | T, F, Ja, Jb, Ra, Rb |
+| 1 sisi dengan lampu depan | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 sisi dengan lampu depan | E, V, Y, Na, Nb |
+
+## Urutan Belajar
+
+Urutan yang disarankan untuk mempelajari semua 21 PLL:
+
+1. **2-Look dulu:** T, Y (sudut) + Ua, Ub, H, Z (sisi) -- 6 algoritma
+2. **Pertukaran berdekatan:** Ja, Jb, F, Ra, Rb -- 5 algoritma lagi
+3. **Hanya sudut:** Aa, Ab, E -- 3 algoritma lagi
+4. **Pertukaran diagonal:** V, Na, Nb -- 3 algoritma lagi
+5. **G Perms terakhir:** Ga, Gb, Gc, Gd -- 4 algoritma terakhir
+
+:::tip
+Latih pengenalan dengan mengacak, menyelesaikan hingga PLL, lalu menutup kubus dan mencoba mengidentifikasi kasus dari ingatan. Kecepatan datang dari pengenalan instan, bukan hanya trik jari yang cepat.
+:::

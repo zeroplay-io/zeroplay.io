@@ -1,0 +1,139 @@
+---
+title: Savjeti za Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Savjeti za Speed Cubing
+
+Postati brži u slaganju Rubikove kocke nije samo pitanje bržeg okretanja. Najveći napredak dolazi od planiranja unaprijed, smanjenja pauza i namjernog vježbanja. Ovaj vodič pokriva ključne vještine koje odvajaju rekreativce od natjecateljskih speedcubera.
+
+---
+
+## Planiranje križa
+
+Križ je prvi korak CFOP rješavanja i jedini dio koji možete planirati **u potpunosti tijekom inspekcije**. Ovladavanje planiranjem križa daje vam besplatan prednost u svakom slaganju.
+
+### Iskoristite punih 15 sekundi inspekcije
+
+Na natjecanju imate 15 sekundi inspekcije prije pokretanja tajmera. Iskoristite svaku sekundu:
+- Prvih 5 sekundi: Identificirajte gdje su sve 4 bridne kocke križa.
+- Sljedećih 5 sekundi: Isplanirajte potpuno rješenje križa (idealno 6-8 poteza ili manje).
+- Zadnjih 5 sekundi: Mentalno provedite sekvencu i isplanirajte prvi F2L par.
+
+### Rješavajte križ na donjem dijelu
+
+Uvijek rješavajte križ na **donjem dijelu** (D sloj). Početnici često rješavaju križ na vrhu pa okrenu kocku, gubąci 1-2 sekunde i orijentaciju. Rješavajući na dnu od početka, možete odmah početi tražiti F2L parove dok završavate križ.
+
+**Primjer: Rješenje križa u 6 poteza**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Primjer: Učinkoviti križ u 5 poteza**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Vježbajte križ zatvorenih očiju
+
+Ovo je najbolja vježba za križ: 1. Zamiješajte kocku. 2. Tijekom inspekcije isplanirajte cijelo rješenje križa. 3. Zatvorite oči i izvedite križ iz memorije. 4. Otvorite oči za provjeru.
+
+### Neutralnost boja
+
+**Boja-neutralni** slagači mogu početi s bilo kojom od 6 boja, birajući najlakši križ za svaki scramble. To obično daje prednost od 2-3 poteza, što iznosi 1-2 sekunde po slaganju.
+
+---
+
+## Lookahead (Gledanje unaprijed)
+
+Lookahead je sposobnost **praćenja sljedećeg dijela dok rješavate trenutni**. To je najvažnija vještina za probijanje platoa brzine.
+
+### Što lookahead zapravo znači
+
+Tijekom F2L uvijek rješavate jedan kut-brid par. Bez lookaheada: riješiti par – pauza – tražiti sljedeći – riješiti – pauza. S lookaheadom, dok vaše ruke izvode poznati algoritam, oči već skeniraju dijelove sljedećeg para. Cilj je **nula pauza** između parova.
+
+### Kako vježbati lookahead
+
+**Spora slaganja** su najučinkovitija metoda: 1. Postavite metronom na 1-2 okretaja po sekundi (60-120 BPM). 2. Rješavajte F2L u tom konstantnom tempu. 3. Pravilo: **smijete okretati sporo, ali nikad ne smijete prestati okretati.** 4. Ako morate stati, prebrzo okretate.
+
+### Slijepa F2L vježba
+
+1. Zamiješajte. 2. Riješite križ. 3. Nađite F2L par i isplanirajte umetanje. 4. Zatvorite oči i izvedite. 5. Ponovite.
+
+---
+
+## Učinkoviti F2L
+
+F2L faza ima najviše prostora za optimizaciju.
+
+### Izbjegavajte nepotrebne rotacije
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. isti par s rotacijom:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+Prva verzija štedi ~0,5 sekundi. Prioritizirajte stražnje slotove. Utjecajte na sljedeći par. Multi-slotting je rijedak ali vrijedan prepoznavanja.
+
+---
+
+## Prepoznavanje OLL/PLL
+
+Brzo prepoznavanje eliminira pauzu između F2L i zadnjeg sloja. Vježbajte prepoznavanje s dva kuta. Pre-AUF i OLL predikcija su napredne tehnike.
+
+---
+
+## Rutine vježbanja
+
+Namjerno vježbanje pobjeđuje bezmisleno slaganje.
+
+### Dnevni plan (45-60 minuta)
+
+**Križ vježbe (10 min)** - Scramble, planiranje, samo križ. Cilj: ispod 2 sekunde, 6 poteza ili manje.
+
+**F2L sporo (15 min)** - Metronom. Fokus na lookahead.
+
+**Algoritmi (10 min)** - 2-3 OLL/PLL algoritma, 20-30 ponavljanja.
+
+**Mjerena slaganja (15-20 min)** - **Prosjek 12** - Pratite trendove.
+
+### Prosjeci: **Ao5**, **Ao12**, **Ao100**.
+
+Deset fokusiranih slaganja pobjeđuje stotinu na autopilotu.
+
+---
+
+## Savjeti za natjecanje
+
+Zagrijte se. Ostanite mirni. Inspekcija na razini očiju. Vježbajte sa Stackmat tajmerom.
+
+---
+
+## Hardver
+
+Dobar speed cube čini stvarnu razliku. Magnetne kocke od MoYu, QiYi i GAN su standard. Corner cutting 45+ stupnjeva, glatko okretanje i stabilnost su ključni. Za početnike: nabavite modernu magnetnu 3x3, zadržite tvorničku napetost, dodajte silikonsko ulje po potrebi i postupno podešavajte.
+
+Dobro podešena kocka uklanja hardver kao varijablu, omogućujući vam da se potpuno usredotočite na poboljšanje tehnike.

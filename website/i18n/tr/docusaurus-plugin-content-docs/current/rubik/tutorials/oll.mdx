@@ -1,0 +1,724 @@
+---
+title: OLL Algoritmaları
+sidebar_position: 7
+description: 3x3 Rubik Küpü için OLL (Son Katman Yönlendirme) algoritma referansı. Yeni başlayanlar için 2-Look OLL artı en yaygın 45 tam OLL durumu.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# OLL Algoritmaları
+
+**OLL (Son Katman Yönlendirme)** CFOP yönteminde son katmanın ilk adımıdır. Amaç, üst yüzün tamamını tek renk (sarı) yapmaktır. Toplamda **57 OLL durumu** vardır.
+
+Yeni başlıyorsanız, **2-Look OLL** ile başlayın — 57'sinin tümü yerine yalnızca **10 algoritma** gerektiren basitleştirilmiş bir yaklaşım.
+
+Bu rehber, 2-Look OLL'nin yanı sıra şekil kategorisine göre düzenlenmiş **en sık karşılaşılan 45** tam OLL durumunu kapsar.
+
+---
+
+## 2-Look OLL
+
+2-Look OLL, yönlendirme adımını iki küçük adıma ayırır:
+
+1. **Kenarları yönlendir** — üstte sarı çarpı yap (3 durum)
+2. **Köşeleri yönlendir** — üst yüzün tamamını sarı yap (7 durum)
+
+Bu, toplamda yalnızca **10 algoritma** öğrenmeniz gerektiği anlamına gelir.
+
+### Adım 1: Kenarları Yönlendir (Sarı Çarpıyı Yap)
+
+Üst yüze bakın. Köşeleri göz ardı edin ve yalnızca **kenarlara** odaklanın. Üç desenden birini göreceksiniz:
+
+#### Nokta (Yönlendirilmiş kenar yok)
+
+Hiçbir sarı kenar yukarı bakmıyor. L-şekline ulaşmak için bu algoritmayı uygulayın, ardından L-şekli algoritmasını uygulayın.
+
+**Algoritma: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### L-Şekli (İki bitişik kenar yönlendirilmiş)
+
+İki sarı kenar **L-şekli** oluşturur. Küpü L'nin **arka-sol** konumda olacağı şekilde tutun.
+
+**Algoritma: f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f'"
+  alg="f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Çizgi (İki karşı kenar yönlendirilmiş)
+
+İki sarı kenar **yatay çizgi** oluşturur. Küpü çizginin **soldan sağa** gittiği şekilde tutun.
+
+**Algoritma: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### Adım 2: Köşeleri Yönlendir (7 Durum)
+
+Artık sarı çarpınız var. Üst yüze bakın ve kaç **köşenin** sarısı yukarı baktığını belirleyin.
+
+#### Sune (1 köşe yönlendirilmiş, sarı sola işaret ediyor)
+
+Küpü çözülmüş köşenin **ön-sol** konumda olacağı şekilde tutun.
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Anti-Sune (1 köşe yönlendirilmiş, sarı sağa işaret ediyor)
+
+Küpü çözülmüş köşenin **ön-sağ** konumda olacağı şekilde tutun.
+
+**Algoritma: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+#### H (Çift Sune — 0 köşe yönlendirilmiş, dama deseni)
+
+Sarı çıkartmalar üstte dama deseni oluşturur (hiçbir köşe yukarı bakmıyor, iki karşı tarafta farlar).
+
+**Algoritma: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Pi (0 köşe yönlendirilmiş, bir tarafta farlar)
+
+Hiçbir köşe yukarı bakmıyor. Aynı tarafta iki sarı çıkartma (önde farlar).
+
+**Algoritma: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+#### U (Farlar — Aynı tarafta 2 köşe yönlendirilmiş)
+
+İki köşe çözülmüş, ikisi de **aynı tarafta**. Farları **solda** tutun.
+
+**Algoritma: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+#### T (2 köşe çapraz yönlendirilmiş)
+
+İki köşe çapraz çözülmüş. Sarı çıkartmalar ön-sol ve arka-sağ (veya tam tersi).
+
+**Algoritma: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+#### L (2 bitişik köşe yönlendirilmiş, çapraz farlar)
+
+İki köşe belirli bir desenle bitişik konumlarda çözülmüş.
+
+**Algoritma: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Tam OLL — Tüm Kenarlar Yönlendirilmiş (OCLL, OLL 21-27)
+
+Bu durumlarda dört kenar da zaten yönlendirilmiştir (sarı çarpı tamamlanmıştır). Yalnızca köşelerin yönlendirilmesi gerekir.
+
+### OLL 21 — H (Çift Sune)
+
+**Algoritma: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 22 — Pi
+
+**Algoritma: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+### OLL 23 — Headlights
+
+**Algoritma: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+### OLL 24 — Chameleon
+
+**Algoritma: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 25 — Bowtie
+
+**Algoritma: F' r U R' U' r' F R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F' r U R U' r' F"
+  alg="F' r U R' U' r' F R"
+  stickering="OLL"
+/>
+
+### OLL 26 — Sune
+
+**Algoritma: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 27 — Anti-Sune
+
+**Algoritma: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## T-Şekilleri
+
+### OLL 33
+
+**Algoritma: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 45
+
+**Algoritma: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Kareler
+
+### OLL 5
+
+**Algoritma: r' U2 R U R' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' R U' R' U2 r"
+  alg="r' U2 R U R' U r"
+  stickering="OLL"
+/>
+
+### OLL 6
+
+**Algoritma: r U2 R' U' R U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U R' U R U2 r'"
+  alg="r U2 R' U' R U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## C-Şekilleri
+
+### OLL 34
+
+**Algoritma: R U R2 U' R' F R U R U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R' U' R' F' R U R2 U' R'"
+  alg="R U R2 U' R' F R U R U' F'"
+  stickering="OLL"
+/>
+
+### OLL 46
+
+**Algoritma: R' U' R' F R F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F R' F' R U R"
+  alg="R' U' R' F R F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## W-Şekilleri
+
+### OLL 36
+
+**Algoritma: L' U' L U' L' U L U L F' L' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L F L' U' L' U' L U L' U L"
+  alg="L' U' L U' L' U L U L F' L' F"
+  stickering="OLL"
+/>
+
+### OLL 38
+
+**Algoritma: R U R' U R U' R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U R' U' R U' R'"
+  alg="R U R' U R U' R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+---
+
+## P-Şekilleri
+
+### OLL 31
+
+**Algoritma: R' U' F U R U' R' F' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F R U R' U' F' U R"
+  alg="R' U' F U R U' R' F' R"
+  stickering="OLL"
+/>
+
+### OLL 32
+
+**Algoritma: L U F' U' L' U L F L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L F' L' U' L U F U' L'"
+  alg="L U F' U' L' U L F L'"
+  stickering="OLL"
+/>
+
+### OLL 43
+
+**Algoritma: F' U' L' U L F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L' U' L U F"
+  alg="F' U' L' U L F"
+  stickering="OLL"
+/>
+
+### OLL 44
+
+**Algoritma: F U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U R' U' F'"
+  alg="F U R U' R' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Balık Şekilleri
+
+### OLL 9
+
+**Algoritma: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 10
+
+**Algoritma: R U R' U R' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 35
+
+**Algoritma: R U2 R2 F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 37
+
+**Algoritma: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## At Hareketi Şekilleri
+
+### OLL 13
+
+**Algoritma: F U R U2 R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U2 R' U' F'"
+  alg="F U R U2 R' U' R U R' F'"
+  stickering="OLL"
+/>
+
+### OLL 14
+
+**Algoritma: R' F R U R' F' R F U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U F' R' F R U' R' F' R"
+  alg="R' F R U R' F' R F U' F'"
+  stickering="OLL"
+/>
+
+### OLL 15
+
+**Algoritma: r' U' r R' U' R U r' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' r U' R' U R r' U r"
+  alg="r' U' r R' U' R U r' U r"
+  stickering="OLL"
+/>
+
+### OLL 16
+
+**Algoritma: r U r' R U R' U' r U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U r' U R U' R' r U' r'"
+  alg="r U r' R U R' U' r U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Zor Şekiller
+
+### OLL 29
+
+**Algoritma: R U R' U' R U' R' F' U' F R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U' R' F' U F R U R' U R U' R'"
+  alg="R U R' U' R U' R' F' U' F R U R'"
+  stickering="OLL"
+/>
+
+### OLL 30
+
+**Algoritma: F R' F R2 U' R' U' R U R' F2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F2 R U' R' U R U R2 F' R F'"
+  alg="F R' F R2 U' R' U' R U R' F2"
+  stickering="OLL"
+/>
+
+### OLL 41
+
+**Algoritma: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 42
+
+**Algoritma: R' U' R U' R' U2 R F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R' U2 R U R' U R"
+  alg="R' U' R U' R' U2 R F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Şimşekler
+
+### OLL 7
+
+**Algoritma: r U R' U R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' U' R U' r'"
+  alg="r U R' U R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 8
+
+**Algoritma: r' U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r"
+  alg="r' U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 11
+
+**Algoritma: r U R' U R' F R F' R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' F R' F' R U' R U' r'"
+  alg="r U R' U R' F R F' R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 12
+
+**Algoritma: F R U R' U' F' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' F U R U' R' F'"
+  alg="F R U R' U' F' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 39
+
+**Algoritma: L F' L' U' L U F U' L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L U F' U' L' U L F L'"
+  alg="L F' L' U' L U F U' L'"
+  stickering="OLL"
+/>
+
+### OLL 40
+
+**Algoritma: R' F R U R' U' F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F U R U' R' F' R"
+  alg="R' F R U R' U' F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Nokta Durumları
+
+Bunlar en zor OLL durumlarıdır — hiçbir kenar yönlendirilmemiştir.
+
+### OLL 1
+
+**Algoritma: R U2 R2 F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 2
+
+**Algoritma: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+### OLL 3
+
+**Algoritma: f R U R' U' f' U' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U f U R U' R' f'"
+  alg="f R U R' U' f' U' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 4
+
+**Algoritma: f R U R' U' f' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' f U R U' R' f'"
+  alg="f R U R' U' f' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 17
+
+**Algoritma: R U R' U R' F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 18
+
+**Algoritma: r U R' U R U2 r2 U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r2 U2 R' U' R U' r'"
+  alg="r U R' U R U2 r2 U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 19
+
+**Algoritma: r' R U R U R' U' r R2 F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R2 r' U R U' R' U' R' r"
+  alg="r' R U R U R' U' r R2 F R F'"
+  stickering="OLL"
+/>
+
+### OLL 20
+
+**Algoritma: r U R' U' r' U2 R U R U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R' U' R' U2 r U R U' r'"
+  alg="r U R' U' r' U2 R U R U' R2 U2 R"
+  stickering="OLL"
+/>
+
+---
+
+## Öğrenme İpuçları
+
+1. **2-Look OLL ile başlayın** — tam sete geçmeden önce 10 algoritmada ustalaşın
+2. **Sonra OCLL öğrenin** — 21-27 durumları en yaygın olanlardır ve 2-Look üzerine kuruludur
+3. **Kategorileri kademeli olarak ekleyin** — T-şekilleri, P-şekilleri ve balık şekilleri iyi sonraki adımlardır
+4. **Tanımayı pratik yapın** — durumu hızlıca tanıyabilmek, algoritmayı bilmek kadar önemlidir
+5. **Parmak hileleri kullanın** — algoritmaları ezberledikten sonra akıcı uygulamaya odaklanın
+
+:::tip
+Pratik yaparken küpü karıştırın ve OLL'ye kadar her şeyi çözün. Ardından OLL durumunu tanımlama ve çözme pratiği yapın. Tanıma otomatik hale gelene kadar tekrarlayın.
+:::

@@ -1,0 +1,325 @@
+---
+title: "Pyraminx İleri Teknikler"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pyraminx İleri Teknikler
+
+Pyraminx çözümlerinizi bir üst seviyeye taşımaya hazır mısınız? Bu rehber, en iyi Pyraminx hız küpçülerin 5 saniyenin altında ortalamalar elde etmek için kullandıkları ileri yöntemleri kapsar. **L4E (Last 4 Edges)** yöntemi, **Keyhole** tekniği ve **Top-First** yaklaşımına odaklanacağız.
+
+## Notasyon Hatırlatması
+
+**Katmanlar (büyük harf)** — tüm katmanı döndürün (uç hariç):
+- **U** = Üst katman &nbsp;&nbsp; **R** = Sağ katman &nbsp;&nbsp; **L** = Sol katman &nbsp;&nbsp; **B** = Arka katman
+
+**Uçlar (küçük harf)** — yalnızca ucu döndürün:
+- **u** = Üst uç &nbsp;&nbsp; **r** = Sağ uç &nbsp;&nbsp; **l** = Sol uç &nbsp;&nbsp; **b** = Arka uç
+
+Tek başına harf **saat yönünde 120°** anlamına gelir. **'** eklemek **saat yönünün tersine 120°** anlamına gelir.
+
+---
+
+## L4E Yöntemi (Last 4 Edges)
+
+L4E yöntemi en popüler ileri Pyraminx yöntemidir. Katman katman çözmek yerine, önce bir blok çözersiniz, ardından algoritmalar kullanarak **son 4 kenarı** tek adımda çözersiniz.
+
+### Genel Bakış
+
+| Adım | Açıklama | Teknik |
+|------|-------------|-----------|
+| 1 | Uçları çözme | Sezgisel (başlangıç ile aynı) |
+| 2 | V oluşturma | Sezgisel — bir merkez + iki kenar |
+| 3 | Son 4 kenarı çözme | Algoritmik — tek bakış |
+
+### Adım 1: Uçları Çözme
+
+Başlangıç yöntemi ile aynıdır. 4 ucun tümünü bitişik merkezlere hizalayın. Bu adım çok basittir — her ucun yalnızca 3 konumu vardır.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Adım 2: V Oluşturma
+
+Bir alt yüz seçin ve **V şekli** oluşturun: bir merkez parça ve ona bitişik iki kenarın doğru yerleştirilmesi. Bu size alt kısımda çözülmüş bir 1x1x2 blok verir.
+
+Pyraminx'i V sol altta olacak şekilde tutun. V, alt merkez ve onu sol ve sağ yüzlere bağlayan iki kenardan oluşur.
+
+**V oluşturma** — bu adım sezgiseldir. Seçtiğiniz merkezin yanına ait iki kenarı bulun ve katman dönüşleriyle yerleştirin:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**Ters çevrilmiş kenarlı V** — kenar yerinde ancak ters çevrilmişse, çıkarıp yeniden yerleştirin:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**İpuçları:**
+- En az hamle gerektiren V'yi seçin — başlamadan önce 4 olası V konumunun tümünü kontrol edin.
+- V, inceleme sırasında tamamen planlanmalıdır (Pyraminx için 15 saniye fazlasıyla yeterli).
+
+### Adım 3: Son 4 Kenarı Çözme
+
+V çözüldüğünde 4 kenar kalır. Durumu belirleyin ve ilgili algoritmayı uygulayın. Yaklaşık 30 L4E durumu vardır, ancak birçoğu birbirinin aynasıdır, bu da öğrenmeniz gereken benzersiz durumları azaltır.
+
+Pyraminx'i **V sol altta** olacak şekilde tutun (çözülmüş blok sol tarafta size bakacak şekilde).
+
+---
+
+#### L4E Durum 1: 4 kenarın tümü saat yönünde döngü gerektirir
+
+**Algoritma: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E Durum 2: 4 kenarın tümü saat yönünün tersine döngü gerektirir
+
+**Algoritma: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E Durum 3: İki kenar yer değiştirme (bitişik, ön)
+
+**Algoritma: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E Durum 4: İki kenar yer değiştirme (bitişik, arka)
+
+**Algoritma: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E Durum 5: İki kenar yerinde çevirme (ön çift)
+
+**Algoritma: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E Durum 6: İki kenar yerinde çevirme (arka çift)
+
+**Algoritma: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E Durum 7: Üç kenar saat yönünde döngü + bir çevirme
+
+**Algoritma: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E Durum 8: Üç kenar saat yönünün tersine döngü + bir çevirme
+
+**Algoritma: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E Durum 9: 4 kenarın tümü çevrilir
+
+**Algoritma: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E Durum 10: İki karşı kenar yer değiştirme
+
+**Algoritma: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E Durum 11: Döngü + çift çevirme
+
+**Algoritma: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E Durum 12: Bitişik yer değiştirme ve çevirme
+
+**Algoritma: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Keyhole Yöntemi
+
+Keyhole yöntemi, L4E'ye daha sezgisel bir alternatiftir. Her durum için algoritma öğrenmek yerine, çözülmemiş bir kenar yuvasını **anahtar deliği** olarak kullanarak diğer parçaları serbestçe yerleştirirsiniz.
+
+### Nasıl Çalışır
+
+1. **Uçları çözün** (her zamanki gibi).
+2. **Bir kenarı çözün** — bir alt kenarı doğru şekilde yerleştirin.
+3. **Boş yuvayı anahtar deliği olarak kullanın** — ikinci alt kenar yuvasını boş bırakmak, kısıtlama olmadan üst katmana kenar yerleştirme özgürlüğü verir.
+4. **Üst katman kenarlarını çözün** — anahtar deliğini kullanarak her üst kenarı tek tek yerleştirin.
+5. **Anahtar deliğini kapatın** — son alt kenarı en son yerleştirin.
+
+### Keyhole Yerleştirme Örneği
+
+Anahtar deliği alt katmanın sağ tarafında olduğunda, üst katman kenarını serbestçe yerleştirebilirsiniz:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Ters çevirme ile yerleştirme** — kenar yerleştirmeden önce çevrilmesi gerekiyorsa:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**İpuçları:**
+- Keyhole yöntemi, başlangıçtan ileri çözüme geçenler için mükemmeldir.
+- L4E'den daha az algoritma gerektirir ancak en üst seviyede biraz daha yavaştır.
+- Keyhole'u L4E'ye bir basamak olarak kullanın — burada geliştirdiğiniz sezgi L4E tanımasına yardımcı olur.
+
+---
+
+## Top-First Yöntemi
+
+Top-First yöntemi, tipik çözüm sırasını tersine çevirir: önce **üst katmanı** çözün, ardından altı tamamlayın.
+
+### Genel Bakış
+
+1. **Uçları çözün.**
+2. **Üst katmanın tamamını çözün** — 3 üst kenarın tümü üst merkez etrafında doğru yön ve konumda.
+3. **Alt katmanı çözün** — kalan 3 alt kenarı yerleştirin.
+
+### Üst Katmanı Çözme
+
+Üst katmanı sezgisel olarak oluşturun. Üstten başladığınız için kısıtlama yoktur — herhangi bir katmanı serbestçe döndürebilirsiniz.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Alt Katmanı Çözme
+
+Üst katman tamamlandığında, alt 3 kenar L4E durumlarına benzer küçük bir algoritma seti ile çözülebilir (ancak alt katmanla sınırlı).
+
+**Alt kenarların saat yönünde döngüsü:**
+
+**Algoritma: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Saat yönünün tersine döngü:**
+
+**Algoritma: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**İpuçları:**
+- Top-First yarışmalarda daha az yaygındır ancak belirli karıştırmalar için çok hızlı olabilir.
+- Karıştırma sonrası üst katman zaten kısmen çözülmüşse en iyi sonucu verir.
+- İnceleme planlaması ile birleştirin — kolay bir üst katman görürseniz Top-First tercih edin.
+
+---
+
+## Hız Çözümü İpuçları
+
+### İnceleme Planlaması
+
+Pyraminx, diğer tüm WCA bulmacalarından daha az parçaya sahiptir, bu da inceleme sırasında **çözümün daha büyük kısmını planlayabileceğiniz** anlamına gelir:
+
+- **15 saniyelik inceleme sırasında her zaman uçları + V'yi planlayın.**
+- İleri düzey çözücüler kolay karıştırmalar için **tüm çözümü** planlayabilir.
+- Planlamanızı genişletme pratiği yapın — uçlarla başlayın, sonra V'yi ekleyin, ardından L4E durumlarını tahmin etmeye çalışın.
+
+### Döndürme Tekniği
+
+- Hassas, hızlı dönüşler için **parmak uçlarını** kullanın — tüm el dönüşlerini değil.
+- Pyraminx, güçlü dönüşlerden ziyade hafif, hızlı fiske hareketlerinden faydalanır.
+- **R** ve **L** katman dönüşlerini işaret parmaklarınızla, **U** dönüşlerini baş parmaklarınızla pratik yapın.
+
+### Renk Tarafsızlığı
+
+- 3x3'ün aksine, Pyraminx'te **renk tarafsızlığı** son derece ulaşılabilirdir.
+- 4 yüzden herhangi birini alt yüz olarak kullanarak başlama pratiği yapın — bu size 4 kat daha fazla kolay V seçeneği verir.
+- Renk tarafsızlığı, 5 saniyenin altında çözüm için neredeyse zorunludur.
+
+### Pratik Rutini
+
+1. **L4E durumlarını tekrarlayın** — tersini kullanarak durumu kurun, çözün, tekrarlayın. Anında tanımayı hedefleyin.
+2. **Zamanlı çözümler** — 12'lik setler halinde çözüm yapın, ortalamanızı takip edin.
+3. **Tek bakış pratiği** — V oluşturma adımı sırasında, bitirmeden L4E durumunu belirlemeye çalışın.
+4. **Yavaş çözümler** — yarı hızda pratik yapın, akıcı dönüşlere ve sıfır duraksama üzerine odaklanın.
+
+---
+
+**L4E'de ustalaşıp iyi bir inceleme planlaması ile Pyraminx'te 4 saniyenin altında ortalamalar elde edilebilir.** Pyraminx, ham dönüş hızından çok planlama ve tanımayı ödüllendirir. L4E durumunuzu erken tahmin etmeye odaklanın, çözümler zahmetsiz hissedilecektir.

@@ -1,0 +1,249 @@
+---
+title: "4x4 Avançat: Mètode Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Avançat: Mètode Yau
+
+El **mètode Yau**, inventat per Robert Yau, és una alternativa més ràpida al mètode Reduction estàndard per al cub de Rubik 4×4. La diferència clau: Yau resol les arestes de la creu **aviat**, cosa que proporciona una millor anticipació i una transició més suau a la fase 3×3. La majoria dels millors speedcubers de 4×4 utilitzen Yau o una variant.
+
+## Yau vs Reduction estàndard
+
+| Aspecte | Reduction | Yau |
+|--------|-----------|-----|
+| **Ordre dels passos** | Tots els centres, després totes les arestes | 2 centres, 3 arestes de creu, 4 centres, arestes restants |
+| **Creu** | Es construeix després de la Reduction | Parcialment feta durant la Reduction |
+| **Anticipació** | Cal trobar les arestes de creu després d'aparellar | La creu és quasi feta, la transició a F2L és fluida |
+| **Sostre de velocitat** | Bo | Més alt — menys pauses entre fases |
+
+## Recordatori de notació
+
+**Moviments estàndard** (només la capa exterior):
+- **R** = Dreta &nbsp;&nbsp; **L** = Esquerra &nbsp;&nbsp; **U** = Amunt &nbsp;&nbsp; **D** = Avall &nbsp;&nbsp; **F** = Davant &nbsp;&nbsp; **B** = Darrere
+
+**Moviments amples** (dues capes exteriors juntes):
+- **Rw** = Dreta ample &nbsp;&nbsp; **Lw** = Esquerra ample &nbsp;&nbsp; **Uw** = Amunt ample &nbsp;&nbsp; **Dw** = Avall ample &nbsp;&nbsp; **Fw** = Davant ample &nbsp;&nbsp; **Bw** = Darrere ample
+
+Una lletra sola significa **90° en sentit horari**. Afegir **'** significa **en sentit antihorari**. Afegir **2** significa **180°**.
+
+---
+
+## Pas 1: Resoldre dos centres oposats
+
+Comença resolent els blocs centrals **blanc** i **groc** (superior i inferior). Això és igual que la primera part del mètode Reduction estàndard.
+
+Cada centre és un bloc de 2×2 peces. Utilitza moviments amples per ajuntar les peces centrals mentre protegeixes les peces ja col·locades amb girs de la capa exterior.
+
+**Construcció bàsica del centre** — porta una peça central a dalt amb un moviment ample, posiciona-la i després inverteix:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Unir dues meitats de centre** — quan tens dues tires centrals 1×2 que cal fusionar:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Consells:**
+- Resol primer el centre blanc (a baix), després el centre groc (a dalt).
+- Mantén el blanc a baix tot el temps — utilitza només moviments Rw, Lw, Fw, Bw per manipular els centres sense pertorbar la part inferior.
+- No et preocupis pels centres laterals ara. Deixa'ls per al Pas 3.
+
+---
+
+## Pas 2: Resoldre 3 de 4 arestes de creu
+
+Aquí és on Yau divergeix de Reduction. Abans de resoldre els centres restants, **aparella i col·loca 3 arestes de creu blanques** a la capa inferior.
+
+Una aresta de creu consisteix en dues peces (p. ex., blanc-vermell i blanc-vermell) que cal aparellar i col·locar a la capa D. Deixa una aresta de creu sense resoldre per ara — això et dona llibertat per utilitzar moviments amples al pas següent.
+
+**Aparellar una aresta de creu amb freeslice** — la tècnica freeslice aparella arestes sense pertorbar els centres. Col·loca una meitat de l'aresta a la posició frontal dreta i porta la seva parella des d'una altra ranura:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Inserir una aresta de creu aparellada a baix** — un cop aparellada, col·loca l'aresta a la seva posició correcta a la capa D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice amb moviments amples** — utilitza Dw per portar una peça d'aresta amunt per aparellar-la sense trencar les arestes de creu ja col·locades:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Consells:**
+- Només necessites 3 arestes de creu resoltes ara. Deixa deliberadament una ranura buida.
+- Utilitza la ranura buida de la capa D lliurement — l'aresta de creu que falta et dona més llibertat per a moviments amples.
+- Tria quina aresta de creu deixar segons quina és més difícil de trobar o aparellar.
+
+---
+
+## Pas 3: Resoldre els 4 centres restants
+
+Ara resol els **4 centres laterals** (vermell, taronja, blau, verd). Els centres blanc i groc ja estan fets del Pas 1.
+
+Com que tens una ranura d'aresta de creu sense resoldre, encara pots utilitzar alguns moviments amples lliurement. Aquest és un avantatge clau de Yau — la creu parcialment resolta no restringeix la construcció dels centres tant com podries esperar.
+
+**Construir un centre lateral** — utilitza moviments amples per recollir peces centrals i després col·loca-les:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Commutador de centre** — quan necessites intercanviar una peça central sense pertorbar les altres, utilitza una seqüència d'estil commutador:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Consells:**
+- Resol els centres en parells oposats quan sigui possible (p. ex., vermell i després taronja, blau i després verd).
+- Aprofita la ranura d'aresta de creu sense resoldre — els moviments amples a través d'aquesta ranura no trencaran les arestes de creu.
+- Tingues en compte les 3 arestes de creu ja a la capa D. Comprova abans de fer moviments amples.
+
+---
+
+## Pas 4: Última aresta de creu + Completar l'aparellament d'arestes
+
+Aquest pas té dues parts: acaba la 4a aresta de creu i després aparella totes les arestes restants.
+
+### Part A: Resoldre l'última aresta de creu
+
+Troba el parell d'aresta de creu restant i ajunta'ls. Com que tots els centres estan resolts ara, cal ser més curós amb els moviments amples.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Un cop aparellada, insereix-la a l'última ranura de la capa D per completar la creu blanca.
+
+### Part B: Aparellar les arestes restants (tècnica 3-2-3)
+
+Ara tens 8 arestes sense aparellar. La **tècnica 3-2-3** és la manera més eficient d'aparellar-les:
+
+1. **Primeres 3 arestes** — aparella-les amb moviments estàndard slice-flip-slice. Col·loca una aresta sense aparellar a la part frontal dreta, troba la seva parella a dalt i utilitza Uw per ajuntar-les:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Següents 2 arestes** — amb menys arestes restants, pots aparellar dues arestes en ràpida successió emmagatzemant-ne una al darrere:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Últimes 3 arestes** — les arestes finals requereixen més cura per evitar trencar les arestes ja aparellades. Utilitza moviments basats en Dw o tècniques de volteig:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Consells:**
+- Durant l'aparellament 3-2-3, comprova sempre que els teus moviments amples no trenquin les arestes de creu de baix.
+- Si una aresta està aparellada però girada, cal treure-la i tornar-la a aparellar.
+- La transició de l'aparellament d'arestes a 3×3 ha de ser fluida — la teva creu ja està feta.
+
+---
+
+## Pas 5: Resoldre com a 3×3 (CFOP)
+
+Amb tots els centres resolts, totes les arestes aparellades i la creu completa, el 4×4 ara es comporta com un 3×3. Com que la **creu blanca ja està feta** (un gran avantatge de Yau), pots passar directament a **F2L** (Primeres Dues Capes).
+
+Utilitza només moviments de la capa exterior a partir d'ara — sense moviments amples.
+
+**Continua amb CFOP estàndard:**
+1. **F2L** — aparella i insereix parells de cantonada-aresta a les primeres dues capes.
+2. **OLL** — orienta l'última capa.
+3. **PLL** — permuta l'última capa.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Aquest és el gran avantatge del mètode Yau: la transició de la creu a F2L no té cap pausa, perquè la creu es va construir durant la fase de Reduction.
+
+---
+
+## Algoritmes de paritat
+
+El 4×4 té dos casos de paritat que no poden ocórrer en un 3×3. Passen aproximadament el 50% del temps cadascun, independentment de si utilitzes Yau o Reduction.
+
+### OLL parity (inversió d'una sola aresta)
+
+Una sola aresta apareix girada a l'última capa — impossible en un 3×3 real.
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Aplica aquest algoritme una vegada i després continua amb OLL/PLL normal.
+
+### PLL parity (intercanvi de dues arestes)
+
+Dues arestes oposades necessiten ser intercanviades — de nou impossible en un 3×3.
+
+**Algorithm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Quan aprendre Yau
+
+- **Si fas una mitjana inferior a 2 minuts amb Reduction**, tens els fonaments per canviar a Yau.
+- **Si coneixes CFOP per a 3×3**, Yau és una opció natural — la creu ja està feta quan entres a la fase 3×3.
+- **Si tens problemes amb la transició de Reduction a 3×3**, Yau elimina completament aquesta pausa.
+
+## Prioritats de pràctica
+
+1. **Domina l'aparellament d'arestes amb freeslice** — aquesta és la tècnica clau que fa Yau eficient.
+2. **Practica el reconeixement de 2 centres + 3 arestes de creu** — aprèn a identificar les arestes de creu ràpidament durant els dos primers passos.
+3. **Practica la tècnica 3-2-3** — l'aparellament fluid d'arestes és on es guanya més temps.
+4. **Treballa la transició de la creu a F2L** — com que la creu està feta, practica detectar el teu primer parell F2L durant l'aparellament d'arestes.
+
+---
+
+**El mètode Yau és l'estàndard per a la resolució competitiva del 4×4.** La transició fluida de la Reduction a la resolució 3×3, combinada amb millors oportunitats d'anticipació, el converteix en l'opció preferida pels speedcubers que aspiren a mitjanes inferiors a 40 segons. Comença convertint les teves resolucions amb Reduction a Yau pas a pas.

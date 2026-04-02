@@ -1,0 +1,724 @@
+---
+title: OLL algoritmy
+sidebar_position: 7
+description: Referenčná príručka algoritmov OLL (Orientácia poslednej vrstvy) pre Rubikovu kocku 3x3. 2-Look OLL pre začiatočníkov plus 45 najčastejších prípadov plného OLL.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# OLL algoritmy
+
+**OLL (Orientácia poslednej vrstvy)** je prvý krok poslednej vrstvy v metóde CFOP. Cieľom je, aby celá horná strana mala jednu farbu (žltú). Celkovo existuje **57 prípadov OLL**.
+
+Ak ste začiatočník, začnite s **2-Look OLL** — zjednodušeným prístupom, ktorý vyžaduje iba **10 algoritmov** namiesto všetkých 57.
+
+Tento sprievodca pokrýva 2-Look OLL plus **45 najčastejšie sa vyskytujúcich** prípadov plného OLL, organizovaných podľa kategórie tvaru.
+
+---
+
+## 2-Look OLL
+
+2-Look OLL rozdeľuje krok orientácie na dva menšie kroky:
+
+1. **Orientácia hrán** — vytvorenie žltého kríža hore (3 prípady)
+2. **Orientácia rohov** — celá horná strana sa stane žltou (7 prípadov)
+
+To znamená, že sa musíte naučiť iba **10 algoritmov** celkovo.
+
+### Krok 1: Orientácia hrán (Vytvorenie žltého kríža)
+
+Pozrite sa na hornú stranu. Ignorujte rohy a sústreďte sa iba na **hrany**. Uvidíte jeden z troch vzorov:
+
+#### Bodka (Žiadne hrany orientované)
+
+Žiadne žlté hrany nesmerujú nahor. Použite tento algoritmus na prechod na tvar L, potom použite algoritmus tvaru L.
+
+**Algoritmus: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Tvar L (Dve susedné hrany orientované)
+
+Dve žlté hrany tvoria **tvar L**. Držte kocku tak, aby L bolo v pozícii **vzadu vľavo**.
+
+**Algoritmus: f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f'"
+  alg="f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Čiara (Dve protiľahlé hrany orientované)
+
+Dve žlté hrany tvoria **vodorovnú čiaru**. Držte kocku tak, aby čiara šla **zľava doprava**.
+
+**Algoritmus: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### Krok 2: Orientácia rohov (7 prípadov)
+
+Teraz máte žltý kríž. Pozrite sa na hornú stranu a zistite, koľko **rohov** má žltú smerujúcu nahor.
+
+#### Sune (1 roh orientovaný, žltá ukazuje vľavo)
+
+Držte kocku tak, aby vyriešený roh bol **vpredu vľavo**.
+
+**Algoritmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Anti-Sune (1 roh orientovaný, žltá ukazuje vpravo)
+
+Držte kocku tak, aby vyriešený roh bol **vpredu vpravo**.
+
+**Algoritmus: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+#### H (Dvojitý Sune — 0 rohov orientovaných, šachovnicový vzor)
+
+Žlté nálepky tvoria šachovnicový vzor hore (žiadne rohy nesmerujú nahor, svetlomety na dvoch protiľahlých stranách).
+
+**Algoritmus: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Pi (0 rohov orientovaných, svetlomety na jednej strane)
+
+Žiadne rohy nesmerujú nahor. Dve žlté nálepky na tej istej strane (svetlomety vpredu).
+
+**Algoritmus: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+#### U (Svetlomety — 2 rohy orientované na tej istej strane)
+
+Dva rohy vyriešené, oba na **tej istej strane**. Držte svetlomety **vľavo**.
+
+**Algoritmus: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+#### T (2 rohy orientované diagonálne)
+
+Dva rohy vyriešené diagonálne. Žlté nálepky vpredu vľavo a vzadu vpravo (alebo naopak).
+
+**Algoritmus: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+#### L (2 susedné rohy orientované, diagonálne svetlomety)
+
+Dva rohy vyriešené v susedných pozíciách so špecifickým vzorom.
+
+**Algoritmus: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Plný OLL — Všetky hrany orientované (OCLL, OLL 21-27)
+
+Tieto prípady majú všetky štyri hrany už orientované (žltý kríž je hotový). Iba rohy potrebujú orientáciu.
+
+### OLL 21 — H (Dvojitý Sune)
+
+**Algoritmus: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 22 — Pi
+
+**Algoritmus: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+### OLL 23 — Headlights
+
+**Algoritmus: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+### OLL 24 — Chameleon
+
+**Algoritmus: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 25 — Bowtie
+
+**Algoritmus: F' r U R' U' r' F R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F' r U R U' r' F"
+  alg="F' r U R' U' r' F R"
+  stickering="OLL"
+/>
+
+### OLL 26 — Sune
+
+**Algoritmus: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 27 — Anti-Sune
+
+**Algoritmus: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Tvary T
+
+### OLL 33
+
+**Algoritmus: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 45
+
+**Algoritmus: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Štvorce
+
+### OLL 5
+
+**Algoritmus: r' U2 R U R' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' R U' R' U2 r"
+  alg="r' U2 R U R' U r"
+  stickering="OLL"
+/>
+
+### OLL 6
+
+**Algoritmus: r U2 R' U' R U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U R' U R U2 r'"
+  alg="r U2 R' U' R U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Tvary C
+
+### OLL 34
+
+**Algoritmus: R U R2 U' R' F R U R U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R' U' R' F' R U R2 U' R'"
+  alg="R U R2 U' R' F R U R U' F'"
+  stickering="OLL"
+/>
+
+### OLL 46
+
+**Algoritmus: R' U' R' F R F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F R' F' R U R"
+  alg="R' U' R' F R F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Tvary W
+
+### OLL 36
+
+**Algoritmus: L' U' L U' L' U L U L F' L' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L F L' U' L' U' L U L' U L"
+  alg="L' U' L U' L' U L U L F' L' F"
+  stickering="OLL"
+/>
+
+### OLL 38
+
+**Algoritmus: R U R' U R U' R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U R' U' R U' R'"
+  alg="R U R' U R U' R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+---
+
+## Tvary P
+
+### OLL 31
+
+**Algoritmus: R' U' F U R U' R' F' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F R U R' U' F' U R"
+  alg="R' U' F U R U' R' F' R"
+  stickering="OLL"
+/>
+
+### OLL 32
+
+**Algoritmus: L U F' U' L' U L F L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L F' L' U' L U F U' L'"
+  alg="L U F' U' L' U L F L'"
+  stickering="OLL"
+/>
+
+### OLL 43
+
+**Algoritmus: F' U' L' U L F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L' U' L U F"
+  alg="F' U' L' U L F"
+  stickering="OLL"
+/>
+
+### OLL 44
+
+**Algoritmus: F U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U R' U' F'"
+  alg="F U R U' R' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Tvary ryby
+
+### OLL 9
+
+**Algoritmus: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 10
+
+**Algoritmus: R U R' U R' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 35
+
+**Algoritmus: R U2 R2 F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 37
+
+**Algoritmus: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Tvary jazdca
+
+### OLL 13
+
+**Algoritmus: F U R U2 R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U2 R' U' F'"
+  alg="F U R U2 R' U' R U R' F'"
+  stickering="OLL"
+/>
+
+### OLL 14
+
+**Algoritmus: R' F R U R' F' R F U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U F' R' F R U' R' F' R"
+  alg="R' F R U R' F' R F U' F'"
+  stickering="OLL"
+/>
+
+### OLL 15
+
+**Algoritmus: r' U' r R' U' R U r' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' r U' R' U R r' U r"
+  alg="r' U' r R' U' R U r' U r"
+  stickering="OLL"
+/>
+
+### OLL 16
+
+**Algoritmus: r U r' R U R' U' r U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U r' U R U' R' r U' r'"
+  alg="r U r' R U R' U' r U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Neobvyklé tvary
+
+### OLL 29
+
+**Algoritmus: R U R' U' R U' R' F' U' F R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U' R' F' U F R U R' U R U' R'"
+  alg="R U R' U' R U' R' F' U' F R U R'"
+  stickering="OLL"
+/>
+
+### OLL 30
+
+**Algoritmus: F R' F R2 U' R' U' R U R' F2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F2 R U' R' U R U R2 F' R F'"
+  alg="F R' F R2 U' R' U' R U R' F2"
+  stickering="OLL"
+/>
+
+### OLL 41
+
+**Algoritmus: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 42
+
+**Algoritmus: R' U' R U' R' U2 R F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R' U2 R U R' U R"
+  alg="R' U' R U' R' U2 R F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Blesky
+
+### OLL 7
+
+**Algoritmus: r U R' U R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' U' R U' r'"
+  alg="r U R' U R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 8
+
+**Algoritmus: r' U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r"
+  alg="r' U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 11
+
+**Algoritmus: r U R' U R' F R F' R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' F R' F' R U' R U' r'"
+  alg="r U R' U R' F R F' R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 12
+
+**Algoritmus: F R U R' U' F' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' F U R U' R' F'"
+  alg="F R U R' U' F' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 39
+
+**Algoritmus: L F' L' U' L U F U' L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L U F' U' L' U L F L'"
+  alg="L F' L' U' L U F U' L'"
+  stickering="OLL"
+/>
+
+### OLL 40
+
+**Algoritmus: R' F R U R' U' F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F U R U' R' F' R"
+  alg="R' F R U R' U' F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Prípady s bodkou
+
+Toto sú najťažšie prípady OLL — žiadne hrany nie sú orientované.
+
+### OLL 1
+
+**Algoritmus: R U2 R2 F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 2
+
+**Algoritmus: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+### OLL 3
+
+**Algoritmus: f R U R' U' f' U' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U f U R U' R' f'"
+  alg="f R U R' U' f' U' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 4
+
+**Algoritmus: f R U R' U' f' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' f U R U' R' f'"
+  alg="f R U R' U' f' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 17
+
+**Algoritmus: R U R' U R' F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 18
+
+**Algoritmus: r U R' U R U2 r2 U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r2 U2 R' U' R U' r'"
+  alg="r U R' U R U2 r2 U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 19
+
+**Algoritmus: r' R U R U R' U' r R2 F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R2 r' U R U' R' U' R' r"
+  alg="r' R U R U R' U' r R2 F R F'"
+  stickering="OLL"
+/>
+
+### OLL 20
+
+**Algoritmus: r U R' U' r' U2 R U R U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R' U' R' U2 r U R U' r'"
+  alg="r U R' U' r' U2 R U R U' R2 U2 R"
+  stickering="OLL"
+/>
+
+---
+
+## Tipy na učenie
+
+1. **Začnite s 2-Look OLL** — zvládnite 10 algoritmov predtým, než sa pustíte do kompletnej sady
+2. **Ďalej sa naučte OCLL** — prípady 21-27 sú najčastejšie a stavajú na 2-Look
+3. **Pridávajte kategórie postupne** — tvary T, tvary P a tvary ryby sú dobré ďalšie kroky
+4. **Precvičujte rozpoznávanie** — schopnosť rýchlo identifikovať prípad je rovnako dôležitá ako znalosť algoritmu
+5. **Používajte prstové triky** — sústreďte sa na plynulé vykonávanie, keď máte algoritmy zapamätané
+
+:::tip
+Pri precvičovaní zamiešajte kocku a vyriešte všetko po OLL. Potom precvičujte identifikáciu a riešenie prípadu OLL. Opakujte, kým sa rozpoznávanie nestane automatickým.
+:::

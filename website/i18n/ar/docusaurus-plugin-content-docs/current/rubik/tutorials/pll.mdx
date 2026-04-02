@@ -1,0 +1,466 @@
+---
+title: خوارزميات PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# خوارزميات PLL
+
+**PLL (تبديل الطبقة الأخيرة)** هي الخطوة الأخيرة في طريقة CFOP. بعد أن يقوم OLL بتوجيه جميع ملصقات الوجه العلوي، يعيد PLL ترتيب القطع إلى مواضعها الصحيحة. هناك **21 حالة PLL** في المجموع.
+
+إذا كنت مبتدئًا، ابدأ بـ **2-Look PLL** -- وهو نهج مبسط يتطلب فقط **6 خوارزميات** بدلاً من 21 خوارزمية كاملة.
+
+---
+
+## 2-Look PLL
+
+يقسم 2-Look PLL خطوة التبديل إلى خطوتين أصغر:
+
+1. **تبديل الأركان** -- وضع جميع الأركان الأربعة في مواضعها الصحيحة (حالتان)
+2. **تبديل الحواف** -- وضع جميع الحواف الأربعة في مواضعها الصحيحة (4 حالات)
+
+هذا يعني أنك تحتاج فقط لتعلم **6 خوارزميات** في المجموع.
+
+### الخطوة 1: تبديل الأركان
+
+انظر إلى أركان الطبقة العلوية. تحقق مما إذا كان أي **زوج من الأركان المتجاورة** ينتمي إلى نفس الجانب (أضواء أمامية متطابقة).
+
+#### تبديل الأركان المتجاورة
+
+زوج واحد من الأركان المتجاورة صحيح بالفعل. أمسك الزوج المحلول في **الخلف** وطبّق:
+
+**الخوارزمية: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+هذه هي **T-Perm** -- تبدل الركنين الأماميين (وحافتين، سنصلحهما في الخطوة 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### تبديل الأركان القطرية
+
+لا توجد أركان متجاورة متطابقة. طبّق **Y-Perm** لتبديل الأركان قطريًا:
+
+**الخوارزمية: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### الخطوة 2: تبديل الحواف
+
+جميع الأركان محلولة الآن. انظر إلى الحواف وحدد أيها يحتاج للدوران.
+
+#### Ua Perm (دورة 3 حواف باتجاه عقارب الساعة)
+
+ثلاث حواف تحتاج للدوران باتجاه عقارب الساعة. أمسك الحافة المحلولة في **الخلف**.
+
+**الخوارزمية: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (دورة 3 حواف عكس عقارب الساعة)
+
+ثلاث حواف تحتاج للدوران عكس عقارب الساعة. أمسك الحافة المحلولة في **الخلف**.
+
+**الخوارزمية: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (تبديل أزواج الحواف المتقابلة)
+
+زوجان من الحواف المتقابلة يحتاجان للتبديل.
+
+**الخوارزمية: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (تبديل أزواج الحواف المتجاورة)
+
+زوجان من الحواف المتجاورة يحتاجان للتبديل. أمسك بحيث يكون الزوجان أمام/يمين وخلف/يسار.
+
+**الخوارزمية: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL الكامل -- جميع الحالات الـ 21
+
+### الحواف فقط (4 حالات)
+
+هذه الحالات تحرك الحواف فقط؛ الأركان محلولة بالفعل.
+
+#### Ua Perm
+
+الحواف تدور باتجاه عقارب الساعة. الحافة المحلولة في الخلف.
+
+**التعرف:** شريط واحد محلول (حافة + ركنان) مرئي من الخلف.
+
+**الخوارزمية: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+الحواف تدور عكس عقارب الساعة. الحافة المحلولة في الخلف.
+
+**التعرف:** شريط واحد محلول مرئي من الخلف؛ ألوان الحواف تدور بالاتجاه المعاكس لـ Ua.
+
+**الخوارزمية: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+زوجان من الحواف المتقابلة يتبادلان.
+
+**التعرف:** كل جانب يحتوي على اللون المعاكس في حافة المركز. نمط رقعة الشطرنج على جميع الجوانب الأربعة.
+
+**الخوارزمية: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+زوجان من الحواف المتجاورة يتبادلان.
+
+**التعرف:** جانبان متجاوران يحمل كل منهما لون الآخر في موضع الحافة. لا يوجد جانب محلول بالكامل.
+
+**الخوارزمية: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### الأركان فقط (3 حالات)
+
+هذه الحالات تحرك الأركان فقط؛ الحواف محلولة بالفعل.
+
+#### Aa Perm
+
+ثلاثة أركان تدور. الأضواء الأمامية على الجانب الأيسر.
+
+**التعرف:** أضواء أمامية على جانب واحد، الشريط (3 ملصقات متطابقة) على الجانب المقابل.
+
+**الخوارزمية: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+ثلاثة أركان تدور (بالاتجاه المعاكس لـ Aa). الأضواء الأمامية على الجانب الأيمن.
+
+**التعرف:** انعكاس Aa -- أضواء أمامية على الجانب المقابل.
+
+**الخوارزمية: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+زوجان من الأركان القطرية يتبادلان. لا تتحرك أي حواف.
+
+**التعرف:** لا توجد أضواء أمامية على أي جانب. كل جانب يحتوي على لونين مختلفين في الأركان.
+
+**الخوارزمية: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### تبديل الأركان المتجاورة (6 حالات)
+
+هذه الحالات تبدل زوجًا من الأركان المتجاورة مع تبديلات الحواف.
+
+#### T Perm
+
+**التعرف:** أضواء أمامية من الأمام والخلف. الجانبان اللذان بدون أضواء أمامية ألوانهما مبدلة.
+
+**الخوارزمية: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**التعرف:** أضواء أمامية على جانب واحد فقط (الأمام). الجوانب الثلاثة الأخرى ليس بها أزواج متطابقة.
+
+**الخوارزمية: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**التعرف:** كتلة 1x1x3 محلولة على الجانب الأيسر. الجانب الأيمن به قطع متجاورة مبدلة.
+
+**الخوارزمية: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**التعرف:** كتلة 1x1x3 محلولة على الجانب الأيمن. انعكاس Ja.
+
+**الخوارزمية: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**التعرف:** أضواء أمامية من الأمام. تبديل ركن وحافة متجاورين على الجانب الأيمن.
+
+**الخوارزمية: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**التعرف:** أضواء أمامية من الخلف. انعكاس Ra.
+
+**الخوارزمية: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### تبديل الأركان القطرية (4 حالات)
+
+هذه الحالات تبدل ركنين متقابلين قطريًا.
+
+#### V Perm
+
+**التعرف:** لا توجد أضواء أمامية على أي جانب. جانب واحد به نمط بلونين حيث تطابق الحافة أحد الأركان.
+
+**الخوارزمية: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**التعرف:** لا توجد أضواء أمامية. جانب واحد به ركنان متطابقان لكن الحافة بينهما خاطئة.
+
+**الخوارزمية: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**التعرف:** جانبان متقابلان محلولان بالكامل (شريط محلول على كل منهما)، لكن الجانبين الآخرين قطعهما مبدلة بالكامل.
+
+**الخوارزمية: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**التعرف:** انعكاس Na. شريطان متقابلان لكن مبدلان بشكل مختلف.
+
+**الخوارزمية: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### حالات G Perm (4 حالات)
+
+تبديلات G هي الأصعب في التعرف عليها. تحرك زوجًا من الأركان المتجاورة وتدوّر ثلاث حواف.
+
+#### Ga Perm
+
+**التعرف:** أضواء أمامية على اليسار. الركن الأمامي الأيمن يطابق الحافة اليمنى.
+
+**الخوارزمية: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**التعرف:** أضواء أمامية من الأمام. الركن الخلفي الأيسر يطابق الحافة اليسرى.
+
+**الخوارزمية: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**التعرف:** أضواء أمامية على اليمين. الركن الأمامي الأيسر يطابق الحافة اليسرى.
+
+**الخوارزمية: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**التعرف:** أضواء أمامية من الخلف. الركن الأمامي الأيمن يطابق الحافة اليمنى.
+
+**الخوارزمية: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## نصائح التعرف
+
+التعرف الفعال على PLL هو مفتاح الحل السريع. إليك استراتيجيات عامة:
+
+1. **ابحث عن الأضواء الأمامية** -- زوج من الأركان المتطابقة على جانب واحد. هذا يضيق الاحتمالات فورًا.
+2. **عد الأشرطة المحلولة** -- الشريط هو ثلاثة ملصقات متطابقة في صف (ركن-حافة-ركن). الأشرطة تشير إلى حالات PLL محددة.
+3. **تحقق من جانبين** -- النظر إلى الجانب الأمامي والأيمن عادة ما يكفي لتحديد الحالة.
+4. **تعلم الأنماط المعاكسة** -- العديد من حالات PLL تأتي في أزواج منعكسة (Ua/Ub، Ja/Jb، Ra/Rb، Ga-Gd).
+
+| ما تراه | حالات PLL المحتملة |
+|:---|:---|
+| 4 جوانب بأضواء أمامية | H، Ua، Ub، Z |
+| جانبان متقابلان بأضواء أمامية | T، F، Ja، Jb، Ra، Rb |
+| جانب واحد بأضواء أمامية | Aa، Ab، Ga، Gb، Gc، Gd |
+| 0 جوانب بأضواء أمامية | E، V، Y، Na، Nb |
+
+## ترتيب التعلم
+
+ترتيب مقترح لتعلم جميع حالات PLL الـ 21:
+
+1. **2-Look أولاً:** T، Y (أركان) + Ua، Ub، H، Z (حواف) -- 6 خوارزميات
+2. **التبديلات المتجاورة:** Ja، Jb، F، Ra، Rb -- 5 خوارزميات إضافية
+3. **الأركان فقط:** Aa، Ab، E -- 3 خوارزميات إضافية
+4. **التبديلات القطرية:** V، Na، Nb -- 3 خوارزميات إضافية
+5. **G Perms أخيرًا:** Ga، Gb، Gc، Gd -- 4 خوارزميات نهائية
+
+:::tip
+تدرب على التعرف عن طريق الخلط، والحل حتى PLL، ثم تغطية المكعب ومحاولة تحديد الحالة من الذاكرة. السرعة تأتي من التعرف الفوري، وليس فقط من حركات الأصابع السريعة.
+:::

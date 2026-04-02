@@ -1,0 +1,312 @@
+---
+title: "F2L: Primeres dues capes"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Primeres dues capes
+
+F2L (First Two Layers, primeres dues capes) és el **pas més important** del mètode CFOP. En lloc de resoldre les cantonades de la primera capa i les arestes de la segona capa com a dos passos separats (com al mètode per a principiants), F2L emparella una cantonada amb la seva aresta corresponent i les insereix juntes a la ranura correcta. Això estalvia un gran nombre de moviments i és on es produeixen les millores de velocitat més grans.
+
+Hi ha **4 ranures** per omplir, una a cada cantonada de les dues capes inferiors. Cada ranura consta d'una peça de cantonada i una peça d'aresta.
+
+## El concepte
+
+Cada cas de F2L implica dues peces:
+- Una **peça de cantonada** que pertany a la capa inferior (té un adhesiu blanc/color de la base)
+- Una **peça d'aresta** que pertany a la capa mitjana (connecta dos colors laterals)
+
+L'objectiu és **emparellar** aquestes dues peces a la capa superior i després **inserir** el parell a la ranura correcta amb un moviment fluid.
+
+## Recordatori de notació
+
+- **R** = Dreta &nbsp;&nbsp; **L** = Esquerra &nbsp;&nbsp; **U** = Dalt &nbsp;&nbsp; **D** = Baix &nbsp;&nbsp; **F** = Davant &nbsp;&nbsp; **B** = Darrere
+- Una lletra sola = **90° en sentit horari** &nbsp;&nbsp; **'** = **sentit antihorari** &nbsp;&nbsp; **2** = **180°**
+
+Agafa el cub amb el **blanc a baix**. La ranura on inserim és sempre la ranura **davant-dreta** (entre les cares F i R).
+
+---
+
+## F2L intuïtiva
+
+Abans de memoritzar algorismes, aprèn la **lògica** de F2L. Cada cas segueix el mateix patró:
+
+1. **Troba** un parell cantonada-aresta que pertanyin junts
+2. **Separa'ls** si estan units incorrectament
+3. **Col·loca** una peça i després **porta** l'altra per trobar-la
+4. **Emparella'ls** a la capa superior perquè el blanc miri cap a fora o cap avall
+5. **Insereix** el parell connectat a la ranura
+
+**Principi clau:** Utilitza moviments R i U per treure la cantonada de la ranura davant-dreta o posar-la-hi, i utilitza moviments U per col·locar l'aresta. No destoris les ranures ja resoltes.
+
+---
+
+Hi ha **41 casos estàndard de F2L** en total. A continuació cobrim els **15 casos més importants** que formen la base. Un cop els dominis, podràs gestionar els casos restants intuïtivament o buscar-los quan calgui.
+
+## Casos bàsics: Ambdues peces a la capa superior
+
+Aquests són els casos més simples i comuns. Tant la cantonada com l'aresta són a la capa U i la ranura objectiu és buida.
+
+### Cas 1: Inserció fàcil — Blanc de la cantonada mira a la dreta, aresta preparada
+
+La cantonada té el blanc mirant a la cara R, i l'aresta ja està col·locada perquè un moviment U les emparelli. Aquesta és la inserció F2L més bàsica.
+
+**Algorisme: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Cas 2: Inserció fàcil — Blanc de la cantonada mira al davant, aresta preparada
+
+La cantonada té el blanc mirant a la cara F, i l'aresta està col·locada per emparellar amb una inserció en sentit antihorari.
+
+**Algorisme: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Cas 3: Blanc de la cantonada mira cap amunt, colors coincideixen amb el lateral
+
+La cantonada té el blanc mirant cap amunt i el seu color frontal coincideix amb el centre frontal. L'aresta és al costat oposat. Cal connectar-les i inserir-les.
+
+**Algorisme: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Cas 4: Blanc de la cantonada mira cap amunt, colors coincideixen amb el lateral dret
+
+La cantonada té el blanc mirant cap amunt i el seu color dret coincideix amb el centre dret. L'aresta necessita ser emparellada des del costat oposat.
+
+**Algorisme: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Cas 5: Cantonada i aresta lluny, blanc mira a la dreta
+
+La cantonada té el blanc mirant a la dreta i l'aresta és al costat oposat de la capa superior. Apropem l'aresta, després emparellem i inserim.
+
+**Algorisme: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Cas 6: Cantonada i aresta lluny, blanc mira al davant
+
+Mirall del cas 5. La cantonada té el blanc mirant al davant i l'aresta és al costat llunyà.
+
+**Algorisme: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Cas 7: Cantonada i aresta adjacents, blanc mira a la dreta — Parell connectat però malament
+
+La cantonada i l'aresta són una al costat de l'altra i connectades, però si les inseríssim anirien malament. Les separem i les tornem a unir correctament.
+
+**Algorisme: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Cas 8: Cantonada i aresta adjacents, blanc mira al davant — Parell connectat però malament
+
+Mirall del cas 7 al costat de la cara F.
+
+**Algorisme: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Casos intermedis: Aresta a la ranura, cantonada a la capa superior
+
+De vegades l'aresta ja està ficada en una ranura (correcta o incorrecta), i la cantonada és a la capa superior. Cal extreure l'aresta sense destorbar altres parells resolts.
+
+### Cas 9: Aresta a la ranura correcta però cantonada a dalt — Blanc mira a la dreta
+
+L'aresta és a la ranura correcta i la cantonada és a la capa U amb el blanc mirant a la dreta. Traiem l'aresta i l'emparellem amb la cantonada.
+
+**Algorisme: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Cas 10: Aresta a ranura incorrecta, cantonada a dalt — Blanc mira cap amunt
+
+L'aresta és a una ranura incorrecta. L'extraiem mentre preparem l'emparellament amb la cantonada.
+
+**Algorisme: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Casos avançats: Cantonada a la ranura
+
+Aquests casos es produeixen quan la cantonada ja és a la ranura correcta però orientada incorrectament, o a la ranura correcta amb l'aresta mal col·locada.
+
+### Cas 11: Cantonada a la ranura, girada — Aresta a la capa superior
+
+La cantonada és a la ranura davant-dreta però amb el blanc mirant al davant (no cap avall). L'aresta és a la capa U. Extraiem la cantonada, l'emparellem amb l'aresta i reinserim.
+
+**Algorisme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Cas 12: Cantonada a la ranura, girada — Aresta a ranura incorrecta
+
+Ambdues peces són a les dues capes inferiors però cap és correcta. Expulsem la cantonada i extraiem l'aresta simultàniament.
+
+**Algorisme: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Casos especials: Ambdues peces a la ranura
+
+### Cas 13: Parell connectat a la ranura però girat
+
+La cantonada i l'aresta estan emparellades i a la ranura, però la cantonada està girada (el blanc mira al davant, no cap avall). Extraiem el parell, els separem i reinserim correctament.
+
+**Algorisme: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Cas 14: Cantonada correcta a la ranura, aresta invertida a la ranura
+
+La cantonada està correctament col·locada però l'aresta que té a sobre està invertida. Aquest és un dels casos més complicats. Extraiem ambdues, emparellem correctament i reinserim.
+
+**Algorisme: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Cas 15: Ambdues a la ranura, ambdues malament — Error creuat
+
+La cantonada i l'aresta són totes dues a la ranura però cap coincideix. Extracció completa i reconstrucció.
+
+**Algorisme: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Consells per fer F2L més ràpid
+
+### 1. Aprèn intuïtivament primer
+
+No tinguis pressa per memoritzar els 41 casos algorísmics. Dedica temps a entendre **per què** funciona cada moviment. Si saps que R U R' treu una cantonada i la torna a posar, pots deduir la majoria de casos tu sol. Els algorismes vénen després per optimitzar els moviments que ja entens.
+
+### 2. Desenvolupa la visió anticipada
+
+La **visió anticipada** és la capacitat de localitzar el proper parell mentre insereixes l'actual. Aquest és el factor més gran que separa els que resolen en 20 segons dels que ho fan en 15.
+
+Consells de pràctica:
+- Alenteix els teus girs i obliga't a buscar el proper parell durant les insercions
+- Practica resolent F2L amb els ulls tancats durant la inserció (ja saps els moviments, mira endavant)
+- Fes resolucions sense cronòmetre centrant-te únicament en zero pauses entre parells
+
+### 3. Redueix les rotacions
+
+Cada vegada que gires el cub sencer, perds temps. Els millors en F2L rarament giren més d'una o dues vegades en tota la fase F2L.
+
+- Aprèn a inserir a les **ranures posteriors** usant moviments R i U (p. ex., R U' R' per inserir a la dreta-darrere)
+- Practica usant moviments **L, F i B** per a ranures del costat oposat
+- Utilitza moviments amples (r, l) per girar i inserir simultàniament
+
+### 4. Reconeix els casos ràpidament
+
+Entrena't per reconèixer instantàniament quin cas estàs veient:
+- **On és el blanc a la cantonada?** (Dalt, davant o dreta)
+- **On és l'aresta respecte a la cantonada?** (Adjacent, oposada o en una ranura)
+- **Ja estan emparellades?** (Connectades correctament, connectades malament o separades)
+
+### 5. Resol en ordre eficient
+
+No has de resoldre els 4 parells en cap ordre fix. Mira tots 4 parells i comença pel **més fàcil** — el que requereix menys moviments. Els experts planifiquen el seu primer parell durant la inspecció juntament amb la creu.
+
+### 6. Trucs de ranura buida
+
+Quan una ranura és buida, la pots usar com a emmagatzematge temporal. Per exemple, col·loca una aresta en una ranura buida (R U R') per apartar-la mentre treballes en un altre parell. Els principiants sovint passen per alt aquesta tècnica poderosa.
+
+---
+
+## Rutina de pràctica
+
+1. **Barreja el cub i resol la creu**
+2. **Troba els 4 parells cantonada-aresta** — identifica on és cada cantonada i la seva aresta corresponent
+3. **Resol cada parell d'un en un** — comença pels casos fàcils, deixa els difícils per al final
+4. **Cronometra només la fase F2L** — utilitza un cronòmetre o una aplicació. Objectiu: menys de 15 segons per als 4 parells
+5. **Revisa** — després de cada resolució, pregunta't: podria haver fet algun parell amb menys moviments?
+
+Amb pràctica constant, F2L es convertirà en una segona naturalesa i veuràs millores espectaculars en els teus temps de resolució.
+
+---
+
+## Què ve després?
+
+Després de dominar F2L, continua amb l'última capa:
+
+- [**Visió general del mètode CFOP**](./cfop) — Mira com F2L encaixa dins del mètode CFOP complet
+- [**Algorismes OLL**](./oll) — Fes que la cara superior sigui tota groga (57 casos + OLL en 2 passos)
+- [**Algorismes PLL**](./pll) — Col·loca les peces finals per completar la resolució (21 casos)
+- [**Guia de trucs amb els dits**](./finger-tricks) — Executa els disparadors de F2L més ràpid i amb més fluïdesa

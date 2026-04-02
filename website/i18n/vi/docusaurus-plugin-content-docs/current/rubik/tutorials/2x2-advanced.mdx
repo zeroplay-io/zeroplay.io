@@ -1,0 +1,374 @@
+---
+title: "2x2 Nâng cao: Phương pháp CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Nâng cao: Phương pháp CLL
+
+Nâng tầm giải rubik 2x2 của bạn với phương pháp **CLL (Góc Tầng Cuối)**. Trong khi Ortega giải tầng cuối trong hai bước (OLL rồi PBL), CLL giải cả **hướng và hoán vị** của các góc trong **một thuật toán**. Ít nhìn hơn và giải nhanh hơn.
+
+## Tại sao CLL?
+
+| Phương pháp | Bước tầng cuối | Thuật toán | Tốc độ thường |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 giây |
+| **CLL** | 1 (một lần nhìn) | ~40 | 2–4 giây |
+
+CLL là phương pháp tiêu chuẩn của các speedcuber 2x2 hàng đầu. Học hết 40 trường hợp, bạn loại bỏ một bước hoàn toàn.
+
+## CLL hoạt động thế nào
+
+1. **Giải mặt đầu tiên** — như Ortega, tạo mặt trắng ở dưới (màu cạnh không cần khớp).
+2. **Nhận diện trường hợp CLL** — nhìn mặt trên và màu cạnh để xác định trường hợp.
+3. **Áp dụng một thuật toán** — đồng thời xoay hướng và hoán vị tất cả góc trên.
+4. **AUF + điều chỉnh đáy** — nhiều nhất một lượt xoay U và một lượt xoay D.
+
+## Nhắc ký hiệu
+
+- **R** = Phải &nbsp;&nbsp; **L** = Trái &nbsp;&nbsp; **U** = Trên &nbsp;&nbsp; **D** = Dưới &nbsp;&nbsp; **F** = Trước &nbsp;&nbsp; **B** = Sau
+- Chữ cái đơn = **90° theo chiều kim đồng hồ**. Thêm **'** = **ngược chiều kim**. Thêm **2** = **180°**.
+
+---
+
+## Nhóm trường hợp CLL
+
+40 trường hợp CLL được chia thành 7 nhóm dựa trên mẫu hướng của mặt trên. Dưới đây là các trường hợp quan trọng nhất.
+
+---
+
+## Trường hợp Sune (4/6)
+
+Một góc đúng hướng (vàng hướng lên), ba góc còn lại cần xoay. Nhóm phổ biến nhất.
+
+### Sune 1 — Đổi kề
+
+Giữ góc đã giải ở trước-trái. Ba góc chưa giải xoay theo chiều kim đồng hồ.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Đổi chéo
+
+Cùng mẫu hướng, nhưng các góc cần đổi chéo.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Thuần (không đổi)
+
+Hướng đã giải, không cần thay đổi vị trí.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Đổi kề (Đối xứng)
+
+Giữ góc đã giải ở trước-phải.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Trường hợp Anti-Sune (3/6)
+
+Đối xứng của Sune — một góc đúng hướng, ba góc còn lại xoay ngược chiều kim.
+
+### Anti-Sune 1 — Đổi kề
+
+Giữ góc đã giải ở trước-phải. Ba góc chưa giải xoay ngược chiều kim đồng hồ.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Đổi chéo
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Thuần (không đổi)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Trường hợp H (4/4)
+
+Hai góc đối diện đúng hướng (vàng hướng lên), hai góc còn lại có vàng ở cạnh.
+
+### H 1 — Đổi kề
+
+Hai miếng dán vàng ở trên tại vị trí chéo.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Đổi chéo
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Không đổi
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Cột
+
+Cả hai cặp góc chéo đều cần đổi.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Trường hợp Pi (4/6)
+
+Hai góc kề có vàng ở trên, hai góc còn lại có vàng ở cạnh. Mặt trên trông giống chữ cái Hy Lạp Pi.
+
+### Pi 1 — Đổi chéo
+
+Giữ hai góc đúng hướng ở phía sau.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Đổi kề (Phải)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Đổi kề (Trái)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Không đổi
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Trường hợp T (3/6)
+
+Mặt trên hiện mẫu hình T — một góc đúng hướng, một góc kề có vàng ở trước, hai góc còn lại có vàng ở cạnh.
+
+### T 1 — Đổi kề
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Đổi chéo
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Không đổi
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Trường hợp U (3/6)
+
+Một góc đúng hướng, ba góc còn lại xếp thành hình U ở cạnh.
+
+### U 1 — Đổi kề
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Đổi chéo
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Không đổi
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Trường hợp L (3/6)
+
+Hai góc kề xoay cùng hướng — mặt trên hiện mẫu hình L.
+
+### L 1 — Đổi kề
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Đổi chéo
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Không đổi
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Sau CLL: Hoàn thành
+
+Sau thuật toán CLL, mặt trên đã giải hoàn toàn. Bạn có thể cần:
+
+1. **AUF (Điều chỉnh mặt U)** — một lượt xoay U hoặc U' để căn chỉnh tầng trên.
+2. **Điều chỉnh tầng dưới** — nếu lệch, một lượt xoay D hoặc D' sẽ sửa.
+3. **Đổi tầng dưới** — hiếm khi, có thể cần đổi kề hoặc chéo. Dùng thuật toán PBL từ Ortega:
+   - **Đổi chéo:** R2 F2 R2
+   - **Đổi kề:** R U' R F2 R' U R'
+
+---
+
+## Chiến lược học
+
+Học 40 trường hợp cùng lúc rất khó. Thứ tự khuyến nghị:
+
+1. **Bắt đầu với Sune và Anti-Sune** (12 trường hợp) — phổ biến nhất, nhiều thuật toán ngắn.
+2. **Thêm trường hợp T và U** (12 trường hợp) — tương đối dễ nhận diện.
+3. **Học trường hợp Pi** (6 trường hợp) — mẫu hướng đặc trưng.
+4. **Học trường hợp L** (6 trường hợp) — nhận diện tương tự Pi, hướng xoay khác.
+5. **Kết thúc với trường hợp H** (4 trường hợp) — nhóm hiếm nhất.
+
+## Mẹo nhận diện
+
+- **Nhìn mặt trên trước** để xác định nhóm hướng.
+- **Sau đó kiểm tra màu cạnh** để xác định trường hợp cụ thể.
+- **Luyện tập theo nhóm** — từng nhóm cho đến khi nhận diện tức thì.
+- **Dùng scramble ngược** — thiết lập trường hợp, giải, dự đoán ngược.
+
+---
+
+**Với CLL thành thạo, bạn có thể đạt trung bình dưới 3 giây trên 2x2.** Cách tiếp cận một lần nhìn loại bỏ khoảng dừng giữa OLL và PBL. Tiếp tục luyện nhận diện — tốc độ đến từ việc nhận diện tức thì.

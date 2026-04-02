@@ -1,0 +1,466 @@
+---
+title: PLL-algoritmer
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL-algoritmer
+
+**PLL (Permutation af sidste lag)** er det sidste trin i CFOP-metoden. Efter at OLL har orienteret alle klistermærker på oversiden, omarrangerer PLL brikkerne til deres løste positioner. Der er **21 PLL-tilfælde** i alt.
+
+Hvis du er nybegynder, start med **2-Look PLL** -- en forenklet tilgang, der kun kræver **6 algoritmer** i stedet for alle 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL opdeler permutationstrinnet i to mindre trin:
+
+1. **Permuter hjørnerne** -- placer alle 4 hjørner på den korrekte position (2 tilfælde)
+2. **Permuter kanterne** -- placer alle 4 kanter på den korrekte position (4 tilfælde)
+
+Det betyder, at du kun behøver at lære **6 algoritmer** i alt.
+
+### Trin 1: Permuter hjørnerne
+
+Se på hjørnerne i det øverste lag. Tjek om et **par af tilstødende hjørner** tilhører den samme side (matchende forlygter).
+
+#### Tilstødende hjørnebyt
+
+Et par af tilstødende hjørner er allerede korrekt. Hold det løste par **bagved** og anvend:
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Dette er **T-Perm** -- den bytter de to forreste hjørner (og to kanter, som vi fikser i trin 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Diagonalt hjørnebyt
+
+Ingen tilstødende hjørner matcher. Anvend **Y-Perm** for at bytte hjørner diagonalt:
+
+**Algoritme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Trin 2: Permuter kanterne
+
+Alle hjørner er nu løst. Se på kanterne og bestem, hvilke der skal cykles.
+
+#### Ua Perm (3-kant cyklus med uret)
+
+Tre kanter skal cykles med uret. Hold den løste kant **bagved**.
+
+**Algoritme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (3-kant cyklus mod uret)
+
+Tre kanter skal cykles mod uret. Hold den løste kant **bagved**.
+
+**Algoritme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (byt modsatte kantpar)
+
+To par af modsatte kanter skal byttes.
+
+**Algoritme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (byt tilstødende kantpar)
+
+To par af tilstødende kanter skal byttes. Hold så de to par er foran/højre og bagved/venstre.
+
+**Algoritme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Fuld PLL -- Alle 21 tilfælde
+
+### Kun kanter (4 tilfælde)
+
+Disse PLL'er flytter kun kanter; hjørnerne er allerede løst.
+
+#### Ua Perm
+
+Kanterne cykler med uret. Den løste kant er bagved.
+
+**Genkendelse:** En løst bjælke (kant + to hjørner) synlig bagfra.
+
+**Algoritme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Kanterne cykler mod uret. Den løste kant er bagved.
+
+**Genkendelse:** En løst bjælke synlig bagfra; kantfarverne cykler i den modsatte retning af Ua.
+
+**Algoritme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+To par af modsatte kanter bytter.
+
+**Genkendelse:** Hver side har den modsatte farve i kantpositionen. Skakbrætmønster på alle fire sider.
+
+**Algoritme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+To par af tilstødende kanter bytter.
+
+**Genkendelse:** To tilstødende sider har hver den andens farve i kantpositionen. Ingen side er helt løst.
+
+**Algoritme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Kun hjørner (3 tilfælde)
+
+Disse PLL'er flytter kun hjørner; kanterne er allerede løst.
+
+#### Aa Perm
+
+Tre hjørner cykler. Forlygter på venstre side.
+
+**Genkendelse:** Forlygter på en side, bjælken (3 matchende klistermærker) er på den modsatte side.
+
+**Algoritme: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tre hjørner cykler (modsat retning af Aa). Forlygter på højre side.
+
+**Genkendelse:** Spejling af Aa -- forlygter på den modsatte side.
+
+**Algoritme: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+To par af diagonale hjørner bytter. Ingen kanter flyttes.
+
+**Genkendelse:** Ingen forlygter på nogen side. Hver side har to forskellige hjørnefarver.
+
+**Algoritme: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Tilstødende hjørnebyt (6 tilfælde)
+
+Disse PLL'er bytter et par af tilstødende hjørner sammen med kantpermutationer.
+
+#### T Perm
+
+**Genkendelse:** Forlygter foran og bagved. De to sider uden forlygter har deres farver byttet.
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Genkendelse:** Forlygter kun på en side (foran). De andre tre sider har ingen matchende par.
+
+**Algoritme: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Genkendelse:** En løst 1x1x3-blok på venstre side. Højre side har tilstødende brikker byttet.
+
+**Algoritme: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Genkendelse:** En løst 1x1x3-blok på højre side. Spejling af Ja.
+
+**Algoritme: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Genkendelse:** Forlygter foran. Tilstødende hjørne- og kantbyt på højre side.
+
+**Algoritme: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Genkendelse:** Forlygter bagved. Spejling af Ra.
+
+**Algoritme: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Diagonalt hjørnebyt (4 tilfælde)
+
+Disse PLL'er bytter to diagonalt modsatte hjørner.
+
+#### V Perm
+
+**Genkendelse:** Ingen forlygter på nogen side. En side har et 2-farvet mønster, hvor kanten matcher et hjørne.
+
+**Algoritme: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Genkendelse:** Ingen forlygter. En side har to matchende hjørner, men kanten mellem dem er forkert.
+
+**Algoritme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Genkendelse:** To modsatte sider er helt løst (en løst bjælke på hver), men de to andre sider har deres brikker helt byttet.
+
+**Algoritme: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Genkendelse:** Spejling af Na. To modsatte bjælker men byttet anderledes.
+
+**Algoritme: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 tilfælde)
+
+G-permutationerne er de sværeste at genkende. De flytter både et par af tilstødende hjørner og cykler tre kanter.
+
+#### Ga Perm
+
+**Genkendelse:** Forlygter til venstre. Det forreste højre hjørne matcher den højre kant.
+
+**Algoritme: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Genkendelse:** Forlygter foran. Det bagerste venstre hjørne matcher den venstre kant.
+
+**Algoritme: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Genkendelse:** Forlygter til højre. Det forreste venstre hjørne matcher den venstre kant.
+
+**Algoritme: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Genkendelse:** Forlygter bagved. Det forreste højre hjørne matcher den højre kant.
+
+**Algoritme: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Genkendelsestips
+
+Effektiv PLL-genkendelse er nøglen til hurtige løsninger. Her er generelle strategier:
+
+1. **Se efter forlygter** -- et par af matchende hjørner på en side. Dette indsnævrer tilfældet med det samme.
+2. **Tæl løste bjælker** -- en bjælke er tre matchende klistermærker i række (hjørne-kant-hjørne). Bjælker indikerer specifikke PLL'er.
+3. **Tjek to sider** -- at se på forsiden og højre side er normalt nok til at identificere tilfældet.
+4. **Lær modsatte mønstre** -- mange PLL'er kommer i spejlpar (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Hvad du ser | Mulige PLL'er |
+|:---|:---|
+| 4 sider med forlygter | H, Ua, Ub, Z |
+| 2 modsatte sider med forlygter | T, F, Ja, Jb, Ra, Rb |
+| 1 side med forlygter | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 sider med forlygter | E, V, Y, Na, Nb |
+
+## Læringsrækkefølge
+
+En anbefalet rækkefølge for at lære alle 21 PLL'er:
+
+1. **2-Look først:** T, Y (hjørner) + Ua, Ub, H, Z (kanter) -- 6 algoritmer
+2. **Tilstødende byt:** Ja, Jb, F, Ra, Rb -- 5 flere algoritmer
+3. **Kun hjørner:** Aa, Ab, E -- 3 flere algoritmer
+4. **Diagonale byt:** V, Na, Nb -- 3 flere algoritmer
+5. **G Perms sidst:** Ga, Gb, Gc, Gd -- 4 sidste algoritmer
+
+:::tip
+Øv genkendelse ved at blande, løse til PLL, og derefter dække terningen og prøve at identificere tilfældet fra hukommelsen. Hastighed kommer fra øjeblikkelig genkendelse, ikke kun hurtige fingerbevægelser.
+:::

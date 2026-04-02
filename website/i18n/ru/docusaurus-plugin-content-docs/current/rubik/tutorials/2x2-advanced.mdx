@@ -1,0 +1,374 @@
+---
+title: "Кубик 2×2 продвинутый: Метод CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Кубик 2×2 продвинутый: Метод CLL
+
+Выведите сборку кубика 2×2 на новый уровень с методом **CLL (Углы последнего слоя)**. В то время как метод Ortega решает последний слой в два шага (OLL, затем PBL), CLL решает и **ориентацию, и перестановку** углов последнего слоя за **один алгоритм**. Меньше взглядов и быстрее сборка.
+
+## Почему CLL?
+
+| Метод | Шаги последнего слоя | Алгоритмы | Типичная скорость |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 секунд |
+| **CLL** | 1 (один взгляд) | ~40 | 2–4 секунд |
+
+CLL — стандартный метод лучших спидкуберов 2×2. Изучив все 40 случаев, вы устраняете целый шаг из сборки.
+
+## Как работает CLL
+
+1. **Собрать первую сторону** — как в Ortega, собрать белую сторону снизу (боковые цвета не обязаны совпадать).
+2. **Распознать случай CLL** — посмотреть на верхнюю сторону и боковые цвета для определения случая.
+3. **Применить один алгоритм** — одновременно ориентирует и переставляет все верхние углы.
+4. **AUF + коррекция нижнего слоя** — максимум один поворот U и один поворот D.
+
+## Напоминание о нотации
+
+- **R** = Правая &nbsp;&nbsp; **L** = Левая &nbsp;&nbsp; **U** = Верх &nbsp;&nbsp; **D** = Низ &nbsp;&nbsp; **F** = Передняя &nbsp;&nbsp; **B** = Задняя
+- Буква одна = **90° по часовой стрелке**. С **'** = **против часовой**. С **2** = **180°**.
+
+---
+
+## Группы случаев CLL
+
+40 случаев CLL организованы в 7 групп по паттерну ориентации верхней стороны. Ниже важнейшие случаи каждой группы.
+
+---
+
+## Случаи Sune (4 из 6)
+
+Один угол ориентирован (жёлтый сверху), остальные три нужно повернуть. Самая частая группа.
+
+### Sune 1 — Смежная замена
+
+Держите собранный угол спереди-слева. Три несобранных угла вращаются по часовой стрелке.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Диагональная замена
+
+Тот же паттерн ориентации, но углы требуют диагональной замены.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Чистый (без замены)
+
+Ориентация решена без необходимости перестановки.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Смежная замена (Зеркало)
+
+Держите собранный угол спереди-справа.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Случаи Anti-Sune (3 из 6)
+
+Зеркало Sune — один угол ориентирован, остальные три вращаются против часовой.
+
+### Anti-Sune 1 — Смежная замена
+
+Держите собранный угол спереди-справа. Три несобранных угла вращаются против часовой.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Диагональная замена
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Чистый (без замены)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Случаи H (4 из 4)
+
+Два противоположных угла ориентированы (жёлтый сверху), у двух других жёлтый на боковых сторонах.
+
+### H 1 — Смежная замена
+
+Две жёлтые наклейки сверху в диагональных позициях.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Диагональная замена
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Без замены
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Столбцы
+
+Обе пары диагональных углов требуют замены.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Случаи Pi (4 из 6)
+
+У двух смежных углов жёлтый сверху, у двух других — на боковых сторонах. Верхняя сторона напоминает греческую букву Пи.
+
+### Pi 1 — Диагональная замена
+
+Держите два ориентированных угла сзади.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Смежная замена (Правая)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Смежная замена (Левая)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Без замены
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Случаи T (3 из 6)
+
+Верхняя сторона показывает T-образный паттерн — один угол ориентирован, один смежный с жёлтым спереди, два других с жёлтым по бокам.
+
+### T 1 — Смежная замена
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Диагональная замена
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Без замены
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Случаи U (3 из 6)
+
+Один угол правильно ориентирован, остальные три в U-образном паттерне по бокам.
+
+### U 1 — Смежная замена
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Диагональная замена
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Без замены
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Случаи L (3 из 6)
+
+Два смежных угла повёрнуты в одном направлении — верхняя сторона показывает L-образный паттерн.
+
+### L 1 — Смежная замена
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Диагональная замена
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Без замены
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## После CLL: Завершение сборки
+
+После применения алгоритма CLL верхняя сторона полностью решена. Может понадобиться:
+
+1. **AUF (Коррекция стороны U)** — один поворот U или U' для выравнивания верхнего слоя.
+2. **Коррекция нижнего слоя** — если смещён, один поворот D или D' исправляет.
+3. **Замена нижнего слоя** — редко, может потребоваться смежная или диагональная замена. Используйте алгоритмы PBL из метода Ortega:
+   - **Диагональная замена:** R2 F2 R2
+   - **Смежная замена:** R U' R F2 R' U R'
+
+---
+
+## Стратегия изучения
+
+Учить все 40 случаев сразу — непосильно. Рекомендуемый порядок:
+
+1. **Начните с Sune и Anti-Sune** (12 случаев) — самые частые, много коротких алгоритмов.
+2. **Добавьте случаи T и U** (12 случаев) — относительно легко распознать.
+3. **Выучите случаи Pi** (6 случаев) — отличительный паттерн ориентации.
+4. **Выучите случаи L** (6 случаев) — похожее распознавание как Pi, другое направление.
+5. **Завершите случаями H** (4 случая) — самая редкая группа.
+
+## Советы по распознаванию
+
+- **Сначала посмотрите на верхнюю сторону** для определения группы ориентации.
+- **Затем проверьте боковые цвета** для определения конкретного случая.
+- **Практикуйте по группам** — одну группу за раз до мгновенного распознавания.
+- **Используйте обратные скрамблы** — подготовьте случай, решите его, предскажите обратный.
+
+---
+
+**С освоенным CLL можно достичь средних результатов менее 3 секунд на 2×2.** Подход одного взгляда устраняет паузу между OLL и PBL. Продолжайте практиковать распознавание — скорость приходит от мгновенной идентификации.

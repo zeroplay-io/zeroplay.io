@@ -1,0 +1,317 @@
+---
+title: "Napredne Skewb tehnike"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Napredne Skewb tehnike
+
+Podignite svoje rješavanje Skewba s početničke na natjecateljsku razinu. Ovaj vodič pokriva **Sarahinu srednju metodu**, koja nadograđuje početničku metodu rješavanjem svih preostalih centara u jednom koraku, plus napredne algoritme i strategije brzog slaganja koje koriste vrhunski Skewb slagači.
+
+## Podsjetnik za notaciju
+
+Skewb se okreće oko **kutova** umjesto strana:
+
+- **R** = Desni prednji kut u smjeru kazaljke &nbsp;&nbsp; **R'** = suprotno od kazaljke
+- **L** = Lijevi prednji kut u smjeru kazaljke &nbsp;&nbsp; **L'** = suprotno od kazaljke
+- **U** = Gornji desni prednji kut u smjeru kazaljke &nbsp;&nbsp; **U'** = suprotno od kazaljke
+- **B** = Desni stražnji kut u smjeru kazaljke &nbsp;&nbsp; **B'** = suprotno od kazaljke
+
+Držite Skewb s **bijelim centrom na dnu** u svim koracima.
+
+---
+
+## Sarahina srednja metoda
+
+Sarahina početna metoda rješava Skewb u 3 koraka: prva strana, zatim centri, zatim kutovi zadnjeg sloja. Srednja nadogradnja **spaja korake centara i kutova**, rješavajući svih 5 preostalih centara JEDNIM algoritmom nakon što je prva strana gotova.
+
+### Pregled
+
+| Korak | Početnik | Srednji |
+|------|----------|-------------|
+| 1 | Riješiti jednu stranu | Riješiti jednu stranu (isto) |
+| 2 | Pozicionirati centre | **Riješiti svih 5 centara u jednom koraku** |
+| 3 | Orijentirati kutove zadnjeg sloja | Orijentirati kutove zadnjeg sloja (isto) |
+
+Ključno poboljšanje je Korak 2: umjesto opetovane upotrebe Sledgehammera za pozicioniranje centara jedan po jedan, učite set algoritama koji rješavaju sve centre istovremeno.
+
+### Korak 1: Riješiti jednu stranu
+
+Izgradite potpunu **bijelu stranu** na dnu — sva 4 kuta oko bijelog centra moraju biti na mjestu s bijelom prema dolje, a susjedne bočne boje moraju se poklapati. Ovaj korak je identičan početnoj metodi.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Koristite Sledgehammer s pripremnim potezima za postavljanje svakog bijelog kuta. S vježbom ovaj korak postaje brz i intuitivan.
+
+### Korak 2: Riješiti svih 5 centara (One-Look)
+
+Nakon rješavanja prve strane, pogledajte **5 preostalih centara** (gornji + 4 bočna) i identificirajte svoj slučaj. Primijenite jedan algoritam da ih riješite sve odjednom.
+
+Postoji nekoliko slučajeva ovisno o tome koliko centara je u ispravnoj poziciji:
+
+---
+
+#### Slučaj 1: Susjedni 4-ciklus
+
+Četiri centra trebaju ciklirati. Gornji centar je ispravan, ali 4 bočna centra trebaju rotirati.
+
+**Algoritam: R' L R L' R' L R L'** (Dvostruki Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Slučaj 2: Suprotna 2-zamjena
+
+Dva suprotna bočna centra trebaju se zamijeniti.
+
+**Algoritam: R L' R' L R L' R' L** (Inverzni dvostruki Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Slučaj 3: Susjedna 2-zamjena
+
+Dva susjedna bočna centra trebaju se zamijeniti. Postavite dva centra za zamjenu naprijed i desno.
+
+**Algoritam: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Slučaj 4: Zamjena gore-bočno + ciklus
+
+Gornji centar treba se zamijeniti s bočnim centrom, a preostali bočni centri cikliraju.
+
+**Algoritam: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Slučaj 5: Trostruki ciklus
+
+Tri centra trebaju ciklirati (gornji ostaje, 3 bočna rotiraju). Postavite stacionarni bočni centar straga.
+
+**Algoritam: R' L R L'** (Jednostruki Sledgehammer — s ispravnom pripremom)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Savjeti:**
+- Naučite brzo identificirati slučajeve centara provjeravajući prvo gornji centar, pa skenirajući 4 strane.
+- Mnogi od ovih su varijacije Sledgehammera — ako dobro poznajete Sledgehammer, ovi algoritmi će se činiti prirodnima.
+- Vježbajte prepoznavanje miješajući Skewb, rješavajući prvu stranu i identificirajući slučaj centara prije izvršavanja.
+
+### Korak 3: Orijentirati kutove zadnjeg sloja
+
+Nakon rješavanja svih centara, kutovi zadnjeg sloja možda još trebaju okretanje. Ovaj korak je isti kao početna metoda.
+
+#### Sva 4 kuta trebaju okret u smjeru kazaljke
+
+**Algoritam: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Sva 4 kuta trebaju okret suprotno od kazaljke
+
+**Algoritam: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 kuta trebaju okretanje (susjedni)
+
+Postavite dva neriješena kuta naprijed. Koristite U za pozicioniranje, izvedite algoritam, pa poništite U.
+
+**Algoritam: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 kuta trebaju okretanje (dijagonalni)
+
+**Algoritam: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Napredni algoritmi
+
+Osim srednje metode, evo dodatnih algoritama koji učinkovitije rješavaju rjeđe slučajeve.
+
+### Z-Perm ekvivalent
+
+Kada dva para kutova trebaju zamjenu (poput Z-uzorka):
+
+**Algoritam: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi slučaj
+
+Gornja strana pokazuje Pi uzorak — dva susjedna kuta orijentirana, dva ne:
+
+**Algoritam: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Priprema i orijentacija kutova
+
+Kada kut treba reorijentaciju, koristite pripremne poteze za konjugaciju Sledgehammer ciklusa koji ga okreće na mjesto:
+
+**Algoritam: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Brza zamjena suprotnih centara
+
+Učinkovitiji algoritam za zamjenu dva suprotna centra:
+
+**Algoritam: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Trostruka orijentacija kutova
+
+Tri kuta trebaju okretanje (jedan ostaje ispravan):
+
+**Algoritam: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Zamjena susjednih kutova
+
+Dva susjedna kuta trebaju zamijeniti pozicije (ne samo okrenuti):
+
+**Algoritam: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Koncepti One-Look rješavanja
+
+Krajnji cilj u natjecateljskom rješavanju Skewba je predvidjeti zadnji sloj dok još rješavate prvu stranu.
+
+### Predviđanje zadnjeg sloja
+
+Tijekom Koraka 1, dok gradite bijelu stranu, obratite pažnju na **centre i kutove gornjeg sloja**. S vježbom možete identificirati slučajeve Koraka 2 i 3 prije završetka Koraka 1.
+
+- **Promatrajte gornji centar** — pomiče li se u ispravnu poziciju kad umetiete zadnji bijeli kut?
+- **Pratite bočne centre** — primijetite koji bočni centri su već ispravni.
+- **Planirajte cijelo rješenje** — napredni slagači mogu planirati cijelo rješenje tijekom inspekcije.
+
+### Utjecanje na zadnji sloj
+
+Kada imate više načina za umetanje zadnjeg bijelog kuta, odaberite umetanje koje vam daje **lakši slučaj Koraka 2**:
+
+- Ako dva umetanja oboje rješavaju kut, odaberite ono koje ispravno pozicionira više centara.
+- Ponekad malo dulji Korak 1 vodi preskakanju Koraka 2 ili 3.
+
+---
+
+## Savjeti za brzo slaganje
+
+### Držanje i okretanje
+
+- Držite Skewb s **vrhovima prstiju na kutovima** — okrećete kutove, ne strane.
+- Koristite **kažiprst i palac** svake ruke za hvatanje suprotnih kutova.
+- Vježbajte glatke, kontrolirane okrete kutova — Skewb nagrađuje preciznost umjesto sirove brzine.
+- **Minimizirajte promjene hvata** — pokušajte izvesti cijeli Sledgehammer bez mijenjanja hvata.
+
+### Neutralnost boja
+
+Neutralnost boja na Skewbu znači da možete početi s **bilo kojom stranom** kao prvom, ne samo bijelom. Ovo je izuzetno moćno:
+
+- S neutralnošću boja, imate **6 mogućih prvih strana** za odabir.
+- Odaberite stranu najbližu rješenju — ponekad su 2-3 kuta već na mjestu.
+- Neutralnost boja je gotovo obavezna za slaganje ispod 4 sekunde.
+
+**Kako vježbati:**
+1. Počnite s neutralnošću između 2 suprotne boje (npr. bijela i žuta).
+2. Postupno dodajte više početnih boja dok ne možete početi s bilo kojom stranom.
+3. Tijekom inspekcije brzo skenirajte svih 6 strana i odaberite najlakšu.
+
+### Planiranje inspekcije
+
+Skewb ima samo 14 vidljivih dijelova (6 centara + 8 kutova), čineći planiranje cijelog rješenja realističnim:
+
+- **Uvijek potpuno planirajte prvu stranu** tijekom inspekcije.
+- **Identificirajte slučaj centara** prije početka rješavanja.
+- **Napredno:** planirajte do Koraka 2 — znajte koji algoritam ćete koristiti prije dodirivanja slagalice.
+
+### Rutina vježbanja
+
+1. **Vježbe prve strane** — miješajte i rješavajte samo prvu stranu, cilj ispod 2 sekunde.
+2. **Prepoznavanje centara** — nakon rješavanja prve strane, identificirajte slučaj centara što brže moguće bez izvršavanja.
+3. **Potpuna rješenja** — setovi od 12 mjerenih rješenja, pratite prosjek 5 i prosjek 12.
+4. **Vježbanje algoritama** — vježbajte svaki algoritam centara i kutova 20 puta zaredom za mišićnu memoriju.
+5. **Vježba neutralnosti boja** — prisilite se počinjati s drugom bojom pri svakom rješavanju.
+
+---
+
+**Sa Sarahinom srednjom metodom i posvećenom vježbom, prosjeci Skewba ispod 5 sekundi su nadohvat ruke.** Skewb je jedna od najpogodnijih slagalica za planiranje u speedcubingu — manje dijelova znači da možete predvidjeti više tijekom inspekcije. Usredotočite se na brzinu prepoznavanja i glatko okretanje, i vidjet ćete brzi napredak.

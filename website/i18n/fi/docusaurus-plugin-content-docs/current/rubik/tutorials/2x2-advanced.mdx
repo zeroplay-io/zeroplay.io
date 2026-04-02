@@ -1,0 +1,374 @@
+---
+title: "2x2 Edistynyt: CLL-menetelmä"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Edistynyt: CLL-menetelmä
+
+Vie 2x2-ratkaisusi seuraavalle tasolle **CLL (Corners of Last Layer)** -menetelmällä. Ortega-menetelmä ratkaisee viimeisen kerroksen kahdessa vaiheessa (OLL sitten PBL), mutta CLL ratkaisee kulmapalojen **suuntauksen ja järjestyksen** **yhdellä algoritmilla**. Vähemmän katsomista ja nopeampia ratkaisuja.
+
+## Miksi CLL?
+
+| Menetelmä | Viim. kerroksen vaiheet | Algoritmit | Tyypillinen nopeus |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 sekuntia |
+| **CLL** | 1 (yksi katse) | ~40 | 2–4 sekuntia |
+
+CLL on huippu 2x2-nopeusratkojien käyttämä vakiomenetelmä. Opettelemalla kaikki 40 tapausta eliminoit kokonaisen vaiheen.
+
+## Miten CLL toimii
+
+1. **Ratkaise ensimmäinen puoli** — kuten Ortegassa, valkoinen puoli pohjaan (sivuvärien ei tarvitse täsmätä).
+2. **Tunnista CLL-tapaus** — katso yläpuolta ja sivuvärejä.
+3. **Käytä yhtä algoritmia** — suuntaa ja järjestää samanaikaisesti kaikki yläkerroksen kulmat.
+4. **AUF + pohjan säätö** — enintään yksi U-käännös ja yksi D-käännös.
+
+## Merkintämuistutus
+
+- **R** = Oikea &nbsp;&nbsp; **L** = Vasen &nbsp;&nbsp; **U** = Ylös &nbsp;&nbsp; **D** = Alas &nbsp;&nbsp; **F** = Etu &nbsp;&nbsp; **B** = Taka
+- Kirjain yksinään = **90° myötäpäivään**. **'** = **vastapäivään**. **2** = **180°**.
+
+---
+
+## CLL-tapausryhmät
+
+40 CLL-tapausta on järjestetty 7 ryhmään yläpuolen suuntauskuvion perusteella. Alla tärkeimmät tapaukset algoritmeineen.
+
+---
+
+## Sune-tapaukset (4/6)
+
+Yksi kulma suunnattu (keltainen ylöspäin), kolme muuta tarvitsevat kääntämistä. Yleisin ryhmä.
+
+### Sune 1 — Viereinen vaihto
+
+Pidä ratkaistu kulma edessä vasemmalla. Kolme ratkaisematonta kulmaa kääntyvät myötäpäivään.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonaalinen vaihto
+
+Sama suuntauskuvio, mutta kulmat tarvitsevat diagonaalisen vaihdon.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Puhdas (ei vaihtoa)
+
+Suuntaus ratkaistu ilman paikanvaihtotarvetta.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Viereinen vaihto (Peili)
+
+Pidä ratkaistu kulma edessä oikealla.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune-tapaukset (3/6)
+
+Sunen peili — yksi kulma suunnattu, kolme muuta kääntyvät vastapäivään.
+
+### Anti-Sune 1 — Viereinen vaihto
+
+Pidä ratkaistu kulma edessä oikealla. Kolme ratkaisematonta kulmaa kääntyvät vastapäivään.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonaalinen vaihto
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Puhdas (ei vaihtoa)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H-tapaukset (4/4)
+
+Kaksi vastakkaista kulmaa suunnattu (keltainen ylöspäin), kahdella muulla keltainen sivuilla.
+
+### H 1 — Viereinen vaihto
+
+Kaksi keltaista tarraa ylhäällä diagonaalisissa asemissa.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonaalinen vaihto
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Ei vaihtoa
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Sarakkeet
+
+Molemmat diagonaalikulmien parit tarvitsevat vaihdon.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi-tapaukset (4/6)
+
+Kahdella viereisellä kulmalla keltainen ylhäällä, kahdella muulla sivuilla. Yläpuoli näyttää kreikkalaiselta Pi-kirjaimelta.
+
+### Pi 1 — Diagonaalinen vaihto
+
+Pidä kaksi suunnattua kulmaa takana.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Viereinen vaihto (Oikea)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Viereinen vaihto (Vasen)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Ei vaihtoa
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T-tapaukset (3/6)
+
+Yläpuolella T-muotoinen keltaisten tarrojen kuvio — yksi kulma suunnattu, yksi viereinen kulma keltaisella edessä, kaksi muuta sivuilla.
+
+### T 1 — Viereinen vaihto
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonaalinen vaihto
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Ei vaihtoa
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U-tapaukset (3/6)
+
+Yksi kulma oikein suunnattu, kolme muuta U-muodossa sivuilla.
+
+### U 1 — Viereinen vaihto
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonaalinen vaihto
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Ei vaihtoa
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L-tapaukset (3/6)
+
+Kaksi viereistä kulmaa käännetty samaan suuntaan — yläpuolella L-muotoinen kuvio.
+
+### L 1 — Viereinen vaihto
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonaalinen vaihto
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Ei vaihtoa
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL:n jälkeen: Ratkaisun viimeistely
+
+CLL-algoritmin jälkeen yläpuoli on täysin ratkaistu. Saatat tarvita:
+
+1. **AUF (Säädä U-puolta)** — yksi U- tai U'-käännös yläkerroksen kohdistamiseksi.
+2. **Pohjakerroksen säätö** — jos pohjakerros on siirtynyt, yksi D- tai D'-käännös korjaa sen.
+3. **Pohjakerroksen vaihto** — harvoin pohjakerros voi tarvita viereisen tai diagonaalisen vaihdon. Käytä samoja PBL-algoritmeja Ortega-menetelmästä:
+   - **Diagonaalinen vaihto:** R2 F2 R2
+   - **Viereinen vaihto:** R U' R F2 R' U R'
+
+---
+
+## Oppimisstrategia
+
+Kaikkien 40 tapauksen opettelu kerralla on ylivoimaista. Suositeltu järjestys:
+
+1. **Aloita Sunesta ja Anti-Sunesta** (12 tapausta) — yleisimmät, monet algoritmit lyhyitä.
+2. **Lisää T- ja U-tapaukset** (12 tapausta) — helppo tunnistaa ja suorittaa.
+3. **Opi Pi-tapaukset** (6 tapausta) — erottuva suuntauskuvio.
+4. **Opi L-tapaukset** (6 tapausta) — samanlainen tunnistus kuin Pi, eri käännössuunta.
+5. **Lopeta H-tapauksiin** (4 tapausta) — harvinaisin ryhmä.
+
+## Tunnistusvinkit
+
+- **Katso ensin yläpuolta** tunnistaaksesi suuntausryhmän.
+- **Tarkista sitten sivuvärit** määrittääksesi tietyn tapauksen.
+- **Harjoittele ryhmittäin** — yhtä ryhmää kerrallaan kunnes tunnistus on välitön.
+- **Käytä käänteisiä sekoituksia** — aseta tapaus, ratkaise se, ennusta käänteinen.
+
+---
+
+**CLL hallittuna voit saavuttaa alle 3 sekunnin keskiarvoja 2x2:lla.** Yhden katseen lähestymistapa poistaa tauon OLL:n ja PBL:n väliltä. Jatka tunnistuksen harjoittelua — nopeus tulee välittömästä tunnistamisesta.

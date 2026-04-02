@@ -1,0 +1,325 @@
+---
+title: "Pyraminx geavanceerde technieken"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pyraminx geavanceerde technieken
+
+Ben je klaar om je Pyraminx-oplossingen naar het volgende niveau te tillen? Deze gids behandelt geavanceerde methoden, die top Pyraminx-speedcubers gebruiken, om gemiddelden onder 5 seconden te bereiken. We richten ons op de **L4E (Laatste 4 Randen)**-methode, de **Keyhole**-techniek en de **Top-First**-aanpak.
+
+## Notatie-herinnering
+
+**Lagen (hoofdletters)** — de hele laag draaien (zonder tip):
+- **U** = Bovenlaag &nbsp;&nbsp; **R** = Rechterlaag &nbsp;&nbsp; **L** = Linkerlaag &nbsp;&nbsp; **B** = Achterlaag
+
+**Tips (kleine letters)** — alleen de tip draaien:
+- **u** = Boventip &nbsp;&nbsp; **r** = Rechtertip &nbsp;&nbsp; **l** = Linkertip &nbsp;&nbsp; **b** = Achtertip
+
+Een letter alleen betekent **120° met de klok mee**. Met **'** betekent **120° tegen de klok in**.
+
+---
+
+## L4E-Methode (Laatste 4 Randen)
+
+De L4E-methode is de populairste geavanceerde Pyraminx-methode. In plaats van laag voor laag op te lossen, los je eerst een blok op en dan de **laatste 4 randen** in één stap met algoritmen.
+
+### Overzicht
+
+| Stap | Beschrijving | Techniek |
+|------|-------------|-----------|
+| 1 | Tips oplossen | Intuïtief (zoals bij beginners) |
+| 2 | De V oplossen | Intuitiv — een centrum + twee randen |
+| 3 | Laatste 4 Randen lösen | Algoritmisch — één blik |
+
+### Schritt 1: Tips oplossen
+
+Zoals bij de beginnersmethode. Lijn alle 4 tips uit zodat ze overeenkomen met hun aangrenzende centra. Deze stap is triviaal — elke tip heeft slechts 3 posities.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Schritt 2: De V oplossen
+
+Kies een onderkant en bouw een **V-vorm**: een centrumstuk met zijn twee aangrenzende randen correct geplaatst. Das ergibt einen gelösten 1×1×2-Block unten.
+
+Houd de Pyraminx met de V linksonder. De V bestaat uit het onderste centrum en de twee randen die het verbinden met de linker- en rechterkant.
+
+**Aufbau des V** — dieser Schritt ist intuitiv. Finde die zwei Kanten, die neben dein gewähltes Zentrum gehören, und platziere sie mit Schichtdrehungen:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V mit einer geflippten Kante** — wenn eine Kante an der richtigen Stelle, aber geflippt ist, nimm sie heraus und setze sie wieder ein:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Wähle das V, das die wenigsten Züge benötigt — überprüfe alle 4 möglichen V-Positionen, bevor du beginnst.
+- Das V sollte während der Inspektion vollständig geplant werden (15 Sekunden sind für den Pyraminx mehr als genug).
+
+### Schritt 3: Laatste 4 Randen lösen
+
+Mit gelöstem V bleiben 4 Kanten übrig. Identificeer het geval en pas het bijbehorende algoritme toe. Es gibt etwa 30 L4E-Fälle, aber viele sind Spiegelbilder voneinander, was die einzigartigen Fälle reduziert, die du lernen musst.
+
+Halte den Pyraminx mit dem **V unten links** (der gelöste Block zeigt auf der linken Seite zu dir).
+
+---
+
+#### L4E-Fall 1: Alle 4 Kanten brauchen einen Zyklus im Uhrzeigersinn
+
+**Algoritme: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E-Fall 2: Alle 4 Kanten brauchen einen Zyklus gegen den Uhrzeigersinn
+
+**Algoritme: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E-Fall 3: Twee randen wisselen (aangrenzend, voor)
+
+**Algoritme: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E-Fall 4: Twee randen wisselen (aangrenzend, achter)
+
+**Algoritme: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E-Fall 5: Zwei Kanten flippen an Ort und Stelle (vorderes Paar)
+
+**Algoritme: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E-Fall 6: Zwei Kanten flippen an Ort und Stelle (hinteres Paar)
+
+**Algoritme: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E-Fall 7: Drei-Kanten-Zyklus im Uhrzeigersinn + ein Flip
+
+**Algoritme: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E-Fall 8: Drei-Kanten-Zyklus gegen den Uhrzeigersinn + ein Flip
+
+**Algoritme: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E-Fall 9: Alle 4 Kanten flippen
+
+**Algoritme: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E-Fall 10: Twee tegenoverliggende randen wisselen
+
+**Algoritme: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E-Fall 11: Zyklus + Doppelflip
+
+**Algoritme: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E-Fall 12: Benachbarter Tausch mit Flip
+
+**Algoritme: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Keyhole-methode
+
+De Keyhole-methode is een intuïtiever alternatief voor L4E. Anstatt Algorithmen für jeden Fall zu lernen, verwendest du einen ungelösten Kantenplatz als **Schlüsselloch**, um andere Teile frei einzusetzen.
+
+### Hoe het werkt
+
+1. **Tips oplossen** (wie immer).
+2. **Eén rand oplossen** — plaats een onderrand correct.
+3. **Den leeren Platz als Schlüsselloch verwenden** — der zweite untere Kantenplatz bleibt leer, was dir Freiheit gibt, Kanten in die obere Schicht ohne Einschränkungen einzusetzen.
+4. **Kanten der oberen Schicht lösen** — verwende das Schlüsselloch, um jede obere Kante einzeln einzusetzen.
+5. **Das Schlüsselloch schließen** — setze die letzte untere Kante zuletzt ein.
+
+### Keyhole-Einsetzbeispiel
+
+Met het sleutelgat aan de rechterkant van de onderlaag kun je vrij een rand van de bovenlaag invoegen:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Geflipptes Einsetzen** — wenn die Kante vor dem Einsetzen geflippt werden muss:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Tips:**
+- Die Keyhole-Methode ist ausgezeichnet für Anfänger, die zum fortgeschrittenen Lösen übergehen.
+- Het vereist minder algoritmen dan L4E, maar is op het hoogste niveau iets langzamer.
+- Verwende Keyhole als Sprungbrett zu L4E — die Intuition, die du hier aufbaust, hilft bei der L4E-Erkennung.
+
+---
+
+## Top-First-methode
+
+Die Top-First-Methode kehrt die typische Lösungsreihenfolge um: löse die **obere Schicht zuerst** und beende dann den unteren Teil.
+
+### Overzicht
+
+1. **Tips oplossen.**
+2. **Die gesamte obere Schicht lösen** — alle 3 oberen Kanten korrekt orientiert und permutiert um das obere Zentrum.
+3. **De onderlaag oplossen** — de resterende 3 onderranden plaatsen.
+
+### De bovenlaag oplossen
+
+Baue die obere Schicht intuitiv auf. Da du oben beginnst, gibt es keine Einschränkungen — du kannst jede Schicht frei drehen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Den unteren Teil lösen
+
+Mit der fertigen oberen Schicht können die 3 unteren Kanten mit einem kleinen Satz von Algorithmen gelöst werden, ähnlich den L4E-Fällen, aber auf den unteren Teil beschränkt.
+
+**Zyklus der unteren Kanten im Uhrzeigersinn:**
+
+**Algoritme: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Zyklus gegen den Uhrzeigersinn:**
+
+**Algoritme: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Tips:**
+- Die Top-First-Methode ist im Wettkampf weniger verbreitet, kann aber für bestimmte Scrambles sehr schnell sein.
+- Sie funktioniert am besten, wenn die obere Schicht nach dem Scramble bereits teilweise gelöst ist.
+- Kombiniere mit Inspektionsplanung — wenn du eine einfache obere Schicht siehst, wähle Top-First.
+
+---
+
+## Tipps für schnelles Lösen
+
+### Inspectieplanning
+
+De Pyraminx heeft minder stukken dan elk ander WCA-puzzel, was bedeutet, dass du **mehr von der Lösung während der Inspektion planen** kannst:
+
+- **Plane immer Spitzen + V** während der 15-sekündigen Inspektion.
+- Gevorderde oplossers kunnen de **hele oplossing** plannen voor eenvoudige scrambles.
+- Übe, deine Planung zu erweitern — beginne mit den Spitzen, füge das V hinzu und versuche dann, L4E-Fälle vorherzusagen.
+
+### Draaitechniek
+
+- Verwende **Fingerspitzen** für präzise, schnelle Drehungen — nicht Drehungen mit der ganzen Hand.
+- Der Pyraminx profitiert von leichten, schnellen Drehungen statt kraftvollen.
+- Oefen **R**- en **L**-laagdraaien met je wijsvingers, en **U**-draaien met je duimen.
+
+### Kleurneutraliteit
+
+- Im Gegensatz zum 3×3-Würfel ist **Farbneutralität** beim Pyraminx sehr erreichbar.
+- Übe, mit jeder der 4 Seiten als Unterseite zu beginnen — das gibt dir 4-mal so viele einfache V-Optionen.
+- Farbneutralität ist für das Lösen unter 5 Sekunden fast obligatorisch.
+
+### Trainingsroutine
+
+1. **L4E-Fälle üben** — stelle jeden Fall mit seinem Inversen auf, löse ihn, wiederhole. Ziel ist sofortige Erkennung.
+2. **Zeitgestoppte Lösungen** — mache Serien von 12 Lösungen und verfolge deinen Durchschnitt.
+3. **Ein-Blick-Übung** — versuche, den L4E-Fall während des V-Aufbau-Schritts zu identifizieren, bevor du ihn abschließt.
+4. **Langsame Lösungen** — übe mit halber Geschwindigkeit, konzentriere dich auf flüssiges Drehen und null Pausen.
+
+---
+
+**Mit beherrschtem L4E und guter Inspektionsplanung sind Pyraminx-Durchschnitte unter 4 Sekunden erreichbar.** De Pyraminx beloont planning en herkenning meer dan pure draaisnelheid. Konzentriere dich darauf, deinen L4E-Fall frühzeitig vorherzusagen, und die Lösungen werden mühelos wirken.

@@ -1,0 +1,312 @@
+---
+title: "F2L: De to første lag"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: De to første lag
+
+F2L (First Two Layers, de to første lag) er det **vigtigste trin** i CFOP-metoden. I stedet for at løse hjørnerne i det første lag og kanterne i det andet lag som to separate trin (som begyndermetoden), parrer F2L et hjørne med dets matchende kant og indsætter dem sammen i den korrekte plads. Dette sparer et enormt antal træk og er kilden til de største hastighedsforbedringer.
+
+Der er **4 pladser** at fylde, én i hvert hjørne af de to nederste lag. Hver plads består af en hjørnebrik og en kantbrik.
+
+## Konceptet
+
+Hvert F2L-tilfælde involverer to brikker:
+- En **hjørnebrik** der hører til det nederste lag (den har en hvid/bundfarve-klistermærke)
+- En **kantbrik** der hører til det midterste lag (den forbinder to sidefarver)
+
+Målet er at **parre** disse to brikker i det øverste lag og derefter **indsætte** parret i den korrekte plads i én glidende bevægelse.
+
+## Notationspåmindelse
+
+- **R** = Højre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Op &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bag
+- Et bogstav alene = **90° med uret** &nbsp;&nbsp; **'** = **mod uret** &nbsp;&nbsp; **2** = **180°**
+
+Hold terningen med **hvid i bunden**. Pladsen vi indsætter i er altid den **forreste højre plads** (mellem F- og R-siderne).
+
+---
+
+## Intuitiv F2L
+
+Før du memorerer algoritmer, lær **logikken** bag F2L. Hvert tilfælde følger det samme mønster:
+
+1. **Find** et hjørne-kant-par der hører sammen
+2. **Adskil** dem hvis de sidder forkert sammen
+3. **Placer** én brik, og **bring** derefter den anden til at møde den
+4. **Parr** dem i det øverste lag så hvid vender udad eller nedad
+5. **Indsæt** det forbundne par i pladsen
+
+**Nøgleprincip:** Brug R- og U-træk til at tage hjørnet ud af eller ind i den forreste højre plads, og U-træk til at placere kanten. Forstyr aldrig allerede løste pladser.
+
+---
+
+Der er **41 standard F2L-tilfælde** i alt. Nedenfor dækker vi de **15 vigtigste tilfælde** der udgør fundamentet. Når du mestrer disse, vil du kunne håndtere de resterende tilfælde intuitivt eller slå dem op efter behov.
+
+## Grundlæggende tilfælde: begge brikker i det øverste lag
+
+Disse er de simpleste og mest almindelige tilfælde. Både hjørnet og kanten er i U-laget og målpladsen er tom.
+
+### Tilfælde 1: Nem indsættelse — Hjørne hvid vender til højre, kant klar
+
+Hjørnet har hvid vendt mod R-siden, og kanten er allerede placeret så ét U-træk parrer dem. Dette er den mest grundlæggende F2L-indsættelse.
+
+**Algoritme: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Tilfælde 2: Nem indsættelse — Hjørne hvid vender fremad, kant klar
+
+Hjørnet har hvid vendt mod F-siden, og kanten er placeret til at parre med en indsættelse mod uret.
+
+**Algoritme: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Tilfælde 3: Hjørne hvid vender opad, farver matcher frontcentret
+
+Hjørnet har hvid opad og dets frontfarve matcher frontcentret. Kanten er på den modsatte side. Vi skal forbinde dem og indsætte.
+
+**Algoritme: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Tilfælde 4: Hjørne hvid vender opad, farver matcher højre center
+
+Hjørnet har hvid opad og dets højre farve matcher det højre center. Kanten skal parres fra den modsatte side.
+
+**Algoritme: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Tilfælde 5: Hjørne og kant langt fra hinanden, hvid vender til højre
+
+Hjørnet har hvid mod højre og kanten er på den modsatte side af det øverste lag. Vi bringer kanten tættere på, parrer og indsætter.
+
+**Algoritme: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Tilfælde 6: Hjørne og kant langt fra hinanden, hvid vender fremad
+
+Spejling af tilfælde 5. Hjørnet har hvid fremad og kanten er på den fjerne side.
+
+**Algoritme: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Tilfælde 7: Hjørne og kant ved siden af hinanden, hvid vender til højre — Par forbundet men forkert
+
+Hjørnet og kanten er ved siden af hinanden og forbundet, men indsat ville de sidde forkert. Vi adskiller dem og sætter dem korrekt sammen igen.
+
+**Algoritme: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Tilfælde 8: Hjørne og kant ved siden af hinanden, hvid vender fremad — Par forbundet men forkert
+
+Spejling af tilfælde 7 på F-sidens side.
+
+**Algoritme: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Mellemliggende tilfælde: kant i plads, hjørne i øverste lag
+
+Nogle gange sidder kanten allerede fast i en plads (korrekt eller forkert), og hjørnet er i det øverste lag. Vi skal trække kanten ud uden at forstyrre andre løste par.
+
+### Tilfælde 9: Kant i korrekt plads men hjørne oppe — Hvid vender til højre
+
+Kanten er i den korrekte plads, og hjørnet er i U-laget med hvid mod højre. Vi tager kanten ud og parrer den med hjørnet.
+
+**Algoritme: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Tilfælde 10: Kant i forkert plads, hjørne oppe — Hvid vender opad
+
+Kanten er i den forkerte plads. Vi trækker den ud mens vi samtidig forbereder parringen med hjørnet.
+
+**Algoritme: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Avancerede tilfælde: hjørne i plads
+
+Disse tilfælde opstår når hjørnet allerede er i den korrekte plads men forkert orienteret, eller i den korrekte plads med kanten fejlplaceret.
+
+### Tilfælde 11: Hjørne i plads, drejet — Kant i øverste lag
+
+Hjørnet er i den forreste højre plads men med hvid fremad (ikke nedad). Kanten er i U-laget. Vi trækker hjørnet ud, parrer det med kanten og genindsætter.
+
+**Algoritme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Tilfælde 12: Hjørne i plads, drejet — Kant i forkert plads
+
+Begge brikker er i de to nederste lag men ingen er korrekt. Vi sparker hjørnet ud og trækker samtidig kanten ud.
+
+**Algoritme: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Specialtilfælde: begge brikker i plads
+
+### Tilfælde 13: Par forbundet i plads men drejet
+
+Hjørnet og kanten er parret og i pladsen, men hjørnet er drejet (hvid vender fremad, ikke nedad). Træk parret ud, adskil dem og genindsæt korrekt.
+
+**Algoritme: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Tilfælde 14: Hjørne korrekt i plads, kant vendt forkert i plads
+
+Hjørnet er korrekt placeret men kanten over det er vendt forkert. Dette er et af de mest tricky tilfælde. Vi trækker begge ud, parrer korrekt og genindsætter.
+
+**Algoritme: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Tilfælde 15: Begge i plads, begge forkert — Kryds-plads fejl
+
+Hjørnet og kanten er begge i pladsen men ingen matcher. Fuld udtrækning og genopbygning.
+
+**Algoritme: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tips til hurtigere F2L
+
+### 1. Lær intuitivt først
+
+Skynd dig ikke med at memorere alle 41 algoritmiske tilfælde. Brug tid på at forstå **hvorfor** hvert træk virker. Hvis du ved at R U R' tager et hjørne ud og sætter det tilbage, kan du selv finde ud af de fleste tilfælde. Algoritmer kommer senere for at optimere de træk du allerede forstår.
+
+### 2. Udvikl lookahead
+
+**Lookahead** er evnen til at spore dit næste par mens du indsætter det nuværende. Dette er den enkeltstående største faktor der adskiller 20-sekunders-løsere fra 15-sekunders-løsere.
+
+Øvelsestips:
+- Sænk tempoet og tving dig selv til at søge efter det næste par under indsættelser
+- Øv dig i at løse F2L med lukkede øjne under indsættelsen (du kender trækkene, så kig fremad)
+- Lav utidtagede løsninger fokuseret udelukkende på nul pauser mellem par
+
+### 3. Reducer rotationer
+
+Hver gang du roterer hele terningen, mister du tid. De bedste F2L-løsere roterer sjældent mere end én eller to gange i en hel F2L-fase.
+
+- Lær at indsætte i **bagerste pladser** med R- og U-træk (f.eks. R U' R' for at indsætte i bagerste højre)
+- Øv dig i at bruge **L-, F- og B-**træk til pladser på den modsatte side
+- Brug brede træk (r, l) til at rotere og indsætte samtidig
+
+### 4. Genkend tilfælde hurtigt
+
+Træn dig selv til øjeblikkeligt at genkende hvilket tilfælde du ser på:
+- **Hvor er hvid på hjørnet?** (Op, Front eller Højre)
+- **Hvor er kanten i forhold til hjørnet?** (Ved siden af, modsat eller i en plads)
+- **Er de allerede parret?** (Forbundet korrekt, forbundet forkert eller adskilt)
+
+### 5. Løs i effektiv rækkefølge
+
+Du behøver ikke løse de 4 par i nogen fast rækkefølge. Se på alle 4 par og start med det **nemmeste** — det der kræver færrest træk. Erfarne løsere planlægger deres første par under inspektion sammen med krydset.
+
+### 6. Tom-plads-tricks
+
+Når en plads er tom, kan du bruge den som midlertidig opbevaring. Placer f.eks. en kant i en tom plads (R U R') for at få den af vejen mens du arbejder på et andet par. Begyndere overser ofte denne kraftfulde teknik.
+
+---
+
+## Øvelsesrutine
+
+1. **Bland terningen og løs krydset**
+2. **Find alle 4 hjørne-kant-par** — identificer hvor hvert hjørne og dets matchende kant er
+3. **Løs hvert par ét ad gangen** — start med nemme tilfælde, gem svære til sidst
+4. **Tag tid kun på F2L-fasen** — brug en timer. Mål: under 15 sekunder for alle 4 par
+5. **Evaluer** — efter hver løsning, spørg: kunne jeg have gjort noget par med færre træk?
+
+Med konsekvent øvelse vil F2L blive anden natur og du vil se dramatiske forbedringer i dine samlede løsningstider.
+
+---
+
+## Hvad er det næste?
+
+Efter at have mestret F2L, fortsæt med det sidste lag:
+
+- [**CFOP-metode oversigt**](./cfop) — Se hvordan F2L passer ind i den fulde CFOP-metode
+- [**OLL-algoritmer**](./oll) — Gør den øverste side helt gul (57 tilfælde + 2-Look OLL)
+- [**PLL-algoritmer**](./pll) — Arranger de sidste brikker for at fuldføre løsningen (21 tilfælde)
+- [**Finger tricks guide**](./finger-tricks) — Udfør F2L-triggere hurtigere og mere flydende

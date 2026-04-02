@@ -1,0 +1,129 @@
+---
+title: Speed Cubing Tippek
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Speed Cubing Tippek
+
+A Rubik-kocka gyorsabb kirakása nem csak a gyorsabb forgatásról szól. A legnagyobb előrelépések az előre tervezésből, a szünetek csökkentéséből és a célzott gyakorlásból származnak. Ez az útmutató azokat az alap képességeket tárgyalja, amelyek megkülönböztetik a hobbiból kirakókat a versenyzőktől.
+
+---
+
+## Kereszt tervezés
+
+A kereszt a CFOP megoldás első lépése és az egyetlen rész, amelyet **teljes egészében a szemrevételezés alatt tervezhetsz meg**. A kereszt tervezés elsajátítása ingyenes előnyt ad minden kirakásnál.
+
+### Használd ki a teljes 15 másodperces szemrevételezést
+
+Versenyen 15 másodperc szemrevételezési idő áll rendelkezésre. Használd ki minden másodpercét:
+- Első 5 mp: Azonosítsd a 4 keresztél helyét.
+- Következő 5 mp: Tervezd meg a teljes megoldást (ideálisan 6-8 lépés vagy kevesebb).
+- Utolsó 5 mp: Mentálisan próbáld a sorozatot és tervezd az első F2L párt.
+
+### Oldj alul
+
+Mindig az **alsó oldalon** (D réteg) oldd a keresztet. Kezdők gyakran felül oldanak és megfordítják a kockát, elveszítve 1-2 másodpercet. Alulról kezdve azonnal keresheted az F2L párokat a kereszt befejezése közben.
+
+**Példa: 6 lépéses kereszt**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Példa: Hatékony 5 lépéses kereszt**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Gyakorolj csukott szemmel
+
+1. Keverd fel. 2. Tervezd meg a teljes keresztet. 3. Csukd be a szemed és hajtsd végre. 4. Nyisd ki ellenőrzésre.
+
+### Színsemlegesség
+
+A **színsemleges** kirakók bármelyik 6 színnel kezdhetnek, 2-3 lépés előnyt nyújtva a kereszten.
+
+---
+
+## Lookahead (Előretekintés)
+
+A lookahead a **következő darab követésének képessége a jelenlegit oldva**. A legfontosabb képesség a sebességi plató áttöréséhez.
+
+### Hogyan gyakorold
+
+**Lassú kirakások**: metronóm 1-2 fordulat/mp, soha ne állj meg. F2L pár gyakorlás vakon erősíti a mentális követést.
+
+---
+
+## Hatékony F2L
+
+Kerüld a felesleges forgatásokat.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. forgatással:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+Első verzió ~0,5 mp-t takarít meg. Részesítsd előnyben a hátsó slotokat. Befolyásold a következő párt. Multi-slotting ritka de értékes.
+
+---
+
+## OLL/PLL felismerés
+
+Gyors felismerés megszünteti az F2L és utolsó réteg közti szünetet. Gyakorolj két szögből. Pre-AUF és OLL előrejelzés haladó technikák.
+
+---
+
+## Gyakorlási rutinok
+
+A tudatos gyakorlás legyőzi az értelmetlen kirakást.
+
+### Napi terv (45-60 perc)
+
+**Kereszt (10 perc)** - Cél: 2 mp alatt, 6 lépés vagy kevesebb.
+
+**F2L lassú (15 perc)** - Metronóm, lookahead fókusz.
+
+**Algoritmus (10 perc)** - 2-3 OLL/PLL, 20-30 ismétlés.
+
+**Időzített (15-20 perc)** - **Ao12** - Trendek nyomon követése.
+
+### Átlagok: **Ao5**, **Ao12**, **Ao100**.
+
+Tíz összpontosított kirakás legyőz százat autopilóton.
+
+---
+
+## Verseny tippek
+
+Melegíts be. Maradj nyugodt. Szemmagasságban vizsgáld a kockát. Stackmat timer gyakorlás.
+
+---
+
+## Hardver
+
+Egy jó speed cube valódi különbséget jelent. MoYu, QiYi és GAN márkák mágneses kockái a standard. Corner cutting 45+ fok, sima forgatás és stabilitás a kulcs. Kezdőknek: bármilyen modern mágneses 3x3, gyári feszesség az első héten, szilikon kenőanyag szükség szerint, fokozatos állítás.
+
+Egy jól beállított kocka megszünteti a hardvert mint változót, lehetővé téve, hogy teljes egészében a technika javítására koncentrálj.

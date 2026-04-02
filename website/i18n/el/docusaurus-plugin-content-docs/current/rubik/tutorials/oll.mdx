@@ -1,0 +1,724 @@
+---
+title: Αλγόριθμοι OLL
+sidebar_position: 7
+description: Αναφορά αλγορίθμων OLL (Προσανατολισμός Τελευταίου Επιπέδου) για τον κύβο του Ρούμπικ 3x3. 2-Look OLL για αρχάριους και 45 από τις πιο συνηθισμένες πλήρεις περιπτώσεις OLL.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Αλγόριθμοι OLL
+
+**OLL (Προσανατολισμός Τελευταίου Επιπέδου)** είναι το πρώτο βήμα του τελευταίου επιπέδου στη μέθοδο CFOP. Ο στόχος είναι να γίνει ολόκληρη η πάνω πλευρά ένα χρώμα (κίτρινο). Υπάρχουν **57 περιπτώσεις OLL** συνολικά.
+
+Αν είστε αρχάριος, ξεκινήστε με το **2-Look OLL** — μια απλοποιημένη προσέγγιση που απαιτεί μόνο **10 αλγόριθμους** αντί για όλους τους 57.
+
+Αυτός ο οδηγός καλύπτει το 2-Look OLL και τις **45 πιο συχνά εμφανιζόμενες** πλήρεις περιπτώσεις OLL, οργανωμένες ανά κατηγορία σχήματος.
+
+---
+
+## 2-Look OLL
+
+Το 2-Look OLL χωρίζει το βήμα προσανατολισμού σε δύο μικρότερα βήματα:
+
+1. **Προσανατολισμός ακμών** — δημιουργία κίτρινου σταυρού στην κορυφή (3 περιπτώσεις)
+2. **Προσανατολισμός γωνιών** — ολόκληρη η πάνω πλευρά γίνεται κίτρινη (7 περιπτώσεις)
+
+Αυτό σημαίνει ότι χρειάζεται να μάθετε μόνο **10 αλγόριθμους** συνολικά.
+
+### Βήμα 1: Προσανατολισμός ακμών (Δημιουργία κίτρινου σταυρού)
+
+Κοιτάξτε την πάνω πλευρά. Αγνοήστε τις γωνίες και εστιάστε μόνο στις **ακμές**. Θα δείτε ένα από τρία μοτίβα:
+
+#### Τελεία (Καμία ακμή προσανατολισμένη)
+
+Καμία κίτρινη ακμή δεν κοιτά προς τα πάνω. Εφαρμόστε αυτόν τον αλγόριθμο για να φτάσετε στο σχήμα L, μετά εφαρμόστε τον αλγόριθμο σχήματος L.
+
+**Αλγόριθμος: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Σχήμα L (Δύο γειτονικές ακμές προσανατολισμένες)
+
+Δύο κίτρινες ακμές σχηματίζουν ένα **σχήμα L**. Κρατήστε τον κύβο ώστε το L να είναι στη θέση **πίσω-αριστερά**.
+
+**Αλγόριθμος: f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f'"
+  alg="f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### Γραμμή (Δύο αντίθετες ακμές προσανατολισμένες)
+
+Δύο κίτρινες ακμές σχηματίζουν μια **οριζόντια γραμμή**. Κρατήστε τον κύβο ώστε η γραμμή να πηγαίνει από **αριστερά προς τα δεξιά**.
+
+**Αλγόριθμος: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### Βήμα 2: Προσανατολισμός γωνιών (7 περιπτώσεις)
+
+Τώρα έχετε κίτρινο σταυρό. Κοιτάξτε την πάνω πλευρά και αναγνωρίστε πόσες **γωνίες** έχουν το κίτρινο προς τα πάνω.
+
+#### Sune (1 γωνία προσανατολισμένη, κίτρινο δείχνει αριστερά)
+
+Κρατήστε τον κύβο ώστε η λυμένη γωνία να είναι **μπροστά-αριστερά**.
+
+**Αλγόριθμος: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Anti-Sune (1 γωνία προσανατολισμένη, κίτρινο δείχνει δεξιά)
+
+Κρατήστε τον κύβο ώστε η λυμένη γωνία να είναι **μπροστά-δεξιά**.
+
+**Αλγόριθμος: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+#### H (Διπλό Sune — 0 γωνίες προσανατολισμένες, μοτίβο σκακιέρας)
+
+Τα κίτρινα αυτοκόλλητα σχηματίζουν μοτίβο σκακιέρας στην κορυφή (καμία γωνία δεν κοιτά πάνω, φανάρια σε δύο αντίθετες πλευρές).
+
+**Αλγόριθμος: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Pi (0 γωνίες προσανατολισμένες, φανάρια σε μία πλευρά)
+
+Καμία γωνία δεν κοιτά πάνω. Δύο κίτρινα αυτοκόλλητα στην ίδια πλευρά (φανάρια μπροστά).
+
+**Αλγόριθμος: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+#### U (Φανάρια — 2 γωνίες προσανατολισμένες στην ίδια πλευρά)
+
+Δύο γωνίες λυμένες, και οι δύο στην **ίδια πλευρά**. Κρατήστε τα φανάρια στα **αριστερά**.
+
+**Αλγόριθμος: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+#### T (2 γωνίες προσανατολισμένες διαγώνια)
+
+Δύο γωνίες λυμένες διαγώνια. Κίτρινα αυτοκόλλητα μπροστά-αριστερά και πίσω-δεξιά (ή αντίστροφα).
+
+**Αλγόριθμος: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+#### L (2 γειτονικές γωνίες προσανατολισμένες, διαγώνια φανάρια)
+
+Δύο γωνίες λυμένες σε γειτονικές θέσεις με συγκεκριμένο μοτίβο.
+
+**Αλγόριθμος: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Πλήρες OLL — Όλες οι ακμές προσανατολισμένες (OCLL, OLL 21-27)
+
+Αυτές οι περιπτώσεις έχουν και τις τέσσερις ακμές ήδη προσανατολισμένες (ο κίτρινος σταυρός είναι έτοιμος). Μόνο οι γωνίες χρειάζονται προσανατολισμό.
+
+### OLL 21 — H (Διπλό Sune)
+
+**Αλγόριθμος: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 22 — Pi
+
+**Αλγόριθμος: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+### OLL 23 — Headlights
+
+**Αλγόριθμος: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+### OLL 24 — Chameleon
+
+**Αλγόριθμος: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 25 — Bowtie
+
+**Αλγόριθμος: F' r U R' U' r' F R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F' r U R U' r' F"
+  alg="F' r U R' U' r' F R"
+  stickering="OLL"
+/>
+
+### OLL 26 — Sune
+
+**Αλγόριθμος: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 27 — Anti-Sune
+
+**Αλγόριθμος: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Σχήματα T
+
+### OLL 33
+
+**Αλγόριθμος: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 45
+
+**Αλγόριθμος: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Τετράγωνα
+
+### OLL 5
+
+**Αλγόριθμος: r' U2 R U R' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' R U' R' U2 r"
+  alg="r' U2 R U R' U r"
+  stickering="OLL"
+/>
+
+### OLL 6
+
+**Αλγόριθμος: r U2 R' U' R U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U R' U R U2 r'"
+  alg="r U2 R' U' R U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Σχήματα C
+
+### OLL 34
+
+**Αλγόριθμος: R U R2 U' R' F R U R U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R' U' R' F' R U R2 U' R'"
+  alg="R U R2 U' R' F R U R U' F'"
+  stickering="OLL"
+/>
+
+### OLL 46
+
+**Αλγόριθμος: R' U' R' F R F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F R' F' R U R"
+  alg="R' U' R' F R F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Σχήματα W
+
+### OLL 36
+
+**Αλγόριθμος: L' U' L U' L' U L U L F' L' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L F L' U' L' U' L U L' U L"
+  alg="L' U' L U' L' U L U L F' L' F"
+  stickering="OLL"
+/>
+
+### OLL 38
+
+**Αλγόριθμος: R U R' U R U' R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U R' U' R U' R'"
+  alg="R U R' U R U' R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+---
+
+## Σχήματα P
+
+### OLL 31
+
+**Αλγόριθμος: R' U' F U R U' R' F' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F R U R' U' F' U R"
+  alg="R' U' F U R U' R' F' R"
+  stickering="OLL"
+/>
+
+### OLL 32
+
+**Αλγόριθμος: L U F' U' L' U L F L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L F' L' U' L U F U' L'"
+  alg="L U F' U' L' U L F L'"
+  stickering="OLL"
+/>
+
+### OLL 43
+
+**Αλγόριθμος: F' U' L' U L F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L' U' L U F"
+  alg="F' U' L' U L F"
+  stickering="OLL"
+/>
+
+### OLL 44
+
+**Αλγόριθμος: F U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U R' U' F'"
+  alg="F U R U' R' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Σχήματα ψαριού
+
+### OLL 9
+
+**Αλγόριθμος: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 10
+
+**Αλγόριθμος: R U R' U R' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 35
+
+**Αλγόριθμος: R U2 R2 F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 37
+
+**Αλγόριθμος: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## Σχήματα κίνησης ίππου
+
+### OLL 13
+
+**Αλγόριθμος: F U R U2 R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U2 R' U' F'"
+  alg="F U R U2 R' U' R U R' F'"
+  stickering="OLL"
+/>
+
+### OLL 14
+
+**Αλγόριθμος: R' F R U R' F' R F U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U F' R' F R U' R' F' R"
+  alg="R' F R U R' F' R F U' F'"
+  stickering="OLL"
+/>
+
+### OLL 15
+
+**Αλγόριθμος: r' U' r R' U' R U r' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' r U' R' U R r' U r"
+  alg="r' U' r R' U' R U r' U r"
+  stickering="OLL"
+/>
+
+### OLL 16
+
+**Αλγόριθμος: r U r' R U R' U' r U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U r' U R U' R' r U' r'"
+  alg="r U r' R U R' U' r U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## Δύσκολα σχήματα
+
+### OLL 29
+
+**Αλγόριθμος: R U R' U' R U' R' F' U' F R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U' R' F' U F R U R' U R U' R'"
+  alg="R U R' U' R U' R' F' U' F R U R'"
+  stickering="OLL"
+/>
+
+### OLL 30
+
+**Αλγόριθμος: F R' F R2 U' R' U' R U R' F2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F2 R U' R' U R U R2 F' R F'"
+  alg="F R' F R2 U' R' U' R U R' F2"
+  stickering="OLL"
+/>
+
+### OLL 41
+
+**Αλγόριθμος: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 42
+
+**Αλγόριθμος: R' U' R U' R' U2 R F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R' U2 R U R' U R"
+  alg="R' U' R U' R' U2 R F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## Κεραυνοί
+
+### OLL 7
+
+**Αλγόριθμος: r U R' U R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' U' R U' r'"
+  alg="r U R' U R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 8
+
+**Αλγόριθμος: r' U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r"
+  alg="r' U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 11
+
+**Αλγόριθμος: r U R' U R' F R F' R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' F R' F' R U' R U' r'"
+  alg="r U R' U R' F R F' R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 12
+
+**Αλγόριθμος: F R U R' U' F' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' F U R U' R' F'"
+  alg="F R U R' U' F' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 39
+
+**Αλγόριθμος: L F' L' U' L U F U' L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L U F' U' L' U L F L'"
+  alg="L F' L' U' L U F U' L'"
+  stickering="OLL"
+/>
+
+### OLL 40
+
+**Αλγόριθμος: R' F R U R' U' F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F U R U' R' F' R"
+  alg="R' F R U R' U' F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## Περιπτώσεις τελείας
+
+Αυτές είναι οι δυσκολότερες περιπτώσεις OLL — καμία ακμή δεν είναι προσανατολισμένη.
+
+### OLL 1
+
+**Αλγόριθμος: R U2 R2 F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 2
+
+**Αλγόριθμος: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+### OLL 3
+
+**Αλγόριθμος: f R U R' U' f' U' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U f U R U' R' f'"
+  alg="f R U R' U' f' U' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 4
+
+**Αλγόριθμος: f R U R' U' f' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' f U R U' R' f'"
+  alg="f R U R' U' f' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 17
+
+**Αλγόριθμος: R U R' U R' F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 18
+
+**Αλγόριθμος: r U R' U R U2 r2 U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r2 U2 R' U' R U' r'"
+  alg="r U R' U R U2 r2 U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 19
+
+**Αλγόριθμος: r' R U R U R' U' r R2 F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R2 r' U R U' R' U' R' r"
+  alg="r' R U R U R' U' r R2 F R F'"
+  stickering="OLL"
+/>
+
+### OLL 20
+
+**Αλγόριθμος: r U R' U' r' U2 R U R U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R' U' R' U2 r U R U' r'"
+  alg="r U R' U' r' U2 R U R U' R2 U2 R"
+  stickering="OLL"
+/>
+
+---
+
+## Συμβουλές μάθησης
+
+1. **Ξεκινήστε με το 2-Look OLL** — κατακτήστε 10 αλγόριθμους πριν αντιμετωπίσετε το πλήρες σετ
+2. **Μάθετε OCLL στη συνέχεια** — οι περιπτώσεις 21-27 είναι οι πιο συνηθισμένες και βασίζονται στο 2-Look
+3. **Προσθέστε κατηγορίες σταδιακά** — τα σχήματα T, P και ψαριού είναι καλά επόμενα βήματα
+4. **Εξασκηθείτε στην αναγνώριση** — η ικανότητα γρήγορης αναγνώρισης της περίπτωσης είναι εξίσου σημαντική με τη γνώση του αλγορίθμου
+5. **Χρησιμοποιήστε κόλπα δαχτύλων** — εστιάστε στην ομαλή εκτέλεση αφού απομνημονεύσετε τους αλγόριθμους
+
+:::tip
+Κατά την εξάσκηση, ανακατέψτε τον κύβο και λύστε τα πάντα μέχρι το OLL. Μετά εξασκηθείτε στην αναγνώριση και επίλυση της περίπτωσης OLL. Επαναλάβετε μέχρι η αναγνώριση να γίνει αυτόματη.
+:::

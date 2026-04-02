@@ -1,0 +1,249 @@
+---
+title: "4x4 Avansat: Metoda Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Avansat: Metoda Yau
+
+**Metoda Yau**, inventată de Robert Yau, este o alternativă mai rapidă la metoda Reduction standard pentru cubul Rubik 4x4. Diferența cheie: Yau rezolvă muchiile crucii **devreme**, ceea ce oferă o anticipare mai bună și o tranziție mai lină în faza 3x3. Majoritatea speedcuberilor de top la 4x4 folosesc Yau sau o variantă a acesteia.
+
+## Yau vs Reduction Standard
+
+| Aspect | Reduction | Yau |
+|--------|-----------|-----|
+| **Ordinea pașilor** | Toate centrele, apoi toate muchiile | 2 centre, 3 muchii de cruce, 4 centre, muchii rămase |
+| **Crucea** | Construită după reducție | Deja parțial gata în timpul reducției |
+| **Anticipare** | Trebuie găsite muchiile crucii după împerechere | Crucea aproape gata, tranziția la F2L fluidă |
+| **Plafonul de viteză** | Bun | Mai ridicat — mai puține pauze între faze |
+
+## Memento Notație
+
+**Mișcări standard** (doar stratul exterior):
+- **R** = Dreapta &nbsp;&nbsp; **L** = Stânga &nbsp;&nbsp; **U** = Sus &nbsp;&nbsp; **D** = Jos &nbsp;&nbsp; **F** = Față &nbsp;&nbsp; **B** = Spate
+
+**Mișcări largi** (două straturi exterioare împreună):
+- **Rw** = Dreapta larg &nbsp;&nbsp; **Lw** = Stânga larg &nbsp;&nbsp; **Uw** = Sus larg &nbsp;&nbsp; **Dw** = Jos larg &nbsp;&nbsp; **Fw** = Față larg &nbsp;&nbsp; **Bw** = Spate larg
+
+O literă singură înseamnă **90° în sensul acelor de ceas**. Cu **'** înseamnă **în sens invers**. Cu **2** înseamnă **180°**.
+
+---
+
+## Pasul 1: Rezolvă Două Centre Opuse
+
+Începe prin rezolvarea blocurilor centrale **alb** și **galben** (sus și jos). Aceasta este la fel ca prima parte a metodei Reduction standard.
+
+Fiecare centru este un bloc 2x2 de piese. Folosește mișcări largi pentru a aduna piesele centrale, protejând piesele deja plasate cu rotații ale stratului exterior.
+
+**Construcția de bază a centrului** — adu o piesă centrală sus cu o mișcare largă, poziționeaz-o, apoi inversează:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Unirea a două jumătăți de centru** — când ai două benzi 1x2 de centru care trebuie unite:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Sfaturi:**
+- Rezolvă mai întâi centrul alb (jos), apoi centrul galben (sus).
+- Păstrează albul jos tot timpul — folosește doar mișcări Rw, Lw, Fw, Bw pentru a manipula centrele fără a deranja partea de jos.
+- Nu te îngrijora de centrele laterale încă. Lasă-le pentru pasul 3.
+
+---
+
+## Pasul 2: Rezolvă 3 din 4 Muchii ale Crucii
+
+Aici Yau se separă de Reduction. Înainte de a rezolva centrele rămase, **împerechează și plasează 3 muchii albe ale crucii** în stratul inferior.
+
+O muchie de cruce constă din două piese (ex: alb-roșu și alb-roșu) care trebuie împerecheate și plasate în stratul D. Lasă o muchie de cruce nerezolvată deocamdată — aceasta îți dă libertatea de a folosi mișcări largi în pasul următor.
+
+**Împerecherea muchiei crucii cu freeslice** — tehnica freeslice împerechează muchii fără a deranja centrele. Plasează o jumătate a muchiei în poziția față-dreapta și adu partenerul din alt slot:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Inserarea muchiei crucii împerecheate în jos** — odată împerecheată, plasează muchia în poziția corectă a stratului D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice cu mișcări largi** — folosește Dw pentru a ridica o piesă de muchie pentru împerechere fără a rupe muchiile crucii deja plasate:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Sfaturi:**
+- Ai nevoie doar de 3 muchii ale crucii rezolvate acum. Lasă deliberat un slot gol.
+- Folosește slotul gol al stratului D liber — muchia crucii lipsă îți dă mai multă libertate pentru mișcări largi.
+- Alege ce muchie a crucii să lași pe baza celei mai greu de găsit sau împerecheat.
+
+---
+
+## Pasul 3: Rezolvă Cele 4 Centre Rămase
+
+Acum rezolvă **cele 4 centre laterale** (roșu, portocaliu, albastru, verde). Centrele alb și galben sunt deja gata din pasul 1.
+
+Deoarece ai un slot de muchie a crucii nerezolvat, poți încă folosi unele mișcări largi liber. Acesta este un avantaj cheie al Yau — crucea parțial rezolvată nu restricționează construcția centrelor atât de mult pe cât ai crede.
+
+**Construirea centrului lateral** — folosește mișcări largi pentru a colecta piese centrale, apoi plasează-le:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Comutator de centru** — când trebuie să schimbi o piesă centrală fără a deranja altele, folosește o secvență de tip comutator:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Sfaturi:**
+- Rezolvă centrele în perechi opuse când e posibil (ex: roșu apoi portocaliu, albastru apoi verde).
+- Profită de slotul de muchie a crucii nerezolvat — mișcările largi prin acel slot nu vor rupe muchiile crucii.
+- Fii atent la cele 3 muchii ale crucii deja în stratul D. Verifică înainte de mișcări largi.
+
+---
+
+## Pasul 4: Ultima Muchie a Crucii + Împerechere Completă a Muchiilor
+
+Acest pas are două părți: finalizează a 4-a muchie a crucii, apoi împerechează toate muchiile rămase.
+
+### Partea A: Rezolvă Ultima Muchie a Crucii
+
+Găsește perechea de muchii a crucii rămasă și adu-le împreună. Deoarece toate centrele sunt acum rezolvate, trebuie să fii mai atent cu mișcările largi.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Odată împerecheată, insereaz-o în ultimul slot al stratului D pentru a completa crucea albă.
+
+### Partea B: Împerechează Muchiile Rămase (Tehnica 3-2-3)
+
+Acum ai 8 muchii neîmperecheate. **Tehnica 3-2-3** este cel mai eficient mod de a le împerechea:
+
+1. **Primele 3 muchii** — împerechează-le cu mișcări slice-flip-slice standard. Plasează o muchie neîmperecheată în față-dreapta, găsește partenerul sus, folosește Uw pentru a le uni:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Următoarele 2 muchii** — cu mai puține muchii rămase, poți împerechea două rapid în succesiune, stocând una în spate:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Ultimele 3 muchii** — ultimele muchii necesită mai multă atenție pentru a evita ruperea celor deja împerecheate. Folosește mișcări bazate pe Dw sau tehnici de întoarcere:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Sfaturi:**
+- În timpul împerecherii 3-2-3, verifică întotdeauna că mișcările tale largi nu rup muchiile crucii de jos.
+- Dacă o muchie este împerecheată dar inversată, trebuie să o scoți și să o împerecheezi din nou.
+- Tranziția de la împerechere la 3x3 ar trebui să fie fluidă — crucea ta este deja gata.
+
+---
+
+## Pasul 5: Rezolvă ca 3x3 (CFOP)
+
+Cu toate centrele rezolvate, toate muchiile împerecheate și crucea deja completă, 4x4 se comportă acum ca un 3x3. Deoarece **crucea albă este deja gata** (un avantaj major al Yau), poți sări direct la **F2L** (primele două straturi).
+
+Folosește doar mișcări ale stratului exterior de acum — fără mișcări largi.
+
+**Continuă cu CFOP standard:**
+1. **F2L** — împerechează și inserează perechi colț-muchie în primele două straturi.
+2. **OLL** — orientează ultimul strat.
+3. **PLL** — permută ultimul strat.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Acesta este cel mai mare avantaj al metodei Yau: tranziția cruce-la-F2L are zero pauză, deoarece crucea a fost construită în timpul fazei de reducție.
+
+---
+
+## Algoritmi de Paritate
+
+4x4 are două cazuri de paritate care nu pot apărea pe un 3x3. Acestea se întâmplă fiecare în circa 50% din timp, indiferent dacă folosești Yau sau Reduction.
+
+### Paritate OLL (Inversare Muchie Unică)
+
+O singură muchie apare inversată pe ultimul strat — imposibil pe un 3x3 real.
+
+**Algoritm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Aplică acest algoritm o dată, apoi continuă cu OLL/PLL normal.
+
+### Paritate PLL (Schimb de Două Muchii)
+
+Două muchii opuse trebuie schimbate — din nou imposibil pe un 3x3.
+
+**Algoritm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Când să Înveți Yau
+
+- **Dacă media ta este sub 2 minute cu Reduction**, ai bazele pentru a trece la Yau.
+- **Dacă știi CFOP pentru 3x3**, Yau este o alegere naturală — crucea este deja gata când intri în faza 3x3.
+- **Dacă te chinui cu tranziția Reduction-la-3x3**, Yau elimină complet acea pauză.
+
+## Priorități de Antrenament
+
+1. **Stăpânește împerecherea muchiilor cu freeslice** — aceasta este tehnica de bază care face Yau eficient.
+2. **Exersează recunoașterea 2 centre + 3 muchii de cruce** — învață să identifici rapid muchiile crucii în primii doi pași.
+3. **Antrenează tehnica 3-2-3** — împerechere fluidă a muchiilor este unde se economisește cel mai mult timp.
+4. **Lucrează la tranziția cruce-la-F2L** — deoarece crucea e gata, exersează observarea primei perechi F2L în timpul împerecherii muchiilor.
+
+---
+
+**Metoda Yau este standardul pentru rezolvarea competitivă a 4x4.** Tranziția fluidă de la reducție la rezolvarea 3x3, combinată cu oportunități mai bune de anticipare, o face alegerea preferată pentru speedcuberii care vizează medii sub 40 de secunde. Începe prin convertirea rezolvărilor tale Reduction în Yau, un pas la un moment dat.

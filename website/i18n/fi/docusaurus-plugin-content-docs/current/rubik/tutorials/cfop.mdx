@@ -1,0 +1,219 @@
+---
+title: CFOP-menetelmän yleiskatsaus
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# CFOP-menetelmän yleiskatsaus
+
+**CFOP-menetelmä** (tunnetaan myös nimellä **Fridrichin menetelmä**) on maailman käytetyin nopeusratkaisumenetelmä. Valtaosa alle 20 sekunnin ratkaisijoista ja maailmanennätyshaltijoista käyttää CFOP:ia. Se perustuu aloittelijan kerrosmenetelmään, mutta on huomattavasti tehokkaampi — vähentäen keskimääräisen ratkaisun yli 100 siirrosta noin 55-60 siirtoon.
+
+**CFOP** tarkoittaa sen neljää vaihetta:
+
+1. **C**ross — Ratkaise 4 reunapalaa pohjaan
+2. **F**2L — Kaksi ensimmäistä kerrosta (yhdistä ja aseta 4 kulma-reuna-paria)
+3. **O**LL — Viimeisen kerroksen orientointi (tee yläpinnasta yksivärinen)
+4. **P**LL — Viimeisen kerroksen permutaatio (järjestä kaikki yläpalaset oikein)
+
+## CFOP vs. aloittelijamenetelmä
+
+| | Aloittelija (LBL) | CFOP |
+|---|---|---|
+| Vaiheet | 7 | 4 |
+| Keskimääräiset siirrot | 100-120 | 55-60 |
+| Opeteltavat algoritmit | 5-8 | 78 (täysi) / 16 (2-look) |
+| Tyypillinen nopeus | 1-3 minuuttia | 10-20 sekuntia |
+| Keskeisin ero | Vaihe vaiheelta, yksi pala kerrallaan | Yhdistää paloja, vähemmän vaiheita |
+
+Hyvä uutinen: voit oppia CFOP:n **vähitellen**. Aloita intuitiivisella F2L:llä ja 2-look OLL/PLL:llä (vain 16 algoritmia), laajenna sitten täyteen OLL:ään (57 algoritmia) ja täyteen PLL:ään (21 algoritmia) ajan myötä.
+
+---
+
+## Vaihe 1: Risti
+
+Risti on sama konsepti kuin aloittelijamenetelmässä — ratkaise 4 valkoista reunapalaa alapinnalle niin, että jokainen reuna vastaa myös sivukeskustaan. Ero CFOP:ssa on **miten** lähestyt sitä:
+
+- **Suunnittele koko risti tarkastuksen aikana** (15 sekuntia ennen ratkaisun alkua)
+- **Ratkaise risti pohjassa** — älä käännä kuutiota ympäri
+- **Tähtää 8 siirtoon tai vähempään** — tehokas risti on keskimäärin 6-7 siirtoa
+
+**Esimerkki: Ristireuna suoraan pohjaan**
+
+Tässä valko-sininen reuna on yläkerroksessa. Kohdistamme sen ja asetamme suoraan pohjaan yhdellä siirrolla:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Esimerkki: Ristireuna tarvitsee uudelleensijoitusta**
+
+Joskus reuna on väärässä paikassa tai käännetty. Tässä korjaamme väärin sijoitetun reunan:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Vinkkejä nopeaan ristiin:**
+- Harjoittele ristin suunnittelua silmät kiinni
+- Opi ratkaisemaan se 8 siirrolla tai vähemmällä mistä tahansa sekoituksesta
+- Työskentele ristin ratkaisemisen kanssa pohjassa alusta alkaen — vältä tapaa ratkaista ylhäällä
+
+---
+
+## Vaihe 2: F2L (Kaksi ensimmäistä kerrosta)
+
+F2L on CFOP:n ydin ja suurimman ajansäästön lähde. Sen sijaan, että ratkaisit ensimmäisen kerroksen kulmat ja toisen kerroksen reunat erikseen (kuten aloittelijamenetelmässä), **yhdistät** kulmapalikan sen vastaavaan reunaan ja **asetat** ne yhdessä yhtenä yksikkönä.
+
+Ratkaistavia kulma-reuna-pareja (kutsutaan **sloteiksi**) on 4. Jokainen slotti sijaitsee kahden sivupinnan välissä kahdessa alimmassa kerroksessa.
+
+**F2L:n perustapaus: Kulma ja reuna molemmat yläkerroksessa**
+
+Valko-puna-vihreä kulma on yläkerroksessa, ja puna-vihreä reuna on myös yläkerroksessa. Yhdistämme ne ja asetamme:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Toinen yleinen tapaus: Väärän parin erottaminen**
+
+Joskus palat ovat väärin yhdistetty. Erotamme ne ja yhdistämme uudelleen oikein:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L voidaan oppia **intuitiivisesti** — ymmärtämällä piilottamisen, yhdistämisen ja asettamisen logiikka — tai **algoritmisesti** 41 erityistapauksella. Useimmat nopeusratkaijat käyttävät yhdistelmää molemmista.
+
+Täydellinen lista F2L-tapauksista ja algoritmeista löytyy oppaasta [**F2L: Kaksi ensimmäistä kerrosta**](./f2l).
+
+---
+
+## Vaihe 3: OLL (Viimeisen kerroksen orientointi)
+
+Kahden ensimmäisen kerroksen jälkeen yläpinnassa on joitain keltaisia ja joitain ei-keltaisia tarroja. OLL:n tavoite on tehdä **koko yläpinta keltaiseksi** — emme välitä sivuväreistä vielä.
+
+Täydessä OLL:ssä on **57 algoritmia**. Voit kuitenkin aloittaa **2-look OLL:llä**, joka käyttää vain 10 algoritmia jakamalla vaiheen kahteen osaan:
+
+1. **Ensimmäinen katselu:** Muodosta keltainen risti yläpinnalle (3 tapausta, käyttäen 2 algoritmia eri suunnista)
+2. **Toinen katselu:** Orientoi keltaiset kulmat (7 algoritmia)
+
+**Esimerkki: Sune (yksi yleisimmistä OLL-tapauksista)**
+
+Tämä on OLL #26, yleisesti nimeltään **Sune**. Yksi keltainen kulma on orientoitu, ja kolme muuta tarvitsee kääntää:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Esimerkki: OLL-ristitapaus (keltaisen ristin muodostaminen)**
+
+Kun yläpinnassa on L-muotoinen keltaisten reunojen kuvio, pidä L takana vasemmalla ja tee:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Vinkkejä OLL:n oppimiseen:**
+- Aloita 2-look OLL:llä — se lisää vain muutaman sekunnin ratkaisuusi
+- Opi Sune ja Anti-Sune ensin; ne esiintyvät monissa OLL-tapauksissa
+- Harjoittele tapausten tunnistamista keltaisten tarrojen kuvion perusteella
+
+---
+
+## Vaihe 4: PLL (Viimeisen kerroksen permutaatio)
+
+Viimeinen vaihe! Kaikki keltaiset tarrat ovat nyt ylhäällä, mutta viimeisen kerroksen palojen sivuvärit eivät ehkä täsmää. PLL **järjestää** yläkerroksen palat oikeisiin paikkoihinsa ratkaisun viimeistelemiseksi.
+
+Täydessä PLL:ssä on **21 algoritmia**. Voit aloittaa **2-look PLL:llä**, joka käyttää vain 6 algoritmia:
+
+1. **Ensimmäinen katselu:** Aseta kulmat oikein (2 algoritmia)
+2. **Toinen katselu:** Aseta reunat oikein (4 algoritmia)
+
+**Esimerkki: T-Perm (yksi hyödyllisimmistä PLL-algoritmeista)**
+
+T-Perm vaihtaa kaksi kulmaa ja kaksi reunaa. Se esiintyy usein ja sitä käytetään perustana muiden PLL:ien oppimiselle:
+
+**Algoritmi: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Esimerkki: U-Perm (a) — 3 reunan sykli**
+
+U-Perm kiertää kolme reunaa myötäpäivään kun kaikki kulmat ovat jo paikoillaan:
+
+**Algoritmi: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Vinkkejä PLL:n oppimiseen:**
+- Aloita T-Permillä, U-Permeillä (a ja b) ja A-Permeillä
+- Opi tunnistamaan PLL:t sivuvärien perusteella (ajovalokuvio)
+- Harjoittele PLL:ien suorittamista mistä tahansa AUF-kulmasta (yläpinnan säätö)
+
+---
+
+## Milloin oppia CFOP
+
+CFOP on luonnollinen seuraava askel sen jälkeen, kun hallitset aloittelijan kerrosmenetelmän. Tässä suositeltu eteneminen:
+
+### Taso 1: Aloittelijasta alle 60 sekuntiin
+- Hallitse aloittelijamenetelmä kunnes ratkaisusi ovat johdonmukaisia
+- Opi ratkaisemaan **risti pohjassa**
+- Aloita **intuitiivisen F2L:n** harjoittelu — katso miten parit muodostetaan ja asetetaan
+
+### Taso 2: Alle 60:stä alle 30 sekuntiin
+- Käytä täyttä **intuitiivista F2L:ää** kaikille 4 parille
+- Opi **2-look OLL** (10 algoritmia)
+- Opi **2-look PLL** (6 algoritmia)
+- Harjoittele **lookaheadia** — seuraa seuraavaa paria asettaessasi nykyistä
+
+### Taso 3: Alle 30:stä alle 20 sekuntiin
+- Opi **täysi PLL** (21 algoritmia)
+- Aloita **täyden OLL:n** oppiminen (57 algoritmia)
+- Optimoi F2L-ratkaisusi — opi [**algoritmiset F2L-tapaukset**](./f2l)
+- Työskentele ristin tehokkuuden parissa (suunnittele koko risti tarkastuksen aikana)
+
+### Taso 4: Alle 20 ja eteenpäin
+- Viimeistele **täysi OLL**
+- Opi edistyneitä F2L-temppuja (tyhjän slotin tekniikat, multi-slotting)
+- Kehitä vahvat **lookahead**-tavat
+- Työskentele käännösnopeuden ja sujuvuuden parissa
+
+---
+
+## Seuraavat askeleet
+
+Valmis sukeltamaan syvemmälle jokaiseen vaiheeseen? Tutustu näihin yksityiskohtaisiin oppaisiin:
+
+- [**F2L: Kaksi ensimmäistä kerrosta**](./f2l) — Kaikki yleiset F2L-tapaukset algoritmeineen ja demoineen
+- [**OLL-algoritmit**](./oll) — Kaikki 57 OLL-tapausta ja 2-look OLL aloittelijoille
+- [**PLL-algoritmit**](./pll) — Kaikki 21 PLL-tapausta ja 2-look PLL aloittelijoille
+- [**Sormitemppuopas**](./finger-tricks) — Tehokas siirtojen suoritus ja olennaiset triggerit
+- [**Nopeusratkaisuvinkkejä**](./speed-tips) — Ristin suunnittelu, lookahead ja harjoitusrutiinit
+
+**Hauskaa kuutiointia!** Matka aloittelijasta alle 20 sekuntiin on yksi palkitsevimmista haasteista nopeusratkaisussa. Ota se vaihe kerrallaan, ja pääset perille.

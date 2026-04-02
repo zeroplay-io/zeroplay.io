@@ -1,0 +1,317 @@
+---
+title: "Avancerade Skewb-tekniker"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Avancerade Skewb-tekniker
+
+Ta din Skewb-lösning från nybörjarnivå till tävlingsnivå. Denna guide täcker **Sarahs mellanmetod**, som uppgraderar nybörjarmetoden genom att lösa alla återstående center i ett enda steg, plus avancerade algoritmer och speed solving-strategier som används av topp-Skewb-lösare.
+
+## Notationspåminnelse
+
+Skewb roterar runt **hörn** istället för sidor:
+
+- **R** = Höger främre hörn medurs &nbsp;&nbsp; **R'** = moturs
+- **L** = Vänster främre hörn medurs &nbsp;&nbsp; **L'** = moturs
+- **U** = Övre höger främre hörn medurs &nbsp;&nbsp; **U'** = moturs
+- **B** = Höger bakhörn medurs &nbsp;&nbsp; **B'** = moturs
+
+Håll Skewb med **vitt center nedåt** för alla steg.
+
+---
+
+## Sarahs mellanmetod
+
+Sarahs nybörjarmetod löser Skewb i 3 steg: första sidan, sedan center, sedan sista lagrets hörn. Mellanuppgraderingen **kombinerar center- och hörnstegen** och löser alla 5 återstående center i EN algoritm efter att första sidan är klar.
+
+### Översikt
+
+| Steg | Nybörjare | Mellan |
+|------|----------|-------------|
+| 1 | Lös en sida | Lös en sida (samma) |
+| 2 | Placera center | **Lös alla 5 center i ett steg** |
+| 3 | Orientera sista lagrets hörn | Orientera sista lagrets hörn (samma) |
+
+Den viktigaste förbättringen är Steg 2: istället för att använda Sledgehammer upprepat för att placera center ett i taget lär du dig en uppsättning algoritmer som löser alla center samtidigt.
+
+### Steg 1: Lös en sida
+
+Bygg en komplett **vit sida** i botten — alla 4 hörn runt det vita centret måste vara på plats med vitt nedåt, och angränsande sidfärger måste matcha. Detta steg är identiskt med nybörjarmetoden.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Använd Sledgehammer med uppsättningsdrag för att placera varje vitt hörn. Med övning blir detta steg snabbt och intuitivt.
+
+### Steg 2: Lös alla 5 center (One-Look)
+
+Efter att första sidan är löst, titta på de **5 återstående centren** (topp + 4 sidor) och identifiera ditt fall. Tillämpa en enda algoritm för att lösa dem alla på en gång.
+
+Det finns flera fall beroende på hur många center som är i rätt position:
+
+---
+
+#### Fall 1: Angränsande 4-cykel
+
+Fyra center behöver cykla. Toppcentret är korrekt, men de 4 sidocentren behöver rotera.
+
+**Algoritm: R' L R L' R' L R L'** (Dubbel Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Fall 2: Motsatt 2-byte
+
+Två motstående sidocenter behöver bytas.
+
+**Algoritm: R L' R' L R L' R' L** (Invers dubbel Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Fall 3: Angränsande 2-byte
+
+Två angränsande sidocenter behöver bytas. Ställ de två centren som ska bytas framme och till höger.
+
+**Algoritm: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Fall 4: Topp-sido-byte + cykel
+
+Toppcentret behöver bytas med ett sidocenter, och de återstående sidocentren cyklar.
+
+**Algoritm: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Fall 5: Trippelcykel
+
+Tre center behöver cykla (topp stannar, 3 sidor roterar). Ställ det stationära sidocentret bak.
+
+**Algoritm: R' L R L'** (Enkel Sledgehammer — med korrekt uppsättning)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Lär dig identifiera centerfall snabbt genom att kontrollera toppcentret först, sedan skanna de 4 sidorna.
+- Många av dessa är Sledgehammer-variationer — om du kan Sledgehammer väl, känns dessa algoritmer naturliga.
+- Öva igenkänning genom att scrambla Skewb, lösa första sidan och identifiera centerfallet innan utförande.
+
+### Steg 3: Orientera sista lagrets hörn
+
+Efter att alla center är lösta kan sista lagrets hörn fortfarande behöva vridas. Detta steg är detsamma som nybörjarmetoden.
+
+#### Alla 4 hörn behöver medursvridning
+
+**Algoritm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Alla 4 hörn behöver motursvridning
+
+**Algoritm: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 hörn behöver vridning (angränsande)
+
+Ställ de två olösta hörnen framme. Använd U för att positionera dem, utför algoritmen, ångra sedan U.
+
+**Algoritm: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 hörn behöver vridning (diagonala)
+
+**Algoritm: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Avancerade algoritmer
+
+Utöver mellanmetoden, här är ytterligare algoritmer som hanterar ovanligare fall effektivare.
+
+### Z-Perm-ekvivalent
+
+När två par hörn behöver bytas (som ett Z-format mönster):
+
+**Algoritm: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi-fall
+
+Toppsidan visar ett Pi-mönster — två angränsande hörn orienterade, två inte:
+
+**Algoritm: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Hörnuppsättning och orientering
+
+När ett hörn behöver omorientering, använd uppsättningsdrag för att konjugera en Sledgehammer-cykel som vrider det på plats:
+
+**Algoritm: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Snabbt motstående centerbyte
+
+En effektivare algoritm för att byta två motstående center:
+
+**Algoritm: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Trippel hörnorientering
+
+Tre hörn behöver vridas (ett förblir korrekt):
+
+**Algoritm: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Angränsande hörnbyte
+
+Två angränsande hörn behöver byta positioner (inte bara vridas):
+
+**Algoritm: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look-lösningskoncept
+
+Det ultimata målet i tävlings-Skewb-lösning är att förutsäga sista lagret medan du fortfarande löser första sidan.
+
+### Förutsäga sista lagret
+
+Under Steg 1, medan du bygger den vita sidan, var uppmärksam på **översta lagrets center och hörn**. Med övning kan du identifiera Steg 2 och 3 fallen innan du avslutar Steg 1.
+
+- **Observera toppcentret** — flyttar det sig till rätt position när du sätter in sista vita hörnet?
+- **Följ sidocentren** — notera vilka sidocenter som redan är korrekta.
+- **Planera hela lösningen** — avancerade lösare kan planera hela lösningen under inspektion.
+
+### Påverka sista lagret
+
+När du har flera sätt att sätta in sista vita hörnet, välj insättningen som ger dig ett **enklare Steg 2-fall**:
+
+- Om två insättningar båda löser hörnet, välj den som placerar fler center korrekt.
+- Ibland leder ett lite längre Steg 1 till att hoppa över Steg 2 eller 3.
+
+---
+
+## Speed solving-tips
+
+### Grepp och vridning
+
+- Håll Skewb med **fingertopparna på hörnen** — du vrider hörn, inte sidor.
+- Använd **pekfinger och tumme** på varje hand för att gripa motstående hörn.
+- Öva jämna, kontrollerade hörnvridningar — Skewb belönar precision över ren hastighet.
+- **Minimera greppbyten** — försök utföra hela Sledgehammer utan att ändra greppet.
+
+### Färgneutralitet
+
+Färgneutralitet på Skewb betyder att du kan börja med **vilken sida som helst** som din första sida, inte bara vit. Detta är extremt kraftfullt:
+
+- Med färgneutralitet har du **6 möjliga första sidor** att välja mellan.
+- Välj sidan som är närmast löst — ibland är 2-3 hörn redan på plats.
+- Färgneutralitet är nästan obligatoriskt för lösning under 4 sekunder.
+
+**Så övar du:**
+1. Börja med att vara neutral mellan 2 motstående färger (t.ex. vit och gul).
+2. Lägg gradvis till fler startfärger tills du kan börja med vilken sida som helst.
+3. Under inspektion, skanna snabbt alla 6 sidor och välj den enklaste.
+
+### Inspektionsplanering
+
+Skewb har bara 14 synliga bitar (6 center + 8 hörn), vilket gör fullständig lösningsplanering realistisk:
+
+- **Planera alltid första sidan helt** under inspektion.
+- **Identifiera centerfallet** innan du börjar lösa.
+- **Avancerat:** planera genom Steg 2 — vet vilken algoritm du kommer använda innan du rör pusslet.
+
+### Övningsrutin
+
+1. **Första sidan-övningar** — scrambla och lös bara första sidan, mål under 2 sekunder.
+2. **Centerigenkänning** — efter att ha löst första sidan, identifiera centerfallet så snabbt som möjligt utan att utföra.
+3. **Fullständiga lösningar** — uppsättningar av 12 tidtagda lösningar, spåra genomsnitt av 5 och genomsnitt av 12.
+4. **Algoritmövning** — öva varje center- och hörnalgoritm 20 gånger i rad för muskelminne.
+5. **Färgneutral övning** — tvinga dig själv att börja med en annan färg varje lösning.
+
+---
+
+**Med Sarahs mellanmetod och dedikerad övning är sub-5-sekunders Skewb-genomsnitt inom räckhåll.** Skewb är ett av de mest planeringsvänliga pusslen i speedcubing — färre bitar betyder att du kan förutsäga mer under inspektion. Fokusera på igenkänningshastighet och jämn vridning, och du kommer se snabb förbättring.

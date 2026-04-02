@@ -1,0 +1,312 @@
+---
+title: "F2L: Eerste twee lagen"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Eerste twee lagen
+
+F2L (First Two Layers, eerste twee lagen) is de **belangrijkste stap** in de CFOP-methode. In plaats van de hoekstukken van de eerste laag en de randstukken van de tweede laag als twee aparte stappen op te lossen (zoals de beginnersmethode), koppelt F2L een hoekstuk aan het bijbehorende randstuk en plaatst ze samen in de juiste sleuf. Dit bespaart een enorm aantal zetten en is de bron van de grootste snelheidsverbeteringen.
+
+Er zijn **4 sleuven** om te vullen, één in elke hoek van de onderste twee lagen. Elke sleuf bestaat uit één hoekstuk en één randstuk.
+
+## Het concept
+
+Elk F2L-geval betreft twee stukken:
+- Een **hoekstuk** dat bij de onderste laag hoort (het heeft een witte/bodemkleur-sticker)
+- Een **randstuk** dat bij de middelste laag hoort (het verbindt twee zijkleuren)
+
+Het doel is om deze twee stukken in de bovenste laag te **koppelen** en vervolgens het paar in de juiste sleuf te **plaatsen** in één vloeiende beweging.
+
+## Notatie-herinnering
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Boven &nbsp;&nbsp; **D** = Onder &nbsp;&nbsp; **F** = Voor &nbsp;&nbsp; **B** = Achter
+- Een letter alleen = **90° met de klok mee** &nbsp;&nbsp; **'** = **tegen de klok in** &nbsp;&nbsp; **2** = **180°**
+
+Houd de kubus met **wit onderaan**. De sleuf waarin we plaatsen is altijd de **rechter voorsleuf** (tussen de F- en R-vlakken).
+
+---
+
+## Intuïtief F2L
+
+Voordat je algoritmes uit je hoofd leert, leer de **logica** van F2L. Elk geval volgt hetzelfde patroon:
+
+1. **Vind** een hoek-rand-paar dat bij elkaar hoort
+2. **Scheid** ze als ze verkeerd aan elkaar vastzitten
+3. **Positioneer** één stuk, en **breng** dan het andere ernaartoe
+4. **Koppel** ze in de bovenste laag zodat wit naar buiten of naar beneden wijst
+5. **Plaats** het verbonden paar in de sleuf
+
+**Kernprincipe:** Gebruik R- en U-zetten om het hoekstuk uit de rechter voorsleuf te halen of erin te plaatsen, en U-zetten om het randstuk te positioneren. Verstoor nooit al opgeloste sleuven.
+
+---
+
+Er zijn in totaal **41 standaard F2L-gevallen**. Hieronder behandelen we de **15 belangrijkste gevallen** die de basis vormen. Als je deze beheerst, kun je de overige gevallen intuïtief oplossen of opzoeken wanneer nodig.
+
+## Basisgevallen: beide stukken in de bovenste laag
+
+Dit zijn de eenvoudigste en meest voorkomende gevallen. Zowel het hoekstuk als het randstuk bevinden zich in de U-laag en de doelsleuf is leeg.
+
+### Geval 1: Eenvoudige plaatsing — Hoek wit wijst naar rechts, rand klaar
+
+Het hoekstuk heeft wit gericht naar het R-vlak, en het randstuk is al zo gepositioneerd dat één U-zet ze koppelt. Dit is de meest basale F2L-plaatsing.
+
+**Algoritme: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Geval 2: Eenvoudige plaatsing — Hoek wit wijst naar voren, rand klaar
+
+Het hoekstuk heeft wit gericht naar het F-vlak, en het randstuk is gepositioneerd voor koppeling met een plaatsing tegen de klok in.
+
+**Algoritme: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Geval 3: Hoek wit wijst omhoog, kleuren komen overeen met het voorcentrum
+
+Het hoekstuk heeft wit omhoog en de voorkleur komt overeen met het voorcentrum. Het randstuk is aan de overkant. We moeten ze verbinden en plaatsen.
+
+**Algoritme: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Geval 4: Hoek wit wijst omhoog, kleuren komen overeen met het rechtercentrum
+
+Het hoekstuk heeft wit omhoog en de rechterkleur komt overeen met het rechtercentrum. Het randstuk moet van de tegenovergestelde kant gekoppeld worden.
+
+**Algoritme: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Geval 5: Hoek en rand ver uit elkaar, wit wijst naar rechts
+
+Het hoekstuk heeft wit naar rechts en het randstuk is aan de andere kant van de bovenste laag. We brengen het randstuk dichterbij, koppelen dan en plaatsen.
+
+**Algoritme: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Geval 6: Hoek en rand ver uit elkaar, wit wijst naar voren
+
+Spiegelbeeld van geval 5. Het hoekstuk heeft wit naar voren en het randstuk is aan de verre kant.
+
+**Algoritme: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Geval 7: Hoek en rand naast elkaar, wit wijst naar rechts — Paar verbonden maar verkeerd
+
+Het hoekstuk en randstuk zijn naast elkaar en verbonden, maar geplaatst zouden ze verkeerd zijn. We scheiden ze en voegen ze correct weer samen.
+
+**Algoritme: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Geval 8: Hoek en rand naast elkaar, wit wijst naar voren — Paar verbonden maar verkeerd
+
+Spiegelbeeld van geval 7 aan de F-vlakzijde.
+
+**Algoritme: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Tussengevallen: rand in sleuf, hoek in bovenste laag
+
+Soms zit het randstuk al vast in een sleuf (juist of onjuist), en het hoekstuk is in de bovenste laag. We moeten het randstuk eruit halen zonder andere opgeloste paren te verstoren.
+
+### Geval 9: Rand in juiste sleuf maar hoek bovenaan — Wit wijst naar rechts
+
+Het randstuk zit in de juiste sleuf, en het hoekstuk is in de U-laag met wit naar rechts. We halen het randstuk eruit en koppelen het met het hoekstuk.
+
+**Algoritme: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Geval 10: Rand in verkeerde sleuf, hoek bovenaan — Wit wijst omhoog
+
+Het randstuk zit in de verkeerde sleuf. We halen het eruit terwijl we tegelijkertijd de koppeling met het hoekstuk voorbereiden.
+
+**Algoritme: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Gevorderde gevallen: hoek in sleuf
+
+Deze gevallen doen zich voor wanneer het hoekstuk al in de juiste sleuf zit maar verkeerd georiënteerd, of in de juiste sleuf met het randstuk op de verkeerde plek.
+
+### Geval 11: Hoek in sleuf, gedraaid — Rand in bovenste laag
+
+Het hoekstuk zit in de rechter voorsleuf maar met wit naar voren (niet naar beneden). Het randstuk is in de U-laag. We halen het hoekstuk eruit, koppelen het met het randstuk en plaatsen opnieuw.
+
+**Algoritme: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Geval 12: Hoek in sleuf, gedraaid — Rand in verkeerde sleuf
+
+Beide stukken zitten in de onderste twee lagen maar geen van beide is correct. We schoppen het hoekstuk eruit en halen tegelijkertijd het randstuk eruit.
+
+**Algoritme: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Speciale gevallen: beide stukken in sleuf
+
+### Geval 13: Paar verbonden in sleuf maar gedraaid
+
+Het hoekstuk en randstuk zijn gekoppeld en in de sleuf, maar het hoekstuk is gedraaid (wit wijst naar voren, niet naar beneden). Haal het paar eruit, scheid ze en plaats opnieuw correct.
+
+**Algoritme: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Geval 14: Hoek correct in sleuf, rand omgedraaid in sleuf
+
+Het hoekstuk is correct geplaatst maar het randstuk erboven is omgedraaid. Dit is een van de lastigste gevallen. We halen beide eruit, koppelen correct en plaatsen opnieuw.
+
+**Algoritme: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Geval 15: Beide in sleuf, beide verkeerd — Kruisfout
+
+Het hoekstuk en randstuk zitten allebei in de sleuf maar geen van beide komt overeen. Volledige extractie en herbouw.
+
+**Algoritme: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tips voor sneller F2L
+
+### 1. Leer eerst intuïtief
+
+Haast je niet om alle 41 algoritmische gevallen te onthouden. Neem de tijd om te begrijpen **waarom** elke zet werkt. Als je weet dat R U R' een hoekstuk eruit haalt en terugplaatst, kun je de meeste gevallen zelf oplossen. Algoritmes komen later voor optimalisatie.
+
+### 2. Ontwikkel lookahead
+
+**Lookahead** is het vermogen om je volgende paar te volgen terwijl je het huidige plaatst. Dit is de grootste factor die 20-seconden-oplossers van 15-seconden-oplossers onderscheidt.
+
+Oefentips:
+- Vertraag je draaien en dwing jezelf om tijdens het plaatsen naar het volgende paar te zoeken
+- Oefen F2L oplossen met je ogen dicht tijdens het plaatsen (je kent de zetten, dus kijk vooruit)
+- Doe ongetimede oplossingen gericht op nul pauzes tussen paren
+
+### 3. Verminder rotaties
+
+Elke keer dat je de hele kubus roteert, verlies je tijd. De beste F2L-oplossers roteren zelden meer dan een of twee keer in een hele F2L-fase.
+
+- Leer plaatsen in **achtersleuven** met R- en U-zetten (bijv. R U' R' om achterrechts te plaatsen)
+- Oefen het gebruik van **L-, F- en B-**zetten voor sleuven aan de andere kant
+- Gebruik brede zetten (r, l) om tegelijkertijd te roteren en te plaatsen
+
+### 4. Herken gevallen snel
+
+Train jezelf om direct te herkennen welk geval je ziet:
+- **Waar is wit op het hoekstuk?** (Boven, Voor of Rechts)
+- **Waar is het randstuk ten opzichte van het hoekstuk?** (Ernaast, tegenover of in een sleuf)
+- **Zijn ze al gekoppeld?** (Correct verbonden, verkeerd verbonden of los)
+
+### 5. Los op in efficiënte volgorde
+
+Je hoeft de 4 paren niet in een vaste volgorde op te lossen. Bekijk alle 4 paren en begin met het **makkelijkste** — degene die de minste zetten vereist. Ervaren oplossers plannen hun eerste paar tijdens de inspectie samen met het kruis.
+
+### 6. Lege-sleuf-trucs
+
+Wanneer een sleuf leeg is, kun je hem als tijdelijke opslag gebruiken. Plaats bijvoorbeeld een randstuk in een lege sleuf (R U R') om het uit de weg te krijgen terwijl je aan een ander paar werkt. Beginners zien deze krachtige techniek vaak over het hoofd.
+
+---
+
+## Oefroutine
+
+1. **Schud de kubus en los het kruis op**
+2. **Vind alle 4 hoek-rand-paren** — identificeer waar elk hoekstuk en zijn bijbehorend randstuk zijn
+3. **Los elk paar één voor één op** — begin met makkelijke gevallen, bewaar moeilijke voor het laatst
+4. **Meet alleen de F2L-fase** — gebruik een timer. Doel: onder de 15 seconden voor alle 4 paren
+5. **Evalueer** — vraag na elke oplossing: had ik een paar met minder zetten kunnen doen?
+
+Met consequent oefenen wordt F2L een tweede natuur en zul je dramatische verbeteringen zien in je totale oplostijden.
+
+---
+
+## Wat nu?
+
+Na het beheersen van F2L, ga verder met de laatste laag:
+
+- [**CFOP-methode overzicht**](./cfop) — Bekijk hoe F2L past in de volledige CFOP-methode
+- [**OLL-algoritmes**](./oll) — Maak het bovenvlak helemaal geel (57 gevallen + 2-Look OLL)
+- [**PLL-algoritmes**](./pll) — Rangschik de laatste stukken om de oplossing te voltooien (21 gevallen)
+- [**Finger tricks-gids**](./finger-tricks) — Voer F2L-triggers sneller en vloeiender uit

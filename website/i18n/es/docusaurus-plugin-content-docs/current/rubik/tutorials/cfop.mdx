@@ -1,0 +1,219 @@
+---
+title: Descripción general del método CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Descripción general del método CFOP
+
+El **método CFOP** (también conocido como **método Fridrich**) es el método de speedcubing más utilizado en el mundo. La gran mayoría de los resolvedores sub-20 segundos y los poseedores de récords mundiales usan CFOP. Se basa en el método de capas para principiantes pero es drásticamente más eficiente — reduciendo una resolución promedio de más de 100 movimientos a aproximadamente 55-60 movimientos.
+
+**CFOP** representa sus cuatro pasos:
+
+1. **C**ross — Resolver 4 aristas en la parte inferior
+2. **F**2L — Primeras dos capas (emparejar e insertar 4 pares esquina-arista)
+3. **O**LL — Orientar la última capa (hacer que toda la cara superior sea de un solo color)
+4. **P**LL — Permutar la última capa (colocar todas las piezas superiores correctamente)
+
+## CFOP vs. Método para principiantes
+
+| | Principiante (LBL) | CFOP |
+|---|---|---|
+| Pasos | 7 | 4 |
+| Movimientos promedio | 100-120 | 55-60 |
+| Algoritmos por aprender | 5-8 | 78 (completo) / 16 (2-look) |
+| Velocidad típica | 1-3 minutos | 10-20 segundos |
+| Diferencia clave | Paso a paso, una pieza a la vez | Empareja piezas, menos pasos |
+
+La buena noticia: puedes aprender CFOP **gradualmente**. Comienza con F2L intuitivo y OLL/PLL de 2-look (solo 16 algoritmos), luego expande a OLL completo (57 algoritmos) y PLL completo (21 algoritmos) con el tiempo.
+
+---
+
+## Paso 1: Cruz
+
+La cruz es el mismo concepto que en el método para principiantes — resolver 4 aristas blancas en la cara inferior de modo que cada arista también coincida con el centro de su lado. La diferencia en CFOP es **cómo** lo abordas:
+
+- **Planifica toda la cruz durante la inspección** (15 segundos antes de que comience la resolución)
+- **Resuelve la cruz en la parte inferior** — sin voltear el cubo
+- **Apunta a 8 movimientos o menos** — una cruz eficiente promedia 6-7 movimientos
+
+**Ejemplo: Resolver una arista de cruz directamente hacia abajo**
+
+Aquí, la arista blanco-azul está en la capa superior. La alineamos e insertamos directamente hacia abajo en un movimiento:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Ejemplo: La arista de cruz necesita reposicionamiento**
+
+A veces una arista está en el lugar equivocado o volteada. Aquí corregimos una arista mal colocada:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Consejos para una cruz rápida:**
+- Practica planificar la cruz con los ojos cerrados
+- Aprende a resolverla en 8 movimientos o menos desde cualquier mezcla
+- Trabaja en resolver la cruz en la parte inferior desde el primer día — evita el hábito de resolver arriba
+
+---
+
+## Paso 2: F2L (Primeras dos capas)
+
+F2L es el corazón de CFOP y de donde provienen los mayores ahorros de tiempo. En lugar de resolver las esquinas de la primera capa y las aristas de la segunda capa por separado (como en el método para principiantes), **emparejas** una pieza de esquina con su arista correspondiente e **insertas** ambas juntas como una sola unidad.
+
+Hay 4 pares de esquina-arista (llamados **slots**) por resolver. Cada slot se sitúa entre dos caras laterales en las dos capas inferiores.
+
+**Caso básico de F2L: Esquina y arista ambas en la capa superior**
+
+La esquina blanco-rojo-verde está en la capa superior, y la arista rojo-verde también está en la capa superior. Las emparejamos e insertamos:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Otro caso común: Separar un par incorrecto**
+
+A veces las piezas están emparejadas incorrectamente. Las separamos y las volvemos a unir correctamente:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L se puede aprender **intuitivamente** — entendiendo la lógica de esconder, emparejar e insertar — o **algorítmicamente** con 41 casos específicos. La mayoría de los speedcubers usan una combinación de ambos.
+
+Para la lista completa de casos y algoritmos F2L, consulta la guía [**F2L: Primeras dos capas**](./f2l).
+
+---
+
+## Paso 3: OLL (Orientar la última capa)
+
+Después de completar las dos primeras capas, la cara superior tendrá algunas pegatinas amarillas y algunas no amarillas. El objetivo de OLL es hacer que **toda la cara superior sea amarilla** — aún no nos preocupamos por los colores laterales.
+
+El OLL completo tiene **57 algoritmos**. Sin embargo, puedes empezar con **OLL de 2-look**, que usa solo 10 algoritmos dividiendo el paso en dos partes:
+
+1. **Primera mirada:** Formar una cruz amarilla arriba (3 casos, usando 2 algoritmos aplicados desde diferentes orientaciones)
+2. **Segunda mirada:** Orientar las esquinas amarillas (7 algoritmos)
+
+**Ejemplo: Sune (uno de los casos de OLL más comunes)**
+
+Este es el OLL #26, comúnmente llamado **Sune**. Una esquina amarilla está orientada, y las otras tres necesitan ser rotadas:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Ejemplo: Caso de cruz OLL (formar la cruz amarilla)**
+
+Cuando tienes una forma de L de aristas amarillas arriba, coloca la L atrás a la izquierda y aplica:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Consejos para aprender OLL:**
+- Comienza con OLL de 2-look — solo añade unos pocos segundos a tu resolución
+- Aprende Sune y Anti-Sune primero; aparecen en muchos casos de OLL
+- Practica reconocer casos por el patrón de pegatinas amarillas arriba
+
+---
+
+## Paso 4: PLL (Permutar la última capa)
+
+¡El último paso! Todas las pegatinas amarillas están ahora arriba, pero los colores laterales de las piezas de la última capa pueden no coincidir. PLL **reordena** las piezas de la capa superior en sus posiciones correctas para completar la resolución.
+
+El PLL completo tiene **21 algoritmos**. Puedes empezar con **PLL de 2-look**, que usa solo 6 algoritmos:
+
+1. **Primera mirada:** Posicionar las esquinas correctamente (2 algoritmos)
+2. **Segunda mirada:** Posicionar las aristas correctamente (4 algoritmos)
+
+**Ejemplo: T-Perm (uno de los algoritmos de PLL más útiles)**
+
+T-Perm intercambia dos esquinas y dos aristas. Aparece frecuentemente y se usa como base para aprender otros PLLs:
+
+**Algoritmo: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Ejemplo: U-Perm (a) — Ciclo de 3 aristas**
+
+U-Perm cicla tres aristas en sentido horario mientras todas las esquinas ya están en su lugar:
+
+**Algoritmo: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Consejos para aprender PLL:**
+- Comienza con T-Perm, U-Perms (a y b) y A-Perms
+- Aprende a reconocer PLLs mirando los colores laterales (patrón de faros)
+- Practica ejecutar PLLs desde cualquier ángulo AUF (ajuste de la cara superior)
+
+---
+
+## Cuándo aprender CFOP
+
+CFOP es el siguiente paso natural después de dominar el método de capas para principiantes. Aquí tienes una progresión recomendada:
+
+### Etapa 1: De principiante a menos de 60 segundos
+- Domina el método para principiantes hasta que tus resoluciones sean consistentes
+- Aprende a resolver la **cruz en la parte inferior**
+- Comienza a practicar **F2L intuitivo** — observa cómo se forman e insertan los pares
+
+### Etapa 2: De menos de 60 a menos de 30 segundos
+- Usa **F2L intuitivo** completo para los 4 pares
+- Aprende **OLL de 2-look** (10 algoritmos)
+- Aprende **PLL de 2-look** (6 algoritmos)
+- Practica el **lookahead** — rastrea el siguiente par mientras insertas el actual
+
+### Etapa 3: De menos de 30 a menos de 20 segundos
+- Aprende **PLL completo** (21 algoritmos)
+- Comienza a aprender **OLL completo** (57 algoritmos)
+- Optimiza tus soluciones F2L — aprende los [**casos algorítmicos de F2L**](./f2l)
+- Trabaja en la eficiencia de la cruz (planifica toda la cruz durante la inspección)
+
+### Etapa 4: Menos de 20 y más allá
+- Completa **OLL completo**
+- Aprende trucos avanzados de F2L (técnicas de slot vacío, multi-slotting)
+- Desarrolla hábitos fuertes de **lookahead**
+- Trabaja en la velocidad de giro y fluidez
+
+---
+
+## Próximos pasos
+
+¿Listo para profundizar en cada paso? Consulta estas guías detalladas:
+
+- [**F2L: Primeras dos capas**](./f2l) — Todos los casos comunes de F2L con algoritmos y demos
+- [**Algoritmos OLL**](./oll) — Los 57 casos completos de OLL con OLL de 2-look para principiantes
+- [**Algoritmos PLL**](./pll) — Los 21 casos de PLL con PLL de 2-look para principiantes
+- [**Guía de finger tricks**](./finger-tricks) — Ejecución eficiente de movimientos y triggers esenciales
+- [**Consejos de speedcubing**](./speed-tips) — Planificación de la cruz, lookahead y rutinas de práctica
+
+**¡Feliz cubing!** El viaje de principiante a sub-20 es uno de los desafíos más gratificantes del speedcubing. Tómalo paso a paso y lo lograrás.

@@ -1,0 +1,312 @@
+---
+title: "F2L: Duas Primeiras Camadas"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Duas Primeiras Camadas
+
+O F2L (First Two Layers, duas primeiras camadas) é o **passo mais importante** do método CFOP. Em vez de resolver os cantos da primeira camada e as arestas da segunda camada em dois passos separados (como no método para iniciantes), o F2L emparelha um canto com a sua aresta correspondente e insere-os juntos no slot correto. Isto poupa um enorme número de movimentos e é a fonte das maiores melhorias de velocidade.
+
+Há **4 slots** para preencher, um em cada canto das duas camadas inferiores. Cada slot consiste numa peça de canto e numa peça de aresta.
+
+## O Conceito
+
+Cada caso de F2L envolve duas peças:
+- Uma **peça de canto** que pertence à camada inferior (tem um autocolante branco/cor do fundo)
+- Uma **peça de aresta** que pertence à camada intermédia (liga duas cores laterais)
+
+O objetivo é **emparelhar** estas duas peças na camada superior e depois **inserir** o par no slot correto num movimento suave.
+
+## Lembrete de Notação
+
+- **R** = Direita &nbsp;&nbsp; **L** = Esquerda &nbsp;&nbsp; **U** = Cima &nbsp;&nbsp; **D** = Baixo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Trás
+- Uma letra sozinha = **90° sentido horário** &nbsp;&nbsp; **'** = **anti-horário** &nbsp;&nbsp; **2** = **180°**
+
+Segure o cubo com o **branco em baixo**. O slot onde inserimos é sempre o **slot frontal direito** (entre as faces F e R).
+
+---
+
+## F2L Intuitivo
+
+Antes de memorizar algoritmos, aprenda a **lógica** do F2L. Cada caso segue o mesmo padrão:
+
+1. **Encontre** um par canto-aresta que pertençam juntos
+2. **Separe-os** se estiverem incorretamente unidos
+3. **Posicione** uma peça e depois **traga** a outra ao seu encontro
+4. **Emparelhe-os** na camada superior para que o branco fique virado para fora ou para baixo
+5. **Insira** o par ligado no slot
+
+**Princípio-chave:** Use movimentos R e U para tirar o canto do slot frontal direito ou inseri-lo, e movimentos U para posicionar a aresta. Nunca perturbe slots já resolvidos.
+
+---
+
+Existem **41 casos padrão de F2L** no total. Abaixo cobrimos os **15 casos mais importantes** que formam a base. Depois de os dominar, poderá lidar com os casos restantes intuitivamente ou consultá-los conforme necessário.
+
+## Casos Básicos: Ambas as Peças na Camada Superior
+
+Estes são os casos mais simples e comuns. Tanto o canto como a aresta estão na camada U e o slot alvo está vazio.
+
+### Caso 1: Inserção Fácil — Branco do Canto Virado para a Direita, Aresta Pronta
+
+O canto tem o branco virado para a face R, e a aresta já está posicionada de modo que um movimento U os emparelha. Esta é a inserção F2L mais básica.
+
+**Algoritmo: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Caso 2: Inserção Fácil — Branco do Canto Virado para a Frente, Aresta Pronta
+
+O canto tem o branco virado para a face F, e a aresta está posicionada para emparelhar com uma inserção anti-horária.
+
+**Algoritmo: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Caso 3: Branco do Canto Virado para Cima, Cores Correspondem ao Centro Frontal
+
+O canto tem o branco para cima e a sua cor frontal corresponde ao centro frontal. A aresta está do lado oposto. Precisamos de os ligar e inserir.
+
+**Algoritmo: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Caso 4: Branco do Canto Virado para Cima, Cores Correspondem ao Centro Direito
+
+O canto tem o branco para cima e a sua cor direita corresponde ao centro direito. A aresta precisa de ser emparelhada do lado oposto.
+
+**Algoritmo: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Caso 5: Canto e Aresta Afastados, Branco Virado para a Direita
+
+O canto tem o branco para a direita e a aresta está no lado oposto da camada superior. Aproximamos a aresta, depois emparelhamos e inserimos.
+
+**Algoritmo: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Caso 6: Canto e Aresta Afastados, Branco Virado para a Frente
+
+Espelho do Caso 5. O canto tem o branco para a frente e a aresta está no lado distante.
+
+**Algoritmo: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Caso 7: Canto e Aresta Adjacentes, Branco Virado para a Direita — Par Ligado mas Errado
+
+O canto e a aresta estão lado a lado e ligados, mas inseridos estariam errados. Separamos e voltamos a unir corretamente.
+
+**Algoritmo: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Caso 8: Canto e Aresta Adjacentes, Branco Virado para a Frente — Par Ligado mas Errado
+
+Espelho do Caso 7 no lado da face F.
+
+**Algoritmo: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Casos Intermédios: Aresta no Slot, Canto na Camada Superior
+
+Por vezes a aresta já está presa num slot (correto ou incorreto), e o canto está na camada superior. Precisamos de extrair a aresta sem perturbar outros pares já resolvidos.
+
+### Caso 9: Aresta no Slot Correto mas Canto em Cima — Branco Virado para a Direita
+
+A aresta está no slot correto, e o canto está na camada U com o branco para a direita. Tiramos a aresta e emparelhamos com o canto.
+
+**Algoritmo: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Caso 10: Aresta no Slot Errado, Canto em Cima — Branco Virado para Cima
+
+A aresta está no slot errado. Extraímo-la enquanto preparamos simultaneamente o emparelhamento com o canto.
+
+**Algoritmo: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Casos Avançados: Canto no Slot
+
+Estes casos ocorrem quando o canto já está no slot correto mas mal orientado, ou no slot correto com a aresta no lugar errado.
+
+### Caso 11: Canto no Slot, Torcido — Aresta na Camada Superior
+
+O canto está no slot frontal direito mas com o branco para a frente (não para baixo). A aresta está na camada U. Extraímos o canto, emparelhamos com a aresta e reinserimos.
+
+**Algoritmo: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Caso 12: Canto no Slot, Torcido — Aresta no Slot Errado
+
+Ambas as peças estão nas duas camadas inferiores mas nenhuma está correta. Expulsamos o canto e simultaneamente extraímos a aresta.
+
+**Algoritmo: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Casos Especiais: Ambas as Peças no Slot
+
+### Caso 13: Par Ligado no Slot mas Torcido
+
+O canto e a aresta estão emparelhados e no slot, mas o canto está torcido (branco para a frente, não para baixo). Extraímos o par, separamos e reinserimos corretamente.
+
+**Algoritmo: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Caso 14: Canto Correto no Slot, Aresta Invertida no Slot
+
+O canto está corretamente colocado mas a aresta acima está invertida. Este é um dos casos mais complicados. Extraímos ambos, emparelhamos corretamente e reinserimos.
+
+**Algoritmo: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Caso 15: Ambos no Slot, Ambos Errados — Erro Cruzado
+
+O canto e a aresta estão ambos no slot mas nenhum corresponde. Extração completa e reconstrução.
+
+**Algoritmo: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Dicas para um F2L Mais Rápido
+
+### 1. Aprenda Intuitivamente Primeiro
+
+Não se apresse a memorizar todos os 41 casos algorítmicos. Dedique tempo a compreender **porquê** cada movimento funciona. Se souber que R U R' tira um canto e o põe de volta, pode resolver a maioria dos casos sozinho. Os algoritmos vêm depois para otimizar.
+
+### 2. Desenvolva o Lookahead
+
+O **lookahead** é a capacidade de rastrear o próximo par enquanto insere o atual. Este é o maior fator que separa resolvedores de 20 segundos dos de 15 segundos.
+
+Dicas de prática:
+- Abrande a rotação e force-se a procurar o próximo par durante as inserções
+- Pratique resolver o F2L de olhos fechados durante a inserção (conhece os movimentos, então olhe em frente)
+- Faça resoluções sem cronómetro focadas exclusivamente em zero pausas entre pares
+
+### 3. Reduza Rotações
+
+Sempre que roda o cubo inteiro, perde tempo. Os melhores resolvedores de F2L raramente rodam mais de uma ou duas vezes em toda a fase F2L.
+
+- Aprenda a inserir em **slots traseiros** usando movimentos R e U (ex., R U' R' para inserir no traseiro direito)
+- Pratique o uso de movimentos **L, F e B** para slots do lado oposto
+- Use movimentos largos (r, l) para rodar e inserir simultaneamente
+
+### 4. Reconheça Casos Rapidamente
+
+Treine-se para reconhecer instantaneamente qual caso está a ver:
+- **Onde está o branco no canto?** (Cima, Frente ou Direita)
+- **Onde está a aresta em relação ao canto?** (Adjacente, oposta ou num slot)
+- **Já estão emparelhados?** (Corretamente ligados, incorretamente ligados ou separados)
+
+### 5. Resolva em Ordem Eficiente
+
+Não precisa de resolver os 4 pares em nenhuma ordem fixa. Olhe para os 4 pares e comece pelo mais **fácil** — o que requer menos movimentos. Resolvedores experientes planeiam o primeiro par durante a inspeção juntamente com a cruz.
+
+### 6. Truques de Slot Vazio
+
+Quando um slot está vazio, pode usá-lo como armazenamento temporário. Por exemplo, coloque uma aresta num slot vazio (R U R') para a tirar do caminho enquanto trabalha noutro par. Os iniciantes frequentemente ignoram esta técnica poderosa.
+
+---
+
+## Rotina de Prática
+
+1. **Embaralhe o cubo e resolva a cruz**
+2. **Encontre todos os 4 pares canto-aresta** — identifique onde está cada canto e a sua aresta correspondente
+3. **Resolva cada par um de cada vez** — comece pelos casos fáceis, deixe os difíceis para o fim
+4. **Cronometre apenas a fase F2L** — use um cronómetro. Objetivo: menos de 15 segundos para os 4 pares
+5. **Reveja** — após cada resolução, pergunte: poderia ter feito algum par com menos movimentos?
+
+Com prática consistente, o F2L tornar-se-á segunda natureza e verá melhorias dramáticas nos seus tempos totais de resolução.
+
+---
+
+## O Que Vem a Seguir?
+
+Depois de dominar o F2L, continue com a última camada:
+
+- [**Visão Geral do Método CFOP**](./cfop) — Veja como o F2L se encaixa no método CFOP completo
+- [**Algoritmos OLL**](./oll) — Faça a face superior toda amarela (57 casos + OLL em 2 passos)
+- [**Algoritmos PLL**](./pll) — Organize as últimas peças para completar a resolução (21 casos)
+- [**Guia de Finger Tricks**](./finger-tricks) — Execute os triggers de F2L mais rápido e suavemente

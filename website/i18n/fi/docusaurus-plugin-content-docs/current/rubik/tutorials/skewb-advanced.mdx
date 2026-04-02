@@ -1,0 +1,317 @@
+---
+title: "Skewb edistyneet tekniikat"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Skewb edistyneet tekniikat
+
+Vie Skewb-ratkaisusi aloittelijatasolta kilpailutasolle. Tämä opas kattaa **Sarahin keskitason menetelmän**, joka päivittää aloittelijamenetelmän ratkaisemalla kaikki jäljellä olevat keskustat yhdessä vaiheessa, sekä edistyneitä algoritmeja ja nopeusratkaisustrategioita, joita huippu-Skewb-ratkaisijat käyttävät.
+
+## Merkintämuistutus
+
+Skewb kääntyy **kulmien** ympäri eikä sivujen:
+
+- **R** = Oikea etukulmamyötäpäivään &nbsp;&nbsp; **R'** = vastapäivään
+- **L** = Vasen etukulma myötäpäivään &nbsp;&nbsp; **L'** = vastapäivään
+- **U** = Oikea yläetukulma myötäpäivään &nbsp;&nbsp; **U'** = vastapäivään
+- **B** = Oikea takakulma myötäpäivään &nbsp;&nbsp; **B'** = vastapäivään
+
+Pidä Skewbiä **valkoinen keskusta alhaalla** kaikissa vaiheissa.
+
+---
+
+## Sarahin keskitason menetelmä
+
+Sarahin aloittelijamenetelmä ratkaisee Skewbin 3 vaiheessa: ensimmäinen sivu, sitten keskustat, sitten viimeisen kerroksen kulmat. Keskitason päivitys **yhdistää keskusta- ja kulmavaiheet** ratkaisten kaikki 5 jäljellä olevaa keskustaa YHDELLÄ algoritmilla ensimmäisen sivun valmistuttua.
+
+### Yleiskatsaus
+
+| Vaihe | Aloittelija | Keskitaso |
+|------|----------|-------------|
+| 1 | Ratkaista yksi sivu | Ratkaista yksi sivu (sama) |
+| 2 | Sijoittaa keskustat | **Ratkaista kaikki 5 keskustaa yhdessä vaiheessa** |
+| 3 | Suunnata viimeisen kerroksen kulmat | Suunnata viimeisen kerroksen kulmat (sama) |
+
+Keskeinen parannus on Vaihe 2: Sledgehammerin toistuvan käytön sijaan keskustojen yksittäiseen sijoittamiseen opit joukon algoritmeja, jotka ratkaisevat kaikki keskustat samanaikaisesti.
+
+### Vaihe 1: Ratkaista yksi sivu
+
+Rakenna täydellinen **valkoinen sivu** alaosaan — kaikki 4 kulmaa valkoisen keskustan ympärillä tulee olla paikoillaan valkoinen alaspäin, ja vierekkäisten sivuvärien tulee täsmätä. Tämä vaihe on identtinen aloittelijamenetelmän kanssa.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Käytä Sledgehammeria valmisteluliikkeiden kanssa jokaisen valkoisen kulman sijoittamiseen. Harjoittelulla tästä vaiheesta tulee nopea ja intuitiivinen.
+
+### Vaihe 2: Ratkaista kaikki 5 keskustaa (One-Look)
+
+Ensimmäisen sivun ratkaisun jälkeen katso **5 jäljellä olevaa keskustaa** (yläosa + 4 sivua) ja tunnista tapauksesi. Käytä yhtä algoritmia ratkaistaksesi ne kaikki kerralla.
+
+Tapauksia on useita riippuen siitä, kuinka monta keskustaa on oikeassa asemassa:
+
+---
+
+#### Tapaus 1: Vierekkäinen 4-sykli
+
+Neljä keskustaa tarvitsee sykliä. Yläkeskusta on oikein, mutta 4 sivukeskustaa tarvitsevat kiertoa.
+
+**Algoritmi: R' L R L' R' L R L'** (Tupla-Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Tapaus 2: Vastakkainen 2-vaihto
+
+Kaksi vastakkaista sivukeskustaa tarvitsee vaihtoa.
+
+**Algoritmi: R L' R' L R L' R' L** (Käänteinen tupla-Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Tapaus 3: Vierekkäinen 2-vaihto
+
+Kaksi vierekkäistä sivukeskustaa tarvitsee vaihtoa. Aseta kaksi vaihdettavaa keskustaa eteen ja oikealle.
+
+**Algoritmi: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Tapaus 4: Ylä-sivu-vaihto + sykli
+
+Yläkeskusta tarvitsee vaihtoa sivukeskustan kanssa, ja loput sivukeskustat syklaavat.
+
+**Algoritmi: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Tapaus 5: Kolmoissykli
+
+Kolme keskustaa tarvitsee sykliä (yläosa pysyy, 3 sivua kiertää). Aseta paikallaan pysyvä sivukeskusta taakse.
+
+**Algoritmi: R' L R L'** (Yksittäinen Sledgehammer — oikealla valmistelulla)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Vinkkejä:**
+- Opi tunnistamaan keskustatapaukset nopeasti tarkistamalla ensin yläkeskusta ja sitten skannaamalla 4 sivua.
+- Monet näistä ovat Sledgehammer-variaatioita — jos tunnet Sledgehammerin hyvin, nämä algoritmit tuntuvat luonnollisilta.
+- Harjoittele tunnistamista sekoittamalla Skewb, ratkaisemalla ensimmäinen sivu ja tunnistamalla keskustatapaus ennen suorittamista.
+
+### Vaihe 3: Viimeisen kerroksen kulmien suuntaus
+
+Kaikkien keskustojen ratkaisun jälkeen viimeisen kerroksen kulmat saattavat vielä tarvita kiertoa. Tämä vaihe on sama kuin aloittelijamenetelmässä.
+
+#### Kaikki 4 kulmaa tarvitsevat myötäpäivään kiertoa
+
+**Algoritmi: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Kaikki 4 kulmaa tarvitsevat vastapäivään kiertoa
+
+**Algoritmi: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 kulmaa tarvitsee kiertoa (vierekkäiset)
+
+Aseta kaksi ratkaisematonta kulmaa eteen. Käytä U:ta niiden sijoittamiseen, suorita algoritmi ja peru sitten U.
+
+**Algoritmi: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 kulmaa tarvitsee kiertoa (diagonaaliset)
+
+**Algoritmi: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Edistyneet algoritmit
+
+Keskitason menetelmän lisäksi tässä on lisäalgoritmeja, jotka käsittelevät harvinaisempia tapauksia tehokkaammin.
+
+### Z-Perm-vastine
+
+Kun kaksi kulmaparia tarvitsee vaihtoa (kuin Z-muotoinen kuvio):
+
+**Algoritmi: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi-tapaus
+
+Yläsivu näyttää Pi-kuvion — kaksi vierekkäistä kulmaa suunnattu, kaksi ei:
+
+**Algoritmi: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Kulman valmistelu ja suuntaus
+
+Kun kulma tarvitsee uudelleensuuntausta, käytä valmisteluliikkeitä konjugoidaksesi Sledgehammer-syklin, joka kiertää sen paikalleen:
+
+**Algoritmi: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Nopea vastakkaisten keskustojen vaihto
+
+Tehokkaampi algoritmi kahden vastakkaisen keskustan vaihtoon:
+
+**Algoritmi: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Kolmoiskulmasuuntaus
+
+Kolme kulmaa tarvitsee kiertoa (yksi pysyy oikeana):
+
+**Algoritmi: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Vierekkäisten kulmien vaihto
+
+Kaksi vierekkäistä kulmaa tarvitsee paikanvaihtoa (ei pelkkää kiertoa):
+
+**Algoritmi: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look-ratkaisukonseptit
+
+Kilpailullisen Skewb-ratkaisun lopullinen tavoite on ennustaa viimeinen kerros samalla kun ratkaiset vielä ensimmäistä sivua.
+
+### Viimeisen kerroksen ennustaminen
+
+Vaiheen 1 aikana, rakentaessasi valkoista sivua, kiinnitä huomiota **yläkerroksen keskustoihin ja kulmiin**. Harjoittelulla voit tunnistaa Vaiheiden 2 ja 3 tapaukset ennen Vaiheen 1 valmistumista.
+
+- **Tarkkaile yläkeskustaa** — siirtyykö se oikeaan asemaan, kun asetat viimeisen valkoisen kulman?
+- **Seuraa sivukeskustoja** — huomaa mitkä sivukeskustat ovat jo oikein.
+- **Suunnittele koko ratkaisu** — edistyneet ratkaisijat voivat suunnitella koko ratkaisun tarkastuksen aikana.
+
+### Viimeiseen kerrokseen vaikuttaminen
+
+Kun sinulla on useita tapoja asettaa viimeinen valkoinen kulma, valitse asetus, joka antaa sinulle **helpomman Vaiheen 2 tapauksen**:
+
+- Jos kaksi asetusta molemmat ratkaisevat kulman, valitse se, joka sijoittaa enemmän keskustoja oikein.
+- Joskus hieman pidempi Vaihe 1 johtaa Vaiheen 2 tai 3 ohittamiseen.
+
+---
+
+## Nopeusratkaisuvinkkejä
+
+### Ote ja kääntäminen
+
+- Pidä Skewbiä **sormenpäät kulmissa** — käännät kulmia, et sivuja.
+- Käytä kummankin käden **etusormea ja peukaloa** vastakkaisten kulmien tarttumiseen.
+- Harjoittele tasaisia, hallittuja kulmakääntöjä — Skewb palkitsee tarkkuuden raa'an nopeuden sijaan.
+- **Minimoi otteenvaihdot** — yritä suorittaa koko Sledgehammer vaihtamatta otettasi.
+
+### Värineutraalius
+
+Värineutraalius Skewbissä tarkoittaa, että voit aloittaa **millä tahansa sivulla** ensimmäisenä sivuna, ei vain valkoisella. Tämä on erittäin voimakasta:
+
+- Värineutraaliudella sinulla on **6 mahdollista ensimmäistä sivua** valittavana.
+- Valitse sivu, joka on lähimpänä ratkaisua — joskus 2-3 kulmaa on jo paikoillaan.
+- Värineutraalius on lähes pakollista alle 4 sekunnin ratkaisuun.
+
+**Kuinka harjoitella:**
+1. Aloita olemalla neutraali 2 vastakkaisen värin välillä (esim. valkoinen ja keltainen).
+2. Lisää vähitellen aloitusvärejä kunnes voit aloittaa millä tahansa sivulla.
+3. Tarkastuksen aikana skannaa nopeasti kaikki 6 sivua ja valitse helpoin.
+
+### Tarkastuksen suunnittelu
+
+Skewbissä on vain 14 näkyvää palaa (6 keskustaa + 8 kulmaa), mikä tekee täydellisen ratkaisun suunnittelusta realistista:
+
+- **Suunnittele aina ensimmäinen sivu kokonaan** tarkastuksen aikana.
+- **Tunnista keskustatapaus** ennen ratkaisun aloittamista.
+- **Edistynyt:** suunnittele Vaiheeseen 2 asti — tiedä mitä algoritmia käytät ennen palapelin koskemista.
+
+### Harjoittelurutiini
+
+1. **Ensimmäisen sivun harjoitukset** — sekoita ja ratkaise vain ensimmäinen sivu, tavoite alle 2 sekuntia.
+2. **Keskustatunnistus** — ensimmäisen sivun ratkaisun jälkeen tunnista keskustatapaus mahdollisimman nopeasti suorittamatta sitä.
+3. **Täydet ratkaisut** — 12 ajastetun ratkaisun sarjat, seuraten 5:n keskiarvoa ja 12:n keskiarvoa.
+4. **Algoritmiharjoittelu** — harjoittele jokaista keskusta- ja kulma-algoritmia 20 kertaa peräkkäin lihasmuistiin.
+5. **Värineutraaliharjoittelu** — pakota itsesi aloittamaan eri värillä joka ratkaisussa.
+
+---
+
+**Sarahin keskitason menetelmällä ja omistautuneella harjoittelulla alle 5 sekunnin Skewb-keskiarvot ovat ulottuvilla.** Skewb on yksi suunnitteluystävällisimmistä paloista speedcubingissa — vähemmän paloja tarkoittaa, että voit ennustaa enemmän tarkastuksen aikana. Keskity tunnistamisnopeuteen ja tasaiseen kääntämiseen, ja näet nopean kehityksen.

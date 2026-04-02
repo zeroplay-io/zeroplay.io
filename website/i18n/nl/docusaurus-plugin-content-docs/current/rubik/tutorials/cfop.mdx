@@ -1,0 +1,219 @@
+---
+title: Overzicht van de CFOP-methode
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Overzicht van de CFOP-methode
+
+De **CFOP-methode** (ook bekend als de **Fridrich-methode**) is de meest gebruikte speedcubing-methode ter wereld. De overgrote meerderheid van sub-20-oplossers en wereldrecordhouders gebruikt CFOP. Het bouwt voort op de beginnersmethode laag-voor-laag maar is aanzienlijk efficiënter — het vermindert een gemiddelde oplossing van meer dan 100 zetten naar ongeveer 55-60 zetten.
+
+**CFOP** staat voor de vier stappen:
+
+1. **C**ross — Los 4 randstukken op aan de onderkant
+2. **F**2L — Eerste twee lagen (koppel en voeg 4 hoek-randparen in)
+3. **O**LL — Oriënteer de laatste laag (maak het hele bovenvlak één kleur)
+4. **P**LL — Permuteer de laatste laag (rangschik alle bovenstukken correct)
+
+## CFOP vs. beginnersmethode
+
+| | Beginner (LBL) | CFOP |
+|---|---|---|
+| Stappen | 7 | 4 |
+| Gemiddelde zetten | 100-120 | 55-60 |
+| Te leren algoritmen | 5-8 | 78 (volledig) / 16 (2-look) |
+| Typische snelheid | 1-3 minuten | 10-20 seconden |
+| Belangrijkste verschil | Stap voor stap, één stuk tegelijk | Koppelt stukken, minder stappen |
+
+Het goede nieuws: je kunt CFOP **geleidelijk** leren. Begin met intuïtief F2L en 2-look OLL/PLL (slechts 16 algoritmen), breid dan geleidelijk uit naar volledig OLL (57 algoritmen) en volledig PLL (21 algoritmen).
+
+---
+
+## Stap 1: Kruis
+
+Het kruis is hetzelfde concept als bij de beginnersmethode — los 4 witte randstukken op aan de onderkant zodat elk randstuk ook overeenkomt met zijn zijcentrum. Het verschil bij CFOP is **hoe** je het benadert:
+
+- **Plan het hele kruis tijdens de inspectie** (15 seconden voor de oplossing begint)
+- **Los het kruis aan de onderkant op** — zonder de kubus om te draaien
+- **Mik op 8 zetten of minder** — een efficiënt kruis is gemiddeld 6-7 zetten
+
+**Voorbeeld: Een kruisrand direct naar de onderkant oplossen**
+
+Hier is de wit-blauwe rand in de bovenste laag. We lijnen hem uit en voegen hem direct aan de onderkant in met één zet:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Voorbeeld: Kruisrand moet herpositioneerd worden**
+
+Soms zit een rand op de verkeerde plek of is omgeklapt. Hier corrigeren we een verkeerd geplaatste rand:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tips voor een snel kruis:**
+- Oefen het plannen van het kruis met gesloten ogen
+- Leer het in 8 zetten of minder op te lossen vanuit elke scramble
+- Werk vanaf dag één aan het oplossen van het kruis aan de onderkant — vermijd de gewoonte om bovenaan op te lossen
+
+---
+
+## Stap 2: F2L (Eerste twee lagen)
+
+F2L is het hart van CFOP en waar de grootste tijdwinst vandaan komt. In plaats van de hoeken van de eerste laag en de randen van de tweede laag apart op te lossen (zoals bij de beginnersmethode), **koppel** je een hoekstuk met zijn bijpassende rand en **voeg** je ze samen in als één geheel.
+
+Er zijn 4 hoek-randparen (genaamd **slots**) om op te lossen. Elke slot bevindt zich tussen twee zijvlakken in de onderste twee lagen.
+
+**Basis F2L-geval: Hoek en rand beide in de bovenste laag**
+
+De wit-rood-groene hoek is in de bovenste laag, en de rood-groene rand is ook in de bovenste laag. We koppelen ze en voegen in:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Een ander veelvoorkomend geval: Een verkeerd paar scheiden**
+
+Soms zijn stukken verkeerd gekoppeld. We scheiden ze en voegen ze correct weer samen:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L kan **intuïtief** geleerd worden — door de logica van verbergen, koppelen en invoegen te begrijpen — of **algoritmisch** met 41 specifieke gevallen. De meeste speedcubers gebruiken een combinatie van beide.
+
+Voor de volledige lijst van F2L-gevallen en algoritmen, zie de gids [**F2L: Eerste twee lagen**](./f2l).
+
+---
+
+## Stap 3: OLL (Oriëntatie van de laatste laag)
+
+Na het voltooien van de eerste twee lagen zal het bovenvlak enkele gele en enkele niet-gele stickers hebben. Het doel van OLL is om het **hele bovenvlak geel** te maken — we maken ons nog geen zorgen over de zijkleuren.
+
+Volledig OLL heeft **57 algoritmen**. Je kunt echter beginnen met **2-look OLL**, dat slechts 10 algoritmen gebruikt door de stap in twee delen te splitsen:
+
+1. **Eerste blik:** Een geel kruis bovenop vormen (3 gevallen, met 2 algoritmen vanuit verschillende oriëntaties)
+2. **Tweede blik:** De gele hoeken oriënteren (7 algoritmen)
+
+**Voorbeeld: Sune (een van de meest voorkomende OLL-gevallen)**
+
+Dit is OLL #26, algemeen **Sune** genoemd. Eén gele hoek is georiënteerd, en de andere drie moeten gedraaid worden:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Voorbeeld: OLL kruisgeval (het gele kruis vormen)**
+
+Wanneer je een L-vorm van gele randen bovenop hebt, houd de L achter-links en pas toe:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tips voor het leren van OLL:**
+- Begin met 2-look OLL — het voegt slechts een paar seconden toe aan je oplossing
+- Leer eerst Sune en Anti-Sune; ze komen in veel OLL-gevallen voor
+- Oefen het herkennen van gevallen aan het patroon van gele stickers bovenop
+
+---
+
+## Stap 4: PLL (Permutatie van de laatste laag)
+
+De laatste stap! Alle gele stickers zijn nu bovenop, maar de zijkleuren van de stukken van de laatste laag kloppen misschien niet. PLL **herschikt** de stukken van de bovenste laag naar hun correcte posities om de oplossing te voltooien.
+
+Volledig PLL heeft **21 algoritmen**. Je kunt beginnen met **2-look PLL**, dat slechts 6 algoritmen gebruikt:
+
+1. **Eerste blik:** Hoeken correct positioneren (2 algoritmen)
+2. **Tweede blik:** Randen correct positioneren (4 algoritmen)
+
+**Voorbeeld: T-Perm (een van de nuttigste PLL-algoritmen)**
+
+T-Perm wisselt twee hoeken en twee randen. Het komt vaak voor en wordt gebruikt als basis voor het leren van andere PLLs:
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Voorbeeld: U-Perm (a) — 3-randencyclus**
+
+U-Perm cycelt drie randen met de klok mee terwijl alle hoeken al op hun plek zijn:
+
+**Algoritme: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tips voor het leren van PLL:**
+- Begin met T-Perm, U-Perms (a en b) en A-Perms
+- Leer PLLs herkennen door naar de zijkleuren te kijken (koplampenpatroon)
+- Oefen het uitvoeren van PLLs vanuit elke AUF-hoek (aanpassing van het bovenvlak)
+
+---
+
+## Wanneer CFOP leren
+
+CFOP is de natuurlijke volgende stap nadat je de beginnersmethode laag-voor-laag beheerst. Hier is een aanbevolen voortgang:
+
+### Fase 1: Beginner tot onder 60 seconden
+- Beheers de beginnersmethode tot je oplossingen consistent zijn
+- Leer het **kruis aan de onderkant** op te lossen
+- Begin met het oefenen van **intuïtief F2L** — observeer hoe paren gevormd en ingevoegd worden
+
+### Fase 2: Onder 60 tot onder 30 seconden
+- Gebruik volledig **intuïtief F2L** voor alle 4 paren
+- Leer **2-look OLL** (10 algoritmen)
+- Leer **2-look PLL** (6 algoritmen)
+- Oefen **lookahead** — volg het volgende paar terwijl je het huidige invoegt
+
+### Fase 3: Onder 30 tot onder 20 seconden
+- Leer **volledig PLL** (21 algoritmen)
+- Begin met het leren van **volledig OLL** (57 algoritmen)
+- Optimaliseer je F2L-oplossingen — leer de [**algoritmische F2L-gevallen**](./f2l)
+- Werk aan kruisefficiëntie (plan het hele kruis tijdens de inspectie)
+
+### Fase 4: Onder 20 en verder
+- Voltooi **volledig OLL**
+- Leer geavanceerde F2L-trucs (lege slottechnieken, multi-slotting)
+- Ontwikkel sterke **lookahead**-gewoonten
+- Werk aan draaisnelheid en vloeiendheid
+
+---
+
+## Volgende stappen
+
+Klaar om dieper in elke stap te duiken? Bekijk deze gedetailleerde gidsen:
+
+- [**F2L: Eerste twee lagen**](./f2l) — Alle veelvoorkomende F2L-gevallen met algoritmen en demo's
+- [**OLL-algoritmen**](./oll) — Alle 57 OLL-gevallen met 2-Look OLL voor beginners
+- [**PLL-algoritmen**](./pll) — Alle 21 PLL-gevallen met 2-Look PLL voor beginners
+- [**Gids voor fingertricks**](./finger-tricks) — Efficiënte zetuitvoering en essentiële triggers
+- [**Speedcubing-tips**](./speed-tips) — Kruisplanning, lookahead en oefenroutines
+
+**Veel plezier met cuben!** De reis van beginner naar sub-20 is een van de meest lonende uitdagingen in speedcubing. Neem het stap voor stap en je komt er.

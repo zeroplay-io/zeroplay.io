@@ -1,0 +1,466 @@
+---
+title: PLLアルゴリズム
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLLアルゴリズム
+
+**PLL（最終層の配置）**はCFOP法の最後のステップです。OLLで上面のステッカーをすべて正しい向きにした後、PLLはピースを正しい位置に並べ替えます。PLLは全部で**21ケース**あります。
+
+初心者の方は**2-Look PLL**から始めましょう -- 21個すべてではなく**6つのアルゴリズム**だけで済む簡略化されたアプローチです。
+
+---
+
+## 2-Look PLL
+
+2-Look PLLは配置ステップを2つの小さなステップに分けます：
+
+1. **コーナーの配置** -- 4つのコーナーすべてを正しい位置に置く（2ケース）
+2. **エッジの配置** -- 4つのエッジすべてを正しい位置に置く（4ケース）
+
+つまり、合計**6つのアルゴリズム**を学ぶだけで済みます。
+
+### ステップ1：コーナーの配置
+
+上層のコーナーを見てください。**隣接するコーナーのペア**が同じ面に属しているか（ヘッドライトが一致）確認します。
+
+#### 隣接コーナーの交換
+
+隣接するコーナーの1ペアがすでに正しい位置にあります。解決済みのペアを**奥**に持って適用します：
+
+**アルゴリズム: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+これは**T-Perm**です -- 前面の2つのコーナーを交換します（2つのエッジも交換しますが、ステップ2で修正します）。
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### 対角コーナーの交換
+
+隣接するコーナーが一致しません。**Y-Perm**を適用して対角にコーナーを交換します：
+
+**アルゴリズム: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### ステップ2：エッジの配置
+
+すべてのコーナーが解決されました。エッジを見て、どれが巡回する必要があるか判断します。
+
+#### Ua Perm (3エッジ時計回り巡回)
+
+3つのエッジが時計回りに巡回する必要があります。解決済みのエッジを**奥**に持ちます。
+
+**アルゴリズム: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (3エッジ反時計回り巡回)
+
+3つのエッジが反時計回りに巡回する必要があります。解決済みのエッジを**奥**に持ちます。
+
+**アルゴリズム: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (対向エッジペアの交換)
+
+2組の対向するエッジが交換する必要があります。
+
+**アルゴリズム: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (隣接エッジペアの交換)
+
+2組の隣接するエッジが交換する必要があります。2組が前/右と奥/左になるように持ちます。
+
+**アルゴリズム: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## 完全PLL -- 全21ケース
+
+### エッジのみ（4ケース）
+
+これらのPLLはエッジのみを移動します。コーナーはすでに解決済みです。
+
+#### Ua Perm
+
+エッジが時計回りに巡回します。解決済みのエッジは奥にあります。
+
+**認識:** 1本の解決済みバー（エッジ+2つのコーナー）が奥から見えます。
+
+**アルゴリズム: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+エッジが反時計回りに巡回します。解決済みのエッジは奥にあります。
+
+**認識:** 1本の解決済みバーが奥から見えます。エッジの色はUaと逆方向に巡回します。
+
+**アルゴリズム: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+2組の対向するエッジが交換します。
+
+**認識:** 各面の中央エッジ位置に反対の色があります。4面すべてにチェッカーボードパターン。
+
+**アルゴリズム: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+2組の隣接するエッジが交換します。
+
+**認識:** 2つの隣接する面がそれぞれ相手の色をエッジ位置に持っています。完全に解決された面はありません。
+
+**アルゴリズム: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### コーナーのみ（3ケース）
+
+これらのPLLはコーナーのみを移動します。エッジはすでに解決済みです。
+
+#### Aa Perm
+
+3つのコーナーが巡回します。左側にヘッドライト。
+
+**認識:** 一方の面にヘッドライト、バー（3つの一致するステッカー）が反対側の面にあります。
+
+**アルゴリズム: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+3つのコーナーが巡回します（Aaと逆方向）。右側にヘッドライト。
+
+**認識:** Aaのミラー -- 反対側の面にヘッドライト。
+
+**アルゴリズム: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+2組の対角コーナーが交換します。エッジは移動しません。
+
+**認識:** どの面にもヘッドライトがありません。各面に2つの異なるコーナー色があります。
+
+**アルゴリズム: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### 隣接コーナーの交換（6ケース）
+
+これらのPLLはエッジの配置と共に隣接するコーナーの1ペアを交換します。
+
+#### T Perm
+
+**認識:** 前面と奥にヘッドライト。ヘッドライトのない2面の色が交換されています。
+
+**アルゴリズム: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**認識:** 1面（前面）のみにヘッドライト。他の3面には一致するペアがありません。
+
+**アルゴリズム: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**認識:** 左側に解決済みの1x1x3ブロック。右側は隣接するピースが交換されています。
+
+**アルゴリズム: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**認識:** 右側に解決済みの1x1x3ブロック。Jaのミラー。
+
+**アルゴリズム: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**認識:** 前面にヘッドライト。右側で隣接するコーナーとエッジが交換。
+
+**アルゴリズム: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**認識:** 奥にヘッドライト。Raのミラー。
+
+**アルゴリズム: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### 対角コーナーの交換（4ケース）
+
+これらのPLLは対角に対向する2つのコーナーを交換します。
+
+#### V Perm
+
+**認識:** どの面にもヘッドライトがありません。1面に2色パターンがあり、エッジが1つのコーナーと一致します。
+
+**アルゴリズム: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**認識:** ヘッドライトなし。1面に2つの一致するコーナーがありますが、間のエッジが間違っています。
+
+**アルゴリズム: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**認識:** 2つの対向する面が完全に解決（各面に解決済みバー）されていますが、他の2面のピースは完全に交換されています。
+
+**アルゴリズム: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**認識:** Naのミラー。2つの対向するバーですが、異なる交換のされ方。
+
+**アルゴリズム: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 ケース)
+
+G配置は認識が最も難しいものです。隣接するコーナーの1ペアを移動し、3つのエッジを巡回させます。
+
+#### Ga Perm
+
+**認識:** 左にヘッドライト。前右コーナーが右エッジと一致。
+
+**アルゴリズム: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**認識:** 前面にヘッドライト。奥左コーナーが左エッジと一致。
+
+**アルゴリズム: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**認識:** 右にヘッドライト。前左コーナーが左エッジと一致。
+
+**アルゴリズム: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**認識:** 奥にヘッドライト。前右コーナーが右エッジと一致。
+
+**アルゴリズム: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## 認識のコツ
+
+効率的なPLL認識は速い解法の鍵です。一般的な戦略を紹介します：
+
+1. **ヘッドライトを探す** -- 一つの面で一致するコーナーのペア。これですぐにケースを絞り込めます。
+2. **解決済みバーを数える** -- バーとは3つの一致するステッカーの列（コーナー-エッジ-コーナー）です。バーは特定のPLLを示します。
+3. **2面を確認する** -- 前面と右面を見るだけで通常ケースを特定できます。
+4. **対のパターンを学ぶ** -- 多くのPLLはミラーペアで存在します（Ua/Ub、Ja/Jb、Ra/Rb、Ga-Gd）。
+
+| 見えるもの | 可能性のあるPLL |
+|:---|:---|
+| 4面にヘッドライト | H, Ua, Ub, Z |
+| 対向する2面にヘッドライト | T, F, Ja, Jb, Ra, Rb |
+| 1面にヘッドライト | Aa, Ab, Ga, Gb, Gc, Gd |
+| ヘッドライトなし | E, V, Y, Na, Nb |
+
+## 学習順序
+
+全21 PLLを学ぶための推奨順序：
+
+1. **まず2-Look：** T、Y（コーナー）+ Ua、Ub、H、Z（エッジ）-- 6アルゴリズム
+2. **隣接交換：** Ja、Jb、F、Ra、Rb -- さらに5アルゴリズム
+3. **コーナーのみ：** Aa、Ab、E -- さらに3アルゴリズム
+4. **対角交換：** V、Na、Nb -- さらに3アルゴリズム
+5. **G Permsは最後：** Ga、Gb、Gc、Gd -- 最後の4アルゴリズム
+
+:::tip
+スクランブルしてPLLまで解き、キューブを覆って記憶からケースを特定する練習をしましょう。速さは瞬時の認識から来るものであり、速い指使いだけではありません。
+:::

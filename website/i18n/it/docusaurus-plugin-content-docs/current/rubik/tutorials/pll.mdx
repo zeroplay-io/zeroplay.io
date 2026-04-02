@@ -1,0 +1,466 @@
+---
+title: Algoritmi PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algoritmi PLL
+
+**PLL (Permutazione dell'Ultimo Strato)** e l'ultimo passaggio del metodo CFOP. Dopo che l'OLL ha orientato tutti gli adesivi della faccia superiore, il PLL riorganizza i pezzi nelle loro posizioni risolte. Ci sono **21 casi PLL** in totale.
+
+Se sei un principiante, inizia con il **2-Look PLL** -- un approccio semplificato che richiede solo **6 algoritmi** invece di tutti i 21.
+
+---
+
+## 2-Look PLL
+
+Il 2-Look PLL divide il passaggio di permutazione in due passaggi piu piccoli:
+
+1. **Permutare gli angoli** -- posizionare tutti e 4 gli angoli nella posizione corretta (2 casi)
+2. **Permutare gli spigoli** -- posizionare tutti e 4 gli spigoli nella posizione corretta (4 casi)
+
+Questo significa che devi imparare solo **6 algoritmi** in totale.
+
+### Passaggio 1: Permutare gli angoli
+
+Guarda gli angoli dello strato superiore. Controlla se una **coppia di angoli adiacenti** appartiene allo stesso lato (fari corrispondenti).
+
+#### Scambio di angoli adiacenti
+
+Una coppia di angoli adiacenti e gia corretta. Tieni la coppia risolta **dietro** e applica:
+
+**Algoritmo: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Questo e il **T-Perm** -- scambia i due angoli anteriori (e due spigoli, che correggeremo nel passaggio 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Scambio di angoli diagonali
+
+Nessun angolo adiacente corrisponde. Applica il **Y-Perm** per scambiare gli angoli diagonalmente:
+
+**Algoritmo: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Passaggio 2: Permutare gli spigoli
+
+Tutti gli angoli sono ora risolti. Guarda gli spigoli e determina quali devono ciclare.
+
+#### Ua Perm (ciclo di 3 spigoli in senso orario)
+
+Tre spigoli devono ciclare in senso orario. Tieni lo spigolo risolto **dietro**.
+
+**Algoritmo: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (ciclo di 3 spigoli in senso antiorario)
+
+Tre spigoli devono ciclare in senso antiorario. Tieni lo spigolo risolto **dietro**.
+
+**Algoritmo: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Scambio coppie di spigoli opposti)
+
+Due coppie di spigoli opposti devono essere scambiate.
+
+**Algoritmo: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Scambio coppie di spigoli adiacenti)
+
+Due coppie di spigoli adiacenti devono essere scambiate. Tieni in modo che le due coppie siano davanti/destra e dietro/sinistra.
+
+**Algoritmo: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL Completo -- Tutti i 21 Casi
+
+### Solo spigoli (4 casi)
+
+Questi PLL muovono solo spigoli; gli angoli sono gia risolti.
+
+#### Ua Perm
+
+Gli spigoli ciclano in senso orario. Lo spigolo risolto e dietro.
+
+**Riconoscimento:** Una barra risolta (spigolo + due angoli) visibile da dietro.
+
+**Algoritmo: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Gli spigoli ciclano in senso antiorario. Lo spigolo risolto e dietro.
+
+**Riconoscimento:** Una barra risolta visibile da dietro; i colori degli spigoli ciclano nella direzione opposta rispetto a Ua.
+
+**Algoritmo: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Due coppie di spigoli opposti si scambiano.
+
+**Riconoscimento:** Ogni lato ha il colore opposto nella posizione dello spigolo centrale. Pattern a scacchiera su tutti e quattro i lati.
+
+**Algoritmo: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Due coppie di spigoli adiacenti si scambiano.
+
+**Riconoscimento:** Due lati adiacenti hanno ciascuno il colore dell'altro nella posizione dello spigolo. Nessun lato e completamente risolto.
+
+**Algoritmo: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Solo angoli (3 casi)
+
+Questi PLL muovono solo angoli; gli spigoli sono gia risolti.
+
+#### Aa Perm
+
+Tre angoli ciclano. Fari sul lato sinistro.
+
+**Riconoscimento:** Fari su un lato, la barra (3 adesivi corrispondenti) e sul lato opposto.
+
+**Algoritmo: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tre angoli ciclano (direzione opposta ad Aa). Fari sul lato destro.
+
+**Riconoscimento:** Specchio di Aa -- fari sul lato opposto.
+
+**Algoritmo: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Due coppie di angoli diagonali si scambiano. Nessuno spigolo si muove.
+
+**Riconoscimento:** Nessun faro su nessun lato. Ogni lato ha due colori di angolo diversi.
+
+**Algoritmo: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Scambio di angoli adiacenti (6 casi)
+
+Questi PLL scambiano una coppia di angoli adiacenti insieme a permutazioni di spigoli.
+
+#### T Perm
+
+**Riconoscimento:** Fari davanti e dietro. I due lati senza fari hanno i colori scambiati.
+
+**Algoritmo: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Riconoscimento:** Fari solo su un lato (davanti). Gli altri tre lati non hanno coppie corrispondenti.
+
+**Algoritmo: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Riconoscimento:** Un blocco 1x1x3 risolto sul lato sinistro. Il lato destro ha pezzi adiacenti scambiati.
+
+**Algoritmo: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Riconoscimento:** Un blocco 1x1x3 risolto sul lato destro. Specchio di Ja.
+
+**Algoritmo: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Riconoscimento:** Fari davanti. Scambio di angolo e spigolo adiacenti sul lato destro.
+
+**Algoritmo: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Riconoscimento:** Fari dietro. Specchio di Ra.
+
+**Algoritmo: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Scambio di angoli diagonali (4 casi)
+
+Questi PLL scambiano due angoli diagonalmente opposti.
+
+#### V Perm
+
+**Riconoscimento:** Nessun faro su nessun lato. Un lato ha un pattern a 2 colori dove lo spigolo corrisponde a un angolo.
+
+**Algoritmo: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Riconoscimento:** Nessun faro. Un lato ha due angoli corrispondenti ma lo spigolo tra di loro e sbagliato.
+
+**Algoritmo: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Riconoscimento:** Due lati opposti completamente risolti (una barra risolta su ciascuno), ma gli altri due lati hanno i pezzi completamente scambiati.
+
+**Algoritmo: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Riconoscimento:** Specchio di Na. Due barre opposte ma scambiate diversamente.
+
+**Algoritmo: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 casi)
+
+Le permutazioni G sono le piu difficili da riconoscere. Muovono sia una coppia di angoli adiacenti sia ciclano tre spigoli.
+
+#### Ga Perm
+
+**Riconoscimento:** Fari a sinistra. L'angolo anteriore destro corrisponde allo spigolo destro.
+
+**Algoritmo: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Riconoscimento:** Fari davanti. L'angolo posteriore sinistro corrisponde allo spigolo sinistro.
+
+**Algoritmo: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Riconoscimento:** Fari a destra. L'angolo anteriore sinistro corrisponde allo spigolo sinistro.
+
+**Algoritmo: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Riconoscimento:** Fari dietro. L'angolo anteriore destro corrisponde allo spigolo destro.
+
+**Algoritmo: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Consigli per il riconoscimento
+
+Il riconoscimento efficiente del PLL e la chiave per risoluzioni veloci. Ecco le strategie generali:
+
+1. **Cerca i fari** -- una coppia di angoli corrispondenti su un lato. Questo restringe immediatamente il caso.
+2. **Conta le barre risolte** -- una barra sono tre adesivi corrispondenti in fila (angolo-spigolo-angolo). Le barre indicano PLL specifici.
+3. **Controlla due lati** -- guardare il lato anteriore e destro e solitamente sufficiente per identificare il caso.
+4. **Impara i pattern opposti** -- molti PLL vengono in coppie speculari (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Cosa vedi | PLL possibili |
+|:---|:---|
+| 4 lati con fari | H, Ua, Ub, Z |
+| 2 lati opposti con fari | T, F, Ja, Jb, Ra, Rb |
+| 1 lato con fari | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 lati con fari | E, V, Y, Na, Nb |
+
+## Ordine di apprendimento
+
+Un ordine consigliato per imparare tutti i 21 PLL:
+
+1. **Prima il 2-Look:** T, Y (angoli) + Ua, Ub, H, Z (spigoli) -- 6 algoritmi
+2. **Scambi adiacenti:** Ja, Jb, F, Ra, Rb -- 5 algoritmi in piu
+3. **Solo angoli:** Aa, Ab, E -- 3 algoritmi in piu
+4. **Scambi diagonali:** V, Na, Nb -- 3 algoritmi in piu
+5. **G Perms per ultimi:** Ga, Gb, Gc, Gd -- 4 algoritmi finali
+
+:::tip
+Esercita il riconoscimento mescolando, risolvendo fino al PLL, poi coprendo il cubo e cercando di identificare il caso a memoria. La velocita viene dal riconoscimento istantaneo, non solo da movimenti rapidi delle dita.
+:::

@@ -1,0 +1,296 @@
+---
+title: "F2L: Erste zwei Schichten"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Erste zwei Schichten
+
+F2L (Erste zwei Schichten) ist der **wichtigste Schritt** der CFOP-Methode. Anstatt die Ecken der ersten Schicht und die Kanten der zweiten Schicht in zwei separaten Schritten zu lösen (wie bei der Anfängermethode), paart F2L eine Ecke mit ihrer passenden Kante und setzt sie zusammen in den richtigen Slot ein. Das spart enorm viele Züge und ist die Quelle der größten Geschwindigkeitsverbesserungen.
+
+Es gibt **4 Slots** zu füllen, einen in jeder Ecke der unteren zwei Schichten. Jeder Slot besteht aus einem Eckstein und einem Kantensten.
+
+## Das Konzept
+
+Jeder F2L-Fall beinhaltet zwei Steine:
+- Einen **Eckstein**, der zur unteren Schicht gehört (hat einen weißen/Unterseiten-Aufkleber)
+- Einen **Kantenstein**, der zur mittleren Schicht gehört (verbindet zwei Seitenfarben)
+
+Das Ziel ist, diese zwei Steine in der oberen Schicht zu **paaren** und dann das Paar in den richtigen Slot **einzusetzen**.
+
+## Notation-Erinnerung
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Oben &nbsp;&nbsp; **D** = Unten &nbsp;&nbsp; **F** = Vorne &nbsp;&nbsp; **B** = Hinten
+- Ein Buchstabe allein = **90° im Uhrzeigersinn** &nbsp;&nbsp; **'** = **gegen den Uhrzeigersinn** &nbsp;&nbsp; **2** = **180°**
+
+Halte den Würfel mit **Weiß unten**. Der Zielslot ist immer der **vordere rechte Slot** (zwischen F- und R-Fläche).
+
+---
+
+## Intuitives F2L
+
+Bevor du Algorithmen auswendig lernst, verstehe die **Logik** von F2L. Jeder Fall folgt dem gleichen Muster:
+
+1. **Finde** ein Ecken-Kanten-Paar, das zusammengehört
+2. **Trenne** sie, wenn sie falsch zusammenstecken
+3. **Positioniere** einen Stein, dann **bringe** den anderen dazu
+4. **Paare** sie in der oberen Schicht, sodass Weiß nach außen oder unten zeigt
+5. **Setze** das verbundene Paar in den Slot ein
+
+**Schlüsselprinzip:** Verwende R- und U-Züge, um die Ecke aus dem vorderen rechten Slot herauszunehmen oder hineinzusetzen, und U-Züge, um die Kante zu positionieren. Störe niemals bereits gelöste Slots.
+
+---
+
+Es gibt insgesamt **41 Standard-F2L-Fälle**. Unten behandeln wir die **15 wichtigsten Fälle**, die das Fundament bilden. Sobald du diese beherrschst, kannst du die übrigen Fälle intuitiv lösen oder bei Bedarf nachschlagen.
+
+## Grundfälle: Beide Steine in der oberen Schicht
+
+Dies sind die einfachsten und häufigsten Fälle. Ecke und Kante sind beide in der U-Schicht und der Zielslot ist leer.
+
+### Fall 1: Einfaches Einsetzen — Ecke Weiß zeigt rechts, Kante bereit
+
+Die Ecke hat Weiß zur R-Fläche, und die Kante ist bereits positioniert, sodass ein U-Zug sie paart. Dies ist das grundlegendste F2L-Einsetzen.
+
+**Algorithmus: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Fall 2: Einfaches Einsetzen — Ecke Weiß zeigt vorne, Kante bereit
+
+Die Ecke hat Weiß zur F-Fläche, und die Kante ist positioniert für ein Einsetzen gegen den Uhrzeigersinn.
+
+**Algorithmus: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Fall 3: Ecke Weiß zeigt oben, Farbe passt zum vorderen Zentrum
+
+Die Ecke hat Weiß nach oben und ihre Frontfarbe passt zum Frontzentrum. Die Kante ist gegenüber. Wir verbinden und setzen ein.
+
+**Algorithmus: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Fall 4: Ecke Weiß zeigt oben, Farbe passt zum rechten Zentrum
+
+Die Ecke hat Weiß nach oben und ihre rechte Farbe passt zum rechten Zentrum. Die Kante muss von der gegenüberliegenden Seite gepaart werden.
+
+**Algorithmus: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Fall 5: Ecke und Kante weit auseinander, Weiß zeigt rechts
+
+Die Ecke hat Weiß nach rechts und die Kante ist auf der gegenüberliegenden Seite der oberen Schicht. Wir bringen die Kante näher, dann paaren und setzen ein.
+
+**Algorithmus: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Fall 6: Ecke und Kante weit auseinander, Weiß zeigt vorne
+
+Spiegelbild von Fall 5. Die Ecke hat Weiß nach vorne und die Kante ist auf der fernen Seite.
+
+**Algorithmus: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Fall 7: Ecke und Kante benachbart, Weiß zeigt rechts — Paar falsch verbunden
+
+Ecke und Kante sind nebeneinander und verbunden, aber eingesetzt wären sie falsch. Wir trennen sie und verbinden sie korrekt.
+
+**Algorithmus: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Fall 8: Ecke und Kante benachbart, Weiß zeigt vorne — Paar falsch verbunden
+
+Spiegelbild von Fall 7 auf der F-Seite.
+
+**Algorithmus: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Mittlere Fälle: Kante im Slot, Ecke in der oberen Schicht
+
+Manchmal steckt die Kante bereits in einem Slot (richtig oder falsch), und die Ecke ist in der oberen Schicht. Wir müssen die Kante herausholen, ohne andere gelöste Paare zu stören.
+
+### Fall 9: Kante im richtigen Slot aber Ecke oben — Weiß zeigt rechts
+
+Die Kante ist im richtigen Slot, und die Ecke ist in der U-Schicht mit Weiß nach rechts. Wir nehmen die Kante heraus und paaren sie mit der Ecke.
+
+**Algorithmus: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Fall 10: Kante im falschen Slot, Ecke oben — Weiß zeigt oben
+
+Die Kante ist im falschen Slot. Wir extrahieren sie und bereiten gleichzeitig das Paaren mit der Ecke vor.
+
+**Algorithmus: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Fortgeschrittene Fälle: Ecke im Slot
+
+Diese Fälle treten auf, wenn die Ecke bereits im richtigen Slot ist aber falsch orientiert, oder im richtigen Slot mit falsch platzierter Kante.
+
+### Fall 11: Ecke im Slot, verdreht — Kante in oberer Schicht
+
+Die Ecke ist im vorderen rechten Slot aber mit Weiß nach vorne (nicht unten). Die Kante ist in der U-Schicht. Wir extrahieren die Ecke, paaren mit der Kante und setzen neu ein.
+
+**Algorithmus: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Fall 12: Ecke im Slot, verdreht — Kante im falschen Slot
+
+Beide Steine sind in den unteren zwei Schichten aber keiner ist korrekt. Wir stoßen die Ecke heraus und extrahieren gleichzeitig die Kante.
+
+**Algorithmus: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Spezialfälle: Beide Steine im Slot
+
+### Fall 13: Paar verbunden im Slot aber verdreht
+
+Ecke und Kante sind gepaart und im Slot, aber die Ecke ist verdreht (Weiß zeigt vorne, nicht unten). Paar extrahieren, trennen und korrekt neu einsetzen.
+
+**Algorithmus: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Fall 14: Ecke korrekt im Slot, Kante im Slot geflippt
+
+Die Ecke ist korrekt platziert aber die Kante darüber ist geflippt. Einer der kniffligsten Fälle. Beide extrahieren, korrekt paaren und neu einsetzen.
+
+**Algorithmus: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Fall 15: Beide im Slot, beide falsch — Kreuzfehler
+
+Ecke und Kante sind beide im Slot aber passen nicht. Vollständige Extraktion und Neuaufbau.
+
+**Algorithmus: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tipps für schnelleres F2L
+
+### 1. Erst intuitiv lernen
+
+Eile nicht, alle 41 algorithmischen Fälle auswendig zu lernen. Verstehe **warum** jeder Zug funktioniert. Wenn du weißt, dass R U R' eine Ecke herausnimmt und zurücksetzt, kannst du die meisten Fälle selbst lösen. Algorithmen kommen später zur Optimierung.
+
+### 2. Lookahead entwickeln
+
+**Lookahead** ist die Fähigkeit, das nächste Paar zu verfolgen, während du das aktuelle einsetzt. Dies ist der größte Faktor, der 20-Sekunden- von 15-Sekunden-Lösern trennt.
+
+Praxistipps:\n- Verlangsame das Drehen und zwinge dich, während des Einsetzens nach dem nächsten Paar zu suchen\n- Übe F2L mit geschlossenen Augen während des Einsetzens (du kennst die Züge, also schau voraus)\n- Mache zeitlose Solves, die sich nur auf Null-Pausen zwischen Paaren konzentrieren
+
+### 3. Rotationen reduzieren
+
+Jedes Mal, wenn du den ganzen Würfel drehst, verlierst du Zeit. Die besten F2L-Löser rotieren selten mehr als ein- oder zweimal im gesamten F2L.\n\n- Lerne, in **hintere Slots** mit R und U einzusetzen (z.B. R U' R' für hinten-rechts)\n- Übe **L, F und B** Züge für gegenüberliegende Slots\n- Verwende breite Züge (r, l) zum gleichzeitigen Rotieren und Einsetzen
+
+### 4. Fälle schnell erkennen
+
+Trainiere dich, sofort zu erkennen, welcher Fall vorliegt:\n- **Wo ist Weiß an der Ecke?** (Oben, Vorne oder Rechts)\n- **Wo ist die Kante relativ zur Ecke?** (Benachbart, gegenüber oder in einem Slot)\n- **Sind sie bereits gepaart?** (Richtig verbunden, falsch verbunden oder getrennt)
+
+### 5. In effizienter Reihenfolge lösen
+
+Du musst die 4 Paare nicht in fester Reihenfolge lösen. Betrachte alle 4 Paare und beginne mit dem **einfachsten** — dem mit den wenigsten Zügen. Erfahrene Löser planen das erste Paar während der Inspektion zusammen mit dem Kreuz.
+
+### 6. Leere-Slot-Tricks
+
+Wenn ein Slot leer ist, kannst du ihn als temporären Speicher nutzen. Zum Beispiel: Setze eine Kante in einen leeren Slot (R U R'), um sie aus dem Weg zu räumen, während du an einem anderen Paar arbeitest. Anfänger übersehen diese mächtige Technik oft.
+
+---
+
+## Übungsroutine
+
+1. **Vermische den Würfel und löse das Kreuz**\n2. **Finde alle 4 Ecken-Kanten-Paare** — identifiziere wo jede Ecke und ihre passende Kante sind\n3. **Löse jedes Paar einzeln** — beginne mit einfachen Fällen, lasse schwere für zuletzt\n4. **Zeit nur die F2L-Phase** — verwende einen Timer. Ziel: unter 15 Sekunden für alle 4 Paare\n5. **Überprüfe** — frage dich nach jedem Solve: hätte ich ein Paar in weniger Zügen lösen können?\n\nMit konsequenter Übung wird F2L zur zweiten Natur und du wirst dramatische Verbesserungen deiner Gesamtlösungszeiten sehen.
+
+---
+
+## Nächste Schritte
+
+Nach dem Meistern von F2L geht es weiter mit der letzten Schicht:
+
+- [**CFOP-Methode Überblick**](./cfop) — Sieh wie F2L in die vollständige CFOP-Methode passt
+- [**OLL-Algorithmen**](./oll) — Mache die obere Seite ganz gelb (57 Fälle + 2-Look OLL)
+- [**PLL-Algorithmen**](./pll) — Ordne die letzten Steine an, um den Solve abzuschließen (21 Fälle)
+- [**Fingertricks-Leitfaden**](./finger-tricks) — F2L-Trigger schneller und flüssiger ausführen

@@ -1,0 +1,374 @@
+---
+title: "2x2 Fortgeschritten: CLL-Methode"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Fortgeschritten: CLL-Methode
+
+Bringe dein 2x2-Lösen mit der **CLL (Corners of Last Layer)**-Methode auf das nächste Level. Während die Ortega-Methode die letzte Schicht in zwei Schritten löst (OLL, dann PBL), löst CLL sowohl die **Orientierung als auch die Permutation** der letzten Schicht in **einem einzigen Algorithmus**. Das bedeutet weniger Blicke und schnellere Solves.
+
+## Warum CLL?
+
+| Methode | Letzte-Schicht-Schritte | Algorithmen | Typische Geschwindigkeit |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 Sekunden |
+| **CLL** | 1 (One-Look) | ~40 | 2–4 Sekunden |
+
+CLL ist die Standardmethode der besten 2x2-Speedcuber. Wenn du alle 40 Fälle erkennst und ausführst, eliminierst du einen ganzen Schritt aus deinem Solve.
+
+## Wie CLL funktioniert
+
+1. **Erste Seite lösen** — wie bei Ortega, baue eine weiße Fläche auf der Unterseite (Seitenfarben müssen nicht übereinstimmen).
+2. **CLL-Fall erkennen** — schaue auf die obere Fläche und die Seitenfarben, um zu bestimmen, welcher der 40 Fälle vorliegt.
+3. **Einen Algorithmus anwenden** — dieser orientiert und permutiert gleichzeitig alle Ecken der oberen Schicht.
+4. **AUF + Unterseite anpassen** — höchstens eine U-Schicht-Drehung und eine D-Schicht-Drehung zum Abschluss.
+
+## Notation-Erinnerung
+
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Oben &nbsp;&nbsp; **D** = Unten &nbsp;&nbsp; **F** = Vorne &nbsp;&nbsp; **B** = Hinten
+- Ein Buchstabe allein bedeutet **90° im Uhrzeigersinn**. Mit **'** bedeutet **gegen den Uhrzeigersinn**. Mit **2** bedeutet **180°**.
+
+---
+
+## CLL-Fallgruppen
+
+Die 40 CLL-Fälle sind in 7 Gruppen unterteilt, basierend auf dem Orientierungsmuster der oberen Fläche. Im Folgenden sind die wichtigsten Fälle jeder Gruppe mit ihren Algorithmen aufgeführt.
+
+---
+
+## Sune-Fälle (4 von 6)
+
+Eine Ecke ist orientiert (gelb zeigt nach oben), die anderen drei müssen gedreht werden. Dies ist die häufigste Gruppe.
+
+### Sune 1 — Benachbarter Tausch
+
+Halte die gelöste Ecke vorne links. Die drei ungelösten Ecken drehen sich im Uhrzeigersinn.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonaler Tausch
+
+Gleiches Orientierungsmuster, aber die Ecken benötigen einen diagonalen Tausch.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Pur (kein Tausch)
+
+Orientierung gelöst, kein Positionstausch nötig.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Benachbarter Tausch (Spiegel)
+
+Halte die gelöste Ecke vorne rechts.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune-Fälle (3 von 6)
+
+Spiegelbild von Sune — eine Ecke ist orientiert, die anderen drei drehen sich gegen den Uhrzeigersinn.
+
+### Anti-Sune 1 — Benachbarter Tausch
+
+Halte die gelöste Ecke vorne rechts. Die drei ungelösten Ecken drehen sich gegen den Uhrzeigersinn.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonaler Tausch
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Pur (kein Tausch)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H-Fälle (4 von 4)
+
+Zwei gegenüberliegende Ecken sind orientiert (gelb zeigt nach oben), die anderen zwei haben gelb an den Seiten.
+
+### H 1 — Benachbarter Tausch
+
+Zwei gelbe Aufkleber oben an diagonalen Positionen.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonaler Tausch
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Kein Tausch
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Spalten
+
+Beide Paare diagonaler Ecken müssen getauscht werden.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi-Fälle (4 von 6)
+
+Zwei benachbarte Ecken haben gelb oben, die anderen zwei haben gelb an den Seiten. Die obere Fläche sieht aus wie der griechische Buchstabe Pi.
+
+### Pi 1 — Diagonaler Tausch
+
+Halte die zwei orientierten Ecken hinten.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Benachbarter Tausch (Rechts)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Benachbarter Tausch (Links)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Kein Tausch
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T-Fälle (3 von 6)
+
+Die obere Fläche zeigt ein T-förmiges Muster gelber Aufkleber — eine Ecke orientiert, eine benachbarte Ecke mit gelb vorne und die anderen zwei mit gelb an den Seiten.
+
+### T 1 — Benachbarter Tausch
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonaler Tausch
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Kein Tausch
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U-Fälle (3 von 6)
+
+Eine Ecke ist korrekt orientiert, die anderen drei bilden ein U-förmiges Muster an den Seiten.
+
+### U 1 — Benachbarter Tausch
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonaler Tausch
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Kein Tausch
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L-Fälle (3 von 6)
+
+Zwei benachbarte Ecken sind in die gleiche Richtung gedreht — die obere Fläche zeigt ein L-förmiges Muster.
+
+### L 1 — Benachbarter Tausch
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonaler Tausch
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Kein Tausch
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Nach CLL: Den Solve abschließen
+
+Nach Anwendung des CLL-Algorithmus ist die obere Fläche vollständig gelöst (orientiert und permutiert). Eventuell benötigst du noch:
+
+1. **AUF (U-Fläche anpassen)** — eine einzelne U- oder U'-Drehung, um die obere Schicht mit der unteren auszurichten.
+2. **Untere Schicht anpassen** — falls die untere Schicht versetzt ist, korrigiert eine einzelne D- oder D'-Drehung dies.
+3. **Untere Schicht tauschen** — selten benötigt die untere Schicht einen benachbarten oder diagonalen Tausch. Verwende die gleichen PBL-Algorithmen wie bei der Ortega-Methode:
+   - **Diagonaler Tausch:** R2 F2 R2
+   - **Benachbarter Tausch:** R U' R F2 R' U R'
+
+---
+
+## Lernstrategie
+
+Alle 40 CLL-Fälle auf einmal zu lernen ist überwältigend. Hier ist eine empfohlene Lernreihenfolge:
+
+1. **Mit Sune und Anti-Sune beginnen** (12 Fälle) — die häufigsten, viele Algorithmen sind kurz.
+2. **T- und U-Fälle hinzufügen** (12 Fälle) — relativ einfach zu erkennen und auszuführen.
+3. **Pi-Fälle lernen** (6 Fälle) — markantes Orientierungsmuster.
+4. **L-Fälle lernen** (6 Fälle) — ähnliche Erkennung wie Pi, aber andere Drehrichtung.
+5. **Zum Schluss H-Fälle** (4 Fälle) — die seltenste Gruppe.
+
+## Erkennungstipps
+
+- **Zuerst die obere Fläche betrachten**, um die Orientierungsgruppe zu bestimmen (wie viele gelbe Aufkleber zeigen nach oben und wo).
+- **Dann die Seitenfarben prüfen**, um den spezifischen Fall innerhalb der Gruppe zu bestimmen.
+- **Gruppenweise üben** — eine Gruppe nach der anderen trainieren, bis die Erkennung sofort funktioniert.
+- **Inverse Scrambles verwenden** — einen Fall aufbauen, lösen und dann das Inverse vorhersagen.
+
+---
+
+**Mit beherrschtem CLL kannst du beim 2x2 Durchschnitte unter 3 Sekunden erreichen.** Der One-Look-Ansatz eliminiert die Pause zwischen OLL und PBL und macht deine Solves schneller und flüssiger. Übe weiter die Erkennung — Geschwindigkeit kommt vom sofortigen Erkennen der Fälle.

@@ -1,0 +1,312 @@
+---
+title: "F2L: First Two Layers"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: First Two Layers
+
+F2L (First Two Layers) is the **most important step** in the CFOP method. Instead of solving the first layer corners and second layer edges as two separate steps (like the beginner method), F2L pairs a corner with its matching edge and inserts them together into the correct slot. This saves a huge number of moves and is where the biggest speed improvements come from.
+
+There are **4 slots** to fill, one in each corner of the bottom two layers. Each slot consists of one corner piece and one edge piece.
+
+## The Concept
+
+Every F2L case involves two pieces:
+- A **corner piece** that belongs in the bottom layer (it has a white/bottom-color sticker)
+- An **edge piece** that belongs in the middle layer (it connects two side colors)
+
+The goal is to **pair** these two pieces in the top layer, then **insert** the pair into the correct slot in one smooth motion.
+
+## Notation Reminder
+
+- **R** = Right &nbsp;&nbsp; **L** = Left &nbsp;&nbsp; **U** = Up &nbsp;&nbsp; **D** = Down &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Back
+- A letter alone = **clockwise 90°** &nbsp;&nbsp; **'** = **counter-clockwise** &nbsp;&nbsp; **2** = **180°**
+
+Hold the cube with **white on the bottom**. The slot we are inserting into is always the **front-right** slot (between the F and R faces).
+
+---
+
+## Intuitive F2L
+
+Before memorizing algorithms, learn the **logic** of F2L. Every case follows the same pattern:
+
+1. **Find** a corner-edge pair that belongs together
+2. **Separate** them if they are stuck together incorrectly
+3. **Position** one piece, then **bring** the other to meet it
+4. **Pair** them in the top layer so white faces outward or downward
+5. **Insert** the connected pair into the slot
+
+**Key principle:** Use R and U moves to take the corner out of or into the front-right slot, and use U moves to position the edge. Never disturb already-solved slots.
+
+---
+
+There are **41 standard F2L cases** in total. Below we cover the **15 most important cases** that form the foundation. Once you master these, you will be able to handle the remaining cases intuitively or look them up as needed.
+
+## Basic Cases: Both Pieces in the Top Layer
+
+These are the simplest and most common cases. Both the corner and the edge are in the U layer and the target slot is empty.
+
+### Case 1: Easy Insert — Corner White Faces Right, Edge Ready
+
+The corner has white facing the R face, and the edge is already positioned so that one U-move pairs them. This is the most basic F2L insert.
+
+**Algorithm: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Case 2: Easy Insert — Corner White Faces Front, Edge Ready
+
+The corner has white facing the F face, and the edge is positioned to pair with a counter-clockwise insertion.
+
+**Algorithm: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Case 3: Corner White Faces Up, Colors Matching Side
+
+The corner has white facing up and its front color matches the front center. The edge is across from it. We need to connect them and insert.
+
+**Algorithm: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Case 4: Corner White Faces Up, Colors Matching Right Side
+
+The corner has white facing up and its right color matches the right center. The edge needs to be paired from the opposite side.
+
+**Algorithm: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Case 5: Corner and Edge Far Apart, White Faces Right
+
+The corner has white facing right and the edge is on the opposite side of the top layer. We bring the edge closer, then pair and insert.
+
+**Algorithm: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Case 6: Corner and Edge Far Apart, White Faces Front
+
+Mirror of Case 5. The corner has white facing front and the edge is on the far side.
+
+**Algorithm: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Case 7: Corner and Edge Adjacent, White Faces Right — Pair Connected but Wrong
+
+The corner and edge are next to each other and connected, but inserted they would go in wrong. We split them, then rejoin correctly.
+
+**Algorithm: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Case 8: Corner and Edge Adjacent, White Faces Front — Pair Connected but Wrong
+
+Mirror of Case 7 on the F face side.
+
+**Algorithm: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Intermediate Cases: Edge in Slot, Corner in Top Layer
+
+Sometimes the edge is already stuck in a slot (correct or incorrect), and the corner is in the top layer. We need to extract the edge without disturbing other solved pairs.
+
+### Case 9: Edge in Correct Slot but Corner in Top — White Faces Right
+
+The edge is in the correct slot, and the corner is in the U layer with white facing right. We take the edge out and pair it with the corner.
+
+**Algorithm: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Case 10: Edge in Wrong Slot, Corner in Top — White Faces Up
+
+The edge is in the wrong slot. We extract it while simultaneously setting up the pairing with the corner.
+
+**Algorithm: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Advanced Cases: Corner in Slot
+
+These cases occur when the corner is already in the correct slot but oriented incorrectly, or in the correct slot with the edge misplaced.
+
+### Case 11: Corner in Slot, Twisted — Edge in Top Layer
+
+The corner is in the front-right slot but with white facing front (not down). The edge is in the U layer. We extract the corner, pair it with the edge, and re-insert.
+
+**Algorithm: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Case 12: Corner in Slot, Twisted — Edge in Wrong Slot
+
+Both pieces are in the bottom two layers but neither is correct. We kick the corner out and simultaneously extract the edge.
+
+**Algorithm: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Special Cases: Both Pieces in Slot
+
+### Case 13: Pair Connected in Slot but Twisted
+
+The corner and edge are paired and in the slot, but the corner is twisted (white faces front, not bottom). Extract the pair, split them apart, and re-insert correctly.
+
+**Algorithm: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Case 14: Corner Correct in Slot, Edge Flipped in Slot
+
+The corner is correctly placed but the edge above it is flipped. This is one of the trickiest cases. We extract both, pair correctly, and re-insert.
+
+**Algorithm: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Case 15: Both in Slot, Both Wrong — Cross-slot Error
+
+The corner and edge are both in the slot but neither matches. Full extraction and rebuild.
+
+**Algorithm: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tips for Faster F2L
+
+### 1. Learn Intuitively First
+
+Do not rush to memorize all 41 algorithmic cases. Spend time understanding **why** each move works. If you know that R U R' takes a corner out and puts it back, you can figure out most cases yourself. Algorithms come later to optimize the moves you already understand.
+
+### 2. Develop Lookahead
+
+**Lookahead** is the ability to track your next pair while inserting the current one. This is the single biggest factor separating 20-second solvers from 15-second solvers.
+
+Practice tips:
+- Slow down your turning and force yourself to search for the next pair during insertions
+- Practice solving F2L with your eyes closed during the insertion (you know the moves, so look ahead)
+- Do untimed solves focused purely on zero pauses between pairs
+
+### 3. Reduce Rotations
+
+Every time you rotate the entire cube, you lose time. The best F2L solvers rarely rotate more than once or twice in an entire F2L phase.
+
+- Learn to insert into **back slots** using R and U moves (e.g., R U' R' to insert into back-right)
+- Practice using **L, F, and B** moves for opposite-side slots
+- Use wide moves (r, l) to rotate and insert simultaneously
+
+### 4. Recognize Cases Quickly
+
+Train yourself to instantly recognize which case you are looking at:
+- **Where is white on the corner?** (Up, Front, or Right)
+- **Where is the edge relative to the corner?** (Adjacent, opposite, or in a slot)
+- **Are they already paired?** (Connected correctly, connected wrong, or separate)
+
+### 5. Solve in Efficient Order
+
+You do not have to solve the 4 pairs in any fixed order. Look at all 4 pairs and start with the **easiest** one — the one that requires the fewest moves. Experienced solvers plan their first pair during inspection along with the cross.
+
+### 6. Empty Slot Tricks
+
+When a slot is empty, you can use it as temporary storage. For example, place an edge into an empty slot (R U R') to get it out of the way while you work on a different pair. Beginners often overlook this powerful technique.
+
+---
+
+## Practice Routine
+
+1. **Scramble the cube and solve the cross**
+2. **Find all 4 corner-edge pairs** — identify where each corner and its matching edge are
+3. **Solve each pair one at a time** — start with easy cases, leave hard ones for last
+4. **Time your F2L phase only** — use a stackmat or app. Target: under 15 seconds for all 4 pairs
+5. **Review** — after each solve, ask: could I have done any pair in fewer moves?
+
+With consistent practice, F2L will become second nature and you will see dramatic improvements in your overall solve times.
+
+---
+
+## What's Next?
+
+After mastering F2L, continue with the last layer:
+
+- [**CFOP Method Overview**](./cfop) — See how F2L fits into the full CFOP method
+- [**OLL Algorithms**](./oll) — Make the top face all yellow (57 cases + 2-Look OLL)
+- [**PLL Algorithms**](./pll) — Arrange the final pieces to complete the solve (21 cases)
+- [**Finger Tricks Guide**](./finger-tricks) — Execute F2L triggers faster and more smoothly

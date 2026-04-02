@@ -1,0 +1,325 @@
+---
+title: "Kỹ thuật nâng cao Pyraminx"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kỹ thuật nâng cao Pyraminx
+
+Bạn đã sẵn sàng đưa khả năng giải Pyraminx lên tầm cao mới chưa? Hướng dẫn này bao gồm các phương pháp nâng cao mà những tay chơi tốc độ Pyraminx hàng đầu sử dụng để đạt trung bình dưới 5 giây. Chúng ta sẽ tập trung vào phương pháp **L4E (Last 4 Edges)**, kỹ thuật **Keyhole** và cách tiếp cận **Top-First**.
+
+## Nhắc lại ký hiệu
+
+**Tầng (chữ hoa)** — xoay toàn bộ tầng (không bao gồm đỉnh):
+- **U** = Tầng trên &nbsp;&nbsp; **R** = Tầng phải &nbsp;&nbsp; **L** = Tầng trái &nbsp;&nbsp; **B** = Tầng sau
+
+**Đỉnh (chữ thường)** — chỉ xoay đỉnh:
+- **u** = Đỉnh trên &nbsp;&nbsp; **r** = Đỉnh phải &nbsp;&nbsp; **l** = Đỉnh trái &nbsp;&nbsp; **b** = Đỉnh sau
+
+Chỉ có chữ cái nghĩa là **thuận chiều kim đồng hồ 120°**. Thêm **'** nghĩa là **ngược chiều kim đồng hồ 120°**.
+
+---
+
+## Phương pháp L4E (Last 4 Edges)
+
+Phương pháp L4E là phương pháp nâng cao Pyraminx phổ biến nhất. Thay vì giải từng tầng, bạn giải một khối trước, sau đó dùng thuật toán để giải **4 cạnh cuối cùng** trong một bước duy nhất.
+
+### Tổng quan
+
+| Bước | Mô tả | Kỹ thuật |
+|------|-------------|-----------|
+| 1 | Giải đỉnh | Trực giác (giống người mới) |
+| 2 | Tạo hình V | Trực giác — một tâm + hai cạnh |
+| 3 | Giải 4 cạnh cuối | Thuật toán — nhìn một lần |
+
+### Bước 1: Giải đỉnh
+
+Giống như phương pháp cơ bản. Căn chỉnh cả 4 đỉnh khớp với các tâm liền kề. Bước này rất đơn giản — mỗi đỉnh chỉ có 3 vị trí.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Bước 2: Tạo hình V
+
+Chọn một mặt đáy và tạo **hình chữ V**: một mảnh tâm cùng hai cạnh liền kề được đặt đúng vị trí. Điều này cho bạn một khối 1x1x2 đã giải ở phía dưới.
+
+Cầm Pyraminx với V ở phía dưới bên trái. V bao gồm tâm đáy và hai cạnh nối nó với mặt trái và phải.
+
+**Tạo V** — bước này dùng trực giác. Tìm hai cạnh thuộc về bên cạnh tâm đã chọn và đặt chúng bằng cách xoay tầng:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V với cạnh bị lật** — nếu một cạnh đúng vị trí nhưng bị lật, hãy lấy ra và đặt lại:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Mẹo:**
+- Chọn V cần ít bước nhất — kiểm tra tất cả 4 vị trí V có thể trước khi bắt đầu.
+- V nên được lên kế hoạch hoàn toàn trong thời gian quan sát (15 giây là quá đủ cho Pyraminx).
+
+### Bước 3: Giải 4 cạnh cuối
+
+Khi V đã giải xong, còn lại 4 cạnh. Xác định trường hợp và áp dụng thuật toán tương ứng. Có khoảng 30 trường hợp L4E, nhưng nhiều trường hợp là hình phản chiếu của nhau, giúp giảm số trường hợp duy nhất cần học.
+
+Cầm Pyraminx với **V ở phía dưới bên trái** (khối đã giải hướng về phía bạn ở bên trái).
+
+---
+
+#### L4E Trường hợp 1: Cả 4 cạnh cần chu kỳ thuận chiều kim đồng hồ
+
+**Thuật toán: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E Trường hợp 2: Cả 4 cạnh cần chu kỳ ngược chiều kim đồng hồ
+
+**Thuật toán: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E Trường hợp 3: Hai cạnh hoán đổi (liền kề, trước)
+
+**Thuật toán: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E Trường hợp 4: Hai cạnh hoán đổi (liền kề, sau)
+
+**Thuật toán: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E Trường hợp 5: Hai cạnh lật tại chỗ (cặp trước)
+
+**Thuật toán: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E Trường hợp 6: Hai cạnh lật tại chỗ (cặp sau)
+
+**Thuật toán: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E Trường hợp 7: Ba cạnh chu kỳ thuận chiều kim đồng hồ + một lật
+
+**Thuật toán: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E Trường hợp 8: Ba cạnh chu kỳ ngược chiều kim đồng hồ + một lật
+
+**Thuật toán: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E Trường hợp 9: Cả 4 cạnh bị lật
+
+**Thuật toán: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E Trường hợp 10: Hai cạnh đối diện hoán đổi
+
+**Thuật toán: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E Trường hợp 11: Chu kỳ + lật đôi
+
+**Thuật toán: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E Trường hợp 12: Hoán đổi liền kề kèm lật
+
+**Thuật toán: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Phương pháp Keyhole
+
+Phương pháp Keyhole là một lựa chọn trực giác hơn so với L4E. Thay vì học thuật toán cho mọi trường hợp, bạn sử dụng một khe cạnh chưa giải làm **lỗ khóa (Keyhole)** để tự do đặt các mảnh khác.
+
+### Cách hoạt động
+
+1. **Giải đỉnh** (như thường lệ).
+2. **Giải một cạnh** — đặt đúng một cạnh đáy.
+3. **Sử dụng khe trống làm lỗ khóa** — giữ khe cạnh đáy thứ hai trống, cho bạn tự do đặt cạnh vào tầng trên mà không có hạn chế.
+4. **Giải các cạnh tầng trên** — dùng lỗ khóa để đặt từng cạnh tầng trên một lần một.
+5. **Đóng lỗ khóa** — đặt cạnh đáy cuối cùng vào sau cùng.
+
+### Ví dụ đặt cạnh Keyhole
+
+Khi lỗ khóa ở bên phải tầng đáy, bạn có thể tự do đặt cạnh tầng trên:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Đặt cạnh bị lật** — nếu cạnh cần lật trước khi đặt:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Mẹo:**
+- Phương pháp Keyhole rất phù hợp cho người mới bắt đầu chuyển sang giải nâng cao.
+- Cần ít thuật toán hơn L4E nhưng hơi chậm hơn ở trình độ cao nhất.
+- Dùng Keyhole làm bàn đạp đến L4E — trực giác bạn xây dựng ở đây giúp nhận diện L4E tốt hơn.
+
+---
+
+## Phương pháp Top-First
+
+Phương pháp Top-First đảo ngược thứ tự giải thông thường: giải **tầng trên trước**, sau đó hoàn thành tầng dưới.
+
+### Tổng quan
+
+1. **Giải đỉnh.**
+2. **Giải toàn bộ tầng trên** — cả 3 cạnh trên đều đúng hướng và đúng vị trí quanh tâm trên.
+3. **Giải tầng dưới** — đặt 3 cạnh đáy còn lại.
+
+### Giải tầng trên
+
+Xây dựng tầng trên bằng trực giác. Vì bạn bắt đầu từ trên, không có hạn chế — bạn có thể xoay bất kỳ tầng nào tự do.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Giải tầng dưới
+
+Khi tầng trên hoàn thành, 3 cạnh đáy có thể được giải bằng một bộ thuật toán nhỏ tương tự các trường hợp L4E nhưng giới hạn ở tầng dưới.
+
+**Chu kỳ thuận chiều kim đồng hồ của các cạnh đáy:**
+
+**Thuật toán: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Chu kỳ ngược chiều kim đồng hồ:**
+
+**Thuật toán: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Mẹo:**
+- Top-First ít phổ biến trong thi đấu nhưng có thể rất nhanh cho một số công thức xáo trộn nhất định.
+- Hiệu quả nhất khi tầng trên đã được giải một phần sau khi xáo trộn.
+- Kết hợp với lập kế hoạch quan sát — nếu bạn thấy tầng trên dễ, hãy chọn Top-First.
+
+---
+
+## Mẹo giải tốc độ
+
+### Lập kế hoạch quan sát
+
+Pyraminx có ít mảnh hơn bất kỳ câu đố WCA nào khác, nghĩa là bạn có thể **lên kế hoạch nhiều hơn cho lượt giải trong thời gian quan sát**:
+
+- **Luôn lên kế hoạch đỉnh + V** trong 15 giây quan sát.
+- Người giải nâng cao có thể lên kế hoạch **toàn bộ lượt giải** cho các công thức xáo trộn dễ.
+- Luyện tập mở rộng kế hoạch — bắt đầu với đỉnh, sau đó thêm V, rồi thử dự đoán trường hợp L4E.
+
+### Kỹ thuật xoay
+
+- Dùng **đầu ngón tay** để xoay chính xác và nhanh — không dùng cả bàn tay.
+- Pyraminx phù hợp với những cú xoay nhẹ, nhanh kiểu búng hơn là xoay mạnh.
+- Luyện xoay tầng **R** và **L** bằng ngón trỏ, và xoay **U** bằng ngón cái.
+
+### Trung lập về màu sắc
+
+- Khác với 3x3, việc **trung lập về màu sắc** trên Pyraminx rất khả thi.
+- Luyện tập bắt đầu với bất kỳ mặt nào trong 4 mặt làm đáy — điều này cho bạn gấp 4 lần lựa chọn V dễ.
+- Trung lập về màu sắc gần như là bắt buộc để giải dưới 5 giây.
+
+### Lịch trình luyện tập
+
+1. **Luyện từng trường hợp L4E** — thiết lập bằng thuật toán ngược, giải, lặp lại. Hướng đến nhận diện ngay lập tức.
+2. **Giải bấm giờ** — thực hiện theo bộ 12 lượt, theo dõi trung bình của bạn.
+3. **Luyện nhìn một lần** — cố gắng xác định trường hợp L4E trong bước tạo V, trước khi hoàn thành.
+4. **Giải chậm** — luyện ở nửa tốc độ, tập trung vào xoay mượt mà và không dừng lại.
+
+---
+
+**Khi thành thạo L4E và lập kế hoạch quan sát tốt, trung bình Pyraminx dưới 4 giây là hoàn toàn khả thi.** Pyraminx thưởng cho việc lập kế hoạch và nhận diện nhiều hơn tốc độ xoay thuần túy. Tập trung vào việc dự đoán trường hợp L4E sớm, và các lượt giải sẽ trở nên dễ dàng.

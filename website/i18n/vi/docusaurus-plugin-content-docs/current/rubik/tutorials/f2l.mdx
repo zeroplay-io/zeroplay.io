@@ -1,0 +1,252 @@
+---
+title: "F2L: Hai tầng đầu tiên"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Hai tầng đầu tiên
+
+F2L (First Two Layers, hai tầng đầu tiên) là **bước quan trọng nhất** trong phương pháp CFOP. Thay vì giải các góc tầng một và các cạnh tầng hai thành hai bước riêng biệt (như phương pháp cơ bản), F2L ghép một góc với cạnh tương ứng và đưa chúng cùng nhau vào đúng rãnh. Điều này tiết kiệm rất nhiều bước xoay và là nguồn cải thiện tốc độ lớn nhất.
+
+Có **4 rãnh** cần lấp đầy, mỗi rãnh ở một góc của hai tầng dưới. Mỗi rãnh bao gồm một mảnh góc và một mảnh cạnh.
+
+## Khái niệm
+
+Mỗi trường hợp F2L liên quan đến hai mảnh:
+- Một **mảnh góc** thuộc tầng dưới (có nhãn dán trắng/màu đáy)
+- Một **mảnh cạnh** thuộc tầng giữa (nối hai màu bên)
+
+Mục tiêu là **ghép cặp** hai mảnh này ở tầng trên, rồi **đưa** cặp vào đúng rãnh trong một chuyển động mượt mà.
+
+## Nhắc lại ký hiệu
+
+- **R** = Phải &nbsp;&nbsp; **L** = Trái &nbsp;&nbsp; **U** = Trên &nbsp;&nbsp; **D** = Dưới &nbsp;&nbsp; **F** = Trước &nbsp;&nbsp; **B** = Sau
+- Chữ cái đơn = **90° theo chiều kim đồng hồ** &nbsp;&nbsp; **'** = **ngược chiều kim đồng hồ** &nbsp;&nbsp; **2** = **180°**
+
+Cầm khối Rubik với **mặt trắng ở dưới**. Rãnh chúng ta đưa vào luôn là **rãnh trước-phải** (giữa mặt F và R).
+
+---
+
+## F2L trực giác
+
+Trước khi thuộc thuật toán, hãy học **logic** của F2L. Mỗi trường hợp đều theo cùng một mẫu:
+
+1. **Tìm** một cặp góc-cạnh thuộc về nhau
+2. **Tách** chúng nếu chúng dính nhau sai cách
+3. **Đặt** một mảnh vào vị trí, rồi **đưa** mảnh kia đến gặp nó
+4. **Ghép cặp** chúng ở tầng trên sao cho mặt trắng hướng ra ngoài hoặc xuống dưới
+5. **Đưa** cặp đã nối vào rãnh
+
+**Nguyên tắc chính:** Dùng các bước R và U để lấy góc ra khỏi rãnh trước-phải hoặc đưa vào, và dùng bước U để định vị cạnh. Không bao giờ làm xáo trộn các rãnh đã giải.
+
+---
+
+Tổng cộng có **41 trường hợp F2L chuẩn**. Dưới đây chúng tôi trình bày **15 trường hợp quan trọng nhất** tạo nền tảng. Khi thành thạo những trường hợp này, bạn có thể xử lý các trường hợp còn lại bằng trực giác hoặc tra cứu khi cần.
+
+## Trường hợp cơ bản: cả hai mảnh ở tầng trên
+
+Đây là những trường hợp đơn giản và phổ biến nhất. Cả góc và cạnh đều ở tầng U và rãnh mục tiêu trống.
+
+### Trường hợp 1: Đưa vào dễ — Trắng của góc hướng phải, cạnh sẵn sàng
+
+Góc có mặt trắng hướng về mặt R, và cạnh đã ở vị trí sao cho một bước U ghép cặp chúng. Đây là cách đưa F2L cơ bản nhất.
+
+**Thuật toán: R U R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U' R'" alg="R U R'" />
+
+### Trường hợp 2: Đưa vào dễ — Trắng của góc hướng trước, cạnh sẵn sàng
+
+Góc có mặt trắng hướng về mặt F, và cạnh ở vị trí để ghép cặp với cách đưa vào ngược chiều kim đồng hồ.
+
+**Thuật toán: F' U' F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U F" alg="F' U' F" />
+
+### Trường hợp 3: Trắng của góc hướng lên, màu khớp với trung tâm trước
+
+Góc có mặt trắng hướng lên và màu trước của nó khớp với trung tâm trước. Cạnh ở phía đối diện. Cần nối chúng và đưa vào.
+
+**Thuật toán: U R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U'" alg="U R U2' R' U R U' R'" />
+
+### Trường hợp 4: Trắng của góc hướng lên, màu khớp với trung tâm phải
+
+Góc có mặt trắng hướng lên và màu phải của nó khớp với trung tâm phải. Cạnh cần được ghép cặp từ phía đối diện.
+
+**Thuật toán: U' F' U2 F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U2 F U" alg="U' F' U2 F U' F' U F" />
+
+### Trường hợp 5: Góc và cạnh xa nhau, trắng hướng phải
+
+Góc có mặt trắng hướng phải và cạnh ở phía đối diện của tầng trên. Chúng ta đưa cạnh lại gần, rồi ghép cặp và đưa vào.
+
+**Thuật toán: U' R U R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U' R' U" alg="U' R U R' U R U' R'" />
+
+### Trường hợp 6: Góc và cạnh xa nhau, trắng hướng trước
+
+Phản chiếu của trường hợp 5. Góc có mặt trắng hướng trước và cạnh ở phía xa.
+
+**Thuật toán: U F' U' F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U F U'" alg="U F' U' F U' F' U F" />
+
+### Trường hợp 7: Góc và cạnh cạnh nhau, trắng hướng phải — Cặp nối nhưng sai
+
+Góc và cạnh ở cạnh nhau và nối với nhau, nhưng đưa vào sẽ sai. Chúng ta tách ra và ghép lại đúng cách.
+
+**Thuật toán: R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R'" alg="R U2' R' U R U' R'" />
+
+### Trường hợp 8: Góc và cạnh cạnh nhau, trắng hướng trước — Cặp nối nhưng sai
+
+Phản chiếu của trường hợp 7 ở phía mặt F.
+
+**Thuật toán: F' U2 F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U2 F" alg="F' U2 F U' F' U F" />
+
+---
+
+## Trường hợp trung cấp: cạnh trong rãnh, góc ở tầng trên
+
+Đôi khi cạnh đã kẹt trong rãnh (đúng hoặc sai), và góc ở tầng trên. Cần rút cạnh ra mà không làm xáo trộn các cặp đã giải.
+
+### Trường hợp 9: Cạnh ở đúng rãnh nhưng góc ở trên — Trắng hướng phải
+
+Cạnh ở đúng rãnh, và góc ở tầng U với mặt trắng hướng phải. Rút cạnh ra và ghép cặp với góc.
+
+**Thuật toán: U R U' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U R' U'" alg="U R U' R' U R U' R'" />
+
+### Trường hợp 10: Cạnh ở sai rãnh, góc ở trên — Trắng hướng lên
+
+Cạnh ở sai rãnh. Rút ra đồng thời chuẩn bị ghép cặp với góc.
+
+**Thuật toán: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U' R U R'" alg="R U' R' U R U2' R' U R U' R'" />
+
+---
+
+## Trường hợp nâng cao: góc trong rãnh
+
+Các trường hợp này xảy ra khi góc đã ở đúng rãnh nhưng hướng sai, hoặc ở đúng rãnh với cạnh sai chỗ.
+
+### Trường hợp 11: Góc trong rãnh, xoắn — Cạnh ở tầng trên
+
+Góc ở rãnh trước-phải nhưng mặt trắng hướng trước (không phải xuống). Cạnh ở tầng U. Rút góc ra, ghép cặp với cạnh và đưa lại vào.
+
+**Thuật toán: R U' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U R'" alg="R U' R' U R U' R'" />
+
+### Trường hợp 12: Góc trong rãnh, xoắn — Cạnh ở sai rãnh
+
+Cả hai mảnh đều ở hai tầng dưới nhưng không mảnh nào đúng. Đẩy góc ra và đồng thời rút cạnh.
+
+**Thuật toán: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U' R' U R U' R' U R U' R'" alg="R U R' U' R U R' U' R U R'" />
+
+---
+
+## Trường hợp đặc biệt: cả hai mảnh trong rãnh
+
+### Trường hợp 13: Cặp nối trong rãnh nhưng xoắn
+
+Góc và cạnh đã ghép cặp và ở trong rãnh, nhưng góc bị xoắn (trắng hướng trước, không phải xuống). Rút cặp ra, tách và đưa lại vào đúng cách.
+
+**Thuật toán: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U R U' R'" alg="R U R' U' R U2 R' U R U' R'" />
+
+### Trường hợp 14: Góc đúng trong rãnh, cạnh lật trong rãnh
+
+Góc được đặt đúng nhưng cạnh phía trên bị lật. Đây là một trong những trường hợp khó nhất. Rút cả hai ra, ghép cặp đúng cách và đưa lại vào.
+
+**Thuật toán: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U2 R U' R' U R U R'" alg="R U' R' U' R U R' U2 R U' R'" />
+
+### Trường hợp 15: Cả hai trong rãnh, cả hai sai — Lỗi chéo rãnh
+
+Góc và cạnh đều trong rãnh nhưng không mảnh nào khớp. Rút hoàn toàn và xây dựng lại.
+
+**Thuật toán: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U F U2 R U R' U R U' R'" alg="R U R' U' R U' R' U2 F' U' F" />
+
+---
+
+## Mẹo để F2L nhanh hơn
+
+### 1. Học trực giác trước
+
+Đừng vội thuộc cả 41 trường hợp thuật toán. Dành thời gian hiểu **tại sao** mỗi bước xoay hoạt động. Nếu bạn biết R U R' lấy góc ra và đặt lại, bạn có thể tự giải hầu hết các trường hợp. Thuật toán đến sau để tối ưu hóa.
+
+### 2. Phát triển Lookahead
+
+**Lookahead** là khả năng theo dõi cặp tiếp theo trong khi đang đưa cặp hiện tại vào. Đây là yếu tố lớn nhất phân biệt người giải 20 giây với người giải 15 giây.
+
+Mẹo luyện tập:
+- Chậm lại và buộc bản thân tìm cặp tiếp theo trong khi đưa vào
+- Luyện giải F2L nhắm mắt trong lúc đưa vào (bạn biết các bước, nên hãy nhìn trước)
+- Giải không tính giờ tập trung hoàn toàn vào không dừng giữa các cặp
+
+### 3. Giảm xoay khối
+
+Mỗi lần bạn xoay toàn bộ khối, bạn mất thời gian. Những người giải F2L giỏi nhất hiếm khi xoay quá một hoặc hai lần trong toàn bộ giai đoạn F2L.
+
+- Học cách đưa vào **rãnh sau** bằng bước R và U (ví dụ, R U' R' để đưa vào sau-phải)
+- Luyện sử dụng bước **L, F và B** cho rãnh phía đối diện
+- Dùng bước xoay rộng (r, l) để xoay và đưa vào đồng thời
+
+### 4. Nhận biết trường hợp nhanh
+
+Luyện tập để nhận ra ngay trường hợp đang nhìn:
+- **Mặt trắng ở đâu trên góc?** (Trên, Trước hoặc Phải)
+- **Cạnh ở đâu so với góc?** (Cạnh nhau, đối diện hoặc trong rãnh)
+- **Chúng đã ghép cặp chưa?** (Nối đúng, nối sai hoặc tách rời)
+
+### 5. Giải theo thứ tự hiệu quả
+
+Không cần giải 4 cặp theo thứ tự cố định. Nhìn cả 4 cặp và bắt đầu với cặp **dễ nhất** — cặp cần ít bước nhất. Người giải kinh nghiệm lên kế hoạch cặp đầu tiên trong lúc kiểm tra cùng với chữ thập.
+
+### 6. Mẹo rãnh trống
+
+Khi rãnh trống, bạn có thể dùng làm nơi lưu trữ tạm thời. Ví dụ, đặt cạnh vào rãnh trống (R U R') để dẹp nó sang khi đang làm cặp khác. Người mới thường bỏ qua kỹ thuật mạnh mẽ này.
+
+---
+
+## Lịch tập luyện
+
+1. **Xáo khối và giải chữ thập**
+2. **Tìm cả 4 cặp góc-cạnh** — xác định vị trí của từng góc và cạnh tương ứng
+3. **Giải từng cặp một** — bắt đầu với trường hợp dễ, để khó cho cuối cùng
+4. **Tính giờ chỉ giai đoạn F2L** — dùng đồng hồ bấm giờ. Mục tiêu: dưới 15 giây cho cả 4 cặp
+5. **Đánh giá** — sau mỗi lần giải, hỏi: liệu có thể làm cặp nào với ít bước hơn không?
+
+Với luyện tập đều đặn, F2L sẽ trở thành bản năng thứ hai và bạn sẽ thấy cải thiện đáng kể trong thời gian giải tổng thể.
+
+---
+
+## Tiếp theo là gì?
+
+Sau khi thành thạo F2L, tiếp tục với tầng cuối:
+
+- [**Tổng quan phương pháp CFOP**](./cfop) — Xem F2L phù hợp với phương pháp CFOP đầy đủ như thế nào
+- [**Thuật toán OLL**](./oll) — Làm mặt trên hoàn toàn vàng (57 trường hợp + 2-Look OLL)
+- [**Thuật toán PLL**](./pll) — Sắp xếp các mảnh cuối cùng để hoàn thành (21 trường hợp)
+- [**Hướng dẫn Finger Tricks**](./finger-tricks) — Thực hiện các trigger F2L nhanh và mượt hơn

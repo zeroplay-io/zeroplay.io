@@ -1,0 +1,374 @@
+---
+title: "2x2 Advanced: CLL Method"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Advanced: CLL Method
+
+Take your 2x2 solving to the next level with the **CLL (Corners of Last Layer)** method. While the Ortega method solves the last layer in two steps (OLL then PBL), CLL solves both **orientation and permutation** of the last layer corners in a **single algorithm**. This means fewer looks and faster solves.
+
+## Why CLL?
+
+| Method | Last Layer Steps | Algorithms | Typical Speed |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 seconds |
+| **CLL** | 1 (one-look) | ~40 | 2–4 seconds |
+
+CLL is the standard method used by top 2x2 speedcubers. By learning to recognize and execute all 40 cases, you eliminate an entire step from your solve.
+
+## How CLL Works
+
+1. **Solve the first face** — same as Ortega, build a white face on the bottom (side colors do not need to match).
+2. **Recognize the CLL case** — look at the top face and side colors to identify which of the 40 cases you have.
+3. **Apply one algorithm** — this simultaneously orients and permutes all top-layer corners.
+4. **AUF + bottom adjustment** — at most one U-layer turn and one D-layer turn to finish.
+
+## Notation Reminder
+
+- **R** = Right &nbsp;&nbsp; **L** = Left &nbsp;&nbsp; **U** = Up &nbsp;&nbsp; **D** = Down &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Back
+- A letter alone means **clockwise 90°**. Adding **'** means **counter-clockwise**. Adding **2** means **180°**.
+
+---
+
+## CLL Case Groups
+
+The 40 CLL cases are organized into 7 groups based on the orientation pattern of the top face. Below are the most important cases from each group with their algorithms.
+
+---
+
+## Sune Cases (4 of 6)
+
+One corner is oriented (yellow facing up), and the other three need to be twisted. This is the most common group.
+
+### Sune 1 — Adjacent Swap
+
+Hold the solved corner at the front-left. The three unsolved corners twist clockwise.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonal Swap
+
+Same orientation pattern, but corners need a diagonal swap.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Pure (No Swap)
+
+Orientation solved with no permutation change needed.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Adjacent Swap (Mirror)
+
+Hold the solved corner at the front-right.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune Cases (3 of 6)
+
+Mirror of Sune — one corner is oriented, and the other three twist counter-clockwise.
+
+### Anti-Sune 1 — Adjacent Swap
+
+Hold the solved corner at the front-right. The three unsolved corners twist counter-clockwise.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonal Swap
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Pure (No Swap)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H Cases (4 of 4)
+
+Two opposite corners are oriented (yellow facing up), and the other two have yellow on the sides.
+
+### H 1 — Adjacent Swap
+
+Two yellow stickers on top at diagonal positions.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonal Swap
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — No Swap
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Columns
+
+Both pairs of diagonal corners need swapping.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi Cases (4 of 6)
+
+Two adjacent corners have yellow on top, the other two have yellow on the sides. The top face looks like the Greek letter Pi.
+
+### Pi 1 — Diagonal Swap
+
+Hold the two oriented corners at the back.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Adjacent Swap (Right)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Adjacent Swap (Left)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — No Swap
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T Cases (3 of 6)
+
+The top face shows a T-shaped pattern of yellow stickers — one corner oriented, one adjacent corner with yellow on the front, and the other two with yellow on the sides.
+
+### T 1 — Adjacent Swap
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonal Swap
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — No Swap
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U Cases (3 of 6)
+
+One corner oriented correctly with the other three arranged in a U-shaped pattern on the sides.
+
+### U 1 — Adjacent Swap
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonal Swap
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — No Swap
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L Cases (3 of 6)
+
+Two adjacent corners are twisted in the same direction — the top face shows an L-shaped pattern.
+
+### L 1 — Adjacent Swap
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonal Swap
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — No Swap
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## After CLL: Finishing the Solve
+
+Once you have applied the CLL algorithm, the top face is fully solved (both oriented and permuted). You may need:
+
+1. **AUF (Adjust U Face)** — a single U or U' turn to align the top layer with the bottom.
+2. **Bottom layer adjustment** — if the bottom layer is offset, a single D or D' turn fixes it.
+3. **Bottom layer swap** — rarely, the bottom layer may need an adjacent or diagonal swap. Use the same PBL algorithms from the Ortega method:
+   - **Diagonal swap:** R2 F2 R2
+   - **Adjacent swap:** R U' R F2 R' U R'
+
+---
+
+## Learning Strategy
+
+Learning all 40 CLL cases at once is overwhelming. Here is a recommended learning order:
+
+1. **Start with Sune and Anti-Sune** (12 cases) — these are the most common and many algorithms are short.
+2. **Add T and U cases** (12 cases) — relatively easy to recognize and execute.
+3. **Learn Pi cases** (6 cases) — distinctive orientation pattern.
+4. **Learn L cases** (6 cases) — similar recognition to Pi but with a different twist direction.
+5. **Finish with H cases** (4 cases) — the rarest group.
+
+## Recognition Tips
+
+- **Look at the top face first** to identify the orientation group (how many yellow stickers face up and where).
+- **Then check the side colors** to determine which specific case within the group you have.
+- **Practice in groups** — drill one group at a time until recognition is instant.
+- **Use inverse scrambles** — set up a case, solve it, then try to predict the inverse.
+
+---
+
+**With CLL mastered, you can achieve sub-3-second averages on the 2x2.** The one-look approach eliminates pause time between OLL and PBL, making your solves faster and more fluid. Keep practicing recognition — speed comes from identifying cases instantly.

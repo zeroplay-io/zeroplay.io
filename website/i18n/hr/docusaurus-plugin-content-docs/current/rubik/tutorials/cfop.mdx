@@ -1,0 +1,219 @@
+---
+title: Pregled CFOP metode
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pregled CFOP metode
+
+**CFOP metoda** (poznata i kao **Fridrichova metoda**) najraširenija je metoda brzog slaganja Rubikove kocke na svijetu. Velika većina slagača ispod 20 sekundi i svjetskih rekorderi koriste CFOP. Temelji se na početničkoj metodi po slojevima, ali je dramatično učinkovitija — smanjuje prosječno rješavanje sa 100+ poteza na otprilike 55-60 poteza.
+
+**CFOP** je kratica za četiri koraka:
+
+1. **C**ross — Složi 4 bridna komada na dnu
+2. **F**2L — Prva dva sloja (spari i umetni 4 para kutni-bridni komad)
+3. **O**LL — Orijentiranje zadnjeg sloja (učini cijelu gornju stranu jednom bojom)
+4. **P**LL — Permutacija zadnjeg sloja (ispravno rasporedi sve gornje komade)
+
+## CFOP naspram početničke metode
+
+| | Početnik (LBL) | CFOP |
+|---|---|---|
+| Koraci | 7 | 4 |
+| Prosječni potezi | 100-120 | 55-60 |
+| Algoritmi za naučiti | 5-8 | 78 (potpuni) / 16 (2-look) |
+| Tipična brzina | 1-3 minute | 10-20 sekundi |
+| Ključna razlika | Korak po korak, jedan komad po jedan | Sparuje komade, manje koraka |
+
+Dobra vijest: CFOP možete učiti **postupno**. Počnite s intuitivnim F2L i 2-look OLL/PLL (samo 16 algoritama), zatim se s vremenom proširite na potpuni OLL (57 algoritama) i potpuni PLL (21 algoritam).
+
+---
+
+## Korak 1: Križ
+
+Križ je isti koncept kao u početničkoj metodi — složi 4 bijela bridna komada na donjoj strani tako da svaki brid odgovara i svom bočnom centru. Razlika u CFOP-u je **kako** pristupate:
+
+- **Planirajte cijeli križ tijekom inspekcije** (15 sekundi prije početka slaganja)
+- **Složite križ na dnu** — bez okretanja kocke
+- **Ciljajte na 8 poteza ili manje** — učinkovit križ u prosjeku ima 6-7 poteza
+
+**Primjer: Rješavanje bridnog komada križa izravno na dno**
+
+Ovdje je bijelo-plavi brid u gornjem sloju. Poravnavamo ga i umećemo izravno na dno jednim potezom:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Primjer: Bridni komad križa treba premjestiti**
+
+Ponekad je brid na krivom mjestu ili okrenut. Ovdje ispravljamo krivo smješten brid:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Savjeti za brz križ:**
+- Vježbajte planiranje križa zatvorenih očiju
+- Naučite ga riješiti u 8 poteza ili manje iz bilo kojeg miješanja
+- Radite na slaganju križa na dnu od prvog dana — izbjegavajte naviku slaganja na vrhu
+
+---
+
+## Korak 2: F2L (Prva dva sloja)
+
+F2L je srce CFOP-a i izvor najveće uštede vremena. Umjesto da rješavate kutove prvog sloja i bridove drugog sloja zasebno (kao u početničkoj metodi), **sparujete** kutni komad s odgovarajućim bridnim komadom i **umetnete** ih zajedno kao jednu cjelinu.
+
+Postoje 4 para kutni-bridni komad (zvani **slotovi**) za riješiti. Svaki slot se nalazi između dviju bočnih strana u donja dva sloja.
+
+**Osnovni F2L slučaj: Kut i brid oba u gornjem sloju**
+
+Bijelo-crveno-zeleni kut je u gornjem sloju, a crveno-zeleni brid je također u gornjem sloju. Sparujemo ih i umetnemo:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Još jedan česti slučaj: Razdvajanje krivog para**
+
+Ponekad su komadi krivo spareni. Razdvajamo ih i ponovno pravilno spajamo:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L se može učiti **intuitivno** — razumijevanjem logike skrivanja, sparivanja i umetanja — ili **algoritmički** s 41 specifičnim slučajem. Većina speed cubera koristi kombinaciju obojeg.
+
+Za potpuni popis F2L slučajeva i algoritama, pogledajte vodič [**F2L: Prva dva sloja**](./f2l).
+
+---
+
+## Korak 3: OLL (Orijentiranje zadnjeg sloja)
+
+Nakon završetka prva dva sloja, gornja strana imat će neke žute i neke ne-žute naljepnice. Cilj OLL-a je učiniti **cijelu gornju stranu žutom** — bočne boje nas još ne zanimaju.
+
+Potpuni OLL ima **57 algoritama**. Međutim, možete početi s **2-look OLL**, koji koristi samo 10 algoritama dijeleći korak na dva dijela:
+
+1. **Prvi pogled:** Formirati žuti križ na vrhu (3 slučaja, koristeći 2 algoritma iz različitih orijentacija)
+2. **Drugi pogled:** Orijentirati žute kutove (7 algoritama)
+
+**Primjer: Sune (jedan od najčešćih OLL slučajeva)**
+
+Ovo je OLL #26, obično nazvan **Sune**. Jedan žuti kut je orijentiran, a ostala tri trebaju rotaciju:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Primjer: OLL slučaj križa (formiranje žutog križa)**
+
+Kada imate L-oblik od žutih bridova na vrhu, držite L straga-lijevo i primijenite:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Savjeti za učenje OLL-a:**
+- Počnite s 2-look OLL — dodaje samo nekoliko sekundi vašem slaganju
+- Naučite prvo Sune i Anti-Sune; pojavljuju se u mnogim OLL slučajevima
+- Vježbajte prepoznavanje slučajeva prema uzorku žutih naljepnica na vrhu
+
+---
+
+## Korak 4: PLL (Permutacija zadnjeg sloja)
+
+Zadnji korak! Sve žute naljepnice su sada na vrhu, ali bočne boje komada zadnjeg sloja možda ne odgovaraju. PLL **preuređuje** komade gornjeg sloja u njihove ispravne pozicije za završetak slaganja.
+
+Potpuni PLL ima **21 algoritam**. Možete početi s **2-look PLL**, koji koristi samo 6 algoritama:
+
+1. **Prvi pogled:** Pozicionirati kutove ispravno (2 algoritma)
+2. **Drugi pogled:** Pozicionirati bridove ispravno (4 algoritma)
+
+**Primjer: T-Perm (jedan od najkorisnijih PLL algoritama)**
+
+T-Perm zamjenjuje dva kuta i dva brida. Pojavljuje se često i koristi se kao temelj za učenje drugih PLL-ova:
+
+**Algoritam: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Primjer: U-Perm (a) — Ciklus 3 brida**
+
+U-Perm ciklički pomiče tri brida u smjeru kazaljke na satu dok su svi kutovi već na mjestu:
+
+**Algoritam: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Savjeti za učenje PLL-a:**
+- Počnite s T-Perm, U-Perms (a i b) i A-Perms
+- Naučite prepoznavati PLL-ove gledajući bočne boje (uzorak farova)
+- Vježbajte izvođenje PLL-ova iz bilo kojeg AUF kuta (podešavanje gornje strane)
+
+---
+
+## Kada učiti CFOP
+
+CFOP je prirodan sljedeći korak nakon što ovladate početničkom metodom po slojevima. Evo preporučene progresije:
+
+### Faza 1: Od početnika do ispod 60 sekundi
+- Savladajte početničku metodu dok vaša slaganja ne budu dosljedna
+- Naučite slagati **križ na dnu**
+- Počnite vježbati **intuitivni F2L** — promatrajte kako se parovi formiraju i umeću
+
+### Faza 2: Od ispod 60 do ispod 30 sekundi
+- Koristite potpuni **intuitivni F2L** za sva 4 para
+- Naučite **2-look OLL** (10 algoritama)
+- Naučite **2-look PLL** (6 algoritama)
+- Vježbajte **lookahead** — pratite sljedeći par dok umećete trenutni
+
+### Faza 3: Od ispod 30 do ispod 20 sekundi
+- Naučite **potpuni PLL** (21 algoritam)
+- Počnite učiti **potpuni OLL** (57 algoritama)
+- Optimizirajte svoja F2L rješenja — naučite [**algoritamske F2L slučajeve**](./f2l)
+- Radite na učinkovitosti križa (planirajte cijeli križ tijekom inspekcije)
+
+### Faza 4: Ispod 20 i dalje
+- Završite **potpuni OLL**
+- Naučite napredne F2L trikove (tehnike praznog slota, multi-slotting)
+- Razvijte snažne **lookahead** navike
+- Radite na brzini okretanja i tečnosti
+
+---
+
+## Sljedeći koraci
+
+Spremni za dublje zaranjanje u svaki korak? Pogledajte ove detaljne vodiče:
+
+- [**F2L: Prva dva sloja**](./f2l) — Svi česti F2L slučajevi s algoritmima i demonstracijama
+- [**OLL algoritmi**](./oll) — Svih 57 OLL slučajeva s 2-Look OLL za početnike
+- [**PLL algoritmi**](./pll) — Svih 21 PLL slučaj s 2-Look PLL za početnike
+- [**Vodič za finger trikove**](./finger-tricks) — Učinkovito izvođenje poteza i esencijalni triggeri
+- [**Savjeti za speed cubing**](./speed-tips) — Planiranje križa, lookahead i rutine vježbanja
+
+**Sretno slaganje!** Putovanje od početnika do ispod 20 sekundi jedan je od najnagrađivijih izazova u speed cubingu. Idite korak po korak i uspjet ćete.

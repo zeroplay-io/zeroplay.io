@@ -1,0 +1,325 @@
+---
+title: "Pyraminx 上級テクニック"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pyraminx 上級テクニック
+
+Pyraminx のソルブを次のレベルに引き上げる準備はできましたか？このガイドでは、トップ Pyraminx スピードキューバーが5秒以下の平均を達成するために使用する上級メソッドを紹介します。**L4E（Last 4 Edges）** メソッド、**Keyhole** テクニック、**Top-First** アプローチに焦点を当てます。
+
+## 記号の確認
+
+**レイヤー（大文字）** — レイヤー全体を回す（チップを除く）：
+- **U** = 上レイヤー &nbsp;&nbsp; **R** = 右レイヤー &nbsp;&nbsp; **L** = 左レイヤー &nbsp;&nbsp; **B** = 後レイヤー
+
+**チップ（小文字）** — チップのみを回す：
+- **u** = 上チップ &nbsp;&nbsp; **r** = 右チップ &nbsp;&nbsp; **l** = 左チップ &nbsp;&nbsp; **b** = 後チップ
+
+文字のみは**時計回り120°**。**'** を付けると**反時計回り120°**。
+
+---
+
+## L4E メソッド（Last 4 Edges）
+
+L4E メソッドは最も人気のある上級 Pyraminx メソッドです。レイヤーごとに解くのではなく、まずブロックを1つ解き、次にアルゴリズムを使って**最後の4つのエッジ**を一手で解きます。
+
+### 概要
+
+| ステップ | 説明 | テクニック |
+|------|-------------|-----------|
+| 1 | チップを揃える | 直感的（初級と同じ） |
+| 2 | V を作る | 直感的 — センター1つ + エッジ2つ |
+| 3 | 最後の4エッジを解く | アルゴリズム — ワンルック |
+
+### ステップ1：チップを揃える
+
+初級メソッドと同じです。4つすべてのチップを隣接するセンターに合わせます。このステップは簡単です — 各チップには3つのポジションしかありません。
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### ステップ2：V を作る
+
+底面を選び、**V字型**を作ります：1つのセンターピースとその隣接する2つのエッジを正しく配置します。これにより底部に解決済みの1x1x2ブロックができます。
+
+Pyraminx を V が左下にくるように持ちます。V は底面のセンターとそれを左右の面につなぐ2つのエッジで構成されます。
+
+**V の構築** — このステップは直感的です。選んだセンターの隣に属する2つのエッジを見つけ、レイヤー回転で配置します：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**反転したエッジの V** — エッジが正しい位置にあるが反転している場合、取り出して再挿入：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**ヒント：**
+- 最少手数の V を選ぶ — 開始前に4つの V 候補すべてを確認してください。
+- V はインスペクション中に完全に計画すべきです（Pyraminx には15秒で十分）。
+
+### ステップ3：最後の4エッジを解く
+
+V が解けたら、4つのエッジが残ります。ケースを判別し、対応するアルゴリズムを適用します。L4E ケースは約30種類ありますが、多くは互いのミラーで、覚える必要のあるユニークなケースは少なくなります。
+
+Pyraminx を **V が左下** にくるように持ちます（解決済みのブロックが左側に向きます）。
+
+---
+
+#### L4E ケース1：4エッジすべてが時計回りサイクル
+
+**アルゴリズム：R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E ケース2：4エッジすべてが反時計回りサイクル
+
+**アルゴリズム：L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E ケース3：2エッジ交換（隣接、前面）
+
+**アルゴリズム：R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E ケース4：2エッジ交換（隣接、背面）
+
+**アルゴリズム：L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E ケース5：2エッジその場反転（前ペア）
+
+**アルゴリズム：R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E ケース6：2エッジその場反転（後ペア）
+
+**アルゴリズム：L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E ケース7：3エッジ時計回りサイクル + 1反転
+
+**アルゴリズム：R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E ケース8：3エッジ反時計回りサイクル + 1反転
+
+**アルゴリズム：L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E ケース9：4エッジすべて反転
+
+**アルゴリズム：R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E ケース10：対面2エッジ交換
+
+**アルゴリズム：R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E ケース11：サイクル + ダブルフリップ
+
+**アルゴリズム：R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E ケース12：隣接交換 + 反転
+
+**アルゴリズム：L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Keyhole メソッド
+
+Keyhole メソッドは L4E のより直感的な代替手段です。すべてのケースのアルゴリズムを覚える代わりに、未解決のエッジスロットを**キーホール**として使い、他のピースを自由に挿入します。
+
+### 仕組み
+
+1. **チップを揃える**（いつも通り）。
+2. **1つのエッジを解く** — 1つの底エッジを正しく配置します。
+3. **空きスロットをキーホールとして使う** — 2番目の底エッジスロットを空けておくことで、制限なくトップレイヤーにエッジを挿入できます。
+4. **トップレイヤーのエッジを解く** — キーホールを使って各トップエッジを1つずつ挿入します。
+5. **キーホールを閉じる** — 最後の底エッジを最後に挿入します。
+
+### Keyhole 挿入例
+
+キーホールが底レイヤーの右側にある場合、トップレイヤーのエッジを自由に挿入できます：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**反転挿入** — エッジを挿入前に反転させる必要がある場合：
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**ヒント：**
+- Keyhole メソッドは初級から上級への移行者に最適です。
+- L4E より覚えるアルゴリズムは少ないですが、最高レベルではやや遅くなります。
+- Keyhole を L4E への踏み台として使いましょう — ここで培う直感は L4E の認識に役立ちます。
+
+---
+
+## Top-First メソッド
+
+Top-First メソッドは通常の解法の順序を逆にします：まず**トップレイヤー**を解き、次に底を完成させます。
+
+### 概要
+
+1. **チップを揃える。**
+2. **トップレイヤー全体を解く** — 3つのトップエッジすべてがトップセンターの周りに正しく向きと位置が揃った状態。
+3. **底レイヤーを解く** — 残りの3つの底エッジを配置。
+
+### トップレイヤーの解法
+
+トップレイヤーを直感的に構築します。トップから始めるため、制限はありません — どのレイヤーも自由に回せます。
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### 底の解法
+
+トップレイヤーが完成したら、底の3つのエッジは L4E ケースに似た少数のアルゴリズムで解けます（底に限定）。
+
+**底エッジの時計回りサイクル：**
+
+**アルゴリズム：R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**反時計回りサイクル：**
+
+**アルゴリズム：L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**ヒント：**
+- Top-First は大会ではあまり一般的ではありませんが、特定のスクランブルでは非常に速くなれます。
+- スクランブル後にトップレイヤーが既に部分的に解けている場合に最適です。
+- インスペクション計画と組み合わせて — 簡単なトップレイヤーが見えたら Top-First を使いましょう。
+
+---
+
+## スピード解法のコツ
+
+### インスペクション計画
+
+Pyraminx は他のどの WCA パズルよりもピースが少なく、インスペクション中に**ソルブのより多くを計画**できます：
+
+- **15秒のインスペクションで必ずチップ + V を計画しましょう。**
+- 上級者は簡単なスクランブルなら**ソルブ全体**を計画できます。
+- 計画を拡張する練習をしましょう — チップから始め、V を追加し、L4E ケースの予測を試みましょう。
+
+### 回転テクニック
+
+- 正確で速い回転には**指先**を使いましょう — 手全体の回転ではなく。
+- Pyraminx は力任せの回転より軽くて素早いフリック回転が向いています。
+- **R** と **L** レイヤーは人差し指で、**U** 回転は親指で練習しましょう。
+
+### カラーニュートラル
+
+- 3x3とは異なり、Pyraminx では**カラーニュートラル**は十分に達成可能です。
+- 4面のいずれからでも底面として始める練習をしましょう — 簡単な V の選択肢が4倍になります。
+- カラーニュートラルは5秒以下の解法にはほぼ必須です。
+
+### 練習ルーティン
+
+1. **L4E ケースをドリル** — 逆アルゴリズムでセットアップし、解き、繰り返す。即座の認識を目指しましょう。
+2. **タイム計測ソルブ** — 12ソルブ1セットで平均を追跡します。
+3. **ワンルック練習** — V 構築ステップ中に、完成前に L4E ケースを特定してみましょう。
+4. **スローソルブ** — 半分の速度で練習し、滑らかな回転とゼロポーズに集中しましょう。
+
+---
+
+**L4E をマスターし、良いインスペクション計画があれば、Pyraminx の平均4秒以下は達成可能です。** Pyraminx は純粋な回転速度よりも計画と認識を重視します。L4E ケースを早めに予測することに集中すれば、ソルブは楽に感じられるようになります。

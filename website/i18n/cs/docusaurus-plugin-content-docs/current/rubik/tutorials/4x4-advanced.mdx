@@ -1,0 +1,249 @@
+---
+title: "4x4 Pokročilé: Metoda Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Pokročilé: Metoda Yau
+
+**Metoda Yau**, kterou vynalezl Robert Yau, je rychlejší alternativou ke standardní metodě Reduction pro Rubikovu kostku 4×4. Klíčový rozdíl: Yau řeší hrany kříže **brzy**, což poskytuje lepší předvídání a plynulejší přechod do fáze 3×3. Většina nejlepších speedcuberů na 4×4 používá Yau nebo její variantu.
+
+## Yau vs standardní Reduction
+
+| Aspekt | Reduction | Yau |
+|--------|-----------|-----|
+| **Pořadí kroků** | Všechna centra, pak všechny hrany | 2 centra, 3 hrany kříže, 4 centra, zbývající hrany |
+| **Kříž** | Stavěn po Reduction | Částečně hotový během Reduction |
+| **Předvídání** | Po párování nutno hledat hrany kříže | Kříž je téměř hotový, přechod na F2L je plynulý |
+| **Rychlostní strop** | Dobrý | Vyšší — méně pauz mezi fázemi |
+
+## Připomenutí notace
+
+**Standardní tahy** (pouze vnější vrstva):
+- **R** = Pravá &nbsp;&nbsp; **L** = Levá &nbsp;&nbsp; **U** = Horní &nbsp;&nbsp; **D** = Dolní &nbsp;&nbsp; **F** = Přední &nbsp;&nbsp; **B** = Zadní
+
+**Široké tahy** (dvě vnější vrstvy společně):
+- **Rw** = Pravý široký &nbsp;&nbsp; **Lw** = Levý široký &nbsp;&nbsp; **Uw** = Horní široký &nbsp;&nbsp; **Dw** = Dolní široký &nbsp;&nbsp; **Fw** = Přední široký &nbsp;&nbsp; **Bw** = Zadní široký
+
+Samotné písmeno znamená **90° po směru hodinových ručiček**. Přidání **'** znamená **proti směru hodinových ručiček**. Přidání **2** znamená **180°**.
+
+---
+
+## Krok 1: Vyřešte dva protější středy
+
+Začněte vyřešením **bílého** a **žlutého** středového bloku (horní a dolní). To je stejné jako první část standardní metody Reduction.
+
+Každý střed je blok 2×2 dílků. Používejte široké tahy k spojení středových dílků a vnější vrstvou chraňte již umístěné dílky.
+
+**Základní stavba středu** — přiveďte středový dílek nahoru širokým tahem, umístěte jej a pak vraťte:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Spojení dvou polovin středu** — když máte dva středové proužky 1×2, které je třeba spojit:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tipy:**
+- Nejdříve vyřešte bílý střed (dole), pak žlutý střed (nahoře).
+- Udržujte bílý stále dole — používejte pouze tahy Rw, Lw, Fw, Bw k manipulaci se středy bez narušení spodku.
+- O boční středy se zatím nestarejte. Nechte je na Krok 3.
+
+---
+
+## Krok 2: Vyřešte 3 ze 4 hran kříže
+
+Zde se Yau odchyluje od Reduction. Před řešením zbývajících středů **spárujte a umístěte 3 bílé hrany kříže** do spodní vrstvy.
+
+Hrana kříže se skládá ze dvou dílků (např. bílo-červený a bílo-červený), které je třeba spárovat a umístit do vrstvy D. Jednu hranu kříže zatím nechte nevyřešenou — to vám dá volnost používat široké tahy v dalším kroku.
+
+**Párování hrany kříže pomocí freeslice** — technika freeslice páruje hrany bez narušení středů. Umístěte jednu polovinu hrany do přední pravé pozice a přiveďte její partnerku z jiného slotu:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Vložení spárované hrany kříže dolů** — po spárování umístěte hranu na správnou pozici ve vrstvě D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice se širokými tahy** — použijte Dw k vyzdvižení hranového dílku pro párování bez rozbití již umístěných hran kříže:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tipy:**
+- Nyní potřebujete vyřešit pouze 3 hrany kříže. Záměrně nechte jeden slot prázdný.
+- Volně využívejte prázdný slot ve vrstvě D — chybějící hrana kříže vám dává větší volnost pro široké tahy.
+- Vyberte si, kterou hranu kříže nechat, podle toho, která je nejtěžší najít nebo spárovat.
+
+---
+
+## Krok 3: Vyřešte zbývající 4 středy
+
+Nyní vyřešte **4 boční středy** (červený, oranžový, modrý, zelený). Bílý a žlutý střed jsou již hotové z Kroku 1.
+
+Protože máte jeden nevyřešený slot hrany kříže, stále můžete volně používat některé široké tahy. To je klíčová výhoda Yau — částečně vyřešený kříž neomezuje stavbu středů tolik, jak byste čekali.
+
+**Stavba bočního středu** — použijte široké tahy k sesbírání středových dílků a pak je umístěte:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Středový komutátor** — když potřebujete vyměnit středový dílek bez narušení ostatních, použijte sekvenci ve stylu komutátoru:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tipy:**
+- Řešte středy v protějších párech, když je to možné (např. červený pak oranžový, modrý pak zelený).
+- Využijte nevyřešený slot hrany kříže — široké tahy přes tento slot nerozhodí hrany kříže.
+- Dávejte pozor na 3 hrany kříže již ve vrstvě D. Zkontrolujte před prováděním širokých tahů.
+
+---
+
+## Krok 4: Poslední hrana kříže + Dokončení párování hran
+
+Tento krok má dvě části: dokončete 4. hranu kříže a pak spárujte všechny zbývající hrany.
+
+### Část A: Vyřešte poslední hranu kříže
+
+Najděte zbývající pár hrany kříže a spojte je. Protože jsou nyní všechny středy vyřešeny, musíte být opatrnější se širokými tahy.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Po spárování ji vložte do posledního slotu vrstvy D a dokončete bílý kříž.
+
+### Část B: Spárujte zbývající hrany (technika 3-2-3)
+
+Nyní máte 8 nespárovaných hran. **Technika 3-2-3** je nejefektivnější způsob jejich spárování:
+
+1. **Prvních 3 hran** — spárujte je standardními tahy slice-flip-slice. Umístěte nespárovanou hranu dopředu vpravo, najděte její partnerku nahoře a použijte Uw k jejich spojení:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Dalších 2 hran** — s méně zbývajícími hranami můžete spárovat dvě hrany rychle za sebou uložením jedné dozadu:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Posledních 3 hran** — poslední hrany vyžadují větší opatrnost, aby se nerozhodily již spárované hrany. Použijte tahy založené na Dw nebo techniky překlápění:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tipy:**
+- Během párování 3-2-3 vždy kontrolujte, že vaše široké tahy nerozhodí hrany kříže dole.
+- Pokud je hrana spárovaná, ale překlopená, musíte ji rozebrat a znovu spárovat.
+- Přechod z párování hran na 3×3 by měl být plynulý — váš kříž je již hotový.
+
+---
+
+## Krok 5: Řešení jako 3×3 (CFOP)
+
+Se všemi vyřešenými středy, spárovanými hranami a dokončeným křížem se 4×4 nyní chová jako 3×3. Protože **bílý kříž je již hotový** (hlavní výhoda Yau), můžete přejít rovnou na **F2L** (První Dvě Vrstvy).
+
+Od tohoto okamžiku používejte pouze tahy vnější vrstvou — žádné široké tahy.
+
+**Pokračujte se standardním CFOP:**
+1. **F2L** — spárujte a vložte páry roh-hrana do prvních dvou vrstev.
+2. **OLL** — zorientujte poslední vrstvu.
+3. **PLL** — permutujte poslední vrstvu.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+To je největší výhoda metody Yau: přechod z kříže na F2L nemá žádnou pauzu, protože kříž byl postaven během fáze Reduction.
+
+---
+
+## Algoritmy parity
+
+4×4 má dva případy parity, které nemohou nastat na 3×3. Každý se vyskytuje přibližně v 50 % případů, bez ohledu na to, zda používáte Yau nebo Reduction.
+
+### OLL parity (překlopení jedné hrany)
+
+Jedna hrana se jeví překlopená na poslední vrstvě — na skutečné 3×3 nemožné.
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Aplikujte tento algoritmus jednou a pak pokračujte normálním OLL/PLL.
+
+### PLL parity (výměna dvou hran)
+
+Dvě protější hrany je třeba vyměnit — opět nemožné na 3×3.
+
+**Algorithm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Kdy se učit Yau
+
+- **Pokud průměrujete pod 2 minuty s Reduction**, máte základy pro přechod na Yau.
+- **Pokud znáte CFOP pro 3×3**, Yau je přirozená volba — kříž je již hotový, když vstoupíte do fáze 3×3.
+- **Pokud máte problémy s přechodem z Reduction na 3×3**, Yau tuto pauzu zcela odstraňuje.
+
+## Priority tréninku
+
+1. **Zvládněte párování hran pomocí freeslice** — to je klíčová technika, která dělá Yau efektivní.
+2. **Trénujte rozpoznávání 2 středů + 3 hran kříže** — naučte se rychle identifikovat hrany kříže během prvních dvou kroků.
+3. **Procvičujte techniku 3-2-3** — plynulé párování hran je místo, kde se ušetří nejvíce času.
+4. **Pracujte na přechodu z kříže na F2L** — protože kříž je hotový, trénujte hledání prvního páru F2L během párování hran.
+
+---
+
+**Metoda Yau je standardem pro závodní řešení 4×4.** Plynulý přechod z Reduction na řešení 3×3, kombinovaný s lepšími možnostmi předvídání, z ní dělá preferovanou volbu speedcuberů mířících na průměry pod 40 sekund. Začněte postupným převáděním svých řešení Reduction na Yau.

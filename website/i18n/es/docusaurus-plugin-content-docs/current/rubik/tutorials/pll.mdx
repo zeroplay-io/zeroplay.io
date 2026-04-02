@@ -1,0 +1,466 @@
+---
+title: Algoritmos PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algoritmos PLL
+
+**PLL (Permutación de la Última Capa)** es el paso final del método CFOP. Después de que OLL haya orientado todas las pegatinas de la cara superior, PLL reordena las piezas en sus posiciones resueltas. Hay **21 casos de PLL** en total.
+
+Si eres principiante, comienza con **2-Look PLL** -- un enfoque simplificado que requiere solo **6 algoritmos** en lugar de los 21 completos.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL divide el paso de permutación en dos pasos más pequeños:
+
+1. **Permutar las esquinas** -- colocar las 4 esquinas en la posición correcta (2 casos)
+2. **Permutar las aristas** -- colocar las 4 aristas en la posición correcta (4 casos)
+
+Esto significa que solo necesitas aprender **6 algoritmos** en total.
+
+### Paso 1: Permutar las esquinas
+
+Mira las esquinas de la capa superior. Comprueba si algún **par de esquinas adyacentes** pertenece al mismo lado (faros coincidentes).
+
+#### Intercambio de esquinas adyacentes
+
+Un par de esquinas adyacentes ya es correcto. Mantén el par resuelto en la **parte trasera** y aplica:
+
+**Algoritmo: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Este es el **T-Perm** -- intercambia las dos esquinas frontales (y dos aristas, que arreglaremos en el paso 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Intercambio de esquinas diagonales
+
+Ninguna esquina adyacente coincide. Aplica el **Y-Perm** para intercambiar esquinas diagonalmente:
+
+**Algoritmo: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Paso 2: Permutar las aristas
+
+Todas las esquinas están resueltas. Mira las aristas y determina cuáles necesitan ciclar.
+
+#### Ua Perm (ciclo de 3 aristas en sentido horario)
+
+Tres aristas necesitan ciclar en sentido horario. Mantén la arista resuelta en la **parte trasera**.
+
+**Algoritmo: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (ciclo de 3 aristas en sentido antihorario)
+
+Tres aristas necesitan ciclar en sentido antihorario. Mantén la arista resuelta en la **parte trasera**.
+
+**Algoritmo: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (intercambio de pares de aristas opuestas)
+
+Dos pares de aristas opuestas necesitan intercambiarse.
+
+**Algoritmo: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (intercambio de pares de aristas adyacentes)
+
+Dos pares de aristas adyacentes necesitan intercambiarse. Mantén de forma que los dos pares estén delante/derecha y detrás/izquierda.
+
+**Algoritmo: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL completo -- Los 21 casos
+
+### Solo aristas (4 casos)
+
+Estos PLL solo mueven aristas; las esquinas ya están resueltas.
+
+#### Ua Perm
+
+Las aristas ciclan en sentido horario. La arista resuelta está atrás.
+
+**Reconocimiento:** Una barra resuelta (arista + dos esquinas) visible desde atrás.
+
+**Algoritmo: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Las aristas ciclan en sentido antihorario. La arista resuelta está atrás.
+
+**Reconocimiento:** Una barra resuelta visible desde atrás; los colores de las aristas ciclan en dirección opuesta a Ua.
+
+**Algoritmo: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Dos pares de aristas opuestas se intercambian.
+
+**Reconocimiento:** Cada lado tiene el color opuesto en la posición de la arista central. Patrón de tablero de ajedrez en los cuatro lados.
+
+**Algoritmo: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Dos pares de aristas adyacentes se intercambian.
+
+**Reconocimiento:** Dos lados adyacentes tienen cada uno el color del otro en la posición de la arista. Ningún lado está completamente resuelto.
+
+**Algoritmo: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Solo esquinas (3 casos)
+
+Estos PLL solo mueven esquinas; las aristas ya están resueltas.
+
+#### Aa Perm
+
+Tres esquinas ciclan. Faros en el lado izquierdo.
+
+**Reconocimiento:** Faros en un lado, la barra (3 pegatinas coincidentes) está en el lado opuesto.
+
+**Algoritmo: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tres esquinas ciclan (dirección opuesta a Aa). Faros en el lado derecho.
+
+**Reconocimiento:** Espejo de Aa -- faros en el lado opuesto.
+
+**Algoritmo: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Dos pares de esquinas diagonales se intercambian. No se mueven aristas.
+
+**Reconocimiento:** Sin faros en ningún lado. Cada lado tiene dos colores de esquina diferentes.
+
+**Algoritmo: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Intercambio de esquinas adyacentes (6 casos)
+
+Estos PLL intercambian un par de esquinas adyacentes junto con permutaciones de aristas.
+
+#### T Perm
+
+**Reconocimiento:** Faros delante y detrás. Los dos lados sin faros tienen sus colores intercambiados.
+
+**Algoritmo: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Reconocimiento:** Faros solo en un lado (delante). Los otros tres lados no tienen pares coincidentes.
+
+**Algoritmo: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Reconocimiento:** Un bloque 1x1x3 resuelto en el lado izquierdo. El lado derecho tiene piezas adyacentes intercambiadas.
+
+**Algoritmo: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Reconocimiento:** Un bloque 1x1x3 resuelto en el lado derecho. Espejo de Ja.
+
+**Algoritmo: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Reconocimiento:** Faros delante. Intercambio de esquina y arista adyacentes en el lado derecho.
+
+**Algoritmo: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Reconocimiento:** Faros detrás. Espejo de Ra.
+
+**Algoritmo: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Intercambio de esquinas diagonales (4 casos)
+
+Estos PLL intercambian dos esquinas diagonalmente opuestas.
+
+#### V Perm
+
+**Reconocimiento:** Sin faros en ningún lado. Un lado tiene un patrón de 2 colores donde la arista coincide con una esquina.
+
+**Algoritmo: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Reconocimiento:** Sin faros. Un lado tiene dos esquinas coincidentes pero la arista entre ellas es incorrecta.
+
+**Algoritmo: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Reconocimiento:** Dos lados opuestos completamente resueltos (una barra resuelta en cada uno), pero los otros dos lados tienen sus piezas completamente intercambiadas.
+
+**Algoritmo: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Reconocimiento:** Espejo de Na. Dos barras opuestas pero intercambiadas de forma diferente.
+
+**Algoritmo: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 casos)
+
+Las permutaciones G son las más difíciles de reconocer. Mueven un par de esquinas adyacentes y ciclan tres aristas.
+
+#### Ga Perm
+
+**Reconocimiento:** Faros a la izquierda. La esquina frontal derecha coincide con la arista derecha.
+
+**Algoritmo: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Reconocimiento:** Faros delante. La esquina trasera izquierda coincide con la arista izquierda.
+
+**Algoritmo: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Reconocimiento:** Faros a la derecha. La esquina frontal izquierda coincide con la arista izquierda.
+
+**Algoritmo: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Reconocimiento:** Faros detrás. La esquina frontal derecha coincide con la arista derecha.
+
+**Algoritmo: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Consejos de reconocimiento
+
+El reconocimiento eficiente de PLL es clave para resoluciones rápidas. Aquí tienes estrategias generales:
+
+1. **Busca los faros** -- un par de esquinas coincidentes en un lado. Esto reduce las posibilidades inmediatamente.
+2. **Cuenta las barras resueltas** -- una barra son tres pegatinas coincidentes en fila (esquina-arista-esquina). Las barras indican PLL específicos.
+3. **Comprueba dos lados** -- mirar el lado frontal y el derecho suele ser suficiente para identificar el caso.
+4. **Aprende los patrones opuestos** -- muchos PLL vienen en pares espejo (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Lo que ves | PLL posibles |
+|:---|:---|
+| 4 lados con faros | H, Ua, Ub, Z |
+| 2 lados opuestos con faros | T, F, Ja, Jb, Ra, Rb |
+| 1 lado con faros | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 lados con faros | E, V, Y, Na, Nb |
+
+## Orden de aprendizaje
+
+Un orden recomendado para aprender los 21 PLL:
+
+1. **2-Look primero:** T, Y (esquinas) + Ua, Ub, H, Z (aristas) -- 6 algoritmos
+2. **Intercambios adyacentes:** Ja, Jb, F, Ra, Rb -- 5 algoritmos más
+3. **Solo esquinas:** Aa, Ab, E -- 3 algoritmos más
+4. **Intercambios diagonales:** V, Na, Nb -- 3 algoritmos más
+5. **G Perms al final:** Ga, Gb, Gc, Gd -- 4 algoritmos finales
+
+:::tip
+Practica el reconocimiento mezclando, resolviendo hasta PLL, y luego cubriendo el cubo e intentando identificar el caso de memoria. La velocidad viene del reconocimiento instantáneo, no solo de trucos rápidos de dedos.
+:::

@@ -1,0 +1,374 @@
+---
+title: "2x2 İleri Seviye: CLL Yöntemi"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 İleri Seviye: CLL Yöntemi
+
+2x2 küp çözümünüzü **CLL (Son Katman Köşeleri)** yöntemiyle bir üst seviyeye taşıyın. Ortega yöntemi son katmanı iki adımda çözerken (OLL sonra PBL), CLL son katman köşelerinin hem **yönelimini hem de permütasyonunu** **tek bir algoritmada** çözer. Daha az bakış ve daha hızlı çözümler.
+
+## Neden CLL?
+
+| Yöntem | Son katman adımları | Algoritmalar | Tipik hız |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 saniye |
+| **CLL** | 1 (tek bakış) | ~40 | 2–4 saniye |
+
+CLL, en iyi 2x2 speedcuber'ların kullandığı standart yöntemdir. Tüm 40 durumu öğrenerek tam bir adımı ortadan kaldırırsınız.
+
+## CLL nasıl çalışır
+
+1. **İlk yüzü çözün** — Ortega gibi, altta beyaz yüz oluşturun (yan renkler uyuşmak zorunda değil).
+2. **CLL durumunu tanıyın** — üst yüze ve yan renklere bakarak durumu belirleyin.
+3. **Bir algoritma uygulayın** — tüm üst köşeleri aynı anda yönlendirir ve permüte eder.
+4. **AUF + alt ayarlama** — en fazla bir U dönüşü ve bir D dönüşü.
+
+## Notasyon hatırlatma
+
+- **R** = Sağ &nbsp;&nbsp; **L** = Sol &nbsp;&nbsp; **U** = Üst &nbsp;&nbsp; **D** = Alt &nbsp;&nbsp; **F** = Ön &nbsp;&nbsp; **B** = Arka
+- Tek harf = **saat yönünde 90°**. **'** ile = **saat yönünün tersi**. **2** ile = **180°**.
+
+---
+
+## CLL durum grupları
+
+40 CLL durumu üst yüzün yönelim desenine göre 7 gruba ayrılmıştır. Aşağıda her gruptan en önemli durumlar.
+
+---
+
+## Sune durumları (6'dan 4)
+
+Bir köşe yönlenmiş (sarı yukarı), diğer üçünün döndürülmesi gerekiyor. En yaygın grup.
+
+### Sune 1 — Komşu takas
+
+Çözülmüş köşeyi ön-solda tutun. Üç çözülmemiş köşe saat yönünde döner.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Çapraz takas
+
+Aynı yönelim deseni, ancak köşeler çapraz takas gerektiriyor.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Saf (takas yok)
+
+Yönelim çözülmüş, pozisyon değişikliği gerekmiyor.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Komşu takas (Ayna)
+
+Çözülmüş köşeyi ön-sağda tutun.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune durumları (6'dan 3)
+
+Sune'nin aynası — bir köşe yönlenmiş, diğer üçü saat yönünün tersine döner.
+
+### Anti-Sune 1 — Komşu takas
+
+Çözülmüş köşeyi ön-sağda tutun. Üç çözülmemiş köşe saat yönünün tersine döner.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Çapraz takas
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Saf (takas yok)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H durumları (4'ten 4)
+
+İki karşıt köşe yönlenmiş (sarı yukarı), diğer ikisinin sarısı yanlarda.
+
+### H 1 — Komşu takas
+
+Üstte çapraz konumlarda iki sarı çıkartma.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Çapraz takas
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Takas yok
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Sütunlar
+
+Her iki çapraz köşe çiftinin takası gerekli.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi durumları (6'dan 4)
+
+İki komşu köşede sarı üstte, diğer ikisinde sarı yanlarda. Üst yüz Yunan harfi Pi'ye benzer.
+
+### Pi 1 — Çapraz takas
+
+İki yönlenmiş köşeyi arkada tutun.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Komşu takas (Sağ)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Komşu takas (Sol)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Takas yok
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T durumları (6'dan 3)
+
+Üst yüz T-şekilli desen gösterir — bir köşe yönlenmiş, bir komşu köşede sarı önde, diğer ikisinde sarı yanlarda.
+
+### T 1 — Komşu takas
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Çapraz takas
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Takas yok
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U durumları (6'dan 3)
+
+Bir köşe doğru yönlenmiş, diğer üçü yanlarda U-şekilli desende.
+
+### U 1 — Komşu takas
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Çapraz takas
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Takas yok
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L durumları (6'dan 3)
+
+İki komşu köşe aynı yönde döndürülmüş — üst yüz L-şekilli desen gösterir.
+
+### L 1 — Komşu takas
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Çapraz takas
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Takas yok
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL sonrası: Çözümü bitirme
+
+CLL algoritmasından sonra üst yüz tamamen çözülmüştür. İhtiyacınız olabilir:
+
+1. **AUF (U yüzünü ayarla)** — üst katmanı hizalamak için bir U veya U' dönüşü.
+2. **Alt katman ayarı** — kaymışsa bir D veya D' dönüşü düzeltir.
+3. **Alt katman takası** — nadiren, komşu veya çapraz takas gerekebilir. Ortega'dan PBL algoritmalarını kullanın:
+   - **Çapraz takas:** R2 F2 R2
+   - **Komşu takas:** R U' R F2 R' U R'
+
+---
+
+## Öğrenme stratejisi
+
+40 durumu aynı anda öğrenmek bunaltıcıdır. Önerilen sıra:
+
+1. **Sune ve Anti-Sune ile başlayın** (12 durum) — en yaygın, birçok kısa algoritma.
+2. **T ve U durumlarını ekleyin** (12 durum) — nispeten kolay tanınır.
+3. **Pi durumlarını öğrenin** (6 durum) — belirgin yönelim deseni.
+4. **L durumlarını öğrenin** (6 durum) — Pi'ye benzer tanıma, farklı yön.
+5. **H durumlarıyla bitirin** (4 durum) — en nadir grup.
+
+## Tanıma ipuçları
+
+- **Önce üst yüze bakın** yönelim grubunu belirlemek için.
+- **Sonra yan renkleri kontrol edin** spesifik durumu belirlemek için.
+- **Gruplar halinde çalışın** — tanıma anında olana kadar bir grup.
+- **Ters scramble kullanın** — bir durum hazırlayın, çözün, tersini tahmin edin.
+
+---
+
+**CLL'yi ustalaşarak 2x2'de 3 saniyenin altında ortalamalar elde edebilirsiniz.** Tek bakış yaklaşımı OLL ve PBL arasındaki duraklamayı ortadan kaldırır. Tanıma pratiğine devam edin — hız anında tanımlamadan gelir.

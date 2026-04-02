@@ -1,0 +1,317 @@
+---
+title: "Tehnici avansate Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Tehnici avansate Skewb
+
+Ridicați rezolvarea Skewb de la nivel de începător la nivel competitiv. Acest ghid acoperă **metoda intermediară a lui Sarah**, care îmbunătățește metoda pentru începători rezolvând toate centrele rămase într-un singur pas, plus algoritmi avansați și strategii de rezolvare rapidă folosite de cei mai buni rezolvatori de Skewb.
+
+## Reamintire notație
+
+Skewb se rotește în jurul **colțurilor**, nu al fețelor:
+
+- **R** = Colțul din față dreapta în sensul acelor de ceasornic &nbsp;&nbsp; **R'** = în sens invers
+- **L** = Colțul din față stânga în sensul acelor de ceasornic &nbsp;&nbsp; **L'** = în sens invers
+- **U** = Colțul din față sus dreapta în sensul acelor de ceasornic &nbsp;&nbsp; **U'** = în sens invers
+- **B** = Colțul din spate dreapta în sensul acelor de ceasornic &nbsp;&nbsp; **B'** = în sens invers
+
+Țineți Skewb cu **centrul alb jos** pentru toți pașii.
+
+---
+
+## Metoda intermediară a lui Sarah
+
+Metoda pentru începători a lui Sarah rezolvă Skewb în 3 pași: prima față, apoi centre, apoi colțurile ultimului strat. Îmbunătățirea intermediară **combină pașii centrelor și colțurilor**, rezolvând toate cele 5 centre rămase într-UN singur algoritm după ce prima față este completă.
+
+### Prezentare generală
+
+| Pas | Începător | Intermediar |
+|------|----------|-------------|
+| 1 | Rezolvă o față | Rezolvă o față (la fel) |
+| 2 | Poziționează centrele | **Rezolvă toate cele 5 centre într-un pas** |
+| 3 | Orientează colțurile ultimului strat | Orientează colțurile ultimului strat (la fel) |
+
+Îmbunătățirea cheie este Pasul 2: în loc să folosiți Sledgehammer repetat pentru a poziționa centrele unul câte unul, învățați un set de algoritmi care rezolvă toate centrele simultan.
+
+### Pasul 1: Rezolvă o față
+
+Construiți o **față albă** completă jos — toate cele 4 colțuri din jurul centrului alb trebuie să fie la locul lor cu albul în jos, iar culorile laterale adiacente trebuie să se potrivească. Acest pas este identic cu metoda pentru începători.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Folosiți Sledgehammer cu mișcări de pregătire pentru a plasa fiecare colț alb. Cu practică, acest pas devine rapid și intuitiv.
+
+### Pasul 2: Rezolvă toate cele 5 centre (One-Look)
+
+După rezolvarea primei fețe, priviți cele **5 centre rămase** (sus + 4 laterale) și identificați cazul vostru. Aplicați un singur algoritm pentru a le rezolva pe toate odată.
+
+Există mai multe cazuri în funcție de câte centre sunt în poziția corectă:
+
+---
+
+#### Cazul 1: Ciclu adiacent de 4
+
+Patru centre trebuie să cicleze. Centrul de sus este corect, dar cele 4 centre laterale trebuie să roteze.
+
+**Algoritm: R' L R L' R' L R L'** (Sledgehammer dublu)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Cazul 2: Schimb opus de 2
+
+Două centre laterale opuse trebuie schimbate.
+
+**Algoritm: R L' R' L R L' R' L** (Sledgehammer dublu invers)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Cazul 3: Schimb adiacent de 2
+
+Două centre laterale adiacente trebuie schimbate. Poziționați cele două centre de schimbat în față și în dreapta.
+
+**Algoritm: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Cazul 4: Schimb sus-lateral + ciclu
+
+Centrul de sus trebuie schimbat cu un centru lateral, iar centrele laterale rămase ciclează.
+
+**Algoritm: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Cazul 5: Ciclu triplu
+
+Trei centre trebuie să cicleze (susul rămâne, 3 laterale rotesc). Poziționați centrul lateral staționar în spate.
+
+**Algoritm: R' L R L'** (Sledgehammer simplu — cu pregătire corectă)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Sfaturi:**
+- Învățați să identificați rapid cazurile centrelor verificând mai întâi centrul de sus, apoi scanând cele 4 laturi.
+- Mulți dintre aceștia sunt variații Sledgehammer — dacă cunoașteți bine Sledgehammer, acești algoritmi se simt naturali.
+- Exersați recunoașterea amestecând Skewb, rezolvând prima față și identificând cazul centrelor înainte de executare.
+
+### Pasul 3: Orientează colțurile ultimului strat
+
+După rezolvarea tuturor centrelor, colțurile ultimului strat pot necesita încă rotire. Acest pas este la fel ca metoda pentru începători.
+
+#### Toate cele 4 colțuri necesită rotire în sensul acelor de ceasornic
+
+**Algoritm: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Toate cele 4 colțuri necesită rotire în sens invers
+
+**Algoritm: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 colțuri necesită rotire (adiacente)
+
+Poziționați cele două colțuri nerezolvate în față. Folosiți U pentru a le poziționa, executați algoritmul, apoi anulați U.
+
+**Algoritm: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 colțuri necesită rotire (diagonale)
+
+**Algoritm: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Algoritmi avansați
+
+Dincolo de metoda intermediară, iată algoritmi suplimentari care gestionează cazuri mai puțin comune mai eficient.
+
+### Echivalent Z-Perm
+
+Când două perechi de colțuri trebuie schimbate (ca un model în formă de Z):
+
+**Algoritm: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Cazul Pi
+
+Fața de sus arată un model Pi — două colțuri adiacente orientate, două nu:
+
+**Algoritm: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Pregătire și orientare colțuri
+
+Când un colț necesită reorientare, folosiți mișcări de pregătire pentru a conjuga un ciclu Sledgehammer care îl rotește la locul lui:
+
+**Algoritm: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Schimb rapid centre opuse
+
+Un algoritm mai eficient pentru schimbarea a două centre opuse:
+
+**Algoritm: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Orientare triplă colțuri
+
+Trei colțuri necesită rotire (unul rămâne corect):
+
+**Algoritm: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Schimb colțuri adiacente
+
+Două colțuri adiacente trebuie să schimbe pozițiile (nu doar să se rotească):
+
+**Algoritm: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Concepte de rezolvare One-Look
+
+Obiectivul final în rezolvarea competitivă a Skewb este de a prezice ultimul strat în timp ce încă rezolvați prima față.
+
+### Prezicerea ultimului strat
+
+În timpul Pasului 1, pe măsură ce construiți fața albă, acordați atenție **centrelor și colțurilor stratului superior**. Cu practică, puteți identifica cazurile Pașilor 2 și 3 înainte de a termina Pasul 1.
+
+- **Urmăriți centrul de sus** — se mișcă în poziția corectă când inserați ultimul colț alb?
+- **Urmăriți centrele laterale** — observați care centre laterale sunt deja corecte.
+- **Planificați rezolvarea completă** — rezolvatorii avansați pot planifica întreaga rezolvare în timpul inspecției.
+
+### Influențarea ultimului strat
+
+Când aveți mai multe moduri de a insera ultimul colț alb, alegeți inserarea care vă oferă un **caz mai ușor la Pasul 2**:
+
+- Dacă două inserări rezolvă ambele colțul, alegeți-o pe cea care poziționează mai multe centre corect.
+- Uneori un Pas 1 puțin mai lung duce la sărirea Pasului 2 sau 3.
+
+---
+
+## Sfaturi speed solving
+
+### Prindere și rotire
+
+- Țineți Skewb cu **vârfurile degetelor pe colțuri** — rotiți colțuri, nu fețe.
+- Folosiți **degetul arătător și degetul mare** de la fiecare mână pentru a prinde colțuri opuse.
+- Exersați rotiri de colțuri line și controlate — Skewb recompensează precizia, nu viteza brută.
+- **Minimizați schimbările de prindere** — încercați să executați întregul Sledgehammer fără a schimba prinderea.
+
+### Neutralitate de culoare
+
+Neutralitatea de culoare pe Skewb înseamnă că puteți începe cu **orice față** ca primă față, nu doar alb. Aceasta este extrem de puternică:
+
+- Cu neutralitate de culoare, aveți **6 posibile prime fețe** din care să alegeți.
+- Alegeți fața cea mai aproape de a fi rezolvată — uneori 2-3 colțuri sunt deja la locul lor.
+- Neutralitatea de culoare este aproape obligatorie pentru rezolvare sub 4 secunde.
+
+**Cum să exersați:**
+1. Începeți cu neutralitate între 2 culori opuse (ex. alb și galben).
+2. Adăugați treptat mai multe culori de start până puteți începe cu orice față.
+3. În timpul inspecției, scanați rapid toate cele 6 fețe și alegeți-o pe cea mai ușoară.
+
+### Planificarea inspecției
+
+Skewb are doar 14 piese vizibile (6 centre + 8 colțuri), făcând planificarea completă a rezolvării realistă:
+
+- **Planificați întotdeauna complet prima față** în timpul inspecției.
+- **Identificați cazul centrelor** înainte de a începe rezolvarea.
+- **Avansat:** planificați până la Pasul 2 — știți ce algoritm veți folosi înainte de a atinge puzzle-ul.
+
+### Rutină de practică
+
+1. **Exerciții prima față** — amestecați și rezolvați doar prima față, țintă sub 2 secunde.
+2. **Recunoaștere centre** — după rezolvarea primei fețe, identificați cazul centrelor cât mai repede posibil fără a executa.
+3. **Rezolvări complete** — seturi de 12 rezolvări cronometrate, urmărind media de 5 și media de 12.
+4. **Exerciții algoritmi** — exersați fiecare algoritm de centre și colțuri de 20 de ori la rând pentru memorie musculară.
+5. **Practică culoare neutră** — forțați-vă să începeți cu o culoare diferită la fiecare rezolvare.
+
+---
+
+**Cu metoda intermediară a lui Sarah și practică dedicată, medii Skewb sub 5 secunde sunt la îndemână.** Skewb este unul dintre cele mai prietenoase puzzle-uri pentru planificare în speedcubing — mai puține piese înseamnă că puteți prezice mai mult în timpul inspecției. Concentrați-vă pe viteza de recunoaștere și rotire lină, și veți vedea o îmbunătățire rapidă.

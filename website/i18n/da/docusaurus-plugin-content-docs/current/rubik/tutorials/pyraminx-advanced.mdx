@@ -1,0 +1,325 @@
+---
+title: "Avancerede Pyraminx-teknikker"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Avancerede Pyraminx-teknikker
+
+Er du klar til at tage dine Pyraminx-løsninger til næste niveau? Denne guide dækker avancerede metoder, som de bedste Pyraminx-speedcubere bruger til at opnå gennemsnit under 5 sekunder. Vi fokuserer på **L4E (Sidste 4 kanter)**-metoden, **Keyhole**-teknikken og **Top-først**-tilgangen.
+
+## Notationspåmindelse
+
+**Lag (store bogstaver)** — drej hele laget (undtagen spidsen):
+- **U** = Øverste lag &nbsp;&nbsp; **R** = Højre lag &nbsp;&nbsp; **L** = Venstre lag &nbsp;&nbsp; **B** = Bageste lag
+
+**Spidser (små bogstaver)** — drej kun spidsen:
+- **u** = Øverste spids &nbsp;&nbsp; **r** = Højre spids &nbsp;&nbsp; **l** = Venstre spids &nbsp;&nbsp; **b** = Bageste spids
+
+Et bogstav alene betyder **120° med uret**. Tilføjelse af **'** betyder **120° mod uret**.
+
+---
+
+## L4E-metoden (Sidste 4 kanter)
+
+L4E-metoden er den mest populære avancerede Pyraminx-metode. I stedet for at løse lag for lag løser du først én blok og derefter de **sidste 4 kanter** i ét trin ved hjælp af algoritmer.
+
+### Oversigt
+
+| Trin | Beskrivelse | Teknik |
+|------|-------------|-----------|
+| 1 | Løs spidserne | Intuitivt (samme som begynder) |
+| 2 | Løs V'et | Intuitivt — ét center + to kanter |
+| 3 | Løs de sidste 4 kanter | Algoritmisk — ét blik |
+
+### Trin 1: Løs spidserne
+
+Samme som begyndermetoden. Justér alle 4 spidser, så de matcher deres tilstødende centre. Dette trin er trivielt — hver spids har kun 3 positioner.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Trin 2: Løs V'et
+
+Vælg en bundside og byg en **V-form**: én centerbrik med dens to tilstødende kanter korrekt placeret. Dette giver dig en løst 1×1×2 blok i bunden.
+
+Hold Pyraminx med V'et nederst til venstre. V'et består af bundcentret og de to kanter, der forbinder det med venstre og højre side.
+
+**Bygning af V'et** — dette trin er intuitivt. Find de to kanter, der hører til ved siden af dit valgte center, og placér dem med lagdrejninger:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V med en vendt kant** — hvis én kant er på plads men vendt, tag den ud og sæt den ind igen:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Vælg det V, der kræver færrest træk — inspicér alle 4 mulige V-positioner, før du begynder.
+- V'et bør være fuldt planlagt under inspektionen (15 sekunder er mere end nok til Pyraminx).
+
+### Trin 3: Løs de sidste 4 kanter
+
+Med V'et løst er der 4 kanter tilbage. Identificér tilfældet og anvend den tilsvarende algoritme. Der er cirka 30 L4E-tilfælde, men mange er spejlinger af hinanden, hvilket reducerer de unikke tilfælde, du skal lære.
+
+Hold Pyraminx med **V'et nederst til venstre** (den løste blok vender mod dig på venstre side).
+
+---
+
+#### L4E-tilfælde 1: Alle 4 kanter skal cykle med uret
+
+**Algoritme: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E-tilfælde 2: Alle 4 kanter skal cykle mod uret
+
+**Algoritme: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E-tilfælde 3: To kanter bytter (tilstødende, front)
+
+**Algoritme: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E-tilfælde 4: To kanter bytter (tilstødende, bag)
+
+**Algoritme: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E-tilfælde 5: To kanter vendes på plads (forreste par)
+
+**Algoritme: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E-tilfælde 6: To kanter vendes på plads (bageste par)
+
+**Algoritme: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E-tilfælde 7: Tre kanter cykler med uret + én vending
+
+**Algoritme: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E-tilfælde 8: Tre kanter cykler mod uret + én vending
+
+**Algoritme: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E-tilfælde 9: Alle 4 kanter vendes
+
+**Algoritme: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E-tilfælde 10: To modsatte kanter bytter
+
+**Algoritme: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E-tilfælde 11: Cyklus + dobbelt vending
+
+**Algoritme: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E-tilfælde 12: Tilstødende bytte med vending
+
+**Algoritme: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Keyhole-metoden
+
+Keyhole-metoden er et mere intuitivt alternativ til L4E. I stedet for at lære algoritmer til hvert tilfælde bruger du én uløst kantplads som et **nøglehul** til frit at indsætte andre brikker.
+
+### Sådan fungerer det
+
+1. **Løs spidserne** (som altid).
+2. **Løs én kant** — placér én bundkant korrekt.
+3. **Brug den tomme plads som nøglehul** — den anden bundkantplads efterlades tom, hvilket giver dig frihed til at indsætte kanter i det øverste lag uden begrænsninger.
+4. **Løs kanterne i det øverste lag** — brug nøglehullet til at indsætte hver øverste kant én ad gangen.
+5. **Luk nøglehullet** — indsæt den sidste bundkant til sidst.
+
+### Keyhole-indsættelseseksempel
+
+Med nøglehullet på højre side af bundlaget kan du frit indsætte en kant fra det øverste lag:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Vendt indsættelse** — hvis kanten skal vendes før indsættelse:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Tips:**
+- Keyhole-metoden er fremragende for begyndere, der går over til avanceret løsning.
+- Den kræver færre algoritmer end L4E, men er lidt langsommere på højeste niveau.
+- Brug Keyhole som springbræt til L4E — den intuition, du opbygger her, hjælper med L4E-genkendelse.
+
+---
+
+## Top-først-metoden
+
+Top-først-metoden vender den typiske løsningsrækkefølge om: løs **det øverste lag først** og afslut derefter bunden.
+
+### Oversigt
+
+1. **Løs spidserne.**
+2. **Løs hele det øverste lag** — alle 3 øverste kanter orienteret og permuteret korrekt omkring det øverste center.
+3. **Løs bundlaget** — placér de resterende 3 bundkanter.
+
+### Løsning af det øverste lag
+
+Byg det øverste lag intuitivt. Da du starter fra toppen, er der ingen begrænsninger — du kan dreje ethvert lag frit.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Løsning af bunden
+
+Med det øverste lag færdigt kan de 3 bundkanter løses med et lille sæt algoritmer, der ligner L4E-tilfældene, men er begrænset til bunden.
+
+**Cyklus med uret af bundkanter:**
+
+**Algoritme: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Cyklus mod uret:**
+
+**Algoritme: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Tips:**
+- Top-først-metoden er mindre almindelig i konkurrence, men kan være meget hurtig for visse blandinger.
+- Den fungerer bedst, når det øverste lag allerede er delvist løst efter blanding.
+- Kombinér med inspektionsplanlægning — hvis du ser et let øverste lag, vælg Top-først.
+
+---
+
+## Tips til hurtigløsning
+
+### Inspektionsplanlægning
+
+Pyraminx har færre brikker end noget andet WCA-puslespil, hvilket betyder, at du kan **planlægge mere af løsningen under inspektionen**:
+
+- **Planlæg altid spidser + V** under de 15 sekunders inspektion.
+- Avancerede løsere kan planlægge **hele løsningen** for nemme blandinger.
+- Øv dig i at udvide din planlægning — start med spidserne, tilføj V'et, og prøv derefter at forudsige L4E-tilfælde.
+
+### Drejeteknik
+
+- Brug **fingerspidserne** til præcise, hurtige drejninger — ikke drejninger med hele hånden.
+- Pyraminx nyder godt af lette, hurtige drejninger frem for kraftfulde.
+- Øv **R**- og **L**-lagdrejninger med pegefingrene og **U**-drejninger med tommelfingrene.
+
+### Farveneutralitet
+
+- I modsætning til 3×3-kuben er **farveneutralitet** på Pyraminx meget opnåelig.
+- Øv dig i at starte med en hvilken som helst af de 4 sider som bund — dette giver dig 4 gange så mange nemme V-muligheder.
+- Farveneutralitet er næsten obligatorisk for løsning under 5 sekunder.
+
+### Træningsrutine
+
+1. **Øv L4E-tilfælde** — opsæt hvert tilfælde med dets inverse, løs det, gentag. Sigt efter øjeblikkelig genkendelse.
+2. **Tidtagede løsninger** — lav sæt af 12 løsninger og følg dit gennemsnit.
+3. **Øvelse med ét blik** — prøv at identificere L4E-tilfældet under V-bygningstrinnet, før du afslutter det.
+4. **Langsomme løsninger** — øv med halv hastighed med fokus på glatte drejninger og nul pauser.
+
+---
+
+**Med mestret L4E og god inspektionsplanlægning er gennemsnit under 4 sekunder på Pyraminx opnåelige.** Pyraminx belønner planlægning og genkendelse mere end rå drejehastighed. Fokusér på at forudsige dit L4E-tilfælde tidligt, og løsningerne vil føles ubesværede.

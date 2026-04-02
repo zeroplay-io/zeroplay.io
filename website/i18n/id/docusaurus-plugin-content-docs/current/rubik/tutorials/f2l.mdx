@@ -1,0 +1,312 @@
+---
+title: "F2L: Dua Lapis Pertama"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Dua Lapis Pertama
+
+F2L (First Two Layers, dua lapis pertama) adalah **langkah terpenting** dalam metode CFOP. Alih-alih menyelesaikan sudut lapis pertama dan sisi lapis kedua sebagai dua langkah terpisah (seperti metode pemula), F2L memasangkan sudut dengan sisi yang cocok dan memasukkannya bersama ke dalam slot yang benar. Ini menghemat banyak sekali gerakan dan merupakan sumber peningkatan kecepatan terbesar.
+
+Ada **4 slot** yang harus diisi, satu di setiap sudut dua lapis bawah. Setiap slot terdiri dari satu potongan sudut dan satu potongan sisi.
+
+## Konsep
+
+Setiap kasus F2L melibatkan dua potongan:
+- Sebuah **potongan sudut** yang termasuk lapis bawah (memiliki stiker putih/warna dasar)
+- Sebuah **potongan sisi** yang termasuk lapis tengah (menghubungkan dua warna samping)
+
+Tujuannya adalah **memasangkan** kedua potongan ini di lapis atas, lalu **memasukkan** pasangan tersebut ke slot yang benar dalam satu gerakan mulus.
+
+## Pengingat Notasi
+
+- **R** = Kanan &nbsp;&nbsp; **L** = Kiri &nbsp;&nbsp; **U** = Atas &nbsp;&nbsp; **D** = Bawah &nbsp;&nbsp; **F** = Depan &nbsp;&nbsp; **B** = Belakang
+- Huruf saja = **90° searah jarum jam** &nbsp;&nbsp; **'** = **berlawanan jarum jam** &nbsp;&nbsp; **2** = **180°**
+
+Pegang kubus dengan **putih di bawah**. Slot yang kita masuki selalu **slot depan-kanan** (antara sisi F dan R).
+
+---
+
+## F2L Intuitif
+
+Sebelum menghafal algoritma, pelajari **logika** F2L. Setiap kasus mengikuti pola yang sama:
+
+1. **Temukan** pasangan sudut-sisi yang saling cocok
+2. **Pisahkan** jika mereka terjebak bersama secara salah
+3. **Posisikan** satu potongan, lalu **bawa** yang lain untuk bertemu
+4. **Pasangkan** mereka di lapis atas sehingga putih menghadap keluar atau ke bawah
+5. **Masukkan** pasangan yang terhubung ke dalam slot
+
+**Prinsip utama:** Gunakan gerakan R dan U untuk mengeluarkan sudut dari slot depan-kanan atau memasukkannya, dan gerakan U untuk memposisikan sisi. Jangan pernah mengganggu slot yang sudah terselesaikan.
+
+---
+
+Ada **41 kasus standar F2L** secara total. Di bawah ini kami membahas **15 kasus terpenting** yang membentuk dasar. Setelah menguasainya, Anda akan dapat menangani kasus sisanya secara intuitif atau mencarinya sesuai kebutuhan.
+
+## Kasus Dasar: Kedua Potongan di Lapis Atas
+
+Ini adalah kasus paling sederhana dan paling umum. Sudut dan sisi keduanya berada di lapis U dan slot target kosong.
+
+### Kasus 1: Sisipan Mudah — Putih Sudut Menghadap Kanan, Sisi Siap
+
+Sudut memiliki putih menghadap sisi R, dan sisi sudah diposisikan sehingga satu gerakan U memasangkan mereka. Ini adalah sisipan F2L paling dasar.
+
+**Algoritma: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Kasus 2: Sisipan Mudah — Putih Sudut Menghadap Depan, Sisi Siap
+
+Sudut memiliki putih menghadap sisi F, dan sisi diposisikan untuk dipasangkan dengan sisipan berlawanan jarum jam.
+
+**Algoritma: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Kasus 3: Putih Sudut Menghadap Atas, Warna Cocok dengan Pusat Depan
+
+Sudut memiliki putih menghadap atas dan warna depannya cocok dengan pusat depan. Sisi berada di seberangnya. Kita perlu menghubungkan dan memasukkan.
+
+**Algoritma: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Kasus 4: Putih Sudut Menghadap Atas, Warna Cocok dengan Pusat Kanan
+
+Sudut memiliki putih menghadap atas dan warna kanannya cocok dengan pusat kanan. Sisi perlu dipasangkan dari sisi sebaliknya.
+
+**Algoritma: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Kasus 5: Sudut dan Sisi Berjauhan, Putih Menghadap Kanan
+
+Sudut memiliki putih menghadap kanan dan sisi berada di sisi berlawanan lapis atas. Kita mendekatkan sisi, lalu memasangkan dan memasukkan.
+
+**Algoritma: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Kasus 6: Sudut dan Sisi Berjauhan, Putih Menghadap Depan
+
+Cermin dari Kasus 5. Sudut memiliki putih menghadap depan dan sisi berada di sisi jauh.
+
+**Algoritma: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Kasus 7: Sudut dan Sisi Berdekatan, Putih Menghadap Kanan — Pasangan Terhubung tapi Salah
+
+Sudut dan sisi bersebelahan dan terhubung, tapi jika dimasukkan akan salah. Kita pisahkan, lalu gabungkan kembali dengan benar.
+
+**Algoritma: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Kasus 8: Sudut dan Sisi Berdekatan, Putih Menghadap Depan — Pasangan Terhubung tapi Salah
+
+Cermin dari Kasus 7 di sisi F.
+
+**Algoritma: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Kasus Menengah: Sisi di Slot, Sudut di Lapis Atas
+
+Terkadang sisi sudah terjebak di slot (benar atau salah), dan sudut berada di lapis atas. Kita perlu mengeluarkan sisi tanpa mengganggu pasangan lain yang sudah terselesaikan.
+
+### Kasus 9: Sisi di Slot Benar tapi Sudut di Atas — Putih Menghadap Kanan
+
+Sisi berada di slot yang benar, dan sudut di lapis U dengan putih menghadap kanan. Kita keluarkan sisi dan pasangkan dengan sudut.
+
+**Algoritma: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Kasus 10: Sisi di Slot Salah, Sudut di Atas — Putih Menghadap Atas
+
+Sisi berada di slot yang salah. Kita keluarkan sambil secara bersamaan menyiapkan pemasangan dengan sudut.
+
+**Algoritma: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Kasus Lanjutan: Sudut di Slot
+
+Kasus ini terjadi ketika sudut sudah berada di slot yang benar tapi orientasinya salah, atau di slot yang benar dengan sisi salah tempat.
+
+### Kasus 11: Sudut di Slot, Terpelintir — Sisi di Lapis Atas
+
+Sudut berada di slot depan-kanan tapi dengan putih menghadap depan (bukan bawah). Sisi di lapis U. Kita keluarkan sudut, pasangkan dengan sisi dan masukkan kembali.
+
+**Algoritma: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Kasus 12: Sudut di Slot, Terpelintir — Sisi di Slot Salah
+
+Kedua potongan berada di dua lapis bawah tapi tak satu pun yang benar. Kita tendang sudut keluar dan secara bersamaan keluarkan sisi.
+
+**Algoritma: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Kasus Khusus: Kedua Potongan di Slot
+
+### Kasus 13: Pasangan Terhubung di Slot tapi Terpelintir
+
+Sudut dan sisi terpasang dan di slot, tapi sudut terpelintir (putih menghadap depan, bukan bawah). Keluarkan pasangan, pisahkan dan masukkan kembali dengan benar.
+
+**Algoritma: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Kasus 14: Sudut Benar di Slot, Sisi Terbalik di Slot
+
+Sudut ditempatkan dengan benar tapi sisi di atasnya terbalik. Ini salah satu kasus paling rumit. Kita keluarkan keduanya, pasangkan dengan benar dan masukkan kembali.
+
+**Algoritma: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Kasus 15: Keduanya di Slot, Keduanya Salah — Kesalahan Silang
+
+Sudut dan sisi keduanya di slot tapi tak ada yang cocok. Pengeluaran penuh dan pembangunan ulang.
+
+**Algoritma: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Tips untuk F2L Lebih Cepat
+
+### 1. Pelajari Secara Intuitif Dulu
+
+Jangan terburu-buru menghafal semua 41 kasus algoritmik. Luangkan waktu untuk memahami **mengapa** setiap gerakan berhasil. Jika Anda tahu bahwa R U R' mengeluarkan sudut dan memasukkannya kembali, Anda bisa menyelesaikan sebagian besar kasus sendiri. Algoritma datang kemudian untuk mengoptimalkan.
+
+### 2. Kembangkan Lookahead
+
+**Lookahead** adalah kemampuan melacak pasangan berikutnya saat memasukkan yang sekarang. Ini adalah faktor terbesar yang memisahkan pemecah 20 detik dari pemecah 15 detik.
+
+Tips latihan:
+- Perlambat putaran Anda dan paksa diri untuk mencari pasangan berikutnya selama penyisipan
+- Latih penyelesaian F2L dengan mata tertutup selama penyisipan (Anda tahu gerakannya, jadi lihat ke depan)
+- Lakukan penyelesaian tanpa waktu yang fokus murni pada nol jeda antar pasangan
+
+### 3. Kurangi Rotasi
+
+Setiap kali Anda memutar seluruh kubus, Anda kehilangan waktu. Pemecah F2L terbaik jarang memutar lebih dari sekali atau dua kali dalam seluruh fase F2L.
+
+- Pelajari cara menyisipkan ke **slot belakang** menggunakan gerakan R dan U (mis., R U' R' untuk menyisipkan ke belakang-kanan)
+- Latih penggunaan gerakan **L, F, dan B** untuk slot sisi berlawanan
+- Gunakan gerakan lebar (r, l) untuk memutar dan menyisipkan secara bersamaan
+
+### 4. Kenali Kasus dengan Cepat
+
+Latih diri Anda untuk langsung mengenali kasus yang sedang dilihat:
+- **Di mana putih pada sudut?** (Atas, Depan, atau Kanan)
+- **Di mana sisi relatif terhadap sudut?** (Berdekatan, berlawanan, atau di slot)
+- **Apakah mereka sudah terpasang?** (Terhubung benar, terhubung salah, atau terpisah)
+
+### 5. Selesaikan dalam Urutan Efisien
+
+Anda tidak harus menyelesaikan 4 pasangan dalam urutan tetap. Lihat semua 4 pasangan dan mulai dengan yang **termudah** — yang membutuhkan gerakan paling sedikit. Pemecah berpengalaman merencanakan pasangan pertama mereka selama inspeksi bersama dengan cross.
+
+### 6. Trik Slot Kosong
+
+Ketika slot kosong, Anda bisa menggunakannya sebagai penyimpanan sementara. Misalnya, tempatkan sisi ke slot kosong (R U R') untuk menyingkirkannya saat Anda mengerjakan pasangan lain. Pemula sering mengabaikan teknik ampuh ini.
+
+---
+
+## Rutinitas Latihan
+
+1. **Acak kubus dan selesaikan cross**
+2. **Temukan semua 4 pasangan sudut-sisi** — identifikasi di mana setiap sudut dan sisi yang cocok
+3. **Selesaikan setiap pasangan satu per satu** — mulai dari kasus mudah, sisakan yang sulit untuk terakhir
+4. **Ukur waktu hanya fase F2L** — gunakan timer. Target: di bawah 15 detik untuk semua 4 pasangan
+5. **Tinjau** — setelah setiap penyelesaian, tanyakan: bisakah saya menyelesaikan pasangan mana pun dengan lebih sedikit gerakan?
+
+Dengan latihan konsisten, F2L akan menjadi kebiasaan dan Anda akan melihat peningkatan dramatis dalam waktu penyelesaian keseluruhan.
+
+---
+
+## Apa Selanjutnya?
+
+Setelah menguasai F2L, lanjutkan dengan lapis terakhir:
+
+- [**Gambaran Umum Metode CFOP**](./cfop) — Lihat bagaimana F2L cocok dalam metode CFOP lengkap
+- [**Algoritma OLL**](./oll) — Buat sisi atas seluruhnya kuning (57 kasus + 2-Look OLL)
+- [**Algoritma PLL**](./pll) — Susun potongan terakhir untuk menyelesaikan (21 kasus)
+- [**Panduan Finger Tricks**](./finger-tricks) — Jalankan trigger F2L lebih cepat dan lebih mulus

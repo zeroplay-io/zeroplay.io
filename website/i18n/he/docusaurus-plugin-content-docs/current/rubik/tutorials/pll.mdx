@@ -1,0 +1,466 @@
+---
+title: אלגוריתמי PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# אלגוריתמי PLL
+
+**PLL (תמורת השכבה האחרונה)** הוא השלב האחרון בשיטת CFOP. לאחר ש-OLL כיוון את כל המדבקות של הפאה העליונה, PLL מסדר מחדש את החלקים למיקומם הפתור. ישנם **21 מקרי PLL** בסך הכל.
+
+אם אתה מתחיל, התחל עם **2-Look PLL** -- גישה מפושטת שדורשת רק **6 אלגוריתמים** במקום 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL מחלק את שלב התמורה לשני שלבים קטנים:
+
+1. **תמורת פינות** -- הצבת כל 4 הפינות במיקום הנכון (2 מקרים)
+2. **תמורת קצוות** -- הצבת כל 4 הקצוות במיקום הנכון (4 מקרים)
+
+זה אומר שצריך ללמוד רק **6 אלגוריתמים** בסך הכל.
+
+### שלב 1: תמורת פינות
+
+הסתכל על פינות השכבה העליונה. בדוק אם **זוג פינות סמוכות** שייך לאותו צד (פנסים תואמים).
+
+#### החלפת פינות סמוכות
+
+זוג אחד של פינות סמוכות כבר נכון. החזק את הזוג הפתור **מאחור** והפעל:
+
+**אלגוריתם: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+זה **T-Perm** -- מחליף את שתי הפינות הקדמיות (ושתי קצוות, שנתקן בשלב 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### החלפת פינות אלכסוניות
+
+אין פינות סמוכות תואמות. הפעל את **Y-Perm** להחלפת פינות באלכסון:
+
+**אלגוריתם: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### שלב 2: תמורת קצוות
+
+כל הפינות פתורות כעת. הסתכל על הקצוות וקבע אילו צריכים לסוב.
+
+#### Ua Perm (מחזור 3 קצוות בכיוון השעון)
+
+שלוש קצוות צריכות לסוב בכיוון השעון. החזק את הקצה הפתור **מאחור**.
+
+**אלגוריתם: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (מחזור 3 קצוות נגד כיוון השעון)
+
+שלוש קצוות צריכות לסוב נגד כיוון השעון. החזק את הקצה הפתור **מאחור**.
+
+**אלגוריתם: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (החלפת זוגות קצוות נגדיים)
+
+שני זוגות של קצוות נגדיים צריכים להתחלף.
+
+**אלגוריתם: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (החלפת זוגות קצוות סמוכים)
+
+שני זוגות של קצוות סמוכים צריכים להתחלף. החזק כך ששני הזוגות יהיו קדמי/ימני ואחורי/שמאלי.
+
+**אלגוריתם: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL מלא -- כל 21 המקרים
+
+### קצוות בלבד (4 מקרים)
+
+PLL אלו מזיזים רק קצוות; הפינות כבר פתורות.
+
+#### Ua Perm
+
+הקצוות סובבים בכיוון השעון. הקצה הפתור מאחור.
+
+**זיהוי:** פס פתור אחד (קצה + שתי פינות) נראה מאחור.
+
+**אלגוריתם: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+הקצוות סובבים נגד כיוון השעון. הקצה הפתור מאחור.
+
+**זיהוי:** פס פתור אחד נראה מאחור; צבעי הקצוות סובבים בכיוון ההפוך מ-Ua.
+
+**אלגוריתם: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+שני זוגות של קצוות נגדיים מתחלפים.
+
+**זיהוי:** לכל צד יש את הצבע הנגדי במיקום הקצה המרכזי. דפוס שחמט בכל ארבעת הצדדים.
+
+**אלגוריתם: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+שני זוגות של קצוות סמוכים מתחלפים.
+
+**זיהוי:** שני צדדים סמוכים, כל אחד עם הצבע של השני במיקום הקצה. אף צד לא פתור לחלוטין.
+
+**אלגוריתם: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### פינות בלבד (3 מקרים)
+
+PLL אלו מזיזים רק פינות; הקצוות כבר פתורים.
+
+#### Aa Perm
+
+שלוש פינות סובבות. פנסים בצד השמאלי.
+
+**זיהוי:** פנסים בצד אחד, הפס (3 מדבקות תואמות) בצד הנגדי.
+
+**אלגוריתם: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+שלוש פינות סובבות (כיוון הפוך מ-Aa). פנסים בצד הימני.
+
+**זיהוי:** מראה של Aa -- פנסים בצד הנגדי.
+
+**אלגוריתם: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+שני זוגות פינות אלכסוניות מתחלפים. אין קצוות זזים.
+
+**זיהוי:** אין פנסים באף צד. לכל צד יש שני צבעי פינות שונים.
+
+**אלגוריתם: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### החלפת פינות סמוכות (6 מקרים)
+
+PLL אלו מחליפים זוג פינות סמוכות יחד עם תמורות קצוות.
+
+#### T Perm
+
+**זיהוי:** פנסים מקדימה ומאחור. שני הצדדים ללא פנסים יש להם את הצבעים מוחלפים.
+
+**אלגוריתם: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**זיהוי:** פנסים בצד אחד בלבד (קדמי). שלושת הצדדים האחרים אין להם זוגות תואמים.
+
+**אלגוריתם: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**זיהוי:** בלוק 1x1x3 פתור בצד השמאלי. בצד הימני יש חלקים סמוכים מוחלפים.
+
+**אלגוריתם: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**זיהוי:** בלוק 1x1x3 פתור בצד הימני. מראה של Ja.
+
+**אלגוריתם: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**זיהוי:** פנסים מקדימה. החלפת פינה וקצה סמוכים בצד הימני.
+
+**אלגוריתם: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**זיהוי:** פנסים מאחור. מראה של Ra.
+
+**אלגוריתם: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### החלפת פינות אלכסוניות (4 מקרים)
+
+PLL אלו מחליפים שתי פינות נגדיות באלכסון.
+
+#### V Perm
+
+**זיהוי:** אין פנסים באף צד. לצד אחד יש דפוס דו-צבעי שבו הקצה תואם לפינה אחת.
+
+**אלגוריתם: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**זיהוי:** אין פנסים. לצד אחד יש שתי פינות תואמות אבל הקצה ביניהן שגוי.
+
+**אלגוריתם: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**זיהוי:** שני צדדים נגדיים פתורים לחלוטין (פס פתור בכל אחד), אבל שני הצדדים האחרים יש להם את החלקים מוחלפים לגמרי.
+
+**אלגוריתם: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**זיהוי:** מראה של Na. שני פסים נגדיים אך מוחלפים בצורה שונה.
+
+**אלגוריתם: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 מקרים)
+
+תמורות G הן הקשות ביותר לזיהוי. הן מזיזות גם זוג פינות סמוכות וגם מחזורות שלוש קצוות.
+
+#### Ga Perm
+
+**זיהוי:** פנסים בשמאל. הפינה הקדמית הימנית תואמת את הקצה הימני.
+
+**אלגוריתם: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**זיהוי:** פנסים מקדימה. הפינה האחורית השמאלית תואמת את הקצה השמאלי.
+
+**אלגוריתם: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**זיהוי:** פנסים בימין. הפינה הקדמית השמאלית תואמת את הקצה השמאלי.
+
+**אלגוריתם: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**זיהוי:** פנסים מאחור. הפינה הקדמית הימנית תואמת את הקצה הימני.
+
+**אלגוריתם: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## טיפים לזיהוי
+
+זיהוי יעיל של PLL הוא המפתח לפתרונות מהירים. הנה אסטרטגיות כלליות:
+
+1. **חפש פנסים** -- זוג פינות תואמות בצד אחד. זה מצמצם את המקרה מיד.
+2. **ספור פסים פתורים** -- פס הוא שלוש מדבקות תואמות ברצף (פינה-קצה-פינה). פסים מצביעים על PLL ספציפיים.
+3. **בדוק שני צדדים** -- הסתכלות על הצד הקדמי והימני מספיקה בדרך כלל לזיהוי המקרה.
+4. **למד דפוסים נגדיים** -- PLL רבים באים בזוגות מראה (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| מה אתה רואה | PLL אפשריים |
+|:---|:---|
+| 4 צדדים עם פנסים | H, Ua, Ub, Z |
+| 2 צדדים נגדיים עם פנסים | T, F, Ja, Jb, Ra, Rb |
+| צד אחד עם פנסים | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 צדדים עם פנסים | E, V, Y, Na, Nb |
+
+## סדר לימוד
+
+סדר מומלץ ללימוד כל 21 ה-PLL:
+
+1. **2-Look קודם:** T, Y (פינות) + Ua, Ub, H, Z (קצוות) -- 6 אלגוריתמים
+2. **החלפות סמוכות:** Ja, Jb, F, Ra, Rb -- 5 אלגוריתמים נוספים
+3. **פינות בלבד:** Aa, Ab, E -- 3 אלגוריתמים נוספים
+4. **החלפות אלכסוניות:** V, Na, Nb -- 3 אלגוריתמים נוספים
+5. **G Perms אחרון:** Ga, Gb, Gc, Gd -- 4 אלגוריתמים אחרונים
+
+:::tip
+תרגל זיהוי על ידי ערבוב, פתרון עד PLL, ואז כיסוי הקוביה וניסיון לזהות את המקרה מזיכרון. מהירות באה מזיהוי מיידי, לא רק מתנועות אצבעות מהירות.
+:::

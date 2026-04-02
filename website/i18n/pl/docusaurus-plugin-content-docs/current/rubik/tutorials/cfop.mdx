@@ -1,0 +1,219 @@
+---
+title: Przegląd metody CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Przegląd metody CFOP
+
+**Metoda CFOP** (znana również jako **metoda Fridrich**) jest najszerzej stosowaną metodą speedcubingu na świecie. Zdecydowana większość osób układających kostkę poniżej 20 sekund i rekordzistów świata używa CFOP. Opiera się na metodzie warstwowej dla początkujących, ale jest drastycznie bardziej wydajna — redukując średnie ułożenie ze 100+ ruchów do około 55-60 ruchów.
+
+**CFOP** to skrót od czterech kroków:
+
+1. **C**ross — Ułóż 4 krawędzie na dole
+2. **F**2L — Pierwsze dwie warstwy (sparuj i wstaw 4 pary róg-krawędź)
+3. **O**LL — Orientacja ostatniej warstwy (cała górna ściana jednego koloru)
+4. **P**LL — Permutacja ostatniej warstwy (ułóż prawidłowo wszystkie górne elementy)
+
+## CFOP vs. metoda dla początkujących
+
+| | Początkujący (LBL) | CFOP |
+|---|---|---|
+| Kroki | 7 | 4 |
+| Średnia ruchów | 100-120 | 55-60 |
+| Algorytmów do nauki | 5-8 | 78 (pełny) / 16 (2-look) |
+| Typowa prędkość | 1-3 minuty | 10-20 sekund |
+| Kluczowa różnica | Krok po kroku, jeden element naraz | Łączenie elementów, mniej kroków |
+
+Dobra wiadomość: CFOP możesz uczyć się **stopniowo**. Zacznij od intuicyjnego F2L i 2-look OLL/PLL (tylko 16 algorytmów), a następnie rozszerzaj do pełnego OLL (57 algorytmów) i pełnego PLL (21 algorytmów) z czasem.
+
+---
+
+## Krok 1: Krzyż
+
+Krzyż to ten sam koncept co w metodzie dla początkujących — ułóż 4 białe krawędzie na dolnej ścianie tak, aby każda krawędź pasowała również do swojego bocznego centrum. Różnica w CFOP polega na **tym, jak** podchodzisz:
+
+- **Zaplanuj cały krzyż podczas inspekcji** (15 sekund przed rozpoczęciem układania)
+- **Układaj krzyż na dole** — nie obracaj kostki
+- **Celuj w 8 ruchów lub mniej** — wydajny krzyż to średnio 6-7 ruchów
+
+**Przykład: Układanie krawędzi krzyża bezpośrednio na dole**
+
+Tu biało-niebieska krawędź jest w górnej warstwie. Wyrównujemy ją i wstawiamy bezpośrednio na dół jednym ruchem:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Przykład: Krawędź krzyża wymaga przesunięcia**
+
+Czasami krawędź jest w złym miejscu lub odwrócona. Tu naprawiamy źle umieszczoną krawędź:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Wskazówki do szybkiego krzyża:**
+- Ćwicz planowanie krzyża z zamkniętymi oczami
+- Naucz się go układać w 8 ruchach lub mniej z dowolnego scramble'a
+- Pracuj nad układaniem krzyża na dole od pierwszego dnia — unikaj nawyku układania na górze
+
+---
+
+## Krok 2: F2L (Pierwsze dwie warstwy)
+
+F2L jest sercem CFOP i źródłem największych oszczędności czasu. Zamiast układać rogi pierwszej warstwy i krawędzie drugiej warstwy osobno (jak w metodzie dla początkujących), **łączysz** element narożny z pasującą krawędzią i **wstawiasz** je razem jako jedną jednostkę.
+
+Do ułożenia jest 4 pary róg-krawędź (zwane **slotami**). Każdy slot znajduje się między dwoma bocznymi ścianami w dwóch dolnych warstwach.
+
+**Podstawowy przypadek F2L: Róg i krawędź oba w górnej warstwie**
+
+Biało-czerwono-zielony róg jest w górnej warstwie, a czerwono-zielona krawędź również w górnej warstwie. Łączymy je i wstawiamy:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Inny typowy przypadek: Rozdzielanie złej pary**
+
+Czasami elementy są źle sparowane. Rozdzielamy je i łączymy prawidłowo:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L można nauczyć się **intuicyjnie** — rozumiejąc logikę chowania, łączenia i wstawiania — lub **algorytmicznie** z 41 konkretnymi przypadkami. Większość speedcuberów używa kombinacji obu podejść.
+
+Pełną listę przypadków i algorytmów F2L znajdziesz w poradniku [**F2L: Pierwsze dwie warstwy**](./f2l).
+
+---
+
+## Krok 3: OLL (Orientacja ostatniej warstwy)
+
+Po ułożeniu pierwszych dwóch warstw na górnej ścianie będą żółte i nie-żółte naklejki. Celem OLL jest zrobienie **całej górnej ściany żółtej** — jeszcze nie przejmujemy się kolorami bocznymi.
+
+Pełny OLL ma **57 algorytmów**. Możesz jednak zacząć od **2-look OLL**, który używa tylko 10 algorytmów, dzieląc krok na dwie części:
+
+1. **Pierwsze spojrzenie:** Utwórz żółty krzyż na górze (3 przypadki, używając 2 algorytmów z różnych orientacji)
+2. **Drugie spojrzenie:** Zorientuj żółte rogi (7 algorytmów)
+
+**Przykład: Sune (jeden z najczęstszych przypadków OLL)**
+
+To jest OLL #26, powszechnie nazywany **Sune**. Jeden żółty róg jest zorientowany, a pozostałe trzy wymagają obrotu:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Przykład: Przypadek krzyża OLL (tworzenie żółtego krzyża)**
+
+Gdy masz kształt L z żółtych krawędzi na górze, trzymaj L z tyłu po lewej i zastosuj:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Wskazówki do nauki OLL:**
+- Zacznij od 2-look OLL — dodaje tylko kilka sekund do ułożenia
+- Naucz się najpierw Sune i Anti-Sune; pojawiają się w wielu przypadkach OLL
+- Ćwicz rozpoznawanie przypadków po wzorze żółtych naklejek na górze
+
+---
+
+## Krok 4: PLL (Permutacja ostatniej warstwy)
+
+Ostatni krok! Wszystkie żółte naklejki są teraz na górze, ale kolory boczne elementów ostatniej warstwy mogą nie pasować. PLL **przearanżowuje** elementy górnej warstwy na ich prawidłowe pozycje, aby ukończyć układanie.
+
+Pełny PLL ma **21 algorytmów**. Możesz zacząć od **2-look PLL**, który używa tylko 6 algorytmów:
+
+1. **Pierwsze spojrzenie:** Ustaw rogi prawidłowo (2 algorytmy)
+2. **Drugie spojrzenie:** Ustaw krawędzie prawidłowo (4 algorytmy)
+
+**Przykład: T-Perm (jeden z najbardziej przydatnych algorytmów PLL)**
+
+T-Perm zamienia dwa rogi i dwie krawędzie. Pojawia się często i służy jako podstawa do nauki innych PLL:
+
+**Algorytm: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Przykład: U-Perm (a) — Cykl 3 krawędzi**
+
+U-Perm cyklicznie przesuwa trzy krawędzie zgodnie z ruchem wskazówek zegara, gdy wszystkie rogi są już na miejscu:
+
+**Algorytm: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Wskazówki do nauki PLL:**
+- Zacznij od T-Perm, U-Perms (a i b) i A-Perms
+- Naucz się rozpoznawać PLL po kolorach bocznych (wzór reflektorów)
+- Ćwicz wykonywanie PLL z dowolnego kąta AUF (dostosowanie górnej ściany)
+
+---
+
+## Kiedy uczyć się CFOP
+
+CFOP jest naturalnym następnym krokiem po opanowaniu metody warstwowej dla początkujących. Oto zalecana progresja:
+
+### Etap 1: Od początkującego do poniżej 60 sekund
+- Opanuj metodę dla początkujących, aż ułożenia będą stabilne
+- Naucz się układać **krzyż na dole**
+- Zacznij ćwiczyć **intuicyjny F2L** — obserwuj jak pary się tworzą i wstawiają
+
+### Etap 2: Od poniżej 60 do poniżej 30 sekund
+- Używaj pełnego **intuicyjnego F2L** dla wszystkich 4 par
+- Naucz się **2-look OLL** (10 algorytmów)
+- Naucz się **2-look PLL** (6 algorytmów)
+- Ćwicz **lookahead** — śledź następną parę podczas wstawiania bieżącej
+
+### Etap 3: Od poniżej 30 do poniżej 20 sekund
+- Naucz się **pełnego PLL** (21 algorytmów)
+- Zacznij uczyć się **pełnego OLL** (57 algorytmów)
+- Optymalizuj rozwiązania F2L — naucz się [**algorytmicznych przypadków F2L**](./f2l)
+- Pracuj nad wydajnością krzyża (planuj cały krzyż podczas inspekcji)
+
+### Etap 4: Poniżej 20 i dalej
+- Ukończ **pełny OLL**
+- Naucz się zaawansowanych trików F2L (techniki pustego slotu, multi-slotting)
+- Rozwijaj silne nawyki **lookaheadu**
+- Pracuj nad prędkością obrotów i płynnością
+
+---
+
+## Następne kroki
+
+Gotowy, by zagłębić się w każdy krok? Sprawdź te szczegółowe poradniki:
+
+- [**F2L: Pierwsze dwie warstwy**](./f2l) — Wszystkie typowe przypadki F2L z algorytmami i demo
+- [**Algorytmy OLL**](./oll) — Wszystkie 57 przypadków OLL z 2-Look OLL dla początkujących
+- [**Algorytmy PLL**](./pll) — Wszystkie 21 przypadków PLL z 2-Look PLL dla początkujących
+- [**Poradnik finger tricków**](./finger-tricks) — Wydajne wykonywanie ruchów i kluczowe triggery
+- [**Wskazówki speedcubingowe**](./speed-tips) — Planowanie krzyża, lookahead i rutyny treningowe
+
+**Miłego układania!** Droga od początkującego do poniżej 20 sekund jest jednym z najbardziej satysfakcjonujących wyzwań w speedcubingu. Bierz to krok po kroku, a dojdziesz do celu.

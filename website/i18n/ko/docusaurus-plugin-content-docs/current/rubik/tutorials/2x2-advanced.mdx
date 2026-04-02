@@ -1,0 +1,374 @@
+---
+title: "2×2 고급: CLL 방법"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2×2 고급: CLL 방법
+
+**CLL(마지막 층 코너)** 방법으로 2×2 큐브 스피드큐빙을 한 단계 끌어올리세요. Ortega 방법은 마지막 층을 2단계(OLL, PBL)로 풀지만, CLL은 마지막 층 코너의 **방향과 위치**를 **하나의 알고리즘**으로 동시에 해결합니다. 더 적은 관찰과 더 빠른 풀이.
+
+## 왜 CLL인가?
+
+| 방법 | 마지막 층 단계 | 알고리즘 수 | 일반적인 속도 |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 초 |
+| **CLL** | 1 (원룩) | ~40 | 2–4 초 |
+
+CLL은 최상위 2×2 스피드큐버들의 표준 방법입니다. 40가지 케이스를 모두 배우면 풀이에서 한 단계를 통째로 없앨 수 있습니다.
+
+## CLL의 원리
+
+1. **첫 번째 면 맞추기** — Ortega와 동일, 아래쪽에 흰색 면을 만듭니다(옆면 색상 불일치 가능).
+2. **CLL 케이스 인식** — 윗면과 옆면 색상을 보고 40가지 중 판단합니다.
+3. **알고리즘 하나 실행** — 윗층 모든 코너의 방향과 위치를 동시에 맞춥니다.
+4. **AUF + 아래층 조정** — 최대 U층 1회전과 D층 1회전으로 완료.
+
+## 기호 안내
+
+- **R** = 오른쪽 &nbsp;&nbsp; **L** = 왼쪽 &nbsp;&nbsp; **U** = 위 &nbsp;&nbsp; **D** = 아래 &nbsp;&nbsp; **F** = 앞 &nbsp;&nbsp; **B** = 뒤
+- 문자만 = **시계 방향 90°**. **'** = **반시계 방향**. **2** = **180°**.
+
+---
+
+## CLL 케이스 그룹
+
+40개의 CLL 케이스는 윗면의 방향 패턴에 따라 7개 그룹으로 분류됩니다. 각 그룹에서 가장 중요한 케이스입니다.
+
+---
+
+## Sune 케이스 (6개 중 4개)
+
+코너 1개가 올바른 방향(노란색 위), 나머지 3개는 비틀어야 합니다. 가장 흔한 그룹.
+
+### Sune 1 — 인접 교환
+
+맞춰진 코너를 왼쪽 앞에 놓습니다. 3개의 미완성 코너가 시계 방향.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — 대각 교환
+
+같은 방향 패턴이지만 코너 대각 교환 필요.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — 순수형 (교환 없음)
+
+방향 해결, 위치 교환 불필요.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — 인접 교환 (미러)
+
+맞춰진 코너를 오른쪽 앞에 놓습니다.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune 케이스 (6개 중 3개)
+
+Sune의 거울상 — 코너 1개 올바른 방향, 나머지 3개 반시계 방향.
+
+### Anti-Sune 1 — 인접 교환
+
+맞춰진 코너를 오른쪽 앞에 놓습니다. 3개의 미완성 코너가 반시계 방향.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — 대각 교환
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — 순수형 (교환 없음)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H 케이스 (4개 중 4개)
+
+대각선 코너 2개 올바른 방향(노란색 위), 나머지 2개는 노란색이 옆면.
+
+### H 1 — 인접 교환
+
+노란색 스티커가 대각선 위치에서 위를 향함.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — 대각 교환
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — 교환 없음
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — 컬럼
+
+대각 코너 두 쌍 모두 교환 필요.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi 케이스 (6개 중 4개)
+
+인접 코너 2개 노란색 위, 나머지 2개 노란색 옆면. 윗면이 그리스 문자 Pi 모양.
+
+### Pi 1 — 대각 교환
+
+올바른 방향의 코너 2개를 뒤쪽에 놓습니다.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — 인접 교환 (오른쪽)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — 인접 교환 (왼쪽)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — 교환 없음
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T 케이스 (6개 중 3개)
+
+윗면에 T자 모양 노란색 패턴 — 코너 1개 올바른 방향, 인접 1개 노란색 앞면, 나머지 2개 옆면.
+
+### T 1 — 인접 교환
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — 대각 교환
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — 교환 없음
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U 케이스 (6개 중 3개)
+
+코너 1개 올바르게 맞춰짐, 나머지 3개 옆면에서 U자 패턴.
+
+### U 1 — 인접 교환
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — 대각 교환
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — 교환 없음
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L 케이스 (6개 중 3개)
+
+인접 코너 2개 같은 방향으로 비틀림 — 윗면 L자 패턴.
+
+### L 1 — 인접 교환
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — 대각 교환
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — 교환 없음
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL 이후: 풀이 마무리
+
+CLL 알고리즘 적용 후 윗면 완전 해결. 다음이 필요할 수 있습니다:
+
+1. **AUF (U면 조정)** — U 또는 U' 한 번으로 윗층을 아래층에 맞춤.
+2. **아래층 조정** — 어긋나면 D 또는 D' 한 번으로 수정.
+3. **아래층 교환** — 드물게 인접 또는 대각 교환 필요. Ortega의 PBL 알고리즘 사용:
+   - **대각 교환:** R2 F2 R2
+   - **인접 교환:** R U' R F2 R' U R'
+
+---
+
+## 학습 전략
+
+40가지 한꺼번에 외우기 어려움. 추천 순서:
+
+1. **Sune과 Anti-Sune부터** (12케이스) — 가장 흔하고 짧은 알고리즘 많음.
+2. **T와 U 케이스 추가** (12케이스) — 인식과 실행이 비교적 쉬움.
+3. **Pi 케이스 학습** (6케이스) — 독특한 방향 패턴.
+4. **L 케이스 학습** (6케이스) — Pi와 비슷하지만 비틀림 방향 다름.
+5. **마지막으로 H 케이스** (4케이스) — 가장 드문 그룹.
+
+## 인식 팁
+
+- **먼저 윗면을 보고** 방향 그룹 파악.
+- **옆면 색상 확인하여** 구체적 케이스 판단.
+- **그룹별 연습** — 한 그룹씩 즉시 인식할 때까지.
+- **역 스크램블 사용** — 케이스 설정, 풀기, 역 예측.
+
+---
+
+**CLL을 마스터하면 2×2에서 평균 3초 이하를 달성할 수 있습니다.** 원룩 방식은 OLL과 PBL 사이의 중단을 없앱니다. 인식 연습을 계속하세요 — 속도는 즉시 판별에서 나옵니다.

@@ -1,0 +1,317 @@
+---
+title: "Pokročilé techniky Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pokročilé techniky Skewb
+
+Posuňte své řešení Skewbu z úrovně začátečníka na soutěžní úroveň. Tento průvodce pokrývá **Sarahinu středně pokročilou metodu**, která vylepšuje metodu pro začátečníky řešením všech zbývajících středů v jednom kroku, plus pokročilé algoritmy a strategie rychlého skládání používané nejlepšími řešiteli Skewbu.
+
+## Připomínka notace
+
+Skewb se otáčí kolem **rohů**, nikoli stěn:
+
+- **R** = Pravý přední roh ve směru hodinových ručiček &nbsp;&nbsp; **R'** = proti směru hodinových ručiček
+- **L** = Levý přední roh ve směru hodinových ručiček &nbsp;&nbsp; **L'** = proti směru hodinových ručiček
+- **U** = Pravý horní přední roh ve směru hodinových ručiček &nbsp;&nbsp; **U'** = proti směru hodinových ručiček
+- **B** = Pravý zadní roh ve směru hodinových ručiček &nbsp;&nbsp; **B'** = proti směru hodinových ručiček
+
+Držte Skewb s **bílým středem dole** ve všech krocích.
+
+---
+
+## Sarahina středně pokročilá metoda
+
+Sarahina metoda pro začátečníky řeší Skewb ve 3 krocích: první stěna, pak středy, pak rohy poslední vrstvy. Středně pokročilá verze **kombinuje kroky středů a rohů** a řeší všech 5 zbývajících středů JEDNÍM algoritmem po dokončení první stěny.
+
+### Přehled
+
+| Krok | Začátečník | Středně pokročilý |
+|------|----------|-------------|
+| 1 | Vyřešit jednu stěnu | Vyřešit jednu stěnu (stejné) |
+| 2 | Umístit středy | **Vyřešit všech 5 středů v jednom kroku** |
+| 3 | Zorientovat rohy poslední vrstvy | Zorientovat rohy poslední vrstvy (stejné) |
+
+Klíčové vylepšení je Krok 2: místo opakovaného používání Sledgehammeru k umísťování středů po jednom se naučíte sadu algoritmů, které řeší všechny středy současně.
+
+### Krok 1: Vyřešit jednu stěnu
+
+Sestavte kompletní **bílou stěnu** dole — všechny 4 rohy kolem bílého středu musí být na svém místě s bílou dolů a sousední boční barvy se musí shodovat. Tento krok je totožný s metodou pro začátečníky.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Použijte Sledgehammer s přípravnými tahy k umístění každého bílého rohu. S praxí se tento krok stane rychlým a intuitivním.
+
+### Krok 2: Vyřešit všech 5 středů (One-Look)
+
+Po vyřešení první stěny se podívejte na **5 zbývajících středů** (horní + 4 boční) a identifikujte svůj případ. Použijte jeden algoritmus k vyřešení všech najednou.
+
+Existuje několik případů v závislosti na tom, kolik středů je ve správné pozici:
+
+---
+
+#### Případ 1: Sousední 4-cyklus
+
+Čtyři středy se musí cyklicky přesunout. Horní střed je správný, ale 4 boční středy se musí otočit.
+
+**Algoritmus: R' L R L' R' L R L'** (Dvojitý Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Případ 2: Protilehlá výměna 2
+
+Dva protilehlé boční středy se musí vyměnit.
+
+**Algoritmus: R L' R' L R L' R' L** (Inverzní dvojitý Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Případ 3: Sousední výměna 2
+
+Dva sousední boční středy se musí vyměnit. Nastavte dva vyměňované středy vpředu a vpravo.
+
+**Algoritmus: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Případ 4: Výměna horní-boční + cyklus
+
+Horní střed se musí vyměnit s bočním středem a zbývající boční středy cyklují.
+
+**Algoritmus: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Případ 5: Trojitý cyklus
+
+Tři středy se musí cyklicky přesunout (horní zůstává, 3 boční rotují). Nastavte nehybný boční střed vzadu.
+
+**Algoritmus: R' L R L'** (Jednoduchý Sledgehammer — se správným nastavením)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tipy:**
+- Naučte se rychle identifikovat případy středů kontrolou horního středu a pak skenováním 4 stran.
+- Mnoho z nich jsou variace Sledgehammeru — pokud dobře znáte Sledgehammer, tyto algoritmy budou přirozené.
+- Procvičujte rozpoznávání zamícháním Skewbu, vyřešením první stěny a identifikací případu středů před provedením.
+
+### Krok 3: Zorientovat rohy poslední vrstvy
+
+Po vyřešení všech středů mohou rohy poslední vrstvy stále potřebovat otočení. Tento krok je stejný jako u metody pro začátečníky.
+
+#### Všechny 4 rohy potřebují otočení ve směru hodinových ručiček
+
+**Algoritmus: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Všechny 4 rohy potřebují otočení proti směru hodinových ručiček
+
+**Algoritmus: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 rohy potřebují otočení (sousední)
+
+Nastavte dva nevyřešené rohy vpředu. Použijte U k jejich umístění, proveďte algoritmus a pak zrušte U.
+
+**Algoritmus: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 rohy potřebují otočení (diagonální)
+
+**Algoritmus: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Pokročilé algoritmy
+
+Kromě středně pokročilé metody jsou zde další algoritmy, které efektivněji zvládají méně běžné případy.
+
+### Ekvivalent Z-Perm
+
+Když se musí vyměnit dva páry rohů (jako vzor ve tvaru Z):
+
+**Algoritmus: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Případ Pi
+
+Horní stěna ukazuje vzor Pi — dva sousední rohy orientované, dva ne:
+
+**Algoritmus: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Nastavení a orientace rohů
+
+Když roh potřebuje přeorientovat, použijte přípravné tahy k sdružení cyklu Sledgehammeru, který ho otočí na místo:
+
+**Algoritmus: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Rychlá výměna protilehlých středů
+
+Efektivnější algoritmus pro výměnu dvou protilehlých středů:
+
+**Algoritmus: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Trojitá orientace rohů
+
+Tři rohy potřebují otočení (jeden zůstává správný):
+
+**Algoritmus: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Výměna sousedních rohů
+
+Dva sousední rohy si musí vyměnit pozice (nejen otočit):
+
+**Algoritmus: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Koncepty One-Look řešení
+
+Konečným cílem v soutěžním řešení Skewbu je předpovědět poslední vrstvu, zatímco ještě řešíte první stěnu.
+
+### Předpovídání poslední vrstvy
+
+Během Kroku 1, zatímco stavíte bílou stěnu, věnujte pozornost **středům a rohům horní vrstvy**. S praxí dokážete identifikovat případy Kroků 2 a 3 před dokončením Kroku 1.
+
+- **Sledujte horní střed** — přesouvá se na správnou pozici při vkládání posledního bílého rohu?
+- **Sledujte boční středy** — všimněte si, které boční středy jsou již správně.
+- **Plánujte celé řešení** — pokročilí řešitelé mohou naplánovat celé řešení během inspekce.
+
+### Ovlivnění poslední vrstvy
+
+Když máte více způsobů, jak vložit poslední bílý roh, vyberte vložení, které vám dá **snadnější případ Kroku 2**:
+
+- Pokud obě vložení řeší roh, vyberte to, které umístí více středů správně.
+- Někdy mírně delší Krok 1 vede k přeskočení Kroku 2 nebo 3.
+
+---
+
+## Tipy pro rychlé skládání
+
+### Úchop a otáčení
+
+- Držte Skewb s **konečky prstů na rozích** — otáčíte rohy, ne stěny.
+- Použijte **ukazováček a palec** každé ruky k uchopení protilehlých rohů.
+- Procvičujte hladké, kontrolované otáčení rohů — Skewb odměňuje přesnost před hrubou rychlostí.
+- **Minimalizujte přehmaty** — snažte se provést celý Sledgehammer bez změny úchopu.
+
+### Barevná neutralita
+
+Barevná neutralita na Skewbu znamená, že můžete začít s **jakoukoli stěnou** jako první, nejen s bílou. To je extrémně silné:
+
+- S barevnou neutralitou máte **6 možných prvních stěn** na výběr.
+- Vyberte stěnu nejblíže k vyřešení — někdy jsou 2-3 rohy již na místě.
+- Barevná neutralita je téměř povinná pro skládání pod 4 sekundy.
+
+**Jak procvičovat:**
+1. Začněte neutralitou mezi 2 protilehlými barvami (např. bílá a žlutá).
+2. Postupně přidávejte více startovních barev, dokud nebudete moci začít s jakoukoli stěnou.
+3. Během inspekce rychle prohledejte všech 6 stěn a vyberte nejsnazší.
+
+### Plánování inspekce
+
+Skewb má pouze 14 viditelných dílků (6 středů + 8 rohů), což činí plánování celého řešení realistickým:
+
+- **Vždy kompletně naplánujte první stěnu** během inspekce.
+- **Identifikujte případ středů** před zahájením řešení.
+- **Pokročilé:** plánujte až po Krok 2 — vězte, který algoritmus použijete, než se dotknete hlavolamu.
+
+### Cvičební rutina
+
+1. **Cvičení první stěny** — zamíchejte a řešte pouze první stěnu, cíl pod 2 sekundy.
+2. **Rozpoznávání středů** — po vyřešení první stěny identifikujte případ středů co nejrychleji bez provedení.
+3. **Kompletní řešení** — série 12 měřených řešení, sledujte průměr z 5 a průměr z 12.
+4. **Procvičování algoritmů** — procvičte každý algoritmus středů a rohů 20x za sebou pro svalovou paměť.
+5. **Cvičení barevné neutrality** — nuťte se začínat s jinou barvou při každém řešení.
+
+---
+
+**Se Sarahinou středně pokročilou metodou a odhodlaným tréninkem jsou průměry Skewbu pod 5 sekund na dosah.** Skewb je jeden z nejpříznivějších hlavolamů pro plánování ve speedcubingu — méně dílků znamená, že můžete předpovědět více během inspekce. Soustřeďte se na rychlost rozpoznávání a hladké otáčení a uvidíte rychlé zlepšení.

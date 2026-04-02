@@ -1,0 +1,129 @@
+---
+title: Tipy pre Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Tipy pre Speed Cubing
+
+Zrýchľovanie skladania Rubikovej kocky nie je len o rýchlejšom otáčaní. Najväčšie pokroky prichádzajú z plánovania dopredu, znižovania prestávok a cieleného cvičenia. Tento sprievodca pokrýva kľúčové zručnosti, ktoré odlišujú bežných riešiteľov od súťažných speedcuberov.
+
+---
+
+## Plánovanie kríža
+
+Kríž je prvý krok riešenia CFOP a jediná časť, ktorú možno **úplne naplánovať počas inšpekcie**. Zvládnutie plánovania kríža dáva bezplatnú výhodu pri každom složení.
+
+### Využite celých 15 sekúnd inšpekcie
+
+Na súťaži máte 15 sekúnd inšpekcie. Využite každú sekundu:
+- Prvých 5: Identifikujte polohy 4 hrán kríža.
+- Ďalších 5: Naplánujte kompletné riešenie (ideálne 6-8 ťahov alebo menej).
+- Posledných 5: Mentálne prejdite sekvenciu a naplánujte prvý F2L pár.
+
+### Skladajte kríž na spodku
+
+Vždy skladajte kríž na **spodnej strane** (vrstva D). Začiatočníci často skladajú hore a potom otočia kocku, strácajúc 1-2 sekundy.
+
+**Príklad: Kríž za 6 ťahov**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Príklad: Efektívny kríž za 5 ťahov**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Cvičte kríž so zatvorenými očami
+
+1. Zamiešajte. 2. Naplánujte celé riešenie. 3. Zatvorte oči a vykonajte z pamäti. 4. Skontrolujte.
+
+### Farebná neutralita
+
+**Farebne neutrálni** riešitelia môžu začať s ktoroukoľvek zo 6 farieb, získajúc výhodu 2-3 ťahov na kríži.
+
+---
+
+## Lookahead (Predvídanie)
+
+Lookahead je schopnosť **sledovať ďalší dielik pri skladaní aktuálneho**. Najdôležitejšia zručnosť pre prekonanie rýchlostných plató.
+
+### Ako cvičiť
+
+**Pomalé složenia**: metronóm 1-2 otočky/s, nikdy nezastavujte. Slepé cvičenie F2L párov posilňuje mentálne sledovanie.
+
+---
+
+## Efektívny F2L
+
+Vyhýbajte sa zbytočným rotáciám.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. s rotáciou:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+Prvá verzia ušetrí ~0,5 sekundy. Uprednostňujte zadné sloty. Ovplyvnite ďalší pár. Multi-slotting je zriedkavý ale cenný.
+
+---
+
+## Rozpoznávanie OLL/PLL
+
+Rýchle rozpoznávanie odstraňuje prestávku medzi F2L a poslednou vrstvou. Cvičte z dvoch uhlov. Pre-AUF a predikcia OLL sú pokročilé techniky.
+
+---
+
+## Tréningové rutiny
+
+Cielené cvičenie poráža bezmyšlienkové skladanie.
+
+### Denný plán (45-60 minút)
+
+**Cvičenia kríža (10 min)** - Cieľ: pod 2 sekundy, 6 ťahov alebo menej.
+
+**F2L pomaly (15 min)** - Metronóm, fokus na lookahead.
+
+**Algoritmy (10 min)** - 2-3 OLL/PLL, 20-30 opakovaní.
+
+**Merané složenia (15-20 min)** - **Ao12** - Sledujte trendy.
+
+### Priemery: **Ao5**, **Ao12**, **Ao100**.
+
+Desať sústredených složení poráža sto na autopilote.
+
+---
+
+## Tipy na súťaže
+
+Správne rozcvičenie, pokoj, inšpekcia vo výške očí a znalost Stackmat časovača.
+
+---
+
+## Hardvér
+
+Dobrá závodná kocka robí skutočný rozdiel. Magnetické kocky od MoYu, QiYi a GAN sú štandard. Corner cutting 45+ stupňov, hladké otáčanie a stabilita sú kľúčové. Pre začiatočníkov: akákoľvek moderná magnetická 3x3, továrenské napätie prvý týždeň, silikónové mazivo podľa potreby, postupné ladenie.
+
+Dobre nastavená kocka eliminuje hardvér ako premennú, umožňujúc plne sa sústrediť na zlepšovanie techniky.

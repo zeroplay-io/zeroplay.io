@@ -1,0 +1,317 @@
+---
+title: "Skewb haladó technikák"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Skewb haladó technikák
+
+Emeld a Skewb megoldásodat kezdő szintről verseny szintre. Ez az útmutató lefedi **Sarah köztes módszerét**, amely továbbfejleszti a kezdő módszert azzal, hogy az összes fennmaradó középsőt egyetlen lépésben oldja meg, továbbá haladó algoritmusokat és gyors kirakási stratégiákat, amelyeket a legjobb Skewb kirakók használnak.
+
+## Jelölés emlékeztető
+
+A Skewb **sarkok** körül forog, nem lapok körül:
+
+- **R** = Jobb elülső sarok óramutató járása szerint &nbsp;&nbsp; **R'** = óramutató járásával ellentétesen
+- **L** = Bal elülső sarok óramutató járása szerint &nbsp;&nbsp; **L'** = óramutató járásával ellentétesen
+- **U** = Jobb felső elülső sarok óramutató járása szerint &nbsp;&nbsp; **U'** = óramutató járásával ellentétesen
+- **B** = Jobb hátsó sarok óramutató járása szerint &nbsp;&nbsp; **B'** = óramutató járásával ellentétesen
+
+Tartsd a Skewböt **fehér középsővel alul** minden lépésnél.
+
+---
+
+## Sarah köztes módszere
+
+Sarah kezdő módszere 3 lépésben oldja meg a Skewböt: első oldal, majd középsők, majd utolsó réteg sarkok. A köztes fejlesztés **egyesíti a középső és sarok lépéseket**, az első oldal befejezése után EGYETLEN algoritmussal oldva meg mind az 5 fennmaradó középsőt.
+
+### Áttekintés
+
+| Lépés | Kezdő | Köztes |
+|------|----------|-------------|
+| 1 | Egy oldal megoldása | Egy oldal megoldása (azonos) |
+| 2 | Középsők pozícionálása | **Mind az 5 középső megoldása egy lépésben** |
+| 3 | Utolsó réteg sarok tájolás | Utolsó réteg sarok tájolás (azonos) |
+
+A legfontosabb fejlesztés a 2. lépés: a Sledgehammer ismételt használata helyett egyenként pozícionálva a középsőket, megtanulsz egy algoritmus-készletet, amely egyszerre oldja meg az összes középsőt.
+
+### 1. lépés: Egy oldal megoldása
+
+Építs egy teljes **fehér oldalt** alulra — mind a 4 sarok a fehér középső körül a helyén kell legyen fehérrel lefelé, és a szomszédos oldalszínek egyezzenek. Ez a lépés megegyezik a kezdő módszerrel.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Használd a Sledgehammert előkészítő lépésekkel minden fehér sarok elhelyezéséhez. Gyakorlással ez a lépés gyors és intuitív lesz.
+
+### 2. lépés: Mind az 5 középső megoldása (One-Look)
+
+Az első oldal megoldása után nézd meg az **5 fennmaradó középsőt** (felső + 4 oldalsó) és azonosítsd az eseted. Alkalmazz egyetlen algoritmust az összes egyszerre történő megoldásához.
+
+Több eset van attól függően, hogy hány középső van helyes pozícióban:
+
+---
+
+#### 1. eset: Szomszédos 4-ciklus
+
+Négy középsőnek ciklikusan kell mozognia. A felső középső helyes, de a 4 oldalsó középsőnek forognia kell.
+
+**Algoritmus: R' L R L' R' L R L'** (Dupla Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### 2. eset: Szemközti 2-csere
+
+Két szemközti oldalsó középsőt kell cserélni.
+
+**Algoritmus: R L' R' L R L' R' L** (Fordított dupla Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### 3. eset: Szomszédos 2-csere
+
+Két szomszédos oldalsó középsőt kell cserélni. Állítsd a két cserélendő középsőt elölre és jobbra.
+
+**Algoritmus: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### 4. eset: Felső-oldalsó csere + ciklus
+
+A felső középsőt cserélni kell egy oldalsó középsővel, és a fennmaradó oldalsó középsők ciklikusan mozognak.
+
+**Algoritmus: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### 5. eset: Hármas ciklus
+
+Három középsőnek ciklikusan kell mozognia (a felső marad, 3 oldalsó forog). Állítsd az álló oldalsó középsőt hátra.
+
+**Algoritmus: R' L R L'** (Egyszerű Sledgehammer — helyes előkészítéssel)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tippek:**
+- Tanuld meg gyorsan azonosítani a középső eseteket: először a felső középsőt ellenőrizd, majd pásztázd a 4 oldalt.
+- Sok ezek közül Sledgehammer-variáció — ha jól ismered a Sledgehammert, ezek az algoritmusok természetesnek tűnnek.
+- Gyakorold a felismerést a Skewb keverésével, az első oldal megoldásával és a középső eset azonosításával a végrehajtás előtt.
+
+### 3. lépés: Utolsó réteg sarkok tájolása
+
+Az összes középső megoldása után az utolsó réteg sarkai még forgatást igényelhetnek. Ez a lépés megegyezik a kezdő módszerrel.
+
+#### Mind a 4 saroknak óramutató járása szerinti forgatás szükséges
+
+**Algoritmus: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Mind a 4 saroknak óramutató járásával ellentétes forgatás szükséges
+
+**Algoritmus: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 saroknak forgatás szükséges (szomszédos)
+
+Állítsd a két megoldatlan sarkot elölre. Használd az U-t pozícionálásukhoz, hajtsd végre az algoritmust, majd vondd vissza az U-t.
+
+**Algoritmus: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 saroknak forgatás szükséges (átlós)
+
+**Algoritmus: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Haladó algoritmusok
+
+A köztes módszeren túl íme további algoritmusok, amelyek hatékonyabban kezelik a ritkább eseteket.
+
+### Z-Perm megfelelő
+
+Amikor két pár saroknak kell cserélődnie (Z-alakú minta):
+
+**Algoritmus: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi eset
+
+A felső oldal Pi mintát mutat — két szomszédos sarok tájolt, kettő nem:
+
+**Algoritmus: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Sarok előkészítés és tájolás
+
+Amikor egy saroknak újratájolás szükséges, használj előkészítő lépéseket egy Sledgehammer ciklus konjugálásához, amely a helyére forgatja:
+
+**Algoritmus: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Gyors szemközti középső csere
+
+Hatékonyabb algoritmus két szemközti középső cseréjéhez:
+
+**Algoritmus: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Hármas sarok tájolás
+
+Három saroknak forgatás szükséges (egy helyes marad):
+
+**Algoritmus: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Szomszédos sarok csere
+
+Két szomszédos saroknak pozíciót kell cserélnie (nem csak forgatás):
+
+**Algoritmus: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look megoldási koncepciók
+
+A verseny Skewb megoldás végső célja az utolsó réteg előrejelzése, miközben még az első oldalt oldod meg.
+
+### Utolsó réteg előrejelzése
+
+Az 1. lépés során, miközben a fehér oldalt építed, figyelj a **felső réteg középsőire és sarkaira**. Gyakorlással azonosíthatod a 2. és 3. lépés eseteit az 1. lépés befejezése előtt.
+
+- **Figyeld a felső középsőt** — helyes pozícióba mozdul, amikor beilleszted az utolsó fehér sarkot?
+- **Kövesd az oldalsó középsőket** — vedd észre, melyek már helyesek.
+- **Tervezd meg a teljes megoldást** — haladó kirakók a teljes megoldást megtervezhetik az inspekció során.
+
+### Utolsó réteg befolyásolása
+
+Amikor több mód van az utolsó fehér sarok beillesztésére, válaszd azt, ami **könnyebb 2. lépés esetet** ad:
+
+- Ha két beillesztés is megoldja a sarkot, válaszd azt, ami több középsőt helyez el helyesen.
+- Néha egy kicsit hosszabb 1. lépés a 2. vagy 3. lépés átugrásához vezet.
+
+---
+
+## Gyors kirakási tippek
+
+### Fogás és forgatás
+
+- Tartsd a Skewböt **ujjhegyekkel a sarkokon** — sarkokat forgatsz, nem lapokat.
+- Használd mindkét kéz **mutatóujját és hüvelykujját** szemközti sarkok megragadásához.
+- Gyakorolj sima, kontrollált sarok forgatásokat — a Skewb a pontosságot jutalmazza a nyers sebesség helyett.
+- **Minimalizáld a fogásváltásokat** — próbáld végrehajtani a teljes Sledgehammert fogásváltás nélkül.
+
+### Szín semlegesség
+
+A Skewb szín semlegessége azt jelenti, hogy **bármely oldallal** kezdhetsz első oldalként, nem csak fehérrel. Ez rendkívül erős:
+
+- Szín semlegességgel **6 lehetséges első oldalad** van.
+- Válaszd a megoldáshoz legközelebb álló oldalt — néha 2-3 sarok már a helyén van.
+- A szín semlegesség szinte kötelező a 4 másodperc alatti kirakáshoz.
+
+**Hogyan gyakorolj:**
+1. Kezdd 2 szemközti szín közötti semlegességgel (pl. fehér és sárga).
+2. Fokozatosan adj hozzá több kezdő színt, amíg bármely oldallal kezdhetsz.
+3. Az inspekció során gyorsan pásztázd mind a 6 oldalt és válaszd a legkönnyebbet.
+
+### Inspekció tervezés
+
+A Skewbnek csak 14 látható darabja van (6 középső + 8 sarok), ami reálissá teszi a teljes megoldás tervezését:
+
+- **Mindig teljesen tervezd meg az első oldalt** az inspekció során.
+- **Azonosítsd a középső esetet** a megoldás megkezdése előtt.
+- **Haladó:** tervezz a 2. lépésig — tudd, melyik algoritmust fogod használni, mielőtt megérintenéd a kirakót.
+
+### Gyakorlási rutin
+
+1. **Első oldal gyakorlatok** — keverd meg és csak az első oldalt oldd meg, cél 2 másodperc alatt.
+2. **Középső felismerés** — az első oldal megoldása után azonosítsd a középső esetet a lehető leggyorsabban végrehajtás nélkül.
+3. **Teljes megoldások** — 12 időzített megoldás sorozata, átlag 5 és átlag 12 követése.
+4. **Algoritmus gyakorlás** — gyakorolj minden középső és sarok algoritmust 20-szor egymás után izommemóriához.
+5. **Szín semleges gyakorlás** — kényszerítsd magad, hogy minden megoldásnál más színnel kezdj.
+
+---
+
+**Sarah köztes módszerével és elkötelezett gyakorlással az 5 másodperc alatti Skewb átlagok elérhetőek.** A Skewb az egyik legtervezhetőbb kirakó a speedcubingban — kevesebb darab azt jelenti, hogy többet tudsz előrejelezni az inspekció során. Koncentrálj a felismerési sebességre és sima forgatásra, és gyors fejlődést fogsz látni.

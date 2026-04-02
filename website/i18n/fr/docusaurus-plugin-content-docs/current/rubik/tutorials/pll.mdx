@@ -1,0 +1,466 @@
+---
+title: Algorithmes PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algorithmes PLL
+
+**PLL (Permutation de la Dernière Couche)** est la dernière étape de la méthode CFOP. Après que l'OLL a orienté tous les autocollants de la face supérieure, le PLL réarrange les pièces dans leurs positions résolues. Il y a **21 cas de PLL** au total.
+
+Si vous êtes débutant, commencez par le **2-Look PLL** -- une approche simplifiée qui ne nécessite que **6 algorithmes** au lieu des 21.
+
+---
+
+## 2-Look PLL
+
+Le 2-Look PLL divise l'étape de permutation en deux étapes plus petites :
+
+1. **Permuter les coins** -- placer les 4 coins à la bonne position (2 cas)
+2. **Permuter les arêtes** -- placer les 4 arêtes à la bonne position (4 cas)
+
+Cela signifie que vous n'avez besoin d'apprendre que **6 algorithmes** au total.
+
+### Étape 1 : Permuter les coins
+
+Regardez les coins de la couche supérieure. Vérifiez si une **paire de coins adjacents** appartient au même côté (phares correspondants).
+
+#### Échange de coins adjacents
+
+Une paire de coins adjacents est déjà correcte. Tenez la paire résolue à l'**arrière** et appliquez :
+
+**Algorithme : R U R' U' R' F R2 U' R' U' R U R' F'**
+
+C'est le **T-Perm** -- il échange les deux coins avant (et deux arêtes, que nous corrigerons à l'étape 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Échange de coins diagonaux
+
+Aucun coin adjacent ne correspond. Appliquez le **Y-Perm** pour échanger les coins en diagonale :
+
+**Algorithme : F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Étape 2 : Permuter les arêtes
+
+Tous les coins sont maintenant résolus. Regardez les arêtes et déterminez lesquelles doivent cycler.
+
+#### Ua Perm (cycle de 3 arêtes dans le sens horaire)
+
+Trois arêtes doivent cycler dans le sens horaire. Tenez l'arête résolue à l'**arrière**.
+
+**Algorithme : M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (cycle de 3 arêtes dans le sens antihoraire)
+
+Trois arêtes doivent cycler dans le sens antihoraire. Tenez l'arête résolue à l'**arrière**.
+
+**Algorithme : M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (échange de paires d'arêtes opposées)
+
+Deux paires d'arêtes opposées doivent s'échanger.
+
+**Algorithme : M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (échange de paires d'arêtes adjacentes)
+
+Deux paires d'arêtes adjacentes doivent s'échanger. Tenez de sorte que les deux paires soient avant/droite et arrière/gauche.
+
+**Algorithme : M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL complet -- Les 21 cas
+
+### Arêtes uniquement (4 cas)
+
+Ces PLL ne déplacent que les arêtes ; les coins sont déjà résolus.
+
+#### Ua Perm
+
+Les arêtes cyclent dans le sens horaire. L'arête résolue est à l'arrière.
+
+**Reconnaissance : ** Une barre résolue (arête + deux coins) visible depuis l'arrière.
+
+**Algorithme : M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Les arêtes cyclent dans le sens antihoraire. L'arête résolue est à l'arrière.
+
+**Reconnaissance :** Une barre résolue visible depuis l'arrière ; les couleurs des arêtes cyclent dans la direction opposée à Ua.
+
+**Algorithme : M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Deux paires d'arêtes opposées s'échangent.
+
+**Reconnaissance :** Chaque côté a la couleur opposée en position d'arête centrale. Motif en damier sur les quatre côtés.
+
+**Algorithme : M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Deux paires d'arêtes adjacentes s'échangent.
+
+**Reconnaissance :** Deux côtés adjacents ont chacun la couleur de l'autre en position d'arête. Aucun côté n'est entièrement résolu.
+
+**Algorithme : M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Coins uniquement (3 cas)
+
+Ces PLL ne déplacent que les coins ; les arêtes sont déjà résolues.
+
+#### Aa Perm
+
+Trois coins cyclent. Phares sur le côté gauche.
+
+**Reconnaissance :** Phares sur un côté, la barre (3 autocollants correspondants) est sur le côté opposé.
+
+**Algorithme : x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Trois coins cyclent (direction opposée à Aa). Phares sur le côté droit.
+
+**Reconnaissance :** Miroir de Aa -- phares sur le côté opposé.
+
+**Algorithme : x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Deux paires de coins diagonaux s'échangent. Aucune arête ne bouge.
+
+**Reconnaissance :** Pas de phares sur aucun côté. Chaque côté a deux couleurs de coins différentes.
+
+**Algorithme : x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Échange de coins adjacents (6 cas)
+
+Ces PLL échangent une paire de coins adjacents avec des permutations d'arêtes.
+
+#### T Perm
+
+**Reconnaissance :** Phares à l'avant et à l'arrière. Les deux côtés sans phares ont leurs couleurs échangées.
+
+**Algorithme : R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Reconnaissance :** Phares sur un seul côté (avant). Les trois autres côtés n'ont pas de paires correspondantes.
+
+**Algorithme : R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Reconnaissance :** Un bloc 1x1x3 résolu sur le côté gauche. Le côté droit a des pièces adjacentes échangées.
+
+**Algorithme : x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Reconnaissance :** Un bloc 1x1x3 résolu sur le côté droit. Miroir de Ja.
+
+**Algorithme : R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Reconnaissance :** Phares à l'avant. Échange de coin et d'arête adjacents sur le côté droit.
+
+**Algorithme : R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Reconnaissance :** Phares à l'arrière. Miroir de Ra.
+
+**Algorithme : R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Échange de coins diagonaux (4 cas)
+
+Ces PLL échangent deux coins diagonalement opposés.
+
+#### V Perm
+
+**Reconnaissance :** Pas de phares sur aucun côté. Un côté a un motif à 2 couleurs où l'arête correspond à un coin.
+
+**Algorithme : R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Reconnaissance :** Pas de phares. Un côté a deux coins correspondants mais l'arête entre eux est incorrecte.
+
+**Algorithme : F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Reconnaissance :** Deux côtés opposés entièrement résolus (une barre résolue sur chacun), mais les deux autres côtés ont leurs pièces complètement échangées.
+
+**Algorithme : R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Reconnaissance :** Miroir de Na. Deux barres opposées mais échangées différemment.
+
+**Algorithme : R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 cas)
+
+Les permutations G sont les plus difficiles à reconnaître. Elles déplacent à la fois une paire de coins adjacents et cyclent trois arêtes.
+
+#### Ga Perm
+
+**Reconnaissance :** Phares à gauche. Le coin avant droit correspond à l'arête droite.
+
+**Algorithme : R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Reconnaissance :** Phares à l'avant. Le coin arrière gauche correspond à l'arête gauche.
+
+**Algorithme : R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Reconnaissance :** Phares à droite. Le coin avant gauche correspond à l'arête gauche.
+
+**Algorithme : R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Reconnaissance :** Phares à l'arrière. Le coin avant droit correspond à l'arête droite.
+
+**Algorithme : R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Conseils de reconnaissance
+
+La reconnaissance efficace des PLL est essentielle pour des résolutions rapides. Voici des stratégies générales :
+
+1. **Cherchez les phares** -- une paire de coins correspondants sur un côté. Cela réduit immédiatement les possibilités.
+2. **Comptez les barres résolues** -- une barre est constituée de trois autocollants correspondants en ligne (coin-arête-coin). Les barres indiquent des PLL spécifiques.
+3. **Vérifiez deux côtés** -- regarder le côté avant et le côté droit suffit généralement pour identifier le cas.
+4. **Apprenez les motifs opposés** -- de nombreux PLL viennent en paires miroir (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Ce que vous voyez | PLL possibles |
+|:---|:---|
+| 4 côtés avec phares | H, Ua, Ub, Z |
+| 2 côtés opposés avec phares | T, F, Ja, Jb, Ra, Rb |
+| 1 côté avec phares | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 côté avec phares | E, V, Y, Na, Nb |
+
+## Ordre d'apprentissage
+
+Un ordre recommandé pour apprendre les 21 PLL :
+
+1. **2-Look d'abord :** T, Y (coins) + Ua, Ub, H, Z (arêtes) -- 6 algorithmes
+2. **Échanges adjacents :** Ja, Jb, F, Ra, Rb -- 5 algorithmes de plus
+3. **Coins uniquement :** Aa, Ab, E -- 3 algorithmes de plus
+4. **Échanges diagonaux :** V, Na, Nb -- 3 algorithmes de plus
+5. **G Perms en dernier :** Ga, Gb, Gc, Gd -- 4 derniers algorithmes
+
+:::tip
+Entraînez-vous à la reconnaissance en mélangeant, en résolvant jusqu'au PLL, puis en couvrant le cube et en essayant d'identifier le cas de mémoire. La vitesse vient de la reconnaissance instantanée, pas seulement de mouvements rapides des doigts.
+:::

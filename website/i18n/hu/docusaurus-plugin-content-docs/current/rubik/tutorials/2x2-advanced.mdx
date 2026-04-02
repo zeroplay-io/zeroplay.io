@@ -1,0 +1,374 @@
+---
+title: "2x2 Haladó: CLL módszer"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Haladó: CLL módszer
+
+Emeld a 2x2-es kirakásodat a következő szintre a **CLL (Utolsó Réteg Sarkai)** módszerrel. Míg az Ortega módszer két lépésben oldja meg az utolsó réteget (OLL majd PBL), a CLL az utolsó réteg sarkainak **orientációját és permutációját** is **egyetlen algoritmussal** oldja meg. Kevesebb nézés és gyorsabb kirakások.
+
+## Miért CLL?
+
+| Módszer | Utolsó réteg lépései | Algoritmusok | Jellemző sebesség |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 másodperc |
+| **CLL** | 1 (egy pillantás) | ~40 | 2–4 másodperc |
+
+A CLL a legjobb 2x2-es speedcuberek standard módszere. Mind a 40 eset megtanulásával egy teljes lépést eliminálsz.
+
+## Hogyan működik a CLL
+
+1. **Oldd meg az első oldalt** — mint Ortegánál, készíts egy fehér oldalt alulra (az oldalsó színeknek nem kell egyezniük).
+2. **Ismerd fel a CLL esetet** — nézd meg a felső oldalt és az oldalsó színeket a 40 eset azonosításához.
+3. **Alkalmazz egy algoritmust** — ez egyszerre orientálja és permutálja az összes felső sarkot.
+4. **AUF + alsó beállítás** — legfeljebb egy U és egy D fordítás a befejezéshez.
+
+## Jelölés emlékeztető
+
+- **R** = Jobb &nbsp;&nbsp; **L** = Bal &nbsp;&nbsp; **U** = Fel &nbsp;&nbsp; **D** = Le &nbsp;&nbsp; **F** = Elöl &nbsp;&nbsp; **B** = Hátul
+- Egy betű egyedül = **90° óramutató irányba**. **'** = **óramutató ellen**. **2** = **180°**.
+
+---
+
+## CLL eset csoportok
+
+A 40 CLL eset 7 csoportba van rendezve a felső oldal orientációs mintázata alapján. Alább a legfontosabb esetek minden csoportból.
+
+---
+
+## Sune esetek (6-ból 4)
+
+Egy sarok orientált (sárga felfelé), a másik háromnak forgásra van szüksége. A leggyakoribb csoport.
+
+### Sune 1 — Szomszédos csere
+
+Tartsd a megoldott sarkot elöl-balra. A három megoldatlan sarok óramutató irányba forog.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Átlós csere
+
+Azonos orientációs minta, de az sarkoknak átlós cserére van szükségük.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Tiszta (nincs csere)
+
+Az orientáció megoldva, pozícióváltás nem szükséges.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Szomszédos csere (Tükör)
+
+Tartsd a megoldott sarkot elöl-jobbra.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune esetek (6-ból 3)
+
+A Sune tükre — egy sarok orientált, a másik három óramutató ellen forog.
+
+### Anti-Sune 1 — Szomszédos csere
+
+Tartsd a megoldott sarkot elöl-jobbra. A három megoldatlan sarok óramutató ellen forog.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Átlós csere
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Tiszta (nincs csere)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H esetek (4-ből 4)
+
+Két szemben lévő sarok orientált (sárga felfelé), a másik kettő sárgája az oldalon.
+
+### H 1 — Szomszédos csere
+
+Két sárga matrica felül átlós pozícióban.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Átlós csere
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Nincs csere
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Oszlopok
+
+Mindkét átlós sarokpárnak cserére van szüksége.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi esetek (6-ból 4)
+
+Két szomszédos saroknak sárga felül, a másik kettőnek sárga az oldalon. A felső oldal a görög Pi betűre hasonlít.
+
+### Pi 1 — Átlós csere
+
+Tartsd a két orientált sarkot hátul.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Szomszédos csere (Jobb)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Szomszédos csere (Bal)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Nincs csere
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T esetek (6-ból 3)
+
+A felső oldal T-alakú sárga mintát mutat — egy sarok orientált, egy szomszédos sarok sárgája elöl, a másik kettőé az oldalon.
+
+### T 1 — Szomszédos csere
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Átlós csere
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Nincs csere
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U esetek (6-ból 3)
+
+Egy sarok helyesen orientált, a másik három U-alakú mintában az oldalakon.
+
+### U 1 — Szomszédos csere
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Átlós csere
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Nincs csere
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L esetek (6-ból 3)
+
+Két szomszédos sarok azonos irányba forgatva — a felső oldal L-alakú mintát mutat.
+
+### L 1 — Szomszédos csere
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Átlós csere
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Nincs csere
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL után: A kirakás befejezése
+
+A CLL algoritmus alkalmazása után a felső oldal teljesen megoldott. Szükséged lehet:
+
+1. **AUF (U oldal beállítása)** — egy U vagy U' fordítás a felső réteg igazításához.
+2. **Alsó réteg beállítása** — ha eltolódott, egy D vagy D' fordítás javítja.
+3. **Alsó réteg csere** — ritkán, szomszédos vagy átlós cserére lehet szükség. Használd az Ortega módszer PBL algoritmusait:
+   - **Átlós csere:** R2 F2 R2
+   - **Szomszédos csere:** R U' R F2 R' U R'
+
+---
+
+## Tanulási stratégia
+
+Mind a 40 CLL eset egyszerre tanulása nehéz. Ajánlott sorrend:
+
+1. **Kezdd a Sune és Anti-Sune esetekkel** (12 eset) — a leggyakoribbak, sok algoritmus rövid.
+2. **Add hozzá a T és U eseteket** (12 eset) — viszonylag könnyű felismerni és végrehajtani.
+3. **Tanuld meg a Pi eseteket** (6 eset) — jellegzetes orientációs minta.
+4. **Tanuld meg az L eseteket** (6 eset) — hasonló felismerés mint Pi, de más forgásirány.
+5. **Fejezd be a H esetekkel** (4 eset) — a legritkább csoport.
+
+## Felismerési tippek
+
+- **Először nézd a felső oldalt** az orientációs csoport azonosításához.
+- **Aztán ellenőrizd az oldalsó színeket** az eset meghatározásához.
+- **Gyakorolj csoportonként** — egy csoportot egyszerre, amíg azonnali nem lesz a felismerés.
+- **Használj inverz scramble-eket** — állíts be egy esetet, oldd meg, jósold meg az inverzét.
+
+---
+
+**CLL elsajátításával 3 másodperc alatti átlagokat érhetsz el a 2x2-n.** Az egy-pillantás megközelítés megszünteti a szünetet OLL és PBL között. Folytasd a felismerés gyakorlását — a sebesség az azonnali azonosításból ered.

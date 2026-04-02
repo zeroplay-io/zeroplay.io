@@ -1,0 +1,374 @@
+---
+title: "2x2 Avanzato: Metodo CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Avanzato: Metodo CLL
+
+Porta la tua risoluzione del 2x2 al livello successivo con il metodo **CLL (Angoli dell'Ultimo Strato)**. Mentre Ortega risolve l'ultimo strato in due passaggi (OLL poi PBL), CLL risolve sia l'**orientamento che la permutazione** degli angoli in **un singolo algoritmo**. Meno osservazioni e risoluzioni più veloci.
+
+## Perché CLL?
+
+| Metodo | Passaggi ultimo strato | Algoritmi | Velocità tipica |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 secondi |
+| **CLL** | 1 (un solo sguardo) | ~40 | 2–4 secondi |
+
+CLL è il metodo standard usato dai migliori speedcuber 2x2. Imparando tutti i 40 casi, elimini un intero passaggio.
+
+## Come funziona CLL
+
+1. **Risolvere la prima faccia** — come Ortega, costruisci una faccia bianca in basso (i colori laterali non devono corrispondere).
+2. **Riconoscere il caso CLL** — guarda la faccia superiore e i colori laterali per identificare il caso.
+3. **Applicare un algoritmo** — orienta e permuta simultaneamente tutti gli angoli superiori.
+4. **AUF + aggiustamento inferiore** — al massimo un giro U e un giro D per finire.
+
+## Promemoria notazione
+
+- **R** = Destra &nbsp;&nbsp; **L** = Sinistra &nbsp;&nbsp; **U** = Su &nbsp;&nbsp; **D** = Giù &nbsp;&nbsp; **F** = Davanti &nbsp;&nbsp; **B** = Dietro
+- Una lettera sola = **90° in senso orario**. Con **'** = **antiorario**. Con **2** = **180°**.
+
+---
+
+## Gruppi di casi CLL
+
+I 40 casi CLL sono organizzati in 7 gruppi basati sul pattern di orientamento della faccia superiore. Di seguito i casi più importanti di ogni gruppo.
+
+---
+
+## Casi Sune (4 di 6)
+
+Un angolo è orientato (giallo in alto), gli altri tre devono essere ruotati. Il gruppo più comune.
+
+### Sune 1 — Scambio adiacente
+
+Tieni l'angolo risolto davanti-sinistra. I tre angoli non risolti ruotano in senso orario.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Scambio diagonale
+
+Stesso pattern, ma gli angoli necessitano di uno scambio diagonale.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Puro (nessuno scambio)
+
+Orientamento risolto senza necessità di cambio posizione.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Scambio adiacente (Specchio)
+
+Tieni l'angolo risolto davanti-destra.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Casi Anti-Sune (3 di 6)
+
+Specchio di Sune — un angolo orientato, gli altri tre ruotano in senso antiorario.
+
+### Anti-Sune 1 — Scambio adiacente
+
+Tieni l'angolo risolto davanti-destra. I tre angoli non risolti ruotano in senso antiorario.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Scambio diagonale
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Puro (nessuno scambio)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Casi H (4 di 4)
+
+Due angoli opposti orientati (giallo in alto), gli altri due con giallo sui lati.
+
+### H 1 — Scambio adiacente
+
+Due adesivi gialli in alto in posizioni diagonali.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Scambio diagonale
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Nessuno scambio
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Colonne
+
+Entrambe le coppie di angoli diagonali necessitano di scambio.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Casi Pi (4 di 6)
+
+Due angoli adiacenti con giallo in alto, gli altri due con giallo sui lati. La faccia superiore assomiglia alla lettera greca Pi.
+
+### Pi 1 — Scambio diagonale
+
+Tieni i due angoli orientati dietro.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Scambio adiacente (Destra)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Scambio adiacente (Sinistra)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Nessuno scambio
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Casi T (3 di 6)
+
+La faccia superiore mostra un pattern a T — un angolo orientato, un angolo adiacente con giallo davanti, gli altri due con giallo sui lati.
+
+### T 1 — Scambio adiacente
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Scambio diagonale
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Nessuno scambio
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Casi U (3 di 6)
+
+Un angolo correttamente orientato, gli altri tre in pattern U sui lati.
+
+### U 1 — Scambio adiacente
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Scambio diagonale
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Nessuno scambio
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Casi L (3 di 6)
+
+Due angoli adiacenti ruotati nella stessa direzione — la faccia superiore mostra un pattern a L.
+
+### L 1 — Scambio adiacente
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Scambio diagonale
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Nessuno scambio
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Dopo CLL: Completare la risoluzione
+
+Dopo l'algoritmo CLL, la faccia superiore è completamente risolta. Potresti aver bisogno di:
+
+1. **AUF (Regola faccia U)** — un giro U o U' per allineare lo strato superiore con quello inferiore.
+2. **Aggiustamento strato inferiore** — se disallineato, un giro D o D' lo corregge.
+3. **Scambio strato inferiore** — raramente, potrebbe servire uno scambio adiacente o diagonale. Usa gli stessi algoritmi PBL di Ortega:
+   - **Scambio diagonale:** R2 F2 R2
+   - **Scambio adiacente:** R U' R F2 R' U R'
+
+---
+
+## Strategia di apprendimento
+
+Imparare tutti i 40 casi in una volta è difficile. Ordine consigliato:
+
+1. **Inizia con Sune e Anti-Sune** (12 casi) — i più comuni, molti algoritmi brevi.
+2. **Aggiungi i casi T e U** (12 casi) — relativamente facili da riconoscere ed eseguire.
+3. **Impara i casi Pi** (6 casi) — pattern di orientamento distintivo.
+4. **Impara i casi L** (6 casi) — riconoscimento simile a Pi ma direzione diversa.
+5. **Finisci con i casi H** (4 casi) — il gruppo più raro.
+
+## Consigli per il riconoscimento
+
+- **Guarda prima la faccia superiore** per identificare il gruppo di orientamento.
+- **Poi controlla i colori laterali** per determinare il caso specifico.
+- **Pratica per gruppi** — un gruppo alla volta fino al riconoscimento istantaneo.
+- **Usa scramble inversi** — prepara un caso, risolvilo, prova a prevedere l'inverso.
+
+---
+
+**Con CLL padroneggiato, puoi raggiungere medie sotto i 3 secondi sul 2x2.** L'approccio a uno sguardo elimina la pausa tra OLL e PBL. Continua a praticare il riconoscimento — la velocità viene dall'identificazione istantanea.

@@ -1,0 +1,466 @@
+---
+title: PLL算法
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL算法
+
+**PLL（最后层排列）**是CFOP方法的最后一步。在OLL将顶面所有贴纸朝向正确后，PLL将各块重新排列到正确位置。共有**21种PLL情况**。
+
+如果你是初学者，请从**2-Look PLL**开始——一种简化方法，只需**6个算法**而非全部21个。
+
+---
+
+## 2-Look PLL
+
+2-Look PLL将排列步骤分为两个较小的步骤：
+
+1. **排列角块** -- 将4个角块放到正确位置（2种情况）
+2. **排列棱块** -- 将4个棱块放到正确位置（4种情况）
+
+这意味着你只需要学习**6个算法**。
+
+### 第1步：排列角块
+
+观察顶层角块。检查是否有**相邻角块对**属于同一面（匹配的"车灯"）。
+
+#### 相邻角块交换
+
+一对相邻角块已经正确。将已解决的对放在**后面**并执行：
+
+**算法: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+这是**T-Perm** -- 它交换两个前角块（和两个棱块，我们将在第2步修复）。
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### 对角角块交换
+
+没有相邻角块匹配。使用**Y-Perm**对角交换角块：
+
+**算法: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### 第2步：排列棱块
+
+所有角块现在已解决。观察棱块并确定哪些需要循环。
+
+#### Ua Perm（3棱块顺时针循环）
+
+三个棱块需要顺时针循环。将已解决的棱块放在**后面**。
+
+**算法: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm（3棱块逆时针循环）
+
+三个棱块需要逆时针循环。将已解决的棱块放在**后面**。
+
+**算法: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm（交换对面棱块对）
+
+两对对面棱块需要交换。
+
+**算法: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm（交换相邻棱块对）
+
+两对相邻棱块需要交换。将两对棱块分别放在前/右和后/左位置。
+
+**算法: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## 完整PLL -- 全部21种情况
+
+### 仅棱块（4种情况）
+
+这些PLL只移动棱块；角块已经解决。
+
+#### Ua Perm
+
+棱块顺时针循环。已解决的棱块在后面。
+
+**识别：** 从后面可以看到一个已解决的条（棱块+两个角块）。
+
+**算法: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+棱块逆时针循环。已解决的棱块在后面。
+
+**识别：** 从后面可以看到一个已解决的条；棱块颜色与Ua相反方向循环。
+
+**算法: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+两对对面棱块交换。
+
+**识别：** 每面的中心棱块位置有对面的颜色。四面都呈棋盘格图案。
+
+**算法: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+两对相邻棱块交换。
+
+**识别：** 两个相邻面各自在棱块位置有对方的颜色。没有一面完全解决。
+
+**算法: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### 仅角块（3种情况）
+
+这些PLL只移动角块；棱块已经解决。
+
+#### Aa Perm
+
+三个角块循环。左侧有"车灯"。
+
+**识别：** 一侧有"车灯"，条（3个匹配贴纸）在对面。
+
+**算法: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+三个角块循环（与Aa相反方向）。右侧有"车灯"。
+
+**识别：** Aa的镜像——"车灯"在对面。
+
+**算法: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+两对对角角块交换。棱块不移动。
+
+**识别：** 任何一面都没有"车灯"。每面有两种不同的角块颜色。
+
+**算法: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### 相邻角块交换（6种情况）
+
+这些PLL交换一对相邻角块以及棱块排列。
+
+#### T Perm
+
+**识别：** 前后有"车灯"。没有"车灯"的两面颜色互换。
+
+**算法: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**识别：** 只有一面（前面）有"车灯"。其他三面没有匹配的对。
+
+**算法: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**识别：** 左侧有一个已解决的1x1x3块。右侧的相邻块已交换。
+
+**算法: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**识别：** 右侧有一个已解决的1x1x3块。Ja的镜像。
+
+**算法: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**识别：** 前面有"车灯"。右侧相邻角块和棱块交换。
+
+**算法: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**识别：** 后面有"车灯"。Ra的镜像。
+
+**算法: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### 对角角块交换（4种情况）
+
+这些PLL交换两个对角的角块。
+
+#### V Perm
+
+**识别：** 任何一面都没有"车灯"。一面有双色图案，其中棱块与一个角块匹配。
+
+**算法: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**识别：** 没有"车灯"。一面有两个匹配的角块，但它们之间的棱块是错误的。
+
+**算法: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**识别：** 两个对面完全解决（各有一个已解决的条），但另外两面的块完全交换。
+
+**算法: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**识别：** Na的镜像。两个对面的条但交换方式不同。
+
+**算法: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms（4种情况）
+
+G排列是最难识别的。它们同时移动一对相邻角块并循环三个棱块。
+
+#### Ga Perm
+
+**识别：** 左侧有"车灯"。前右角块与右棱块匹配。
+
+**算法: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**识别：** 前面有"车灯"。后左角块与左棱块匹配。
+
+**算法: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**识别：** 右侧有"车灯"。前左角块与左棱块匹配。
+
+**算法: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**识别：** 后面有"车灯"。前右角块与右棱块匹配。
+
+**算法: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## 识别技巧
+
+高效的PLL识别是快速解决的关键。以下是一般策略：
+
+1. **寻找"车灯"** -- 一面上一对匹配的角块。这能立即缩小情况范围。
+2. **数已解决的条** -- 条是一排三个匹配的贴纸（角块-棱块-角块）。条指示特定的PLL。
+3. **检查两面** -- 看前面和右面通常足以识别情况。
+4. **学习对称图案** -- 许多PLL以镜像对出现（Ua/Ub、Ja/Jb、Ra/Rb、Ga-Gd）。
+
+| 你看到的 | 可能的PLL |
+|:---|:---|
+| 4面有"车灯" | H, Ua, Ub, Z |
+| 2个对面有"车灯" | T, F, Ja, Jb, Ra, Rb |
+| 1面有"车灯" | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0面有"车灯" | E, V, Y, Na, Nb |
+
+## 学习顺序
+
+学习全部21种PLL的推荐顺序：
+
+1. **先学2-Look：** T、Y（角块）+ Ua、Ub、H、Z（棱块）-- 6个算法
+2. **相邻交换：** Ja、Jb、F、Ra、Rb -- 再加5个算法
+3. **仅角块：** Aa、Ab、E -- 再加3个算法
+4. **对角交换：** V、Na、Nb -- 再加3个算法
+5. **最后学G Perms：** Ga、Gb、Gc、Gd -- 最后4个算法
+
+:::tip
+通过打乱、解到PLL、然后遮住魔方尝试从记忆中识别情况来练习识别。速度来自即时识别，而不仅仅是快速的手法。
+:::

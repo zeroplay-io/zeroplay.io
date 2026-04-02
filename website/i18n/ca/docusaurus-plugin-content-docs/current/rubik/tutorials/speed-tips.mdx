@@ -1,0 +1,286 @@
+---
+title: Consells de Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Consells de Speed Cubing
+
+Ser més ràpid amb el cub de Rubik no és només girar més ràpid. Els majors avenços provenen de planificar amb antelació, reduir les pauses i practicar amb intenció. Aquesta guia cobreix les habilitats clau que separen els resoledors casuals dels speedcubers competitius.
+
+---
+
+## Planificació de la creu
+
+La creu és el primer pas d'una resolució CFOP i és l'única part que pots planificar **completament durant la inspecció**. Dominar la planificació de la creu et dona un avantatge gratuït a cada resolució.
+
+### Aprofita els 15 segons complets d'inspecció
+
+En competició, tens 15 segons d'inspecció abans d'iniciar el cronòmetre. Aprofita cada segon:
+- Primers 5 segons: Identifica on estan les 4 arestes de la creu.
+- Següents 5 segons: Planifica la solució completa de la creu (idealment 6-8 moviments o menys).
+- Últims 5 segons: Repassa mentalment la seqüència i planifica el teu primer parell F2L.
+
+### Resol la creu a la cara inferior
+
+Resol sempre la creu a la **cara inferior** (capa D). Els principiants sovint resolen la creu a dalt i després giren el cub, perdent 1-2 segons i l'orientació. Resolent a baix des del principi, pots començar immediatament a buscar parells F2L mentre acabes la creu.
+
+**Exemple: Una solució de creu en 6 moviments**
+
+Partint d'aquesta barreja, la creu blanca es pot resoldre en només 6 moviments:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Exemple: Una creu eficient en 5 moviments**
+
+Amb bona planificació, moltes creus es poden resoldre en 5 moviments o menys:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Practica la creu amb els ulls tancats
+
+Aquest és el millor exercici de creu:
+1. Barreja el cub.
+2. Durant la inspecció, planifica la solució completa de la creu.
+3. Tanca els ulls i executa la creu de memòria.
+4. Obre els ulls per verificar.
+
+Si la creu és correcta, la teva planificació és sòlida. Si no, identifica on ha fallat el teu seguiment mental.
+
+### Neutralitat de colors
+
+La majoria dels principiants aprenen només amb la creu blanca. Els resoledors **neutrals en colors** poden començar amb qualsevol dels 6 colors, triant la creu més fàcil per a cada barreja. Això proporciona típicament un avantatge de 2-3 moviments a la creu, que suma 1-2 segons per resolució de mitjana.
+
+Per desenvolupar la neutralitat de colors:
+1. Comença afegint un color (p. ex., groc, l'oposat del blanc).
+2. Per a cada barreja, planifica les creus blanca i groga i tria la més curta.
+3. Afegeix gradualment més colors fins a sentir-te còmode amb els sis.
+
+---
+
+## Lookahead (Anticipació)
+
+El lookahead és la capacitat de **rastrejar la peça següent mentre resols l'actual**. És l'habilitat més important per superar estancaments de velocitat i el que separa resoledors sub-15 de sub-10.
+
+### Què significa realment el lookahead
+
+Durant el F2L, sempre estàs resolent un parell cantonada-aresta a la vegada. Sense lookahead, la seqüència és: resoldre parell – pausa – buscar següent parell – resoldre parell – pausa. Aquestes pauses sumen diversos segons per resolució.
+
+Amb lookahead, mentre les teves mans executen un algorisme conegut per al parell actual, els teus ulls ja estan escanejant les peces del següent parell. L'objectiu és **zero pauses** entre parells.
+
+### Com practicar el lookahead
+
+Les **resolucions lentes** són el mètode d'entrenament més efectiu:
+
+1. Configura un metrònom a 1-2 girs per segon (60-120 BPM).
+2. Resol el F2L a aquest ritme constant, sincronitzant cada moviment amb el pols.
+3. La regla: **pots girar lentament, però mai pots deixar de girar.**
+4. Si has de fer una pausa per trobar el següent parell, estàs girant massa ràpid. Redueix encara més la velocitat.
+
+Amb setmanes de pràctica, acceleraràs naturalment mantenint un flux continu.
+
+### Pràctica de parells F2L a cegues
+
+1. Barreja el cub.
+2. Resol la creu.
+3. Troba un parell F2L i planifica la inserció mentalment.
+4. Tanca els ulls i executa la inserció.
+5. Obre els ulls i repeteix per al següent parell.
+
+Això obliga el teu cervell a planificar completament cada inserció abans d'executar-la, reforçant el seguiment mental necessari per a un lookahead real.
+
+---
+
+## F2L eficient
+
+L'etapa F2L (First Two Layers) té el major marge d'optimització. Fins i tot petites millores en l'eficiència del F2L s'acumulen al llarg de centenars de resolucions.
+
+### Evita rotacions innecessàries
+
+Les rotacions completes del cub (y, y') costen temps i interrompen el lookahead. Una resolució típica de principiant té 6-8 rotacions durant el F2L. Un resolutor avançat fa de mitjana 1-2.
+
+**Exemple: Inserció a l'slot posterior dret sense rotació**
+
+En lloc de rotar amb y' i inserir a l'slot anterior dret, fes servir insercions als slots posteriors:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. el mateix parell requerint una rotació:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+La primera versió estalvia uns 0,5 segons — la rotació en si més el reajust d'agafada.
+
+### Prioritza els slots posteriors
+
+Inserir parells F2L als slots **posterior dret** i **posterior esquerre** és generalment més eficient perquè:
+- Els moviments R i L són més ràpids que els moviments F.
+- Les insercions als slots posteriors sovint requereixen menys moviments.
+- Mantens millor lookahead quan les peces sense resoldre són visibles davant teu.
+
+### Influeix en el següent parell
+
+En inserir el teu parell F2L actual, de vegades pots preparar el següent parell gratis. Per exemple, si la cantonada del següent parell és a la capa U, triar un angle d'inserció específic per al parell actual pot moure aquesta cantonada a una posició favorable.
+
+És una habilitat avançada, però només ser-ne conscient t'ajuda a prendre millors decisions.
+
+### Multi-slotting
+
+En alguns casos, pots resoldre dos parells F2L simultàniament o resoldre'n un mentre prepares parcialment un altre. És rar a la pràctica, però val la pena reconèixer-ho quan sorgeix l'oportunitat.
+
+---
+
+## Reconeixement OLL/PLL
+
+El reconeixement ràpid de casos OLL i PLL elimina la pausa entre el F2L i l'última capa.
+
+### Reconeix des de dos angles
+
+Practica la identificació de casos OLL mirant simultàniament la **cara superior** i la **cara frontal**. Això et dona tota la informació que necessites sense rotar el cub per revisar altres costats.
+
+Per al PLL, revisa les cares **frontal i dreta** (els dos costats visibles des del teu angle de resolució estàndard). Amb pràctica, el reconeixement des de dues cares es torna instantani.
+
+### Pre-AUF
+
+L'AUF (Adjust U Face) és el moviment U/U'/U2 que fas abans d'iniciar un algorisme OLL o PLL per alinear correctament el cas. Els resoledors avançats fan l'AUF durant l'últim moviment del F2L o durant el reconeixement, superposant-lo amb el temps de reflexió.
+
+### Predicció d'OLL
+
+Durant l'última inserció F2L, sovint coneixes 2-3 de les 4 orientacions de cantonades de la cara superior. Rastrejant com la teva inserció afecta l'última cantonada, pots predir el cas OLL abans d'acabar el F2L i començar a executar l'algorisme OLL sense pausa.
+
+---
+
+## Rutines de pràctica
+
+La pràctica deliberada supera la resolució sense pensar. Estructura les teves sessions de pràctica per a la màxima millora.
+
+### Pla de pràctica diari (45-60 minuts)
+
+**Exercicis de creu (10 minuts)**
+- Barreja, planifica la creu durant la inspecció, resol només la creu.
+- Objectiu: constantment per sota de 2 segons, planificada amb ulls tancats.
+- Registra la teva mitjana de moviments. Apunta a 6 o menys.
+
+**F2L en resolucions lentes (15 minuts)**
+- Fes servir un metrònom. F2L complet a velocitat de gir constant.
+- Concentra't exclusivament en el lookahead i el flux continu.
+- No cronometris aquestes resolucions. La velocitat no és l'objectiu aquí.
+
+**Entrenament d'algorismes (10 minuts)**
+- Tria 2-3 algorismes OLL o PLL que encara estiguis aprenent.
+- Repeteix cada un 20-30 vegades fins que la memòria muscular prengui el control.
+- Després barreja i practica el reconeixement + execució.
+
+**Resolucions cronometrades (15-20 minuts)**
+- Fes una **mitjana de 12** — dotze resolucions cronometrades, descarta la millor i la pitjor, calcula la mitjana de les deu restants.
+- Registra els teus resultats. Segueix tendències al llarg de setmanes, no resolucions individuals.
+- Després de cada sessió, revisa la teva pitjor resolució. Què ha anat malament?
+
+### Mitjanes i seguiment
+
+- **Ao5** (Mitjana de 5): Verificació ràpida de l'estat actual. Bo per escalfar.
+- **Ao12** (Mitjana de 12): La mètrica competitiva estàndard. L'indicador més fiable del nivell d'habilitat.
+- **Ao100**: Seguiment de tendències a llarg termini. Calcula setmanalment per mesurar el progrés.
+
+Fes servir una aplicació de cronòmetre que registri el teu historial automàticament. Veure com la teva mitjana baixa al llarg de les setmanes és una motivació poderosa.
+
+### Pràctica deliberada vs. pràctica sense pensar
+
+Fer 200 resolucions mirant la televisió no et farà més ràpid. La pràctica deliberada significa:
+- Triar **una habilitat específica** en la qual enfocar-te per sessió (creu, lookahead, reconeixement OLL).
+- Prestar total atenció a aquesta habilitat durant cada resolució.
+- Analitzar errors en lloc de barrejar immediatament de nou.
+
+Deu resolucions enfocades superen cent en pilot automàtic.
+
+---
+
+## Consells per a competició
+
+Competir és una habilitat diferent a practicar a casa. Els nervis, els entorns desconeguts i la pressió del temps afecten el rendiment.
+
+### Escalfa adequadament
+
+- Arriba d'hora i fes 20-30 resolucions relaxades abans del teu event.
+- Fes exercicis d'algorismes per activar la memòria muscular.
+- No intentis batre rècords personals durant l'escalfament. Simplement posa les mans en moviment.
+
+### Mantén la calma durant les resolucions
+
+- **Concentra't en resoldre fluidament, no ràpid.** Forçar la velocitat causa errors i bloquejos.
+- Si t'equivoques en un parell o algorisme, respira i continua. No entris en pànic ni intentis afanyar-te per recuperar temps.
+- Recorda: la teva mitjana de competició exclou les teves millor i pitjor resolucions, així que una mala resolució no arruïnarà el teu resultat.
+
+### Tècnica d'inspecció
+
+- Sosté el cub a l'alçada dels ulls durant la inspecció. No miris cap avall a la taula.
+- Rota el cub amb moviments y i x per veure tots els costats eficientment.
+- Planifica la teva creu completament. Si el temps ho permet, localitza el teu primer parell F2L.
+- Escolta els avisos de 8 i 12 segons i ajusta el teu ritme en conseqüència.
+
+### Familiaritat amb el Stackmat timer
+
+- Practica amb un Stackmat timer a casa si planifiques competir. La col·locació de les mans i el moviment d'inici/parada són diferents de tocar la pantalla d'un telèfon.
+- Ambdues mans han d'estar planes sobre les coixinetes. El cronòmetre s'inicia quan aixeques ambdues mans simultàniament.
+- Practica un inici suau per no fallar el primer moviment de la teva creu.
+
+---
+
+## Maquinari
+
+Un bon speed cube marca una diferència real. No necessites el cub més car per millorar, però canviar d'un Rubik's de marca estàndard a un speed cube modern és una de les majors millores individuals que pots fer.
+
+### Què fa un bon speed cube
+
+- **Corner cutting**: El cub ha de tolerar lleugers desalineaments sense bloquejar-se. Els cubs moderns poden fer corner cutting de 45 graus o més.
+- **Gir suau i controlable**: Ni massa ràpid (causa passar-se de gir) ni massa lent (requereix esforç extra).
+- **Estabilitat**: El cub ha de mantenir la seva forma durant girs ràpids sense que saltin peces ni es deformi.
+
+### Cubs magnètics
+
+Gairebé tots els cubers competitius fan servir **cubs magnètics** avui en dia. Petits imants dins de cada peça creen un subtil clic a cada gir de 90 graus, proporcionant:
+- Millor control a altes velocitats
+- Menys passades de gir i bloquejos
+- Una sensació més satisfactòria
+
+Els cubs magnètics de marques com MoYu, QiYi i GAN estan disponibles en diversos rangs de preu. Fins i tot els cubs magnètics econòmics (menys de 10 $) són enormement millors que els no magnètics.
+
+### Tensió i lubricació
+
+- La **tensió** controla com de fluix o apretat se sent el cub. Una tensió més fluixa permet girs més ràpids però redueix l'estabilitat. Comença amb tensió mitjana i ajusta segons el teu estil de gir.
+- La **lubricació** redueix la fricció i canvia la sensació del cub. Els lubricants a base de silicona són l'estàndard:
+  - **Lubricant ràpid** a les peces per a velocitat.
+  - **Lubricant lent/enganxós** al nucli per a estabilitat.
+  - Relubrica cada pocs centenars de resolucions o quan el cub comenci a sentir-se aspre.
+
+### Recomanació de configuració per a principiants
+
+1. Aconsegueix qualsevol 3x3 magnètic modern (MoYu RS3M, QiYi Tornado o similar).
+2. Mantén les tensions de fàbrica la primera setmana per acostumar-te al cub.
+3. Afegeix una petita quantitat de lubricant de silicona si el cub se sent sec.
+4. Ajusta les tensions gradualment — afluixa un quart de volta a la vegada fins a trobar la teva preferència.
+
+Un cub ben configurat elimina el maquinari com a variable, permetent-te concentrar-te completament a millorar la teva tècnica.

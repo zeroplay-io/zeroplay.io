@@ -1,0 +1,219 @@
+---
+title: Tổng quan phương pháp CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Tổng quan phương pháp CFOP
+
+**Phương pháp CFOP** (còn gọi là **phương pháp Fridrich**) là phương pháp giải Rubik tốc độ được sử dụng rộng rãi nhất trên thế giới. Đại đa số người giải dưới 20 giây và các kỷ lục gia thế giới đều sử dụng CFOP. Phương pháp này dựa trên phương pháp từng lớp cho người mới nhưng hiệu quả hơn rất nhiều — giảm trung bình từ hơn 100 bước xuống khoảng 55-60 bước.
+
+**CFOP** là viết tắt của bốn bước:
+
+1. **C**ross — Giải 4 cạnh ở mặt đáy
+2. **F**2L — Hai tầng đầu tiên (ghép và chèn 4 cặp góc-cạnh)
+3. **O**LL — Định hướng tầng cuối (làm toàn bộ mặt trên thành một màu)
+4. **P**LL — Hoán vị tầng cuối (sắp xếp tất cả các mảnh trên đúng vị trí)
+
+## CFOP so với phương pháp cho người mới
+
+| | Người mới (LBL) | CFOP |
+|---|---|---|
+| Bước | 7 | 4 |
+| Số bước trung bình | 100-120 | 55-60 |
+| Công thức cần học | 5-8 | 78 (đầy đủ) / 16 (2-look) |
+| Tốc độ thông thường | 1-3 phút | 10-20 giây |
+| Khác biệt chính | Từng bước, từng mảnh một | Ghép cặp mảnh, ít bước hơn |
+
+Tin tốt: bạn có thể học CFOP **dần dần**. Bắt đầu với F2L trực giác và 2-look OLL/PLL (chỉ 16 công thức), sau đó mở rộng sang OLL đầy đủ (57 công thức) và PLL đầy đủ (21 công thức) theo thời gian.
+
+---
+
+## Bước 1: Chữ thập
+
+Chữ thập cùng khái niệm với phương pháp người mới — giải 4 cạnh trắng ở mặt đáy sao cho mỗi cạnh cũng khớp với tâm bên cạnh. Điểm khác biệt trong CFOP là **cách** bạn tiếp cận:
+
+- **Lên kế hoạch toàn bộ chữ thập trong thời gian quan sát** (15 giây trước khi bắt đầu giải)
+- **Giải chữ thập ở dưới** — không lật Rubik
+- **Nhắm 8 bước hoặc ít hơn** — chữ thập hiệu quả trung bình 6-7 bước
+
+**Ví dụ: Giải cạnh chữ thập trực tiếp xuống đáy**
+
+Ở đây, cạnh trắng-xanh dương ở tầng trên. Chúng ta căn chỉnh và chèn trực tiếp xuống đáy bằng một bước:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Ví dụ: Cạnh chữ thập cần định vị lại**
+
+Đôi khi cạnh ở sai vị trí hoặc bị lật. Ở đây chúng ta sửa cạnh bị đặt sai:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Mẹo cho chữ thập nhanh:**
+- Luyện lên kế hoạch chữ thập với mắt nhắm
+- Học giải trong 8 bước hoặc ít hơn từ bất kỳ scramble nào
+- Luyện giải chữ thập ở dưới từ ngày đầu — tránh thói quen giải ở trên
+
+---
+
+## Bước 2: F2L (Hai tầng đầu tiên)
+
+F2L là trái tim của CFOP và là nơi tiết kiệm thời gian nhiều nhất. Thay vì giải góc tầng một và cạnh tầng hai riêng biệt (như phương pháp người mới), bạn **ghép** mảnh góc với cạnh tương ứng và **chèn** chúng cùng nhau thành một đơn vị.
+
+Có 4 cặp góc-cạnh (gọi là **slot**) cần giải. Mỗi slot nằm giữa hai mặt bên ở hai tầng dưới.
+
+**Trường hợp F2L cơ bản: Góc và cạnh đều ở tầng trên**
+
+Góc trắng-đỏ-xanh ở tầng trên, và cạnh đỏ-xanh cũng ở tầng trên. Chúng ta ghép và chèn:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Trường hợp phổ biến khác: Tách cặp sai**
+
+Đôi khi các mảnh bị ghép sai. Chúng ta tách và ghép lại đúng:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L có thể học **trực giác** — hiểu logic ẩn, ghép và chèn — hoặc **theo công thức** với 41 trường hợp cụ thể. Hầu hết người chơi tốc độ dùng kết hợp cả hai.
+
+Danh sách đầy đủ các trường hợp và công thức F2L, xem hướng dẫn [**F2L: Hai tầng đầu tiên**](./f2l).
+
+---
+
+## Bước 3: OLL (Định hướng tầng cuối)
+
+Sau khi hoàn thành hai tầng đầu, mặt trên sẽ có một số miếng dán vàng và không vàng. Mục tiêu của OLL là làm **toàn bộ mặt trên thành vàng** — chưa cần quan tâm màu bên cạnh.
+
+OLL đầy đủ có **57 công thức**. Tuy nhiên, bạn có thể bắt đầu với **2-look OLL**, chỉ dùng 10 công thức bằng cách chia bước thành hai phần:
+
+1. **Nhìn lần 1:** Tạo chữ thập vàng trên cùng (3 trường hợp, dùng 2 công thức từ các hướng khác nhau)
+2. **Nhìn lần 2:** Định hướng các góc vàng (7 công thức)
+
+**Ví dụ: Sune (một trong các trường hợp OLL phổ biến nhất)**
+
+Đây là OLL #26, thường gọi là **Sune**. Một góc vàng đã đúng hướng, ba góc còn lại cần xoay:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Ví dụ: Trường hợp chữ thập OLL (tạo chữ thập vàng)**
+
+Khi có hình chữ L từ cạnh vàng ở trên, đặt L ở phía sau bên trái và áp dụng:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Mẹo học OLL:**
+- Bắt đầu với 2-look OLL — chỉ thêm vài giây vào lời giải
+- Học Sune và Anti-Sune trước; chúng xuất hiện trong nhiều trường hợp OLL
+- Luyện nhận diện trường hợp qua mẫu miếng dán vàng ở trên
+
+---
+
+## Bước 4: PLL (Hoán vị tầng cuối)
+
+Bước cuối cùng! Tất cả miếng dán vàng đã ở trên, nhưng màu bên cạnh của các mảnh tầng cuối có thể chưa khớp. PLL **sắp xếp lại** các mảnh tầng trên vào đúng vị trí để hoàn thành.
+
+PLL đầy đủ có **21 công thức**. Bạn có thể bắt đầu với **2-look PLL**, chỉ dùng 6 công thức:
+
+1. **Nhìn lần 1:** Đặt góc đúng vị trí (2 công thức)
+2. **Nhìn lần 2:** Đặt cạnh đúng vị trí (4 công thức)
+
+**Ví dụ: T-Perm (một trong các công thức PLL hữu ích nhất)**
+
+T-Perm hoán đổi hai góc và hai cạnh. Xuất hiện thường xuyên và là nền tảng để học các PLL khác:
+
+**Công thức: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Ví dụ: U-Perm (a) — Chu trình 3 cạnh**
+
+U-Perm xoay ba cạnh theo chiều kim đồng hồ trong khi tất cả góc đã đúng vị trí:
+
+**Công thức: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Mẹo học PLL:**
+- Bắt đầu với T-Perm, U-Perms (a và b) và A-Perms
+- Học nhận diện PLL qua màu bên cạnh (mẫu đèn pha)
+- Luyện thực hiện PLL từ bất kỳ góc AUF nào (điều chỉnh mặt trên)
+
+---
+
+## Khi nào nên học CFOP
+
+CFOP là bước tiếp theo tự nhiên sau khi bạn thành thạo phương pháp từng lớp cho người mới. Đây là lộ trình khuyến nghị:
+
+### Giai đoạn 1: Người mới đến dưới 60 giây
+- Thành thạo phương pháp người mới cho đến khi lời giải ổn định
+- Học giải **chữ thập ở dưới**
+- Bắt đầu luyện **F2L trực giác** — quan sát cách các cặp được tạo và chèn
+
+### Giai đoạn 2: Dưới 60 đến dưới 30 giây
+- Dùng **F2L trực giác** đầy đủ cho cả 4 cặp
+- Học **2-look OLL** (10 công thức)
+- Học **2-look PLL** (6 công thức)
+- Luyện **lookahead** — theo dõi cặp tiếp theo khi đang chèn cặp hiện tại
+
+### Giai đoạn 3: Dưới 30 đến dưới 20 giây
+- Học **PLL đầy đủ** (21 công thức)
+- Bắt đầu học **OLL đầy đủ** (57 công thức)
+- Tối ưu hóa giải pháp F2L — học [**các trường hợp F2L theo công thức**](./f2l)
+- Cải thiện hiệu quả chữ thập (lên kế hoạch toàn bộ chữ thập trong thời gian quan sát)
+
+### Giai đoạn 4: Dưới 20 giây và hơn nữa
+- Hoàn thành **OLL đầy đủ**
+- Học kỹ thuật F2L nâng cao (kỹ thuật slot trống, multi-slotting)
+- Xây dựng thói quen **lookahead** mạnh mẽ
+- Cải thiện tốc độ xoay và sự mượt mà
+
+---
+
+## Bước tiếp theo
+
+Sẵn sàng đi sâu vào từng bước? Xem các hướng dẫn chi tiết:
+
+- [**F2L: Hai tầng đầu tiên**](./f2l) — Tất cả trường hợp F2L phổ biến với công thức và demo
+- [**Công thức OLL**](./oll) — Đầy đủ 57 trường hợp OLL với 2-Look OLL cho người mới
+- [**Công thức PLL**](./pll) — Tất cả 21 trường hợp PLL với 2-Look PLL cho người mới
+- [**Hướng dẫn Finger Tricks**](./finger-tricks) — Thực hiện bước hiệu quả và các trigger thiết yếu
+- [**Mẹo Speedcubing**](./speed-tips) — Lên kế hoạch chữ thập, lookahead và lịch luyện tập
+
+**Chúc vui với Rubik!** Hành trình từ người mới đến dưới 20 giây là một trong những thử thách đáng giá nhất trong speedcubing. Từng bước một, bạn sẽ đạt được.

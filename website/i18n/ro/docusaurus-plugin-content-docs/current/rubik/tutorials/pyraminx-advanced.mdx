@@ -1,0 +1,325 @@
+---
+title: "Técnicas avanzadas de Pyraminx"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Técnicas avanzadas de Pyraminx
+
+¿Estás listo para llevar tus resoluciones de Pyraminx al siguiente nivel? Questa guida copre i metodi avanzati che i migliori speedcuber di Pyraminx usano per raggiungere medie sotto i 5 secondi. Nos centraremos en el método **L4E (Ultimi 4 Spigoli)**, la tecnica **Keyhole** e l'approccio **Superior primero**.
+
+## Memento notație
+
+**Strati (maiuscole)** — girar toda la capa (excluyendo la punta):
+- **U** = Strato superiore &nbsp;&nbsp; **R** = Strato destro &nbsp;&nbsp; **L** = Strato sinistro &nbsp;&nbsp; **B** = Strato posteriore
+
+**Punte (minuscole)** — girar solo la punta:
+- **u** = Punta superiore &nbsp;&nbsp; **r** = Punta destra &nbsp;&nbsp; **l** = Punta sinistra &nbsp;&nbsp; **b** = Punta posteriore
+
+Una lettera sola significa **120° in senso orario**. Añadir **'** significa **120° in senso antiorario**.
+
+---
+
+## Metoda L4E (Ultimi 4 Spigoli)
+
+El método L4E es el método avanzado más popular para el Pyraminx. En lugar de resolver capa por capa, resuelves un bloque primero y luego las **últimas 4 aristas** en un solo paso usando algoritmos.
+
+### Prezentare generală
+
+| Passo | Descrizione | Tecnica |
+|------|-------------|-----------|
+| 1 | Resolver las puntas | Intuitivo (igual que principiante) |
+| 2 | Risolvere la V | Intuitivo — un centro + due spigoli |
+| 3 | Resolver las últimas 4 aristas | Algorítmico — una sola mirada |
+
+### Pasul 1: Risolvere le punte
+
+Come il metodo per principianti. Allinea tutte le 4 punte ai centri adiacenti. Questo passo è banale — ogni punta ha solo 3 posizioni.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Pasul 2: Risolvere la V
+
+Scegli una faccia inferiore e costruisci una **forma a V**: un pezzo centrale con i suoi due spigoli adiacenti correttamente posizionati. Esto te da un bloque 1×1×2 resuelto en la parte inferior.
+
+Sostén el Pyraminx con la V en la parte inferior izquierda. La V consiste nel centro inferiore e nei due spigoli che lo collegano alle facce sinistra e destra.
+
+**Construir la V** — este paso es intuitivo. Encuentra las dos aristas que pertenecen junto al centro elegido y colócalas usando giros de capa:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V con una arista volteada** — si una arista está en su lugar pero volteada, sácala y vuelve a insertarla:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Sfaturi:**
+- Elige la V que requiera menos movimientos — inspecciona las 4 posiciones posibles de V antes de empezar.
+- La V dovrebbe essere completamente pianificata durante l'ispezione (15 secondi sono più che sufficienti per il Pyraminx).
+
+### Pasul 3: Risolvere gli ultimi 4 spigoli
+
+Con la V risolta, rimangono 4 spigoli. Identifica il caso e applica l'algoritmo corrispondente. Hay aproximadamente 30 casos L4E, pero muchos son espejos entre sí, lo que reduce los casos únicos que necesitas aprender.
+
+Sostén el Pyraminx con la **V en la parte inferior izquierda** (el bloque resuelto te mira desde el lado izquierdo).
+
+---
+
+#### Cazul L4E 1: Las 4 aristas necesitan un ciclo in senso orario
+
+**Algoritm: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### Cazul L4E 2: Las 4 aristas necesitan un ciclo in senso antiorario
+
+**Algoritm: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### Cazul L4E 3: Due spigoli si scambiano (adiacenti, davanti)
+
+**Algoritm: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### Cazul L4E 4: Due spigoli si scambiano (adiacenti, dietro)
+
+**Algoritm: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### Cazul L4E 5: Dos aristas se voltean en su lugar (par delantero)
+
+**Algoritm: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### Cazul L4E 6: Due spigoli si capovolgono sul posto (coppia posteriore)
+
+**Algoritm: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### Cazul L4E 7: Ciclo de tres aristas in senso orario + un volteo
+
+**Algoritm: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### Cazul L4E 8: Ciclo de tres aristas in senso antiorario + un volteo
+
+**Algoritm: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### Cazul L4E 9: Tutti e 4 gli spigoli si capovolgono
+
+**Algoritm: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### Cazul L4E 10: Due spigoli opposti si scambiano
+
+**Algoritm: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### Cazul L4E 11: Ciclo + doppio capovolgimento
+
+**Algoritm: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### Cazul L4E 12: Scambio adiacente con capovolgimento
+
+**Algoritm: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Metoda Keyhole
+
+El método Keyhole es una alternativa más intuitiva al L4E. En lugar de aprender algoritmos para cada caso, usas una ranura de arista sin resolver como **ojo de cerradura** para insertar otras piezas libremente.
+
+### Come funziona
+
+1. **Resolver las puntas** (como siempre).
+2. **Resolver una arista** — coloca una arista inferior correctamente.
+3. **Usar la ranura vacía como ojo de cerradura** — la segunda ranura de arista inferior se deja vacía, dándote libertad para insertar aristas en la capa superior sin restricciones.
+4. **Resolver las aristas de la capa superior** — usa el ojo de cerradura para insertar cada arista superior una por una.
+5. **Cerrar el ojo de cerradura** — inserta la última arista inferior al final.
+
+### Esempio di inserimento Keyhole
+
+Con el ojo de cerradura en el lado derecho de la capa inferior, puedes insertar libremente una arista de la capa superior:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Inserimento capovolto** — se lo spigolo deve essere capovolto prima dell'inserimento:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Sfaturi:**
+- El método Keyhole es excelente para principiantes que hacen la transición a la resolución avanzada.
+- Requiere menos algoritmos que el L4E pero es ligeramente más lento al más alto nivel.
+- Usa Keyhole como trampolín hacia el L4E — la intuición que construyes aquí ayuda con el reconocimiento del L4E.
+
+---
+
+## Metoda Top-First
+
+El método Superior Primero invierte el orden típico de resolución: resuelve la **capa superior primero** y luego termina la inferior.
+
+### Prezentare generală
+
+1. **Resolver las puntas.**
+2. **Risolvere l'intero strato superiore** — tutti e 3 gli spigoli superiori orientati e permutati correttamente attorno al centro superiore.
+3. **Risolvere lo strato inferiore** — posizionare i 3 spigoli inferiori rimanenti.
+
+### Risolvere lo strato superiore
+
+Construye la capa superior de forma intuitiva. Como empiezas desde arriba, no hay restricciones — puedes girar cualquier capa libremente.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Risolvere la parte inferiore
+
+Con lo strato superiore completo, i 3 spigoli inferiori possono essere risolti usando un piccolo set di algoritmi simili ai casi L4E ma limitati alla parte inferiore.
+
+**Ciclo in senso orario de las aristas inferiores:**
+
+**Algoritm: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Ciclo in senso antiorario:**
+
+**Algoritm: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Sfaturi:**
+- El método Superior Primero es menos común en competición pero puede ser muy rápido para ciertos mezclas.
+- Funciona mejor cuando la capa superior ya está parcialmente resuelta después del mezcla.
+- Combínalo con la planificación durante la inspección — si ves una capa superior fácil, elige Superior Primero.
+
+---
+
+## Sfaturi pentru rezolvare rapidă
+
+### Pianificazione dell'ispezione
+
+El Pyraminx tiene menos piezas que cualquier otro rompecabezas WCA, lo que significa que puedes **planificar más de la resolución durante la inspección**:
+
+- **Planifica siempre las puntas + la V** durante los 15 segundos de inspección.
+- Los resolutores avanzados pueden planificar la **resolución completa** para mezclas fáciles.
+- Practica ampliar tu planificación — empieza con las puntas, añade la V y luego intenta predecir los casos L4E.
+
+### Tecnica di rotazione
+
+- Usa las **puntas de los dedos** para giros precisos y rápidos — no rotaciones con toda la mano.
+- Il Pyraminx beneficia di rotazioni leggere e rapide piuttosto che forzate.
+- Pratica le rotazioni di strato **R** e **L** con gli indici, e le rotazioni **U** con i pollici.
+
+### Neutralità di colorees
+
+- A diferencia del cubo 3×3, la **neutralidad de colores** en el Pyraminx es muy alcanzable.
+- Practica empezar con cualquiera de las 4 caras como base — esto te da 4 veces más opciones de V fáciles.
+- La neutralidad de colores es casi obligatoria para resolver en menos de 5 segundos.
+
+### Routine di pratica
+
+1. **Practicar casos L4E** — configura cada caso con su inverso, resuélvelo, repite. Apunta al reconocimiento instantáneo.
+2. **Resoluciones cronometradas** — haz series de 12 resoluciones siguiendo tu promedio.
+3. **Práctica de una sola mirada** — intenta identificar el caso L4E durante el paso de construcción de la V, antes de terminarlo.
+4. **Resoluciones lentas** — practica a media velocidad, centrándote en giros suaves y cero pausas.
+
+---
+
+**Con el L4E dominado y buena planificación de inspección, los promedios por debajo de 4 segundos en Pyraminx son alcanzables.** El Pyraminx recompensa la planificación y el reconocimiento más que la velocidad de giro bruta. Céntrate en predecir tu caso L4E temprano, y las resoluciones se sentirán sin esfuerzo.

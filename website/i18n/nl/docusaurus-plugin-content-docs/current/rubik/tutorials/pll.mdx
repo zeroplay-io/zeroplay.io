@@ -1,0 +1,466 @@
+---
+title: PLL-algoritmen
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL-algoritmen
+
+**PLL (Permutatie van de Laatste Laag)** is de laatste stap van de CFOP-methode. Nadat OLL alle stickers van het bovenvlak heeft georienteerd, herschikt PLL de stukken naar hun opgeloste posities. Er zijn in totaal **21 PLL-gevallen**.
+
+Als je een beginner bent, begin dan met **2-Look PLL** -- een vereenvoudigde aanpak die slechts **6 algoritmen** vereist in plaats van alle 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL verdeelt de permutatiestap in twee kleinere stappen:
+
+1. **Hoeken permuteren** -- alle 4 hoeken op de juiste positie plaatsen (2 gevallen)
+2. **Randen permuteren** -- alle 4 randen op de juiste positie plaatsen (4 gevallen)
+
+Dit betekent dat je in totaal slechts **6 algoritmen** hoeft te leren.
+
+### Stap 1: Hoeken permuteren
+
+Kijk naar de hoeken van de bovenste laag. Controleer of een **paar aangrenzende hoeken** tot dezelfde zijde behoort (overeenkomende koplampen).
+
+#### Aangrenzende hoekwissel
+
+Een paar aangrenzende hoeken is al correct. Houd het opgeloste paar **achteraan** en pas toe:
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Dit is de **T-Perm** -- hij wisselt de twee voorste hoeken (en twee randen, die we in stap 2 oplossen).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Diagonale hoekwissel
+
+Geen aangrenzende hoeken komen overeen. Pas de **Y-Perm** toe om hoeken diagonaal te wisselen:
+
+**Algoritme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Stap 2: Randen permuteren
+
+Alle hoeken zijn nu opgelost. Kijk naar de randen en bepaal welke moeten cycleren.
+
+#### Ua Perm (3-randcyclus met de klok mee)
+
+Drie randen moeten met de klok mee cycleren. Houd de opgeloste rand **achteraan**.
+
+**Algoritme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (3-randcyclus tegen de klok in)
+
+Drie randen moeten tegen de klok in cycleren. Houd de opgeloste rand **achteraan**.
+
+**Algoritme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Wissel tegenoverliggende randparen)
+
+Twee paren tegenoverliggende randen moeten gewisseld worden.
+
+**Algoritme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Wissel aangrenzende randparen)
+
+Twee paren aangrenzende randen moeten gewisseld worden. Houd zo dat de twee paren voor/rechts en achter/links zijn.
+
+**Algoritme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Volledig PLL -- Alle 21 gevallen
+
+### Alleen randen (4 gevallen)
+
+Deze PLL's verplaatsen alleen randen; de hoeken zijn al opgelost.
+
+#### Ua Perm
+
+Randen cycleren met de klok mee. De opgeloste rand is achteraan.
+
+**Herkenning:** Een opgeloste balk (rand + twee hoeken) zichtbaar vanaf de achterkant.
+
+**Algoritme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Randen cycleren tegen de klok in. De opgeloste rand is achteraan.
+
+**Herkenning:** Een opgeloste balk zichtbaar vanaf de achterkant; randkleuren cycleren in de tegenovergestelde richting van Ua.
+
+**Algoritme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Twee paren tegenoverliggende randen wisselen.
+
+**Herkenning:** Elke zijde heeft de tegenovergestelde kleur in de middelste rand. Dambordpatroon op alle vier zijden.
+
+**Algoritme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Twee paren aangrenzende randen wisselen.
+
+**Herkenning:** Twee aangrenzende zijden hebben elkaars kleur in de randpositie. Geen zijde is volledig opgelost.
+
+**Algoritme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Alleen hoeken (3 gevallen)
+
+Deze PLL's verplaatsen alleen hoeken; de randen zijn al opgelost.
+
+#### Aa Perm
+
+Drie hoeken cycleren. Koplampen aan de linkerkant.
+
+**Herkenning:** Koplampen aan een kant, de balk (3 overeenkomende stickers) is aan de tegenovergestelde kant.
+
+**Algoritme: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Drie hoeken cycleren (tegenovergestelde richting van Aa). Koplampen aan de rechterkant.
+
+**Herkenning:** Spiegel van Aa -- koplampen aan de tegenovergestelde kant.
+
+**Algoritme: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Twee paren diagonale hoeken wisselen. Geen randen bewegen.
+
+**Herkenning:** Geen koplampen aan enige zijde. Elke zijde heeft twee verschillende hoekkleuren.
+
+**Algoritme: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Aangrenzende hoekwissel (6 gevallen)
+
+Deze PLL's wisselen een paar aangrenzende hoeken samen met randpermutaties.
+
+#### T Perm
+
+**Herkenning:** Koplampen voor en achter. De twee zijden zonder koplampen hebben hun kleuren gewisseld.
+
+**Algoritme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Herkenning:** Koplampen aan slechts een zijde (voor). De andere drie zijden hebben geen overeenkomende paren.
+
+**Algoritme: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Herkenning:** Een opgelost 1x1x3 blok aan de linkerkant. De rechterkant heeft aangrenzende stukken gewisseld.
+
+**Algoritme: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Herkenning:** Een opgelost 1x1x3 blok aan de rechterkant. Spiegel van Ja.
+
+**Algoritme: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Herkenning:** Koplampen aan de voorkant. Aangrenzende hoek- en randwissel aan de rechterkant.
+
+**Algoritme: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Herkenning:** Koplampen aan de achterkant. Spiegel van Ra.
+
+**Algoritme: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Diagonale hoekwissel (4 gevallen)
+
+Deze PLL's wisselen twee diagonaal tegenovergestelde hoeken.
+
+#### V Perm
+
+**Herkenning:** Geen koplampen aan enige zijde. Een zijde heeft een 2-kleurenpatroon waarbij de rand overeenkomt met een hoek.
+
+**Algoritme: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Herkenning:** Geen koplampen. Een zijde heeft twee overeenkomende hoeken maar de rand ertussen is fout.
+
+**Algoritme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Herkenning:** Twee tegenovergestelde zijden zijn volledig opgelost (een opgeloste balk op elk), maar de andere twee zijden hebben hun stukken volledig gewisseld.
+
+**Algoritme: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Herkenning:** Spiegel van Na. Twee tegenovergestelde balken maar anders gewisseld.
+
+**Algoritme: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 gevallen)
+
+De G-permutaties zijn het moeilijkst te herkennen. Ze verplaatsen zowel een paar aangrenzende hoeken als drie randen in een cyclus.
+
+#### Ga Perm
+
+**Herkenning:** Koplampen links. De rechtervoorhoek komt overeen met de rechterrand.
+
+**Algoritme: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Herkenning:** Koplampen voor. De linkerachterhoek komt overeen met de linkerrand.
+
+**Algoritme: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Herkenning:** Koplampen rechts. De linkervoorhoek komt overeen met de linkerrand.
+
+**Algoritme: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Herkenning:** Koplampen achter. De rechtervoorhoek komt overeen met de rechterrand.
+
+**Algoritme: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Herkenningstips
+
+Efficiente PLL-herkenning is de sleutel tot snelle oplossingen. Hier zijn algemene strategieen:
+
+1. **Zoek naar koplampen** -- een paar overeenkomende hoeken aan een zijde. Dit beperkt het geval onmiddellijk.
+2. **Tel opgeloste balken** -- een balk is drie overeenkomende stickers op een rij (hoek-rand-hoek). Balken duiden op specifieke PLL's.
+3. **Controleer twee zijden** -- kijken naar de voor- en rechterzijde is meestal voldoende om het geval te identificeren.
+4. **Leer tegengestelde patronen** -- veel PLL's komen in spiegelparen (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Wat je ziet | Mogelijke PLL's |
+|:---|:---|
+| 4 zijden met koplampen | H, Ua, Ub, Z |
+| 2 tegenovergestelde zijden met koplampen | T, F, Ja, Jb, Ra, Rb |
+| 1 zijde met koplampen | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 zijden met koplampen | E, V, Y, Na, Nb |
+
+## Leervolgorde
+
+Een aanbevolen volgorde om alle 21 PLL's te leren:
+
+1. **Eerst 2-Look:** T, Y (hoeken) + Ua, Ub, H, Z (randen) -- 6 algoritmen
+2. **Aangrenzende wissels:** Ja, Jb, F, Ra, Rb -- 5 meer algoritmen
+3. **Alleen hoeken:** Aa, Ab, E -- 3 meer algoritmen
+4. **Diagonale wissels:** V, Na, Nb -- 3 meer algoritmen
+5. **G Perms laatst:** Ga, Gb, Gc, Gd -- 4 laatste algoritmen
+
+:::tip
+Oefen herkenning door te scramblen, op te lossen tot PLL, dan de kubus te bedekken en te proberen het geval uit het geheugen te identificeren. Snelheid komt van directe herkenning, niet alleen van snelle vingerbewegingen.
+:::

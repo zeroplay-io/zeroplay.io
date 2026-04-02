@@ -1,0 +1,296 @@
+---
+title: "F2L: Primeras dos capas"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Primeras dos capas
+
+F2L (Primeras dos capas) es el **paso mas importante** del metodo CFOP. En lugar de resolver las esquinas de la primera capa y las aristas de la segunda capa en dos pasos separados (como en el metodo para principiantes), F2L empareja una esquina con su arista correspondiente y las inserta juntas en el slot correcto. Esto ahorra muchos movimientos y es donde se obtienen las mayores mejoras de velocidad.
+
+Hay **4 slots** por llenar, uno en cada esquina de las dos capas inferiores. Cada slot consiste en una pieza de esquina y una pieza de arista.
+
+## El concepto
+
+Cada caso de F2L involucra dos piezas:
+- Una **pieza de esquina** que pertenece a la capa inferior (tiene una pegatina blanca/color inferior)
+- Una **pieza de arista** que pertenece a la capa media (conecta dos colores laterales)
+
+El objetivo es **emparejar** estas dos piezas en la capa superior, luego **insertar** el par en el slot correcto en un movimiento fluido.
+
+## Recordatorio de notacion
+
+- **R** = Derecha &nbsp;&nbsp; **L** = Izquierda &nbsp;&nbsp; **U** = Arriba &nbsp;&nbsp; **D** = Abajo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Atras
+- Una letra sola = **90° en sentido horario** &nbsp;&nbsp; **'** = **sentido antihorario** &nbsp;&nbsp; **2** = **180°**
+
+Sostiene el cubo con **blanco abajo**. El slot donde insertamos siempre es el **slot frontal derecho** (entre las caras F y R).
+
+---
+
+## F2L intuitivo
+
+Antes de memorizar algoritmos, aprende la **logica** de F2L. Cada caso sigue el mismo patron:
+
+1. **Encuentra** un par esquina-arista que pertenezcan juntos
+2. **Separalos** si estan pegados incorrectamente
+3. **Posiciona** una pieza, luego **trae** la otra para unirse
+4. **Empareja** en la capa superior con blanco hacia afuera o abajo
+5. **Inserta** el par conectado en el slot
+
+**Principio clave:** Usa movimientos R y U para sacar o meter la esquina del slot frontal derecho, y movimientos U para posicionar la arista. Nunca perturbes slots ya resueltos.
+
+---
+
+Hay **41 casos estandar de F2L** en total. A continuacion cubrimos los **15 casos mas importantes** que forman la base. Una vez que los domines, podras manejar los casos restantes intuitivamente o buscarlos segun sea necesario.
+
+## Casos basicos: Ambas piezas en la capa superior
+
+Estos son los casos mas simples y comunes. Tanto la esquina como la arista estan en la capa U y el slot objetivo esta vacio.
+
+### Caso 1: Insercion facil — Esquina blanco mira a la derecha, arista lista
+
+La esquina tiene blanco mirando a la cara R, y la arista ya esta posicionada para emparejarse con un movimiento U. Esta es la insercion F2L mas basica.
+
+**Algoritmo: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Caso 2: Insercion facil — Esquina blanco mira al frente, arista lista
+
+La esquina tiene blanco mirando a la cara F, y la arista esta posicionada para una insercion en sentido antihorario.
+
+**Algoritmo: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Caso 3: Esquina blanco mira arriba, color coincide con centro frontal
+
+La esquina tiene blanco mirando arriba y su color frontal coincide con el centro frontal. La arista esta al otro lado. Conectamos e insertamos.
+
+**Algoritmo: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Caso 4: Esquina blanco mira arriba, color coincide con centro derecho
+
+La esquina tiene blanco mirando arriba y su color derecho coincide con el centro derecho. La arista necesita emparejarse desde el lado opuesto.
+
+**Algoritmo: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Caso 5: Esquina y arista lejos, blanco mira a la derecha
+
+La esquina tiene blanco mirando a la derecha y la arista esta en el lado opuesto de la capa superior. Acercamos la arista, luego emparejamos e insertamos.
+
+**Algoritmo: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Caso 6: Esquina y arista lejos, blanco mira al frente
+
+Espejo del Caso 5. La esquina tiene blanco mirando al frente y la arista esta en el lado lejano.
+
+**Algoritmo: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Caso 7: Esquina y arista adyacentes, blanco mira a la derecha — Par incorrecto
+
+La esquina y arista estan juntas y conectadas, pero insertadas irian mal. Las separamos y reunimos correctamente.
+
+**Algoritmo: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Caso 8: Esquina y arista adyacentes, blanco mira al frente — Par incorrecto
+
+Espejo del Caso 7 en el lado F.
+
+**Algoritmo: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Casos intermedios: Arista en slot, esquina en capa superior
+
+A veces la arista ya esta en un slot (correcto o incorrecto), y la esquina esta en la capa superior. Necesitamos extraer la arista sin perturbar otros pares resueltos.
+
+### Caso 9: Arista en slot correcto pero esquina arriba — Blanco mira a la derecha
+
+La arista esta en el slot correcto, y la esquina esta en la capa U con blanco mirando a la derecha. Sacamos la arista y la emparejamos con la esquina.
+
+**Algoritmo: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Caso 10: Arista en slot incorrecto, esquina arriba — Blanco mira arriba
+
+La arista esta en el slot incorrecto. La extraemos mientras preparamos el emparejamiento con la esquina.
+
+**Algoritmo: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Casos avanzados: Esquina en slot
+
+Estos casos ocurren cuando la esquina ya esta en el slot correcto pero mal orientada, o en el slot correcto con la arista mal colocada.
+
+### Caso 11: Esquina en slot, torcida — Arista en capa superior
+
+La esquina esta en el slot frontal derecho pero con blanco mirando al frente (no abajo). La arista esta en la capa U. Extraemos la esquina, emparejamos con la arista y reinsertamos.
+
+**Algoritmo: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Caso 12: Esquina en slot, torcida — Arista en slot incorrecto
+
+Ambas piezas estan en las dos capas inferiores pero ninguna es correcta. Sacamos la esquina y extraemos la arista simultaneamente.
+
+**Algoritmo: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Casos especiales: Ambas piezas en slot
+
+### Caso 13: Par conectado en slot pero torcido
+
+La esquina y arista estan emparejadas y en el slot, pero la esquina esta torcida (blanco mira al frente, no abajo). Extraer el par, separarlos y reinsertar correctamente.
+
+**Algoritmo: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Caso 14: Esquina correcta en slot, arista volteada en slot
+
+La esquina esta correctamente colocada pero la arista encima esta volteada. Uno de los casos mas dificiles. Extraemos ambos, emparejamos correctamente y reinsertamos.
+
+**Algoritmo: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Caso 15: Ambos en slot, ambos incorrectos — Error cruzado
+
+La esquina y arista estan ambas en el slot pero ninguna coincide. Extraccion completa y reconstruccion.
+
+**Algoritmo: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Consejos para un F2L mas rapido
+
+### 1. Aprende intuitivamente primero
+
+No te apresures a memorizar los 41 casos algoritmicos. Dedica tiempo a entender **por que** funciona cada movimiento. Si sabes que R U R' saca una esquina y la devuelve, puedes resolver la mayoria de los casos por ti mismo. Los algoritmos vienen despues para optimizar.
+
+### 2. Desarrolla el lookahead
+
+**Lookahead** es la capacidad de rastrear tu proximo par mientras insertas el actual. Es el factor mas importante que separa a los resolvedores de 20 segundos de los de 15 segundos.
+
+Consejos de practica:\n- Ralentiza el giro y fuerzate a buscar el siguiente par durante las inserciones\n- Practica F2L con los ojos cerrados durante la insercion (conoces los movimientos, asi que mira adelante)\n- Haz resoluciones sin tiempo enfocadas en cero pausas entre pares
+
+### 3. Reduce las rotaciones
+
+Cada vez que rotas todo el cubo, pierdes tiempo. Los mejores resolvedores de F2L rara vez rotan mas de una o dos veces en todo el F2L.\n\n- Aprende a insertar en **slots traseros** usando R y U (ej. R U' R' para insertar atras-derecha)\n- Practica usando **L, F y B** para slots del lado opuesto\n- Usa movimientos anchos (r, l) para rotar e insertar simultaneamente
+
+### 4. Reconoce los casos rapidamente
+
+Entrena para reconocer instantaneamente que caso tienes:\n- **Donde esta el blanco en la esquina?** (Arriba, frente o derecha)\n- **Donde esta la arista relativa a la esquina?** (Adyacente, opuesta o en un slot)\n- **Ya estan emparejadas?** (Conectadas correctamente, incorrectamente o separadas)
+
+### 5. Resuelve en orden eficiente
+
+No tienes que resolver los 4 pares en orden fijo. Mira los 4 pares y empieza con el **mas facil** — el que requiere menos movimientos. Los resolvedores experimentados planifican su primer par durante la inspeccion junto con la cruz.
+
+### 6. Trucos de slot vacio
+
+Cuando un slot esta vacio, puedes usarlo como almacenamiento temporal. Por ejemplo, coloca una arista en un slot vacio (R U R') para quitarla del camino mientras trabajas en otro par. Los principiantes a menudo pasan por alto esta poderosa tecnica.
+
+---
+
+## Rutina de practica
+
+1. **Mezcla el cubo y resuelve la cruz**\n2. **Encuentra los 4 pares esquina-arista** — identifica donde esta cada esquina y su arista correspondiente\n3. **Resuelve cada par uno a la vez** — empieza con casos faciles, deja los dificiles para el final\n4. **Cronometra solo la fase F2L** — usa un timer. Objetivo: menos de 15 segundos para los 4 pares\n5. **Revisa** — despues de cada solve, pregunta: podria haber hecho algun par en menos movimientos?\n\nCon practica constante, F2L se convertira en segunda naturaleza y veras mejoras dramaticas en tus tiempos totales.
+
+---
+
+## Proximos pasos
+
+Despues de dominar F2L, continua con la ultima capa:
+
+- [**Descripcion general del metodo CFOP**](./cfop) — Ve como F2L encaja en el metodo CFOP completo
+- [**Algoritmos OLL**](./oll) — Haz que toda la cara superior sea amarilla (57 casos + 2-Look OLL)
+- [**Algoritmos PLL**](./pll) — Coloca las piezas finales para completar el solve (21 casos)
+- [**Guia de finger tricks**](./finger-tricks) — Ejecuta triggers de F2L mas rapido y suavemente

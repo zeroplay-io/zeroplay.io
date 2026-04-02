@@ -1,0 +1,374 @@
+---
+title: "2x2 Avancerat: CLL-metoden"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Avancerat: CLL-metoden
+
+Ta din 2x2-lösning till nästa nivå med **CLL (Corners of Last Layer)**-metoden. Medan Ortega löser sista lagret i två steg (OLL sedan PBL), löser CLL både **orientering och permutation** av hörnen i **en enda algoritm**. Färre blickar och snabbare lösningar.
+
+## Varför CLL?
+
+| Metod | Sista lagret-steg | Algoritmer | Typisk hastighet |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 sekunder |
+| **CLL** | 1 (en blick) | ~40 | 2–4 sekunder |
+
+CLL är standardmetoden bland de bästa 2x2-speedcuberna. Genom att lära dig alla 40 fall eliminerar du ett helt steg.
+
+## Hur CLL fungerar
+
+1. **Lös den första sidan** — som Ortega, bygg en vit sida på botten (sidfärger behöver inte matcha).
+2. **Känn igen CLL-fallet** — titta på toppytan och sidfärgerna för att identifiera fallet.
+3. **Använd en algoritm** — orienterar och permuterar samtidigt alla topphörn.
+4. **AUF + bottenjustering** — högst en U-vridning och en D-vridning.
+
+## Notationspåminnelse
+
+- **R** = Höger &nbsp;&nbsp; **L** = Vänster &nbsp;&nbsp; **U** = Upp &nbsp;&nbsp; **D** = Ner &nbsp;&nbsp; **F** = Fram &nbsp;&nbsp; **B** = Bak
+- En bokstav ensam = **90° medurs**. Med **'** = **moturs**. Med **2** = **180°**.
+
+---
+
+## CLL-fallgrupper
+
+De 40 CLL-fallen är organiserade i 7 grupper baserat på orienteringsmönstret. Nedan de viktigaste fallen från varje grupp.
+
+---
+
+## Sune-fall (4 av 6)
+
+Ett hörn är orienterat (gul uppåt), de andra tre behöver vridas. Den vanligaste gruppen.
+
+### Sune 1 — Angränsande byte
+
+Håll det lösta hörnet framtill vänster. De tre olösta hörnen vrider medurs.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonalt byte
+
+Samma orienteringsmönster, men hörnen behöver diagonalt byte.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Ren (inget byte)
+
+Orientering löst utan positionsbyte.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Angränsande byte (Spegel)
+
+Håll det lösta hörnet framtill höger.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune-fall (3 av 6)
+
+Spegelbild av Sune — ett hörn orienterat, de andra tre vrider moturs.
+
+### Anti-Sune 1 — Angränsande byte
+
+Håll det lösta hörnet framtill höger. De tre olösta hörnen vrider moturs.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonalt byte
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Ren (inget byte)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H-fall (4 av 4)
+
+Två motstående hörn orienterade (gul uppåt), de andra två har gul på sidorna.
+
+### H 1 — Angränsande byte
+
+Två gula klistermärken upptill i diagonala positioner.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonalt byte
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Inget byte
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Kolumner
+
+Båda paren av diagonala hörn behöver bytas.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi-fall (4 av 6)
+
+Två angränsande hörn har gul upptill, de andra två har gul på sidorna. Toppytan liknar den grekiska bokstaven Pi.
+
+### Pi 1 — Diagonalt byte
+
+Håll de två orienterade hörnen baktill.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Angränsande byte (Höger)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Angränsande byte (Vänster)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Inget byte
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T-fall (3 av 6)
+
+Toppytan visar ett T-format mönster — ett hörn orienterat, ett angränsande hörn med gul framtill, de andra två med gul på sidorna.
+
+### T 1 — Angränsande byte
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonalt byte
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Inget byte
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U-fall (3 av 6)
+
+Ett hörn korrekt orienterat, de andra tre i ett U-mönster på sidorna.
+
+### U 1 — Angränsande byte
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonalt byte
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Inget byte
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L-fall (3 av 6)
+
+Två angränsande hörn vridna i samma riktning — toppytan visar ett L-mönster.
+
+### L 1 — Angränsande byte
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonalt byte
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Inget byte
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Efter CLL: Slutför lösningen
+
+Efter CLL-algoritmen är toppytan helt löst. Du kan behöva:
+
+1. **AUF (Justera U-ytan)** — en U- eller U'-vridning för justering.
+2. **Bottenlagersjustering** — om förskjutet, löser en D- eller D'-vridning det.
+3. **Bottenlagerbyte** — sällan, kan behöva angränsande eller diagonalt byte. Använd PBL-algoritmerna från Ortega:
+   - **Diagonalt byte:** R2 F2 R2
+   - **Angränsande byte:** R U' R F2 R' U R'
+
+---
+
+## Inlärningsstrategi
+
+Att lära sig alla 40 fall på en gång är överväldigande. Rekommenderad ordning:
+
+1. **Börja med Sune och Anti-Sune** (12 fall) — vanligast, många korta algoritmer.
+2. **Lägg till T- och U-fall** (12 fall) — relativt lätta att känna igen.
+3. **Lär dig Pi-fall** (6 fall) — distinkt orienteringsmönster.
+4. **Lär dig L-fall** (6 fall) — liknande igenkänning som Pi, annan riktning.
+5. **Avsluta med H-fall** (4 fall) — den sällsyntaste gruppen.
+
+## Igenkänningstips
+
+- **Titta först på toppytan** för att identifiera orienteringsgruppen.
+- **Kontrollera sedan sidfärgerna** för att bestämma det specifika fallet.
+- **Öva gruppvis** — en grupp åt gången tills igenkänning är omedelbar.
+- **Använd omvända scrambles** — ställ upp ett fall, lös det, förutsäg omvändningen.
+
+---
+
+**Med CLL bemästrad kan du uppnå snitt under 3 sekunder på 2x2.** En-blick-metoden eliminerar pausen mellan OLL och PBL. Fortsätt öva igenkänning — hastighet kommer från omedelbar identifiering.

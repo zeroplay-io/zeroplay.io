@@ -1,0 +1,219 @@
+---
+title: CFOP Yöntemi Genel Bakış
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# CFOP Yöntemi Genel Bakış
+
+**CFOP yöntemi** (**Fridrich yöntemi** olarak da bilinir) dünyada en yaygın kullanılan hızlı küp çözme yöntemidir. 20 saniyenin altında çözen kişilerin ve dünya rekoru sahiplerinin büyük çoğunluğu CFOP kullanır. Başlangıç katman katman yöntemini temel alır ancak çok daha verimlidir — ortalama çözümü 100+ hareketten yaklaşık 55-60 harekete düşürür.
+
+**CFOP** dört adımının kısaltmasıdır:
+
+1. **C**ross — Alt yüzde 4 kenar parçası çöz
+2. **F**2L — İlk iki katman (4 köşe-kenar çifti eşleştir ve yerleştir)
+3. **O**LL — Son katmanı yönlendir (üst yüzü tamamen tek renk yap)
+4. **P**LL — Son katmanı permüte et (tüm üst parçaları doğru konuma getir)
+
+## CFOP vs. Başlangıç Yöntemi
+
+| | Başlangıç (LBL) | CFOP |
+|---|---|---|
+| Adımlar | 7 | 4 |
+| Ortalama hareket | 100-120 | 55-60 |
+| Öğrenilecek algoritmalar | 5-8 | 78 (tam) / 16 (2-look) |
+| Tipik hız | 1-3 dakika | 10-20 saniye |
+| Temel fark | Adım adım, birer parça | Parçaları eşleştirir, daha az adım |
+
+İyi haber: CFOP'u **kademeli** öğrenebilirsiniz. Sezgisel F2L ve 2-look OLL/PLL (sadece 16 algoritma) ile başlayın, ardından zamanla tam OLL (57 algoritma) ve tam PLL (21 algoritma) genişletin.
+
+---
+
+## Adım 1: Çapraz
+
+Çapraz, başlangıç yöntemiyle aynı konsepttir — alt yüzde 4 beyaz kenar parçasını, her kenarın yan merkezle de eşleşeceği şekilde çözün. CFOP'taki fark **nasıl** yaklaştığınızdır:
+
+- **İnceleme sırasında tüm çaprazı planlayın** (çözüm başlamadan 15 saniye önce)
+- **Çaprazı altta çözün** — küpü çevirmeyin
+- **8 hareket veya daha azını hedefleyin** — verimli bir çapraz ortalama 6-7 harekettir
+
+**Örnek: Çapraz kenarını doğrudan alta çözme**
+
+Burada beyaz-mavi kenar üst katmanda. Hizalayıp tek hareketle doğrudan alta yerleştiriyoruz:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Örnek: Çapraz kenarının yeniden konumlandırılması**
+
+Bazen bir kenar yanlış yerde veya ters duruyor. Burada yanlış yerleştirilmiş bir kenarı düzeltiyoruz:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Hızlı çapraz için ipuçları:**
+- Gözleriniz kapalı çapraz planlamayı pratik yapın
+- Herhangi bir karışımdan 8 hareket veya daha azıyla çözmeyi öğrenin
+- İlk günden altta çapraz çözme üzerinde çalışın — üstte çözme alışkanlığından kaçının
+
+---
+
+## Adım 2: F2L (İlk İki Katman)
+
+F2L, CFOP'un kalbidir ve en büyük zaman tasarrufu buradan gelir. Başlangıç yöntemindeki gibi birinci katmanın köşelerini ve ikinci katmanın kenarlarını ayrı ayrı çözmek yerine, bir köşe parçasını eşleşen kenarıyla **eşleştirip** birlikte tek birim olarak **yerleştirirsiniz**.
+
+Çözülecek 4 köşe-kenar çifti (**slot** olarak adlandırılır) vardır. Her slot, alt iki katmandaki iki yan yüz arasında bulunur.
+
+**Temel F2L durumu: Köşe ve kenar ikisi de üst katmanda**
+
+Beyaz-kırmızı-yeşil köşe üst katmanda ve kırmızı-yeşil kenar da üst katmanda. Eşleştirip yerleştiriyoruz:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Bir diğer yaygın durum: Yanlış çifti ayırma**
+
+Bazen parçalar yanlış eşleştirilmiş olur. Ayırıp doğru şekilde birleştiriyoruz:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L **sezgisel** olarak öğrenilebilir — gizleme, eşleştirme ve yerleştirme mantığını anlayarak — veya 41 özel durumla **algoritmik** olarak. Çoğu hızlı küpçü her ikisinin kombinasyonunu kullanır.
+
+F2L durumları ve algoritmaların tam listesi için [**F2L: İlk İki Katman**](./f2l) rehberine bakın.
+
+---
+
+## Adım 3: OLL (Son Katman Yönlendirme)
+
+İlk iki katmanı tamamladıktan sonra üst yüzde bazı sarı ve bazı sarı olmayan çıkartmalar olacaktır. OLL'nin amacı **tüm üst yüzü sarı** yapmaktır — yan renklerle henüz ilgilenmiyoruz.
+
+Tam OLL'de **57 algoritma** vardır. Ancak adımı iki parçaya bölen **2-look OLL** ile başlayabilirsiniz, sadece 10 algoritma kullanır:
+
+1. **İlk bakış:** Üstte sarı çapraz oluştur (3 durum, farklı yönlerden 2 algoritma uygulayarak)
+2. **İkinci bakış:** Sarı köşeleri yönlendir (7 algoritma)
+
+**Örnek: Sune (en yaygın OLL durumlarından biri)**
+
+Bu OLL #26, genellikle **Sune** olarak adlandırılır. Bir sarı köşe yönlendirilmiş, diğer üçünün döndürülmesi gerekiyor:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Örnek: OLL çapraz durumu (sarı çapraz oluşturma)**
+
+Üstte sarı kenarların L şekli olduğunda, L'yi arka solda tutun ve uygulayın:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**OLL öğrenme ipuçları:**
+- 2-look OLL ile başlayın — çözümünüze sadece birkaç saniye ekler
+- Önce Sune ve Anti-Sune öğrenin; birçok OLL durumunda görünürler
+- Üstteki sarı çıkartma deseninden durumları tanımayı pratik yapın
+
+---
+
+## Adım 4: PLL (Son Katman Permütasyonu)
+
+Son adım! Tüm sarı çıkartmalar artık üstte, ancak son katman parçalarının yan renkleri eşleşmeyebilir. PLL, çözümü tamamlamak için üst katman parçalarını doğru konumlarına **yeniden düzenler**.
+
+Tam PLL'de **21 algoritma** vardır. Sadece 6 algoritma kullanan **2-look PLL** ile başlayabilirsiniz:
+
+1. **İlk bakış:** Köşeleri doğru konumlandır (2 algoritma)
+2. **İkinci bakış:** Kenarları doğru konumlandır (4 algoritma)
+
+**Örnek: T-Perm (en kullanışlı PLL algoritmalarından biri)**
+
+T-Perm iki köşe ve iki kenar değiştirir. Sık görünür ve diğer PLL'leri öğrenmek için temel olarak kullanılır:
+
+**Algoritma: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Örnek: U-Perm (a) — 3 kenar döngüsü**
+
+U-Perm tüm köşeler zaten yerindeyken üç kenarı saat yönünde döndürür:
+
+**Algoritma: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**PLL öğrenme ipuçları:**
+- T-Perm, U-Perms (a ve b) ve A-Perms ile başlayın
+- Yan renklere bakarak PLL'leri tanımayı öğrenin (far deseni)
+- Herhangi bir AUF açısından (üst yüz ayarı) PLL uygulamayı pratik yapın
+
+---
+
+## CFOP'u Ne Zaman Öğrenmeli
+
+CFOP, başlangıç katman katman yöntemini rahat kullandıktan sonraki doğal adımdır. İşte önerilen ilerleme:
+
+### Aşama 1: Başlangıçtan 60 saniyenin altına
+- Çözümleriniz tutarlı olana kadar başlangıç yöntemini ustalaşın
+- **Çaprazı altta** çözmeyi öğrenin
+- **Sezgisel F2L** pratiğine başlayın — çiftlerin nasıl oluşturulup yerleştirildiğini izleyin
+
+### Aşama 2: 60 altından 30 saniyenin altına
+- 4 çift için tam **sezgisel F2L** kullanın
+- **2-look OLL** öğrenin (10 algoritma)
+- **2-look PLL** öğrenin (6 algoritma)
+- **İleriye bakma** pratiği yapın — mevcut çifti yerleştirirken sonraki çifti takip edin
+
+### Aşama 3: 30 altından 20 saniyenin altına
+- **Tam PLL** öğrenin (21 algoritma)
+- **Tam OLL** öğrenmeye başlayın (57 algoritma)
+- F2L çözümlerinizi optimize edin — [**algoritmik F2L durumlarını**](./f2l) öğrenin
+- Çapraz verimliliği üzerinde çalışın (inceleme sırasında tüm çaprazı planlayın)
+
+### Aşama 4: 20 saniyenin altı ve ötesi
+- **Tam OLL**'yi tamamlayın
+- İleri F2L teknikleri öğrenin (boş slot teknikleri, multi-slotting)
+- Güçlü **ileriye bakma** alışkanlıkları geliştirin
+- Çevirme hızı ve akıcılık üzerinde çalışın
+
+---
+
+## Sonraki Adımlar
+
+Her adıma daha derinlemesine dalmaya hazır mısınız? Bu detaylı rehberlere göz atın:
+
+- [**F2L: İlk İki Katman**](./f2l) — Tüm yaygın F2L durumları algoritmalar ve demolarla
+- [**OLL Algoritmaları**](./oll) — Tam 57 OLL durumu, başlangıç için 2-Look OLL ile
+- [**PLL Algoritmaları**](./pll) — Tüm 21 PLL durumu, başlangıç için 2-Look PLL ile
+- [**Parmak Teknikleri Rehberi**](./finger-tricks) — Verimli hareket uygulaması ve temel tetikleyiciler
+- [**Hızlı Küp Çözme İpuçları**](./speed-tips) — Çapraz planlama, ileriye bakma ve pratik rutinleri
+
+**İyi küp çözmeler!** Başlangıçtan 20 saniyenin altına yolculuk, hızlı küp çözmedeki en ödüllendirici meydan okumalardan biridir. Adım adım ilerleyin, hedefe ulaşacaksınız.

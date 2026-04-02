@@ -1,0 +1,286 @@
+---
+title: Hızlı Küp Çözme İpuçları
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Hızlı Küp Çözme İpuçları
+
+Rubik Küpünde hızlanmak sadece daha hızlı çevirmek değildir. En büyük ilerleme önceden planlama, duraklamaları azaltma ve bilinçli pratik yapmaktan gelir. Bu rehber, sıradan çözücüleri yarışmacı speedcuber'lardan ayıran temel becerileri kapsar.
+
+---
+
+## Çapraz Planlama
+
+Çapraz, CFOP çözümünün ilk adımıdır ve **tamamen inceleme süresinde planlayabileceğiniz** tek kısımdır. Çapraz planlamayı ustalaşmak her çözümde ücretsiz bir avantaj sağlar.
+
+### 15 saniyelik inceleme süresinin tamamını kullanın
+
+Yarışmalarda zamanlayıcıyı başlatmadan önce 15 saniyelik inceleme süreniz var. Her saniyeyi değerlendirin:
+- İlk 5 saniye: 4 çapraz kenarın konumunu belirleyin.
+- Sonraki 5 saniye: Tam çapraz çözümünü planlayın (ideal olarak 6-8 hamle veya daha az).
+- Son 5 saniye: Sıralamayı zihinsel olarak tekrarlayın ve ilk F2L çiftinizi planlayın.
+
+### Çaprazı alt yüzde çözün
+
+Her zaman çaprazı **alt yüzde** (D katmanı) çözün. Yeni başlayanlar genellikle çaprazı üstte çözer ve küpü çevirir, 1-2 saniye kaybeder ve yönelimi yitirir. Başından itibaren altta çözerek, çaprazı bitirirken hemen F2L çiftlerini aramaya başlayabilirsiniz.
+
+**Örnek: 6 hamlelik çapraz çözümü**
+
+Bu karıştırmadan beyaz çapraz sadece 6 hamlede çözülebilir:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Örnek: Verimli 5 hamlelik çapraz**
+
+İyi planlamayla birçok çapraz 5 hamle veya daha azında çözülebilir:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Gözler kapalı çapraz çalışın
+
+Bu en iyi çapraz alıştırmasıdır:
+1. Küpü karıştırın.
+2. İnceleme süresinde çapraz çözümünün tamamını planlayın.
+3. Gözlerinizi kapatın ve çaprazı bellekten uygulayın.
+4. Gözlerinizi açıp doğrulayın.
+
+Çapraz doğruysa planlamanız sağlamdır. Değilse, zihinsel takibinizin nerede hata yaptığını bulun.
+
+### Renk nötralitesi
+
+Çoğu yeni başlayan sadece beyaz çaprazı öğrenir. **Renk nötr** çözücüler 6 renkten herhangi biriyle başlayabilir ve her karıştırma için en kolay çaprazı seçer. Bu genellikle çaprazda 2-3 hamle avantajı sağlar, bu da ortalama çözüm başına 1-2 saniye tasarruf demektir.
+
+Renk nötralitesi geliştirmek için:
+1. Bir renk ekleyerek başlayın (ör. beyazın karşısı olan sarı).
+2. Her karıştırma için hem beyaz hem sarı çaprazı planlayın ve kısa olanı seçin.
+3. Altısının tamamında rahat olana kadar kademeli olarak daha fazla renk ekleyin.
+
+---
+
+## İleri Bakış (Lookahead)
+
+Lookahead, **mevcut parçayı çözerken bir sonraki parçayı takip etme** yeteneğidir. Hız platolarını aşmanın en önemli becerisidir ve sub-15 ile sub-10 çözücüleri birbirinden ayıran şeydir.
+
+### Lookahead gerçekte ne anlama gelir
+
+F2L sırasında her seferinde bir köşe-kenar çifti çözüyorsunuz. Lookahead olmadan sıra şöyledir: çifti çöz – dur – sonraki çifti ara – çifti çöz – dur. Bu duraklamalar çözüm başına birkaç saniye ekler.
+
+Lookahead ile elleriniz mevcut çift için bilinen bir algoritmayı uygularken gözleriniz zaten sonraki çiftin parçalarını tarıyor. Hedef çiftler arasında **sıfır duraklama**.
+
+### Lookahead nasıl çalışılır
+
+**Yavaş çözümler** en etkili eğitim yöntemidir:
+
+1. Metronomu saniyede 1-2 çevirme (60-120 BPM) olarak ayarlayın.
+2. F2L'yi bu sabit tempoda çözün, her hamleyi vuruşa eşleştirin.
+3. Kural: **yavaş çevirebilirsiniz ama asla çevirmeyi durdurmayın.**
+4. Sonraki çifti bulmak için durmanız gerekiyorsa çok hızlı çeviriyorsunuz. Daha da yavaşlayın.
+
+Haftalarca pratikle sürekli akışı koruyarak doğal olarak hızlanacaksınız.
+
+### Kör F2L çifti çalışması
+
+1. Küpü karıştırın.
+2. Çaprazı çözün.
+3. Bir F2L çifti bulun ve yerleştirmeyi kafanızda planlayın.
+4. Gözlerinizi kapatıp yerleştirmeyi uygulayın.
+5. Gözlerinizi açıp sonraki çift için tekrarlayın.
+
+Bu, beyninizi uygulamadan önce her yerleştirmeyi tamamen planlamaya zorlar ve gerçek lookahead için gereken zihinsel takibi güçlendirir.
+
+---
+
+## Verimli F2L
+
+F2L (İlk İki Katman) aşaması en fazla optimizasyon alanına sahiptir. F2L verimliliğindeki küçük gelişmeler bile yüzlerce çözüm boyunca birikim yapar.
+
+### Gereksiz döndürmelerden kaçının
+
+Tam küp döndürmeleri (y, y') zaman kaybettirir ve lookahead'i bozar. Tipik bir yeni başlayan çözümünde F2L sırasında 6-8 döndürme vardır. İleri düzey bir çözücü ortalama 1-2 yapar.
+
+**Örnek: Döndürme olmadan arka sağ yuvaya yerleştirme**
+
+y' ile döndürüp ön sağ yuvaya yerleştirmek yerine arka yuva yerleştirmelerini kullanın:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**aynı çiftin döndürme gerektirmesiyle karşılaştırma:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+İlk versiyon yaklaşık 0,5 saniye tasarruf eder — döndürmenin kendisi artı yeniden tutuş.
+
+### Arka yuvaları öncelikli yapın
+
+F2L çiftlerini **arka sağ** ve **arka sol** yuvalara yerleştirmek genellikle daha verimlidir çünkü:
+- R ve L hamleleri F hamlelerinden daha hızlıdır.
+- Arka yuva yerleştirmeleri genellikle daha az hamle gerektirir.
+- Çözülmemiş parçalar önünüzde görünürken daha iyi lookahead sürdürürsünüz.
+
+### Sonraki çifti etkileyin
+
+Mevcut F2L çiftinizi yerleştirirken bazen sonraki çifti bedavaya hazırlayabilirsiniz. Örneğin, sonraki çiftin köşesi U katmanındaysa, mevcut çift için belirli bir yerleştirme açısı seçmek o köşeyi avantajlı bir konuma taşıyabilir.
+
+Bu ileri düzey bir beceridir, ama bunun farkında olmak bile daha iyi kararlar almanıza yardımcı olur.
+
+### Çoklu yerleştirme
+
+Bazı durumlarda iki F2L çiftini aynı anda çözebilir veya birini çözerken diğerini kısmen hazırlayabilirsiniz. Pratikte nadirdir ama fırsat çıktığında tanımaya değer.
+
+---
+
+## OLL/PLL Tanıma
+
+OLL ve PLL vakalarının hızlı tanınması F2L ile son katman arasındaki duraklamayı ortadan kaldırır.
+
+### İki açıdan tanıyın
+
+**Üst yüz** ve **ön yüze** aynı anda bakarak OLL vakalarını tanıma pratiği yapın. Bu, diğer tarafları kontrol etmek için küpü döndürmeden gereken tüm bilgiyi verir.
+
+PLL için **ön ve sağ** yüzleri kontrol edin (standart çözüm açınızdan görünen iki taraf). Pratikle iki taraflı tanıma anlık hale gelir.
+
+### Ön AUF
+
+AUF (Adjust U Face), bir OLL veya PLL algoritması başlatmadan önce vakayı doğru hizalamak için yaptığınız U/U'/U2 hamlesidir. İleri düzey çözücüler AUF'u F2L'nin son hamlesi sırasında veya tanıma sırasında yaparak düşünme zamanıyla örtüştürür.
+
+### OLL tahmini
+
+Son F2L yerleştirmesi sırasında, üst yüzün 4 köşe yöneliminden 2-3'ünü genellikle bilirsiniz. Yerleştirmenizin son köşeyi nasıl etkilediğini takip ederek, F2L'yi bitirmeden OLL vakasını tahmin edebilir ve sıfır duraklama ile OLL algoritmasını uygulamaya başlayabilirsiniz.
+
+---
+
+## Çalışma Rutinleri
+
+Bilinçli çalışma düşüncesiz çözmeyi yener. Çalışma oturumlarınızı maksimum gelişim için yapılandırın.
+
+### Günlük çalışma planı (45-60 dakika)
+
+**Çapraz alıştırmaları (10 dakika)**
+- Karıştırın, inceleme sırasında çaprazı planlayın, sadece çaprazı çözün.
+- Hedef: sürekli 2 saniyenin altında, gözler kapalı planlanmış.
+- Ortalama hamle sayınızı takip edin. 6 veya daha azını hedefleyin.
+
+**F2L yavaş çözümler (15 dakika)**
+- Metronom kullanın. Sabit çevirme hızında tam F2L.
+- Sadece lookahead ve sürekli akışa odaklanın.
+- Bu çözümlerde süre tutmayın. Hız burada hedef değil.
+
+**Algoritma çalışması (10 dakika)**
+- Hâlâ öğrendiğiniz 2-3 OLL veya PLL algoritması seçin.
+- Her birini kas belleği devralana kadar 20-30 kez tekrarlayın.
+- Sonra karıştırıp tanıma + uygulama pratiği yapın.
+
+**Süreli çözümler (15-20 dakika)**
+- **12'nin ortalamasını** alın — on iki süreli çözüm, en iyi ve en kötüyü atın, kalan onun ortalamasını alın.
+- Sonuçlarınızı kaydedin. Haftalardaki trendleri takip edin, tek tek çözümleri değil.
+- Her oturumdan sonra en kötü çözümünüzü inceleyin. Ne yanlış gitti?
+
+### Ortalamalar ve takip
+
+- **Ao5** (5'in ortalaması): Mevcut formun hızlı kontrolü. Isınma için iyi.
+- **Ao12** (12'nin ortalaması): Standart yarışma metriği. Beceri seviyesinin en güvenilir göstergesi.
+- **Ao100**: Uzun vadeli trend takibi. İlerlemeyi ölçmek için haftalık hesaplayın.
+
+Geçmişinizi otomatik takip eden bir zamanlayıcı uygulaması kullanın. Haftalar içinde ortalamanızın düştüğünü görmek güçlü bir motivasyondur.
+
+### Bilinçli vs. düşüncesiz çalışma
+
+TV izlerken 200 çözüm yapmak sizi hızlandırmaz. Bilinçli çalışma demek:
+- Oturum başına **bir belirli beceriye** odaklanmak (çapraz, lookahead, OLL tanıma).
+- Her çözümde o beceriye tam dikkat vermek.
+- Hemen yeniden karıştırmak yerine hataları analiz etmek.
+
+On odaklı çözüm, yüz otomatik pilottaki çözümü yener.
+
+---
+
+## Yarışma İpuçları
+
+Yarışmak, evde çalışmaktan farklı bir beceridir. Sinirler, tanıdık olmayan ortamlar ve zaman baskısı performansı etkiler.
+
+### Düzgün ısının
+
+- Erken gelin ve etkinliğinizden önce 20-30 rahat çözüm yapın.
+- Kas belleğini uyandırmak için algoritma çalışmaları yapın.
+- Isınma sırasında kişisel rekor kırmaya çalışmayın. Sadece ellerinizi hareket ettirin.
+
+### Çözüm sırasında sakin kalın
+
+- **Hızlı değil, akıcı çözmeye odaklanın.** Hızı zorlamak hatalara ve kilitlenmelere neden olur.
+- Bir çifti veya algoritmayı karıştırırsanız nefes alın ve devam edin. Panik yapmayın veya zamanı telafi etmeye çalışmayın.
+- Unutmayın: yarışma ortalamanız en iyi ve en kötü çözümlerinizi atar, bu yüzden tek bir kötü çözüm sonucunuzu mahvetmez.
+
+### İnceleme tekniği
+
+- İnceleme sırasında küpü göz hizasında tutun. Masaya bakmayın.
+- Tüm tarafları verimli şekilde görmek için y ve x hareketleriyle küpü döndürün.
+- Çaprazınızı tamamen planlayın. Zaman kalırsa ilk F2L çiftinizi konumlandırın.
+- 8 ve 12 saniyelik uyarıları dinleyin ve temponuzu buna göre ayarlayın.
+
+### Stackmat zamanlayıcı aşinalığı
+
+- Yarışmayı planlıyorsanız evde Stackmat zamanlayıcı ile çalışın. El yerleşimi ve başlatma/durdurma hareketi telefon ekranına dokunmaktan farklıdır.
+- Her iki el pedlerin üzerinde düz olmalıdır. Her iki elinizi aynı anda kaldırdığınızda zamanlayıcı başlar.
+- Çaprazınızın ilk hamlesinde bocalamanız için düzgün başlama pratiği yapın.
+
+---
+
+## Donanım
+
+İyi bir speed cube gerçek bir fark yaratır. İlerleme için en pahalı küpe ihtiyacınız yoktur, ama standart bir Rubik's markasından modern bir speed cube'a yükseltme yapabileceğiniz en büyük tek iyileştirmelerden biridir.
+
+### İyi bir speed cube'u ne yapar
+
+- **Köşe kesme**: Küp hafif yanlış hizalamaları kilitlenmeden tolere etmelidir. Modern küpler 45 derece veya daha fazla köşe kesebilir.
+- **Pürüzsüz, kontrol edilebilir dönüş**: Çok hızlı değil (aşmaya neden olur) ve çok yavaş değil (ekstra çaba gerektirir).
+- **Kararlılık**: Küp hızlı dönüş sırasında şeklini korumalı, parça fırlatmamalı veya deforme olmamalıdır.
+
+### Manyetik küpler
+
+Neredeyse tüm yarışmacı cuber'lar bugün **manyetik küpler** kullanır. Her parçanın içindeki küçük mıknatıslar her 90 derecelik dönüşte hafif bir tıklama yaratır ve şunları sağlar:
+- Yüksek hızlarda daha iyi kontrol
+- Daha az aşma ve kilitlenme
+- Daha tatmin edici his
+
+MoYu, QiYi ve GAN gibi markalardan manyetik küpler çeşitli fiyat noktalarında mevcuttur. Bütçe dostu manyetik küpler bile (10 $'ın altında) manyetik olmayanlardan çok daha iyidir.
+
+### Gerginlik ve yağlama
+
+- **Gerginlik**, küpün ne kadar gevşek veya sıkı hissettirdiğini kontrol eder. Daha gevşek gerginlik daha hızlı dönüşe izin verir ama kararlılığı azaltır. Orta gerginlikle başlayın ve dönüş tarzınıza göre ayarlayın.
+- **Yağlama** sürtünmeyi azaltır ve küpün hissini değiştirir. Silikon bazlı yağlar standarttır:
+  - Hız için parçalara **hızlı yağ**.
+  - Kararlılık için çekirdeğe **yavaş/yapışkan yağ**.
+  - Birkaç yüz çözümde bir veya küp çizmeye başladığında yeniden yağlayın.
+
+### Yeni başlayanlar için kurulum önerisi
+
+1. Herhangi bir modern manyetik 3x3 edinin (MoYu RS3M, QiYi Tornado veya benzeri).
+2. Küpe alışmak için ilk hafta fabrika gerginliğini koruyun.
+3. Küp kuru hissettiriyorsa az miktarda silikon yağ ekleyin.
+4. Gerginliği kademeli olarak ayarlayın — tercihinizi bulana kadar seferde çeyrek tur gevşetin.
+
+İyi ayarlanmış bir küp donanımı değişken olmaktan çıkarır ve tamamen tekniğinizi geliştirmeye odaklanmanızı sağlar.

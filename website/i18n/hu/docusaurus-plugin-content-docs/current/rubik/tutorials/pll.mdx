@@ -1,0 +1,466 @@
+---
+title: PLL algoritmusok
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL algoritmusok
+
+**A PLL (az utolso reteg permutacioja)** a CFOP modszer utolso lepeese. Miutan az OLL az osszes felso oldali matricat helyesen orientalta, a PLL atrendezi a darabokat a megoldott poziciojukba. Osszesen **21 PLL eset** letezik.
+
+Ha kezdo vagy, kezdd a **2-Look PLL**-lel -- egy egyszerusitett megkozelitessel, amely mindossze **6 algoritmust** igenyel a teljes 21 helyett.
+
+---
+
+## 2-Look PLL
+
+A 2-Look PLL ket kisebb lepesre osztja a permutacios lepest:
+
+1. **Sarkok permutacioja** -- mind a 4 sarok helyes pozicioba helyezese (2 eset)
+2. **Elek permutacioja** -- mind a 4 el helyes pozicioba helyezese (4 eset)
+
+Ez azt jelenti, hogy osszesen csak **6 algoritmust** kell megtanulnod.
+
+### 1. lepes: Sarkok permutacioja
+
+Nezd meg a felso reteg sarkait. Ellenorizd, hogy van-e **szomszedos sarokpar**, amely ugyanahhoz az oldalhoz tartozik (egyezo fenyszorok).
+
+#### Szomszedos sarkok csereje
+
+Egy szomszedos sarokpar mar helyes. Tartsd a megoldott part **hatul** es alkalmazd:
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Ez a **T-Perm** -- megcsereli a ket elso sarkot (es ket elet, amelyeket a 2. lepesben javitunk).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Atlos sarkok csereje
+
+Nincs egyezo szomszedos sarok. Alkalmazd a **Y-Perm**-et az atlos sarokcserehez:
+
+**Algoritmus: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### 2. lepes: Elek permutacioja
+
+Minden sarok megoldott. Nezd meg az eleket es határozd meg, melyeknek kell korozniuk.
+
+#### Ua Perm (3-el koros orajaras iranyban)
+
+Harom elnek kell koroznie orajaras iranyban. Tartsd a megoldott elet **hatul**.
+
+**Algoritmus: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (3-el koros orajarassal szemben)
+
+Harom elnek kell koroznie orajarassal szemben. Tartsd a megoldott elet **hatul**.
+
+**Algoritmus: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (szemben levo elparok csereje)
+
+Ket szemben levo elparnak kell cserelodie.
+
+**Algoritmus: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (szomszedos elparok csereje)
+
+Ket szomszedos elparnak kell cserelodie. Tartsd ugy, hogy a ket par elol/jobb es hatul/bal legyen.
+
+**Algoritmus: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Teljes PLL -- Mind a 21 eset
+
+### Csak elek (4 eset)
+
+Ezek a PLL-ek csak eleket mozgatnak; a sarkok mar megoldottak.
+
+#### Ua Perm
+
+Az elek orajaras iranyban koroznek. A megoldott el hatul van.
+
+**Felismeres:** Egy megoldott sav (el + ket sarok) latható hatulrol.
+
+**Algoritmus: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Az elek orajarassal szemben koroznek. A megoldott el hatul van.
+
+**Felismeres:** Egy megoldott sav latható hatulrol; az el szinek az Ua-val ellentetes iranyban koroznek.
+
+**Algoritmus: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Ket szemben levo elpar cserelodik.
+
+**Felismeres:** Minden oldalon az ellenteetes szin van a kozepso el pozicioban. Sakktabla minta mind a negy oldalon.
+
+**Algoritmus: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Ket szomszedos elpar cserelodik.
+
+**Felismeres:** Ket szomszedos oldalon mindegyiken a masik szine van az el pozicioban. Egyik oldal sem teljesen megoldott.
+
+**Algoritmus: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Csak sarkok (3 eset)
+
+Ezek a PLL-ek csak sarkokat mozgatnak; az elek mar megoldottak.
+
+#### Aa Perm
+
+Harom sarok koroz. Fenyszorok a bal oldalon.
+
+**Felismeres:** Fenyszorok az egyik oldalon, a sav (3 egyezo matrica) a szemben levo oldalon.
+
+**Algoritmus: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Harom sarok koroz (az Aa-val ellentetes iranyban). Fenyszorok a jobb oldalon.
+
+**Felismeres:** Az Aa tukorkeepe -- fenyszorok a szemben levo oldalon.
+
+**Algoritmus: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Ket atlos sarokpar cserelodik. Egyetlen el sem mozdul.
+
+**Felismeres:** Nincs fenyszoro egyetlen oldalon sem. Minden oldalon ket kulonbozo sarokszin van.
+
+**Algoritmus: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Szomszedos sarkok csereje (6 eset)
+
+Ezek a PLL-ek egy szomszedos sarokpart cserelnek el-permutaciokkal egyutt.
+
+#### T Perm
+
+**Felismeres:** Fenyszorok elol es hatul. A ket fenyszoro nelkuli oldal szinei felcsereltek.
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Felismeres:** Fenyszorok csak egy oldalon (elol). A masik harom oldalon nincs egyezo par.
+
+**Algoritmus: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Felismeres:** Egy megoldott 1x1x3 blokk a bal oldalon. A jobb oldal szomszedos darabjai felcsereltek.
+
+**Algoritmus: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Felismeres:** Egy megoldott 1x1x3 blokk a jobb oldalon. A Ja tukorkeepe.
+
+**Algoritmus: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Felismeres:** Fenyszorok elol. Szomszedos sarok- es elcsere a jobb oldalon.
+
+**Algoritmus: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Felismeres:** Fenyszorok hatul. Az Ra tukorkeepe.
+
+**Algoritmus: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Atlos sarkok csereje (4 eset)
+
+Ezek a PLL-ek ket atlosan szemben levo sarkot cserelnek.
+
+#### V Perm
+
+**Felismeres:** Nincs fenyszoro egyetlen oldalon sem. Egy oldalon ketszinu minta, ahol az el megegyezik az egyik sarokkal.
+
+**Algoritmus: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Felismeres:** Nincs fenyszoro. Egy oldalon ket egyezo sarok van, de a koztuk levo el helytelen.
+
+**Algoritmus: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Felismeres:** Ket szemben levo oldal teljesen megoldott (mindegyiken egy megoldott sav), de a masik ket oldal darabjai teljesen felcsereltek.
+
+**Algoritmus: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Felismeres:** Az Na tukorkeepe. Ket szemben levo sav, de maskeppen felcserelve.
+
+**Algoritmus: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 eset)
+
+A G permutaciokat a legnehezebb felismerni. Egy szomszedos sarokpart es harom elet mozgatnak korozes formajaban.
+
+#### Ga Perm
+
+**Felismeres:** Fenyszorok balra. Az elso jobb sarok megegyezik a jobb ellel.
+
+**Algoritmus: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Felismeres:** Fenyszorok elol. A hatso bal sarok megegyezik a bal ellel.
+
+**Algoritmus: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Felismeres:** Fenyszorok jobbra. Az elso bal sarok megegyezik a bal ellel.
+
+**Algoritmus: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Felismeres:** Fenyszorok hatul. Az elso jobb sarok megegyezik a jobb ellel.
+
+**Algoritmus: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Felismeresi tippek
+
+A hatekony PLL felismeres a gyors megoldasok kulcsa. Ime altalanos strategiak:
+
+1. **Keress fenyszorokat** -- egy egyezo sarokpar egy oldalon. Ez azonnal leszukiti az esetet.
+2. **Szamold a megoldott savokat** -- a sav harom egyezo matrica egy sorban (sarok-el-sarok). A savok specifikus PLL-ekre utalnak.
+3. **Ellenorizz ket oldalt** -- az elso es jobb oldal megtekintese altalaban eleg az eset azonositasahoz.
+4. **Tanuld meg az ellentetes mintakat** -- sok PLL tukorparokban jon (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Mit latsz | Lehetseges PLL-ek |
+|:---|:---|
+| 4 oldal fenyszoroval | H, Ua, Ub, Z |
+| 2 szemben levo oldal fenyszoroval | T, F, Ja, Jb, Ra, Rb |
+| 1 oldal fenyszoroval | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 oldal fenyszoroval | E, V, Y, Na, Nb |
+
+## Tanulasi sorrend
+
+Ajanlott sorrend mind a 21 PLL megtanulasahoz:
+
+1. **Eloszor 2-Look:** T, Y (sarkok) + Ua, Ub, H, Z (elek) -- 6 algoritmus
+2. **Szomszedos cserek:** Ja, Jb, F, Ra, Rb -- 5 tovabbi algoritmus
+3. **Csak sarkok:** Aa, Ab, E -- 3 tovabbi algoritmus
+4. **Atlos cserek:** V, Na, Nb -- 3 tovabbi algoritmus
+5. **G Perms vegul:** Ga, Gb, Gc, Gd -- 4 utolso algoritmus
+
+:::tip
+Gyakorold a felismerest kevereessel, PLL-ig megoldassal, majd a kocka eltakarasaval es a memoriaboli azonositasi kiserlettel. A sebesseg az azonnali felismeresbol jon, nem csak a gyors ujjmozgasokbol.
+:::

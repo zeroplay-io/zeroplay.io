@@ -1,0 +1,374 @@
+---
+title: "2x2 Napredno: CLL metoda"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Napredno: CLL metoda
+
+Podignite rješavanje 2x2 kocke na višu razinu s **CLL (Kutovi posljednjeg sloja)** metodom. Dok Ortega metoda rješava posljednji sloj u dva koraka (OLL pa PBL), CLL rješava i **orijentaciju i permutaciju** kutova posljednjeg sloja u **jednom algoritmu**. Manje gledanja i brže rješavanje.
+
+## Zašto CLL?
+
+| Metoda | Koraci posljednjeg sloja | Algoritmi | Tipična brzina |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 sekundi |
+| **CLL** | 1 (jedan pogled) | ~40 | 2–4 sekundi |
+
+CLL je standardna metoda koju koriste najbolji 2x2 speedcuberi. Učenjem svih 40 slučajeva eliminirate cijeli korak.
+
+## Kako CLL funkcionira
+
+1. **Riješite prvu stranu** — kao kod Ortege, sastavite bijelu stranu na dnu (bočne boje ne moraju se poklapati).
+2. **Prepoznajte CLL slučaj** — pogledajte gornju stranu i bočne boje da odredite koji od 40 slučajeva imate.
+3. **Primijenite jedan algoritam** — istovremeno orijentira i permutira sve gornje kutove.
+4. **AUF + podešavanje dna** — najviše jedan U okret i jedan D okret za završetak.
+
+## Podsjetnik notacije
+
+- **R** = Desno &nbsp;&nbsp; **L** = Lijevo &nbsp;&nbsp; **U** = Gore &nbsp;&nbsp; **D** = Dolje &nbsp;&nbsp; **F** = Prednje &nbsp;&nbsp; **B** = Stražnje
+- Samo slovo znači **90° u smjeru kazaljke**. S **'** znači **suprotno od kazaljke**. S **2** znači **180°**.
+
+---
+
+## Grupe CLL slučajeva
+
+40 CLL slučajeva organizirano je u 7 grupa prema obrascu orijentacije gornje strane. Ispod su najvažniji slučajevi iz svake grupe.
+
+---
+
+## Sune slučajevi (4 od 6)
+
+Jedan kut je orijentiran (žuto gore), ostala tri trebaju okretanje. Najčešća grupa.
+
+### Sune 1 — Susjedna zamjena
+
+Držite riješeni kut naprijed-lijevo. Tri neriješena kuta se okreću u smjeru kazaljke.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Dijagonalna zamjena
+
+Isti obrazac orijentacije, ali kutovi trebaju dijagonalnu zamjenu.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Čisti (bez zamjene)
+
+Orijentacija riješena bez potrebe za promjenom pozicije.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Susjedna zamjena (Zrcalo)
+
+Držite riješeni kut naprijed-desno.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune slučajevi (3 od 6)
+
+Zrcalo Sunea — jedan kut orijentiran, ostala tri se okreću suprotno od kazaljke.
+
+### Anti-Sune 1 — Susjedna zamjena
+
+Držite riješeni kut naprijed-desno. Tri neriješena kuta se okreću suprotno od kazaljke.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Dijagonalna zamjena
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Čisti (bez zamjene)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H slučajevi (4 od 4)
+
+Dva suprotna kuta orijentirana (žuto gore), druga dva imaju žuto na stranama.
+
+### H 1 — Susjedna zamjena
+
+Dvije žute naljepnice gore na dijagonalnim pozicijama.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Dijagonalna zamjena
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Bez zamjene
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Stupci
+
+Oba para dijagonalnih kutova trebaju zamjenu.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi slučajevi (4 od 6)
+
+Dva susjedna kuta imaju žuto gore, druga dva imaju žuto na stranama. Gornja strana izgleda kao grčko slovo Pi.
+
+### Pi 1 — Dijagonalna zamjena
+
+Držite dva orijentirana kuta straga.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Susjedna zamjena (Desno)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Susjedna zamjena (Lijevo)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Bez zamjene
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T slučajevi (3 od 6)
+
+Gornja strana pokazuje T-obrazac žutih naljepnica — jedan kut orijentiran, jedan susjedni kut sa žutim sprijeda, druga dva sa žutim na stranama.
+
+### T 1 — Susjedna zamjena
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Dijagonalna zamjena
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Bez zamjene
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U slučajevi (3 od 6)
+
+Jedan kut ispravno orijentiran, ostala tri u U-obrascu na stranama.
+
+### U 1 — Susjedna zamjena
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Dijagonalna zamjena
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Bez zamjene
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L slučajevi (3 od 6)
+
+Dva susjedna kuta okrenuta u istom smjeru — gornja strana pokazuje L-obrazac.
+
+### L 1 — Susjedna zamjena
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Dijagonalna zamjena
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Bez zamjene
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Nakon CLL-a: Završetak rješavanja
+
+Nakon primjene CLL algoritma, gornja strana je potpuno riješena. Možda ćete trebati:
+
+1. **AUF (Podesi U stranu)** — jedan U ili U' okret za poravnanje gornjeg sloja s donjim.
+2. **Podešavanje donjeg sloja** — ako je pomaknut, jedan D ili D' okret to ispravlja.
+3. **Zamjena donjeg sloja** — rijetko, donji sloj može trebati susjednu ili dijagonalnu zamjenu. Koristite iste PBL algoritme iz Ortega metode:
+   - **Dijagonalna zamjena:** R2 F2 R2
+   - **Susjedna zamjena:** R U' R F2 R' U R'
+
+---
+
+## Strategija učenja
+
+Učenje svih 40 slučajeva odjednom je zahtjevno. Preporučeni redoslijed:
+
+1. **Počnite sa Sune i Anti-Sune** (12 slučajeva) — najčešći, mnogi algoritmi su kratki.
+2. **Dodajte T i U slučajeve** (12 slučajeva) — relativno lako prepoznati i izvesti.
+3. **Naučite Pi slučajeve** (6 slučajeva) — prepoznatljiv obrazac orijentacije.
+4. **Naučite L slučajeve** (6 slučajeva) — slično prepoznavanje kao Pi, ali drugačiji smjer.
+5. **Završite s H slučajevima** (4 slučaja) — najrjeđa grupa.
+
+## Savjeti za prepoznavanje
+
+- **Prvo pogledajte gornju stranu** za identifikaciju grupe orijentacije.
+- **Zatim provjerite bočne boje** za određivanje specifičnog slučaja.
+- **Vježbajte po grupama** — jednu grupu dok prepoznavanje ne postane trenutno.
+- **Koristite obrnute scramble** — postavite slučaj, riješite ga, predvidite obrnuto.
+
+---
+
+**S ovladanim CLL-om možete postići prosjeke ispod 3 sekunde na 2x2.** Pristup jednog pogleda eliminira pauzu između OLL-a i PBL-a. Nastavite vježbati prepoznavanje — brzina dolazi od trenutnog prepoznavanja.

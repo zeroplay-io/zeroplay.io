@@ -1,0 +1,466 @@
+---
+title: Algorytmy PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algorytmy PLL
+
+**PLL (Permutacja Ostatniej Warstwy)** to ostatni krok metody CFOP. Po tym jak OLL prawidlowo zorientowal wszystkie naklejki gornej sciany, PLL przestawia elementy na ich rozwiazane pozycje. Lacznie istnieje **21 przypadkow PLL**.
+
+Jesli jestes poczatkujacy, zacznij od **2-Look PLL** -- uproszczonego podejscia wymagajacego tylko **6 algorytmow** zamiast wszystkich 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL dzieli krok permutacji na dwa mniejsze kroki:
+
+1. **Permutacja naroznikow** -- umieszczenie wszystkich 4 naroznikow na wlasciwej pozycji (2 przypadki)
+2. **Permutacja krawedzi** -- umieszczenie wszystkich 4 krawedzi na wlasciwej pozycji (4 przypadki)
+
+To oznacza, ze musisz nauczyc sie tylko **6 algorytmow** lacznie.
+
+### Krok 1: Permutacja naroznikow
+
+Spojrz na narozniki gornej warstwy. Sprawdz, czy jakas **para sasiadujacych naroznikow** nalezy do tej samej strony (pasujace swiatla).
+
+#### Zamiana sasiadujacych naroznikow
+
+Jedna para sasiadujacych naroznikow jest juz poprawna. Trzymaj rozwiazana pare **z tylu** i zastosuj:
+
+**Algorytm: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+To jest **T-Perm** -- zamienia dwa przednie narozniki (i dwie krawedzie, ktore naprawimy w kroku 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Zamiana przekatnych naroznikow
+
+Zadne sasiadujace narozniki nie pasuja. Zastosuj **Y-Perm** aby zamienic narozniki po przekatnej:
+
+**Algorytm: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Krok 2: Permutacja krawedzi
+
+Wszystkie narozniki sa teraz rozwiazane. Spojrz na krawedzie i okresl, ktore musza sie cyklicznie zamienic.
+
+#### Ua Perm (cykl 3 krawedzi zgodnie z ruchem wskazowek zegara)
+
+Trzy krawedzie musza sie cyklicznie zamienic zgodnie z ruchem wskazowek zegara. Trzymaj rozwiazana krawedz **z tylu**.
+
+**Algorytm: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (cykl 3 krawedzi przeciwnie do ruchu wskazowek zegara)
+
+Trzy krawedzie musza sie cyklicznie zamienic przeciwnie do ruchu wskazowek zegara. Trzymaj rozwiazana krawedz **z tylu**.
+
+**Algorytm: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Zamiana przeciwleglych par krawedzi)
+
+Dwie pary przeciwleglych krawedzi musza sie zamienic.
+
+**Algorytm: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Zamiana sasiadujacych par krawedzi)
+
+Dwie pary sasiadujacych krawedzi musza sie zamienic. Trzymaj tak, aby dwie pary byly z przodu/po prawej i z tylu/po lewej.
+
+**Algorytm: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Pelne PLL -- Wszystkie 21 przypadkow
+
+### Tylko krawedzie (4 przypadki)
+
+Te PLL przesuwaja tylko krawedzie; narozniki sa juz rozwiazane.
+
+#### Ua Perm
+
+Krawedzie cykluja zgodnie z ruchem wskazowek zegara. Rozwiazana krawedz jest z tylu.
+
+**Rozpoznanie:** Jeden rozwiazany pasek (krawedz + dwa narozniki) widoczny z tylu.
+
+**Algorytm: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Krawedzie cykluja przeciwnie do ruchu wskazowek zegara. Rozwiazana krawedz jest z tylu.
+
+**Rozpoznanie:** Jeden rozwiazany pasek widoczny z tylu; kolory krawedzi cykluja w przeciwnym kierunku niz Ua.
+
+**Algorytm: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Dwie pary przeciwleglych krawedzi sie zamieniaja.
+
+**Rozpoznanie:** Kazda strona ma przeciwny kolor w pozycji srodkowej krawedzi. Wzor szachownicy na wszystkich czterech stronach.
+
+**Algorytm: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Dwie pary sasiadujacych krawedzi sie zamieniaja.
+
+**Rozpoznanie:** Dwie sasiadujace strony maja kolor drugiej w pozycji krawedzi. Zadna strona nie jest calkowicie rozwiazana.
+
+**Algorytm: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Tylko narozniki (3 przypadki)
+
+Te PLL przesuwaja tylko narozniki; krawedzie sa juz rozwiazane.
+
+#### Aa Perm
+
+Trzy narozniki cykluja. Swiatla po lewej stronie.
+
+**Rozpoznanie:** Swiatla po jednej stronie, pasek (3 pasujace naklejki) po przeciwnej stronie.
+
+**Algorytm: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Trzy narozniki cykluja (przeciwny kierunek do Aa). Swiatla po prawej stronie.
+
+**Rozpoznanie:** Lustrzane odbicie Aa -- swiatla po przeciwnej stronie.
+
+**Algorytm: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Dwie pary przekatnych naroznikow sie zamieniaja. Krawedzie sie nie ruszaja.
+
+**Rozpoznanie:** Brak swiatel na zadnej stronie. Kazda strona ma dwa rozne kolory naroznikow.
+
+**Algorytm: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Zamiana sasiadujacych naroznikow (6 przypadkow)
+
+Te PLL zamieniaja jedna pare sasiadujacych naroznikow wraz z permutacjami krawedzi.
+
+#### T Perm
+
+**Rozpoznanie:** Swiatla z przodu i z tylu. Dwie strony bez swiatel maja zamienione kolory.
+
+**Algorytm: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Rozpoznanie:** Swiatla tylko po jednej stronie (z przodu). Trzy pozostale strony nie maja pasujacych par.
+
+**Algorytm: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Rozpoznanie:** Rozwiazany blok 1x1x3 po lewej stronie. Prawa strona ma zamienione sasiadujace elementy.
+
+**Algorytm: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Rozpoznanie:** Rozwiazany blok 1x1x3 po prawej stronie. Lustrzane odbicie Ja.
+
+**Algorytm: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Rozpoznanie:** Swiatla z przodu. Zamiana sasiadujacego naroznika i krawedzi po prawej stronie.
+
+**Algorytm: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Rozpoznanie:** Swiatla z tylu. Lustrzane odbicie Ra.
+
+**Algorytm: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Zamiana przekatnych naroznikow (4 przypadki)
+
+Te PLL zamieniaja dwa przekatnie przeciwlegle narozniki.
+
+#### V Perm
+
+**Rozpoznanie:** Brak swiatel na zadnej stronie. Jedna strona ma wzor 2-kolorowy, gdzie krawedz pasuje do jednego naroznika.
+
+**Algorytm: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Rozpoznanie:** Brak swiatel. Jedna strona ma dwa pasujace narozniki, ale krawedz miedzy nimi jest bledna.
+
+**Algorytm: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Rozpoznanie:** Dwie przeciwlegle strony sa calkowicie rozwiazane (rozwiazany pasek na kazdej), ale dwie pozostale strony maja calkowicie zamienione elementy.
+
+**Algorytm: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Rozpoznanie:** Lustrzane odbicie Na. Dwa przeciwlegle paski, ale zamienione inaczej.
+
+**Algorytm: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 przypadki)
+
+Permutacje G sa najtrudniejsze do rozpoznania. Przesuwaja zarowno jedna pare sasiadujacych naroznikow, jak i cyklicznie trzy krawedzie.
+
+#### Ga Perm
+
+**Rozpoznanie:** Swiatla po lewej. Przedni prawy naroznik pasuje do prawej krawedzi.
+
+**Algorytm: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Rozpoznanie:** Swiatla z przodu. Tylny lewy naroznik pasuje do lewej krawedzi.
+
+**Algorytm: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Rozpoznanie:** Swiatla po prawej. Przedni lewy naroznik pasuje do lewej krawedzi.
+
+**Algorytm: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Rozpoznanie:** Swiatla z tylu. Przedni prawy naroznik pasuje do prawej krawedzi.
+
+**Algorytm: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Wskazowki rozpoznawania
+
+Efektywne rozpoznawanie PLL jest kluczem do szybkiego ukladania. Oto ogolne strategie:
+
+1. **Szukaj swiatel** -- pary pasujacych naroznikow po jednej stronie. To natychmiast zaweza przypadek.
+2. **Licz rozwiazane paski** -- pasek to trzy pasujace naklejki w rzedzie (naroznik-krawedz-naroznik). Paski wskazuja na konkretne PLL.
+3. **Sprawdz dwie strony** -- patrzenie na przod i prawa strone zwykle wystarcza do identyfikacji przypadku.
+4. **Naucz sie przeciwnych wzorow** -- wiele PLL wystepuje w parach lustrzanych (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Co widzisz | Mozliwe PLL |
+|:---|:---|
+| 4 strony ze swiatami | H, Ua, Ub, Z |
+| 2 przeciwlegle strony ze swiatami | T, F, Ja, Jb, Ra, Rb |
+| 1 strona ze swiatami | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 stron ze swiatami | E, V, Y, Na, Nb |
+
+## Kolejnosc nauki
+
+Zalecana kolejnosc nauki wszystkich 21 PLL:
+
+1. **Najpierw 2-Look:** T, Y (narozniki) + Ua, Ub, H, Z (krawedzie) -- 6 algorytmow
+2. **Zamiany sasiadujace:** Ja, Jb, F, Ra, Rb -- 5 kolejnych algorytmow
+3. **Tylko narozniki:** Aa, Ab, E -- 3 kolejne algorytmy
+4. **Zamiany przekatne:** V, Na, Nb -- 3 kolejne algorytmy
+5. **G Perms na koniec:** Ga, Gb, Gc, Gd -- 4 ostatnie algorytmy
+
+:::tip
+Cwicz rozpoznawanie mieszajac, ukladajac do PLL, a nastepnie zakrywajac kostke i probujac zidentyfikowac przypadek z pamieci. Szybkosc pochodzi z natychmiastowego rozpoznawania, a nie tylko z szybkich ruchow palcow.
+:::

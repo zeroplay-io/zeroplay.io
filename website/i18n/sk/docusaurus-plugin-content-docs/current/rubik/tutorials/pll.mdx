@@ -1,0 +1,466 @@
+---
+title: PLL algoritmy
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# PLL algoritmy
+
+**PLL (Permutacia poslednej vrstvy)** je poslednym krokom metody CFOP. Po tom, co OLL spravne orientoval vsetky nalepky hornej strany, PLL preusporiada dieliky do ich vyriesenych pozicii. Celkovo existuje **21 pripadov PLL**.
+
+Ak ste zaciatocnik, zacnite s **2-Look PLL** -- zjednodusenym pristupom, ktory vyzaduje iba **6 algoritmov** namiesto vsetkych 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL rozdeluje krok permutacie na dva mensie kroky:
+
+1. **Permutacia rohov** -- umiestnenie vsetkych 4 rohov na spravnu poziciu (2 pripady)
+2. **Permutacia hran** -- umiestnenie vsetkych 4 hran na spravnu poziciu (4 pripady)
+
+To znamena, ze sa potrebujete naucit iba **6 algoritmov** celkovo.
+
+### Krok 1: Permutacia rohov
+
+Look at the top layer corners. Check if any **pair of adjacent corners** belongs to the same side (matching headlights).
+
+#### Adjacent Corner Swap
+
+One pair of adjacent corners is already correct. Hold the solved pair at the **back** and apply:
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+This is the **T-Perm** -- it swaps the two front corners (and two edges, which we fix in step 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Diagonal Corner Swap
+
+No adjacent corners match. Apply the **Y-Perm** to swap corners diagonally:
+
+**Algoritmus: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Krok 2: Permutacia hran
+
+All corners are now solved. Look at the edges and determine which need to cycle.
+
+#### Ua Perm (3-edge cycle clockwise)
+
+Three edges need to cycle clockwise. Hold the solved edge at the **back**.
+
+**Algoritmus: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (3-edge cycle counter-clockwise)
+
+Three edges need to cycle counter-clockwise. Hold the solved edge at the **back**.
+
+**Algoritmus: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (Swap opposite edge pairs)
+
+Two pairs of opposite edges need to swap.
+
+**Algoritmus: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (Swap adjacent edge pairs)
+
+Two pairs of adjacent edges need to swap. Hold so the two pairs are front/right and back/left.
+
+**Algoritmus: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Uplny PLL -- Vsetkych 21 pripadov
+
+### Iba hrany (4 pripady)
+
+These PLLs only move edges; corners are already solved.
+
+#### Ua Perm
+
+Edges cycle clockwise. The solved edge is at the back.
+
+**Rozpoznanie:** One solved bar (edge + two corners) visible from the back.
+
+**Algoritmus: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Edges cycle counter-clockwise. The solved edge is at the back.
+
+**Rozpoznanie:** One solved bar visible from the back; edge colors cycle the opposite direction from Ua.
+
+**Algoritmus: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Two pairs of opposite edges swap.
+
+**Rozpoznanie:** Every side has the opposite color in the center edge. Checkerboard pattern on all four sides.
+
+**Algoritmus: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Two pairs of adjacent edges swap.
+
+**Rozpoznanie:** Two adjacent sides each have the other's color in the edge position. No side is fully solved.
+
+**Algoritmus: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Iba rohy (3 pripady)
+
+These PLLs only move corners; edges are already solved.
+
+#### Aa Perm
+
+Three corners cycle. Headlights on the left side.
+
+**Rozpoznanie:** Headlights on one side, the bar (3 matching stickers) is on the opposite side.
+
+**Algoritmus: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Three corners cycle (opposite direction to Aa). Headlights on the right side.
+
+**Rozpoznanie:** Mirror of Aa -- headlights on the opposite side.
+
+**Algoritmus: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Two pairs of diagonal corners swap. No edges move.
+
+**Rozpoznanie:** No headlights on any side. Each side has two different corner colors.
+
+**Algoritmus: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Vymena susednych rohov (6 pripadov)
+
+These PLLs swap one pair of adjacent corners along with edge permutations.
+
+#### T Perm
+
+**Rozpoznanie:** Headlights on the front and back. The two non-headlight sides each have their colors swapped.
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Rozpoznanie:** Headlights on one side only (front). The other three sides have no matching pairs.
+
+**Algoritmus: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Rozpoznanie:** A solved 1x1x3 block on the left side. The right side has adjacent pieces swapped.
+
+**Algoritmus: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Rozpoznanie:** A solved 1x1x3 block on the right side. Mirror of Ja.
+
+**Algoritmus: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Rozpoznanie:** Headlights on the front. Adjacent corner and edge swap on the right side.
+
+**Algoritmus: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Rozpoznanie:** Headlights on the back. Mirror of Ra.
+
+**Algoritmus: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Vymena diagonalnych rohov (4 pripady)
+
+These PLLs swap two diagonally opposite corners.
+
+#### V Perm
+
+**Rozpoznanie:** No headlights on any side. One side has a 2-color pattern where the edge matches one corner.
+
+**Algoritmus: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Rozpoznanie:** No headlights. One side has two matching corners but the edge between them is wrong.
+
+**Algoritmus: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Rozpoznanie:** Two opposite sides are fully solved (a solved bar on each), but the other two sides have their pieces completely swapped.
+
+**Algoritmus: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Rozpoznanie:** Mirror of Na. Two opposite bars but swapped differently.
+
+**Algoritmus: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 pripady)
+
+The G permutations are the trickiest to recognize. They move both one pair of adjacent corners and cycle three edges.
+
+#### Ga Perm
+
+**Rozpoznanie:** Headlights on the left. The front-right corner matches the right edge.
+
+**Algoritmus: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Rozpoznanie:** Headlights on the front. The back-left corner matches the left edge.
+
+**Algoritmus: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Rozpoznanie:** Headlights on the right. The front-left corner matches the left edge.
+
+**Algoritmus: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Rozpoznanie:** Headlights on the back. The front-right corner matches the right edge.
+
+**Algoritmus: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Tipy na rozpoznanie
+
+Efficient PLL recognition is key to fast solves. Here are general strategies:
+
+1. **Look for headlights** -- a pair of matching corners on one side. This narrows down the case immediately.
+2. **Count solved bars** -- a bar is three matching stickers in a row (corner-edge-corner). Bars indicate specific PLLs.
+3. **Check two sides** -- looking at the front and right side is usually enough to identify the case.
+4. **Learn opposite patterns** -- many PLLs come in mirror pairs (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| What you see | Possible PLLs |
+|:---|:---|
+| 4 sides with headlights | H, Ua, Ub, Z |
+| 2 opposite sides with headlights | T, F, Ja, Jb, Ra, Rb |
+| 1 side with headlights | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 sides with headlights | E, V, Y, Na, Nb |
+
+## Poradie ucenia
+
+A recommended order for learning all 21 PLLs:
+
+1. **2-Look first:** T, Y (corners) + Ua, Ub, H, Z (edges) -- 6 algorithms
+2. **Adjacent swaps:** Ja, Jb, F, Ra, Rb -- 5 more algorithms
+3. **Corner-only:** Aa, Ab, E -- 3 more algorithms
+4. **Diagonal swaps:** V, Na, Nb -- 3 more algorithms
+5. **G Perms last:** Ga, Gb, Gc, Gd -- 4 final algorithms
+
+:::tip
+Practice recognition by scrambling, solving to PLL, then covering the cube and trying to identify the case from memory. Speed comes from instant recognition, not just fast finger tricks.
+:::

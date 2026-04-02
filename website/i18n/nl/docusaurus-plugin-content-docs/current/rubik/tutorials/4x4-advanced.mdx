@@ -1,0 +1,249 @@
+---
+title: "4x4 Gevorderd: Yau-methode"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Gevorderd: Yau-methode
+
+De **Yau-methode**, uitgevonden door Robert Yau, is een sneller alternatief voor de standaard Reduction-methode voor de 4x4 Rubik's Cube. Het belangrijkste verschil: Yau lost kruisranden **vroeg** op, wat een beter vooruitzicht en een soepelere overgang naar de 3x3-fase biedt. De meeste top 4x4-speedcubers gebruiken Yau of een variant ervan.
+
+## Yau vs standaard Reduction
+
+| Aspect | Reduction | Yau |
+|--------|-----------|-----|
+| **Stapvolgorde** | Alle centra, dan alle randen | 2 centra, 3 kruisranden, 4 centra, resterende randen |
+| **Kruis** | Gebouwd na reductie | Al gedeeltelijk klaar tijdens reductie |
+| **Vooruitzicht** | Moet kruisranden zoeken na pairing | Kruis bijna klaar, overgang naar F2L naadloos |
+| **Snelheidsplafond** | Goed | Hoger — minder pauzes tussen fases |
+
+## Notatie-herinnering
+
+**Standaardbewegingen** (alleen buitenste laag):
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Boven &nbsp;&nbsp; **D** = Onder &nbsp;&nbsp; **F** = Voor &nbsp;&nbsp; **B** = Achter
+
+**Brede bewegingen** (twee buitenste lagen samen):
+- **Rw** = Rechts breed &nbsp;&nbsp; **Lw** = Links breed &nbsp;&nbsp; **Uw** = Boven breed &nbsp;&nbsp; **Dw** = Onder breed &nbsp;&nbsp; **Fw** = Voor breed &nbsp;&nbsp; **Bw** = Achter breed
+
+Een letter alleen betekent **90° met de klok mee**. Met **'** betekent **tegen de klok in**. Met **2** betekent **180°**.
+
+---
+
+## Stap 1: Los twee tegenoverliggende centra op
+
+Begin met het oplossen van de **witte** en **gele** centrumblokken (boven en onder). Dit is hetzelfde als het eerste deel van de standaard Reduction-methode.
+
+Elk centrum is een 2x2-blok. Gebruik brede bewegingen om centrumstukken samen te brengen, terwijl je al geplaatste stukken beschermt met buitenste laagdraaien.
+
+**Basis centrumbouw** — breng een centrumstuk omhoog met een brede beweging, positioneer het, en keer om:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Twee centrumhelften samenvoegen** — wanneer je twee 1x2-centrumstroken hebt die samengevoegd moeten worden:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tips:**
+- Los eerst het witte centrum op (onderaan), dan het gele centrum (bovenaan).
+- Houd wit onderaan de hele tijd — gebruik alleen Rw, Lw, Fw, Bw-bewegingen om centra te bewerken zonder de onderkant te verstoren.
+- Maak je nog geen zorgen over de zijcentra. Laat die voor stap 3.
+
+---
+
+## Stap 2: Los 3 van 4 kruisranden op
+
+Hier wijkt Yau af van Reduction. Voordat je de resterende centra oplost, **koppel en plaats 3 witte kruisranden** in de onderste laag.
+
+Een kruisrand bestaat uit twee stukken (bijv. wit-rood en wit-rood) die gekoppeld en in de D-laag geplaatst moeten worden. Laat één kruisrand voorlopig onopgelost — dit geeft vrijheid om brede bewegingen te gebruiken in de volgende stap.
+
+**Kruisrand koppelen met freeslice** — de freeslice-techniek koppelt randen zonder centra te verstoren. Plaats de ene helft op de voor-rechts positie en haal de partner uit een andere sleuf:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Gekoppelde kruisrand in de onderkant plaatsen** — eenmaal gekoppeld, plaats de rand in de juiste D-laagpositie:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice met brede bewegingen** — gebruik Dw om een randstuk omhoog te halen voor koppeling zonder kruisranden te breken die al op hun plaats zitten:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tips:**
+- Je hebt nu slechts 3 kruisranden opgelost nodig. Laat bewust één plek leeg.
+- Gebruik de lege D-laagplek vrij — de ontbrekende kruisrand geeft meer vrijheid voor brede bewegingen.
+- Kies welke kruisrand je laat op basis van welke het moeilijkst te vinden of te koppelen is.
+
+---
+
+## Stap 3: Los de resterende 4 centra op
+
+Los nu de **4 zijcentra** op (rood, oranje, blauw, groen). De witte en gele centra zijn al klaar uit stap 1.
+
+Omdat je één onopgeloste kruisrandplek hebt, kun je nog steeds enkele brede bewegingen vrij gebruiken. Dit is een belangrijk voordeel van Yau — het gedeeltelijk opgeloste kruis beperkt de centrumbouw niet zoveel als je zou denken.
+
+**Zijcentrum bouwen** — gebruik brede bewegingen om centrumstukken te verzamelen, plaats ze dan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Centrum commutator** — wanneer je een centrumstuk moet wisselen zonder anderen te verstoren, gebruik een commutator-achtige reeks:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tips:**
+- Los centra op in tegenoverliggende paren wanneer mogelijk (bijv. rood dan oranje, blauw dan groen).
+- Benut de onopgeloste kruisrandplek — brede bewegingen door die plek zullen kruisranden niet breken.
+- Let op de 3 kruisranden die al in de D-laag zitten. Controleer vóór brede bewegingen.
+
+---
+
+## Stap 4: Laatste kruisrand + volledige randkoppeling
+
+Deze stap heeft twee delen: voltooi de 4e kruisrand, koppel dan alle resterende randen.
+
+### Deel A: Los de laatste kruisrand op
+
+Vind het resterende kruisrandpaar en breng ze samen. Omdat alle centra nu opgelost zijn, moet je voorzichtiger zijn met brede bewegingen.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Eenmaal gekoppeld, plaats het in de laatste D-laagplek om het witte kruis te voltooien.
+
+### Deel B: Koppel resterende randen (3-2-3-techniek)
+
+Je hebt nu 8 ongekoppelde randen. De **3-2-3-techniek** is de meest efficiënte manier om ze te koppelen:
+
+1. **Eerste 3 randen** — koppel ze met standaard slice-flip-slice-bewegingen. Plaats een ongekoppelde rand voor-rechts, vind de partner bovenaan, gebruik Uw om ze samen te brengen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Volgende 2 randen** — met minder resterende randen kun je twee randen snel achter elkaar koppelen door er één achter op te slaan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Laatste 3 randen** — de laatste randen vereisen meer zorgvuldigheid om al gekoppelde randen niet te breken. Gebruik Dw-gebaseerde bewegingen of omdraaitectinieken:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tips:**
+- Controleer tijdens 3-2-3-koppeling altijd dat je brede bewegingen de kruisranden onderaan niet breken.
+- Als een rand gekoppeld maar omgedraaid is, moet je hem eruit halen en opnieuw koppelen.
+- De overgang van randkoppeling naar 3x3 moet naadloos zijn — je kruis is al klaar.
+
+---
+
+## Stap 5: Oplossen als 3x3 (CFOP)
+
+Met alle centra opgelost, alle randen gekoppeld, en het kruis al compleet, gedraagt de 4x4 zich nu als een 3x3. Omdat het **witte kruis al klaar is** (een groot voordeel van Yau), kun je direct naar **F2L** (eerste twee lagen) springen.
+
+Gebruik vanaf nu alleen buitenste laagbewegingen — geen brede bewegingen.
+
+**Ga verder met standaard CFOP:**
+1. **F2L** — koppel en plaats hoek-rand-paren in de eerste twee lagen.
+2. **OLL** — oriënteer de laatste laag.
+3. **PLL** — permuteer de laatste laag.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Dit is het grootste voordeel van de Yau-methode: de kruis-naar-F2L-overgang heeft nul pauze, omdat het kruis werd gebouwd tijdens de reductiefase.
+
+---
+
+## Pariteitsalgoritmen
+
+De 4x4 heeft twee pariteitsgevallen die niet kunnen voorkomen op een 3x3. Deze komen elk ongeveer 50% van de tijd voor, ongeacht of je Yau of Reduction gebruikt.
+
+### OLL-pariteit (enkele randflip)
+
+Een enkele rand lijkt omgedraaid op de laatste laag — onmogelijk op een echte 3x3.
+
+**Algoritme: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Pas dit algoritme eenmaal toe, ga dan verder met normaal OLL/PLL.
+
+### PLL-pariteit (twee randen wisselen)
+
+Twee tegenoverliggende randen moeten gewisseld worden — opnieuw onmogelijk op een 3x3.
+
+**Algoritme: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Wanneer Yau leren
+
+- **Als je gemiddelde onder 2 minuten is met Reduction**, heb je de basis om over te stappen naar Yau.
+- **Als je CFOP kent voor 3x3**, is Yau een natuurlijke keuze — het kruis is al klaar wanneer je de 3x3-fase ingaat.
+- **Als je moeite hebt met de Reduction-naar-3x3-overgang**, elimineert Yau die pauze volledig.
+
+## Trainingsprioriteiten
+
+1. **Beheers freeslice randkoppeling** — dit is de kerntechniek die Yau efficiënt maakt.
+2. **Oefen 2-centrum + 3-kruisrand-herkenning** — leer kruisranden snel te identificeren tijdens de eerste twee stappen.
+3. **Drill de 3-2-3-techniek** — soepele randkoppeling is waar de meeste tijd wordt bespaard.
+4. **Werk aan de kruis-naar-F2L-overgang** — aangezien het kruis klaar is, oefen het spotten van je eerste F2L-paar tijdens randkoppeling.
+
+---
+
+**De Yau-methode is de standaard voor competitief 4x4 oplossen.** De naadloze overgang van reductie naar 3x3-oplossing, gecombineerd met betere vooruitzichtmogelijkheden, maakt het de voorkeurskeuze voor speedcubers die mikken op gemiddelden onder 40 seconden. Begin met het omzetten van je Reduction-oplossingen naar Yau, één stap tegelijk.

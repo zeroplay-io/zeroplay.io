@@ -1,0 +1,249 @@
+---
+title: "4x4 İleri Seviye: Yau Yöntemi"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 İleri Seviye: Yau Yöntemi
+
+**Yau yöntemi**, Robert Yau tarafından icat edilmiş olup, 4x4 Rubik Küpü için standart Reduction yöntemine daha hızlı bir alternatiftir. Temel fark: Yau, çapraz kenarları **erken** çözer, bu da daha iyi öngörü ve 3x3 aşamasına daha yumuşak bir geçiş sağlar. En iyi 4x4 hız çözücülerin çoğu Yau veya bir varyantını kullanır.
+
+## Yau vs Standart Reduction
+
+| Özellik | Reduction | Yau |
+|--------|-----------|-----|
+| **Adım sırası** | Tüm merkezler, sonra tüm kenarlar | 2 merkez, 3 çapraz kenar, 4 merkez, kalan kenarlar |
+| **Çapraz** | Redüksiyon sonrası yapılır | Redüksiyon sırasında kısmen hazır |
+| **Öngörü** | Eşleştirme sonrası çapraz kenarları bulmalı | Çapraz neredeyse hazır, F2L'ye geçiş sorunsuz |
+| **Hız tavanı** | İyi | Daha yüksek — fazlar arası daha az duraklama |
+
+## Notasyon Hatırlatması
+
+**Standart hareketler** (yalnızca dış katman):
+- **R** = Sağ &nbsp;&nbsp; **L** = Sol &nbsp;&nbsp; **U** = Üst &nbsp;&nbsp; **D** = Alt &nbsp;&nbsp; **F** = Ön &nbsp;&nbsp; **B** = Arka
+
+**Geniş hareketler** (iki dış katman birlikte):
+- **Rw** = Sağ geniş &nbsp;&nbsp; **Lw** = Sol geniş &nbsp;&nbsp; **Uw** = Üst geniş &nbsp;&nbsp; **Dw** = Alt geniş &nbsp;&nbsp; **Fw** = Ön geniş &nbsp;&nbsp; **Bw** = Arka geniş
+
+Tek harf **saat yönünde 90°** anlamına gelir. **'** eklenmesi **saat yönünün tersi** demektir. **2** eklenmesi **180°** demektir.
+
+---
+
+## Adım 1: İki Karşıt Merkezi Çözün
+
+**Beyaz** ve **sarı** merkez bloklarını (üst ve alt) çözerek başlayın. Bu, standart Reduction yönteminin ilk bölümüyle aynıdır.
+
+Her merkez 2x2'lik bir parça bloğudur. Merkez parçalarını bir araya getirmek için geniş hareketler kullanın, zaten yerleştirilmiş parçaları dış katman dönüşleriyle koruyun.
+
+**Temel merkez inşası** — bir merkez parçasını geniş hareketle yukarı getirin, konumlandırın, sonra geri alın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**İki merkez yarısını birleştirme** — birleştirilmesi gereken iki 1x2 merkez şeridine sahip olduğunuzda:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**İpuçları:**
+- Önce beyaz merkezi (altta), sonra sarı merkezi (üstte) çözün.
+- Beyazı her zaman altta tutun — merkezleri alt kısmı bozmadan işlemek için yalnızca Rw, Lw, Fw, Bw hareketlerini kullanın.
+- Yan merkezleri henüz düşünmeyin. Onları adım 3'e bırakın.
+
+---
+
+## Adım 2: 4 Çapraz Kenarın 3'ünü Çözün
+
+Yau burada Reduction'dan ayrılır. Kalan merkezleri çözmeden önce, **3 beyaz çapraz kenarı eşleştirip** alt katmana yerleştirin.
+
+Bir çapraz kenar iki parçadan oluşur (örn. beyaz-kırmızı ve beyaz-kırmızı) bunların eşleştirilip D katmanına yerleştirilmesi gerekir. Şimdilik bir çapraz kenarı çözülmemiş bırakın — bu, sonraki adımda geniş hareketler kullanma özgürlüğü verir.
+
+**Freeslice ile çapraz kenar eşleştirme** — freeslice tekniği merkezleri bozmadan kenarları eşleştirir. Kenarın bir yarısını ön-sağ konuma yerleştirin ve eşini başka bir yuvaştan getirin:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Eşleştirilmiş çapraz kenarı alta yerleştirme** — eşleştirdikten sonra kenarı doğru D-katman konumuna yerleştirin:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Geniş hareketlerle freeslice** — zaten yerinde olan çapraz kenarları bozmadan eşleştirme için bir kenar parçasını kaldırmak üzere Dw kullanın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**İpuçları:**
+- Şimdi yalnızca 3 çözülmüş çapraz kenara ihtiyacınız var. Kasıtlı olarak bir yuvayı boş bırakın.
+- Boş D-katman yuvasını serbestçe kullanın — eksik çapraz kenar, geniş hareketler için daha fazla özgürlük verir.
+- Hangi çapraz kenarı bırakacağınızı, hangisinin bulunması veya eşleştirilmesi en zor olduğuna göre seçin.
+
+---
+
+## Adım 3: Kalan 4 Merkezi Çözün
+
+Şimdi **4 yan merkezi** (kırmızı, turuncu, mavi, yeşil) çözün. Beyaz ve sarı merkezler adım 1'den hazır.
+
+Çözülmemiş bir çapraz kenar yuvanız olduğu için, hâlâ bazı geniş hareketleri serbestçe kullanabilirsiniz. Bu Yau'nun önemli bir avantajıdır — kısmen çözülmüş çapraz, merkez inşasını düşündüğünüz kadar kısıtlamaz.
+
+**Yan merkez inşası** — merkez parçalarını toplamak için geniş hareketler kullanın, sonra yerleştirin:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Merkez komütatörü** — başkalarını bozmadan bir merkez parçasını değiştirmeniz gerektiğinde, komütatör tarzı bir dizi kullanın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**İpuçları:**
+- Mümkün olduğunda merkezleri karşıt çiftler halinde çözün (örn. kırmızı sonra turuncu, mavi sonra yeşil).
+- Çözülmemiş çapraz kenar yuvasından yararlanın — o yuvadan geçen geniş hareketler çapraz kenarları bozmaz.
+- D katmanındaki 3 çapraz kenara dikkat edin. Geniş hareketlerden önce kontrol edin.
+
+---
+
+## Adım 4: Son Çapraz Kenar + Tam Kenar Eşleştirme
+
+Bu adımın iki bölümü var: 4. çapraz kenarı tamamlayın, sonra tüm kalan kenarları eşleştirin.
+
+### Bölüm A: Son Çapraz Kenarı Çözün
+
+Kalan çapraz kenar çiftini bulun ve birleştirin. Tüm merkezler artık çözüldüğü için geniş hareketlere daha dikkatli olmalısınız.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Eşleştirdikten sonra, beyaz çaprazı tamamlamak için son D-katman yuvasına yerleştirin.
+
+### Bölüm B: Kalan Kenarları Eşleştirin (3-2-3 Tekniği)
+
+Şimdi 8 eşleştirilmemiş kenarınız var. **3-2-3 tekniği** bunları eşleştirmenin en verimli yoludur:
+
+1. **İlk 3 kenar** — standart slice-flip-slice hareketleriyle eşleştirin. Eşleştirilmemiş bir kenarı ön-sağa yerleştirin, eşini üstte bulun, birleştirmek için Uw kullanın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Sonraki 2 kenar** — daha az kenar kaldığında, birini arkaya depolayarak iki kenarı hızla art arda eşleştirebilirsiniz:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Son 3 kenar** — son kenarlar, önceden eşleştirilmiş kenarları bozmamak için daha fazla dikkat gerektirir. Dw tabanlı hareketler veya çevirme teknikleri kullanın:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**İpuçları:**
+- 3-2-3 eşleştirme sırasında, geniş hareketlerinizin alttaki çapraz kenarları bozmadığından her zaman emin olun.
+- Bir kenar eşleştirilmiş ama ters dönmüşse, çıkarıp tekrar eşleştirmeniz gerekir.
+- Kenar eşleştirmeden 3x3'e geçiş sorunsuz olmalı — çaprazınız zaten hazır.
+
+---
+
+## Adım 5: 3x3 Olarak Çözün (CFOP)
+
+Tüm merkezler çözülmüş, tüm kenarlar eşleştirilmiş ve çapraz zaten tamamlanmış olarak, 4x4 artık 3x3 gibi davranır. **Beyaz çapraz zaten hazır** olduğu için (Yau'nun büyük avantajı), doğrudan **F2L**'ye (ilk iki katman) atlayabilirsiniz.
+
+Bundan sonra yalnızca dış katman hareketleri kullanın — geniş hareketler yok.
+
+**Standart CFOP ile devam edin:**
+1. **F2L** — köşe-kenar çiftlerini ilk iki katmana eşleştirip yerleştirin.
+2. **OLL** — son katmanı yönlendirin.
+3. **PLL** — son katmanı permüte edin.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Bu, Yau yönteminin en büyük avantajıdır: çapraz-F2L geçişinde sıfır duraklama var, çünkü çapraz redüksiyon aşamasında inşa edilmiştir.
+
+---
+
+## Parite Algoritmaları
+
+4x4'te 3x3'te oluşamayan iki parite durumu vardır. Her biri zamanın yaklaşık %50'sinde gerçekleşir, Yau veya Reduction kullanmanızdan bağımsız olarak.
+
+### OLL Paritesi (Tek Kenar Çevirme)
+
+Tek bir kenar son katmanda ters görünür — gerçek bir 3x3'te imkânsız.
+
+**Algoritma: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Bu algoritmayı bir kez uygulayın, sonra normal OLL/PLL ile devam edin.
+
+### PLL Paritesi (İki Kenar Değişimi)
+
+İki karşıt kenarın değiştirilmesi gerekir — yine 3x3'te imkânsız.
+
+**Algoritma: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Yau'yu Ne Zaman Öğrenmeli
+
+- **Reduction ile ortalamanız 2 dakikanın altındaysa**, Yau'ya geçiş için temellere sahipsiniz.
+- **3x3 için CFOP biliyorsanız**, Yau doğal bir seçimdir — 3x3 aşamasına girdiğinizde çapraz zaten hazır.
+- **Reduction-3x3 geçişinde zorlanıyorsanız**, Yau o duraklamayı tamamen ortadan kaldırır.
+
+## Antrenman Öncelikleri
+
+1. **Freeslice kenar eşleştirmede ustalaşın** — bu, Yau'yu verimli kılan temel tekniktir.
+2. **2-merkez + 3-çapraz-kenar tanıma pratiği yapın** — ilk iki adımda çapraz kenarları hızla tanımayı öğrenin.
+3. **3-2-3 tekniğini tekrarlayın** — akıcı kenar eşleştirme en çok zamanın kazanıldığı yerdir.
+4. **Çapraz-F2L geçişi üzerinde çalışın** — çapraz hazır olduğundan, kenar eşleştirme sırasında ilk F2L çiftinizi fark etme pratiği yapın.
+
+---
+
+**Yau yöntemi, yarışmacı 4x4 çözümü için standarttır.** Redüksiyondan 3x3 çözümüne sorunsuz geçiş, daha iyi öngörü fırsatlarıyla birleşerek, 40 saniyenin altında ortalama hedefleyen hız çözücüler için tercih edilen seçim yapar. Reduction çözümlerinizi birer adım Yau'ya dönüştürmeye başlayın.

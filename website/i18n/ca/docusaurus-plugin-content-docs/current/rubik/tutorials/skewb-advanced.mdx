@@ -1,0 +1,317 @@
+---
+title: "Tècniques avançades de Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Tècniques avançades de Skewb
+
+Porta la teva resolució del Skewb del nivell principiant al competitiu. Aquesta guia cobreix el **mètode intermedi de Sarah**, que millora el mètode per a principiants resolent tots els centres restants en un sol pas, a més d'algoritmes avançats i estratègies de speed solving utilitzades pels millors resoledors de Skewb.
+
+## Recordatori de notació
+
+L'Skewb gira al voltant de les **cantonades** en comptes de les cares:
+
+- **R** = Cantonada frontal dreta en sentit horari &nbsp;&nbsp; **R'** = sentit antihorari
+- **L** = Cantonada frontal esquerra en sentit horari &nbsp;&nbsp; **L'** = sentit antihorari
+- **U** = Cantonada frontal superior dreta en sentit horari &nbsp;&nbsp; **U'** = sentit antihorari
+- **B** = Cantonada posterior dreta en sentit horari &nbsp;&nbsp; **B'** = sentit antihorari
+
+Manteniu l'Skewb amb el **centre blanc a baix** per a tots els passos.
+
+---
+
+## Mètode intermedi de Sarah
+
+El mètode per a principiants de Sarah resol l'Skewb en 3 passos: primera cara, després centres, després cantonades de l'última capa. La millora intermèdia **combina els passos de centres i cantonades**, resolent els 5 centres restants en UN sol algorisme després de completar la primera cara.
+
+### Resum
+
+| Pas | Principiant | Intermedi |
+|------|----------|-------------|
+| 1 | Resoldre una cara | Resoldre una cara (igual) |
+| 2 | Posicionar centres | **Resoldre els 5 centres en un pas** |
+| 3 | Orientar cantonades de l'última capa | Orientar cantonades de l'última capa (igual) |
+
+La millora clau és el Pas 2: en lloc d'utilitzar el Sledgehammer repetidament per posicionar centres un per un, aprens un conjunt d'algorismes que resolen tots els centres simultàniament.
+
+### Pas 1: Resoldre una cara
+
+Construeix una **cara blanca** completa a baix — les 4 cantonades al voltant del centre blanc han d'estar al seu lloc amb el blanc cap avall, i els colors laterals adjacents han de coincidir. Aquest pas és idèntic al mètode per a principiants.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Utilitzeu el Sledgehammer amb moviments de preparació per col·locar cada cantonada blanca. Amb pràctica, aquest pas es torna ràpid i intuïtiu.
+
+### Pas 2: Resoldre els 5 centres (One-Look)
+
+Després de resoldre la primera cara, observeu els **5 centres restants** (superior + 4 laterals) i identifiqueu el vostre cas. Apliqueu un sol algorisme per resoldre'ls tots alhora.
+
+Hi ha diversos casos segons quants centres estan en la posició correcta:
+
+---
+
+#### Cas 1: Cicle adjacent de 4
+
+Quatre centres han de ciclar. El centre superior és correcte, però els 4 centres laterals han de rotar.
+
+**Algorisme: R' L R L' R' L R L'** (Doble Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Cas 2: Intercanvi oposat de 2
+
+Dos centres laterals oposats han d'intercanviar-se.
+
+**Algorisme: R L' R' L R L' R' L** (Doble Sledgehammer invers)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Cas 3: Intercanvi adjacent de 2
+
+Dos centres laterals adjacents han d'intercanviar-se. Col·loqueu els dos centres a intercanviar al davant i a la dreta.
+
+**Algorisme: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Cas 4: Intercanvi superior-lateral + cicle
+
+El centre superior ha d'intercanviar-se amb un centre lateral, i els centres laterals restants ciclen.
+
+**Algorisme: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Cas 5: Triple cicle
+
+Tres centres han de ciclar (el superior queda, 3 laterals roten). Col·loqueu el centre lateral fix al darrere.
+
+**Algorisme: R' L R L'** (Sledgehammer simple — amb la preparació correcta)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Consells:**
+- Apreneu a identificar ràpidament els casos de centres verificant primer el centre superior i després escanejant els 4 costats.
+- Molts d'aquests són variacions del Sledgehammer — si coneixeu bé el Sledgehammer, aquests algorismes resulten naturals.
+- Practiqueu el reconeixement barrejant l'Skewb, resolent la primera cara i identificant el cas dels centres abans d'executar.
+
+### Pas 3: Orientar cantonades de l'última capa
+
+Després de resoldre tots els centres, les cantonades de l'última capa poden necessitar encara una rotació. Aquest pas és igual al mètode per a principiants.
+
+#### Totes les 4 cantonades necessiten rotació horària
+
+**Algorisme: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Totes les 4 cantonades necessiten rotació antihorària
+
+**Algorisme: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 cantonades necessiten rotació (adjacents)
+
+Col·loqueu les dues cantonades no resoltes al davant. Utilitzeu U per posicionar-les, apliqueu l'algorisme i després desfeu U.
+
+**Algorisme: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 cantonades necessiten rotació (diagonals)
+
+**Algorisme: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Algorismes avançats
+
+Més enllà del mètode intermedi, aquí teniu algorismes addicionals que gestionen casos menys comuns de manera més eficient.
+
+### Equivalent Z-Perm
+
+Quan dues parelles de cantonades han d'intercanviar-se (com un patró en Z):
+
+**Algorisme: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Cas Pi
+
+La cara superior mostra un patró Pi — dues cantonades adjacents orientades, dues no:
+
+**Algorisme: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Preparació i orientació de cantonades
+
+Quan una cantonada necessita reorientació, utilitzeu moviments de preparació per conjugar un cicle Sledgehammer que la giri al seu lloc:
+
+**Algorisme: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Intercanvi ràpid de centres oposats
+
+Un algorisme més eficient per intercanviar dos centres oposats:
+
+**Algorisme: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Triple orientació de cantonades
+
+Tres cantonades necessiten rotació (una roman correcta):
+
+**Algorisme: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Intercanvi de cantonades adjacents
+
+Dues cantonades adjacents han d'intercanviar posicions (no només rotar):
+
+**Algorisme: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Conceptes de resolució One-Look
+
+L'objectiu final en la resolució competitiva d'Skewb és predir l'última capa mentre encara resols la primera cara.
+
+### Predir l'última capa
+
+Durant el Pas 1, mentre construïu la cara blanca, pareu atenció als **centres i cantonades de la capa superior**. Amb pràctica, podeu identificar els casos dels Passos 2 i 3 abans de completar el Pas 1.
+
+- **Observeu el centre superior** — es mou a la posició correcta quan inseriu l'última cantonada blanca?
+- **Seguiu els centres laterals** — observeu quins centres laterals ja són correctes.
+- **Planifiqueu la resolució completa** — els resoledors avançats poden planificar tota la resolució durant la inspecció.
+
+### Influir en l'última capa
+
+Quan teniu múltiples maneres d'inserir l'última cantonada blanca, trieu la inserció que us doni un **cas més fàcil al Pas 2**:
+
+- Si dues insercions resolen la cantonada, trieu la que posicioni més centres correctament.
+- De vegades un Pas 1 lleugerament més llarg porta a saltar-se el Pas 2 o 3.
+
+---
+
+## Consells de speed solving
+
+### Agafada i girs
+
+- Manteniu l'Skewb amb les **puntes dels dits a les cantonades** — gireu cantonades, no cares.
+- Utilitzeu el **dit índex i el polze** de cada mà per agafar cantonades oposades.
+- Practiqueu girs de cantonada suaus i controlats — l'Skewb recompensa la precisió per sobre la velocitat bruta.
+- **Minimitzeu els canvis d'agafada** — intenteu executar el Sledgehammer complet sense canviar la vostra agafada.
+
+### Neutralitat de color
+
+La neutralitat de color a l'Skewb significa que podeu començar amb **qualsevol cara** com a primera cara, no només la blanca. Això és extremadament potent:
+
+- Amb neutralitat de color, teniu **6 possibles primeres cares** per triar.
+- Trieu la cara més propera a estar resolta — de vegades 2-3 cantonades ja són al seu lloc.
+- La neutralitat de color és gairebé obligatòria per resoldre per sota de 4 segons.
+
+**Com practicar:**
+1. Comenceu sent neutrals entre 2 colors oposats (p. ex. blanc i groc).
+2. Afegiu gradualment més colors d'inici fins que pugueu començar amb qualsevol cara.
+3. Durant la inspecció, escanegeu ràpidament les 6 cares i trieu la més fàcil.
+
+### Planificació de la inspecció
+
+L'Skewb només té 14 peces visibles (6 centres + 8 cantonades), fent que la planificació completa sigui realista:
+
+- **Planifiqueu sempre completament la primera cara** durant la inspecció.
+- **Identifiqueu el cas dels centres** abans de començar a resoldre.
+- **Avançat:** planifiqueu fins al Pas 2 — sapigueu quin algorisme utilitzareu abans de tocar el trencaclosques.
+
+### Rutina de pràctica
+
+1. **Exercicis de primera cara** — barregeu i resoleu només la primera cara, objectiu per sota de 2 segons.
+2. **Reconeixement de centres** — després de resoldre la primera cara, identifiqueu el cas dels centres tan ràpid com sigui possible sense executar-lo.
+3. **Resolucions completes** — sèries de 12 resolucions cronometrades, seguint la vostra mitjana de 5 i mitjana de 12.
+4. **Entrenament d'algorismes** — practiqueu cada algorisme de centres i cantonades 20 vegades seguides per a la memòria muscular.
+5. **Pràctica de color neutral** — obligeu-vos a començar amb un color diferent a cada resolució.
+
+---
+
+**Amb el mètode intermedi de Sarah i pràctica dedicada, mitjanes d'Skewb per sota de 5 segons estan a l'abast.** L'Skewb és un dels trencaclosques més favorables a la planificació en speedcubing — menys peces signifiquen que podeu predir més durant la inspecció. Concentreu-vos en la velocitat de reconeixement i girs suaus, i veureu una millora ràpida.

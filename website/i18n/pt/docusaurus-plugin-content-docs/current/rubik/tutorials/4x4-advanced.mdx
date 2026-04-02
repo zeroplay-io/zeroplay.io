@@ -1,0 +1,249 @@
+---
+title: "4x4 Avançado: Método Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Avançado: Método Yau
+
+O **método Yau**, inventado por Robert Yau, é uma alternativa mais rápida ao método Reduction padrão para o cubo de Rubik 4x4. A diferença principal: Yau resolve as arestas da cruz **cedo**, o que proporciona melhor antecipação e uma transição mais suave para a fase 3x3. A maioria dos melhores speedcubers de 4x4 usa Yau ou uma variante.
+
+## Yau vs Reduction Padrão
+
+| Aspecto | Reduction | Yau |
+|--------|-----------|-----|
+| **Ordem dos passos** | Todos os centros, depois todas as arestas | 2 centros, 3 arestas da cruz, 4 centros, arestas restantes |
+| **Cruz** | Construída após a redução | Já parcialmente pronta durante a redução |
+| **Antecipação** | Precisa encontrar arestas da cruz após emparelhamento | Cruz quase pronta, transição para F2L fluida |
+| **Teto de velocidade** | Bom | Mais alto — menos pausas entre fases |
+
+## Lembrete de Notação
+
+**Movimentos padrão** (apenas camada externa):
+- **R** = Direita &nbsp;&nbsp; **L** = Esquerda &nbsp;&nbsp; **U** = Cima &nbsp;&nbsp; **D** = Baixo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Trás
+
+**Movimentos largos** (duas camadas externas juntas):
+- **Rw** = Direita largo &nbsp;&nbsp; **Lw** = Esquerda largo &nbsp;&nbsp; **Uw** = Cima largo &nbsp;&nbsp; **Dw** = Baixo largo &nbsp;&nbsp; **Fw** = Frente largo &nbsp;&nbsp; **Bw** = Trás largo
+
+Uma letra sozinha significa **90° no sentido horário**. Com **'** significa **anti-horário**. Com **2** significa **180°**.
+
+---
+
+## Passo 1: Resolver Dois Centros Opostos
+
+Comece resolvendo os blocos centrais **branco** e **amarelo** (cima e baixo). Isto é igual à primeira parte do método Reduction padrão.
+
+Cada centro é um bloco 2x2. Use movimentos largos para juntar peças centrais, protegendo peças já posicionadas com giros da camada externa.
+
+**Construção básica do centro** — traga uma peça central para cima com um movimento largo, posicione-a e reverta:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Juntar duas metades do centro** — quando tem duas faixas 1x2 do centro que precisam ser unidas:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Dicas:**
+- Resolva primeiro o centro branco (em baixo), depois o centro amarelo (em cima).
+- Mantenha o branco em baixo o tempo todo — use apenas movimentos Rw, Lw, Fw, Bw para manipular centros sem perturbar a parte inferior.
+- Não se preocupe com os centros laterais ainda. Deixe-os para o passo 3.
+
+---
+
+## Passo 2: Resolver 3 de 4 Arestas da Cruz
+
+Aqui Yau diverge da Reduction. Antes de resolver os centros restantes, **emparelhe e posicione 3 arestas brancas da cruz** na camada inferior.
+
+Uma aresta da cruz consiste em duas peças (ex: branco-vermelho e branco-vermelho) que precisam ser emparelhadas e colocadas na camada D. Deixe uma aresta da cruz por resolver por agora — isto dá liberdade para usar movimentos largos no próximo passo.
+
+**Emparelhamento de aresta da cruz com freeslice** — a técnica freeslice emparelha arestas sem perturbar centros. Coloque metade da aresta na posição frente-direita e traga o parceiro de outro slot:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Inserir aresta da cruz emparelhada em baixo** — depois de emparelhada, coloque a aresta na posição correta da camada D:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice com movimentos largos** — use Dw para levantar uma peça de aresta para emparelhamento sem quebrar arestas da cruz já posicionadas:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Dicas:**
+- Precisa apenas de 3 arestas da cruz resolvidas agora. Deixe deliberadamente um slot vazio.
+- Use o slot vazio da camada D livremente — a aresta da cruz em falta dá mais liberdade para movimentos largos.
+- Escolha qual aresta da cruz deixar com base na que é mais difícil de encontrar ou emparelhar.
+
+---
+
+## Passo 3: Resolver os 4 Centros Restantes
+
+Agora resolva os **4 centros laterais** (vermelho, laranja, azul, verde). Os centros branco e amarelo já estão prontos do passo 1.
+
+Como tem um slot de aresta da cruz por resolver, ainda pode usar alguns movimentos largos livremente. Esta é uma vantagem chave do Yau — a cruz parcialmente resolvida não restringe a construção dos centros tanto como se poderia pensar.
+
+**Construir centro lateral** — use movimentos largos para recolher peças centrais e posicione-as:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Comutador de centro** — quando precisa trocar uma peça central sem perturbar outras, use uma sequência tipo comutador:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Dicas:**
+- Resolva centros em pares opostos quando possível (ex: vermelho depois laranja, azul depois verde).
+- Aproveite o slot de aresta da cruz não resolvido — movimentos largos por esse slot não quebrarão arestas da cruz.
+- Tenha atenção às 3 arestas da cruz já na camada D. Verifique antes de fazer movimentos largos.
+
+---
+
+## Passo 4: Última Aresta da Cruz + Emparelhamento Completo de Arestas
+
+Este passo tem duas partes: termine a 4ª aresta da cruz, depois emparelhe todas as arestas restantes.
+
+### Parte A: Resolver a Última Aresta da Cruz
+
+Encontre o par de arestas da cruz restante e junte-os. Como todos os centros já estão resolvidos, precisa de mais cuidado com movimentos largos.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Depois de emparelhada, insira-a no último slot da camada D para completar a cruz branca.
+
+### Parte B: Emparelhar Arestas Restantes (Técnica 3-2-3)
+
+Agora tem 8 arestas não emparelhadas. A **técnica 3-2-3** é a forma mais eficiente de as emparelhar:
+
+1. **Primeiras 3 arestas** — emparelhe com movimentos slice-flip-slice padrão. Coloque uma aresta não emparelhada na frente-direita, encontre o parceiro em cima, use Uw para os juntar:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Próximas 2 arestas** — com menos arestas restantes, pode emparelhar duas rapidamente em sucessão, armazenando uma atrás:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Últimas 3 arestas** — as últimas arestas requerem mais cuidado para não quebrar arestas já emparelhadas. Use movimentos baseados em Dw ou técnicas de inversão:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Dicas:**
+- Durante o emparelhamento 3-2-3, verifique sempre que os seus movimentos largos não quebram as arestas da cruz em baixo.
+- Se uma aresta está emparelhada mas invertida, precisa de a retirar e re-emparelhar.
+- A transição do emparelhamento de arestas para o 3x3 deve ser fluida — a sua cruz já está pronta.
+
+---
+
+## Passo 5: Resolver como 3x3 (CFOP)
+
+Com todos os centros resolvidos, todas as arestas emparelhadas e a cruz já completa, o 4x4 comporta-se agora como um 3x3. Como a **cruz branca já está pronta** (uma grande vantagem do Yau), pode saltar diretamente para o **F2L** (primeiras duas camadas).
+
+Use apenas movimentos de camada externa a partir daqui — sem movimentos largos.
+
+**Continue com CFOP padrão:**
+1. **F2L** — emparelhe e insira pares canto-aresta nas primeiras duas camadas.
+2. **OLL** — oriente a última camada.
+3. **PLL** — permute a última camada.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Esta é a maior vantagem do método Yau: a transição cruz-para-F2L tem zero pausa, porque a cruz foi construída durante a fase de redução.
+
+---
+
+## Algoritmos de Paridade
+
+O 4x4 tem dois casos de paridade que não podem ocorrer num 3x3. Cada um acontece cerca de 50% das vezes, independentemente de usar Yau ou Reduction.
+
+### Paridade OLL (Inversão de Aresta Única)
+
+Uma única aresta aparece invertida na última camada — impossível num 3x3 real.
+
+**Algoritmo: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Aplique este algoritmo uma vez, depois continue com OLL/PLL normalmente.
+
+### Paridade PLL (Troca de Duas Arestas)
+
+Duas arestas opostas precisam ser trocadas — novamente impossível num 3x3.
+
+**Algoritmo: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Quando Aprender Yau
+
+- **Se a sua média está abaixo de 2 minutos com Reduction**, tem os fundamentos para mudar para Yau.
+- **Se conhece CFOP para 3x3**, Yau é uma escolha natural — a cruz já está pronta quando entra na fase 3x3.
+- **Se tem dificuldade com a transição Reduction-para-3x3**, Yau elimina essa pausa inteiramente.
+
+## Prioridades de Treino
+
+1. **Domine o emparelhamento de arestas com freeslice** — esta é a técnica central que torna Yau eficiente.
+2. **Pratique o reconhecimento de 2 centros + 3 arestas da cruz** — aprenda a identificar arestas da cruz rapidamente durante os dois primeiros passos.
+3. **Treine a técnica 3-2-3** — emparelhamento fluido de arestas é onde mais tempo se poupa.
+4. **Trabalhe na transição cruz-para-F2L** — como a cruz está pronta, pratique identificar o seu primeiro par F2L durante o emparelhamento de arestas.
+
+---
+
+**O método Yau é o padrão para a resolução competitiva do 4x4.** A transição fluida da redução para a resolução 3x3, combinada com melhores oportunidades de antecipação, torna-o a escolha preferida para speedcubers que visam médias abaixo de 40 segundos. Comece por converter as suas resoluções Reduction para Yau, um passo de cada vez.

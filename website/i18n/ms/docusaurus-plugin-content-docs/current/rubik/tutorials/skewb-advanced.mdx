@@ -1,0 +1,317 @@
+---
+title: "Teknik Lanjutan Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Teknik Lanjutan Skewb
+
+Tingkatkan penyelesaian Skewb anda dari tahap pemula ke tahap pertandingan. Panduan ini merangkumi **kaedah pertengahan Sarah**, yang menaik taraf kaedah pemula dengan menyelesaikan semua pusat yang tinggal dalam satu langkah, serta algoritma lanjutan dan strategi penyelesaian pantas yang digunakan oleh penyelesai Skewb terbaik.
+
+## Peringatan Notasi
+
+Skewb berpusing di sekitar **penjuru** bukan muka:
+
+- **R** = Penjuru hadapan kanan ikut jam &nbsp;&nbsp; **R'** = lawan jam
+- **L** = Penjuru hadapan kiri ikut jam &nbsp;&nbsp; **L'** = lawan jam
+- **U** = Penjuru hadapan atas kanan ikut jam &nbsp;&nbsp; **U'** = lawan jam
+- **B** = Penjuru belakang kanan ikut jam &nbsp;&nbsp; **B'** = lawan jam
+
+Pegang Skewb dengan **pusat putih di bawah** untuk semua langkah.
+
+---
+
+## Kaedah Pertengahan Sarah
+
+Kaedah pemula Sarah menyelesaikan Skewb dalam 3 langkah: muka pertama, kemudian pusat, kemudian penjuru lapisan terakhir. Peningkatan pertengahan **menggabungkan langkah pusat dan penjuru**, menyelesaikan semua 5 pusat yang tinggal dalam SATU algoritma selepas muka pertama siap.
+
+### Gambaran Keseluruhan
+
+| Langkah | Pemula | Pertengahan |
+|------|----------|-------------|
+| 1 | Selesaikan satu muka | Selesaikan satu muka (sama) |
+| 2 | Posisikan pusat | **Selesaikan semua 5 pusat dalam satu langkah** |
+| 3 | Orientasi penjuru lapisan terakhir | Orientasi penjuru lapisan terakhir (sama) |
+
+Penambahbaikan utama ialah Langkah 2: daripada menggunakan Sledgehammer berulang kali untuk memposisikan pusat satu demi satu, anda mempelajari set algoritma yang menyelesaikan semua pusat serentak.
+
+### Langkah 1: Selesaikan Satu Muka
+
+Bina **muka putih** yang lengkap di bawah — semua 4 penjuru di sekeliling pusat putih mesti berada di tempatnya dengan putih menghadap ke bawah, dan warna sisi bersebelahan mesti sepadan. Langkah ini sama dengan kaedah pemula.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Gunakan Sledgehammer dengan gerakan persediaan untuk meletakkan setiap penjuru putih. Dengan latihan, langkah ini menjadi pantas dan intuitif.
+
+### Langkah 2: Selesaikan Semua 5 Pusat (One-Look)
+
+Selepas muka pertama selesai, lihat **5 pusat yang tinggal** (atas + 4 sisi) dan kenal pasti kes anda. Gunakan satu algoritma untuk menyelesaikan kesemuanya sekaligus.
+
+Terdapat beberapa kes bergantung pada berapa banyak pusat di posisi betul:
+
+---
+
+#### Kes 1: Kitaran 4 Bersebelahan
+
+Empat pusat perlu berkitar. Pusat atas betul, tetapi 4 pusat sisi perlu berputar.
+
+**Algoritma: R' L R L' R' L R L'** (Sledgehammer Berganda)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Kes 2: Tukar 2 Bertentangan
+
+Dua pusat sisi bertentangan perlu ditukar.
+
+**Algoritma: R L' R' L R L' R' L** (Sledgehammer Berganda Terbalik)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Kes 3: Tukar 2 Bersebelahan
+
+Dua pusat sisi bersebelahan perlu ditukar. Tetapkan dua pusat untuk ditukar di hadapan dan kanan.
+
+**Algoritma: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Kes 4: Tukar Atas-Sisi + Kitaran
+
+Pusat atas perlu ditukar dengan pusat sisi, dan pusat sisi yang tinggal berkitar.
+
+**Algoritma: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Kes 5: Kitaran Tiga
+
+Tiga pusat perlu berkitar (atas kekal, 3 sisi berputar). Tetapkan pusat sisi yang tetap di belakang.
+
+**Algoritma: R' L R L'** (Sledgehammer Tunggal — dengan persediaan betul)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Petua:**
+- Belajar mengenal pasti kes pusat dengan pantas dengan menyemak pusat atas dahulu, kemudian mengimbas 4 sisi.
+- Banyak daripada ini adalah variasi Sledgehammer — jika anda mengenali Sledgehammer dengan baik, algoritma ini terasa semula jadi.
+- Latih pengecaman dengan mengacau Skewb, menyelesaikan muka pertama, dan mengenal pasti kes pusat sebelum melaksanakan.
+
+### Langkah 3: Orientasi Penjuru Lapisan Terakhir
+
+Selepas menyelesaikan semua pusat, penjuru lapisan terakhir mungkin masih perlu dipusing. Langkah ini sama dengan kaedah pemula.
+
+#### Semua 4 penjuru perlu pusingan ikut jam
+
+**Algoritma: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Semua 4 penjuru perlu pusingan lawan jam
+
+**Algoritma: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 penjuru perlu dipusing (bersebelahan)
+
+Tetapkan dua penjuru yang belum selesai di hadapan. Gunakan U untuk memposisikan, laksanakan algoritma, kemudian batalkan U.
+
+**Algoritma: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 penjuru perlu dipusing (pepenjuru)
+
+**Algoritma: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Algoritma Lanjutan
+
+Di luar kaedah pertengahan, berikut algoritma tambahan yang mengendalikan kes kurang biasa dengan lebih cekap.
+
+### Setara Z-Perm
+
+Apabila dua pasang penjuru perlu ditukar (seperti corak berbentuk Z):
+
+**Algoritma: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Kes Pi
+
+Muka atas menunjukkan corak Pi — dua penjuru bersebelahan berorientasi, dua tidak:
+
+**Algoritma: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Persediaan dan Orientasi Penjuru
+
+Apabila penjuru memerlukan orientasi semula, gunakan gerakan persediaan untuk mengkonjugasi kitaran Sledgehammer yang memutarnya ke tempatnya:
+
+**Algoritma: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Tukar Pusat Bertentangan Pantas
+
+Algoritma yang lebih cekap untuk menukar dua pusat bertentangan:
+
+**Algoritma: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Orientasi Tiga Penjuru
+
+Tiga penjuru perlu dipusing (satu kekal betul):
+
+**Algoritma: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Tukar Penjuru Bersebelahan
+
+Dua penjuru bersebelahan perlu menukar posisi (bukan sekadar dipusing):
+
+**Algoritma: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Konsep Penyelesaian One-Look
+
+Matlamat utama dalam penyelesaian Skewb pertandingan adalah meramalkan lapisan terakhir semasa masih menyelesaikan muka pertama.
+
+### Meramalkan Lapisan Terakhir
+
+Semasa Langkah 1, ketika membina muka putih, perhatikan **pusat dan penjuru lapisan atas**. Dengan latihan, anda boleh mengenal pasti kes Langkah 2 dan 3 sebelum menamatkan Langkah 1.
+
+- **Perhatikan pusat atas** — adakah ia bergerak ke posisi betul apabila anda memasukkan penjuru putih terakhir?
+- **Jejak pusat sisi** — perhatikan pusat sisi mana yang sudah betul.
+- **Rancang penyelesaian lengkap** — penyelesai lanjutan boleh merancang keseluruhan penyelesaian semasa pemeriksaan.
+
+### Mempengaruhi Lapisan Terakhir
+
+Apabila terdapat beberapa cara memasukkan penjuru putih terakhir, pilih kemasukan yang memberikan **kes Langkah 2 yang lebih mudah**:
+
+- Jika dua kemasukan sama-sama menyelesaikan penjuru, pilih yang memposisikan lebih banyak pusat dengan betul.
+- Kadang-kadang Langkah 1 yang sedikit lebih panjang membawa kepada melangkau Langkah 2 atau 3.
+
+---
+
+## Petua Speed Solving
+
+### Pegangan dan Pusingan
+
+- Pegang Skewb dengan **hujung jari di penjuru** — anda memutar penjuru, bukan muka.
+- Gunakan **jari telunjuk dan ibu jari** setiap tangan untuk memegang penjuru bertentangan.
+- Latih pusingan penjuru yang lancar dan terkawal — Skewb menghargai ketepatan berbanding kelajuan mentah.
+- **Kurangkan pertukaran pegangan** — cuba laksanakan keseluruhan Sledgehammer tanpa menukar pegangan.
+
+### Neutraliti Warna
+
+Neutraliti warna pada Skewb bermakna anda boleh bermula dengan **mana-mana muka** sebagai muka pertama, bukan hanya putih. Ini sangat berkuasa:
+
+- Dengan neutraliti warna, anda mempunyai **6 kemungkinan muka pertama** untuk dipilih.
+- Pilih muka yang paling hampir dengan selesai — kadang-kadang 2-3 penjuru sudah di tempatnya.
+- Neutraliti warna hampir wajib untuk penyelesaian di bawah 4 saat.
+
+**Cara berlatih:**
+1. Mulakan dengan neutral antara 2 warna bertentangan (cth. putih dan kuning).
+2. Tambah warna permulaan secara beransur-ansur sehingga anda boleh bermula dari mana-mana muka.
+3. Semasa pemeriksaan, imbas semua 6 muka dengan pantas dan pilih yang paling mudah.
+
+### Perancangan Pemeriksaan
+
+Skewb hanya mempunyai 14 bahagian yang kelihatan (6 pusat + 8 penjuru), menjadikan perancangan penyelesaian lengkap realistik:
+
+- **Sentiasa rancang muka pertama sepenuhnya** semasa pemeriksaan.
+- **Kenal pasti kes pusat** sebelum mula menyelesaikan.
+- **Lanjutan:** rancang sehingga Langkah 2 — ketahui algoritma mana yang akan anda gunakan sebelum menyentuh teka-teki.
+
+### Rutin Latihan
+
+1. **Latihan muka pertama** — kacau dan selesaikan hanya muka pertama, sasaran di bawah 2 saat.
+2. **Pengecaman pusat** — selepas menyelesaikan muka pertama, kenal pasti kes pusat secepat mungkin tanpa melaksanakan.
+3. **Penyelesaian lengkap** — set 12 penyelesaian berwaktu, jejak purata 5 dan purata 12.
+4. **Latihan algoritma** — latih setiap algoritma pusat dan penjuru 20 kali berturut-turut untuk memori otot.
+5. **Latihan warna neutral** — paksa diri anda bermula dengan warna berbeza setiap penyelesaian.
+
+---
+
+**Dengan kaedah pertengahan Sarah dan latihan yang tekun, purata Skewb di bawah 5 saat boleh dicapai.** Skewb adalah salah satu teka-teki yang paling mesra perancangan dalam speedcubing — bahagian yang lebih sedikit bermakna anda boleh meramalkan lebih banyak semasa pemeriksaan. Fokus pada kelajuan pengecaman dan pusingan yang lancar, dan anda akan melihat kemajuan yang pantas.

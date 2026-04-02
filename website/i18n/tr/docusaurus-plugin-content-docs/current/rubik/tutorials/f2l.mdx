@@ -1,0 +1,252 @@
+---
+title: "F2L: İlk İki Katman"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: İlk İki Katman
+
+F2L (First Two Layers, ilk iki katman) CFOP yönteminin **en önemli adımıdır**. Birinci katmanın köşelerini ve ikinci katmanın kenarlarını iki ayrı adımda çözmek yerine (başlangıç yönteminde olduğu gibi), F2L bir köşeyi eşleşen kenarıyla eşleştirir ve birlikte doğru yuvaya yerleştirir. Bu, büyük miktarda hamle tasarrufu sağlar ve en büyük hız iyileştirmelerinin kaynağıdır.
+
+Doldurulacak **4 yuva** vardır, alt iki katmanın her köşesinde bir tane. Her yuva bir köşe parçası ve bir kenar parçasından oluşur.
+
+## Kavram
+
+Her F2L durumu iki parça içerir:
+- Alt katmana ait bir **köşe parçası** (beyaz/alt renk çıkartması vardır)
+- Orta katmana ait bir **kenar parçası** (iki yan rengi birleştirir)
+
+Amaç, bu iki parçayı üst katmanda **eşleştirmek** ve ardından çifti tek bir akıcı hareketle doğru yuvaya **yerleştirmektir**.
+
+## Notasyon Hatırlatması
+
+- **R** = Sağ &nbsp;&nbsp; **L** = Sol &nbsp;&nbsp; **U** = Üst &nbsp;&nbsp; **D** = Alt &nbsp;&nbsp; **F** = Ön &nbsp;&nbsp; **B** = Arka
+- Tek harf = **saat yönünde 90°** &nbsp;&nbsp; **'** = **saat yönünün tersi** &nbsp;&nbsp; **2** = **180°**
+
+Küpü **beyaz altta** olacak şekilde tutun. Yerleştirdiğimiz yuva her zaman **ön sağ yuvadır** (F ve R yüzleri arasında).
+
+---
+
+## Sezgisel F2L
+
+Algoritmaları ezberlemeden önce, F2L'nin **mantığını** öğrenin. Her durum aynı kalıbı izler:
+
+1. Birbirine ait bir köşe-kenar çifti **bulun**
+2. Yanlış birleşmişlerse **ayırın**
+3. Bir parçayı **konumlandırın**, sonra diğerini ona **getirin**
+4. Beyaz dışarı veya aşağı bakacak şekilde üst katmanda **eşleştirin**
+5. Bağlı çifti yuvaya **yerleştirin**
+
+**Temel ilke:** Köşeyi ön sağ yuvadan çıkarmak veya yerleştirmek için R ve U hamleleri, kenarı konumlandırmak için U hamleleri kullanın. Zaten çözülmüş yuvaları asla bozmayın.
+
+---
+
+Toplamda **41 standart F2L durumu** vardır. Aşağıda temeli oluşturan **en önemli 15 durumu** ele alıyoruz. Bunlarda ustalaştığınızda, kalan durumları sezgisel olarak çözebilir veya gerektiğinde arayabilirsiniz.
+
+## Temel Durumlar: Her İki Parça Üst Katmanda
+
+Bunlar en basit ve en yaygın durumlardır. Hem köşe hem kenar U katmanında ve hedef yuva boştur.
+
+### Durum 1: Kolay Yerleştirme — Köşe Beyazı Sağa Bakıyor, Kenar Hazır
+
+Köşenin beyazı R yüzüne bakıyor ve kenar zaten bir U hamlesiyle eşleşecek şekilde konumlanmış. Bu en temel F2L yerleştirmesidir.
+
+**Algoritma: R U R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U' R'" alg="R U R'" />
+
+### Durum 2: Kolay Yerleştirme — Köşe Beyazı Öne Bakıyor, Kenar Hazır
+
+Köşenin beyazı F yüzüne bakıyor ve kenar saat yönünün tersine yerleştirme ile eşleşecek şekilde konumlanmış.
+
+**Algoritma: F' U' F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U F" alg="F' U' F" />
+
+### Durum 3: Köşe Beyazı Yukarı Bakıyor, Renkler Ön Merkeze Uyuyor
+
+Köşenin beyazı yukarı bakıyor ve ön rengi ön merkeze uyuyor. Kenar karşı tarafta. Birleştirmemiz ve yerleştirmemiz gerekiyor.
+
+**Algoritma: U R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U'" alg="U R U2' R' U R U' R'" />
+
+### Durum 4: Köşe Beyazı Yukarı Bakıyor, Renkler Sağ Merkeze Uyuyor
+
+Köşenin beyazı yukarı bakıyor ve sağ rengi sağ merkeze uyuyor. Kenarın karşı taraftan eşleştirilmesi gerekiyor.
+
+**Algoritma: U' F' U2 F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U2 F U" alg="U' F' U2 F U' F' U F" />
+
+### Durum 5: Köşe ve Kenar Uzakta, Beyaz Sağa Bakıyor
+
+Köşenin beyazı sağa bakıyor ve kenar üst katmanın karşı tarafında. Kenarı yaklaştırıyoruz, sonra eşleştirip yerleştiriyoruz.
+
+**Algoritma: U' R U R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U' R' U" alg="U' R U R' U R U' R'" />
+
+### Durum 6: Köşe ve Kenar Uzakta, Beyaz Öne Bakıyor
+
+Durum 5'in aynası. Köşenin beyazı öne bakıyor ve kenar uzak tarafta.
+
+**Algoritma: U F' U' F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U F U'" alg="U F' U' F U' F' U F" />
+
+### Durum 7: Köşe ve Kenar Yan Yana, Beyaz Sağa Bakıyor — Çift Bağlı ama Yanlış
+
+Köşe ve kenar yan yana ve bağlı, ama yerleştirilseler yanlış olurlar. Ayırıp doğru şekilde yeniden birleştiriyoruz.
+
+**Algoritma: R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R'" alg="R U2' R' U R U' R'" />
+
+### Durum 8: Köşe ve Kenar Yan Yana, Beyaz Öne Bakıyor — Çift Bağlı ama Yanlış
+
+Durum 7'nin F yüzü tarafındaki aynası.
+
+**Algoritma: F' U2 F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U2 F" alg="F' U2 F U' F' U F" />
+
+---
+
+## Orta Düzey Durumlar: Kenar Yuvada, Köşe Üst Katmanda
+
+Bazen kenar zaten bir yuvada sıkışmıştır (doğru veya yanlış) ve köşe üst katmandadır. Diğer çözülmüş çiftleri bozmadan kenarı çıkarmamız gerekiyor.
+
+### Durum 9: Kenar Doğru Yuvada ama Köşe Üstte — Beyaz Sağa Bakıyor
+
+Kenar doğru yuvada ve köşe U katmanında beyazı sağa bakarak. Kenarı çıkarıp köşeyle eşleştiriyoruz.
+
+**Algoritma: U R U' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U R' U'" alg="U R U' R' U R U' R'" />
+
+### Durum 10: Kenar Yanlış Yuvada, Köşe Üstte — Beyaz Yukarı Bakıyor
+
+Kenar yanlış yuvada. Eş zamanlı olarak köşeyle eşleştirmeyi hazırlarken çıkarıyoruz.
+
+**Algoritma: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U' R U R'" alg="R U' R' U R U2' R' U R U' R'" />
+
+---
+
+## İleri Düzey Durumlar: Köşe Yuvada
+
+Bu durumlar köşe zaten doğru yuvada ama yanlış yönlendirildiğinde veya doğru yuvada kenar yanlış yerde olduğunda ortaya çıkar.
+
+### Durum 11: Köşe Yuvada, Bükülmüş — Kenar Üst Katmanda
+
+Köşe ön sağ yuvada ama beyazı öne bakıyor (aşağı değil). Kenar U katmanında. Köşeyi çıkarıyoruz, kenarla eşleştirip tekrar yerleştiriyoruz.
+
+**Algoritma: R U' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U R'" alg="R U' R' U R U' R'" />
+
+### Durum 12: Köşe Yuvada, Bükülmüş — Kenar Yanlış Yuvada
+
+Her iki parça da alt iki katmanda ama hiçbiri doğru değil. Köşeyi tekmeliyoruz ve aynı anda kenarı çıkarıyoruz.
+
+**Algoritma: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U' R' U R U' R' U R U' R'" alg="R U R' U' R U R' U' R U R'" />
+
+---
+
+## Özel Durumlar: Her İki Parça Yuvada
+
+### Durum 13: Çift Yuvada Bağlı ama Bükülmüş
+
+Köşe ve kenar eşleşmiş ve yuvada, ama köşe bükülmüş (beyaz öne bakıyor, aşağı değil). Çifti çıkarın, ayırın ve doğru şekilde tekrar yerleştirin.
+
+**Algoritma: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U R U' R'" alg="R U R' U' R U2 R' U R U' R'" />
+
+### Durum 14: Köşe Yuvada Doğru, Kenar Yuvada Ters
+
+Köşe doğru yerleştirilmiş ama üstündeki kenar ters. Bu en zor durumlardan biri. İkisini de çıkarıyoruz, doğru eşleştirip tekrar yerleştiriyoruz.
+
+**Algoritma: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U2 R U' R' U R U R'" alg="R U' R' U' R U R' U2 R U' R'" />
+
+### Durum 15: İkisi de Yuvada, İkisi de Yanlış — Çapraz Hata
+
+Köşe ve kenar ikisi de yuvada ama hiçbiri uymuyor. Tam çıkarma ve yeniden inşa.
+
+**Algoritma: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U F U2 R U R' U R U' R'" alg="R U R' U' R U' R' U2 F' U' F" />
+
+---
+
+## Daha Hızlı F2L İçin İpuçları
+
+### 1. Önce Sezgisel Öğrenin
+
+41 algoritmik durumun hepsini ezberlemeye acele etmeyin. Her hamlenin **neden** işe yaradığını anlamaya zaman ayırın. R U R'ın bir köşeyi çıkarıp geri koyduğunu biliyorsanız, çoğu durumu kendiniz çözebilirsiniz. Algoritmalar daha sonra optimizasyon için gelir.
+
+### 2. Lookahead Geliştirin
+
+**Lookahead**, mevcut çifti yerleştirirken bir sonraki çifti takip etme yeteneğidir. Bu, 20 saniyelik çözücüleri 15 saniyelik çözücülerden ayıran en büyük faktördür.
+
+Pratik ipuçları:
+- Dönüşü yavaşlatın ve yerleştirme sırasında bir sonraki çifti aramaya kendinizi zorlayın
+- Yerleştirme sırasında gözler kapalı F2L çözme pratik yapın (hamleleri biliyorsunuz, ileriye bakın)
+- Çiftler arasında sıfır duraklama odaklı zamansız çözümler yapın
+
+### 3. Rotasyonları Azaltın
+
+Küpün tamamını her döndürdüğünüzde zaman kaybedersiniz. En iyi F2L çözücüleri tüm F2L aşamasında nadiren bir veya iki kereden fazla döndürür.
+
+- R ve U hamleleriyle **arka yuvalara** yerleştirmeyi öğrenin (örn., arka sağa yerleştirmek için R U' R')
+- Karşı taraftaki yuvalar için **L, F ve B** hamleleri kullanmayı pratik yapın
+- Aynı anda döndürmek ve yerleştirmek için geniş hamleler (r, l) kullanın
+
+### 4. Durumları Hızla Tanıyın
+
+Hangi duruma baktığınızı anında tanıyacak şekilde kendinizi eğitin:
+- **Köşede beyaz nerede?** (Üstte, Önde veya Sağda)
+- **Kenar köşeye göre nerede?** (Yan yana, karşıda veya yuvada)
+- **Zaten eşleşmiş mi?** (Doğru bağlı, yanlış bağlı veya ayrı)
+
+### 5. Verimli Sırayla Çözün
+
+4 çifti sabit bir sırayla çözmek zorunda değilsiniz. 4 çiftin hepsine bakın ve en **kolayından** başlayın — en az hamle gerektirenden. Deneyimli çözücüler ilk çiftlerini inceleme sırasında artı ile birlikte planlar.
+
+### 6. Boş Yuva Hileleri
+
+Bir yuva boşken, geçici depolama olarak kullanabilirsiniz. Örneğin, başka bir çift üzerinde çalışırken bir kenarı boş yuvaya koyun (R U R'). Başlangıç seviyesindekiler bu güçlü tekniği sıklıkla gözden kaçırır.
+
+---
+
+## Pratik Rutini
+
+1. **Küpü karıştırın ve artıyı çözün**
+2. **4 köşe-kenar çiftin hepsini bulun** — her köşenin ve eşleşen kenarının nerede olduğunu belirleyin
+3. **Her çifti tek tek çözün** — kolay durumlarla başlayın, zorları sona bırakın
+4. **Sadece F2L aşamasını zamanlayın** — kronometre kullanın. Hedef: 4 çiftin tamamı için 15 saniyenin altında
+5. **Değerlendirin** — her çözümden sonra sorun: herhangi bir çifti daha az hamleyle yapabilir miydim?
+
+Düzenli pratikle F2L ikinci doğanız olacak ve toplam çözüm sürelerinizde dramatik iyileşmeler göreceksiniz.
+
+---
+
+## Sırada Ne Var?
+
+F2L'de ustalaştıktan sonra son katmanla devam edin:
+
+- [**CFOP Yöntemi Genel Bakış**](./cfop) — F2L'nin tam CFOP yöntemine nasıl uyduğunu görün
+- [**OLL Algoritmaları**](./oll) — Üst yüzü tamamen sarı yapın (57 durum + 2-Look OLL)
+- [**PLL Algoritmaları**](./pll) — Çözümü tamamlamak için son parçaları düzenleyin (21 durum)
+- [**Finger Tricks Rehberi**](./finger-tricks) — F2L tetikleyicilerini daha hızlı ve akıcı uygulayın

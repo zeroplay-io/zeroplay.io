@@ -1,0 +1,374 @@
+---
+title: "2x2 एडवांस्ड: CLL विधि"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 एडवांस्ड: CLL विधि
+
+**CLL (लास्ट लेयर कॉर्नर्स)** विधि से अपनी 2x2 क्यूब सॉल्विंग को अगले स्तर पर ले जाएं। जबकि Ortega विधि अंतिम परत को दो चरणों में हल करती है (OLL फिर PBL), CLL अंतिम परत के कोनों के **ओरिएंटेशन और परम्यूटेशन** दोनों को **एक एल्गोरिदम** में हल करती है। कम देखना और तेज़ सॉल्व।
+
+## CLL क्यों?
+
+| विधि | अंतिम परत चरण | एल्गोरिदम | सामान्य गति |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 सेकंड |
+| **CLL** | 1 (एक नज़र) | ~40 | 2–4 सेकंड |
+
+CLL शीर्ष 2x2 स्पीडक्यूबर्स द्वारा उपयोग की जाने वाली मानक विधि है। सभी 40 केस सीखकर, आप एक पूरा चरण समाप्त कर सकते हैं।
+
+## CLL कैसे काम करता है
+
+1. **पहला फेस हल करें** — Ortega की तरह, नीचे सफेद फेस बनाएं (साइड रंग मैच नहीं होने चाहिए)।
+2. **CLL केस पहचानें** — ऊपरी फेस और साइड रंग देखकर 40 में से अपना केस पहचानें।
+3. **एक एल्गोरिदम लागू करें** — यह एक साथ सभी ऊपरी कोनों को ओरिएंट और परम्यूट करता है।
+4. **AUF + बॉटम एडजस्टमेंट** — अधिकतम एक U-लेयर टर्न और एक D-लेयर टर्न।
+
+## नोटेशन रिमाइंडर
+
+- **R** = दाएं &nbsp;&nbsp; **L** = बाएं &nbsp;&nbsp; **U** = ऊपर &nbsp;&nbsp; **D** = नीचे &nbsp;&nbsp; **F** = सामने &nbsp;&nbsp; **B** = पीछे
+- अकेला अक्षर = **90° दक्षिणावर्त**। **'** = **वामावर्त**। **2** = **180°**।
+
+---
+
+## CLL केस समूह
+
+40 CLL केस ऊपरी फेस के ओरिएंटेशन पैटर्न के आधार पर 7 समूहों में व्यवस्थित हैं। नीचे प्रत्येक समूह के सबसे महत्वपूर्ण केस हैं।
+
+---
+
+## Sune केस (6 में से 4)
+
+एक कोना ओरिएंटेड (पीला ऊपर), अन्य तीन को मोड़ना है। सबसे आम समूह।
+
+### Sune 1 — एडजेसेंट स्वैप
+
+हल किए गए कोने को सामने-बाएं रखें। तीन अनसॉल्व्ड कोने दक्षिणावर्त मुड़ते हैं।
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — डायगोनल स्वैप
+
+वही ओरिएंटेशन पैटर्न, लेकिन कोनों को डायगोनल स्वैप चाहिए।
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — प्योर (बिना स्वैप)
+
+ओरिएंटेशन हल, पोज़ीशन बदलने की ज़रूरत नहीं।
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — एडजेसेंट स्वैप (मिरर)
+
+हल किए गए कोने को सामने-दाएं रखें।
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune केस (6 में से 3)
+
+Sune का मिरर — एक कोना ओरिएंटेड, अन्य तीन वामावर्त मुड़ते हैं।
+
+### Anti-Sune 1 — एडजेसेंट स्वैप
+
+हल किए गए कोने को सामने-दाएं रखें। तीन अनसॉल्व्ड कोने वामावर्त मुड़ते हैं।
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — डायगोनल स्वैप
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — प्योर (बिना स्वैप)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H केस (4 में से 4)
+
+दो विपरीत कोने ओरिएंटेड (पीला ऊपर), अन्य दो पर पीला साइड में।
+
+### H 1 — एडजेसेंट स्वैप
+
+ऊपर डायगोनल पोज़ीशन में दो पीले स्टिकर।
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — डायगोनल स्वैप
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — बिना स्वैप
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — कॉलम
+
+दोनों डायगोनल कोनों के जोड़ों को स्वैप चाहिए।
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi केस (6 में से 4)
+
+दो एडजेसेंट कोनों पर पीला ऊपर, अन्य दो पर पीला साइड में। ऊपरी फेस ग्रीक अक्षर Pi जैसा दिखता है।
+
+### Pi 1 — डायगोनल स्वैप
+
+दो ओरिएंटेड कोनों को पीछे रखें।
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — एडजेसेंट स्वैप (दाएं)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — एडजेसेंट स्वैप (बाएं)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — बिना स्वैप
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T केस (6 में से 3)
+
+ऊपरी फेस T-आकार का पीला पैटर्न दिखाता है — एक कोना ओरिएंटेड, एक एडजेसेंट कोने पर पीला सामने, अन्य दो पर साइड में।
+
+### T 1 — एडजेसेंट स्वैप
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — डायगोनल स्वैप
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — बिना स्वैप
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U केस (6 में से 3)
+
+एक कोना सही ओरिएंटेड, अन्य तीन साइड पर U-पैटर्न में।
+
+### U 1 — एडजेसेंट स्वैप
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — डायगोनल स्वैप
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — बिना स्वैप
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L केस (6 में से 3)
+
+दो एडजेसेंट कोने एक ही दिशा में मुड़े — ऊपरी फेस L-आकार का पैटर्न दिखाता है।
+
+### L 1 — एडजेसेंट स्वैप
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — डायगोनल स्वैप
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — बिना स्वैप
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL के बाद: सॉल्व पूरा करना
+
+CLL एल्गोरिदम के बाद, ऊपरी फेस पूरी तरह हल है। आपको चाहिए हो सकता है:
+
+1. **AUF (U फेस एडजस्ट)** — ऊपरी परत को नीचे से मिलाने के लिए एक U या U' टर्न।
+2. **बॉटम लेयर एडजस्टमेंट** — अगर ऑफसेट है, तो एक D या D' टर्न ठीक करता है।
+3. **बॉटम लेयर स्वैप** — कभी-कभी, एडजेसेंट या डायगोनल स्वैप चाहिए। Ortega के PBL एल्गोरिदम इस्तेमाल करें:
+   - **डायगोनल स्वैप:** R2 F2 R2
+   - **एडजेसेंट स्वैप:** R U' R F2 R' U R'
+
+---
+
+## सीखने की रणनीति
+
+एक बार में 40 केस सीखना भारी है। अनुशंसित क्रम:
+
+1. **Sune और Anti-Sune से शुरू करें** (12 केस) — सबसे आम, कई एल्गोरिदम छोटे।
+2. **T और U केस जोड़ें** (12 केस) — पहचानने और करने में आसान।
+3. **Pi केस सीखें** (6 केस) — विशिष्ट ओरिएंटेशन पैटर्न।
+4. **L केस सीखें** (6 केस) — Pi जैसी पहचान, अलग मोड़ दिशा।
+5. **H केस से समाप्त करें** (4 केस) — सबसे दुर्लभ समूह।
+
+## पहचान टिप्स
+
+- **पहले ऊपरी फेस देखें** ओरिएंटेशन समूह पहचानने के लिए।
+- **फिर साइड रंग जांचें** विशिष्ट केस निर्धारित करने के लिए।
+- **समूहों में अभ्यास करें** — एक समूह तब तक जब तक पहचान तुरंत न हो।
+- **इनवर्स स्क्रैम्बल इस्तेमाल करें** — केस सेट करें, हल करें, इनवर्स की भविष्यवाणी करें।
+
+---
+
+**CLL मास्टर करके, 2x2 पर 3 सेकंड से कम का औसत प्राप्त किया जा सकता है।** एक-नज़र दृष्टिकोण OLL और PBL के बीच का ठहराव समाप्त करता है। पहचान अभ्यास जारी रखें — गति तुरंत पहचान से आती है।

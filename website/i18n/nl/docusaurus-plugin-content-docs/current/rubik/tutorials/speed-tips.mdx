@@ -1,0 +1,286 @@
+---
+title: Speed Cubing Tips
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Speed Cubing Tips
+
+Sneller worden met de Rubik's Cube draait niet alleen om sneller draaien. De grootste vooruitgang komt van vooruit plannen, pauzes verminderen en doelgericht oefenen. Deze gids behandelt de kernvaardigheden die casual oplossers onderscheiden van competitieve speedcubers.
+
+---
+
+## Kruisplanning
+
+Het kruis is de eerste stap van een CFOP-oplossing en het enige deel dat je **volledig tijdens de inspectie kunt plannen**. Het beheersen van kruisplanning geeft je een gratis voorsprong bij elke solve.
+
+### Gebruik de volledige 15 seconden inspectie
+
+In competitie heb je 15 seconden inspectietijd voordat je de timer start. Gebruik elke seconde:
+- Eerste 5 seconden: Identificeer waar alle 4 kruisranden zich bevinden.
+- Volgende 5 seconden: Plan de volledige kruisoplossing (idealiter 6-8 zetten of minder).
+- Laatste 5 seconden: Herhaal de volgorde mentaal en plan je eerste F2L-paar.
+
+### Los het kruis op aan de onderkant
+
+Los het kruis altijd op aan de **onderkant** (D-laag). Beginners lossen het kruis vaak bovenaan op en draaien de kubus dan om, waardoor ze 1-2 seconden verspillen en hun oriëntatie verliezen. Door vanaf het begin onderaan op te lossen, kun je meteen F2L-paren gaan zoeken terwijl je het kruis afmaakt.
+
+**Voorbeeld: Een 6-zetten kruisoplossing**
+
+Vanuit deze scramble kan het witte kruis in slechts 6 zetten worden opgelost:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Voorbeeld: Een efficiënt 5-zetten kruis**
+
+Met goede planning kunnen veel kruisen in 5 zetten of minder worden opgelost:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Oefen het kruis met gesloten ogen
+
+Dit is de beste kruisoefening die er is:
+1. Scramble de kubus.
+2. Plan tijdens de inspectie de volledige kruisoplossing.
+3. Sluit je ogen en voer het kruis uit het geheugen uit.
+4. Open je ogen om te controleren.
+
+Als het kruis correct is, is je planning solide. Zo niet, zoek uit waar je mentale tracking misging.
+
+### Kleurneutraliteit
+
+De meeste beginners leren alleen met een wit kruis. **Kleurneutrale** oplossers kunnen met elk van de 6 kleuren beginnen en kiezen het makkelijkste kruis voor elke scramble. Dit biedt doorgaans een voordeel van 2-3 zetten op het kruis, wat neerkomt op 1-2 seconden per solve gemiddeld.
+
+Om kleurneutraliteit te ontwikkelen:
+1. Begin met het toevoegen van één kleur (bijv. geel, de tegenhanger van wit).
+2. Plan voor elke scramble zowel het witte als gele kruis en kies de kortste.
+3. Voeg geleidelijk meer kleuren toe totdat je comfortabel bent met alle zes.
+
+---
+
+## Lookahead (Vooruitkijken)
+
+Lookahead is het vermogen om **het volgende stuk te volgen terwijl je het huidige oplost**. Het is de belangrijkste vaardigheid om snelheidsplateaus te doorbreken en wat sub-15-oplossers scheidt van sub-10-oplossers.
+
+### Wat lookahead echt betekent
+
+Tijdens F2L los je altijd één hoek-randpaar tegelijk op. Zonder lookahead is de volgorde: paar oplossen – pauze – volgend paar zoeken – paar oplossen – pauze. Deze pauzes tellen op tot meerdere seconden per solve.
+
+Met lookahead scannen je ogen al naar de stukken van het volgende paar terwijl je handen een bekend algoritme voor het huidige paar uitvoeren. Het doel is **nul pauzes** tussen paren.
+
+### Hoe je lookahead oefent
+
+**Langzame solves** zijn de meest effectieve trainingsmethode:
+
+1. Stel een metronoom in op 1-2 draaien per seconde (60-120 BPM).
+2. Los F2L op in dat constante tempo, elke zet op de beat.
+3. De regel: **je mag langzaam draaien, maar je mag nooit stoppen met draaien.**
+4. Als je moet pauzeren om het volgende paar te vinden, draai je te snel. Vertraag verder.
+
+Over weken van oefening word je vanzelf sneller terwijl je de continue flow behoudt.
+
+### Blinde F2L-paar oefening
+
+1. Scramble de kubus.
+2. Los het kruis op.
+3. Vind één F2L-paar en plan de insertie in je hoofd.
+4. Sluit je ogen en voer de insertie uit.
+5. Open je ogen en herhaal voor het volgende paar.
+
+Dit dwingt je brein om elke insertie volledig te plannen voor uitvoering, wat de mentale tracking versterkt die nodig is voor echt lookahead.
+
+---
+
+## Efficiënt F2L
+
+De F2L-fase (First Two Layers) heeft de meeste ruimte voor optimalisatie. Zelfs kleine verbeteringen in F2L-efficiëntie stapelen op over honderden solves.
+
+### Vermijd onnodige rotaties
+
+Hele kubusrotaties (y, y') kosten tijd en verstoren lookahead. Een typische beginners-solve heeft 6-8 rotaties tijdens F2L. Een gevorderde oplosser heeft er gemiddeld 1-2.
+
+**Voorbeeld: Insertie in de achter-rechter slot zonder rotatie**
+
+In plaats van te roteren met y' en in te voegen in de voor-rechter slot, gebruik achterslot-inserties:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. hetzelfde paar dat een rotatie vereist:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+De eerste versie bespaart ongeveer 0,5 seconden — de rotatie zelf plus de hergreep.
+
+### Geef prioriteit aan achterslots
+
+F2L-paren invoegen in de **achter-rechter** en **achter-linker** slots is over het algemeen efficiënter omdat:
+- R- en L-zetten sneller zijn dan F-zetten.
+- Achterslot-inserties vaak minder zetten vereisen.
+- Je beter lookahead behoudt wanneer de onopgeloste stukken zichtbaar voor je zijn.
+
+### Beïnvloed het volgende paar
+
+Tijdens het invoegen van je huidige F2L-paar kun je soms het volgende paar gratis klaarzetten. Als bijvoorbeeld de hoek van het volgende paar in de U-laag zit, kan het kiezen van een specifieke invoegshoek voor het huidige paar die hoek naar een gunstige positie verplaatsen.
+
+Dit is een gevorderde vaardigheid, maar alleen al bewust zijn ervan helpt je betere beslissingen te nemen.
+
+### Multi-slotting
+
+In sommige gevallen kun je twee F2L-paren tegelijkertijd oplossen of één paar oplossen terwijl je een ander deels klaarzet. Dit komt in de praktijk zelden voor, maar het is de moeite waard om het te herkennen wanneer de kans zich voordoet.
+
+---
+
+## OLL/PLL-herkenning
+
+Snelle herkenning van OLL- en PLL-gevallen elimineert de pauze tussen F2L en de laatste laag.
+
+### Herken vanuit twee hoeken
+
+Oefen het identificeren van OLL-gevallen door tegelijkertijd naar de **bovenkant** en de **voorkant** te kijken. Dit geeft je alle informatie die je nodig hebt zonder de kubus te draaien om andere zijden te controleren.
+
+Voor PLL, controleer de **voor- en rechterkant** (de twee zijden zichtbaar vanuit je standaard oplossingshoek). Met oefening wordt twee-zijden-herkenning onmiddellijk.
+
+### Pre-AUF
+
+De AUF (Adjust U Face) is de U/U'/U2-zet die je doet voor het starten van een OLL- of PLL-algoritme om het geval correct uit te lijnen. Gevorderde oplossers voeren de AUF uit tijdens de laatste zet van F2L of tijdens herkenning, overlappend met denktijd.
+
+### OLL-voorspelling
+
+Tijdens de laatste F2L-insertie weet je vaak 2-3 van de 4 hoekoriëntaties van de bovenkant. Door te volgen hoe je insertie de laatste hoek beïnvloedt, kun je het OLL-geval voorspellen voordat je F2L afmaakt en het OLL-algoritme zonder pauze beginnen uit te voeren.
+
+---
+
+## Oefeningsroutines
+
+Doelbewust oefenen verslaat gedachteloos oplossen. Structureer je oefensessies voor maximale verbetering.
+
+### Dagelijks oefeningsplan (45-60 minuten)
+
+**Kruisoefeningen (10 minuten)**
+- Scramble, plan het kruis tijdens inspectie, los alleen het kruis op.
+- Doel: consistent onder 2 seconden, gepland met gesloten ogen.
+- Houd je gemiddelde zettenaantal bij. Streef naar 6 of minder.
+
+**F2L langzame solves (15 minuten)**
+- Gebruik een metronoom. Volledige F2L op constante draaisnelheid.
+- Focus puur op lookahead en continue flow.
+- Neem geen tijd op bij deze solves. Snelheid is hier niet het doel.
+
+**Algoritme-training (10 minuten)**
+- Kies 2-3 OLL- of PLL-algoritmes die je nog leert.
+- Herhaal elk 20-30 keer totdat het spiergeheugen het overneemt.
+- Scramble dan en oefen herkenning + uitvoering.
+
+**Getimede solves (15-20 minuten)**
+- Doe een **gemiddelde van 12** — twaalf getimede solves, verwijder de beste en slechtste, bereken het gemiddelde van de overige tien.
+- Noteer je resultaten. Volg trends over weken, niet individuele solves.
+- Bekijk na elke sessie je slechtste solve. Wat ging er mis?
+
+### Gemiddelden en tracking
+
+- **Ao5** (Gemiddelde van 5): Snelle check van de huidige vorm. Goed voor het opwarmen.
+- **Ao12** (Gemiddelde van 12): De standaard competitiemetriek. Meest betrouwbare indicator van vaardigheidsniveau.
+- **Ao100**: Langetermijn trendtracking. Bereken wekelijks om voortgang te meten.
+
+Gebruik een timer-app die je geschiedenis automatisch bijhoudt. Zien dat je gemiddelde over weken daalt is een krachtige motivatie.
+
+### Doelbewust vs. gedachteloos oefenen
+
+200 solves doen terwijl je tv kijkt maakt je niet sneller. Doelbewust oefenen betekent:
+- Per sessie **één specifieke vaardigheid** kiezen om op te focussen (kruis, lookahead, OLL-herkenning).
+- Die vaardigheid volle aandacht geven bij elke solve.
+- Fouten analyseren in plaats van meteen opnieuw te scramblen.
+
+Tien gefocuste solves verslaan honderd solves op de automatische piloot.
+
+---
+
+## Competitietips
+
+Competitie is een andere vaardigheid dan thuis oefenen. Zenuwen, onbekende omgevingen en tijdsdruk beïnvloeden allemaal de prestatie.
+
+### Warm goed op
+
+- Kom vroeg aan en doe 20-30 ontspannen solves voor je event.
+- Doe algoritme-oefeningen om het spiergeheugen wakker te maken.
+- Probeer tijdens het opwarmen geen persoonlijke records te breken. Zorg gewoon dat je handen bewegen.
+
+### Blijf kalm tijdens solves
+
+- **Focus op soepel oplossen, niet op snel oplossen.** Snelheid forceren veroorzaakt fouten en lockups.
+- Als je een paar of algoritme verprutst, haal adem en ga door. Niet in paniek raken of proberen te haasten om tijd in te halen.
+- Onthoud: je competitiegemiddelde haalt je beste en slechtste solve eruit, dus één slechte solve zal je resultaat niet ruïneren.
+
+### Inspectietechniek
+
+- Houd de kubus op ooghoogte tijdens de inspectie. Kijk niet naar de tafel.
+- Roteer de kubus met y- en x-zetten om alle kanten efficiënt te zien.
+- Plan je kruis volledig. Als er tijd over is, lokaliseer je eerste F2L-paar.
+- Luister naar de 8-seconden en 12-seconden waarschuwingen en pas je tempo aan.
+
+### Stackmat timer-vertrouwdheid
+
+- Oefen thuis met een Stackmat timer als je van plan bent mee te doen aan competities. De handplaatsing en start/stop-beweging zijn anders dan tikken op een telefoonscherm.
+- Beide handen moeten plat op de pads liggen. De timer start wanneer je beide handen tegelijkertijd optilt.
+- Oefen een soepele start zodat je niet fumelt met de eerste zet van je kruis.
+
+---
+
+## Hardware
+
+Een goede speed cube maakt echt verschil. Je hebt niet de duurste kubus nodig om te verbeteren, maar upgraden van een standaard Rubik's-merk naar een moderne speed cube is een van de grootste enkelvoudige verbeteringen die je kunt maken.
+
+### Wat maakt een goede speed cube
+
+- **Corner cutting**: De kubus moet lichte verkeerde uitlijningen tolereren zonder vast te lopen. Moderne kubussen kunnen 45 graden of meer corner-cutten.
+- **Soepel, controleerbaar draaien**: Niet te snel (veroorzaakt overshooting) en niet te langzaam (vereist extra kracht).
+- **Stabiliteit**: De kubus moet zijn vorm behouden tijdens snel draaien zonder te poppen of te vervormen.
+
+### Magnetische kubussen
+
+Bijna alle competitieve cubers gebruiken tegenwoordig **magnetische kubussen**. Kleine magneten in elk stuk creëren een subtiele klik bij elke 90-graden draai, wat biedt:
+- Betere controle bij hoge snelheden
+- Minder overshoots en lockups
+- Een bevredigender gevoel
+
+Magnetische kubussen van merken als MoYu, QiYi en GAN zijn beschikbaar in verschillende prijsklassen. Zelfs budget magnetische kubussen (onder de $10) zijn dramatisch beter dan niet-magnetische.
+
+### Spanning en smering
+
+- **Spanning** bepaalt hoe los of strak de kubus aanvoelt. Lossere spanning maakt sneller draaien mogelijk maar vermindert stabiliteit. Begin met gemiddelde spanning en pas aan op basis van je draaistijl.
+- **Smering** vermindert wrijving en verandert het gevoel van de kubus. Siliconenbasis smeermiddelen zijn standaard:
+  - **Snel smeermiddel** op de stukken voor snelheid.
+  - **Langzaam/plakkerig smeermiddel** op de kern voor stabiliteit.
+  - Smeer opnieuw elke paar honderd solves of wanneer de kubus krassend begint te voelen.
+
+### Setup-aanbeveling voor beginners
+
+1. Koop een moderne magnetische 3x3 (MoYu RS3M, QiYi Tornado of vergelijkbaar).
+2. Behoud de fabrieksspanning de eerste week om aan de kubus te wennen.
+3. Voeg een kleine hoeveelheid siliconensmering toe als de kubus droog aanvoelt.
+4. Pas de spanning geleidelijk aan — draai een kwartslag losser per keer totdat je je voorkeur vindt.
+
+Een goed ingestelde kubus elimineert hardware als variabele, waardoor je je volledig kunt concentreren op het verbeteren van je techniek.

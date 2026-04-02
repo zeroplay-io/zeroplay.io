@@ -1,0 +1,317 @@
+---
+title: "Skewb geavanceerde technieken"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Skewb geavanceerde technieken
+
+Breng je Skewb-oplossing van beginnersniveau naar wedstrijdniveau. Deze gids behandelt **Sarahs Intermediaire methode**, die de beginnersmethode verbetert door alle resterende centra in één stap op te lossen, plus geavanceerde algoritmen en speed solving-strategieën die door top Skewb-oplossers worden gebruikt.
+
+## Notatie-herinnering
+
+De Skewb draait rond **hoeken** in plaats van vlakken:
+
+- **R** = Rechter voorhoek met de klok mee &nbsp;&nbsp; **R'** = tegen de klok in
+- **L** = Linker voorhoek met de klok mee &nbsp;&nbsp; **L'** = tegen de klok in
+- **U** = Rechter bovenvoorhoek met de klok mee &nbsp;&nbsp; **U'** = tegen de klok in
+- **B** = Rechter achterhoek met de klok mee &nbsp;&nbsp; **B'** = tegen de klok in
+
+Houd de Skewb met het **witte centrum onderaan** bij alle stappen.
+
+---
+
+## Sarahs Intermediaire methode
+
+Sarahs Beginnersmethode lost de Skewb op in 3 stappen: eerste vlak, dan centra, dan hoeken van de laatste laag. De intermediaire upgrade **combineert de centra- en hoekenstappen** en lost alle 5 resterende centra op in ÉÉN algoritme nadat het eerste vlak is voltooid.
+
+### Overzicht
+
+| Stap | Beginners | Intermediair |
+|------|----------|-------------|
+| 1 | Eén vlak oplossen | Eén vlak oplossen (gelijk) |
+| 2 | Centra positioneren | **Alle 5 centra in één stap oplossen** |
+| 3 | Hoeken laatste laag oriënteren | Hoeken laatste laag oriënteren (gelijk) |
+
+De belangrijkste verbetering is Stap 2: in plaats van de Sledgehammer herhaaldelijk te gebruiken om centra één voor één te positioneren, leer je een set algoritmen die alle centra tegelijk oplossen.
+
+### Stap 1: Eén vlak oplossen
+
+Bouw een compleet **wit vlak** onderaan — alle 4 hoeken rond het witte centrum moeten op hun plek zitten met wit naar beneden, en aangrenzende zijkleuren moeten overeenkomen. Deze stap is identiek aan de beginnersmethode.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Gebruik de Sledgehammer met opzetbewegingen om elke witte hoek te plaatsen. Met oefening wordt deze stap snel en intuïtief.
+
+### Stap 2: Alle 5 centra oplossen (One-Look)
+
+Na het oplossen van het eerste vlak, bekijk de **5 resterende centra** (boven + 4 zijkanten) en identificeer je geval. Pas één algoritme toe om ze allemaal tegelijk op te lossen.
+
+Er zijn verschillende gevallen afhankelijk van hoeveel centra op de juiste positie staan:
+
+---
+
+#### Geval 1: Aangrenzende 4-cyclus
+
+Vier centra moeten cyclisch verwisselen. Het bovenste centrum is correct, maar de 4 zijcentra moeten roteren.
+
+**Algoritme: R' L R L' R' L R L'** (Dubbele Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Geval 2: Tegenovergestelde 2-verwisseling
+
+Twee tegenovergestelde zijcentra moeten verwisseld worden.
+
+**Algoritme: R L' R' L R L' R' L** (Inverse dubbele Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Geval 3: Aangrenzende 2-verwisseling
+
+Twee aangrenzende zijcentra moeten verwisseld worden. Zet de twee te verwisselen centra voor en rechts.
+
+**Algoritme: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Geval 4: Boven-zij verwisseling + cyclus
+
+Het bovenste centrum moet verwisseld worden met een zijcentrum, en de resterende zijcentra cycleren.
+
+**Algoritme: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Geval 5: Drievoudige cyclus
+
+Drie centra moeten cyclisch verwisselen (boven blijft, 3 zijkanten roteren). Zet het vaste zijcentrum achteraan.
+
+**Algoritme: R' L R L'** (Enkele Sledgehammer — met correcte opzet)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tips:**
+- Leer centravallen snel te herkennen door eerst het bovenste centrum te controleren en dan de 4 zijkanten te scannen.
+- Veel hiervan zijn Sledgehammer-variaties — als je de Sledgehammer goed kent, voelen deze algoritmen natuurlijk aan.
+- Oefen herkenning door de Skewb te scramblen, het eerste vlak op te lossen en het centrageval te identificeren voor uitvoering.
+
+### Stap 3: Hoeken van de laatste laag oriënteren
+
+Na het oplossen van alle centra moeten de hoeken van de laatste laag mogelijk nog gedraaid worden. Deze stap is hetzelfde als de beginnersmethode.
+
+#### Alle 4 hoeken moeten met de klok mee draaien
+
+**Algoritme: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Alle 4 hoeken moeten tegen de klok in draaien
+
+**Algoritme: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 hoeken moeten draaien (aangrenzend)
+
+Zet de twee onopgeloste hoeken vooraan. Gebruik U om ze te positioneren, voer het algoritme uit en maak U ongedaan.
+
+**Algoritme: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 hoeken moeten draaien (diagonaal)
+
+**Algoritme: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Geavanceerde algoritmen
+
+Naast de Intermediaire methode zijn hier aanvullende algoritmen die minder voorkomende gevallen efficiënter afhandelen.
+
+### Z-Perm-equivalent
+
+Wanneer twee paren hoeken verwisseld moeten worden (als een Z-vormig patroon):
+
+**Algoritme: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi-geval
+
+Het bovenvlak toont een Pi-patroon — twee aangrenzende hoeken georiënteerd, twee niet:
+
+**Algoritme: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Hoekopzet en oriëntatie
+
+Wanneer een hoek heroriëntatie nodig heeft, gebruik opzetbewegingen om een Sledgehammer-cyclus te conjugeren die hem op zijn plek draait:
+
+**Algoritme: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Snelle tegenovergestelde centraverwisseling
+
+Een efficiënter algoritme voor het verwisselen van twee tegenovergestelde centra:
+
+**Algoritme: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Drievoudige hoekoriëntatie
+
+Drie hoeken moeten draaien (één blijft correct):
+
+**Algoritme: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Aangrenzende hoekverwisseling
+
+Twee aangrenzende hoeken moeten van positie wisselen (niet alleen draaien):
+
+**Algoritme: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look oplossingsconcepten
+
+Het ultieme doel bij competitief Skewb-oplossen is de laatste laag voorspellen terwijl je nog de eerste zijde oplost.
+
+### Laatste laag voorspellen
+
+Tijdens Stap 1, terwijl je het witte vlak opbouwt, let op de **centra en hoeken van de bovenste laag**. Met oefening kun je de gevallen van Stap 2 en 3 identificeren voordat je Stap 1 afrondt.
+
+- **Let op het bovenste centrum** — verplaatst het naar de juiste positie als je de laatste witte hoek invoegt?
+- **Volg de zijcentra** — merk op welke zijcentra al correct zijn.
+- **Plan de volledige oplossing** — gevorderde oplossers kunnen de hele oplossing plannen tijdens inspectie.
+
+### De laatste laag beïnvloeden
+
+Wanneer je meerdere manieren hebt om de laatste witte hoek in te voegen, kies de invoeging die je een **makkelijker Stap 2-geval** geeft:
+
+- Als twee invoegingen beide de hoek oplossen, kies degene die meer centra correct positioneert.
+- Soms leidt een iets langere Stap 1 tot het overslaan van Stap 2 of 3.
+
+---
+
+## Speed solving-tips
+
+### Grip en draaien
+
+- Houd de Skewb met **vingertoppen op de hoeken** — je draait hoeken, geen vlakken.
+- Gebruik je **wijsvinger en duim** van elke hand om tegenovergestelde hoeken vast te houden.
+- Oefen vloeiende, gecontroleerde hoekdraaien — de Skewb beloont precisie boven ruwe snelheid.
+- **Minimaliseer hergrepen** — probeer de volledige Sledgehammer uit te voeren zonder je grip te veranderen.
+
+### Kleurneutraliteit
+
+Kleurneutraliteit op de Skewb betekent dat je met **elk vlak** als eerste vlak kunt beginnen, niet alleen wit. Dit is enorm krachtig:
+
+- Met kleurneutraliteit heb je **6 mogelijke eerste vlakken** om uit te kiezen.
+- Kies het vlak dat het dichtst bij opgelost is — soms zijn 2-3 hoeken al op hun plek.
+- Kleurneutraliteit is bijna verplicht voor sub-4-seconden oplossen.
+
+**Hoe te oefenen:**
+1. Begin met neutraal zijn tussen 2 tegenovergestelde kleuren (bijv. wit en geel).
+2. Voeg geleidelijk meer startkleuren toe totdat je met elk vlak kunt beginnen.
+3. Scan tijdens inspectie snel alle 6 vlakken en kies de makkelijkste.
+
+### Inspectieplanning
+
+De Skewb heeft slechts 14 zichtbare stukken (6 centra + 8 hoeken), waardoor volledige oplossingsplanning realistisch is:
+
+- **Plan altijd het eerste vlak volledig** tijdens inspectie.
+- **Identificeer het centrageval** voordat je begint met oplossen.
+- **Gevorderd:** plan tot Stap 2 — weet welk algoritme je gaat gebruiken voordat je de puzzel aanraakt.
+
+### Oefenroutine
+
+1. **Eerste vlak-oefeningen** — scramble en los alleen het eerste vlak op, doel onder 2 seconden.
+2. **Centraherkenning** — los het eerste vlak op en identificeer het centrageval zo snel mogelijk zonder uit te voeren.
+3. **Volledige oplossingen** — sets van 12 getimede oplossingen, volg je gemiddelde van 5 en gemiddelde van 12.
+4. **Algoritme-drilling** — oefen elk centra- en hoekalgoritme 20 keer achter elkaar voor spiergeheugen.
+5. **Kleurneutrale oefening** — dwing jezelf om elke oplossing met een andere kleur te beginnen.
+
+---
+
+**Met Sarahs Intermediaire methode en toegewijde oefening zijn sub-5-seconden Skewb-gemiddelden haalbaar.** De Skewb is een van de meest planningsvriendelijke puzzels in speedcubing — minder stukken betekent dat je meer kunt voorspellen tijdens inspectie. Focus op herkenningssnelheid en vloeiend draaien, en je zult snelle verbetering zien.

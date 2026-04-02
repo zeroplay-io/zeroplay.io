@@ -1,0 +1,374 @@
+---
+title: "2x2 Avansat: Metoda CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Avansat: Metoda CLL
+
+Duce rezolvarea cubului 2x2 la nivelul următor cu metoda **CLL (Colțuri ale Ultimului Strat)**. În timp ce Ortega rezolvă ultimul strat în doi pași (OLL apoi PBL), CLL rezolvă atât **orientarea cât și permutarea** colțurilor în **un singur algoritm**. Mai puțin privit și rezolvări mai rapide.
+
+## De ce CLL?
+
+| Metodă | Pași ultimul strat | Algoritmi | Viteză tipică |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 secunde |
+| **CLL** | 1 (o privire) | ~40 | 2–4 secunde |
+
+CLL este metoda standard a celor mai buni speedcuberi 2x2. Învățând toate cele 40 de cazuri, elimini un pas întreg.
+
+## Cum funcționează CLL
+
+1. **Rezolvă prima față** — ca la Ortega, construiește o față albă jos (culorile laterale nu trebuie să se potrivească).
+2. **Recunoaște cazul CLL** — privește fața superioară și culorile laterale pentru a identifica cazul.
+3. **Aplică un algoritm** — orientează și permută simultan toate colțurile superioare.
+4. **AUF + ajustare inferioară** — cel mult o rotire U și o rotire D.
+
+## Memento notație
+
+- **R** = Dreapta &nbsp;&nbsp; **L** = Stânga &nbsp;&nbsp; **U** = Sus &nbsp;&nbsp; **D** = Jos &nbsp;&nbsp; **F** = Față &nbsp;&nbsp; **B** = Spate
+- O literă singură = **90° în sensul acelor de ceasornic**. Cu **'** = **invers**. Cu **2** = **180°**.
+
+---
+
+## Grupuri de cazuri CLL
+
+Cele 40 de cazuri CLL sunt organizate în 7 grupuri bazate pe modelul de orientare al feței superioare. Mai jos cele mai importante cazuri.
+
+---
+
+## Cazuri Sune (4 din 6)
+
+Un colț orientat (galben sus), celelalte trei trebuie rotite. Cel mai comun grup.
+
+### Sune 1 — Schimb adiacent
+
+Ține colțul rezolvat în față-stânga. Cele trei colțuri nerezolvate se rotesc în sensul acelor.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Schimb diagonal
+
+Același model, dar colțurile necesită schimb diagonal.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Pur (fără schimb)
+
+Orientare rezolvată fără nevoie de schimbare de poziție.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Schimb adiacent (Oglindă)
+
+Ține colțul rezolvat în față-dreapta.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Cazuri Anti-Sune (3 din 6)
+
+Oglinda lui Sune — un colț orientat, celelalte trei se rotesc invers.
+
+### Anti-Sune 1 — Schimb adiacent
+
+Ține colțul rezolvat în față-dreapta. Cele trei colțuri nerezolvate se rotesc invers.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Schimb diagonal
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Pur (fără schimb)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Cazuri H (4 din 4)
+
+Două colțuri opuse orientate (galben sus), celelalte două cu galben pe laturi.
+
+### H 1 — Schimb adiacent
+
+Două abțibilduri galbene sus în poziții diagonale.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Schimb diagonal
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Fără schimb
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Coloane
+
+Ambele perechi de colțuri diagonale trebuie schimbate.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Cazuri Pi (4 din 6)
+
+Două colțuri adiacente cu galben sus, celelalte două cu galben pe laturi. Fața superioară seamănă cu litera greacă Pi.
+
+### Pi 1 — Schimb diagonal
+
+Ține cele două colțuri orientate în spate.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Schimb adiacent (Dreapta)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Schimb adiacent (Stânga)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Fără schimb
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Cazuri T (3 din 6)
+
+Fața superioară arată un model T — un colț orientat, un colț adiacent cu galben în față, celelalte două cu galben pe laturi.
+
+### T 1 — Schimb adiacent
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Schimb diagonal
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Fără schimb
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Cazuri U (3 din 6)
+
+Un colț corect orientat, celelalte trei în model U pe laturi.
+
+### U 1 — Schimb adiacent
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Schimb diagonal
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Fără schimb
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Cazuri L (3 din 6)
+
+Două colțuri adiacente rotite în aceeași direcție — fața superioară arată un model L.
+
+### L 1 — Schimb adiacent
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Schimb diagonal
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Fără schimb
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## După CLL: Finalizarea
+
+După algoritmul CLL, fața superioară este complet rezolvată. Poate fi nevoie de:
+
+1. **AUF (Ajustare față U)** — o rotire U sau U' pentru aliniere.
+2. **Ajustare strat inferior** — dacă este deplasat, o rotire D sau D' corectează.
+3. **Schimb strat inferior** — rar, poate necesita schimb adiacent sau diagonal. Folosește algoritmii PBL din Ortega:
+   - **Schimb diagonal:** R2 F2 R2
+   - **Schimb adiacent:** R U' R F2 R' U R'
+
+---
+
+## Strategie de învățare
+
+Învățarea tuturor celor 40 de cazuri odată este copleșitoare. Ordine recomandată:
+
+1. **Începe cu Sune și Anti-Sune** (12 cazuri) — cele mai comune, mulți algoritmi scurți.
+2. **Adaugă cazurile T și U** (12 cazuri) — relativ ușor de recunoscut.
+3. **Învață cazurile Pi** (6 cazuri) — model de orientare distinctiv.
+4. **Învață cazurile L** (6 cazuri) — recunoaștere similară cu Pi, direcție diferită.
+5. **Termină cu cazurile H** (4 cazuri) — cel mai rar grup.
+
+## Sfaturi de recunoaștere
+
+- **Privește mai întâi fața superioară** pentru a identifica grupul de orientare.
+- **Apoi verifică culorile laterale** pentru a determina cazul specific.
+- **Exersează pe grupuri** — un grup pe rând până la recunoaștere instantanee.
+- **Folosește scramble-uri inverse** — pregătește un caz, rezolvă-l, prezice inversul.
+
+---
+
+**Cu CLL stăpânit, poți atinge medii sub 3 secunde la 2x2.** Abordarea unei priviri elimină pauza între OLL și PBL. Continuă să exersezi — viteza vine din identificarea instantanee.

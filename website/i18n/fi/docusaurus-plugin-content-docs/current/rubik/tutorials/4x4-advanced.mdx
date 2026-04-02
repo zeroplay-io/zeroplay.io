@@ -1,0 +1,249 @@
+---
+title: "4x4 Edistynyt: Yau-menetelmä"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Edistynyt: Yau-menetelmä
+
+**Yau-menetelmä**, Robert Yaun keksimä, on nopeampi vaihtoehto standardille Reduction-menetelmälle 4x4 Rubikin kuutiossa. Keskeinen ero: Yau ratkaisee ristisärmät **aikaisin**, mikä tarjoaa paremman ennakointikyvyn ja sujuvamman siirtymän 3x3-vaiheeseen. Useimmat huippu-4x4-pikaratkaisijoista käyttävät Yau-menetelmää tai sen muunnelmaa.
+
+## Yau vs standardi Reduction
+
+| Näkökohta | Reduction | Yau |
+|--------|-----------|-----|
+| **Vaihejärjestys** | Kaikki keskustat, sitten kaikki särmät | 2 keskustaa, 3 ristisärmää, 4 keskustaa, loput särmät |
+| **Risti** | Rakennetaan reduktion jälkeen | Jo osittain valmis reduktion aikana |
+| **Ennakointi** | Ristisärmät etsittävä parituksen jälkeen | Risti lähes valmis, siirtymä F2L:ään saumaton |
+| **Nopeusraja** | Hyvä | Korkeampi — vähemmän taukoja vaiheiden välillä |
+
+## Merkintämuistutus
+
+**Vakiosiirrot** (vain ulommainen kerros):
+- **R** = Oikea &nbsp;&nbsp; **L** = Vasen &nbsp;&nbsp; **U** = Ylä &nbsp;&nbsp; **D** = Ala &nbsp;&nbsp; **F** = Etu &nbsp;&nbsp; **B** = Taka
+
+**Leveät siirrot** (ulommat kaksi kerrosta yhdessä):
+- **Rw** = Oikea leveä &nbsp;&nbsp; **Lw** = Vasen leveä &nbsp;&nbsp; **Uw** = Ylä leveä &nbsp;&nbsp; **Dw** = Ala leveä &nbsp;&nbsp; **Fw** = Etu leveä &nbsp;&nbsp; **Bw** = Taka leveä
+
+Pelkkä kirjain tarkoittaa **90° myötäpäivään**. **'** tarkoittaa **vastapäivään**. **2** tarkoittaa **180°**.
+
+---
+
+## Vaihe 1: Ratkaise kaksi vastakkaista keskustaa
+
+Aloita ratkaisemalla **valkoinen** ja **keltainen** keskusblokki (ylä ja ala). Tämä on sama kuin Reduction-menetelmän ensimmäinen osa.
+
+Jokainen keskus on 2x2-palikkalohko. Käytä leveitä siirtoja keskuspalojen yhdistämiseen ja suojaa jo paikoilleen asetettuja paloja ulkokerrossiirroilla.
+
+**Peruskeskustan rakentaminen** — tuo keskuspala ylös leveällä siirrolla, aseta se paikalleen ja käännä takaisin:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Kahden keskuspuoliskon yhdistäminen** — kun sinulla on kaksi 1x2-keskusnauhaa, jotka pitää liittää yhteen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Vinkit:**
+- Ratkaise ensin valkoinen keskus (alhaalla), sitten keltainen keskus (ylhäällä).
+- Pidä valkoinen alhaalla koko ajan — käytä vain Rw-, Lw-, Fw-, Bw-siirtoja keskustojen käsittelyyn häiritsemättä pohjaa.
+- Älä huolehdi sivukeskuksista vielä. Jätä ne vaiheeseen 3.
+
+---
+
+## Vaihe 2: Ratkaise 3/4 ristisärmästä
+
+Tässä Yau eroaa Reductionista. Ennen jäljellä olevien keskustojen ratkaisemista **paritetaan ja sijoitetaan 3 valkoista ristisärmää** alakerrokseen.
+
+Ristisärmä koostuu kahdesta palasta (esim. valko-punainen ja valko-punainen), jotka pitää parittaa ja sijoittaa D-kerrokseen. Jätä yksi ristisärmä toistaiseksi ratkaisematta — tämä antaa vapauden käyttää leveitä siirtoja seuraavassa vaiheessa.
+
+**Ristisärmän paritus freeslicella** — freeslice-tekniikka parittaa särmiä häiritsemättä keskustoja. Aseta toinen puolikas etuoikea-asemaan ja tuo sen pari toisesta paikasta:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Paritetun ristisärmän asettaminen pohjaan** — kun pari on muodostettu, aseta särmä oikeaan D-kerrospaikkaan:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice leveillä siirroilla** — käytä Dw:tä särmäpalan nostamiseen paritusta varten rikkomatta jo paikallaan olevia pohjaristisärmiä:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Vinkit:**
+- Tarvitset nyt vain 3 ristisärmää ratkaistuna. Jätä tarkoituksella yksi paikka tyhjäksi.
+- Käytä tyhjää D-kerrospaikkaa vapaasti — puuttuva ristisärmä antaa enemmän vapautta leveille siirroille.
+- Valitse jätettävä ristisärmä sen mukaan, mikä on vaikein löytää tai parittaa.
+
+---
+
+## Vaihe 3: Ratkaise loput 4 keskustaa
+
+Ratkaise nyt **4 sivukeskusta** (punainen, oranssi, sininen, vihreä). Valkoinen ja keltainen keskus ovat jo valmiit vaiheesta 1.
+
+Koska sinulla on yksi ratkaisematon ristisärmäpaikka, voit yhä käyttää joitakin leveitä siirtoja vapaasti. Tämä on Yau-menetelmän keskeinen etu — osittain ratkaistu risti ei rajoita keskustan rakentamista niin paljon kuin voisi odottaa.
+
+**Sivukeskustan rakentaminen** — käytä leveitä siirtoja keskuspalojen keräämiseen ja sijoittamiseen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Keskuskommutaattori** — kun sinun pitää vaihtaa keskuspala häiritsemättä muita, käytä kommutaattorityyppistä sekvenssiä:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Vinkit:**
+- Ratkaise keskustat vastakkaisina pareina mahdollisuuksien mukaan (esim. punainen sitten oranssi, sininen sitten vihreä).
+- Hyödynnä ratkaisematonta ristisärmäpaikkaa — leveät siirrot tuon paikan kautta eivät riko ristisärmiä.
+- Muista tarkistaa D-kerroksen 3 ristisärmää ennen leveitä siirtoja.
+
+---
+
+## Vaihe 4: Viimeinen ristisärmä + särmien paritus loppuun
+
+Tässä vaiheessa on kaksi osaa: viimeistele 4. ristisärmä ja paritetaan kaikki loput särmät.
+
+### Osa A: Ratkaise viimeinen ristisärmä
+
+Etsi jäljellä oleva ristisärmäpari ja yhdistä ne. Koska kaikki keskustat ovat nyt valmiit, leveisiin siirtoihin on suhtauduttava varovaisemmin.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Kun pari on muodostettu, aseta se viimeiseen D-kerrospaikkaan ja viimeistele valkoinen risti.
+
+### Osa B: Parita loput särmät (3-2-3-tekniikka)
+
+Sinulla on nyt 8 paritonta särmää. **3-2-3-tekniikka** on tehokkain tapa parittaa ne:
+
+1. **Ensimmäiset 3 särmää** — paritetaan vakio slice-flip-slice-siirroilla. Aseta parittamaton särmä etuoikealle, etsi sen pari ylhäältä ja käytä Uw:tä niiden yhdistämiseen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Seuraavat 2 särmää** — kun särmiä on jäljellä vähemmän, voit parittaa kaksi särmää nopeasti peräkkäin varastoimalla yhden taakse:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Viimeiset 3 särmää** — viimeiset särmät vaativat enemmän huolellisuutta, jotta jo paritetut särmät eivät rikkoudu. Käytä Dw-pohjaisia siirtoja tai kääntötekniikoita:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Vinkit:**
+- Tarkista 3-2-3-parituksen aikana aina, etteivät leveät siirtosi riko pohjan ristisärmiä.
+- Jos särmä on paritettu mutta käännetty väärin, sinun pitää irrottaa se ja parittaa uudelleen.
+- Siirtymä särmien parituksesta 3x3:een tulisi olla saumaton — ristisi on jo valmis.
+
+---
+
+## Vaihe 5: Ratkaise kuten 3x3 (CFOP)
+
+Kun kaikki keskustat on ratkaistu, kaikki särmät paritettu ja risti on jo valmis, 4x4 käyttäytyy kuin 3x3. Koska **valkoinen risti on jo valmis** (Yau-menetelmän suuri etu), voit siirtyä suoraan **F2L:ään** (ensimmäiset kaksi kerrosta).
+
+Käytä tästä eteenpäin vain ulkokerrossiirtoja — ei leveitä siirtoja.
+
+**Jatka standardilla CFOP:lla:**
+1. **F2L** — paritetaan ja asetetaan kulma-särmäparit ensimmäisiin kahteen kerrokseen.
+2. **OLL** — orientoidaan viimeinen kerros.
+3. **PLL** — permutoidaan viimeinen kerros.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Tämä on Yau-menetelmän suurin etu: rististä F2L:ään siirtymisessä ei ole taukoa, koska risti rakennettiin reduktiovaiheen aikana.
+
+---
+
+## Pariteettialgoritmit
+
+4x4:ssä on kaksi pariteettitapausta, jotka eivät voi esiintyä 3x3:ssa. Nämä tapahtuvat kumpikin noin 50 % ajasta, riippumatta siitä käytetäänkö Yau- vai Reduction-menetelmää.
+
+### OLL-pariteetti (yksittäinen särmän kääntö)
+
+Yksi särmä näyttää kääntyneeltä viimeisessä kerroksessa — mahdotonta oikeassa 3x3:ssa.
+
+**Algoritmi: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Suorita tämä algoritmi kerran ja jatka sitten normaalilla OLL/PLL:llä.
+
+### PLL-pariteetti (kahden särmän vaihto)
+
+Kaksi vastakkaista särmää pitää vaihtaa — jälleen mahdotonta 3x3:ssa.
+
+**Algoritmi: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Milloin opetella Yau
+
+- **Jos keskiarvosi on alle 2 minuuttia Reductionilla**, sinulla on perusteet siirtyä Yauhun.
+- **Jos osaat CFOP:n 3x3:lle**, Yau on luonnollinen valinta — risti on jo valmis kun siirryt 3x3-vaiheeseen.
+- **Jos Reduction-3x3-siirtymä tuottaa vaikeuksia**, Yau poistaa tuon tauon kokonaan.
+
+## Harjoittelun painopisteet
+
+1. **Hallitse freeslice-särmäparitus** — tämä on ydintekniikka, joka tekee Yausta tehokkaan.
+2. **Harjoittele 2 keskustan + 3 ristisärmän tunnistamista** — opi tunnistamaan ristisärmät nopeasti kahden ensimmäisen vaiheen aikana.
+3. **Drillaa 3-2-3-tekniikka** — sujuva särmäparitus on se, mistä suurin ajan säästö tulee.
+4. **Harjoittele risti-F2L-siirtymää** — koska risti on valmis, harjoittele ensimmäisen F2L-parin havaitsemista särmäparituksen aikana.
+
+---
+
+**Yau-menetelmä on standardi kilpailutason 4x4-ratkaisussa.** Saumaton siirtymä reduktiosta 3x3-ratkaisuun yhdistettynä parempiin ennakointimahdollisuuksiin tekee siitä ensisijaisen valinnan pikaratkaisijoille, jotka tähtäävät alle 40 sekunnin keskiarvoihin. Aloita muuntamalla Reduction-ratkaisusi Yauhun yksi vaihe kerrallaan.

@@ -1,0 +1,219 @@
+---
+title: A CFOP módszer áttekintése
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# A CFOP módszer áttekintése
+
+A **CFOP módszer** (más néven **Fridrich módszer**) a világ legelterjedtebb speedcubing módszere. A 20 másodperc alatti kirakók és a világrekordosok túlnyomó többsége CFOP-ot használ. A kezdő rétegről-rétegre módszerre épít, de drámaian hatékonyabb — az átlagos kirakást 100+ lépésről kb. 55-60 lépésre csökkenti.
+
+**CFOP** a négy lépés rövidítése:
+
+1. **C**ross — 4 él megoldása az alján
+2. **F**2L — Első két réteg (4 sarok-él pár párosítása és beillesztése)
+3. **O**LL — Utolsó réteg orientálása (az egész felső lap egyszínűvé tétele)
+4. **P**LL — Utolsó réteg permutálása (az összes felső darab helyes elrendezése)
+
+## CFOP vs. kezdő módszer
+
+| | Kezdő (LBL) | CFOP |
+|---|---|---|
+| Lépések | 7 | 4 |
+| Átlagos lépések | 100-120 | 55-60 |
+| Megtanulandó algoritmusok | 5-8 | 78 (teljes) / 16 (2-look) |
+| Jellemző sebesség | 1-3 perc | 10-20 másodperc |
+| Fő különbség | Lépésről lépésre, egy darab egyszerre | Darabokat párosít, kevesebb lépés |
+
+A jó hír: a CFOP-ot **fokozatosan** tanulhatod meg. Kezdd intuitív F2L-lel és 2-look OLL/PLL-lel (csak 16 algoritmus), majd idővel bővítsd teljes OLL-re (57 algoritmus) és teljes PLL-re (21 algoritmus).
+
+---
+
+## 1. lépés: Kereszt
+
+A kereszt ugyanaz a koncepció, mint a kezdő módszernél — 4 fehér él megoldása az alsó lapon úgy, hogy minden él megegyezzen az oldali középpontjával is. A különbség a CFOP-ban a **megközelítés**:
+
+- **Tervezd meg az egész keresztet az inspekció alatt** (15 másodperc a kirakás kezdete előtt)
+- **Oldd meg a keresztet alul** — ne forgasd meg a kockát
+- **Célozz 8 lépésre vagy kevesebbre** — egy hatékony kereszt átlagosan 6-7 lépés
+
+**Példa: Keresztél megoldása közvetlenül az aljára**
+
+Itt a fehér-kék él a felső rétegben van. Igazítjuk és közvetlenül az aljára illesztjük egy lépéssel:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Példa: Keresztél áthelyezése**
+
+Néha egy él rossz helyen van vagy fordítva áll. Itt egy rosszul elhelyezett élt javítunk:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tippek a gyors kereszthez:**
+- Gyakorold a kereszt tervezését csukott szemmel
+- Tanuld meg 8 lépésben vagy kevesebbel megoldani bármilyen keverésből
+- Dolgozz az alsó kereszt megoldásán az első naptól — kerüld a felső megoldás szokását
+
+---
+
+## 2. lépés: F2L (Első két réteg)
+
+Az F2L a CFOP szíve és a legnagyobb időmegtakarítás forrása. Ahelyett, hogy az első réteg sarkait és a második réteg éleit külön oldanád meg (mint a kezdő módszernél), **párosítasz** egy sarokdarabot a hozzá illő éllel és **együtt illeszted** be őket egyetlen egységként.
+
+4 sarok-él pár (úgynevezett **slot**) van megoldandó. Minden slot két oldallap között helyezkedik el az alsó két rétegben.
+
+**Alapvető F2L eset: Sarok és él egyaránt a felső rétegben**
+
+A fehér-piros-zöld sarok a felső rétegben van, és a piros-zöld él szintén a felső rétegben van. Párosítjuk és beillesztjük:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Egy másik gyakori eset: Rossz pár szétválasztása**
+
+Néha a darabok rosszul vannak párosítva. Szétválasztjuk és helyesen összerakjuk:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+Az F2L tanulható **intuitívan** — megértve az elrejtés, párosítás és beillesztés logikáját — vagy **algoritmikusan** 41 konkrét esettel. A legtöbb speedcuber a kettő kombinációját használja.
+
+Az F2L esetek és algoritmusok teljes listájáért lásd az [**F2L: Első két réteg**](./f2l) útmutatót.
+
+---
+
+## 3. lépés: OLL (Utolsó réteg orientálása)
+
+Az első két réteg befejezése után a felső lapon lesznek sárga és nem-sárga matricák. Az OLL célja az **egész felső lap sárgává** tétele — az oldalsó színekkel még nem foglalkozunk.
+
+A teljes OLL-nek **57 algoritmusa** van. Azonban kezdheted **2-look OLL**-lel, ami csak 10 algoritmust használ, a lépést két részre osztva:
+
+1. **Első pillantás:** Sárga kereszt kialakítása felül (3 eset, 2 algoritmussal különböző tájolásokból)
+2. **Második pillantás:** Sárga sarkok orientálása (7 algoritmus)
+
+**Példa: Sune (az egyik leggyakoribb OLL eset)**
+
+Ez az OLL #26, közismert nevén **Sune**. Egy sárga sarok orientált, a másik háromnak forgásra van szüksége:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Példa: OLL kereszt eset (sárga kereszt kialakítása)**
+
+Amikor L-alakú sárga élek vannak felül, tartsd az L-t bal hátul és alkalmazd:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tippek az OLL tanulásához:**
+- Kezdd 2-look OLL-lel — csak néhány másodpercet ad a kirakásodhoz
+- Tanuld meg először a Sune-t és Anti-Sune-t; sok OLL esetben megjelennek
+- Gyakorold az esetek felismerését a felső sárga matricák mintázata alapján
+
+---
+
+## 4. lépés: PLL (Utolsó réteg permutálása)
+
+Az utolsó lépés! Minden sárga matrica most felül van, de az utolsó réteg darabjainak oldalszínei nem biztos, hogy egyeznek. A PLL **átrendezi** a felső réteg darabjait a helyes pozíciójukba a kirakás befejezéséhez.
+
+A teljes PLL-nek **21 algoritmusa** van. Kezdheted **2-look PLL**-lel, ami csak 6 algoritmust használ:
+
+1. **Első pillantás:** Sarkok helyes pozícionálása (2 algoritmus)
+2. **Második pillantás:** Élek helyes pozícionálása (4 algoritmus)
+
+**Példa: T-Perm (az egyik leghasznosabb PLL algoritmus)**
+
+A T-Perm két sarkot és két élt cserél. Gyakran előfordul és más PLL-ek tanulásának alapja:
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Példa: U-Perm (a) — 3-él ciklus**
+
+A U-Perm három élt forgat az óramutató járásával megegyezően, míg minden sarok már a helyén van:
+
+**Algoritmus: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tippek a PLL tanulásához:**
+- Kezdd a T-Perm, U-Perms (a és b) és A-Perms algoritmusokkal
+- Tanuld meg felismerni a PLL-eket az oldalszínek alapján (fényszóró mintázat)
+- Gyakorold a PLL-ek végrehajtását bármilyen AUF (felső lap igazítása) szögből
+
+---
+
+## Mikor tanuld meg a CFOP-ot
+
+A CFOP a természetes következő lépés, miután elsajátítottad a kezdő rétegről-rétegre módszert. Itt egy javasolt fejlődési terv:
+
+### 1. szakasz: Kezdőtől 60 másodperc alá
+- Sajátítsd el a kezdő módszert, amíg a kirakásaid konzisztensek nem lesznek
+- Tanuld meg a **keresztet alul** megoldani
+- Kezdj el **intuitív F2L**-t gyakorolni — figyeld, hogyan alakulnak és illeszkednek a párok
+
+### 2. szakasz: 60 alól 30 másodperc alá
+- Használj teljes **intuitív F2L**-t mind a 4 párra
+- Tanuld meg a **2-look OLL**-t (10 algoritmus)
+- Tanuld meg a **2-look PLL**-t (6 algoritmus)
+- Gyakorold a **lookahead**-et — kövesd a következő párt, miközben az aktuálisat illeszted
+
+### 3. szakasz: 30 alól 20 másodperc alá
+- Tanuld meg a **teljes PLL**-t (21 algoritmus)
+- Kezdd el tanulni a **teljes OLL**-t (57 algoritmus)
+- Optimalizáld az F2L megoldásaidat — tanuld meg az [**algoritmikus F2L eseteket**](./f2l)
+- Dolgozz a kereszt hatékonyságán (tervezd meg az egész keresztet az inspekció alatt)
+
+### 4. szakasz: 20 alatt és tovább
+- Fejezd be a **teljes OLL**-t
+- Tanulj haladó F2L trükköket (üres slot technikák, multi-slotting)
+- Fejlessz ki erős **lookahead** szokásokat
+- Dolgozz a forgatási sebességen és folyékonyságon
+
+---
+
+## Következő lépések
+
+Készen állsz mélyebbre merülni minden lépésben? Nézd meg ezeket a részletes útmutatókat:
+
+- [**F2L: Első két réteg**](./f2l) — Az összes gyakori F2L eset algoritmusokkal és bemutatókkal
+- [**OLL algoritmusok**](./oll) — Mind az 57 OLL eset 2-Look OLL-lel kezdőknek
+- [**PLL algoritmusok**](./pll) — Mind a 21 PLL eset 2-Look PLL-lel kezdőknek
+- [**Ujjtechnika útmutató**](./finger-tricks) — Hatékony lépésvégrehajtás és alapvető triggerek
+- [**Speedcubing tippek**](./speed-tips) — Kereszttervezés, lookahead és gyakorlási rutinok
+
+**Jó kockázást!** Az út a kezdőtől a 20 másodperc alá a speedcubing egyik legkifizetődőbb kihívása. Haladj lépésről lépésre, és sikerülni fog.

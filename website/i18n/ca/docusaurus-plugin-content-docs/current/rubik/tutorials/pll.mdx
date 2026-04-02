@@ -1,0 +1,466 @@
+---
+title: Algorismes PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algorismes PLL
+
+**PLL (Permutació de l'Última Capa)** és el pas final del mètode CFOP. Després que l'OLL hagi orientat tots els adhesius de la cara superior, el PLL reordena les peces a les seves posicions resoltes. Hi ha **21 casos de PLL** en total.
+
+Si ets principiant, comença amb el **2-Look PLL** -- un enfocament simplificat que requereix només **6 algorismes** en lloc dels 21 complets.
+
+---
+
+## 2-Look PLL
+
+El 2-Look PLL divideix el pas de permutació en dos passos més petits:
+
+1. **Permutar les cantonades** -- col·locar les 4 cantonades a la posició correcta (2 casos)
+2. **Permutar les arestes** -- col·locar les 4 arestes a la posició correcta (4 casos)
+
+Això significa que només necessites aprendre **6 algorismes** en total.
+
+### Pas 1: Permutar les cantonades
+
+Mira les cantonades de la capa superior. Comprova si algun **parell de cantonades adjacents** pertany al mateix costat (llums de coincidència).
+
+#### Intercanvi de cantonades adjacents
+
+Un parell de cantonades adjacents ja és correcte. Manté el parell resolt a la **part posterior** i aplica:
+
+**Algorisme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Aquesta és la **T-Perm** -- intercanvia les dues cantonades frontals (i dues arestes, que arreglarem al pas 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Intercanvi de cantonades diagonals
+
+Cap cantonada adjacent coincideix. Aplica el **Y-Perm** per intercanviar cantonades diagonalment:
+
+**Algorisme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Pas 2: Permutar les arestes
+
+Totes les cantonades estan resoltes. Mira les arestes i determina quines necessiten ciclar.
+
+#### Ua Perm (cicle de 3 arestes en sentit horari)
+
+Tres arestes necessiten ciclar en sentit horari. Manté l'aresta resolta a la **part posterior**.
+
+**Algorisme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (cicle de 3 arestes en sentit antihorari)
+
+Tres arestes necessiten ciclar en sentit antihorari. Manté l'aresta resolta a la **part posterior**.
+
+**Algorisme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (intercanvi de parells d'arestes oposades)
+
+Dos parells d'arestes oposades necessiten intercanviar-se.
+
+**Algorisme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (intercanvi de parells d'arestes adjacents)
+
+Dos parells d'arestes adjacents necessiten intercanviar-se. Manté de manera que els dos parells estiguin davant/dreta i darrere/esquerra.
+
+**Algorisme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## PLL complet -- Els 21 casos
+
+### Només arestes (4 casos)
+
+Aquests PLL només mouen arestes; les cantonades ja estan resoltes.
+
+#### Ua Perm
+
+Les arestes ciclen en sentit horari. L'aresta resolta és a la part posterior.
+
+**Reconeixement:** Una barra resolta (aresta + dues cantonades) visible des de la part posterior.
+
+**Algorisme: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Les arestes ciclen en sentit antihorari. L'aresta resolta és a la part posterior.
+
+**Reconeixement:** Una barra resolta visible des de la part posterior; els colors de les arestes ciclen en la direcció oposada a Ua.
+
+**Algorisme: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Dos parells d'arestes oposades s'intercanvien.
+
+**Reconeixement:** Cada costat té el color oposat a la posició de l'aresta central. Patró d'escaquer als quatre costats.
+
+**Algorisme: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Dos parells d'arestes adjacents s'intercanvien.
+
+**Reconeixement:** Dos costats adjacents tenen cadascun el color de l'altre a la posició de l'aresta. Cap costat està completament resolt.
+
+**Algorisme: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Només cantonades (3 casos)
+
+Aquests PLL només mouen cantonades; les arestes ja estan resoltes.
+
+#### Aa Perm
+
+Tres cantonades ciclen. Llums al costat esquerre.
+
+**Reconeixement:** Llums a un costat, la barra (3 adhesius coincidents) és al costat oposat.
+
+**Algorisme: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tres cantonades ciclen (direcció oposada a Aa). Llums al costat dret.
+
+**Reconeixement:** Mirall de Aa -- llums al costat oposat.
+
+**Algorisme: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Dos parells de cantonades diagonals s'intercanvien. No es mouen arestes.
+
+**Reconeixement:** Cap llum a cap costat. Cada costat té dos colors de cantonada diferents.
+
+**Algorisme: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Intercanvi de cantonades adjacents (6 casos)
+
+Aquests PLL intercanvien un parell de cantonades adjacents juntament amb permutacions d'arestes.
+
+#### T Perm
+
+**Reconeixement:** Llums a la part frontal i posterior. Els dos costats sense llums tenen els seus colors intercanviats.
+
+**Algorisme: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Reconeixement:** Llums només a un costat (frontal). Els altres tres costats no tenen parells coincidents.
+
+**Algorisme: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Reconeixement:** Un bloc 1x1x3 resolt al costat esquerre. El costat dret té peces adjacents intercanviades.
+
+**Algorisme: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Reconeixement:** Un bloc 1x1x3 resolt al costat dret. Mirall de Ja.
+
+**Algorisme: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Reconeixement:** Llums a la part frontal. Intercanvi de cantonada i aresta adjacents al costat dret.
+
+**Algorisme: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Reconeixement:** Llums a la part posterior. Mirall de Ra.
+
+**Algorisme: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Intercanvi de cantonades diagonals (4 casos)
+
+Aquests PLL intercanvien dues cantonades diagonalment oposades.
+
+#### V Perm
+
+**Reconeixement:** Cap llum a cap costat. Un costat té un patró de 2 colors on l'aresta coincideix amb una cantonada.
+
+**Algorisme: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Reconeixement:** Cap llum. Un costat té dues cantonades coincidents però l'aresta entre elles és incorrecta.
+
+**Algorisme: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Reconeixement:** Dos costats oposats completament resolts (una barra resolta a cadascun), però els altres dos costats tenen les peces completament intercanviades.
+
+**Algorisme: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Reconeixement:** Mirall de Na. Dues barres oposades però intercanviades de manera diferent.
+
+**Algorisme: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 casos)
+
+Les permutacions G són les més difícils de reconèixer. Mouen un parell de cantonades adjacents i ciclen tres arestes.
+
+#### Ga Perm
+
+**Reconeixement:** Llums a l'esquerra. La cantonada frontal dreta coincideix amb l'aresta dreta.
+
+**Algorisme: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Reconeixement:** Llums a la part frontal. La cantonada posterior esquerra coincideix amb l'aresta esquerra.
+
+**Algorisme: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Reconeixement:** Llums a la dreta. La cantonada frontal esquerra coincideix amb l'aresta esquerra.
+
+**Algorisme: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Reconeixement:** Llums a la part posterior. La cantonada frontal dreta coincideix amb l'aresta dreta.
+
+**Algorisme: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Consells de reconeixement
+
+El reconeixement eficient de PLL és clau per a resolucions ràpides. Aquí tens estratègies generals:
+
+1. **Busca les llums** -- un parell de cantonades coincidents a un costat. Això redueix les possibilitats immediatament.
+2. **Compta les barres resoltes** -- una barra són tres adhesius coincidents en fila (cantonada-aresta-cantonada). Les barres indiquen PLL específics.
+3. **Comprova dos costats** -- mirar el costat frontal i el dret normalment és suficient per identificar el cas.
+4. **Aprèn els patrons oposats** -- molts PLL venen en parells mirall (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| El que veus | PLL possibles |
+|:---|:---|
+| 4 costats amb llums | H, Ua, Ub, Z |
+| 2 costats oposats amb llums | T, F, Ja, Jb, Ra, Rb |
+| 1 costat amb llums | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 costats amb llums | E, V, Y, Na, Nb |
+
+## Ordre d'aprenentatge
+
+Un ordre recomanat per aprendre els 21 PLL:
+
+1. **2-Look primer:** T, Y (cantonades) + Ua, Ub, H, Z (arestes) -- 6 algorismes
+2. **Intercanvis adjacents:** Ja, Jb, F, Ra, Rb -- 5 algorismes més
+3. **Només cantonades:** Aa, Ab, E -- 3 algorismes més
+4. **Intercanvis diagonals:** V, Na, Nb -- 3 algorismes més
+5. **G Perms al final:** Ga, Gb, Gc, Gd -- 4 algorismes finals
+
+:::tip
+Practica el reconeixement barrejant, resolent fins al PLL, i després cobrint el cub i intentant identificar el cas de memòria. La velocitat prové del reconeixement instantani, no només dels moviments ràpids dels dits.
+:::

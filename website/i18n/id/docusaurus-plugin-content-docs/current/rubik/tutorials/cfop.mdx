@@ -1,0 +1,219 @@
+---
+title: Gambaran Umum Metode CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Gambaran Umum Metode CFOP
+
+**Metode CFOP** (juga dikenal sebagai **metode Fridrich**) adalah metode speedcubing yang paling banyak digunakan di dunia. Sebagian besar pemecah di bawah 20 detik dan pemegang rekor dunia menggunakan CFOP. Metode ini dibangun di atas metode lapis demi lapis untuk pemula tetapi jauh lebih efisien — mengurangi rata-rata penyelesaian dari 100+ gerakan menjadi sekitar 55-60 gerakan.
+
+**CFOP** adalah singkatan dari empat langkahnya:
+
+1. **C**ross — Selesaikan 4 edge di bagian bawah
+2. **F**2L — Dua lapis pertama (pasangkan dan masukkan 4 pasang corner-edge)
+3. **O**LL — Orientasi lapis terakhir (jadikan seluruh sisi atas satu warna)
+4. **P**LL — Permutasi lapis terakhir (atur semua potongan atas dengan benar)
+
+## CFOP vs. Metode Pemula
+
+| | Pemula (LBL) | CFOP |
+|---|---|---|
+| Langkah | 7 | 4 |
+| Rata-rata gerakan | 100-120 | 55-60 |
+| Algoritma untuk dipelajari | 5-8 | 78 (penuh) / 16 (2-look) |
+| Kecepatan tipikal | 1-3 menit | 10-20 detik |
+| Perbedaan utama | Langkah demi langkah, satu potongan sekaligus | Memasangkan potongan, lebih sedikit langkah |
+
+Kabar baiknya: Anda bisa belajar CFOP **secara bertahap**. Mulai dengan F2L intuitif dan 2-look OLL/PLL (hanya 16 algoritma), lalu perluas ke OLL penuh (57 algoritma) dan PLL penuh (21 algoritma) seiring waktu.
+
+---
+
+## Langkah 1: Cross
+
+Cross adalah konsep yang sama dengan metode pemula — selesaikan 4 edge putih di sisi bawah sehingga setiap edge juga cocok dengan center sisinya. Perbedaan dalam CFOP adalah **cara** Anda mendekatinya:
+
+- **Rencanakan seluruh cross saat inspeksi** (15 detik sebelum penyelesaian dimulai)
+- **Selesaikan cross di bawah** — tanpa membalik kubus
+- **Targetkan 8 gerakan atau kurang** — cross yang efisien rata-rata 6-7 gerakan
+
+**Contoh: Menyelesaikan edge cross langsung ke bawah**
+
+Di sini, edge putih-biru ada di lapis atas. Kita sejajarkan dan masukkan langsung ke bawah dengan satu gerakan:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Contoh: Edge cross perlu diposisikan ulang**
+
+Terkadang sebuah edge ada di tempat yang salah atau terbalik. Di sini kita memperbaiki edge yang salah tempat:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tips untuk cross yang cepat:**
+- Latih perencanaan cross dengan mata tertutup
+- Pelajari cara menyelesaikannya dalam 8 gerakan atau kurang dari scramble apa pun
+- Mulai selesaikan cross di bawah sejak hari pertama — hindari kebiasaan menyelesaikan di atas
+
+---
+
+## Langkah 2: F2L (Dua Lapis Pertama)
+
+F2L adalah inti dari CFOP dan di mana penghematan waktu terbesar berasal. Alih-alih menyelesaikan corner lapis pertama dan edge lapis kedua secara terpisah (seperti di metode pemula), Anda **memasangkan** sebuah corner dengan edge yang cocok dan **memasukkan** mereka bersama sebagai satu unit.
+
+Ada 4 pasang corner-edge (disebut **slot**) yang harus diselesaikan. Setiap slot terletak di antara dua sisi pada dua lapis bawah.
+
+**Kasus F2L dasar: Corner dan edge keduanya di lapis atas**
+
+Corner putih-merah-hijau ada di lapis atas, dan edge merah-hijau juga ada di lapis atas. Kita pasangkan dan masukkan:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Kasus umum lainnya: Memisahkan pasangan yang salah**
+
+Terkadang potongan dipasangkan secara salah. Kita pisahkan dan gabungkan kembali dengan benar:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L bisa dipelajari secara **intuitif** — memahami logika menyembunyikan, memasangkan, dan memasukkan — atau secara **algoritmis** dengan 41 kasus spesifik. Kebanyakan speedcuber menggunakan kombinasi keduanya.
+
+Untuk daftar lengkap kasus dan algoritma F2L, lihat panduan [**F2L: Dua Lapis Pertama**](./f2l).
+
+---
+
+## Langkah 3: OLL (Orientasi Lapis Terakhir)
+
+Setelah menyelesaikan dua lapis pertama, sisi atas akan memiliki beberapa stiker kuning dan beberapa yang bukan kuning. Tujuan OLL adalah membuat **seluruh sisi atas menjadi kuning** — kita belum peduli dengan warna sisinya.
+
+OLL penuh memiliki **57 algoritma**. Namun, Anda bisa mulai dengan **2-look OLL**, yang hanya menggunakan 10 algoritma dengan membagi langkah menjadi dua bagian:
+
+1. **Pandangan pertama:** Bentuk cross kuning di atas (3 kasus, menggunakan 2 algoritma dari orientasi berbeda)
+2. **Pandangan kedua:** Orientasikan corner kuning (7 algoritma)
+
+**Contoh: Sune (salah satu kasus OLL paling umum)**
+
+Ini adalah OLL #26, biasa disebut **Sune**. Satu corner kuning sudah berorientasi, dan tiga lainnya perlu diputar:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Contoh: Kasus cross OLL (membentuk cross kuning)**
+
+Ketika Anda memiliki bentuk L dari edge kuning di atas, tahan L di belakang-kiri dan terapkan:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tips untuk belajar OLL:**
+- Mulai dengan 2-look OLL — hanya menambah beberapa detik ke penyelesaian Anda
+- Pelajari Sune dan Anti-Sune terlebih dahulu; mereka muncul di banyak kasus OLL
+- Latih pengenalan kasus dari pola stiker kuning di atas
+
+---
+
+## Langkah 4: PLL (Permutasi Lapis Terakhir)
+
+Langkah terakhir! Semua stiker kuning sekarang di atas, tetapi warna sisi potongan lapis terakhir mungkin tidak cocok. PLL **mengatur ulang** potongan lapis atas ke posisi yang benar untuk menyelesaikan kubus.
+
+PLL penuh memiliki **21 algoritma**. Anda bisa mulai dengan **2-look PLL**, yang hanya menggunakan 6 algoritma:
+
+1. **Pandangan pertama:** Posisikan corner dengan benar (2 algoritma)
+2. **Pandangan kedua:** Posisikan edge dengan benar (4 algoritma)
+
+**Contoh: T-Perm (salah satu algoritma PLL paling berguna)**
+
+T-Perm menukar dua corner dan dua edge. Muncul sering dan digunakan sebagai fondasi untuk mempelajari PLL lainnya:
+
+**Algoritma: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Contoh: U-Perm (a) — Siklus 3 edge**
+
+U-Perm memutar tiga edge searah jarum jam sementara semua corner sudah di tempatnya:
+
+**Algoritma: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tips untuk belajar PLL:**
+- Mulai dengan T-Perm, U-Perms (a dan b), dan A-Perms
+- Pelajari mengenali PLL dengan melihat warna sisi (pola headlight)
+- Latih eksekusi PLL dari sudut AUF (penyesuaian sisi atas) apa pun
+
+---
+
+## Kapan Belajar CFOP
+
+CFOP adalah langkah alami berikutnya setelah Anda menguasai metode lapis demi lapis untuk pemula. Berikut adalah progresi yang direkomendasikan:
+
+### Tahap 1: Pemula ke di bawah 60 detik
+- Kuasai metode pemula sampai penyelesaian Anda konsisten
+- Pelajari menyelesaikan **cross di bawah**
+- Mulai berlatih **F2L intuitif** — amati bagaimana pasangan dibentuk dan dimasukkan
+
+### Tahap 2: Di bawah 60 ke di bawah 30 detik
+- Gunakan **F2L intuitif** penuh untuk semua 4 pasang
+- Pelajari **2-look OLL** (10 algoritma)
+- Pelajari **2-look PLL** (6 algoritma)
+- Latih **lookahead** — lacak pasangan berikutnya saat memasukkan yang sekarang
+
+### Tahap 3: Di bawah 30 ke di bawah 20 detik
+- Pelajari **PLL penuh** (21 algoritma)
+- Mulai pelajari **OLL penuh** (57 algoritma)
+- Optimalkan solusi F2L Anda — pelajari [**kasus algoritmis F2L**](./f2l)
+- Tingkatkan efisiensi cross (rencanakan seluruh cross saat inspeksi)
+
+### Tahap 4: Di bawah 20 dan seterusnya
+- Selesaikan **OLL penuh**
+- Pelajari trik F2L lanjutan (teknik slot kosong, multi-slotting)
+- Kembangkan kebiasaan **lookahead** yang kuat
+- Tingkatkan kecepatan putaran dan kelancaran
+
+---
+
+## Langkah Selanjutnya
+
+Siap mendalami setiap langkah? Lihat panduan detail ini:
+
+- [**F2L: Dua Lapis Pertama**](./f2l) — Semua kasus F2L umum dengan algoritma dan demo
+- [**Algoritma OLL**](./oll) — 57 kasus OLL lengkap dengan 2-Look OLL untuk pemula
+- [**Algoritma PLL**](./pll) — Semua 21 kasus PLL dengan 2-Look PLL untuk pemula
+- [**Panduan Finger Tricks**](./finger-tricks) — Eksekusi gerakan efisien dan trigger esensial
+- [**Tips Speedcubing**](./speed-tips) — Perencanaan cross, lookahead, dan rutinitas latihan
+
+**Selamat cubing!** Perjalanan dari pemula ke di bawah 20 detik adalah salah satu tantangan paling memuaskan dalam speedcubing. Ambil satu langkah pada satu waktu, dan Anda akan sampai di sana.

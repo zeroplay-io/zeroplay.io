@@ -1,0 +1,374 @@
+---
+title: "二阶魔方进阶：CLL 方法"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 二阶魔方进阶：CLL 方法
+
+使用 **CLL（最后层角块）** 方法，让你的二阶魔方速拧更上一层楼。Ortega 方法需要两步来解决最后层（OLL 然后 PBL），而 CLL 只需 **一个公式** 就能同时完成最后层角块的 **方向和位置** 调整。这意味着更少的观察和更快的速度。
+
+## 为什么选择 CLL？
+
+| 方法 | 最后层步骤 | 公式数量 | 典型速度 |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2（OLL + PBL） | ~12 | 3–5 秒 |
+| **CLL** | 1（一步完成） | ~40 | 2–4 秒 |
+
+CLL 是顶级二阶速拧选手使用的标准方法。通过学习识别并执行全部 40 种情况，你可以从还原过程中省去整整一步。
+
+## CLL 的原理
+
+1. **还原第一面** — 与 Ortega 相同，在底部完成白色面（侧面颜色无需匹配）。
+2. **识别 CLL 情况** — 观察顶面和侧面颜色，确定你面对的是 40 种情况中的哪一种。
+3. **执行一个公式** — 同时调整所有顶层角块的方向和位置。
+4. **AUF + 底层调整** — 最多旋转一次 U 层和一次 D 层即可完成。
+
+## 记号提醒
+
+- **R** = 右 &nbsp;&nbsp; **L** = 左 &nbsp;&nbsp; **U** = 上 &nbsp;&nbsp; **D** = 下 &nbsp;&nbsp; **F** = 前 &nbsp;&nbsp; **B** = 后
+- 单独字母表示 **顺时针 90°**。加 **'** 表示 **逆时针**。加 **2** 表示 **180°**。
+
+---
+
+## CLL 情况分组
+
+40 种 CLL 情况根据顶面朝向模式分为 7 组。以下是每组中最重要的情况及其公式。
+
+---
+
+## Sune 组（6 种中的 4 种）
+
+一个角块已归位（黄色朝上），另外三个需要翻转。这是最常见的组。
+
+### Sune 1 — 相邻交换
+
+将已归位的角块放在左前方。三个未归位角块顺时针翻转。
+
+**公式：R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — 对角交换
+
+相同的朝向模式，但角块需要对角交换。
+
+**公式：F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — 纯净型（无交换）
+
+方向已解决，无需进行位置交换。
+
+**公式：R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — 相邻交换（镜像）
+
+将已归位的角块放在右前方。
+
+**公式：R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune 组（6 种中的 3 种）
+
+Sune 的镜像 — 一个角块已归位，另外三个逆时针翻转。
+
+### Anti-Sune 1 — 相邻交换
+
+将已归位的角块放在右前方。三个未归位角块逆时针翻转。
+
+**公式：R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — 对角交换
+
+**公式：R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — 纯净型（无交换）
+
+**公式：R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H 组（4 种中的 4 种）
+
+两个对角角块已归位（黄色朝上），另外两个黄色在侧面。
+
+### H 1 — 相邻交换
+
+两个黄色贴纸在顶部对角位置。
+
+**公式：F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — 对角交换
+
+**公式：R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — 无交换
+
+**公式：R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — 柱型
+
+两对对角角块都需要交换。
+
+**公式：R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi 组（6 种中的 4 种）
+
+两个相邻角块黄色朝上，另外两个黄色在侧面。顶面看起来像希腊字母 Pi。
+
+### Pi 1 — 对角交换
+
+将两个已归位的角块放在后方。
+
+**公式：F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — 相邻交换（右）
+
+**公式：R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — 相邻交换（左）
+
+**公式：R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — 无交换
+
+**公式：R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T 组（6 种中的 3 种）
+
+顶面显示 T 形的黄色贴纸图案 — 一个角块已归位，一个相邻角块的黄色在前面，另外两个黄色在侧面。
+
+### T 1 — 相邻交换
+
+**公式：R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — 对角交换
+
+**公式：F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — 无交换
+
+**公式：R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U 组（6 种中的 3 种）
+
+一个角块正确归位，另外三个在侧面形成 U 形图案。
+
+### U 1 — 相邻交换
+
+**公式：R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — 对角交换
+
+**公式：R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — 无交换
+
+**公式：F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L 组（6 种中的 3 种）
+
+两个相邻角块朝同一方向翻转 — 顶面显示 L 形图案。
+
+### L 1 — 相邻交换
+
+**公式：R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — 对角交换
+
+**公式：R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — 无交换
+
+**公式：R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL 之后：完成还原
+
+执行 CLL 公式后，顶面已完全还原（方向和位置都已解决）。你可能还需要：
+
+1. **AUF（调整 U 面）** — 旋转一次 U 或 U' 使顶层与底层对齐。
+2. **底层调整** — 如果底层错位，旋转一次 D 或 D' 即可修正。
+3. **底层交换** — 极少数情况下，底层可能需要相邻或对角交换。使用与 Ortega 方法相同的 PBL 公式：
+   - **对角交换：** R2 F2 R2
+   - **相邻交换：** R U' R F2 R' U R'
+
+---
+
+## 学习策略
+
+一次性学习全部 40 种 CLL 情况会让人感到困难。以下是推荐的学习顺序：
+
+1. **从 Sune 和 Anti-Sune 开始**（12 种情况）— 这些是最常见的，且很多公式较短。
+2. **添加 T 组和 U 组**（12 种情况）— 相对容易识别和执行。
+3. **学习 Pi 组**（6 种情况）— 具有独特的朝向模式。
+4. **学习 L 组**（6 种情况）— 识别方式与 Pi 类似，但翻转方向不同。
+5. **最后学习 H 组**（4 种情况）— 最少见的组。
+
+## 识别技巧
+
+- **先看顶面** 确定朝向组（有多少个黄色贴纸朝上及其位置）。
+- **再检查侧面颜色** 确定你面对的是组内的哪种具体情况。
+- **分组练习** — 一次只练一组，直到能瞬间识别。
+- **使用逆向打乱** — 设置一个情况，还原它，然后尝试预测逆向操作。
+
+---
+
+**掌握 CLL 后，你可以在二阶魔方上达到平均 3 秒以内的成绩。** 一步完成法消除了 OLL 和 PBL 之间的停顿，使还原更快更流畅。持续练习识别 — 速度来自于瞬间判断情况。

@@ -1,0 +1,249 @@
+---
+title: "Cube 4x4 Avancé : Méthode Yau"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cube 4x4 Avancé : Méthode Yau
+
+La **méthode Yau**, inventée par Robert Yau, est une alternative plus rapide à la méthode Reduction standard pour le Rubik's Cube 4x4. La différence clé : Yau résout les arêtes de la croix **tôt**, ce qui offre une meilleure anticipation et une transition plus fluide vers la phase 3x3. La plupart des meilleurs speedcubers 4x4 utilisent Yau ou une de ses variantes.
+
+## Yau vs Reduction standard
+
+| Aspect | Reduction | Yau |
+|--------|-----------|-----|
+| **Ordre des étapes** | Tous les centres, puis toutes les arêtes | 2 centres, 3 arêtes de croix, 4 centres, arêtes restantes |
+| **Croix** | Construite après la réduction | Déjà partiellement faite pendant la réduction |
+| **Anticipation** | Doit trouver les arêtes de croix après l'appairage | Croix presque faite, transition vers F2L fluide |
+| **Plafond de vitesse** | Bon | Plus élevé — moins de pauses entre les phases |
+
+## Rappel de notation
+
+**Mouvements standard** (couche extérieure uniquement) :
+- **R** = Droite &nbsp;&nbsp; **L** = Gauche &nbsp;&nbsp; **U** = Haut &nbsp;&nbsp; **D** = Bas &nbsp;&nbsp; **F** = Face &nbsp;&nbsp; **B** = Arrière
+
+**Mouvements larges** (deux couches extérieures ensemble) :
+- **Rw** = Droite large &nbsp;&nbsp; **Lw** = Gauche large &nbsp;&nbsp; **Uw** = Haut large &nbsp;&nbsp; **Dw** = Bas large &nbsp;&nbsp; **Fw** = Face large &nbsp;&nbsp; **Bw** = Arrière large
+
+Une lettre seule signifie **90° dans le sens horaire**. Ajouter **'** signifie **sens antihoraire**. Ajouter **2** signifie **180°**.
+
+---
+
+## Étape 1 : Résoudre deux centres opposés
+
+Commencez par résoudre les blocs centraux **blanc** et **jaune** (haut et bas). C'est identique à la première partie de la méthode Reduction standard.
+
+Chaque centre est un bloc 2x2 de pièces. Utilisez des mouvements larges pour rassembler les pièces centrales tout en protégeant les pièces déjà placées avec des rotations de couche extérieure.
+
+**Construction de base des centres** — amenez une pièce centrale en haut avec un mouvement large, positionnez-la, puis inversez :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Jonction de deux moitiés de centre** — quand vous avez deux bandes 1x2 de centre qui doivent être fusionnées :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Conseils :**
+- Résolvez d'abord le centre blanc (en bas), puis le centre jaune (en haut).
+- Gardez le blanc en bas tout au long — utilisez uniquement les mouvements Rw, Lw, Fw, Bw pour manipuler les centres sans perturber le bas.
+- Ne vous souciez pas encore des centres latéraux. Laissez-les pour l'étape 3.
+
+---
+
+## Étape 2 : Résoudre 3 des 4 arêtes de la croix
+
+C'est là que Yau diverge de Reduction. Avant de résoudre les centres restants, **appairez et placez 3 arêtes blanches de la croix** dans la couche inférieure.
+
+Une arête de croix se compose de deux pièces (par ex. blanc-rouge et blanc-rouge) qui doivent être appariées et placées dans la couche D. Laissez une arête de croix non résolue pour l'instant — cela vous donne la liberté d'utiliser des mouvements larges à l'étape suivante.
+
+**Appairage d'une arête de croix avec le freeslice** — la technique freeslice apparie les arêtes sans perturber les centres. Placez une moitié de l'arête en position avant-droite et amenez sa partenaire depuis un autre emplacement :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Insertion d'une arête de croix appariée dans le bas** — une fois appariée, placez l'arête dans sa position correcte de la couche D :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice avec mouvements larges** — utilisez Dw pour amener une pièce d'arête vers le haut pour l'appairage sans casser les arêtes de croix déjà en place :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Conseils :**
+- Vous n'avez besoin que de 3 arêtes de croix résolues maintenant. Laissez délibérément un emplacement vide.
+- Utilisez l'emplacement vide de la couche D librement — l'arête de croix manquante vous donne plus de liberté pour les mouvements larges.
+- Choisissez quelle arête de croix laisser en fonction de celle qui est la plus difficile à trouver ou à apparier.
+
+---
+
+## Étape 3 : Résoudre les 4 centres restants
+
+Résolvez maintenant les **4 centres latéraux** (rouge, orange, bleu, vert). Les centres blanc et jaune sont déjà faits depuis l'étape 1.
+
+Comme vous avez un emplacement d'arête de croix non résolu, vous pouvez encore utiliser certains mouvements larges librement. C'est un avantage clé de Yau — la croix partiellement résolue ne restreint pas la construction des centres autant qu'on pourrait le penser.
+
+**Construction d'un centre latéral** — utilisez des mouvements larges pour collecter les pièces centrales, puis placez-les :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Commutateur de centre** — quand vous devez échanger une pièce centrale sans perturber les autres, utilisez une séquence de type commutateur :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Conseils :**
+- Résolvez les centres par paires opposées quand c'est possible (par ex. rouge puis orange, bleu puis vert).
+- Profitez de l'emplacement d'arête de croix non résolu — les mouvements larges passant par cet emplacement ne casseront pas les arêtes de croix.
+- Faites attention aux 3 arêtes de croix déjà dans la couche D. Vérifiez avant de faire des mouvements larges.
+
+---
+
+## Étape 4 : Dernière arête de croix + appairage complet des arêtes
+
+Cette étape comprend deux parties : finir la 4ème arête de croix, puis apparier toutes les arêtes restantes.
+
+### Partie A : Résoudre la dernière arête de croix
+
+Trouvez la paire d'arêtes de croix restante et rassemblez-les. Comme tous les centres sont maintenant résolus, vous devez être plus prudent avec les mouvements larges.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Une fois appariée, insérez-la dans le dernier emplacement de la couche D pour compléter la croix blanche.
+
+### Partie B : Apparier les arêtes restantes (technique 3-2-3)
+
+Vous avez maintenant 8 arêtes non appariées. La **technique 3-2-3** est le moyen le plus efficace de les apparier :
+
+1. **3 premières arêtes** — appariez-les avec des mouvements slice-flip-slice standard. Placez une arête non appariée à l'avant-droite, trouvez sa partenaire en haut, utilisez Uw pour les rassembler :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **2 arêtes suivantes** — avec moins d'arêtes restantes, vous pouvez apparier deux arêtes rapidement en succession en stockant une à l'arrière :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **3 dernières arêtes** — les dernières arêtes nécessitent plus de soin pour éviter de casser les arêtes déjà appariées. Utilisez des mouvements basés sur Dw ou des techniques de retournement :
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Conseils :**
+- Pendant l'appairage 3-2-3, vérifiez toujours que vos mouvements larges ne cassent pas les arêtes de croix en bas.
+- Si une arête est appariée mais retournée, vous devez la sortir et la ré-apparier.
+- La transition de l'appairage des arêtes au 3x3 doit être fluide — votre croix est déjà faite.
+
+---
+
+## Étape 5 : Résoudre comme un 3x3 (CFOP)
+
+Avec tous les centres résolus, toutes les arêtes appariées et la croix déjà complète, le 4x4 se comporte maintenant comme un 3x3. Comme la **croix blanche est déjà faite** (un avantage majeur de Yau), vous pouvez passer directement au **F2L** (les deux premières couches).
+
+Utilisez uniquement des mouvements de couche extérieure à partir de maintenant — pas de mouvements larges.
+
+**Continuez avec le CFOP standard :**
+1. **F2L** — appairez et insérez les paires coin-arête dans les deux premières couches.
+2. **OLL** — orientez la dernière couche.
+3. **PLL** — permutez la dernière couche.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+C'est le plus grand avantage de la méthode Yau : la transition croix-F2L n'a aucune pause, car la croix a été construite pendant la phase de réduction.
+
+---
+
+## Algorithmes de parité
+
+Le 4x4 a deux cas de parité qui ne peuvent pas se produire sur un 3x3. Ils surviennent chacun environ 50 % du temps, que vous utilisiez Yau ou Reduction.
+
+### Parité OLL (retournement d'une seule arête)
+
+Une seule arête apparaît retournée sur la dernière couche — impossible sur un vrai 3x3.
+
+**Algorithme : Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Appliquez cet algorithme une fois, puis continuez avec OLL/PLL normalement.
+
+### Parité PLL (échange de deux arêtes)
+
+Deux arêtes opposées doivent être échangées — encore une fois impossible sur un 3x3.
+
+**Algorithme : r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Quand apprendre Yau
+
+- **Si votre moyenne est sous 2 minutes avec Reduction**, vous avez les bases pour passer à Yau.
+- **Si vous connaissez le CFOP pour le 3x3**, Yau est un choix naturel — la croix est déjà faite quand vous entrez dans la phase 3x3.
+- **Si vous avez du mal avec la transition Reduction-3x3**, Yau élimine cette pause entièrement.
+
+## Priorités d'entraînement
+
+1. **Maîtrisez l'appairage d'arêtes par freeslice** — c'est la technique centrale qui rend Yau efficace.
+2. **Pratiquez la reconnaissance 2 centres + 3 arêtes de croix** — apprenez à identifier rapidement les arêtes de croix pendant les deux premières étapes.
+3. **Drillez la technique 3-2-3** — un appairage d'arêtes fluide est là où le plus de temps est gagné.
+4. **Travaillez la transition croix-F2L** — puisque la croix est faite, entraînez-vous à repérer votre première paire F2L pendant l'appairage des arêtes.
+
+---
+
+**La méthode Yau est le standard pour la résolution compétitive du 4x4.** La transition fluide de la réduction à la résolution 3x3, combinée à de meilleures opportunités d'anticipation, en fait le choix privilégié des speedcubers visant des moyennes sous 40 secondes. Commencez par convertir vos résolutions Reduction en Yau une étape à la fois.

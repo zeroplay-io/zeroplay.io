@@ -1,0 +1,325 @@
+---
+title: "Pyraminx Fortgeschrittene Techniken"
+sidebar_position: 13
+description: Advanced Pyraminx solving techniques including L4E, Keyhole method, and top-first approaches for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pyraminx-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Pyraminx Fortgeschrittene Techniken
+
+Bist du bereit, deine Pyraminx-Lösungen auf das nächste Level zu bringen? Dieser Leitfaden behandelt fortgeschrittene Methoden, die Top-Pyraminx-Speedcuber verwenden, um Durchschnitte unter 5 Sekunden zu erreichen. Wir konzentrieren uns auf die **L4E (Letzte 4 Kanten)**-Methode, die **Keyhole**-Technik und den **Top-First**-Ansatz.
+
+## Notation-Erinnerung
+
+**Schichten (Großbuchstaben)** — die gesamte Schicht drehen (ohne Spitze):
+- **U** = Obere Schicht &nbsp;&nbsp; **R** = Rechte Schicht &nbsp;&nbsp; **L** = Linke Schicht &nbsp;&nbsp; **B** = Hintere Schicht
+
+**Spitzen (Kleinbuchstaben)** — nur die Spitze drehen:
+- **u** = Obere Spitze &nbsp;&nbsp; **r** = Rechte Spitze &nbsp;&nbsp; **l** = Linke Spitze &nbsp;&nbsp; **b** = Hintere Spitze
+
+Ein Buchstabe allein bedeutet **120° im Uhrzeigersinn**. Das Hinzufügen von **'** bedeutet **120° gegen den Uhrzeigersinn**.
+
+---
+
+## L4E-Methode (Letzte 4 Kanten)
+
+Die L4E-Methode ist die beliebteste fortgeschrittene Pyraminx-Methode. Anstatt Schicht für Schicht zu lösen, löst du zuerst einen Block und dann die **letzten 4 Kanten** in einem Schritt mit Algorithmen.
+
+### Übersicht
+
+| Schritt | Beschreibung | Technik |
+|------|-------------|-----------|
+| 1 | Spitzen lösen | Intuitiv (wie bei der Anfängermethode) |
+| 2 | Das V lösen | Intuitiv — ein Zentrum + zwei Kanten |
+| 3 | Letzte 4 Kanten lösen | Algorithmisch — ein Blick |
+
+### Schritt 1: Spitzen lösen
+
+Wie bei der Anfängermethode. Richte alle 4 Spitzen aus, damit sie zu ihren benachbarten Zentren passen. Dieser Schritt ist trivial — jede Spitze hat nur 3 Positionen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="u r' l"
+  alg="l' r u'"
+/>
+
+### Schritt 2: Das V lösen
+
+Wähle eine untere Seite und baue eine **V-Form**: ein Zentrumsteil mit seinen zwei benachbarten Kanten korrekt platziert. Das ergibt einen gelösten 1×1×2-Block unten.
+
+Halte den Pyraminx mit dem V unten links. Das V besteht aus dem unteren Zentrum und den zwei Kanten, die es mit der linken und rechten Seite verbinden.
+
+**Aufbau des V** — dieser Schritt ist intuitiv. Finde die zwei Kanten, die neben dein gewähltes Zentrum gehören, und platziere sie mit Schichtdrehungen:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R L'"
+  alg="L R'"
+/>
+
+**V mit einer geflippten Kante** — wenn eine Kante an der richtigen Stelle, aber geflippt ist, nimm sie heraus und setze sie wieder ein:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tipps:**
+- Wähle das V, das die wenigsten Züge benötigt — überprüfe alle 4 möglichen V-Positionen, bevor du beginnst.
+- Das V sollte während der Inspektion vollständig geplant werden (15 Sekunden sind für den Pyraminx mehr als genug).
+
+### Schritt 3: Letzte 4 Kanten lösen
+
+Mit gelöstem V bleiben 4 Kanten übrig. Identifiziere den Fall und wende den entsprechenden Algorithmus an. Es gibt etwa 30 L4E-Fälle, aber viele sind Spiegelbilder voneinander, was die einzigartigen Fälle reduziert, die du lernen musst.
+
+Halte den Pyraminx mit dem **V unten links** (der gelöste Block zeigt auf der linken Seite zu dir).
+
+---
+
+#### L4E-Fall 1: Alle 4 Kanten brauchen einen Zyklus im Uhrzeigersinn
+
+**Algorithmus: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+#### L4E-Fall 2: Alle 4 Kanten brauchen einen Zyklus gegen den Uhrzeigersinn
+
+**Algorithmus: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+#### L4E-Fall 3: Zwei Kanten tauschen (benachbart, vorne)
+
+**Algorithmus: R U' L' U R' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U R U' L U R'"
+  alg="R U' L' U R' U' L"
+/>
+
+#### L4E-Fall 4: Zwei Kanten tauschen (benachbart, hinten)
+
+**Algorithmus: L' U R U' L U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' L' U R' U' L"
+  alg="L' U R U' L U R'"
+/>
+
+#### L4E-Fall 5: Zwei Kanten flippen an Ort und Stelle (vorderes Paar)
+
+**Algorithmus: R L' R' L U L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U' L' R L R'"
+  alg="R L' R' L U L' U' L"
+/>
+
+#### L4E-Fall 6: Zwei Kanten flippen an Ort und Stelle (hinteres Paar)
+
+**Algorithmus: L' R L R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U R L' R' L"
+  alg="L' R L R' U' R U R'"
+/>
+
+#### L4E-Fall 7: Drei-Kanten-Zyklus im Uhrzeigersinn + ein Flip
+
+**Algorithmus: R U R' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L R U' R'"
+  alg="R U R' L' U' L"
+/>
+
+#### L4E-Fall 8: Drei-Kanten-Zyklus gegen den Uhrzeigersinn + ein Flip
+
+**Algorithmus: L' U' L R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' L' U L"
+  alg="L' U' L R U R'"
+/>
+
+#### L4E-Fall 9: Alle 4 Kanten flippen
+
+**Algorithmus: R U R' U R U R' U L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L U' R U' R' U' R U' R'"
+  alg="R U R' U R U R' U L' U' L U' L' U' L"
+/>
+
+#### L4E-Fall 10: Zwei gegenüberliegende Kanten tauschen
+
+**Algorithmus: R U' R' U L' U L U'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U L' U' L U' R U R'"
+  alg="R U' R' U L' U L U'"
+/>
+
+#### L4E-Fall 11: Zyklus + Doppelflip
+
+**Algorithmus: R U R' U' R U' R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U R' U R U' R'"
+  alg="R U R' U' R U' R' U R U R'"
+/>
+
+#### L4E-Fall 12: Benachbarter Tausch mit Flip
+
+**Algorithmus: L' U' L U L' U L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U' L U' L' U L"
+  alg="L' U' L U L' U L U' L' U' L"
+/>
+
+---
+
+## Keyhole-Methode
+
+Die Keyhole-Methode ist eine intuitivere Alternative zu L4E. Anstatt Algorithmen für jeden Fall zu lernen, verwendest du einen ungelösten Kantenplatz als **Schlüsselloch**, um andere Teile frei einzusetzen.
+
+### So funktioniert es
+
+1. **Spitzen lösen** (wie immer).
+2. **Eine Kante lösen** — platziere eine untere Kante korrekt.
+3. **Den leeren Platz als Schlüsselloch verwenden** — der zweite untere Kantenplatz bleibt leer, was dir Freiheit gibt, Kanten in die obere Schicht ohne Einschränkungen einzusetzen.
+4. **Kanten der oberen Schicht lösen** — verwende das Schlüsselloch, um jede obere Kante einzeln einzusetzen.
+5. **Das Schlüsselloch schließen** — setze die letzte untere Kante zuletzt ein.
+
+### Keyhole-Einsetzbeispiel
+
+Mit dem Schlüsselloch auf der rechten Seite der unteren Schicht kannst du frei eine Kante der oberen Schicht einsetzen:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R'"
+  alg="R U R'"
+/>
+
+**Geflipptes Einsetzen** — wenn die Kante vor dem Einsetzen geflippt werden muss:
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U R' U' R U' R'"
+  alg="R U R' U R U' R'"
+/>
+
+**Tipps:**
+- Die Keyhole-Methode ist ausgezeichnet für Anfänger, die zum fortgeschrittenen Lösen übergehen.
+- Sie erfordert weniger Algorithmen als L4E, ist aber auf höchstem Niveau etwas langsamer.
+- Verwende Keyhole als Sprungbrett zu L4E — die Intuition, die du hier aufbaust, hilft bei der L4E-Erkennung.
+
+---
+
+## Top-First-Methode
+
+Die Top-First-Methode kehrt die typische Lösungsreihenfolge um: löse die **obere Schicht zuerst** und beende dann den unteren Teil.
+
+### Übersicht
+
+1. **Spitzen lösen.**
+2. **Die gesamte obere Schicht lösen** — alle 3 oberen Kanten korrekt orientiert und permutiert um das obere Zentrum.
+3. **Die untere Schicht lösen** — die verbleibenden 3 unteren Kanten platzieren.
+
+### Die obere Schicht lösen
+
+Baue die obere Schicht intuitiv auf. Da du oben beginnst, gibt es keine Einschränkungen — du kannst jede Schicht frei drehen.
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="U R L'"
+  alg="L R' U'"
+/>
+
+### Den unteren Teil lösen
+
+Mit der fertigen oberen Schicht können die 3 unteren Kanten mit einem kleinen Satz von Algorithmen gelöst werden, ähnlich den L4E-Fällen, aber auf den unteren Teil beschränkt.
+
+**Zyklus der unteren Kanten im Uhrzeigersinn:**
+
+**Algorithmus: R U R' U R U R'**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="R U' R' U' R U' R'"
+  alg="R U R' U R U R'"
+/>
+
+**Zyklus gegen den Uhrzeigersinn:**
+
+**Algorithmus: L' U' L U' L' U' L**
+
+<TwistyPlayer
+  puzzle="pyraminx"
+  setupAlg="L' U L U L' U L"
+  alg="L' U' L U' L' U' L"
+/>
+
+**Tipps:**
+- Die Top-First-Methode ist im Wettkampf weniger verbreitet, kann aber für bestimmte Scrambles sehr schnell sein.
+- Sie funktioniert am besten, wenn die obere Schicht nach dem Scramble bereits teilweise gelöst ist.
+- Kombiniere mit Inspektionsplanung — wenn du eine einfache obere Schicht siehst, wähle Top-First.
+
+---
+
+## Tipps für schnelles Lösen
+
+### Inspektionsplanung
+
+Der Pyraminx hat weniger Teile als jedes andere WCA-Puzzle, was bedeutet, dass du **mehr von der Lösung während der Inspektion planen** kannst:
+
+- **Plane immer Spitzen + V** während der 15-sekündigen Inspektion.
+- Fortgeschrittene Löser können die **gesamte Lösung** für einfache Scrambles planen.
+- Übe, deine Planung zu erweitern — beginne mit den Spitzen, füge das V hinzu und versuche dann, L4E-Fälle vorherzusagen.
+
+### Drehtechnik
+
+- Verwende **Fingerspitzen** für präzise, schnelle Drehungen — nicht Drehungen mit der ganzen Hand.
+- Der Pyraminx profitiert von leichten, schnellen Drehungen statt kraftvollen.
+- Übe **R**- und **L**-Schichtdrehungen mit den Zeigefingern und **U**-Drehungen mit den Daumen.
+
+### Farbneutralität
+
+- Im Gegensatz zum 3×3-Würfel ist **Farbneutralität** beim Pyraminx sehr erreichbar.
+- Übe, mit jeder der 4 Seiten als Unterseite zu beginnen — das gibt dir 4-mal so viele einfache V-Optionen.
+- Farbneutralität ist für das Lösen unter 5 Sekunden fast obligatorisch.
+
+### Trainingsroutine
+
+1. **L4E-Fälle üben** — stelle jeden Fall mit seinem Inversen auf, löse ihn, wiederhole. Ziel ist sofortige Erkennung.
+2. **Zeitgestoppte Lösungen** — mache Serien von 12 Lösungen und verfolge deinen Durchschnitt.
+3. **Ein-Blick-Übung** — versuche, den L4E-Fall während des V-Aufbau-Schritts zu identifizieren, bevor du ihn abschließt.
+4. **Langsame Lösungen** — übe mit halber Geschwindigkeit, konzentriere dich auf flüssiges Drehen und null Pausen.
+
+---
+
+**Mit beherrschtem L4E und guter Inspektionsplanung sind Pyraminx-Durchschnitte unter 4 Sekunden erreichbar.** Der Pyraminx belohnt Planung und Erkennung mehr als reine Drehgeschwindigkeit. Konzentriere dich darauf, deinen L4E-Fall frühzeitig vorherzusagen, und die Lösungen werden mühelos wirken.

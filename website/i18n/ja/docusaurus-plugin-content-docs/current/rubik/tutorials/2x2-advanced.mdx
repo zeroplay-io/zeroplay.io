@@ -1,0 +1,374 @@
+---
+title: "2×2 上級：CLL 法"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2×2 上級：CLL 法
+
+**CLL（最終層コーナー）** 法で、2×2ルービックキューブの速解きをレベルアップしましょう。Ortega 法では最終層を2ステップ（OLL、次に PBL）で解きますが、CLL は最終層コーナーの **向きと位置** を **1つのアルゴリズム** で同時に解決します。観察回数が減り、より速く解けるようになります。
+
+## なぜ CLL か？
+
+| 方法 | 最終層ステップ | アルゴリズム数 | 一般的な速度 |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 秒 |
+| **CLL** | 1 (一発完了) | ~40 | 2–4 秒 |
+
+CLL はトップレベルの2×2スピードキューバーが使う標準メソッドです。40ケース全てを認識・実行できるようになれば、解法から丸ごと1ステップ省くことができます。
+
+## CLL の仕組み
+
+1. **最初の面を揃える** — Ortega と同じく、底面に白い面を作ります（側面の色は揃わなくても構いません）。
+2. **CLL ケースを認識する** — 上面と側面の色を見て、40ケースのうちどれかを判断します。
+3. **1つのアルゴリズムを実行する** — 上層の全コーナーの向きと位置を同時に揃えます。
+4. **AUF + 底面調整** — 最大で U 層1回転と D 層1回転で完了です。
+
+## 記号の確認
+
+- **R** = 右 &nbsp;&nbsp; **L** = 左 &nbsp;&nbsp; **U** = 上 &nbsp;&nbsp; **D** = 下 &nbsp;&nbsp; **F** = 前 &nbsp;&nbsp; **B** = 後
+- 文字のみは **時計回り90°**。**'** を付けると **反時計回り**。**2** を付けると **180°**。
+
+---
+
+## CLL ケースグループ
+
+40の CLL ケースは上面の向きパターンに基づいて7つのグループに分かれています。以下は各グループの最も重要なケースとアルゴリズムです。
+
+---
+
+## Sune ケース（6種中4種）
+
+1つのコーナーが正しい向き（黄色が上向き）で、残り3つは回転が必要です。最も一般的なグループです。
+
+### Sune 1 — 隣接交換
+
+揃ったコーナーを左前に持ちます。3つの未完成コーナーは時計回りにねじれています。
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — 対角交換
+
+同じ向きパターンですが、コーナーの対角交換が必要です。
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — ピュア（交換なし）
+
+向きは解決済みで、位置の交換は不要です。
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — 隣接交換 (ミラー)
+
+揃ったコーナーを右前に持ちます。
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune ケース（6種中3種）
+
+Sune の鏡像 — 1つのコーナーが正しい向きで、残り3つは反時計回りにねじれています。
+
+### Anti-Sune 1 — 隣接交換
+
+揃ったコーナーを右前に持ちます。3つの未完成コーナーは反時計回りにねじれています。
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — 対角交換
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — ピュア（交換なし）
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H ケース（4種中4種）
+
+対角の2つのコーナーが正しい向き（黄色が上向き）で、残り2つは黄色が側面にあります。
+
+### H 1 — 隣接交換
+
+黄色ステッカーが対角位置で上を向いています。
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — 対角交換
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — 交換なし
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — カラム
+
+対角コーナーの両ペアの交換が必要です。
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi ケース（6種中4種）
+
+隣接する2つのコーナーの黄色が上向きで、残り2つは黄色が側面にあります。上面はギリシャ文字のパイ（Pi）のように見えます。
+
+### Pi 1 — 対角交換
+
+正しい向きの2つのコーナーを後ろに持ちます。
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — 隣接交換 (右)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — 隣接交換 (左)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — 交換なし
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T ケース（6種中3種）
+
+上面にT字型の黄色ステッカーパターンが見えます — 1つのコーナーが正しい向き、隣接する1つのコーナーの黄色が前面に、残り2つの黄色が側面にあります。
+
+### T 1 — 隣接交換
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — 対角交換
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — 交換なし
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U ケース（6種中3種）
+
+1つのコーナーが正しく揃い、残り3つが側面でU字型パターンを形成しています。
+
+### U 1 — 隣接交換
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — 対角交換
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — 交換なし
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L ケース（6種中3種）
+
+隣接する2つのコーナーが同じ方向にねじれています — 上面はL字型パターンを示します。
+
+### L 1 — 隣接交換
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — 対角交換
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — 交換なし
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## CLL の後：ソルブの仕上げ
+
+CLL アルゴリズムを実行した後、上面は完全に解決されます。以下の調整が必要な場合があります：
+
+1. **AUF（U面調整）** — U または U' の1回転で上層と下層を揃えます。
+2. **底面調整** — 底面がずれている場合、D または D' の1回転で修正できます。
+3. **底面交換** — まれに、底面に隣接交換または対角交換が必要になります。Ortega 法と同じ PBL アルゴリズムを使います：
+   - **対角交換:** R2 F2 R2
+   - **隣接交換:** R U' R F2 R' U R'
+
+---
+
+## 学習戦略
+
+40ケース全てを一度に覚えるのは大変です。以下の学習順序をお勧めします：
+
+1. **Sune と Anti-Sune から始める**（12ケース）— 最も一般的で、短いアルゴリズムが多いです。
+2. **T と U ケースを追加する**（12ケース）— 比較的認識・実行が簡単です。
+3. **Pi ケースを学ぶ**（6ケース）— 特徴的な向きパターンです。
+4. **L ケースを学ぶ**（6ケース）— Pi と似た認識ですが、ねじれの方向が異なります。
+5. **最後に H ケース**（4ケース）— 最も少ないグループです。
+
+## 認識のコツ
+
+- **まず上面を見て** 向きグループを特定します（黄色ステッカーがいくつ上を向いているか、どこにあるか）。
+- **次に側面の色を確認して** グループ内のどのケースかを判断します。
+- **グループごとに練習** — 一度に1グループずつ練習し、瞬時に認識できるようにします。
+- **逆スクランブルを使う** — ケースをセットアップし、解いて、逆を予測してみましょう。
+
+---
+
+**CLL をマスターすれば、2×2で平均3秒以下を達成できます。** 一発完了のアプローチで OLL と PBL の間の停止時間がなくなり、ソルブがより速くスムーズになります。認識の練習を続けましょう — スピードはケースを瞬時に判断できることから生まれます。

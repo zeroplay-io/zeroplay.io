@@ -1,0 +1,724 @@
+---
+title: OLL एल्गोरिदम
+sidebar_position: 7
+description: 3x3 रूबिक्स क्यूब के लिए OLL (अंतिम परत का अभिविन्यास) एल्गोरिदम संदर्भ। शुरुआती लोगों के लिए 2-लुक OLL और 45 सबसे सामान्य पूर्ण OLL केस।
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-oll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# OLL एल्गोरिदम
+
+**OLL (अंतिम परत का अभिविन्यास)** CFOP विधि में अंतिम परत का पहला चरण है। लक्ष्य पूरे ऊपरी चेहरे को एक रंग (पीला) बनाना है। कुल **57 OLL केस** हैं।
+
+यदि आप शुरुआती हैं, तो **2-लुक OLL** से शुरू करें — एक सरलीकृत दृष्टिकोण जिसमें सभी 57 के बजाय केवल **10 एल्गोरिदम** की आवश्यकता होती है।
+
+यह गाइड 2-लुक OLL के साथ-साथ **45 सबसे अधिक सामना किए जाने वाले** पूर्ण OLL केस को कवर करती है, जो आकार श्रेणी के अनुसार व्यवस्थित हैं।
+
+---
+
+## 2-लुक OLL
+
+2-लुक OLL अभिविन्यास चरण को दो छोटे चरणों में तोड़ता है:
+
+1. **किनारों का अभिविन्यास** — ऊपर पीला क्रॉस बनाना (3 केस)
+2. **कोनों का अभिविन्यास** — पूरा ऊपरी चेहरा पीला बनाना (7 केस)
+
+इसका मतलब है कि आपको कुल मिलाकर केवल **10 एल्गोरिदम** सीखने हैं।
+
+### चरण 1: किनारों का अभिविन्यास (पीला क्रॉस बनाना)
+
+ऊपरी चेहरे को देखें। कोनों को अनदेखा करें और केवल **किनारों** पर ध्यान दें। आपको तीन पैटर्न में से एक दिखाई देगा:
+
+#### बिंदु (कोई किनारा अभिविन्यासित नहीं)
+
+कोई पीला किनारा ऊपर नहीं है। L-आकार पर पहुंचने के लिए यह एल्गोरिदम लागू करें, फिर L-आकार एल्गोरिदम लागू करें।
+
+**एल्गोरिदम: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### L-आकार (दो आसन्न किनारे अभिविन्यासित)
+
+दो पीले किनारे **L-आकार** बनाते हैं। क्यूब को ऐसे पकड़ें कि L **पीछे-बाएं** स्थिति में हो।
+
+**एल्गोरिदम: f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f'"
+  alg="f R U R' U' f'"
+  stickering="OLL"
+/>
+
+#### रेखा (दो विपरीत किनारे अभिविन्यासित)
+
+दो पीले किनारे **क्षैतिज रेखा** बनाते हैं। क्यूब को ऐसे पकड़ें कि रेखा **बाएं से दाएं** जाए।
+
+**एल्गोरिदम: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### चरण 2: कोनों का अभिविन्यास (7 केस)
+
+अब आपके पास पीला क्रॉस है। ऊपरी चेहरे को देखें और पहचानें कि कितने **कोनों** में पीला ऊपर है।
+
+#### Sune (1 कोना अभिविन्यासित, पीला बाएं की ओर)
+
+क्यूब को ऐसे पकड़ें कि हल किया हुआ कोना **सामने-बाएं** हो।
+
+**एल्गोरिदम: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Anti-Sune (1 कोना अभिविन्यासित, पीला दाएं की ओर)
+
+क्यूब को ऐसे पकड़ें कि हल किया हुआ कोना **सामने-दाएं** हो।
+
+**एल्गोरिदम: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+#### H (डबल Sune — 0 कोने अभिविन्यासित, शतरंज पैटर्न)
+
+पीले स्टिकर ऊपर शतरंज पैटर्न बनाते हैं (कोई कोना ऊपर नहीं, दो विपरीत पक्षों पर हेडलाइट)।
+
+**एल्गोरिदम: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+#### Pi (0 कोने अभिविन्यासित, एक तरफ हेडलाइट)
+
+कोई कोना ऊपर नहीं। एक ही तरफ दो पीले स्टिकर (सामने हेडलाइट)।
+
+**एल्गोरिदम: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+#### U (हेडलाइट — 2 कोने एक ही तरफ अभिविन्यासित)
+
+दो कोने हल, दोनों **एक ही तरफ**। हेडलाइट **बाएं** रखें।
+
+**एल्गोरिदम: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+#### T (2 कोने विकर्ण रूप से अभिविन्यासित)
+
+दो कोने विकर्ण रूप से हल। पीले स्टिकर सामने-बाएं और पीछे-दाएं (या इसके विपरीत)।
+
+**एल्गोरिदम: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+#### L (2 आसन्न कोने अभिविन्यासित, विकर्ण हेडलाइट)
+
+दो कोने आसन्न स्थानों पर एक विशिष्ट पैटर्न के साथ हल।
+
+**एल्गोरिदम: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## पूर्ण OLL — सभी किनारे अभिविन्यासित (OCLL, OLL 21-27)
+
+इन केस में सभी चार किनारे पहले से अभिविन्यासित हैं (पीला क्रॉस तैयार है)। केवल कोनों को अभिविन्यासित करना होगा।
+
+### OLL 21 — H (डबल Sune)
+
+**एल्गोरिदम: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 22 — Pi
+
+**एल्गोरिदम: R U2 R2 U' R2 U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2 U' R2 U' R2 U2 R"
+  stickering="OLL"
+/>
+
+### OLL 23 — Headlights
+
+**एल्गोरिदम: R2 D' R U2 R' D R U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R' D' R U2 R' D R2"
+  alg="R2 D' R U2 R' D R U2 R"
+  stickering="OLL"
+/>
+
+### OLL 24 — Chameleon
+
+**एल्गोरिदम: r U R' U' r' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' r U R U' r'"
+  alg="r U R' U' r' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 25 — Bowtie
+
+**एल्गोरिदम: F' r U R' U' r' F R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F' r U R U' r' F"
+  alg="F' r U R' U' r' F R"
+  stickering="OLL"
+/>
+
+### OLL 26 — Sune
+
+**एल्गोरिदम: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 27 — Anti-Sune
+
+**एल्गोरिदम: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## T-आकार
+
+### OLL 33
+
+**एल्गोरिदम: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 45
+
+**एल्गोरिदम: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## वर्ग
+
+### OLL 5
+
+**एल्गोरिदम: r' U2 R U R' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' R U' R' U2 r"
+  alg="r' U2 R U R' U r"
+  stickering="OLL"
+/>
+
+### OLL 6
+
+**एल्गोरिदम: r U2 R' U' R U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U R' U R U2 r'"
+  alg="r U2 R' U' R U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## C-आकार
+
+### OLL 34
+
+**एल्गोरिदम: R U R2 U' R' F R U R U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R' U' R' F' R U R2 U' R'"
+  alg="R U R2 U' R' F R U R U' F'"
+  stickering="OLL"
+/>
+
+### OLL 46
+
+**एल्गोरिदम: R' U' R' F R F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F R' F' R U R"
+  alg="R' U' R' F R F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## W-आकार
+
+### OLL 36
+
+**एल्गोरिदम: L' U' L U' L' U L U L F' L' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L F L' U' L' U' L U L' U L"
+  alg="L' U' L U' L' U L U L F' L' F"
+  stickering="OLL"
+/>
+
+### OLL 38
+
+**एल्गोरिदम: R U R' U R U' R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U R' U' R U' R'"
+  alg="R U R' U R U' R' U' R' F R F'"
+  stickering="OLL"
+/>
+
+---
+
+## P-आकार
+
+### OLL 31
+
+**एल्गोरिदम: R' U' F U R U' R' F' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' F R U R' U' F' U R"
+  alg="R' U' F U R U' R' F' R"
+  stickering="OLL"
+/>
+
+### OLL 32
+
+**एल्गोरिदम: L U F' U' L' U L F L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L F' L' U' L U F U' L'"
+  alg="L U F' U' L' U L F L'"
+  stickering="OLL"
+/>
+
+### OLL 43
+
+**एल्गोरिदम: F' U' L' U L F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' L' U' L U F"
+  alg="F' U' L' U L F"
+  stickering="OLL"
+/>
+
+### OLL 44
+
+**एल्गोरिदम: F U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U R' U' F'"
+  alg="F U R U' R' F'"
+  stickering="OLL"
+/>
+
+---
+
+## मछली आकार
+
+### OLL 9
+
+**एल्गोरिदम: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 10
+
+**एल्गोरिदम: R U R' U R' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 35
+
+**एल्गोरिदम: R U2 R2 F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' R U2 R'"
+  stickering="OLL"
+/>
+
+### OLL 37
+
+**एल्गोरिदम: F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U' R' F R F'"
+  alg="F R' F' R U R U' R'"
+  stickering="OLL"
+/>
+
+---
+
+## नाइट मूव आकार
+
+### OLL 13
+
+**एल्गोरिदम: F U R U2 R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U2 R' U' F'"
+  alg="F U R U2 R' U' R U R' F'"
+  stickering="OLL"
+/>
+
+### OLL 14
+
+**एल्गोरिदम: R' F R U R' F' R F U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U F' R' F R U' R' F' R"
+  alg="R' F R U R' F' R F U' F'"
+  stickering="OLL"
+/>
+
+### OLL 15
+
+**एल्गोरिदम: r' U' r R' U' R U r' U r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U' r U' R' U R r' U r"
+  alg="r' U' r R' U' R U r' U r"
+  stickering="OLL"
+/>
+
+### OLL 16
+
+**एल्गोरिदम: r U r' R U R' U' r U' r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U r' U R U' R' r U' r'"
+  alg="r U r' R U R' U' r U' r'"
+  stickering="OLL"
+/>
+
+---
+
+## कठिन आकार
+
+### OLL 29
+
+**एल्गोरिदम: R U R' U' R U' R' F' U' F R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U' R' F' U F R U R' U R U' R'"
+  alg="R U R' U' R U' R' F' U' F R U R'"
+  stickering="OLL"
+/>
+
+### OLL 30
+
+**एल्गोरिदम: F R' F R2 U' R' U' R U R' F2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F2 R U' R' U R U R2 F' R F'"
+  alg="F R' F R2 U' R' U' R U R' F2"
+  stickering="OLL"
+/>
+
+### OLL 41
+
+**एल्गोरिदम: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 42
+
+**एल्गोरिदम: R' U' R U' R' U2 R F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' R' U2 R U R' U R"
+  alg="R' U' R U' R' U2 R F R U R' U' F'"
+  stickering="OLL"
+/>
+
+---
+
+## बिजली आकार
+
+### OLL 7
+
+**एल्गोरिदम: r U R' U R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' U' R U' r'"
+  alg="r U R' U R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 8
+
+**एल्गोरिदम: r' U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r"
+  alg="r' U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 11
+
+**एल्गोरिदम: r U R' U R' F R F' R U2 r'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r U2 R' F R' F' R U' R U' r'"
+  alg="r U R' U R' F R F' R U2 r'"
+  stickering="OLL"
+/>
+
+### OLL 12
+
+**एल्गोरिदम: F R U R' U' F' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' F U R U' R' F'"
+  alg="F R U R' U' F' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 39
+
+**एल्गोरिदम: L F' L' U' L U F U' L'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="L U F' U' L' U L F L'"
+  alg="L F' L' U' L U F U' L'"
+  stickering="OLL"
+/>
+
+### OLL 40
+
+**एल्गोरिदम: R' F R U R' U' F' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' F U R U' R' F' R"
+  alg="R' F R U R' U' F' U R"
+  stickering="OLL"
+/>
+
+---
+
+## बिंदु केस
+
+ये सबसे कठिन OLL केस हैं — कोई किनारा अभिविन्यासित नहीं है।
+
+### OLL 1
+
+**एल्गोरिदम: R U2 R2 F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R2 U2 R'"
+  alg="R U2 R2 F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 2
+
+**एल्गोरिदम: F R U R' U' F' f R U R' U' f'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="f U R U' R' f' F U R U' R' F'"
+  alg="F R U R' U' F' f R U R' U' f'"
+  stickering="OLL"
+/>
+
+### OLL 3
+
+**एल्गोरिदम: f R U R' U' f' U' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U f U R U' R' f'"
+  alg="f R U R' U' f' U' F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 4
+
+**एल्गोरिदम: f R U R' U' f' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F U R U' R' F' U' f U R U' R' f'"
+  alg="f R U R' U' f' U F R U R' U' F'"
+  stickering="OLL"
+/>
+
+### OLL 17
+
+**एल्गोरिदम: R U R' U R' F R F' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U2 F R' F' R U' R U' R'"
+  alg="R U R' U R' F R F' U2 R' F R F'"
+  stickering="OLL"
+/>
+
+### OLL 18
+
+**एल्गोरिदम: r U R' U R U2 r2 U' R U' R' U2 r**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="r' U2 R U R' U r2 U2 R' U' R U' r'"
+  alg="r U R' U R U2 r2 U' R U' R' U2 r"
+  stickering="OLL"
+/>
+
+### OLL 19
+
+**एल्गोरिदम: r' R U R U R' U' r R2 F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R2 r' U R U' R' U' R' r"
+  alg="r' R U R U R' U' r R2 F R F'"
+  stickering="OLL"
+/>
+
+### OLL 20
+
+**एल्गोरिदम: r U R' U' r' U2 R U R U' R2 U2 R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U2 R2 U R' U' R' U2 r U R U' r'"
+  alg="r U R' U' r' U2 R U R U' R2 U2 R"
+  stickering="OLL"
+/>
+
+---
+
+## सीखने की टिप्स
+
+1. **2-लुक OLL से शुरू करें** — पूर्ण सेट से पहले 10 एल्गोरिदम में महारत हासिल करें
+2. **अगला OCLL सीखें** — केस 21-27 सबसे सामान्य हैं और 2-लुक पर आधारित हैं
+3. **धीरे-धीरे श्रेणियां जोड़ें** — T-आकार, P-आकार और मछली आकार अगले अच्छे कदम हैं
+4. **पहचान का अभ्यास करें** — केस को जल्दी पहचान पाना उतना ही महत्वपूर्ण है जितना एल्गोरिदम जानना
+5. **फिंगर ट्रिक्स का उपयोग करें** — एल्गोरिदम याद होने के बाद सुचारू निष्पादन पर ध्यान दें
+
+:::tip
+अभ्यास करते समय, क्यूब को मिलाएं और OLL तक सब कुछ हल करें। फिर OLL केस की पहचान और समाधान का अभ्यास करें। जब तक पहचान स्वचालित न हो जाए, दोहराएं।
+:::

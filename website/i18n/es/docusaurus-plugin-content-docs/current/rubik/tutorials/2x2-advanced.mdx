@@ -1,0 +1,374 @@
+---
+title: "Cubo 2x2 Avanzado: Método CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Cubo 2x2 Avanzado: Método CLL
+
+Lleva tu resolución del cubo 2x2 al siguiente nivel con el método **CLL (Esquinas de la Última Capa)**. Mientras Ortega resuelve la última capa en dos pasos (OLL y PBL), CLL resuelve tanto la **orientación como la permutación** de las esquinas en **un solo algoritmo**. Menos observaciones y resoluciones más rápidas.
+
+## ¿Por qué CLL?
+
+| Método | Pasos última capa | Algoritmos | Velocidad típica |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 segundos |
+| **CLL** | 1 (una mirada) | ~40 | 2–4 segundos |
+
+CLL es el método estándar de los mejores speedcubers de 2x2. Al aprender los 40 casos, eliminas un paso completo de tu resolución.
+
+## Cómo funciona CLL
+
+1. **Resolver la primera cara** — como Ortega, construye una cara blanca abajo (los colores laterales no necesitan coincidir).
+2. **Reconocer el caso CLL** — mira la cara superior y los colores laterales para identificar cuál de los 40 casos tienes.
+3. **Aplicar un algoritmo** — orienta y permuta simultáneamente todas las esquinas superiores.
+4. **AUF + ajuste inferior** — como máximo un giro U y un giro D para terminar.
+
+## Recordatorio de notación
+
+- **R** = Derecha &nbsp;&nbsp; **L** = Izquierda &nbsp;&nbsp; **U** = Arriba &nbsp;&nbsp; **D** = Abajo &nbsp;&nbsp; **F** = Frente &nbsp;&nbsp; **B** = Atrás
+- Una letra sola significa **90° en sentido horario**. Con **'** significa **antihorario**. Con **2** significa **180°**.
+
+---
+
+## Grupos de casos CLL
+
+Los 40 casos CLL se organizan en 7 grupos según el patrón de orientación de la cara superior. A continuación los casos más importantes de cada grupo.
+
+---
+
+## Casos Sune (4 de 6)
+
+Una esquina orientada (amarillo arriba) y las otras tres necesitan girarse. El grupo más común.
+
+### Sune 1 — Intercambio adyacente
+
+Coloca la esquina resuelta en la frontal-izquierda. Las tres sin resolver giran en sentido horario.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Intercambio diagonal
+
+Mismo patrón, pero las esquinas necesitan intercambio diagonal.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Puro (sin intercambio)
+
+Orientación resuelta sin cambio de posición necesario.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Intercambio adyacente (Espejo)
+
+Coloca la esquina resuelta en la frontal-derecha.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Casos Anti-Sune (3 de 6)
+
+Espejo de Sune — una esquina orientada y las otras tres giran en sentido antihorario.
+
+### Anti-Sune 1 — Intercambio adyacente
+
+Coloca la esquina resuelta en la frontal-derecha. Las tres sin resolver giran en sentido antihorario.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Intercambio diagonal
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Puro (sin intercambio)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Casos H (4 de 4)
+
+Dos esquinas opuestas orientadas (amarillo arriba) y las otras dos con amarillo en los lados.
+
+### H 1 — Intercambio adyacente
+
+Dos pegatinas amarillas arriba en posiciones diagonales.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Intercambio diagonal
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Sin intercambio
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Columnas
+
+Ambos pares de esquinas diagonales necesitan intercambio.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Casos Pi (4 de 6)
+
+Dos esquinas adyacentes con amarillo arriba, las otras dos con amarillo en los lados. La cara superior parece la letra griega Pi.
+
+### Pi 1 — Intercambio diagonal
+
+Coloca las dos esquinas orientadas atrás.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Intercambio adyacente (Derecha)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Intercambio adyacente (Izquierda)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Sin intercambio
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Casos T (3 de 6)
+
+La cara superior muestra un patrón en T de pegatinas amarillas — una esquina orientada, una adyacente con amarillo al frente y las otras dos con amarillo en los lados.
+
+### T 1 — Intercambio adyacente
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Intercambio diagonal
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Sin intercambio
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Casos U (3 de 6)
+
+Una esquina correctamente orientada con las otras tres en un patrón U en los lados.
+
+### U 1 — Intercambio adyacente
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Intercambio diagonal
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Sin intercambio
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Casos L (3 de 6)
+
+Dos esquinas adyacentes giradas en la misma dirección — la cara superior muestra un patrón en L.
+
+### L 1 — Intercambio adyacente
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Intercambio diagonal
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Sin intercambio
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Después de CLL: Completar la resolución
+
+Una vez aplicado el algoritmo CLL, la cara superior está completamente resuelta. Puedes necesitar:
+
+1. **AUF (Ajustar cara U)** — un giro U o U' para alinear la capa superior con la inferior.
+2. **Ajuste de capa inferior** — si está desplazada, un giro D o D' lo corrige.
+3. **Intercambio de capa inferior** — raramente, puede necesitar intercambio adyacente o diagonal. Usa los mismos algoritmos PBL de Ortega:
+   - **Intercambio diagonal:** R2 F2 R2
+   - **Intercambio adyacente:** R U' R F2 R' U R'
+
+---
+
+## Estrategia de aprendizaje
+
+Aprender los 40 casos de una vez es abrumador. Orden recomendado:
+
+1. **Empieza con Sune y Anti-Sune** (12 casos) — los más comunes, algoritmos cortos.
+2. **Añade casos T y U** (12 casos) — fáciles de reconocer y ejecutar.
+3. **Aprende casos Pi** (6 casos) — patrón de orientación distintivo.
+4. **Aprende casos L** (6 casos) — reconocimiento similar a Pi, dirección de giro diferente.
+5. **Termina con casos H** (4 casos) — el grupo más raro.
+
+## Consejos de reconocimiento
+
+- **Mira primero la cara superior** para identificar el grupo de orientación.
+- **Luego comprueba los colores laterales** para determinar el caso específico.
+- **Practica por grupos** — un grupo a la vez hasta reconocimiento instantáneo.
+- **Usa scrambles inversos** — prepara un caso, resuélvelo e intenta predecir el inverso.
+
+---
+
+**Con CLL dominado, puedes lograr promedios bajo 3 segundos en el 2x2.** El enfoque de una mirada elimina la pausa entre OLL y PBL. Sigue practicando el reconocimiento — la velocidad viene de identificar casos instantáneamente.

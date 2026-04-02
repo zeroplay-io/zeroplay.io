@@ -1,0 +1,374 @@
+---
+title: "2x2 Avanceret: CLL-metoden"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Avanceret: CLL-metoden
+
+Tag din 2x2-løsning til næste niveau med **CLL (Corners of Last Layer)**-metoden. Mens Ortega-metoden løser det sidste lag i to trin (OLL derefter PBL), løser CLL både **orientering og permutation** af det sidste lags hjørner i **én enkelt algoritme**. Det betyder færre blik og hurtigere løsninger.
+
+## Hvorfor CLL?
+
+| Metode | Sidste lag-trin | Algoritmer | Typisk hastighed |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 sekunder |
+| **CLL** | 1 (ét blik) | ~40 | 2–4 sekunder |
+
+CLL er standardmetoden blandt de bedste 2x2-speedcubere. Ved at lære at genkende og udføre alle 40 tilfælde eliminerer du et helt trin fra din løsning.
+
+## Sådan fungerer CLL
+
+1. **Løs den første side** — ligesom Ortega, byg en hvid flade i bunden (sidefarver behøver ikke at matche).
+2. **Genkend CLL-tilfældet** — se på topfladen og sidefarverne for at identificere, hvilket af de 40 tilfælde du har.
+3. **Anvend én algoritme** — denne orienterer og permuterer samtidig alle toplag-hjørner.
+4. **AUF + bundjustering** — højst én U-lagsdrejning og én D-lagsdrejning for at afslutte.
+
+## Notationspåmindelse
+
+- **R** = Højre &nbsp;&nbsp; **L** = Venstre &nbsp;&nbsp; **U** = Op &nbsp;&nbsp; **D** = Ned &nbsp;&nbsp; **F** = Front &nbsp;&nbsp; **B** = Bag
+- Et bogstav alene betyder **90° med uret**. Med **'** betyder **mod uret**. Med **2** betyder **180°**.
+
+---
+
+## CLL-tilfældegrupper
+
+De 40 CLL-tilfælde er organiseret i 7 grupper baseret på orienteringsmønstret på topfladen. Nedenfor er de vigtigste tilfælde fra hver gruppe med deres algoritmer.
+
+---
+
+## Sune-tilfælde (4 af 6)
+
+Ét hjørne er orienteret (gul opad), og de tre andre skal drejes. Dette er den mest almindelige gruppe.
+
+### Sune 1 — Tilstødende bytte
+
+Hold det løste hjørne foran til venstre. De tre uløste hjørner drejer med uret.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonalt bytte
+
+Samme orienteringsmønster, men hjørnerne kræver et diagonalt bytte.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Ren (intet bytte)
+
+Orientering løst uden behov for positionsbytte.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Tilstødende bytte (Spejl)
+
+Hold det løste hjørne foran til højre.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Anti-Sune-tilfælde (3 af 6)
+
+Spejling af Sune — ét hjørne er orienteret, og de tre andre drejer mod uret.
+
+### Anti-Sune 1 — Tilstødende bytte
+
+Hold det løste hjørne foran til højre. De tre uløste hjørner drejer mod uret.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonalt bytte
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Ren (intet bytte)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## H-tilfælde (4 af 4)
+
+To modsatte hjørner er orienterede (gul opad), og de andre to har gul på siderne.
+
+### H 1 — Tilstødende bytte
+
+To gule klistermærker på toppen i diagonale positioner.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonalt bytte
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Intet bytte
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Kolonner
+
+Begge par af diagonale hjørner skal byttes.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Pi-tilfælde (4 af 6)
+
+To tilstødende hjørner har gul på toppen, de andre to har gul på siderne. Topfladen ligner det græske bogstav Pi.
+
+### Pi 1 — Diagonalt bytte
+
+Hold de to orienterede hjørner bagerst.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Tilstødende bytte (Højre)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Tilstødende bytte (Venstre)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Intet bytte
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## T-tilfælde (3 af 6)
+
+Topfladen viser et T-formet mønster af gule klistermærker — ét hjørne orienteret, ét tilstødende hjørne med gul foran og de andre to med gul på siderne.
+
+### T 1 — Tilstødende bytte
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonalt bytte
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Intet bytte
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## U-tilfælde (3 af 6)
+
+Ét hjørne er korrekt orienteret, og de tre andre danner et U-formet mønster på siderne.
+
+### U 1 — Tilstødende bytte
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonalt bytte
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Intet bytte
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## L-tilfælde (3 af 6)
+
+To tilstødende hjørner er drejet i samme retning — topfladen viser et L-formet mønster.
+
+### L 1 — Tilstødende bytte
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonalt bytte
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Intet bytte
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Efter CLL: Afslut løsningen
+
+Når du har anvendt CLL-algoritmen, er topfladen fuldt løst (både orienteret og permuteret). Du kan have brug for:
+
+1. **AUF (Juster U-fladen)** — en enkelt U- eller U'-drejning for at justere toplaget med bunden.
+2. **Bundjustering** — hvis bundlaget er forskudt, retter en enkelt D- eller D'-drejning det.
+3. **Bundlagsbytte** — sjældent kan bundlaget have brug for et tilstødende eller diagonalt bytte. Brug de samme PBL-algoritmer fra Ortega-metoden:
+   - **Diagonalt bytte:** R2 F2 R2
+   - **Tilstødende bytte:** R U' R F2 R' U R'
+
+---
+
+## Læringsstrategi
+
+At lære alle 40 CLL-tilfælde på én gang er overvældende. Her er en anbefalet læringsrækkefølge:
+
+1. **Start med Sune og Anti-Sune** (12 tilfælde) — de mest almindelige, og mange algoritmer er korte.
+2. **Tilføj T- og U-tilfælde** (12 tilfælde) — relativt nemme at genkende og udføre.
+3. **Lær Pi-tilfælde** (6 tilfælde) — karakteristisk orienteringsmønster.
+4. **Lær L-tilfælde** (6 tilfælde) — lignende genkendelse som Pi, men med anden drejeretning.
+5. **Afslut med H-tilfælde** (4 tilfælde) — den sjældneste gruppe.
+
+## Genkendelsestips
+
+- **Se først på topfladen** for at identificere orienteringsgruppen (hvor mange gule klistermærker peger opad og hvor).
+- **Tjek derefter sidefarverne** for at bestemme det specifikke tilfælde inden for gruppen.
+- **Øv i grupper** — træn én gruppe ad gangen, indtil genkendelsen er øjeblikkelig.
+- **Brug omvendte scrambles** — opsæt et tilfælde, løs det, og prøv derefter at forudsige det omvendte.
+
+---
+
+**Med CLL mestret kan du opnå gennemsnit under 3 sekunder på 2x2.** Ét-blik-tilgangen eliminerer pausetid mellem OLL og PBL, hvilket gør dine løsninger hurtigere og mere flydende. Bliv ved med at øve genkendelse — hastighed kommer af at identificere tilfælde øjeblikkeligt.

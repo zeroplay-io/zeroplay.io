@@ -1,0 +1,317 @@
+---
+title: "Skewb Fortgeschrittene Techniken"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Skewb Fortgeschrittene Techniken
+
+Bringe dein Skewb-Lösen vom Anfänger- auf Wettkampfniveau. Dieser Leitfaden behandelt **Sarahs Mittelmethode**, die die Anfängermethode erweitert, indem alle verbleibenden Zentren in einem einzigen Schritt gelöst werden, sowie fortgeschrittene Algorithmen und Speed-Solving-Strategien, die von Top-Skewb-Lösern verwendet werden.
+
+## Notation-Erinnerung
+
+Der Skewb dreht sich um **Ecken** statt Flächen:
+
+- **R** = Rechte vordere Ecke im Uhrzeigersinn &nbsp;&nbsp; **R'** = gegen den Uhrzeigersinn
+- **L** = Linke vordere Ecke im Uhrzeigersinn &nbsp;&nbsp; **L'** = gegen den Uhrzeigersinn
+- **U** = Obere rechte vordere Ecke im Uhrzeigersinn &nbsp;&nbsp; **U'** = gegen den Uhrzeigersinn
+- **B** = Hintere rechte Ecke im Uhrzeigersinn &nbsp;&nbsp; **B'** = gegen den Uhrzeigersinn
+
+Halte den Skewb bei allen Schritten mit dem **weißen Zentrum unten**.
+
+---
+
+## Sarahs Mittelmethode
+
+Sarahs Anfängermethode löst den Skewb in 3 Schritten: erste Seite, dann Zentren, dann letzte Schicht Ecken. Das Mittel-Upgrade **kombiniert die Zentren- und Eckenschritte** und löst alle 5 verbleibenden Zentren in EINEM Algorithmus, nachdem die erste Seite fertig ist.
+
+### Übersicht
+
+| Schritt | Anfänger | Mittel |
+|------|----------|-------------|
+| 1 | Eine Seite lösen | Eine Seite lösen (gleich) |
+| 2 | Zentren positionieren | **Alle 5 Zentren in einem Schritt lösen** |
+| 3 | Letzte-Schicht-Ecken orientieren | Letzte-Schicht-Ecken orientieren (gleich) |
+
+Die wichtigste Verbesserung ist Schritt 2: Anstatt den Sledgehammer wiederholt zu verwenden, um Zentren einzeln zu positionieren, lernst du eine Reihe von Algorithmen, die alle Zentren gleichzeitig lösen.
+
+### Schritt 1: Eine Seite lösen
+
+Baue eine vollständige **weiße Seite** unten auf — alle 4 Ecken um das weiße Zentrum müssen an ihrem Platz sein, mit Weiß nach unten zeigend, und die angrenzenden Seitenfarben müssen übereinstimmen. Dieser Schritt ist identisch mit der Anfängermethode.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Verwende den Sledgehammer mit Setup-Zügen, um jede weiße Ecke zu platzieren. Mit Übung wird dieser Schritt schnell und intuitiv.
+
+### Schritt 2: Alle 5 Zentren lösen (One-Look)
+
+Nachdem die erste Seite gelöst ist, schaue auf die **5 verbleibenden Zentren** (oben + 4 Seiten) und identifiziere deinen Fall. Wende einen einzigen Algorithmus an, um alle auf einmal zu lösen.
+
+Es gibt mehrere Fälle, je nachdem wie viele Zentren an der richtigen Position sind:
+
+---
+
+#### Fall 1: Benachbarter 4-Zyklus
+
+Vier Zentren müssen zyklisch getauscht werden. Das obere Zentrum ist korrekt, aber die 4 Seitenzentren müssen rotieren.
+
+**Algorithmus: R' L R L' R' L R L'** (Doppelter Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Fall 2: Gegenüberliegender 2-Tausch
+
+Zwei gegenüberliegende Seitenzentren müssen getauscht werden.
+
+**Algorithmus: R L' R' L R L' R' L** (Inverser doppelter Sledgehammer)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Fall 3: Benachbarter 2-Tausch
+
+Zwei benachbarte Seitenzentren müssen getauscht werden. Richte sie so ein, dass die beiden zu tauschenden Zentren vorne und rechts sind.
+
+**Algorithmus: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Fall 4: Oben-Seite-Tausch + Zyklus
+
+Das obere Zentrum muss mit einem Seitenzentrum getauscht werden, und die verbleibenden Seitenzentren rotieren.
+
+**Algorithmus: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Fall 5: Dreifach-Zyklus
+
+Drei Zentren müssen zyklisch getauscht werden (oben bleibt, 3 Seiten rotieren). Richte das stationäre Seitenzentrum hinten ein.
+
+**Algorithmus: R' L R L'** (Einfacher Sledgehammer — mit korrektem Setup)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Tipps:**
+- Lerne, Zentren-Fälle schnell zu erkennen, indem du zuerst das obere Zentrum prüfst und dann die 4 Seiten scannst.
+- Viele davon sind Sledgehammer-Variationen — wenn du den Sledgehammer gut kennst, fühlen sich diese Algorithmen natürlich an.
+- Übe die Erkennung, indem du den Skewb scrambelst, die erste Seite löst und den Zentrenfall vor der Ausführung identifizierst.
+
+### Schritt 3: Letzte-Schicht-Ecken orientieren
+
+Nach dem Lösen aller Zentren müssen die Ecken der letzten Schicht möglicherweise noch gedreht werden. Dieser Schritt ist identisch mit der Anfängermethode.
+
+#### Alle 4 Ecken brauchen Drehung im Uhrzeigersinn
+
+**Algorithmus: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Alle 4 Ecken brauchen Drehung gegen den Uhrzeigersinn
+
+**Algorithmus: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 Ecken brauchen Drehung (benachbart)
+
+Richte die beiden ungelösten Ecken vorne ein. Verwende U, um sie zu positionieren, führe den Algorithmus aus und mache U rückgängig.
+
+**Algorithmus: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 Ecken brauchen Drehung (diagonal)
+
+**Algorithmus: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Fortgeschrittene Algorithmen
+
+Über die Mittelmethode hinaus gibt es zusätzliche Algorithmen, die weniger häufige Fälle effizienter behandeln.
+
+### Z-Perm-Äquivalent
+
+Wenn zwei Paare von Ecken getauscht werden müssen (wie ein Z-förmiges Muster):
+
+**Algorithmus: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Pi-Fall
+
+Die obere Seite zeigt ein Pi-Muster — zwei benachbarte Ecken orientiert, zwei nicht:
+
+**Algorithmus: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Ecken-Setup und Orientierung
+
+Wenn eine Ecke umorientiertwerden muss, verwende Setup-Züge, um einen Sledgehammer-Zyklus zu konjugieren, der sie an ihren Platz dreht:
+
+**Algorithmus: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Schneller gegenüberliegender Zentren-Tausch
+
+Ein effizienterer Algorithmus zum Tauschen zweier gegenüberliegender Zentren:
+
+**Algorithmus: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Dreifache Ecken-Orientierung
+
+Drei Ecken müssen gedreht werden (eine bleibt korrekt):
+
+**Algorithmus: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Benachbarter Ecken-Tausch
+
+Zwei benachbarte Ecken müssen ihre Positionen tauschen (nicht nur drehen):
+
+**Algorithmus: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## One-Look-Lösungskonzepte
+
+Das ultimative Ziel beim wettkampfmäßigen Skewb-Lösen ist es, die letzte Schicht vorherzusagen, während man noch die erste Seite löst.
+
+### Letzte Schicht vorhersagen
+
+Während Schritt 1, beim Aufbau der weißen Seite, achte auf die **Zentren und Ecken der oberen Schicht**. Mit Übung kannst du die Fälle von Schritt 2 und 3 erkennen, bevor Schritt 1 abgeschlossen ist.
+
+- **Beobachte das obere Zentrum** — bewegt es sich in die richtige Position, wenn du die letzte weiße Ecke einsetzt?
+- **Verfolge die Seitenzentren** — beachte, welche Seitenzentren bereits korrekt sind.
+- **Plane den gesamten Solve** — fortgeschrittene Löser können während der Inspektion den gesamten Solve planen.
+
+### Letzte Schicht beeinflussen
+
+Wenn du mehrere Möglichkeiten hast, die letzte weiße Ecke einzusetzen, wähle die Einfügung, die dir einen **einfacheren Schritt-2-Fall** gibt:
+
+- Wenn zwei Einfügungen beide die Ecke lösen, wähle die, die mehr Zentren korrekt positioniert.
+- Manchmal führt ein etwas längerer Schritt 1 zu einem Überspringen von Schritt 2 oder 3.
+
+---
+
+## Speed-Solving-Tipps
+
+### Griff und Drehen
+
+- Halte den Skewb mit **Fingerspitzen auf den Ecken** — du drehst Ecken, nicht Flächen.
+- Verwende **Zeigefinger und Daumen** jeder Hand, um gegenüberliegende Ecken zu greifen.
+- Übe glatte, kontrollierte Eckendrehungen — der Skewb belohnt Präzision statt roher Geschwindigkeit.
+- **Minimiere Umgreifen** — versuche den gesamten Sledgehammer auszuführen, ohne den Griff zu ändern.
+
+### Farbneutralität
+
+Farbneutralität beim Skewb bedeutet, dass du mit **jeder Seite** als erster Seite beginnen kannst, nicht nur mit Weiß. Das ist extrem mächtig:
+
+- Mit Farbneutralität hast du **6 mögliche erste Seiten** zur Auswahl.
+- Wähle die Seite, die am nächsten am Gelöst-Zustand ist — manchmal sind 2-3 Ecken bereits an ihrem Platz.
+- Farbneutralität ist für Sub-4-Sekunden-Lösen fast Pflicht.
+
+**So übst du:**
+1. Beginne damit, zwischen 2 gegenüberliegenden Farben neutral zu sein (z.B. Weiß und Gelb).
+2. Füge allmählich mehr Startfarben hinzu, bis du mit jeder Seite beginnen kannst.
+3. Scanne während der Inspektion schnell alle 6 Seiten und wähle die einfachste.
+
+### Inspektionsplanung
+
+Der Skewb hat nur 14 sichtbare Teile (6 Zentren + 8 Ecken), was eine vollständige Solve-Planung realistisch macht:
+
+- **Plane immer die erste Seite vollständig** während der Inspektion.
+- **Identifiziere den Zentrenfall** bevor du zu lösen beginnst.
+- **Fortgeschritten:** Plane bis Schritt 2 — wisse welchen Algorithmus du verwenden wirst, bevor du das Puzzle berührst.
+
+### Übungsroutine
+
+1. **Erste-Seite-Drills** — scrambeln und nur die erste Seite lösen, Ziel unter 2 Sekunden.
+2. **Zentren-Erkennung** — nach dem Lösen der ersten Seite den Zentrenfall so schnell wie möglich identifizieren, ohne auszuführen.
+3. **Vollständige Solves** — Sets von 12 Zeitmessungen, durchschnittlich 5 und durchschnittlich 12 verfolgen.
+4. **Algorithmen-Drilling** — jeden Zentren- und Ecken-Algorithmus 20 Mal hintereinander für Muskelgedächtnis üben.
+5. **Farbneutralitäts-Übung** — zwinge dich, bei jedem Solve mit einer anderen Farbe zu beginnen.
+
+---
+
+**Mit Sarahs Mittelmethode und engagiertem Üben sind Sub-5-Sekunden-Skewb-Durchschnitte erreichbar.** Der Skewb ist eines der planungsfreundlichsten Puzzles im Speedcubing — weniger Teile bedeuten, dass du während der Inspektion mehr vorhersagen kannst. Konzentriere dich auf Erkennungsgeschwindigkeit und geschmeidiges Drehen, und du wirst schnelle Verbesserung sehen.

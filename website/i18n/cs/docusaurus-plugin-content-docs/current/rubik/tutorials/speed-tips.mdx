@@ -1,0 +1,286 @@
+---
+title: Tipy pro Speed Cubing
+sidebar_position: 10
+description: Essential tips and techniques to improve your Rubik's Cube solving speed. From cross planning to lookahead and practice routines.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-speed-tips.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Tipy pro Speed Cubing
+
+Zrychlování skládání Rubikovy kostky není jen o rychlejším otáčení. Největší pokroky přicházejí z plánování dopředu, snižování pauz a cíleného tréninku. Tento průvodce pokrývá klíčové dovednosti, které odlišují běžné řešitele od závodních speedcuberů.
+
+---
+
+## Plánování kříže
+
+Kříž je první krok řešení CFOP a jediná část, kterou lze **kompletně naplánovat během inspekce**. Zvládnutí plánování kříže vám dává bezplatný náskok u každého složení.
+
+### Využijte celých 15 sekund inspekce
+
+Na závodech máte 15 sekund inspekce před startem časovače. Využijte každou sekundu:
+- Prvních 5 sekund: Identifikujte polohu všech 4 hran kříže.
+- Dalších 5 sekund: Naplánujte kompletní řešení kříže (ideálně 6-8 tahů nebo méně).
+- Posledních 5 sekund: Mentálně projděte sekvenci a naplánujte první F2L pár.
+
+### Skládejte kříž na spodní straně
+
+Vždy skládejte kříž na **spodní straně** (vrstva D). Začátečníci často skládají kříž nahoře a pak kostku otočí, čímž ztrácejí 1-2 sekundy a orientaci. Skládáním dole od začátku můžete okamžitě hledat F2L páry, zatímco dokončujete kříž.
+
+**Příklad: Kříž za 6 tahů**
+
+Z tohoto scramble lze bílý kříž složit za pouhých 6 tahů:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="D R F' D' R' D"
+  setupAlg="D' R D F R' D'"
+  stickering="cross"
+/>
+
+**Příklad: Efektivní kříž za 5 tahů**
+
+S dobrým plánováním lze mnoho křížů složit za 5 tahů nebo méně:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R D' F D2 R'"
+  setupAlg="R D2 F' D R'"
+  stickering="cross"
+/>
+
+### Cvičte kříž se zavřenýma očima
+
+Toto je nejlepší cvičení na kříž:
+1. Zamíchejte kostku.
+2. Během inspekce naplánujte celé řešení kříže.
+3. Zavřete oči a proveďte kříž z paměti.
+4. Otevřete oči ke kontrole.
+
+Pokud je kříž správný, vaše plánování je solidní. Pokud ne, zjistěte, kde vaše mentální sledování selhalo.
+
+### Barevná neutralita
+
+Většina začátečníků se učí pouze s bílým křížem. **Barevně neutrální** řešitelé mohou začít s kteroukoliv ze 6 barev a volí nejsnazší kříž pro každý scramble. To typicky poskytuje výhodu 2-3 tahů na kříži, což se sčítá na 1-2 sekundy na složení v průměru.
+
+Pro rozvoj barevné neutrality:
+1. Začněte přidáním jedné barvy (např. žlutá, opak bílé).
+2. Pro každý scramble plánujte bílý i žlutý kříž a zvolte kratší.
+3. Postupně přidávejte více barev, dokud neovládnete všech šest.
+
+---
+
+## Lookahead (Předvídání)
+
+Lookahead je schopnost **sledovat další dílek při skládání aktuálního**. Je to nejdůležitější dovednost pro překonání rychlostních plató a to, co odlišuje řešitele sub-15 od sub-10.
+
+### Co lookahead skutečně znamená
+
+Během F2L vždy skládáte jeden pár roh-hrana. Bez lookahead je sekvence: složit pár – pauza – hledat další pár – složit pár – pauza. Tyto pauzy se sčítají na několik sekund za složení.
+
+S lookahead vaše oči již skenují dílky dalšího páru, zatímco vaše ruce provádějí známý algoritmus pro aktuální pár. Cílem je **nula pauz** mezi páry.
+
+### Jak trénovat lookahead
+
+**Pomalá složení** jsou nejúčinnější tréninková metoda:
+
+1. Nastavte metronom na 1-2 otočky za sekundu (60-120 BPM).
+2. Skládejte F2L v tomto konstantním tempu, synchronizujte každý tah s úderem.
+3. Pravidlo: **můžete otáčet pomalu, ale nikdy nesmíte přestat otáčet.**
+4. Pokud musíte zastavit pro hledání dalšího páru, otáčíte příliš rychle. Ještě zpomalte.
+
+Po týdnech tréninku přirozeně zrychlíte při zachování plynulého toku.
+
+### Slepý trénink F2L párů
+
+1. Zamíchejte kostku.
+2. Složte kříž.
+3. Najděte jeden F2L pár a naplánujte vložení v hlavě.
+4. Zavřete oči a proveďte vložení.
+5. Otevřete oči a opakujte pro další pár.
+
+Toto nutí váš mozek plně naplánovat každé vložení před provedením, což posiluje mentální sledování potřebné pro skutečný lookahead.
+
+---
+
+## Efektivní F2L
+
+Fáze F2L (First Two Layers) má nejvíce prostoru pro optimalizaci. I malá zlepšení efektivity F2L se kumulují přes stovky složení.
+
+### Vyhněte se zbytečným rotacím
+
+Rotace celou kostkou (y, y') stojí čas a narušují lookahead. Typické složení začátečníka má 6-8 rotací během F2L. Pokročilý řešitel průměrně 1-2.
+
+**Příklad: Vložení do zadního pravého slotu bez rotace**
+
+Místo rotace y' a vložení do předního pravého slotu použijte vložení do zadních slotů:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U' R'"
+  setupAlg="R U R'"
+/>
+
+**vs. tentýž pár vyžadující rotaci:**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="y' R U' R'"
+  setupAlg="R U R' y"
+/>
+
+První verze ušetří asi 0,5 sekundy — rotace samotná plus přechycení.
+
+### Upřednostňujte zadní sloty
+
+Vkládání F2L párů do **zadního pravého** a **zadního levého** slotu je obecně efektivnější, protože:
+- Tahy R a L jsou rychlejší než tahy F.
+- Vložení do zadních slotů často vyžadují méně tahů.
+- Udržujete lepší lookahead, když nesložené dílky jsou viditelné před vámi.
+
+### Ovlivňujte další pár
+
+Při vkládání aktuálního F2L páru můžete někdy připravit další pár zdarma. Například pokud je roh dalšího páru ve vrstvě U, volba specifického úhlu vložení pro aktuální pár může přesunout tento roh do výhodné pozice.
+
+Je to pokročilá dovednost, ale i pouhé povědomí o ní pomáhá činit lepší rozhodnutí.
+
+### Multi-slotting
+
+V některých případech můžete složit dva F2L páry současně nebo složit jeden pár a částečně připravit další. V praxi je to vzácné, ale stojí za to to rozpoznat, když se naskytne příležitost.
+
+---
+
+## Rozpoznávání OLL/PLL
+
+Rychlé rozpoznávání případů OLL a PLL eliminuje pauzu mezi F2L a poslední vrstvou.
+
+### Rozpoznávejte ze dvou úhlů
+
+Cvičte identifikaci případů OLL současným pohledem na **horní stranu** a **přední stranu**. To vám dá všechny potřebné informace bez otáčení kostky ke kontrole dalších stran.
+
+U PLL zkontrolujte **přední a pravou** stranu (dvě strany viditelné z vašeho standardního úhlu skládání). S tréninkem se rozpoznání ze dvou stran stane okamžitým.
+
+### Pre-AUF
+
+AUF (Adjust U Face) je tah U/U'/U2, který provedete před zahájením algoritmu OLL nebo PLL pro správné zarovnání případu. Pokročilí řešitelé provádějí AUF během posledního tahu F2L nebo během rozpoznávání, překrývajíce ho s dobou přemýšlení.
+
+### Predikce OLL
+
+Během posledního vložení F2L často znáte 2-3 ze 4 orientací rohů horní strany. Sledováním, jak vaše vložení ovlivní poslední roh, můžete předpovědět případ OLL před dokončením F2L a začít provádět algoritmus OLL bez pauzy.
+
+---
+
+## Tréninkové rutiny
+
+Cílený trénink překonává bezmyšlenkovité skládání. Strukturujte tréninky pro maximální zlepšení.
+
+### Denní tréninkový plán (45-60 minut)
+
+**Cvičení kříže (10 minut)**
+- Zamíchejte, naplánujte kříž během inspekce, složte pouze kříž.
+- Cíl: stabilně pod 2 sekundy, plánováno se zavřenýma očima.
+- Sledujte průměrný počet tahů. Mířte na 6 nebo méně.
+
+**F2L pomalá složení (15 minut)**
+- Použijte metronom. Celé F2L s konstantní rychlostí otáčení.
+- Soustřeďte se výhradně na lookahead a plynulý tok.
+- Neměřte čas těchto složení. Rychlost tu není cílem.
+
+**Trénink algoritmů (10 minut)**
+- Vyberte 2-3 algoritmy OLL nebo PLL, které se ještě učíte.
+- Opakujte každý 20-30x, dokud nezíská svalová paměť převahu.
+- Pak zamíchejte a cvičte rozpoznávání + provádění.
+
+**Měřená složení (15-20 minut)**
+- Udělejte **průměr z 12** — dvanáct měřených složení, odstraňte nejlepší a nejhorší, zprůměrujte zbývajících deset.
+- Zaznamenávejte výsledky. Sledujte trendy v průběhu týdnů, ne jednotlivá složení.
+- Po každém sezení zhodnoťte nejhorší složení. Co se pokazilo?
+
+### Průměry a sledování
+
+- **Ao5** (Průměr z 5): Rychlá kontrola aktuální formy. Dobré pro rozcvičku.
+- **Ao12** (Průměr z 12): Standardní závodní metrika. Nejspolehlivější ukazatel úrovně dovedností.
+- **Ao100**: Sledování dlouhodobých trendů. Počítejte týdně pro měření pokroku.
+
+Používejte aplikaci s časovačem, která automaticky sleduje historii. Vidět, jak váš průměr klesá v průběhu týdnů, je silná motivace.
+
+### Cílený vs. bezmyšlenkovitý trénink
+
+200 složení při sledování televize vás nezrychlí. Cílený trénink znamená:
+- Vybrat **jednu konkrétní dovednost** pro zaměření za sezení (kříž, lookahead, rozpoznávání OLL).
+- Věnovat této dovednosti plnou pozornost při každém složení.
+- Analyzovat chyby místo okamžitého zamíchání.
+
+Deset soustředěných složení překoná sto na autopilotě.
+
+---
+
+## Tipy pro závody
+
+Závodění je jiná dovednost než trénink doma. Nervy, neznámé prostředí a časový tlak ovlivňují výkon.
+
+### Správně se rozcvičte
+
+- Přijďte brzy a udělejte 20-30 uvolněných složení před vaší disciplínou.
+- Procvičte algoritmy pro probuzení svalové paměti.
+- Nepokoušejte se o osobní rekordy při rozcvičce. Prostě rozehřejte ruce.
+
+### Zůstaňte v klidu během složení
+
+- **Soustřeďte se na plynulé skládání, ne na rychlé.** Nucení rychlosti způsobuje chyby a zaseknutí.
+- Pokud uděláte chybu v páru nebo algoritmu, nadechněte se a pokračujte. Nepanikařte a nepokoušejte se dohnat čas.
+- Pamatujte: váš závodní průměr vyřazuje nejlepší a nejhorší složení, takže jedno špatné složení nezničí výsledek.
+
+### Technika inspekce
+
+- Držte kostku v úrovni očí během inspekce. Nedívejte se dolů na stůl.
+- Otáčejte kostkou pohyby y a x pro efektivní prohlédnutí všech stran.
+- Naplánujte kříž kompletně. Pokud čas dovolí, lokalizujte první F2L pár.
+- Naslouchejte upozorněním na 8 a 12 sekund a přizpůsobte tempo.
+
+### Znalost Stackmat časovače
+
+- Trénujte doma se Stackmat časovačem, pokud plánujete závodit. Umístění rukou a pohyb startu/stopu se liší od ťukání na obrazovku telefonu.
+- Obě ruce musí být ploché na podložkách. Časovač se spustí, když současně zvednete obě ruce.
+- Cvičte plynulý start, abyste nezaváhali u prvního tahu kříže.
+
+---
+
+## Hardware
+
+Dobrá závodní kostka dělá skutečný rozdíl. Nepotřebujete nejdražší kostku pro zlepšení, ale přechod ze standardní Rubik's na moderní speed cube je jedno z největších jednotlivých vylepšení.
+
+### Co dělá dobrou speed cube
+
+- **Corner cutting**: Kostka by měla tolerovat mírné nepřesnosti bez zaseknutí. Moderní kostky zvládají corner-cut 45 stupňů a více.
+- **Hladké, ovladatelné otáčení**: Ne příliš rychlé (způsobuje přetočení) a ne příliš pomalé (vyžaduje extra sílu).
+- **Stabilita**: Kostka by měla udržet tvar při rychlém otáčení bez vypadávání dílků či deformace.
+
+### Magnetické kostky
+
+Téměř všichni závodní cubeři dnes používají **magnetické kostky**. Malé magnety uvnitř každého dílku vytvářejí jemné zacvaknutí při každém otočení o 90 stupňů, což poskytuje:
+- Lepší kontrolu při vysokých rychlostech
+- Méně přetočení a zaseknutí
+- Příjemnější pocit
+
+Magnetické kostky od značek jako MoYu, QiYi a GAN jsou dostupné v různých cenových kategoriích. I levné magnetické kostky (pod 10 $) jsou dramaticky lepší než nemagnetické.
+
+### Napětí a mazání
+
+- **Napětí** ovládá, jak volná nebo tuhá kostka je. Volnější napětí umožňuje rychlejší otáčení, ale snižuje stabilitu. Začněte se středním napětím a přizpůsobte svému stylu.
+- **Mazání** snižuje tření a mění pocit z kostky. Silikonová maziva jsou standardem:
+  - **Rychlé mazivo** na dílky pro rychlost.
+  - **Pomalé/husté mazivo** na jádro pro stabilitu.
+  - Přemažte každých pár set složení nebo když kostka začne drhnout.
+
+### Doporučení nastavení pro začátečníky
+
+1. Pořiďte si jakoukoliv moderní magnetickou 3x3 (MoYu RS3M, QiYi Tornado nebo podobnou).
+2. Ponechte tovární napětí první týden pro zvyknutí na kostku.
+3. Přidejte malé množství silikonového maziva, pokud kostka působí suše.
+4. Upravujte napětí postupně — povolte o čtvrt otáčky najednou, dokud nenajdete svou preferenci.
+
+Správně nastavená kostka eliminuje hardware jako proměnnou a umožňuje vám plně se soustředit na zlepšování techniky.

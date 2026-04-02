@@ -1,0 +1,219 @@
+---
+title: Überblick über die CFOP-Methode
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Überblick über die CFOP-Methode
+
+Die **CFOP-Methode** (auch bekannt als **Fridrich-Methode**) ist die weltweit am häufigsten verwendete Speedcubing-Methode. Die überwiegende Mehrheit der Sub-20-Löser und Weltrekordhalter verwendet CFOP. Sie baut auf der Anfänger-Schichtmethode auf, ist aber drastisch effizienter — sie reduziert eine durchschnittliche Lösung von über 100 Zügen auf etwa 55-60 Züge.
+
+**CFOP** steht für die vier Schritte:
+
+1. **C**ross — 4 Kantensteine auf der Unterseite lösen
+2. **F**2L — Die ersten zwei Schichten (4 Ecken-Kanten-Paare verbinden und einsetzen)
+3. **O**LL — Letzte Schicht orientieren (die gesamte Oberseite einfarbig machen)
+4. **P**LL — Letzte Schicht permutieren (alle oberen Steine korrekt anordnen)
+
+## CFOP vs. Anfängermethode
+
+| | Anfänger (LBL) | CFOP |
+|---|---|---|
+| Schritte | 7 | 4 |
+| Durchschnittliche Züge | 100-120 | 55-60 |
+| Zu lernende Algorithmen | 5-8 | 78 (vollständig) / 16 (2-Look) |
+| Typische Geschwindigkeit | 1-3 Minuten | 10-20 Sekunden |
+| Hauptunterschied | Schritt für Schritt, ein Stein nach dem anderen | Steine zusammen paaren, weniger Schritte |
+
+Die gute Nachricht: Du kannst CFOP **schrittweise** lernen. Beginne mit intuitivem F2L und 2-Look OLL/PLL (nur 16 Algorithmen) und erweitere dann nach und nach auf vollständiges OLL (57 Algorithmen) und vollständiges PLL (21 Algorithmen).
+
+---
+
+## Schritt 1: Kreuz
+
+Das Kreuz ist das gleiche Konzept wie bei der Anfängermethode — 4 weiße Kantensteine auf der Unterseite lösen, sodass jede Kante auch zu ihrem Seitenzentrum passt. Der Unterschied bei CFOP ist **wie** du vorgehst:
+
+- **Plane das gesamte Kreuz während der Inspektion** (15 Sekunden vor dem Lösungsbeginn)
+- **Löse das Kreuz auf der Unterseite** — kein Umdrehen des Würfels
+- **Ziele auf 8 Züge oder weniger** — ein effizientes Kreuz benötigt durchschnittlich 6-7 Züge
+
+**Beispiel: Eine Kreuzkante direkt nach unten lösen**
+
+Hier ist die weiß-blaue Kante in der oberen Schicht. Wir richten sie aus und setzen sie mit einem Zug direkt nach unten ein:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Beispiel: Kreuzkante muss umpositioniert werden**
+
+Manchmal ist eine Kante im falschen Slot oder gekippt. Hier korrigieren wir eine falsch platzierte Kante:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tipps für ein schnelles Kreuz:**
+- Übe das Planen des Kreuzes mit geschlossenen Augen
+- Lerne es in 8 Zügen oder weniger aus jeder Vermischung zu lösen
+- Arbeite von Anfang an daran, das Kreuz unten zu lösen — vermeide die Gewohnheit, oben zu lösen
+
+---
+
+## Schritt 2: F2L (Erste zwei Schichten)
+
+F2L ist das Herzstück von CFOP und bringt die größten Zeiteinsparungen. Anstatt die Ecken der ersten Schicht und die Kanten der zweiten Schicht separat zu lösen (wie bei der Anfängermethode), **paarst** du einen Eckstein mit seiner passenden Kante und **setzt** sie als eine Einheit zusammen ein.
+
+Es gibt 4 Ecken-Kanten-Paare (genannt **Slots**), die gelöst werden müssen. Jeder Slot befindet sich zwischen zwei Seitenflächen in den unteren zwei Schichten.
+
+**Grundlegender F2L-Fall: Ecke und Kante beide in der oberen Schicht**
+
+Die weiß-rot-grüne Ecke ist in der oberen Schicht, und die rot-grüne Kante ist ebenfalls in der oberen Schicht. Wir paaren sie und setzen ein:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Ein weiterer häufiger Fall: Ein falsches Paar trennen**
+
+Manchmal sind Steine falsch gepaart. Wir trennen sie und fügen sie korrekt wieder zusammen:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L kann **intuitiv** gelernt werden — durch Verständnis der Logik des Versteckens, Paarens und Einsetzens — oder **algorithmisch** mit 41 spezifischen Fällen. Die meisten Speedcuber verwenden eine Kombination aus beidem.
+
+Die vollständige Liste der F2L-Fälle und Algorithmen findest du im Leitfaden [**F2L: Erste zwei Schichten**](./f2l).
+
+---
+
+## Schritt 3: OLL (Orientierung der letzten Schicht)
+
+Nach Abschluss der ersten beiden Schichten wird die Oberseite einige gelbe und einige nicht-gelbe Aufkleber haben. Das Ziel von OLL ist es, die **gesamte Oberseite gelb** zu machen — die Seitenfarben sind uns noch egal.
+
+Vollständiges OLL hat **57 Algorithmen**. Du kannst jedoch mit **2-Look OLL** beginnen, das nur 10 Algorithmen verwendet, indem der Schritt in zwei Teile aufgeteilt wird:
+
+1. **Erster Blick:** Ein gelbes Kreuz oben bilden (3 Fälle, mit 2 Algorithmen aus verschiedenen Ausrichtungen)
+2. **Zweiter Blick:** Die gelben Ecken orientieren (7 Algorithmen)
+
+**Beispiel: Sune (einer der häufigsten OLL-Fälle)**
+
+Dies ist OLL #26, allgemein **Sune** genannt. Eine gelbe Ecke ist orientiert, und die anderen drei müssen gedreht werden:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Beispiel: OLL-Kreuz-Fall (das gelbe Kreuz bilden)**
+
+Wenn du eine L-Form aus gelben Kanten oben hast, halte das L hinten links und wende an:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tipps zum Lernen von OLL:**
+- Beginne mit 2-Look OLL — es fügt nur wenige Sekunden zu deiner Lösung hinzu
+- Lerne zuerst Sune und Anti-Sune; sie tauchen in vielen OLL-Fällen auf
+- Übe das Erkennen von Fällen anhand des Musters der gelben Aufkleber oben
+
+---
+
+## Schritt 4: PLL (Permutation der letzten Schicht)
+
+Der letzte Schritt! Alle gelben Aufkleber sind jetzt oben, aber die Seitenfarben der letzten Schicht stimmen möglicherweise nicht. PLL **ordnet** die Steine der oberen Schicht in ihre korrekten Positionen um, um die Lösung abzuschließen.
+
+Vollständiges PLL hat **21 Algorithmen**. Du kannst mit **2-Look PLL** beginnen, das nur 6 Algorithmen verwendet:
+
+1. **Erster Blick:** Die Ecken korrekt positionieren (2 Algorithmen)
+2. **Zweiter Blick:** Die Kanten korrekt positionieren (4 Algorithmen)
+
+**Beispiel: T-Perm (einer der nützlichsten PLL-Algorithmen)**
+
+T-Perm tauscht zwei Ecken und zwei Kanten. Er kommt häufig vor und dient als Grundlage zum Erlernen anderer PLLs:
+
+**Algorithmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Beispiel: U-Perm (a) — 3-Kanten-Zyklus**
+
+U-Perm dreht drei Kanten im Uhrzeigersinn, während alle Ecken bereits an ihrem Platz sind:
+
+**Algorithmus: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tipps zum Lernen von PLL:**
+- Beginne mit T-Perm, U-Perms (a und b) und A-Perms
+- Lerne PLLs anhand der Seitenfarben zu erkennen (Scheinwerfermuster)
+- Übe das Ausführen von PLLs aus jedem AUF-Winkel (Anpassung der oberen Fläche)
+
+---
+
+## Wann CFOP lernen
+
+CFOP ist der natürliche nächste Schritt, nachdem du die Anfänger-Schichtmethode beherrschst. Hier ist ein empfohlener Fortschritt:
+
+### Phase 1: Anfänger bis unter 60 Sekunden
+- Beherrsche die Anfängermethode, bis deine Lösungen konsistent sind
+- Lerne das **Kreuz unten** zu lösen
+- Beginne mit dem Üben von **intuitivem F2L** — beobachte wie Paare gebildet und eingesetzt werden
+
+### Phase 2: Unter 60 bis unter 30 Sekunden
+- Verwende vollständiges **intuitives F2L** für alle 4 Paare
+- Lerne **2-Look OLL** (10 Algorithmen)
+- Lerne **2-Look PLL** (6 Algorithmen)
+- Übe **Lookahead** — verfolge das nächste Paar, während du das aktuelle einsetzt
+
+### Phase 3: Unter 30 bis unter 20 Sekunden
+- Lerne **vollständiges PLL** (21 Algorithmen)
+- Beginne mit dem Lernen von **vollständigem OLL** (57 Algorithmen)
+- Optimiere deine F2L-Lösungen — lerne die [**algorithmischen F2L-Fälle**](./f2l)
+- Arbeite an der Kreuzeffizienz (plane das gesamte Kreuz während der Inspektion)
+
+### Phase 4: Unter 20 und darüber hinaus
+- Vervollständige **vollständiges OLL**
+- Lerne fortgeschrittene F2L-Tricks (Leerer-Slot-Techniken, Multi-Slotting)
+- Entwickle starke **Lookahead**-Gewohnheiten
+- Arbeite an Drehgeschwindigkeit und Flüssigkeit
+
+---
+
+## Nächste Schritte
+
+Bereit, tiefer in jeden Schritt einzutauchen? Schau dir diese detaillierten Anleitungen an:
+
+- [**F2L: Erste zwei Schichten**](./f2l) — Alle gängigen F2L-Fälle mit Algorithmen und Demos
+- [**OLL-Algorithmen**](./oll) — Alle 57 OLL-Fälle mit 2-Look OLL für Anfänger
+- [**PLL-Algorithmen**](./pll) — Alle 21 PLL-Fälle mit 2-Look PLL für Anfänger
+- [**Fingertricks-Leitfaden**](./finger-tricks) — Effiziente Zugausführung und essentielle Trigger
+- [**Speedcubing-Tipps**](./speed-tips) — Kreuzplanung, Lookahead und Übungsroutinen
+
+**Viel Spaß beim Cuben!** Die Reise vom Anfänger zu Sub-20 ist eine der lohnendsten Herausforderungen im Speedcubing. Nimm es Schritt für Schritt, und du wirst es schaffen.

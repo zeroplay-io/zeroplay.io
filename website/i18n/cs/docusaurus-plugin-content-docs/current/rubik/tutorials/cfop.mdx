@@ -1,0 +1,219 @@
+---
+title: Přehled metody CFOP
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Přehled metody CFOP
+
+Metoda **CFOP** (známá také jako **Fridrichova metoda**) je celosvětově nejpoužívanější metodou speedcubingu. Naprostá většina řešitelů pod 20 sekund a držitelů světových rekordů používá CFOP. Staví na metodě po vrstvách pro začátečníky, ale je dramaticky efektivnější — průměrné řešení snižuje z více než 100 tahů na přibližně 55–60 tahů.
+
+**CFOP** je zkratka pro čtyři kroky:
+
+1. **C**ross — Vyřešit 4 hrany na spodní straně
+2. **F**2L — První dvě vrstvy (spárovat a vložit 4 páry roh-hrana)
+3. **O**LL — Orientovat poslední vrstvu (sjednotit barvu celé horní strany)
+4. **P**LL — Permutovat poslední vrstvu (správně rozmístit všechny horní díly)
+
+## CFOP vs. metoda pro začátečníky
+
+| | Začátečník (LBL) | CFOP |
+|---|---|---|
+| Kroky | 7 | 4 |
+| Průměrný počet tahů | 100–120 | 55–60 |
+| Algoritmů k naučení | 5–8 | 78 (plný) / 16 (2-look) |
+| Typická rychlost | 1–3 minuty | 10–20 sekund |
+| Klíčový rozdíl | Krok za krokem, díl po dílu | Párování dílů dohromady, méně kroků |
+
+Dobrá zpráva: CFOP se můžete učit **postupně**. Začněte s intuitivním F2L a 2-look OLL/PLL (pouze 16 algoritmů), poté se postupem času rozšiřte na plný OLL (57 algoritmů) a plný PLL (21 algoritmů).
+
+---
+
+## Krok 1: Kříž
+
+Kříž je stejný koncept jako u metody pro začátečníky — vyřešit 4 bílé hrany na spodní straně tak, aby každá hrana také odpovídala středovému poli svého boku. Rozdíl u CFOP je **jak** k tomu přistoupíte:
+
+- **Naplánujte si celý kříž během inspekce** (15 sekund před začátkem řešení)
+- **Řešte kříž na spodku** — bez překlápění kostky
+- **Cílte na 8 tahů nebo méně** — efektivní kříž průměrně zabere 6–7 tahů
+
+**Příklad: Řešení hrany kříže přímo na spodek**
+
+Zde je bílo-modrá hrana v horní vrstvě. Zarovnáme ji a vložíme přímo na spodek jedním tahem:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Příklad: Hrana kříže potřebuje přemístit**
+
+Někdy je hrana ve špatném slotu nebo je překlopená. Zde opravíme špatně umístěnou hranu:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tipy pro rychlý kříž:**
+- Cvičte plánování kříže se zavřenýma očima
+- Naučte se ho řešit na 8 tahů nebo méně z jakéhokoli zamíchání
+- Pracujte na řešení kříže na spodku od prvního dne — vyvarujte se návyku řešit nahoře
+
+---
+
+## Krok 2: F2L (První dvě vrstvy)
+
+F2L je srdcem CFOP a přináší největší úspory času. Místo řešení rohů první vrstvy a hran druhé vrstvy odděleně (jako u metody pro začátečníky) **spárujete** rohový díl s jeho odpovídající hranou a **vložíte** je společně jako jeden celek.
+
+Existují 4 páry roh-hrana (nazývané **sloty**), které je třeba vyřešit. Každý slot se nachází mezi dvěma bočními stranami ve spodních dvou vrstvách.
+
+**Základní případ F2L: Roh i hrana v horní vrstvě**
+
+Bílo-červeno-zelený roh je v horní vrstvě a červeno-zelená hrana je také v horní vrstvě. Spárujeme je a vložíme:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Další běžný případ: Rozdělení nesprávného páru**
+
+Někdy jsou díly spárovány nesprávně. Rozdělíme je a znovu správně spojíme:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L se lze naučit **intuitivně** — pochopením logiky skrývání, párování a vkládání — nebo **algoritmicky** se 41 konkrétními případy. Většina speedcuberů používá kombinaci obojího.
+
+Kompletní seznam případů a algoritmů F2L najdete v průvodci [**F2L: První dvě vrstvy**](./f2l).
+
+---
+
+## Krok 3: OLL (Orientace poslední vrstvy)
+
+Po dokončení prvních dvou vrstev bude horní strana obsahovat některé žluté a některé nežluté nálepky. Cílem OLL je udělat **celou horní stranu žlutou** — o barvy boků se zatím nestaráme.
+
+Plný OLL má **57 algoritmů**. Můžete však začít s **2-look OLL**, který používá pouze 10 algoritmů rozdělením kroku na dvě části:
+
+1. **První pohled:** Vytvořit žlutý kříž nahoře (3 případy, pomocí 2 algoritmů aplikovaných z různých orientací)
+2. **Druhý pohled:** Orientovat žluté rohy (7 algoritmů)
+
+**Příklad: Sune (jeden z nejběžnějších případů OLL)**
+
+Toto je OLL #26, běžně nazývaný **Sune**. Jeden žlutý roh je orientovaný a ostatní tři potřebují otočit:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Příklad: Případ kříže OLL (tvorba žlutého kříže)**
+
+Když máte nahoře L-tvar z žlutých hran, umístěte L dozadu vlevo a aplikujte:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tipy pro učení OLL:**
+- Začněte s 2-look OLL — přidá jen pár sekund k vašemu řešení
+- Naučte se nejdříve Sune a Anti-Sune; objevují se v mnoha případech OLL
+- Cvičte rozpoznávání případů podle vzoru žlutých nálepek nahoře
+
+---
+
+## Krok 4: PLL (Permutace poslední vrstvy)
+
+Poslední krok! Všechny žluté nálepky jsou nyní nahoře, ale barvy boků dílů poslední vrstvy nemusí odpovídat. PLL **přeskupí** díly horní vrstvy do jejich správných pozic pro dokončení řešení.
+
+Plný PLL má **21 algoritmů**. Můžete začít s **2-look PLL**, který používá pouze 6 algoritmů:
+
+1. **První pohled:** Správně umístit rohy (2 algoritmy)
+2. **Druhý pohled:** Správně umístit hrany (4 algoritmy)
+
+**Příklad: T-Perm (jeden z nejužitečnějších algoritmů PLL)**
+
+T-Perm prohodí dva rohy a dvě hrany. Objevuje se často a slouží jako základ pro učení dalších PLL:
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Příklad: U-Perm (a) — Cyklus 3 hran**
+
+U-Perm cyklicky přesune tři hrany ve směru hodinových ručiček, zatímco všechny rohy jsou již na svém místě:
+
+**Algoritmus: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tipy pro učení PLL:**
+- Začněte s T-Perm, U-Permy (a a b) a A-Permy
+- Naučte se rozpoznávat PLL podle bočních barev (vzor světel)
+- Cvičte provádění PLL z jakéhokoli úhlu AUF (nastavení horní strany)
+
+---
+
+## Kdy se učit CFOP
+
+CFOP je přirozený další krok poté, co ovládnete metodu po vrstvách pro začátečníky. Zde je doporučený postup:
+
+### Fáze 1: Od začátečníka pod 60 sekund
+- Zvládněte metodu pro začátečníky, dokud vaše řešení nebudou konzistentní
+- Naučte se řešit **kříž na spodku**
+- Začněte procvičovat **intuitivní F2L** — sledujte, jak se páry tvoří a vkládají
+
+### Fáze 2: Pod 60 na pod 30 sekund
+- Používejte plný **intuitivní F2L** pro všechny 4 páry
+- Naučte se **2-look OLL** (10 algoritmů)
+- Naučte se **2-look PLL** (6 algoritmů)
+- Cvičte **lookahead** — sledování dalšího páru při vkládání aktuálního
+
+### Fáze 3: Pod 30 na pod 20 sekund
+- Naučte se **plný PLL** (21 algoritmů)
+- Začněte se učit **plný OLL** (57 algoritmů)
+- Optimalizujte svá řešení F2L — naučte se [**algoritmické případy F2L**](./f2l)
+- Pracujte na efektivitě kříže (naplánujte celý kříž během inspekce)
+
+### Fáze 4: Pod 20 a dále
+- Dokončete **plný OLL**
+- Naučte se pokročilé triky F2L (techniky prázdného slotu, multi-slotting)
+- Rozvíjejte silné návyky **lookaheadu**
+- Pracujte na rychlosti a plynulosti tahů
+
+---
+
+## Další kroky
+
+Jste připraveni ponořit se hlouběji do každého kroku? Podívejte se na tyto podrobné průvodce:
+
+- [**F2L: První dvě vrstvy**](./f2l) — Všechny běžné případy F2L s algoritmy a ukázkami
+- [**Algoritmy OLL**](./oll) — Všech 57 případů OLL s 2-look OLL pro začátečníky
+- [**Algoritmy PLL**](./pll) — Všech 21 případů PLL s 2-look PLL pro začátečníky
+- [**Průvodce finger tricky**](./finger-tricks) — Efektivní provádění tahů a základní triggery
+- [**Tipy pro speedcubing**](./speed-tips) — Plánování kříže, lookahead a tréninkové rutiny
+
+**Šťastné skládání!** Cesta od začátečníka k časům pod 20 sekund je jednou z nejodměňujícnějších výzev ve speedcubingu. Berte to krok za krokem a dostanete se tam.

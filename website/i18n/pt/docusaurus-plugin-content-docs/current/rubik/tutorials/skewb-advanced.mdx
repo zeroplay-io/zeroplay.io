@@ -1,0 +1,317 @@
+---
+title: "Técnicas avançadas de Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Técnicas avançadas de Skewb
+
+Leve sua resolução do Skewb do nível iniciante ao competitivo. Este guia cobre o **método intermediário de Sarah**, que melhora o método iniciante resolvendo todos os centros restantes em uma única etapa, além de algoritmos avançados e estratégias de speed solving usadas pelos melhores resolvedores de Skewb.
+
+## Lembrete de notação
+
+O Skewb gira ao redor de **cantos** em vez de faces:
+
+- **R** = Canto frontal direito no sentido horário &nbsp;&nbsp; **R'** = anti-horário
+- **L** = Canto frontal esquerdo no sentido horário &nbsp;&nbsp; **L'** = anti-horário
+- **U** = Canto frontal superior direito no sentido horário &nbsp;&nbsp; **U'** = anti-horário
+- **B** = Canto traseiro direito no sentido horário &nbsp;&nbsp; **B'** = anti-horário
+
+Segure o Skewb com o **centro branco embaixo** em todas as etapas.
+
+---
+
+## Método intermediário de Sarah
+
+O método iniciante de Sarah resolve o Skewb em 3 etapas: primeira face, depois centros, depois cantos da última camada. A melhoria intermediária **combina as etapas de centros e cantos**, resolvendo todos os 5 centros restantes em UM algoritmo após a primeira face estar completa.
+
+### Visão geral
+
+| Etapa | Iniciante | Intermediário |
+|------|----------|-------------|
+| 1 | Resolver uma face | Resolver uma face (igual) |
+| 2 | Posicionar centros | **Resolver todos os 5 centros em uma etapa** |
+| 3 | Orientar cantos da última camada | Orientar cantos da última camada (igual) |
+
+A melhoria principal é a Etapa 2: em vez de usar o Sledgehammer repetidamente para posicionar centros um de cada vez, você aprende um conjunto de algoritmos que resolvem todos os centros simultaneamente.
+
+### Etapa 1: Resolver uma face
+
+Construa uma **face branca** completa embaixo — os 4 cantos ao redor do centro branco devem estar no lugar com o branco voltado para baixo, e as cores laterais adjacentes devem corresponder. Esta etapa é idêntica ao método iniciante.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Use o Sledgehammer com movimentos de preparação para colocar cada canto branco. Com prática, esta etapa se torna rápida e intuitiva.
+
+### Etapa 2: Resolver todos os 5 centros (One-Look)
+
+Após resolver a primeira face, observe os **5 centros restantes** (topo + 4 laterais) e identifique seu caso. Aplique um único algoritmo para resolver todos de uma vez.
+
+Há vários casos dependendo de quantos centros estão na posição correta:
+
+---
+
+#### Caso 1: Ciclo adjacente de 4
+
+Quatro centros precisam ciclar. O centro superior está correto, mas os 4 centros laterais precisam rotacionar.
+
+**Algoritmo: R' L R L' R' L R L'** (Sledgehammer duplo)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Caso 2: Troca oposta de 2
+
+Dois centros laterais opostos precisam ser trocados.
+
+**Algoritmo: R L' R' L R L' R' L** (Sledgehammer duplo inverso)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Caso 3: Troca adjacente de 2
+
+Dois centros laterais adjacentes precisam ser trocados. Posicione os dois centros a trocar na frente e à direita.
+
+**Algoritmo: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Caso 4: Troca topo-lateral + ciclo
+
+O centro superior precisa trocar com um centro lateral, e os centros laterais restantes ciclam.
+
+**Algoritmo: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Caso 5: Ciclo triplo
+
+Três centros precisam ciclar (topo fica, 3 laterais rotacionam). Posicione o centro lateral fixo atrás.
+
+**Algoritmo: R' L R L'** (Sledgehammer simples — com preparação correta)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Dicas:**
+- Aprenda a identificar casos de centros rapidamente verificando primeiro o centro superior e depois escaneando os 4 lados.
+- Muitos destes são variações do Sledgehammer — se você conhece bem o Sledgehammer, estes algoritmos parecem naturais.
+- Pratique o reconhecimento embaralhando o Skewb, resolvendo a primeira face e identificando o caso dos centros antes de executar.
+
+### Etapa 3: Orientar cantos da última camada
+
+Após resolver todos os centros, os cantos da última camada podem ainda precisar ser girados. Esta etapa é igual ao método iniciante.
+
+#### Todos os 4 cantos precisam de giro horário
+
+**Algoritmo: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Todos os 4 cantos precisam de giro anti-horário
+
+**Algoritmo: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 cantos precisam de giro (adjacentes)
+
+Posicione os dois cantos não resolvidos na frente. Use U para posicioná-los, aplique o algoritmo, depois desfaça U.
+
+**Algoritmo: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 cantos precisam de giro (diagonais)
+
+**Algoritmo: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Algoritmos avançados
+
+Além do método intermediário, aqui estão algoritmos adicionais que lidam com casos menos comuns de forma mais eficiente.
+
+### Equivalente Z-Perm
+
+Quando dois pares de cantos precisam ser trocados (como um padrão em Z):
+
+**Algoritmo: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Caso Pi
+
+A face superior mostra um padrão Pi — dois cantos adjacentes orientados, dois não:
+
+**Algoritmo: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Preparação e orientação de cantos
+
+Quando um canto precisa de reorientação, use movimentos de preparação para conjugar um ciclo Sledgehammer que o gire para o lugar:
+
+**Algoritmo: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Troca rápida de centros opostos
+
+Um algoritmo mais eficiente para trocar dois centros opostos:
+
+**Algoritmo: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Orientação tripla de cantos
+
+Três cantos precisam ser girados (um permanece correto):
+
+**Algoritmo: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Troca de cantos adjacentes
+
+Dois cantos adjacentes precisam trocar de posição (não apenas girar):
+
+**Algoritmo: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Conceitos de resolução One-Look
+
+O objetivo final na resolução competitiva de Skewb é prever a última camada enquanto ainda resolve a primeira face.
+
+### Prevendo a última camada
+
+Durante a Etapa 1, ao construir a face branca, preste atenção aos **centros e cantos da camada superior**. Com prática, você pode identificar os casos das Etapas 2 e 3 antes de terminar a Etapa 1.
+
+- **Observe o centro superior** — ele se move para a posição correta ao inserir o último canto branco?
+- **Acompanhe os centros laterais** — note quais centros laterais já estão corretos.
+- **Planeje a resolução completa** — resolvedores avançados podem planejar toda a resolução durante a inspeção.
+
+### Influenciando a última camada
+
+Quando você tem múltiplas formas de inserir o último canto branco, escolha a inserção que dá um **caso mais fácil na Etapa 2**:
+
+- Se duas inserções resolvem o canto, escolha a que posiciona mais centros corretamente.
+- Às vezes uma Etapa 1 um pouco mais longa leva a pular a Etapa 2 ou 3.
+
+---
+
+## Dicas de speed solving
+
+### Pegada e giros
+
+- Segure o Skewb com as **pontas dos dedos nos cantos** — você gira cantos, não faces.
+- Use o **dedo indicador e polegar** de cada mão para segurar cantos opostos.
+- Pratique giros de canto suaves e controlados — o Skewb recompensa precisão em vez de velocidade bruta.
+- **Minimize as trocas de pegada** — tente executar o Sledgehammer completo sem mudar sua pegada.
+
+### Neutralidade de cor
+
+Neutralidade de cor no Skewb significa que você pode começar com **qualquer face** como primeira face, não apenas branco. Isso é extremamente poderoso:
+
+- Com neutralidade de cor, você tem **6 primeiras faces possíveis** para escolher.
+- Escolha a face mais próxima de estar resolvida — às vezes 2-3 cantos já estão no lugar.
+- Neutralidade de cor é quase obrigatória para resolver abaixo de 4 segundos.
+
+**Como praticar:**
+1. Comece sendo neutro entre 2 cores opostas (ex: branco e amarelo).
+2. Adicione gradualmente mais cores de início até poder começar com qualquer face.
+3. Durante a inspeção, escaneie rapidamente todas as 6 faces e escolha a mais fácil.
+
+### Planejamento de inspeção
+
+O Skewb tem apenas 14 peças visíveis (6 centros + 8 cantos), tornando o planejamento completo realista:
+
+- **Sempre planeje completamente a primeira face** durante a inspeção.
+- **Identifique o caso dos centros** antes de começar a resolver.
+- **Avançado:** planeje até a Etapa 2 — saiba qual algoritmo usará antes de tocar o puzzle.
+
+### Rotina de prática
+
+1. **Exercícios de primeira face** — embaralhe e resolva apenas a primeira face, meta abaixo de 2 segundos.
+2. **Reconhecimento de centros** — após resolver a primeira face, identifique o caso dos centros o mais rápido possível sem executar.
+3. **Resoluções completas** — séries de 12 resoluções cronometradas, acompanhando sua média de 5 e média de 12.
+4. **Treino de algoritmos** — pratique cada algoritmo de centros e cantos 20 vezes seguidas para memória muscular.
+5. **Prática de cor neutra** — force-se a começar com uma cor diferente a cada resolução.
+
+---
+
+**Com o método intermediário de Sarah e prática dedicada, médias de Skewb abaixo de 5 segundos estão ao alcance.** O Skewb é um dos puzzles mais favoráveis ao planejamento no speedcubing — menos peças significam que você pode prever mais durante a inspeção. Foque na velocidade de reconhecimento e giros suaves, e você verá melhoria rápida.

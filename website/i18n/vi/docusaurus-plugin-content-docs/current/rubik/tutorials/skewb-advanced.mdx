@@ -1,0 +1,317 @@
+---
+title: "Kỹ thuật nâng cao Skewb"
+sidebar_position: 14
+description: Advanced Skewb solving techniques including Sarah's Intermediate method, advanced algorithms, and speed solving strategies.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-skewb-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Kỹ thuật nâng cao Skewb
+
+Nâng cao kỹ năng giải Skewb của bạn từ cấp độ người mới bắt đầu lên cấp độ thi đấu. Hướng dẫn này bao gồm **phương pháp trung cấp của Sarah**, nâng cấp phương pháp cơ bản bằng cách giải tất cả các tâm còn lại trong một bước duy nhất, cùng với các thuật toán nâng cao và chiến lược giải nhanh được những người giải Skewb hàng đầu sử dụng.
+
+## Nhắc lại ký hiệu
+
+Skewb xoay quanh **góc** thay vì mặt:
+
+- **R** = Góc trước phải theo chiều kim đồng hồ &nbsp;&nbsp; **R'** = ngược chiều kim đồng hồ
+- **L** = Góc trước trái theo chiều kim đồng hồ &nbsp;&nbsp; **L'** = ngược chiều kim đồng hồ
+- **U** = Góc trước trên phải theo chiều kim đồng hồ &nbsp;&nbsp; **U'** = ngược chiều kim đồng hồ
+- **B** = Góc sau phải theo chiều kim đồng hồ &nbsp;&nbsp; **B'** = ngược chiều kim đồng hồ
+
+Giữ Skewb với **tâm trắng ở dưới** trong tất cả các bước.
+
+---
+
+## Phương pháp trung cấp của Sarah
+
+Phương pháp cơ bản của Sarah giải Skewb trong 3 bước: mặt đầu tiên, sau đó tâm, rồi góc tầng cuối. Bản nâng cấp trung cấp **kết hợp bước tâm và góc**, giải tất cả 5 tâm còn lại trong MỘT thuật toán sau khi hoàn thành mặt đầu tiên.
+
+### Tổng quan
+
+| Bước | Cơ bản | Trung cấp |
+|------|----------|-------------|
+| 1 | Giải một mặt | Giải một mặt (giống) |
+| 2 | Định vị tâm | **Giải tất cả 5 tâm trong một bước** |
+| 3 | Định hướng góc tầng cuối | Định hướng góc tầng cuối (giống) |
+
+Cải tiến chính là Bước 2: thay vì sử dụng Sledgehammer lặp lại để định vị tâm từng cái một, bạn học một bộ thuật toán giải tất cả tâm đồng thời.
+
+### Bước 1: Giải một mặt
+
+Xây dựng **mặt trắng** hoàn chỉnh ở dưới — tất cả 4 góc xung quanh tâm trắng phải ở đúng vị trí với mặt trắng hướng xuống, và các màu bên cạnh phải khớp. Bước này giống với phương pháp cơ bản.
+
+**Sledgehammer: R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+Sử dụng Sledgehammer với các bước chuẩn bị để đặt từng góc trắng. Với luyện tập, bước này trở nên nhanh và trực giác.
+
+### Bước 2: Giải tất cả 5 tâm (One-Look)
+
+Sau khi giải mặt đầu tiên, nhìn **5 tâm còn lại** (trên + 4 bên) và xác định trường hợp của bạn. Áp dụng một thuật toán để giải tất cả cùng lúc.
+
+Có nhiều trường hợp tùy thuộc vào số tâm ở vị trí đúng:
+
+---
+
+#### Trường hợp 1: Chu trình 4 liền kề
+
+Bốn tâm cần chu trình. Tâm trên đúng, nhưng 4 tâm bên cần xoay.
+
+**Thuật toán: R' L R L' R' L R L'** (Sledgehammer kép)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R L R' L' R"
+  alg="R' L R L' R' L R L'"
+/>
+
+#### Trường hợp 2: Đổi 2 đối diện
+
+Hai tâm bên đối diện cần đổi chỗ.
+
+**Thuật toán: R L' R' L R L' R' L** (Sledgehammer kép ngược)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Trường hợp 3: Đổi 2 liền kề
+
+Hai tâm bên liền kề cần đổi chỗ. Đặt hai tâm cần đổi ở phía trước và bên phải.
+
+**Thuật toán: R' L R L' U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U'"
+/>
+
+#### Trường hợp 4: Đổi trên-bên + chu trình
+
+Tâm trên cần đổi với một tâm bên, và các tâm bên còn lại chu trình.
+
+**Thuật toán: U R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R U'"
+  alg="U R' L R L' U'"
+/>
+
+#### Trường hợp 5: Chu trình ba
+
+Ba tâm cần chu trình (trên giữ nguyên, 3 bên xoay). Đặt tâm bên cố định ở phía sau.
+
+**Thuật toán: R' L R L'** (Sledgehammer đơn — với chuẩn bị đúng)
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R"
+  alg="R' L R L'"
+/>
+
+**Mẹo:**
+- Học cách nhận diện trường hợp tâm nhanh bằng cách kiểm tra tâm trên trước, rồi quét 4 bên.
+- Nhiều thuật toán là biến thể của Sledgehammer — nếu bạn hiểu rõ Sledgehammer, những thuật toán này sẽ cảm thấy tự nhiên.
+- Luyện tập nhận diện bằng cách xáo Skewb, giải mặt đầu tiên, và xác định trường hợp tâm trước khi thực hiện.
+
+### Bước 3: Định hướng góc tầng cuối
+
+Sau khi giải tất cả tâm, góc tầng cuối có thể vẫn cần xoay. Bước này giống với phương pháp cơ bản.
+
+#### Tất cả 4 góc cần xoay thuận chiều kim đồng hồ
+
+**Thuật toán: R L' R' L R L' R' L**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L' R L R' L' R L R'"
+  alg="R L' R' L R L' R' L"
+/>
+
+#### Tất cả 4 góc cần xoay ngược chiều kim đồng hồ
+
+**Thuật toán: L' R L R' L' R L R'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R L' R' L R L' R' L"
+  alg="L' R L R' L' R L R'"
+/>
+
+#### 2 góc cần xoay (liền kề)
+
+Đặt hai góc chưa giải ở phía trước. Dùng U để định vị, thực hiện thuật toán, rồi hoàn tác U.
+
+**Thuật toán: U R L' R' L R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' L' R L R' U'"
+  alg="U R L' R' L R L' R' L U'"
+/>
+
+#### 2 góc cần xoay (chéo)
+
+**Thuật toán: R L' R' L U R L' R' L U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L' R L R' U' L' R L R'"
+  alg="R L' R' L U R L' R' L U'"
+/>
+
+---
+
+## Thuật toán nâng cao
+
+Ngoài phương pháp trung cấp, đây là các thuật toán bổ sung xử lý hiệu quả hơn các trường hợp ít phổ biến.
+
+### Tương đương Z-Perm
+
+Khi hai cặp góc cần đổi chỗ (như hình chữ Z):
+
+**Thuật toán: R' L R L' U R' L R L' U R' L R L'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="L R' L' R U' L R' L' R U' L R' L' R"
+  alg="R' L R L' U R' L R L' U R' L R L'"
+/>
+
+### Trường hợp Pi
+
+Mặt trên hiển thị hình Pi — hai góc liền kề đã định hướng, hai góc chưa:
+
+**Thuật toán: R B' R' B R B' R' B**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="B' R B R' B' R B R'"
+  alg="R B' R' B R B' R' B"
+/>
+
+### Chuẩn bị và định hướng góc
+
+Khi góc cần tái định hướng, sử dụng bước chuẩn bị để liên hợp chu trình Sledgehammer xoay góc vào vị trí:
+
+**Thuật toán: U R' L R L' R' L R L' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U L R' L' R L R' L' R U'"
+  alg="U R' L R L' R' L R L' U'"
+/>
+
+### Đổi tâm đối diện nhanh
+
+Thuật toán hiệu quả hơn để đổi hai tâm đối diện:
+
+**Thuật toán: B R' B' R B R' B' R**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="R' B R B' R' B R B'"
+  alg="B R' B' R B R' B' R"
+/>
+
+### Định hướng ba góc
+
+Ba góc cần xoay (một góc giữ đúng):
+
+**Thuật toán: L' R L R' U L' R L R' U'**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U R L' R' L U' R L' R' L"
+  alg="L' R L R' U L' R L R' U'"
+/>
+
+### Đổi góc liền kề
+
+Hai góc liền kề cần đổi vị trí (không chỉ xoay):
+
+**Thuật toán: R' L R L' U' R' L R L' U**
+
+<TwistyPlayer
+  puzzle="skewb"
+  setupAlg="U' L R' L' R U L R' L' R"
+  alg="R' L R L' U' R' L R L' U"
+/>
+
+---
+
+## Khái niệm giải One-Look
+
+Mục tiêu cuối cùng trong giải Skewb thi đấu là dự đoán tầng cuối trong khi vẫn đang giải mặt đầu tiên.
+
+### Dự đoán tầng cuối
+
+Trong Bước 1, khi xây dựng mặt trắng, chú ý đến **tâm và góc tầng trên**. Với luyện tập, bạn có thể xác định trường hợp Bước 2 và 3 trước khi hoàn thành Bước 1.
+
+- **Quan sát tâm trên** — nó có di chuyển đến vị trí đúng khi bạn đặt góc trắng cuối cùng không?
+- **Theo dõi tâm bên** — chú ý tâm bên nào đã đúng.
+- **Lập kế hoạch giải hoàn chỉnh** — người giải nâng cao có thể lên kế hoạch toàn bộ trong thời gian quan sát.
+
+### Ảnh hưởng tầng cuối
+
+Khi có nhiều cách đặt góc trắng cuối cùng, chọn cách đặt cho bạn **trường hợp Bước 2 dễ hơn**:
+
+- Nếu hai cách đặt đều giải góc, chọn cách định vị nhiều tâm đúng hơn.
+- Đôi khi Bước 1 dài hơn một chút dẫn đến bỏ qua Bước 2 hoặc 3.
+
+---
+
+## Mẹo giải nhanh
+
+### Cách cầm và xoay
+
+- Cầm Skewb với **đầu ngón tay trên các góc** — bạn xoay góc, không phải mặt.
+- Dùng **ngón trỏ và ngón cái** mỗi tay để cầm các góc đối diện.
+- Luyện tập xoay góc mượt mà, có kiểm soát — Skewb thưởng cho sự chính xác hơn tốc độ thô.
+- **Giảm thiểu đổi tay** — cố gắng thực hiện toàn bộ Sledgehammer mà không đổi cách cầm.
+
+### Trung lập màu sắc
+
+Trung lập màu sắc trên Skewb nghĩa là bạn có thể bắt đầu với **bất kỳ mặt nào** làm mặt đầu tiên, không chỉ trắng. Điều này cực kỳ mạnh:
+
+- Với trung lập màu sắc, bạn có **6 mặt đầu tiên có thể chọn**.
+- Chọn mặt gần hoàn thành nhất — đôi khi 2-3 góc đã ở đúng chỗ.
+- Trung lập màu sắc gần như bắt buộc để giải dưới 4 giây.
+
+**Cách luyện tập:**
+1. Bắt đầu bằng cách trung lập giữa 2 màu đối diện (ví dụ: trắng và vàng).
+2. Dần thêm nhiều màu khởi đầu cho đến khi bạn có thể bắt đầu từ bất kỳ mặt nào.
+3. Trong thời gian quan sát, quét nhanh cả 6 mặt và chọn mặt dễ nhất.
+
+### Lập kế hoạch quan sát
+
+Skewb chỉ có 14 mảnh nhìn thấy được (6 tâm + 8 góc), giúp việc lập kế hoạch giải hoàn chỉnh trở nên thực tế:
+
+- **Luôn lập kế hoạch mặt đầu tiên hoàn chỉnh** trong thời gian quan sát.
+- **Xác định trường hợp tâm** trước khi bắt đầu giải.
+- **Nâng cao:** lập kế hoạch đến Bước 2 — biết thuật toán nào sẽ dùng trước khi chạm vào puzzle.
+
+### Lịch trình luyện tập
+
+1. **Bài tập mặt đầu tiên** — xáo và giải chỉ mặt đầu tiên, mục tiêu dưới 2 giây.
+2. **Nhận diện tâm** — sau khi giải mặt đầu tiên, xác định trường hợp tâm nhanh nhất có thể mà không thực hiện.
+3. **Giải hoàn chỉnh** — bộ 12 lần giải bấm giờ, theo dõi trung bình 5 và trung bình 12.
+4. **Luyện thuật toán** — luyện mỗi thuật toán tâm và góc 20 lần liên tục để tạo trí nhớ cơ bắp.
+5. **Luyện trung lập màu** — bắt buộc bản thân bắt đầu bằng màu khác nhau mỗi lần giải.
+
+---
+
+**Với phương pháp trung cấp của Sarah và luyện tập chăm chỉ, thành tích trung bình Skewb dưới 5 giây nằm trong tầm tay.** Skewb là một trong những puzzle thân thiện nhất với việc lập kế hoạch trong speedcubing — ít mảnh hơn nghĩa là bạn có thể dự đoán nhiều hơn trong thời gian quan sát. Tập trung vào tốc độ nhận diện và xoay mượt mà, bạn sẽ thấy sự tiến bộ nhanh chóng.

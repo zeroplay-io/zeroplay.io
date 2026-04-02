@@ -1,0 +1,312 @@
+---
+title: "F2L: Pierwsze dwie warstwy"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Pierwsze dwie warstwy
+
+F2L (First Two Layers, pierwsze dwie warstwy) to **najważniejszy krok** metody CFOP. Zamiast rozwiązywać narożniki pierwszej warstwy i krawędzie drugiej warstwy w dwóch oddzielnych krokach (jak w metodzie dla początkujących), F2L łączy narożnik z pasującą krawędzią i wstawia je razem do odpowiedniego slotu. Oszczędza to ogromną liczbę ruchów i jest źródłem największych ulepszeń prędkości.
+
+Do wypełnienia są **4 sloty**, po jednym w każdym rogu dwóch dolnych warstw. Każdy slot składa się z jednego elementu narożnego i jednego elementu krawędziowego.
+
+## Koncept
+
+Każdy przypadek F2L dotyczy dwóch elementów:
+- **Element narożny** należący do dolnej warstwy (ma białą/dolną naklejkę)
+- **Element krawędziowy** należący do środkowej warstwy (łączy dwa kolory boczne)
+
+Celem jest **sparowanie** tych dwóch elementów w górnej warstwie, a następnie **wstawienie** pary do odpowiedniego slotu jednym płynnym ruchem.
+
+## Przypomnienie notacji
+
+- **R** = Prawa &nbsp;&nbsp; **L** = Lewa &nbsp;&nbsp; **U** = Góra &nbsp;&nbsp; **D** = Dół &nbsp;&nbsp; **F** = Przód &nbsp;&nbsp; **B** = Tył
+- Sama litera = **90° zgodnie z ruchem wskazówek zegara** &nbsp;&nbsp; **'** = **przeciwnie do wskazówek** &nbsp;&nbsp; **2** = **180°**
+
+Trzymaj kostkę z **białym na dole**. Slot, do którego wstawiamy, to zawsze **prawy przedni slot** (między ścianami F i R).
+
+---
+
+## Intuicyjne F2L
+
+Zanim zaczniesz zapamiętywać algorytmy, naucz się **logiki** F2L. Każdy przypadek podąża za tym samym wzorcem:
+
+1. **Znajdź** parę narożnik-krawędź, które do siebie pasują
+2. **Rozdziel** je, jeśli są nieprawidłowo połączone
+3. **Ustaw** jeden element, następnie **przyprowadź** drugi
+4. **Sparuj** je w górnej warstwie, tak aby biały był skierowany na zewnątrz lub w dół
+5. **Wstaw** połączoną parę do slotu
+
+**Kluczowa zasada:** Używaj ruchów R i U, aby wyjmować narożnik z prawego przedniego slotu lub go wstawiać, oraz ruchów U do pozycjonowania krawędzi. Nigdy nie zakłócaj już rozwiązanych slotów.
+
+---
+
+Łącznie istnieją **41 standardowe przypadki F2L**. Poniżej omawiamy **15 najważniejszych przypadków**, które tworzą fundament. Gdy je opanujesz, będziesz w stanie rozwiązywać pozostałe przypadki intuicyjnie lub wyszukiwać je w razie potrzeby.
+
+## Podstawowe przypadki: oba elementy w górnej warstwie
+
+To najprostsze i najczęstsze przypadki. Narożnik i krawędź znajdują się w warstwie U, a slot docelowy jest pusty.
+
+### Przypadek 1: Łatwe wstawienie — Biały narożnika skierowany w prawo, krawędź gotowa
+
+Narożnik ma biały skierowany ku ścianie R, a krawędź jest już ustawiona tak, że jeden ruch U je sparuje. To najbardziej podstawowe wstawienie F2L.
+
+**Algorytm: R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Przypadek 2: Łatwe wstawienie — Biały narożnika skierowany do przodu, krawędź gotowa
+
+Narożnik ma biały skierowany ku ścianie F, a krawędź jest ustawiona do sparowania z wstawieniem przeciwnie do wskazówek zegara.
+
+**Algorytm: F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Przypadek 3: Biały narożnika skierowany w górę, kolory pasują do przedniego centrum
+
+Narożnik ma biały w górę, a jego przedni kolor pasuje do przedniego centrum. Krawędź jest naprzeciwko. Musimy je połączyć i wstawić.
+
+**Algorytm: U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Przypadek 4: Biały narożnika skierowany w górę, kolory pasują do prawego centrum
+
+Narożnik ma biały w górę, a jego prawy kolor pasuje do prawego centrum. Krawędź musi być sparowana z przeciwnej strony.
+
+**Algorytm: U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Przypadek 5: Narożnik i krawędź daleko od siebie, biały skierowany w prawo
+
+Narożnik ma biały w prawo, a krawędź jest po przeciwnej stronie górnej warstwy. Przybliżamy krawędź, następnie parujemy i wstawiamy.
+
+**Algorytm: U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Przypadek 6: Narożnik i krawędź daleko od siebie, biały skierowany do przodu
+
+Lustrzane odbicie przypadku 5. Narożnik ma biały do przodu, a krawędź jest po dalszej stronie.
+
+**Algorytm: U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Przypadek 7: Narożnik i krawędź obok siebie, biały skierowany w prawo — Para połączona, ale źle
+
+Narożnik i krawędź są obok siebie i połączone, ale wstawione byłyby źle. Rozdzielamy je i ponownie prawidłowo łączymy.
+
+**Algorytm: R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Przypadek 8: Narożnik i krawędź obok siebie, biały skierowany do przodu — Para połączona, ale źle
+
+Lustrzane odbicie przypadku 7 po stronie ściany F.
+
+**Algorytm: F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Przypadki średniozaawansowane: krawędź w slocie, narożnik w górnej warstwie
+
+Czasami krawędź już tkwi w slocie (prawidłowo lub nieprawidłowo), a narożnik jest w górnej warstwie. Musimy wyciągnąć krawędź bez zakłócania innych rozwiązanych par.
+
+### Przypadek 9: Krawędź w prawidłowym slocie, ale narożnik na górze — Biały skierowany w prawo
+
+Krawędź jest w prawidłowym slocie, a narożnik jest w warstwie U z białym w prawo. Wyjmujemy krawędź i parujemy ją z narożnikiem.
+
+**Algorytm: U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Przypadek 10: Krawędź w złym slocie, narożnik na górze — Biały skierowany w górę
+
+Krawędź jest w złym slocie. Wyciągamy ją, jednocześnie przygotowując parowanie z narożnikiem.
+
+**Algorytm: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Zaawansowane przypadki: narożnik w slocie
+
+Te przypadki występują, gdy narożnik jest już w prawidłowym slocie, ale nieprawidłowo zorientowany, lub w prawidłowym slocie z krawędzią w złym miejscu.
+
+### Przypadek 11: Narożnik w slocie, skręcony — Krawędź w górnej warstwie
+
+Narożnik jest w prawym przednim slocie, ale z białym do przodu (nie w dół). Krawędź jest w warstwie U. Wyciągamy narożnik, parujemy z krawędzią i ponownie wstawiamy.
+
+**Algorytm: R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Przypadek 12: Narożnik w slocie, skręcony — Krawędź w złym slocie
+
+Oba elementy są w dwóch dolnych warstwach, ale żaden nie jest prawidłowy. Wykopujemy narożnik i jednocześnie wyciągamy krawędź.
+
+**Algorytm: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Przypadki specjalne: oba elementy w slocie
+
+### Przypadek 13: Para połączona w slocie, ale skręcona
+
+Narożnik i krawędź są sparowane i w slocie, ale narożnik jest skręcony (biały do przodu, nie w dół). Wyciągamy parę, rozdzielamy i ponownie prawidłowo wstawiamy.
+
+**Algorytm: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Przypadek 14: Narożnik prawidłowo w slocie, krawędź odwrócona w slocie
+
+Narożnik jest prawidłowo umieszczony, ale krawędź nad nim jest odwrócona. To jeden z najtrudniejszych przypadków. Wyciągamy oba, prawidłowo parujemy i ponownie wstawiamy.
+
+**Algorytm: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Przypadek 15: Oba w slocie, oba źle — Błąd krzyżowy
+
+Narożnik i krawędź są oba w slocie, ale żaden nie pasuje. Pełna ekstrakcja i odbudowa.
+
+**Algorytm: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Wskazówki dla szybszego F2L
+
+### 1. Najpierw ucz się intuicyjnie
+
+Nie spiesz się z zapamiętywaniem wszystkich 41 przypadków algorytmicznych. Poświęć czas na zrozumienie **dlaczego** każdy ruch działa. Jeśli wiesz, że R U R' wyjmuje narożnik i wstawia go z powrotem, możesz sam rozwiązać większość przypadków. Algorytmy przychodzą później do optymalizacji.
+
+### 2. Rozwijaj lookahead
+
+**Lookahead** to zdolność śledzenia następnej pary podczas wstawiania bieżącej. To największy czynnik oddzielający rozwiązujących w 20 sekund od rozwiązujących w 15 sekund.
+
+Wskazówki do ćwiczeń:
+- Zwolnij obracanie i zmuś się do szukania następnej pary podczas wstawień
+- Ćwicz rozwiązywanie F2L z zamkniętymi oczami podczas wstawiania (znasz ruchy, więc patrz naprzód)
+- Wykonuj niezmierzone rozwiązania skupione wyłącznie na zerowych przerwach między parami
+
+### 3. Zmniejsz rotacje
+
+Za każdym razem, gdy obracasz całą kostkę, tracisz czas. Najlepsi rozwiązujący F2L rzadko obracają więcej niż raz lub dwa razy w całej fazie F2L.
+
+- Naucz się wstawiać do **tylnych slotów** za pomocą ruchów R i U (np. R U' R' do wstawienia w tylny prawy)
+- Ćwicz użycie ruchów **L, F i B** dla slotów po przeciwnej stronie
+- Używaj szerokich ruchów (r, l) do jednoczesnego obracania i wstawiania
+
+### 4. Szybko rozpoznawaj przypadki
+
+Trenuj się, aby natychmiast rozpoznać, na który przypadek patrzysz:
+- **Gdzie jest biały na narożniku?** (Góra, Przód lub Prawo)
+- **Gdzie jest krawędź względem narożnika?** (Obok, naprzeciwko lub w slocie)
+- **Czy są już sparowane?** (Prawidłowo połączone, źle połączone lub oddzielne)
+
+### 5. Rozwiązuj w efektywnej kolejności
+
+Nie musisz rozwiązywać 4 par w żadnej stałej kolejności. Spójrz na wszystkie 4 pary i zacznij od **najłatwiejszej** — tej, która wymaga najmniejszej liczby ruchów. Doświadczeni rozwiązujący planują swoją pierwszą parę podczas inspekcji razem z krzyżem.
+
+### 6. Triki z pustym slotem
+
+Gdy slot jest pusty, możesz go użyć jako tymczasowego magazynu. Na przykład umieść krawędź w pustym slocie (R U R'), aby usunąć ją z drogi podczas pracy nad inną parą. Początkujący często pomijają tę potężną technikę.
+
+---
+
+## Rutyna ćwiczeń
+
+1. **Wymieszaj kostkę i rozwiąż krzyż**
+2. **Znajdź wszystkie 4 pary narożnik-krawędź** — zidentyfikuj, gdzie jest każdy narożnik i jego pasująca krawędź
+3. **Rozwiąż każdą parę po kolei** — zacznij od łatwych przypadków, trudne zostaw na koniec
+4. **Mierz czas tylko fazy F2L** — użyj timera. Cel: poniżej 15 sekund na wszystkie 4 pary
+5. **Oceń** — po każdym rozwiązaniu zapytaj: czy mogłem zrobić jakąś parę w mniejszej liczbie ruchów?
+
+Przy konsekwentnych ćwiczeniach F2L stanie się drugą naturą i zobaczysz dramatyczne poprawy w ogólnych czasach rozwiązywania.
+
+---
+
+## Co dalej?
+
+Po opanowaniu F2L kontynuuj z ostatnią warstwą:
+
+- [**Przegląd metody CFOP**](./cfop) — Zobacz, jak F2L pasuje do pełnej metody CFOP
+- [**Algorytmy OLL**](./oll) — Uczyń górną ścianę całkowicie żółtą (57 przypadków + 2-Look OLL)
+- [**Algorytmy PLL**](./pll) — Ułóż ostatnie elementy, aby zakończyć rozwiązanie (21 przypadków)
+- [**Przewodnik po finger tricks**](./finger-tricks) — Wykonuj triggery F2L szybciej i płynniej

@@ -1,0 +1,374 @@
+---
+title: "קובייה 2×2 מתקדם: שיטת CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# קובייה 2×2 מתקדם: שיטת CLL
+
+קחו את פתרון קוביית 2×2 לשלב הבא עם שיטת **CLL (פינות השכבה האחרונה)**. בעוד Ortega פותרת את השכבה האחרונה בשני שלבים (OLL ואז PBL), CLL פותרת גם את **הכיוון וגם את הסידור** של הפינות ב**אלגוריתם אחד**. פחות הסתכלויות ופתרונות מהירים יותר.
+
+## למה CLL?
+
+| שיטה | שלבי שכבה אחרונה | אלגוריתמים | מהירות טיפוסית |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 שניות |
+| **CLL** | 1 (הסתכלות אחת) | ~40 | 2–4 שניות |
+
+CLL היא השיטה הסטנדרטית של פותרי 2×2 מהירים מובילים. למידת כל 40 המקרים מבטלת שלב שלם מהפתרון.
+
+## איך CLL עובדת
+
+1. **לפתור את הצד הראשון** — כמו Ortega, צד לבן בתחתית (צבעי צדדים לא צריכים להתאים).
+2. **לזהות את מקרה CLL** — הסתכלו על הצד העליון וצבעי הצדדים לזיהוי המקרה.
+3. **להפעיל אלגוריתם אחד** — מכוון ומסדר בו-זמנית את כל הפינות העליונות.
+4. **AUF + התאמת תחתית** — לכל היותר סיבוב U אחד וסיבוב D אחד.
+
+## תזכורת סימנים
+
+- **R** = ימין &nbsp;&nbsp; **L** = שמאל &nbsp;&nbsp; **U** = למעלה &nbsp;&nbsp; **D** = למטה &nbsp;&nbsp; **F** = קדמי &nbsp;&nbsp; **B** = אחורי
+- אות בודדת = **90° עם כיוון השעון**. עם **'** = **נגד כיוון השעון**. עם **2** = **180°**.
+
+---
+
+## קבוצות מקרי CLL
+
+40 מקרי CLL מאורגנים ב-7 קבוצות לפי דפוס הכיוון של הצד העליון. להלן המקרים החשובים ביותר מכל קבוצה.
+
+---
+
+## מקרי Sune (4 מתוך 6)
+
+פינה אחת מכוונת (צהוב כלפי מעלה), שלוש אחרות צריכות סיבוב. הקבוצה הנפוצה ביותר.
+
+### Sune 1 — החלפה שכנית
+
+החזיקו את הפינה הפתורה בחזית-שמאל. שלוש הפינות הלא פתורות מסתובבות עם כיוון השעון.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — החלפה אלכסונית
+
+אותו דפוס כיוון, אבל הפינות צריכות החלפה אלכסונית.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — טהור (ללא החלפה)
+
+כיוון פתור ללא צורך בשינוי מיקום.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — החלפה שכנית (מראה)
+
+החזיקו את הפינה הפתורה בחזית-ימין.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## מקרי Anti-Sune (3 מתוך 6)
+
+מראה של Sune — פינה אחת מכוונת, שלוש אחרות מסתובבות נגד כיוון השעון.
+
+### Anti-Sune 1 — החלפה שכנית
+
+החזיקו את הפינה הפתורה בחזית-ימין. שלוש הפינות הלא פתורות מסתובבות נגד כיוון השעון.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — החלפה אלכסונית
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — טהור (ללא החלפה)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## מקרי H (4 מתוך 4)
+
+שתי פינות נגדיות מכוונות (צהוב כלפי מעלה), לשתי האחרות צהוב בצדדים.
+
+### H 1 — החלפה שכנית
+
+שתי מדבקות צהובות למעלה בעמדות אלכסוניות.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — החלפה אלכסונית
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — ללא החלפה
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — עמודות
+
+שני זוגות הפינות האלכסוניות צריכים החלפה.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## מקרי Pi (4 מתוך 6)
+
+לשתי פינות שכנות צהוב למעלה, לשתי האחרות צהוב בצדדים. הצד העליון נראה כמו האות פי.
+
+### Pi 1 — החלפה אלכסונית
+
+החזיקו את שתי הפינות המכוונות מאחור.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — החלפה שכנית (ימין)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — החלפה שכנית (שמאל)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — ללא החלפה
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## מקרי T (3 מתוך 6)
+
+הצד העליון מראה דפוס T — פינה מכוונת, פינה שכנה עם צהוב בחזית, שתי אחרות עם צהוב בצדדים.
+
+### T 1 — החלפה שכנית
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — החלפה אלכסונית
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — ללא החלפה
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## מקרי U (3 מתוך 6)
+
+פינה אחת מכוונת נכון, שלוש אחרות בדפוס U בצדדים.
+
+### U 1 — החלפה שכנית
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — החלפה אלכסונית
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — ללא החלפה
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## מקרי L (3 מתוך 6)
+
+שתי פינות שכנות מסובבות באותו כיוון — הצד העליון מראה דפוס L.
+
+### L 1 — החלפה שכנית
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — החלפה אלכסונית
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — ללא החלפה
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## אחרי CLL: סיום הפתרון
+
+לאחר הפעלת אלגוריתם CLL, הצד העליון פתור לחלוטין. ייתכן שתצטרכו:
+
+1. **AUF (התאמת צד U)** — סיבוב U או U' בודד ליישור השכבה העליונה.
+2. **התאמת שכבה תחתונה** — אם מוסטת, סיבוב D או D' בודד מתקן.
+3. **החלפת שכבה תחתונה** — לעיתים רחוקות, עשויה להזדקק להחלפה שכנית או אלכסונית. השתמשו באלגוריתמי PBL של Ortega:
+   - **החלפה אלכסונית:** R2 F2 R2
+   - **החלפה שכנית:** R U' R F2 R' U R'
+
+---
+
+## אסטרטגיית למידה
+
+ללמוד את כל 40 המקרים בבת אחת זה מכריע. סדר מומלץ:
+
+1. **התחילו עם Sune ו-Anti-Sune** (12 מקרים) — הנפוצים ביותר, אלגוריתמים קצרים.
+2. **הוסיפו מקרי T ו-U** (12 מקרים) — קל לזהות ולבצע.
+3. **למדו מקרי Pi** (6 מקרים) — דפוס כיוון ייחודי.
+4. **למדו מקרי L** (6 מקרים) — זיהוי דומה ל-Pi, כיוון סיבוב שונה.
+5. **סיימו עם מקרי H** (4 מקרים) — הקבוצה הנדירה ביותר.
+
+## טיפים לזיהוי
+
+- **הסתכלו קודם על הצד העליון** לזיהוי קבוצת הכיוון.
+- **בדקו את צבעי הצדדים** לקביעת המקרה הספציפי.
+- **תרגלו בקבוצות** — קבוצה אחת בכל פעם עד שהזיהוי מיידי.
+- **השתמשו בערבובים הפוכים** — הכינו מקרה, פתרו, חזו את ההפוך.
+
+---
+
+**עם שליטה ב-CLL, תוכלו להשיג ממוצעים מתחת ל-3 שניות בקוביית 2×2.** גישת ההסתכלות האחת מבטלת את ההשהייה בין OLL ל-PBL. המשיכו לתרגל — מהירות באה מזיהוי מיידי.

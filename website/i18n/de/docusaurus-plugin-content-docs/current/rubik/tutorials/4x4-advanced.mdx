@@ -1,0 +1,249 @@
+---
+title: "4x4 Fortgeschritten: Yau-Methode"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Fortgeschritten: Yau-Methode
+
+Die **Yau-Methode**, erfunden von Robert Yau, ist eine schnellere Alternative zur Standard-Reduktionsmethode für den 4x4 Rubik's Cube. Der entscheidende Unterschied: Yau löst Kreuzkantenpaare **früh**, was bessere Vorausschau und einen reibungsloseren Übergang in die 3x3-Phase bietet. Die meisten Top-4x4-Speedcuber verwenden Yau oder eine Variante davon.
+
+## Yau vs Standard-Reduktion
+
+| Aspekt | Reduktion | Yau |
+|--------|-----------|-----|
+| **Reihenfolge** | Alle Zentren, dann alle Kanten | 2 Zentren, 3 Kreuzkanten, 4 Zentren, restliche Kanten |
+| **Kreuz** | Nach Reduktion gebaut | Während der Reduktion bereits teilweise fertig |
+| **Vorausschau** | Muss Kreuzkanten nach Pairing finden | Kreuz fast fertig, Übergang zu F2L nahtlos |
+| **Geschwindigkeitsgrenze** | Gut | Höher — weniger Pausen zwischen Phasen |
+
+## Notation-Erinnerung
+
+**Standardzüge** (nur äußere Schicht):
+- **R** = Rechts &nbsp;&nbsp; **L** = Links &nbsp;&nbsp; **U** = Oben &nbsp;&nbsp; **D** = Unten &nbsp;&nbsp; **F** = Vorne &nbsp;&nbsp; **B** = Hinten
+
+**Weite Züge** (äußere zwei Schichten zusammen):
+- **Rw** = Rechts weit &nbsp;&nbsp; **Lw** = Links weit &nbsp;&nbsp; **Uw** = Oben weit &nbsp;&nbsp; **Dw** = Unten weit &nbsp;&nbsp; **Fw** = Vorne weit &nbsp;&nbsp; **Bw** = Hinten weit
+
+Ein Buchstabe allein bedeutet **90° im Uhrzeigersinn**. Mit **'** bedeutet **gegen den Uhrzeigersinn**. Mit **2** bedeutet **180°**.
+
+---
+
+## Schritt 1: Zwei gegenüberliegende Zentren lösen
+
+Beginne mit dem Lösen der **weißen** und **gelben** Zentrumsblöcke (oben und unten). Dies entspricht dem ersten Teil der Standard-Reduktionsmethode.
+
+Jedes Zentrum ist ein 2x2-Block. Verwende weite Züge, um Zentrumsteile zusammenzubringen, und schütze bereits platzierte Teile mit Außenschicht-Drehungen.
+
+**Grundlegendes Zentrums-Bauen** — bringe ein Zentrumsteil mit einem weiten Zug nach oben, positioniere es und kehre um:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Zwei Zentrumshälften verbinden** — wenn du zwei 1x2-Zentrumsstreifen hast, die zusammengeführt werden müssen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tipps:**
+- Löse zuerst das weiße Zentrum (unten), dann das gelbe Zentrum (oben).
+- Halte Weiß durchgehend unten — verwende nur Rw, Lw, Fw, Bw, um Zentren zu manipulieren, ohne die Unterseite zu stören.
+- Kümmere dich noch nicht um Seitenzentren. Die kommen in Schritt 3.
+
+---
+
+## Schritt 2: 3 von 4 Kreuzkanten lösen
+
+Hier unterscheidet sich Yau von der Reduktion. Bevor die verbleibenden Zentren gelöst werden, **paare und platziere 3 weiße Kreuzkanten** in der unteren Schicht.
+
+Eine Kreuzkante besteht aus zwei Teilen (z.B. weiß-rot und weiß-rot), die gepaart und in der D-Schicht platziert werden müssen. Lasse eine Kreuzkante vorerst ungelöst — das gibt dir Freiheit für weite Züge im nächsten Schritt.
+
+**Kreuzkante mit Freeslice paaren** — die Freeslice-Technik paart Kanten ohne Zentren zu zerstören. Platziere eine Hälfte der Kante vorne-rechts und bringe den Partner von einem anderen Slot:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Gepaarte Kreuzkante unten einsetzen** — nach dem Paaren die Kante in die richtige D-Schicht-Position setzen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice mit weiten Zügen** — verwende Dw, um ein Kantenteil zum Paaren hochzubringen, ohne die bereits platzierten unteren Kreuzkanten zu zerstören:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tipps:**
+- Du brauchst jetzt nur 3 Kreuzkanten gelöst. Lasse absichtlich einen Slot frei.
+- Nutze den leeren D-Schicht-Slot frei — die fehlende Kreuzkante gibt mehr Freiheit für weite Züge.
+- Wähle die Kreuzkante zum Auslassen basierend darauf, welche am schwierigsten zu finden oder zu paaren ist.
+
+---
+
+## Schritt 3: Verbleibende 4 Zentren lösen
+
+Löse nun die **4 Seitenzentren** (rot, orange, blau, grün). Die weißen und gelben Zentren sind aus Schritt 1 bereits fertig.
+
+Da ein ungelöster Kreuzkanten-Slot vorhanden ist, kannst du einige weite Züge noch frei verwenden. Dies ist ein wichtiger Vorteil von Yau — das teilweise gelöste Kreuz schränkt den Zentrumsaufbau weniger ein als erwartet.
+
+**Seitenzentrum aufbauen** — verwende weite Züge, um Zentrumsteile zu sammeln und zu platzieren:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Zentrums-Kommutator** — wenn du ein Zentrumsteil tauschen musst, ohne andere zu stören, verwende eine Kommutator-Sequenz:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tipps:**
+- Löse Zentren in gegenüberliegenden Paaren wenn möglich (z.B. rot dann orange, blau dann grün).
+- Nutze den ungelösten Kreuzkanten-Slot — weite Züge durch diesen Slot zerstören keine Kreuzkanten.
+- Beachte die 3 Kreuzkanten, die bereits in der D-Schicht sind. Prüfe vor weiten Zügen.
+
+---
+
+## Schritt 4: Letzte Kreuzkante + Kantenpaaring abschließen
+
+Dieser Schritt hat zwei Teile: die 4. Kreuzkante fertigstellen und dann alle verbleibenden Kanten paaren.
+
+### Teil A: Letzte Kreuzkante lösen
+
+Finde das verbleibende Kreuzkantenpaar und bringe es zusammen. Da alle Zentren gelöst sind, musst du mit weiten Zügen vorsichtiger sein.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Nach dem Paaren in den letzten D-Schicht-Slot einsetzen, um das weiße Kreuz zu vervollständigen.
+
+### Teil B: Verbleibende Kanten paaren (3-2-3-Technik)
+
+Du hast jetzt 8 ungepaarte Kanten. Die **3-2-3-Technik** ist die effizienteste Methode:
+
+1. **Erste 3 Kanten** — paare sie mit Standard-Slice-Flip-Slice-Zügen. Platziere eine ungepaarte Kante vorne-rechts, finde den Partner oben, verwende Uw zum Zusammenführen:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Nächste 2 Kanten** — mit weniger Kanten kannst du zwei schnell hintereinander paaren, indem du eine hinten lagerst:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Letzte 3 Kanten** — die letzten Kanten erfordern mehr Sorgfalt, um bereits gepaarte nicht zu zerstören. Verwende Dw-basierte Züge oder Flipping-Techniken:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tipps:**
+- Während des 3-2-3-Paarings immer prüfen, dass weite Züge die Kreuzkanten unten nicht zerstören.
+- Wenn eine Kante gepaart aber gekippt ist, musst du sie ausbrechen und neu paaren.
+- Der Übergang vom Kantenpaaring zum 3x3 sollte nahtlos sein — dein Kreuz ist bereits fertig.
+
+---
+
+## Schritt 5: Als 3x3 lösen (CFOP)
+
+Mit allen Zentren gelöst, allen Kanten gepaart und dem Kreuz bereits fertig, verhält sich der 4x4 nun wie ein 3x3. Da das **weiße Kreuz bereits fertig** ist (ein großer Vorteil von Yau), kannst du direkt in **F2L** (Erste zwei Schichten) einsteigen.
+
+Ab hier nur Außenschicht-Züge verwenden — keine weiten Züge.
+
+**Mit Standard-CFOP fortfahren:**
+1. **F2L** — Ecken-Kanten-Paare in die ersten zwei Schichten einfügen.
+2. **OLL** — letzte Schicht orientieren.
+3. **PLL** — letzte Schicht permutieren.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Das ist der größte Vorteil der Yau-Methode: der Kreuz-zu-F2L-Übergang hat keine Pause, weil das Kreuz während der Reduktionsphase gebaut wurde.
+
+---
+
+## Paritäts-Algorithmen
+
+Der 4x4 hat zwei Paritätsfälle, die beim 3x3 nicht vorkommen können. Diese treten jeweils mit etwa 50% Wahrscheinlichkeit auf, unabhängig davon ob du Yau oder Reduktion verwendest.
+
+### OLL-Parität (Einzelkanten-Flip)
+
+Eine einzelne Kante erscheint auf der letzten Schicht gekippt — beim echten 3x3 unmöglich.
+
+**Algorithm: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Diesen Algorithmus einmal anwenden, dann mit normalem OLL/PLL fortfahren.
+
+### PLL-Parität (Zwei-Kanten-Tausch)
+
+Zwei gegenüberliegende Kanten müssen getauscht werden — ebenfalls beim 3x3 unmöglich.
+
+**Algorithm: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Wann Yau lernen
+
+- **Wenn du mit Reduktion unter 2 Minuten im Schnitt bist**, hast du die Grundlagen für den Wechsel zu Yau.
+- **Wenn du CFOP für 3x3 kennst**, ist Yau eine natürliche Wahl — das Kreuz ist fertig, wenn du in die 3x3-Phase eintrittst.
+- **Wenn du mit dem Reduktion-zu-3x3-Übergang kämpfst**, eliminiert Yau diese Pause vollständig.
+
+## Übungsprioritäten
+
+1. **Freeslice-Kantenpaaring meistern** — die Kerntechnik, die Yau effizient macht.
+2. **2-Zentren + 3-Kreuzkanten-Erkennung üben** — lerne, Kreuzkanten während der ersten zwei Schritte schnell zu erkennen.
+3. **3-2-3-Technik trainieren** — flüssiges Kantenpaaring spart die meiste Zeit.
+4. **Kreuz-zu-F2L-Übergang verbessern** — da das Kreuz fertig ist, übe das Erkennen des ersten F2L-Paares während des Kantenpairings.
+
+---
+
+**Die Yau-Methode ist der Standard für wettkampfmäßiges 4x4-Lösen.** Der nahtlose Übergang von der Reduktion zum 3x3-Lösen, kombiniert mit besseren Vorausschau-Möglichkeiten, macht sie zur bevorzugten Wahl für Speedcuber, die auf Durchschnitte unter 40 Sekunden zielen. Beginne damit, deine Reduktions-Lösungen Schritt für Schritt in Yau umzuwandeln.

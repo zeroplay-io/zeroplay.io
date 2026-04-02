@@ -1,0 +1,466 @@
+---
+title: Algoritmy PLL
+sidebar_position: 8
+description: Complete PLL (Permutation of the Last Layer) algorithm reference for 3x3 Rubik's Cube. All 21 cases with algorithms and interactive demos.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-pll.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Algoritmy PLL
+
+**PLL (Permutace poslední vrstvy)** je posledním krokem metody CFOP. Poté, co OLL správně orientuje všechny nálepky horní strany, PLL přeuspořádá dílky do jejich vyřešených pozic. Celkem existuje **21 případů PLL**.
+
+Pokud jste začátečník, začněte s **2-Look PLL** -- zjednodušeným přístupem, který vyžaduje pouze **6 algoritmů** místo všech 21.
+
+---
+
+## 2-Look PLL
+
+2-Look PLL rozděluje krok permutace na dva menší kroky:
+
+1. **Permutace rohů** -- umístění všech 4 rohů na správnou pozici (2 případy)
+2. **Permutace hran** -- umístění všech 4 hran na správnou pozici (4 případy)
+
+To znamená, že se potřebujete naučit pouze **6 algoritmů** celkem.
+
+### Krok 1: Permutace rohů
+
+Podívejte se na rohy horní vrstvy. Zkontrolujte, zda některý **pár sousedních rohů** patří ke stejné straně (odpovídající světla).
+
+#### Výměna sousedních rohů
+
+Jeden pár sousedních rohů je již správně. Držte vyřešený pár **vzadu** a aplikujte:
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+Toto je **T-Perm** -- vymění dva přední rohy (a dvě hrany, které opravíme v kroku 2).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### Výměna diagonálních rohů
+
+Žádné sousední rohy se neshodují. Aplikujte **Y-Perm** pro diagonální výměnu rohů:
+
+**Algoritmus: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+### Krok 2: Permutace hran
+
+Všechny rohy jsou nyní vyřešeny. Podívejte se na hrany a určete, které potřebují cyklovat.
+
+#### Ua Perm (cyklus 3 hran ve směru hodinových ručiček)
+
+Tři hrany potřebují cyklovat ve směru hodinových ručiček. Držte vyřešenou hranu **vzadu**.
+
+**Algoritmus: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm (cyklus 3 hran proti směru hodinových ručiček)
+
+Tři hrany potřebují cyklovat proti směru hodinových ručiček. Držte vyřešenou hranu **vzadu**.
+
+**Algoritmus: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm (výměna protějších párů hran)
+
+Dva páry protějších hran se potřebují vyměnit.
+
+**Algoritmus: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm (výměna sousedních párů hran)
+
+Dva páry sousedních hran se potřebují vyměnit. Držte tak, aby dva páry byly vpředu/vpravo a vzadu/vlevo.
+
+**Algoritmus: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+## Kompletní PLL -- Všech 21 případů
+
+### Pouze hrany (4 případy)
+
+Tyto PLL pohybují pouze hranami; rohy jsou již vyřešeny.
+
+#### Ua Perm
+
+Hrany cyklují ve směru hodinových ručiček. Vyřešená hrana je vzadu.
+
+**Rozpoznání:** Jeden vyřešený pruh (hrana + dva rohy) viditelný zezadu.
+
+**Algoritmus: M2 U M U2 M' U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M U2 M' U' M2"
+  alg="M2 U M U2 M' U M2"
+  stickering="PLL"
+/>
+
+#### Ub Perm
+
+Hrany cyklují proti směru hodinových ručiček. Vyřešená hrana je vzadu.
+
+**Rozpoznání:** Jeden vyřešený pruh viditelný zezadu; barvy hran cyklují opačným směrem než u Ua.
+
+**Algoritmus: M2 U' M U2 M' U' M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U M U2 M' U M2"
+  alg="M2 U' M U2 M' U' M2"
+  stickering="PLL"
+/>
+
+#### H Perm
+
+Dva páry protějších hran se vyměňují.
+
+**Rozpoznání:** Každá strana má opačnou barvu na pozici středové hrany. Šachovnicový vzor na všech čtyřech stranách.
+
+**Algoritmus: M2 U M2 U2 M2 U M2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M2 U' M2 U2 M2 U' M2"
+  alg="M2 U M2 U2 M2 U M2"
+  stickering="PLL"
+/>
+
+#### Z Perm
+
+Dva páry sousedních hran se vyměňují.
+
+**Rozpoznání:** Dvě sousední strany mají každá barvu té druhé na pozici hrany. Žádná strana není zcela vyřešena.
+
+**Algoritmus: M2 U M2 U M' U2 M2 U2 M'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="M U2 M2 U2 M U' M2 U' M2"
+  alg="M2 U M2 U M' U2 M2 U2 M'"
+  stickering="PLL"
+/>
+
+---
+
+### Pouze rohy (3 případy)
+
+Tyto PLL pohybují pouze rohy; hrany jsou již vyřešeny.
+
+#### Aa Perm
+
+Tři rohy cyklují. Světla na levé straně.
+
+**Rozpoznání:** Světla na jedné straně, pruh (3 odpovídající nálepky) je na protější straně.
+
+**Algoritmus: x R' U R' D2 R U' R' D2 R2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R2 D2 R U R' D2 R U' R x'"
+  alg="x R' U R' D2 R U' R' D2 R2 x'"
+  stickering="PLL"
+/>
+
+#### Ab Perm
+
+Tři rohy cyklují (opačný směr než Aa). Světla na pravé straně.
+
+**Rozpoznání:** Zrcadlo Aa -- světla na protější straně.
+
+**Algoritmus: x R2 D2 R U R' D2 R U' R x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x R' U R' D2 R U' R' D2 R2 x'"
+  alg="x R2 D2 R U R' D2 R U' R x'"
+  stickering="PLL"
+/>
+
+#### E Perm
+
+Dva páry diagonálních rohů se vyměňují. Žádné hrany se nepohybují.
+
+**Rozpoznání:** Žádná světla na žádné straně. Každá strana má dva různé barvy rohů.
+
+**Algoritmus: x' R U' R' D R U R' D' R U R' D R U' R' D' x**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x' D R U R' D' R U' R' D R U' R' D' R U R' x"
+  alg="x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+  stickering="PLL"
+/>
+
+---
+
+### Výměna sousedních rohů (6 případů)
+
+Tyto PLL vyměňují jeden pár sousedních rohů spolu s permutacemi hran.
+
+#### T Perm
+
+**Rozpoznání:** Světla vpředu a vzadu. Dvě strany bez světel mají své barvy prohozené.
+
+**Algoritmus: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  stickering="PLL"
+/>
+
+#### F Perm
+
+**Rozpoznání:** Světla pouze na jedné straně (vpředu). Ostatní tři strany nemají odpovídající páry.
+
+**Algoritmus: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U' R U' R' U R U R2 F' R U R U' R' F U R"
+  alg="R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"
+  stickering="PLL"
+/>
+
+#### Ja Perm
+
+**Rozpoznání:** Vyřešený blok 1x1x3 na levé straně. Pravá strana má prohozené sousední dílky.
+
+**Algoritmus: x R2 F R F' R U2 r' U r U2 x'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x U2 r' U' r U2 R' F R' F' R2 x'"
+  alg="x R2 F R F' R U2 r' U r U2 x'"
+  stickering="PLL"
+/>
+
+#### Jb Perm
+
+**Rozpoznání:** Vyřešený blok 1x1x3 na pravé straně. Zrcadlo Ja.
+
+**Algoritmus: R U R' F' R U R' U' R' F R2 U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R2 F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  stickering="PLL"
+/>
+
+#### Ra Perm
+
+**Rozpoznání:** Světla vpředu. Výměna sousedního rohu a hrany na pravé straně.
+
+**Algoritmus: R U' R' U' R U R D R' U' R D' R' U2 R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U2 R D R' U R D' R' U' R' U R U R'"
+  alg="R U' R' U' R U R D R' U' R D' R' U2 R'"
+  stickering="PLL"
+/>
+
+#### Rb Perm
+
+**Rozpoznání:** Světla vzadu. Zrcadlo Ra.
+
+**Algoritmus: R' U2 R U2 R' F R U R' U' R' F' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R2 F R U R U' R' F' R U2 R' U2 R"
+  alg="R' U2 R U2 R' F R U R' U' R' F' R2"
+  stickering="PLL"
+/>
+
+---
+
+### Výměna diagonálních rohů (4 případy)
+
+Tyto PLL vyměňují dva diagonálně protější rohy.
+
+#### V Perm
+
+**Rozpoznání:** Žádná světla na žádné straně. Jedna strana má dvoubarevný vzor, kde hrana odpovídá jednomu rohu.
+
+**Algoritmus: R' U R' U' y R' F' R2 U' R' U R' F R F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F' R' F' R U' R U R2 F R y' U R U' R"
+  alg="R' U R' U' y R' F' R2 U' R' U R' F R F"
+  stickering="PLL"
+/>
+
+#### Y Perm
+
+**Rozpoznání:** Žádná světla. Jedna strana má dva odpovídající rohy, ale hrana mezi nimi je špatná.
+
+**Algoritmus: F R U' R' U' R U R' F' R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="F R' F' R U R U' R' F R U' R' U R U R' F'"
+  alg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  stickering="PLL"
+/>
+
+#### Na Perm
+
+**Rozpoznání:** Dvě protější strany jsou zcela vyřešeny (vyřešený pruh na každé), ale ostatní dvě strany mají dílky zcela prohozené.
+
+**Algoritmus: R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R U R' U2 R U R2 F' R U R U' R' F R U' R' U' R U' R'"
+  alg="R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"
+  stickering="PLL"
+/>
+
+#### Nb Perm
+
+**Rozpoznání:** Zrcadlo Na. Dva protější pruhy, ale prohozené jinak.
+
+**Algoritmus: R' U R U' R' F' U' F R U R' F R' F' R U' R**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="R' U R' F R F' R U' R' F' U F R U R' U' R"
+  alg="R' U R U' R' F' U' F R U R' F R' F' R U' R"
+  stickering="PLL"
+/>
+
+---
+
+### G Perms (4 případy)
+
+Permutace G jsou nejtěžší na rozpoznání. Pohybují jedním párem sousedních rohů a cyklují tři hrany.
+
+#### Ga Perm
+
+**Rozpoznání:** Světla vlevo. Přední pravý roh odpovídá pravé hraně.
+
+**Algoritmus: R2 U R' U R' U' R U' R2 U' D R' U R D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R' U' R D' U R2 U R' U R U' R U' R2"
+  alg="R2 U R' U R' U' R U' R2 U' D R' U R D'"
+  stickering="PLL"
+/>
+
+#### Gb Perm
+
+**Rozpoznání:** Světla vpředu. Zadní levý roh odpovídá levé hraně.
+
+**Algoritmus: R' U' R U D' R2 U R' U R U' R U' R2 D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R2 U R' U R' U' R U' R2 D U' R' U R"
+  alg="R' U' R U D' R2 U R' U R U' R U' R2 D"
+  stickering="PLL"
+/>
+
+#### Gc Perm
+
+**Rozpoznání:** Světla vpravo. Přední levý roh odpovídá levé hraně.
+
+**Algoritmus: R2 U' R U' R U R' U R2 U D' R U' R' D**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D' R U R' D U' R2 U' R U' R' U R' U R2"
+  alg="R2 U' R U' R U R' U R2 U D' R U' R' D"
+  stickering="PLL"
+/>
+
+#### Gd Perm
+
+**Rozpoznání:** Světla vzadu. Přední pravý roh odpovídá pravé hraně.
+
+**Algoritmus: R U R' U' D R2 U' R U' R' U R' U R2 D'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="D R2 U' R U' R U R' U R2 D' U R U' R'"
+  alg="R U R' U' D R2 U' R U' R' U R' U R2 D'"
+  stickering="PLL"
+/>
+
+---
+
+## Tipy pro rozpoznání
+
+Efektivní rozpoznání PLL je klíčem k rychlému řešení. Zde jsou obecné strategie:
+
+1. **Hledejte světla** -- pár odpovídajících rohů na jedné straně. To okamžitě zúží možnosti.
+2. **Počítejte vyřešené pruhy** -- pruh jsou tři odpovídající nálepky v řadě (roh-hrana-roh). Pruhy ukazují na konkrétní PLL.
+3. **Zkontrolujte dvě strany** -- pohled na přední a pravou stranu obvykle stačí k identifikaci případu.
+4. **Naučte se protější vzory** -- mnoho PLL přichází v zrcadlových párech (Ua/Ub, Ja/Jb, Ra/Rb, Ga-Gd).
+
+| Co vidíte | Možné PLL |
+|:---|:---|
+| 4 strany se světly | H, Ua, Ub, Z |
+| 2 protější strany se světly | T, F, Ja, Jb, Ra, Rb |
+| 1 strana se světly | Aa, Ab, Ga, Gb, Gc, Gd |
+| 0 stran se světly | E, V, Y, Na, Nb |
+
+## Pořadí učení
+
+Doporučené pořadí pro naučení všech 21 PLL:
+
+1. **Nejprve 2-Look:** T, Y (rohy) + Ua, Ub, H, Z (hrany) -- 6 algoritmů
+2. **Sousední výměny:** Ja, Jb, F, Ra, Rb -- 5 dalších algoritmů
+3. **Pouze rohy:** Aa, Ab, E -- 3 další algoritmy
+4. **Diagonální výměny:** V, Na, Nb -- 3 další algoritmy
+5. **G Perms nakonec:** Ga, Gb, Gc, Gd -- 4 poslední algoritmy
+
+:::tip
+Procvičujte rozpoznání zamícháním, vyřešením do PLL a poté zakrytím kostky a pokusem identifikovat případ z paměti. Rychlost přichází z okamžitého rozpoznání, nejen z rychlých pohybů prstů.
+:::

@@ -1,0 +1,231 @@
+---
+title: Guía de Finger Tricks
+sidebar_position: 9
+description: Master essential finger tricks for faster Rubik's Cube solving. Learn proper grip, efficient move execution, and common triggers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-finger-tricks.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-finger-tricks.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# Guía de Finger Tricks
+
+Los finger tricks son la base del speedcubing. En lugar de girar cada cara con toda la mano, usas dedos individuales para mover las capas a su lugar. Dominar los finger tricks hará que tus resoluciones sean más fluidas, rápidas y mucho menos agotadoras. Esta guía cubre el agarre estándar, cómo ejecutar cada movimiento común de manera eficiente y los triggers esenciales que necesitas practicar.
+
+---
+
+## Agarre Base
+
+El **agarre base** es la forma predeterminada de sostener el cubo entre movimientos. Cada finger trick comienza y vuelve a esta posición.
+
+- El **pulgar izquierdo** descansa en la **cara frontal** (F), cerca del centro-izquierda
+- El **índice izquierdo** descansa en la **cara trasera** (B), cerca de la parte superior izquierda
+- El **pulgar derecho** descansa en la **cara frontal** (F), cerca del centro-derecha
+- El **índice derecho** descansa en la **cara trasera** (B), cerca de la parte superior derecha
+
+Los dedos medio, anular y meñique de cada mano envuelven las caras **izquierda (L)** y **derecha (R)** respectivamente, proporcionando soporte y permitiendo movimientos R/L.
+
+**Puntos clave:**
+- Sostén el cubo con suavidad. Un agarre apretado te frena y dificulta los movimientos rápidos.
+- Los dedos índice deben flotar justo por encima de la capa superior para estar listos para movimientos U en cualquier momento.
+- El cubo debe sentirse equilibrado entre ambas manos con una presión mínima.
+
+---
+
+## Ejecución de Movimientos Básicos
+
+Cada movimiento de cara tiene una forma eficiente de ejecutarse con un solo dedo. Aprenderlos individualmente es esencial antes de combinarlos en triggers.
+
+### R (Derecha en sentido horario)
+
+Empuja la cara derecha hacia arriba con tu **índice derecho**. Empieza con el índice en el borde posterior derecho de la cara R y haz un movimiento rápido alejándolo de ti y hacia arriba. Tus otros dedos se quedan en el agarre base.
+
+### R' (Derecha en sentido antihorario)
+
+Tira de la cara derecha hacia abajo con tu **anular derecho** (o pulgar derecho). El anular engancha el borde inferior derecho de la cara R y lo tira hacia ti. Algunos cuberos prefieren usar el pulgar para empujar el borde frontal derecho hacia abajo.
+
+### U (Superior en sentido horario)
+
+Lanza la capa superior de **izquierda a derecha** usando tu **índice derecho**. Tu índice empieza en el borde posterior derecho de la cara U y la empuja hacia la derecha con un rápido movimiento horizontal. Este es uno de los movimientos más comunes en speedcubing.
+
+### U' (Superior en sentido antihorario)
+
+Lanza la capa superior de **derecha a izquierda** usando tu **índice izquierdo**. Espejo del movimiento U. Tu índice izquierdo empieza en el borde posterior izquierdo y la empuja hacia la izquierda.
+
+### U2 (Superior 180)
+
+Dos métodos:
+1. **Doble lanzamiento** — Ejecuta U dos veces rápidamente con tu índice derecho.
+2. **Combinación izquierda-derecha** — Lanza U con tu índice derecho, luego inmediatamente lanza U con tu índice izquierdo (o viceversa). Esto es más rápido una vez dominado.
+
+### F (Frontal en sentido horario)
+
+Empuja la cara frontal hacia abajo y a la derecha usando tu **índice derecho**. Empieza en la parte superior derecha de la cara F y empújala en sentido horario. Alternativamente, usa tu **índice izquierdo** empujando hacia abajo desde la parte superior izquierda. El método del índice izquierdo suele preferirse durante algoritmos cuando la mano derecha está ocupada.
+
+### F' (Frontal en sentido antihorario)
+
+Empuja la cara frontal hacia arriba con tu **pulgar derecho**. Tu pulgar descansa naturalmente en la cara frontal en el agarre base, así que empuja hacia arriba y a la izquierda para girar F en sentido antihorario.
+
+### D (Inferior en sentido horario)
+
+Tira de la capa inferior hacia ti con tu **anular derecho**. Tu anular engancha el borde posterior inferior de la capa D y lo tira hacia tu cuerpo.
+
+### D' (Inferior en sentido antihorario)
+
+Tira de la capa inferior hacia ti con tu **anular izquierdo**. Espejo del movimiento D, usando la mano izquierda.
+
+---
+
+## Triggers Comunes
+
+Los triggers son fragmentos cortos de algoritmos que aparecen repetidamente en algoritmos CFOP. Practicarlos hasta que sean automáticos es la mejor manera de mejorar tu velocidad.
+
+### Sexy Move: R U R' U'
+
+El trigger más fundamental en todo el cubing. Aparece en incontables algoritmos de OLL, PLL y F2L. Practícalo hasta que se sienta como un solo movimiento fluido en lugar de cuatro movimientos separados.
+
+**Ejecución:** Índice derecho hacia arriba (R) - índice derecho hacia la derecha (U) - anular derecho hacia abajo (R') - índice izquierdo hacia la izquierda (U').
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U R' U'"
+  setupAlg=""
+/>
+
+### Inverse Sexy: U R U' R'
+
+El inverso del Sexy Move. Igualmente importante y aparece en muchas variaciones de algoritmos.
+
+**Ejecución:** Índice derecho hacia la derecha (U) - índice derecho hacia arriba (R) - índice izquierdo hacia la izquierda (U') - anular derecho hacia abajo (R').
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="U R U' R'"
+  setupAlg=""
+/>
+
+### Sledgehammer: R' F R F'
+
+Un trigger potente usado extensamente en OLL y para inserción de aristas en F2L. Los movimientos F requieren un ligero ajuste del agarre base.
+
+**Ejecución:** Anular derecho (R') - índice izquierdo (F) - índice derecho hacia arriba (R) - pulgar derecho hacia arriba (F').
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R' F R F'"
+  setupAlg=""
+/>
+
+### Hedge Slammer: F R' F' R
+
+El inverso del Sledgehammer. Suele aparecer en la orientación opuesta de los casos de Sledgehammer.
+
+**Ejecución:** Índice izquierdo (F) - anular derecho (R') - pulgar derecho hacia arriba (F') - índice derecho hacia arriba (R).
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="F R' F' R"
+  setupAlg=""
+/>
+
+### Sune Trigger: R U R' U R U2 R'
+
+Uno de los algoritmos de OLL más comunes. Aparece en muchos métodos y es un bloque de construcción para algoritmos más avanzados. El Sune es esencialmente una variación del Sexy Move con un giro U doble al final.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U R' U R U2 R'"
+  setupAlg="R U2 R' U' R U' R'"
+/>
+
+### Double Sexy: (R U R' U') (R U R' U')
+
+Dos Sexy Moves consecutivos. Aparece en varios algoritmos de PLL y es un gran ejercicio para construir velocidad y ritmo con el trigger básico.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U R' U' R U R' U'"
+  setupAlg=""
+/>
+
+---
+
+## Reagarres
+
+Un **reagarre** es cualquier momento en que ajustas la posición de tu mano en el cubo durante una resolución. Cada reagarre cuesta tiempo, así que minimizarlos es crítico.
+
+### Cuándo ocurren los reagarres
+
+- **Antes de un grupo de caras diferente** — Cambiar de movimientos R/U a movimientos L/F a menudo requiere cambiar el agarre.
+- **Después de rotaciones** — Una rotación y o y' cambia qué cara es la frontal, requiriendo reposicionar las manos.
+- **Entre fases del algoritmo** — Transición de F2L a OLL o de OLL a PLL.
+
+### Cómo minimizar los reagarres
+
+1. **Aprende algoritmos que fluyan naturalmente.** Muchos algoritmos de OLL/PLL tienen múltiples versiones. Elige el que requiera menos cambios de agarre para tu estilo de giro.
+
+2. **Usa más tu mano no dominante.** Si tu mano izquierda puede ejecutar movimientos U' y L sin reagarrar, ahorras tiempo significativo.
+
+3. **Predice el siguiente movimiento.** Durante una resolución, mira hacia adelante a lo que viene después y posiciona tus dedos por adelantado en lugar de completar un movimiento y luego ajustar.
+
+4. **Practica las transiciones.** El reagarre entre el último par F2L y OLL, o entre OLL y PLL, suele ser la mayor pérdida de tiempo. Practica estas transiciones específicamente.
+
+5. **Uso de la mesa (para OH).** En la resolución con una mano, golpear el cubo contra la mesa para asistir los giros es una técnica legítima. Para resolución con dos manos, esto es innecesario pero algunos cuberos lo usan para movimientos D.
+
+---
+
+## Ejercicios de Práctica
+
+La práctica constante y enfocada es lo que convierte los finger tricks de un esfuerzo consciente en memoria muscular.
+
+### Ejercicio 1: Repetición del Sexy Move
+
+Ejecuta **R U R' U'** repetidamente. Seis repeticiones devuelven el cubo al estado resuelto. Concéntrate en:
+- Mantener un ritmo consistente
+- Sin pausas entre movimientos
+- Transiciones suaves entre movimientos R y U
+- Objetivo: completar el ciclo de 6 repeticiones en menos de 4 segundos
+
+### Ejercicio 2: Sune × 6
+
+Realizar el algoritmo Sune (**R U R' U R U2 R'**) seis veces devuelve el cubo a su estado resuelto. Es un ejercicio excelente porque:
+- Combina el Sexy Move con un U2
+- Entrena la resistencia de tu índice derecho
+- Construye ritmo para algoritmos más largos
+
+Empieza despacio y aumenta la velocidad gradualmente. Cronométrate y sigue tu progreso.
+
+### Ejercicio 3: Repetición del T-Perm
+
+El T-Perm (**R U R' U' R' F R2 U' R' U' R U R' F'**) es un gran ejercicio de velocidad porque combina múltiples triggers: el Sexy Move, movimientos F y movimientos R dobles. Repítelo hasta que fluya sin vacilación.
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+  setupAlg="F R U' R' U R U R2 F' R U R U' R'"
+/>
+
+### Ejercicio 4: Práctica con Metrónomo
+
+Usa una app o web de metrónomo:
+1. Empieza a **60 BPM** — un movimiento por pulso.
+2. Ejecuta cualquier trigger (el Sexy Move es ideal) haciendo coincidir cada movimiento exactamente con el pulso.
+3. Aumenta 10 BPM una vez que puedas mantener un timing perfecto durante 30 segundos.
+4. Tu objetivo es alcanzar **180+ BPM** para el Sexy Move.
+
+Esto enseña una velocidad de giro consistente, que es más importante que la velocidad máxima.
+
+---
+
+## Evitar Malos Hábitos
+
+Construir velocidad sobre una base débil lleva a un estancamiento. Cuidado con estos errores comunes:
+
+- **Giros de muñeca** — Girar una cara rotando toda la muñeca es lento y cansador. Usa movimientos individuales de dedos. Tu muñeca debe permanecer relativamente quieta.
+- **Giros de una cara con dos manos** — Si usas ambas manos para girar R, pierdes la capacidad de preparar la otra mano para el siguiente movimiento. Cada mano debe trabajar de forma independiente.
+- **Reagarrar después de cada movimiento** — Si te encuentras ajustando el agarre constantemente, tu agarre base puede estar mal. Vuelve a lo básico y corrige tu posición inicial.
+- **Apresurarse antes de la precisión** — La velocidad viene de eliminar pausas, no de girar más rápido. Una resolución fluida y sin pausas a velocidad moderada siempre ganará a una resolución con giros rápidos y vacilaciones constantes.
+- **Ignorar tu mano débil** — La mayoría de cuberos descuidan los movimientos de la mano izquierda. Dedica tiempo de práctica específicamente a movimientos L, U' y triggers de mano izquierda.
+
+Practica cada movimiento de forma aislada primero. Una vez que los movimientos individuales sean automáticos, combínalos en triggers. Una vez que los triggers sean automáticos, se integrarán naturalmente en tus resoluciones completas.

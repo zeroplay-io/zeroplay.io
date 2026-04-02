@@ -1,0 +1,219 @@
+---
+title: CFOP Method Overview
+sidebar_position: 5
+description: Learn the CFOP speedcubing method - Cross, F2L, OLL, and PLL. The most popular advanced method for solving the 3x3 Rubik's Cube fast.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-cfop.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# CFOP Method Overview
+
+The **CFOP method** (also known as the **Fridrich method**) is the most widely used speedcubing method in the world. The vast majority of sub-20-second solvers and world record holders use CFOP. It builds on the beginner Layer-by-Layer method but is dramatically more efficient — reducing an average solve from 100+ moves to around 55-60 moves.
+
+**CFOP** stands for its four steps:
+
+1. **C**ross — Solve 4 edge pieces on the bottom
+2. **F**2L — First Two Layers (pair and insert 4 corner-edge pairs)
+3. **O**LL — Orient Last Layer (make the top face all one color)
+4. **P**LL — Permute Last Layer (arrange all top pieces correctly)
+
+## CFOP vs. Beginner Method
+
+| | Beginner (LBL) | CFOP |
+|---|---|---|
+| Steps | 7 | 4 |
+| Average moves | 100-120 | 55-60 |
+| Algorithms to learn | 5-8 | 78 (full) / 16 (2-look) |
+| Typical speed | 1-3 minutes | 10-20 seconds |
+| Key difference | Step-by-step, one piece at a time | Pairs pieces together, fewer steps |
+
+The good news: you can learn CFOP **gradually**. Start with intuitive F2L and 2-look OLL/PLL (only 16 algorithms), then expand to full OLL (57 algorithms) and full PLL (21 algorithms) over time.
+
+---
+
+## Step 1: Cross
+
+The cross is the same concept as the beginner method — solve 4 white edge pieces on the bottom face so that each edge also matches its side center. The difference in CFOP is **how** you approach it:
+
+- **Plan the entire cross during inspection** (15 seconds before the solve starts)
+- **Solve the cross on the bottom** — no flipping the cube over
+- **Aim for 8 moves or fewer** — an efficient cross averages 6-7 moves
+
+**Example: Solving a cross edge directly to the bottom**
+
+Here, the white-blue edge is in the top layer. We align it and insert it directly to the bottom in one move:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2"
+  alg="R2"
+/>
+
+**Example: Cross edge needs repositioning**
+
+Sometimes an edge is in the wrong slot or flipped. Here we fix a misplaced edge:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 D' F"
+  alg="F' D"
+/>
+
+**Tips for a fast cross:**
+- Practice planning the cross with your eyes closed
+- Learn to solve it in 8 moves or fewer from any scramble
+- Work on solving the cross on the bottom from day one — avoid the habit of solving on top
+
+---
+
+## Step 2: F2L (First Two Layers)
+
+F2L is the heart of CFOP and where the biggest time savings come from. Instead of solving the first layer corners and second layer edges separately (as in the beginner method), you **pair** a corner piece with its matching edge piece and **insert** them together as a single unit.
+
+There are 4 corner-edge pairs (called **slots**) to solve. Each slot sits between two side faces in the bottom two layers.
+
+**Basic F2L case: Corner and edge both in the top layer**
+
+The white-red-green corner is in the top layer, and the red-green edge is also in the top layer. We pair them and insert:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U'"
+  alg="U R U' R'"
+/>
+
+**Another common case: Separating a wrong pair**
+
+Sometimes pieces are paired incorrectly. We split them apart and rejoin correctly:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U R U' R'"
+  alg="R U R' U' R U' R'"
+/>
+
+F2L can be learned **intuitively** — understanding the logic of hiding, pairing, and inserting — or **algorithmically** with 41 specific cases. Most speedcubers use a combination of both.
+
+For the full list of F2L cases and algorithms, see the [**F2L: First Two Layers**](./f2l) guide.
+
+---
+
+## Step 3: OLL (Orient Last Layer)
+
+After completing the first two layers, the top face will have some yellow stickers and some non-yellow stickers. The goal of OLL is to make the **entire top face yellow** — we don't care about the side colors yet.
+
+Full OLL has **57 algorithms**. However, you can start with **2-look OLL**, which uses only 10 algorithms by splitting the step into two parts:
+
+1. **First look:** Form a yellow cross on top (3 cases, using 2 algorithms applied from different orientations)
+2. **Second look:** Orient the yellow corners (7 algorithms)
+
+**Example: Sune (one of the most common OLL cases)**
+
+This is OLL #26, commonly called **Sune**. One yellow corner is oriented, and the other three need to be rotated:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U2 R' U' R U' R'"
+  alg="R U R' U R U2' R'"
+/>
+
+**Example: OLL Cross case (forming the yellow cross)**
+
+When you have an L-shape of yellow edges on top, hold the L at the back-left and apply:
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+**Tips for learning OLL:**
+- Start with 2-look OLL — it only adds a few seconds to your solve
+- Learn the Sune and Anti-Sune first; they appear in many OLL cases
+- Practice recognizing cases by the pattern of yellow stickers on top
+
+---
+
+## Step 4: PLL (Permute Last Layer)
+
+The final step! All yellow stickers are now on top, but the side colors of the last layer pieces may not match. PLL **rearranges** the top layer pieces into their correct positions to complete the solve.
+
+Full PLL has **21 algorithms**. You can start with **2-look PLL**, which uses only 6 algorithms:
+
+1. **First look:** Position the corners correctly (2 algorithms)
+2. **Second look:** Position the edges correctly (4 algorithms)
+
+**Example: T-Perm (one of the most useful PLL algorithms)**
+
+T-Perm swaps two corners and two edges. It appears frequently and is used as a foundation for learning other PLLs:
+
+**Algorithm: R U R' U' R' F R2 U' R' U' R U R' F'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F R U' R' U R U R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U' R' U' R U R' F'"
+/>
+
+**Example: U-Perm (a) — 3-edge cycle**
+
+U-Perm cycles three edges clockwise while all corners are already in place:
+
+**Algorithm: R U' R U R U R U' R' U' R2**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R2 U R U R' U' R' U' R' U R'"
+  alg="R U' R U R U R U' R' U' R2"
+/>
+
+**Tips for learning PLL:**
+- Start with the T-Perm, U-Perms (a and b), and the A-Perms
+- Learn to recognize PLLs by looking at the side colors (headlights pattern)
+- Practice executing PLLs from any AUF (adjustment of upper face) angle
+
+---
+
+## When to Learn CFOP
+
+CFOP is the natural next step after you are comfortable with the beginner Layer-by-Layer method. Here is a recommended progression:
+
+### Stage 1: Beginner to Sub-60 Seconds
+- Master the beginner method until your solves are consistent
+- Learn to solve the **cross on the bottom**
+- Start practicing **intuitive F2L** — watch how pairs are formed and inserted
+
+### Stage 2: Sub-60 to Sub-30 Seconds
+- Use full **intuitive F2L** for all 4 pairs
+- Learn **2-look OLL** (10 algorithms)
+- Learn **2-look PLL** (6 algorithms)
+- Practice **lookahead** — tracking the next pair while inserting the current one
+
+### Stage 3: Sub-30 to Sub-20 Seconds
+- Learn **full PLL** (21 algorithms)
+- Start learning **full OLL** (57 algorithms)
+- Optimize your F2L solutions — learn the [**algorithmic F2L cases**](./f2l)
+- Work on cross efficiency (plan full cross in inspection)
+
+### Stage 4: Sub-20 and Beyond
+- Complete **full OLL**
+- Learn advanced F2L tricks (empty slot techniques, multi-slotting)
+- Develop strong **lookahead** habits
+- Work on turning speed and fluency
+
+---
+
+## Next Steps
+
+Ready to dive deeper into each step? Check out these detailed guides:
+
+- [**F2L: First Two Layers**](./f2l) — All common F2L cases with algorithms and demos
+- [**OLL Algorithms**](./oll) — Full 57 OLL cases with 2-Look OLL for beginners
+- [**PLL Algorithms**](./pll) — All 21 PLL cases with 2-Look PLL for beginners
+- [**Finger Tricks Guide**](./finger-tricks) — Efficient move execution and essential triggers
+- [**Speed Cubing Tips**](./speed-tips) — Cross planning, lookahead, and practice routines
+
+**Happy cubing!** The journey from beginner to sub-20 is one of the most rewarding challenges in speedcubing. Take it one step at a time, and you will get there.

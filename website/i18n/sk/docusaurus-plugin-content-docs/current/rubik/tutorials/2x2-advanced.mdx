@@ -1,0 +1,374 @@
+---
+title: "2x2 Pokročilé: Metóda CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 Pokročilé: Metóda CLL
+
+Posuňte riešenie 2x2 kocky na ďalšiu úroveň s metódou **CLL (Rohy poslednej vrstvy)**. Zatiaľ čo Ortega rieši poslednú vrstvu v dvoch krokoch (OLL, potom PBL), CLL rieši **orientáciu aj permutáciu** rohov v **jedinom algoritme**. Menej pohľadov a rýchlejšie riešenia.
+
+## Prečo CLL?
+
+| Metóda | Kroky poslednej vrstvy | Algoritmy | Typická rýchlosť |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 sekúnd |
+| **CLL** | 1 (jeden pohľad) | ~40 | 2–4 sekúnd |
+
+CLL je štandardná metóda najlepších speedcuberov 2x2. Naučením všetkých 40 prípadov eliminujete celý krok.
+
+## Ako CLL funguje
+
+1. **Vyriešte prvú stranu** — ako pri Ortege, zostavte bielu stranu dole (farby strán sa nemusia zhodovať).
+2. **Rozpoznajte prípad CLL** — pozrite sa na hornú stranu a farby strán na identifikáciu prípadu.
+3. **Aplikujte jeden algoritmus** — súčasne orientuje a permutuje všetky horné rohy.
+4. **AUF + úprava spodnej vrstvy** — maximálne jedno otočenie U a jedno otočenie D.
+
+## Pripomienka notácie
+
+- **R** = Pravá &nbsp;&nbsp; **L** = Ľavá &nbsp;&nbsp; **U** = Horná &nbsp;&nbsp; **D** = Dolná &nbsp;&nbsp; **F** = Predná &nbsp;&nbsp; **B** = Zadná
+- Samotné písmeno = **90° v smere hodinových ručičiek**. S **'** = **proti smeru**. S **2** = **180°**.
+
+---
+
+## Skupiny prípadov CLL
+
+40 prípadov CLL je organizovaných do 7 skupín podľa orientačného vzoru hornej strany. Nižšie sú najdôležitejšie prípady z každej skupiny.
+
+---
+
+## Prípady Sune (4 zo 6)
+
+Jeden roh je orientovaný (žltá hore), ostatné tri treba otočiť. Najčastejšia skupina.
+
+### Sune 1 — Susedná výmena
+
+Držte vyriešený roh vpredu vľavo. Tri nevyriešené rohy sa otáčajú v smere hodinových ručičiek.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — Diagonálna výmena
+
+Rovnaký orientačný vzor, ale rohy vyžadujú diagonálnu výmenu.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — Čistý (bez výmeny)
+
+Orientácia vyriešená bez potreby výmeny pozícií.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — Susedná výmena (Zrkadlo)
+
+Držte vyriešený roh vpredu vpravo.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## Prípady Anti-Sune (3 zo 6)
+
+Zrkadlo Sune — jeden roh orientovaný, ostatné tri sa otáčajú proti smeru.
+
+### Anti-Sune 1 — Susedná výmena
+
+Držte vyriešený roh vpredu vpravo. Tri nevyriešené rohy sa otáčajú proti smeru.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — Diagonálna výmena
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — Čistý (bez výmeny)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## Prípady H (4 zo 4)
+
+Dva protiľahlé rohy orientované (žltá hore), ďalšie dva majú žltú na stranách.
+
+### H 1 — Susedná výmena
+
+Dve žlté nálepky hore v diagonálnych pozíciách.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — Diagonálna výmena
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — Bez výmeny
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — Stĺpce
+
+Oba páry diagonálnych rohov potrebujú výmenu.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## Prípady Pi (4 zo 6)
+
+Dva susedné rohy majú žltú hore, ďalšie dva majú žltú na stranách. Horná strana vyzerá ako grécke písmeno Pi.
+
+### Pi 1 — Diagonálna výmena
+
+Držte dva orientované rohy vzadu.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — Susedná výmena (Pravá)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — Susedná výmena (Ľavá)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — Bez výmeny
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## Prípady T (3 zo 6)
+
+Horná strana ukazuje vzor v tvare T — jeden roh orientovaný, jeden susedný so žltou vpredu, ďalšie dva so žltou na stranách.
+
+### T 1 — Susedná výmena
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — Diagonálna výmena
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — Bez výmeny
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## Prípady U (3 zo 6)
+
+Jeden roh správne orientovaný, ostatné tri vo vzore U na stranách.
+
+### U 1 — Susedná výmena
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — Diagonálna výmena
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — Bez výmeny
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## Prípady L (3 zo 6)
+
+Dva susedné rohy otočené rovnakým smerom — horná strana ukazuje vzor L.
+
+### L 1 — Susedná výmena
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — Diagonálna výmena
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — Bez výmeny
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## Po CLL: Dokončenie riešenia
+
+Po aplikácii algoritmu CLL je horná strana plne vyriešená. Možno budete potrebovať:
+
+1. **AUF (Úprava strany U)** — jedno otočenie U alebo U' na zarovnanie.
+2. **Úprava spodnej vrstvy** — ak je posunutá, jedno otočenie D alebo D' to opraví.
+3. **Výmena spodnej vrstvy** — zriedkavo môže potrebovať susednú alebo diagonálnu výmenu. Použite PBL algoritmy z metódy Ortega:
+   - **Diagonálna výmena:** R2 F2 R2
+   - **Susedná výmena:** R U' R F2 R' U R'
+
+---
+
+## Stratégia učenia
+
+Naučiť sa 40 prípadov naraz je náročné. Odporúčané poradie:
+
+1. **Začnite so Sune a Anti-Sune** (12 prípadov) — najčastejšie, mnoho krátkych algoritmov.
+2. **Pridajte prípady T a U** (12 prípadov) — pomerne ľahké na rozpoznanie.
+3. **Naučte sa prípady Pi** (6 prípadov) — výrazný orientačný vzor.
+4. **Naučte sa prípady L** (6 prípadov) — podobné rozpoznanie ako Pi, iný smer.
+5. **Dokončite prípadmi H** (4 prípady) — najmenej častá skupina.
+
+## Tipy na rozpoznávanie
+
+- **Najprv sa pozrite na hornú stranu** na identifikáciu orientačnej skupiny.
+- **Potom skontrolujte farby strán** na určenie konkrétneho prípadu.
+- **Cvičte po skupinách** — jednu skupinu naraz až po okamžité rozpoznanie.
+- **Používajte inverzné scrambly** — pripravte prípad, vyriešte ho, predpovedajte inverz.
+
+---
+
+**S ovládnutým CLL môžete dosiahnuť priemery pod 3 sekundy na 2x2.** Prístup jedného pohľadu eliminuje pauzu medzi OLL a PBL. Pokračujte v cvičení rozpoznávania — rýchlosť prichádza z okamžitej identifikácie.

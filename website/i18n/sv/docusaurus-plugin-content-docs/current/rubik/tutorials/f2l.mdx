@@ -1,0 +1,252 @@
+---
+title: "F2L: Första två lagren"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L: Första två lagren
+
+F2L (First Two Layers, första två lagren) är det **viktigaste steget** i CFOP-metoden. Istället för att lösa hörnen i det första lagret och kanterna i det andra lagret som två separata steg (som nybörjarmetoden), parar F2L ett hörn med dess matchande kant och sätter in dem tillsammans i rätt plats. Detta sparar ett enormt antal drag och är källan till de största hastighetsförbättringarna.
+
+Det finns **4 platser** att fylla, en i varje hörn av de två nedersta lagren. Varje plats består av en hörnbit och en kantbit.
+
+## Konceptet
+
+Varje F2L-fall involverar två bitar:
+- En **hörnbit** som hör till det nedersta lagret (den har en vit/bottenfärg-klistermärke)
+- En **kantbit** som hör till det mellersta lagret (den förbinder två sidfärger)
+
+Målet är att **para** dessa två bitar i det översta lagret och sedan **sätta in** paret i rätt plats i en smidig rörelse.
+
+## Notationspåminnelse
+
+- **R** = Höger &nbsp;&nbsp; **L** = Vänster &nbsp;&nbsp; **U** = Upp &nbsp;&nbsp; **D** = Ner &nbsp;&nbsp; **F** = Fram &nbsp;&nbsp; **B** = Bak
+- En bokstav ensam = **90° medurs** &nbsp;&nbsp; **'** = **moturs** &nbsp;&nbsp; **2** = **180°**
+
+Håll kuben med **vit nedåt**. Platsen vi sätter in i är alltid den **främre högra platsen** (mellan F- och R-sidorna).
+
+---
+
+## Intuitiv F2L
+
+Innan du memorerar algoritmer, lär dig **logiken** bakom F2L. Varje fall följer samma mönster:
+
+1. **Hitta** ett hörn-kant-par som hör ihop
+2. **Separera** dem om de sitter ihop felaktigt
+3. **Positionera** en bit, sedan **för** den andra till den
+4. **Para** dem i det översta lagret så att vit pekar utåt eller nedåt
+5. **Sätt in** det förbundna paret i platsen
+
+**Nyckelprincip:** Använd R- och U-drag för att ta ut hörnet från den främre högra platsen eller sätta in det, och U-drag för att positionera kanten. Störa aldrig redan lösta platser.
+
+---
+
+Det finns **41 standard F2L-fall** totalt. Nedan täcker vi de **15 viktigaste fallen** som utgör grunden. När du behärskar dessa kommer du att kunna hantera de återstående fallen intuitivt eller slå upp dem vid behov.
+
+## Grundfall: båda bitarna i det översta lagret
+
+Dessa är de enklaste och vanligaste fallen. Både hörnet och kanten finns i U-lagret och målplatsen är tom.
+
+### Fall 1: Enkel insättning — Hörn vit pekar höger, kant redo
+
+Hörnet har vit mot R-sidan, och kanten är redan positionerad så att ett U-drag parar dem. Detta är den mest grundläggande F2L-insättningen.
+
+**Algoritm: R U R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U' R'" alg="R U R'" />
+
+### Fall 2: Enkel insättning — Hörn vit pekar framåt, kant redo
+
+Hörnet har vit mot F-sidan, och kanten är positionerad för parning med en moturs insättning.
+
+**Algoritm: F' U' F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U F" alg="F' U' F" />
+
+### Fall 3: Hörn vit pekar uppåt, färger matchar framcentret
+
+Hörnet har vit uppåt och dess framfärg matchar framcentret. Kanten är på motsatt sida. Vi behöver koppla ihop dem och sätta in.
+
+**Algoritm: U R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U'" alg="U R U2' R' U R U' R'" />
+
+### Fall 4: Hörn vit pekar uppåt, färger matchar höger center
+
+Hörnet har vit uppåt och dess högra färg matchar höger center. Kanten måste paras från motsatt sida.
+
+**Algoritm: U' F' U2 F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U2 F U" alg="U' F' U2 F U' F' U F" />
+
+### Fall 5: Hörn och kant långt ifrån varandra, vit pekar höger
+
+Hörnet har vit åt höger och kanten är på motsatt sida av det översta lagret. Vi för kanten närmare, sedan parar och sätter in.
+
+**Algoritm: U' R U R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U' R' U" alg="U' R U R' U R U' R'" />
+
+### Fall 6: Hörn och kant långt ifrån varandra, vit pekar framåt
+
+Spegling av fall 5. Hörnet har vit framåt och kanten är på den bortre sidan.
+
+**Algoritm: U F' U' F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U F U'" alg="U F' U' F U' F' U F" />
+
+### Fall 7: Hörn och kant intill varandra, vit pekar höger — Par förbundet men fel
+
+Hörnet och kanten är intill varandra och förbundna, men insatta skulle de vara fel. Vi delar dem och sätter ihop dem rätt igen.
+
+**Algoritm: R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R'" alg="R U2' R' U R U' R'" />
+
+### Fall 8: Hörn och kant intill varandra, vit pekar framåt — Par förbundet men fel
+
+Spegling av fall 7 på F-sidans sida.
+
+**Algoritm: F' U2 F U' F' U F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U' F U F' U2 F" alg="F' U2 F U' F' U F" />
+
+---
+
+## Mellanfall: kant i plats, hörn i översta lagret
+
+Ibland sitter kanten redan fast i en plats (rätt eller fel), och hörnet är i det översta lagret. Vi måste dra ut kanten utan att störa andra lösta par.
+
+### Fall 9: Kant i rätt plats men hörn uppe — Vit pekar höger
+
+Kanten är i rätt plats, och hörnet är i U-lagret med vit åt höger. Vi tar ut kanten och parar den med hörnet.
+
+**Algoritm: U R U' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U R' U'" alg="U R U' R' U R U' R'" />
+
+### Fall 10: Kant i fel plats, hörn uppe — Vit pekar uppåt
+
+Kanten är i fel plats. Vi drar ut den medan vi samtidigt förbereder parningen med hörnet.
+
+**Algoritm: R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U' R U R'" alg="R U' R' U R U2' R' U R U' R'" />
+
+---
+
+## Avancerade fall: hörn i plats
+
+Dessa fall uppstår när hörnet redan är i rätt plats men felaktigt orienterat, eller i rätt plats med kanten felplacerad.
+
+### Fall 11: Hörn i plats, vriden — Kant i översta lagret
+
+Hörnet är i den främre högra platsen men med vit framåt (inte nedåt). Kanten är i U-lagret. Vi drar ut hörnet, parar det med kanten och sätter in igen.
+
+**Algoritm: R U' R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U R'" alg="R U' R' U R U' R'" />
+
+### Fall 12: Hörn i plats, vriden — Kant i fel plats
+
+Båda bitarna är i de två nedersta lagren men ingen är korrekt. Vi sparkar ut hörnet och drar samtidigt ut kanten.
+
+**Algoritm: R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U' R' U R U' R' U R U' R'" alg="R U R' U' R U R' U' R U R'" />
+
+---
+
+## Specialfall: båda bitarna i plats
+
+### Fall 13: Par förbundet i plats men vridet
+
+Hörnet och kanten är parade och i platsen, men hörnet är vridet (vit pekar framåt, inte nedåt). Dra ut paret, separera dem och sätt in korrekt igen.
+
+**Algoritm: R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U' R U2 R' U R U' R'" alg="R U R' U' R U2 R' U R U' R'" />
+
+### Fall 14: Hörn korrekt i plats, kant flippat i plats
+
+Hörnet är korrekt placerat men kanten ovanför är flippad. Detta är ett av de svåraste fallen. Vi drar ut båda, parar korrekt och sätter in igen.
+
+**Algoritm: R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 R U R' U2 R U' R' U R U R'" alg="R U' R' U' R U R' U2 R U' R'" />
+
+### Fall 15: Båda i plats, båda fel — Korsfel
+
+Hörnet och kanten är båda i platsen men ingen matchar. Full utdragning och ombyggnad.
+
+**Algoritm: R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer puzzle="3x3x3" setupAlg="x2 F' U F U2 R U R' U R U' R'" alg="R U R' U' R U' R' U2 F' U' F" />
+
+---
+
+## Tips för snabbare F2L
+
+### 1. Lär dig intuitivt först
+
+Skynda dig inte att memorera alla 41 algoritmiska fall. Lägg tid på att förstå **varför** varje drag fungerar. Om du vet att R U R' tar ut ett hörn och sätter tillbaka det, kan du lösa de flesta fall själv. Algoritmer kommer senare för optimering.
+
+### 2. Utveckla lookahead
+
+**Lookahead** är förmågan att spåra ditt nästa par medan du sätter in det nuvarande. Detta är den enskilt största faktorn som skiljer 20-sekunders-lösare från 15-sekunders-lösare.
+
+Övningstips:
+- Sänk tempot och tvinga dig att leta efter nästa par under insättningar
+- Öva F2L-lösning med slutna ögon under insättningen (du kan dragen, så titta framåt)
+- Gör otidsatta lösningar fokuserade enbart på noll pauser mellan par
+
+### 3. Minska rotationer
+
+Varje gång du roterar hela kuben förlorar du tid. De bästa F2L-lösarna roterar sällan mer än en eller två gånger under en hel F2L-fas.
+
+- Lär dig att sätta in i **bakre platser** med R- och U-drag (t.ex. R U' R' för att sätta in i bakre höger)
+- Öva på att använda **L-, F- och B-**drag för platser på motsatt sida
+- Använd breda drag (r, l) för att rotera och sätta in samtidigt
+
+### 4. Känn igen fall snabbt
+
+Träna dig att omedelbart känna igen vilket fall du ser på:
+- **Var är vit på hörnet?** (Upp, Fram eller Höger)
+- **Var är kanten i förhållande till hörnet?** (Intill, mittemot eller i en plats)
+- **Är de redan parade?** (Rätt förbundna, fel förbundna eller separerade)
+
+### 5. Lös i effektiv ordning
+
+Du behöver inte lösa de 4 paren i någon fast ordning. Titta på alla 4 par och börja med det **enklaste** — det som kräver minst drag. Erfarna lösare planerar sitt första par under inspektion tillsammans med korset.
+
+### 6. Tom-plats-trick
+
+När en plats är tom kan du använda den som tillfällig förvaring. Placera till exempel en kant i en tom plats (R U R') för att få den ur vägen medan du arbetar med ett annat par. Nybörjare förbiser ofta denna kraftfulla teknik.
+
+---
+
+## Övningsrutin
+
+1. **Blanda kuben och lös korset**
+2. **Hitta alla 4 hörn-kant-par** — identifiera var varje hörn och dess matchande kant är
+3. **Lös varje par ett i taget** — börja med enkla fall, spara svåra till sist
+4. **Ta tid bara på F2L-fasen** — använd en timer. Mål: under 15 sekunder för alla 4 par
+5. **Utvärdera** — efter varje lösning, fråga: kunde jag gjort något par med färre drag?
+
+Med konsekvent övning kommer F2L att bli andra natur och du kommer se dramatiska förbättringar i dina totala lösningstider.
+
+---
+
+## Vad kommer härnäst?
+
+Efter att ha behärskat F2L, fortsätt med det sista lagret:
+
+- [**CFOP-metod översikt**](./cfop) — Se hur F2L passar in i den fullständiga CFOP-metoden
+- [**OLL-algoritmer**](./oll) — Gör den översta sidan helt gul (57 fall + 2-Look OLL)
+- [**PLL-algoritmer**](./pll) — Ordna de sista bitarna för att slutföra lösningen (21 fall)
+- [**Finger tricks-guide**](./finger-tricks) — Utför F2L-triggers snabbare och jämnare

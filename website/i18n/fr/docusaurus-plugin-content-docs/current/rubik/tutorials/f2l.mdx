@@ -1,0 +1,312 @@
+---
+title: "F2L : Les deux premières couches"
+sidebar_position: 6
+description: Master F2L (First Two Layers) - the most important step in CFOP. Learn intuitive and algorithmic approaches to pair and insert corner-edge pairs.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-f2l.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# F2L : Les deux premières couches
+
+Le F2L (First Two Layers, les deux premières couches) est l'**étape la plus importante** de la méthode CFOP. Au lieu de résoudre les coins de la première couche et les arêtes de la deuxième couche en deux étapes séparées (comme la méthode débutant), le F2L associe un coin avec son arête correspondante et les insère ensemble dans le bon emplacement. Cela économise un nombre considérable de mouvements et c'est là que proviennent les plus grandes améliorations de vitesse.
+
+Il y a **4 emplacements** à remplir, un dans chaque coin des deux couches inférieures. Chaque emplacement se compose d'une pièce de coin et d'une pièce d'arête.
+
+## Le concept
+
+Chaque cas de F2L implique deux pièces :
+- Une **pièce de coin** qui appartient à la couche inférieure (elle possède un autocollant blanc/couleur du bas)
+- Une **pièce d'arête** qui appartient à la couche intermédiaire (elle relie deux couleurs latérales)
+
+L'objectif est d'**associer** ces deux pièces dans la couche supérieure, puis d'**insérer** la paire dans le bon emplacement en un mouvement fluide.
+
+## Rappel de notation
+
+- **R** = Droite &nbsp;&nbsp; **L** = Gauche &nbsp;&nbsp; **U** = Haut &nbsp;&nbsp; **D** = Bas &nbsp;&nbsp; **F** = Face &nbsp;&nbsp; **B** = Arrière
+- Une lettre seule = **90° dans le sens horaire** &nbsp;&nbsp; **'** = **sens antihoraire** &nbsp;&nbsp; **2** = **180°**
+
+Tenez le cube avec le **blanc en bas**. L'emplacement dans lequel nous insérons est toujours l'**emplacement avant-droit** (entre les faces F et R).
+
+---
+
+## F2L intuitif
+
+Avant de mémoriser des algorithmes, apprenez la **logique** du F2L. Chaque cas suit le même schéma :
+
+1. **Trouver** une paire coin-arête qui va ensemble
+2. **Séparer** les pièces si elles sont mal assemblées
+3. **Positionner** une pièce, puis **amener** l'autre à sa rencontre
+4. **Associer** les pièces dans la couche supérieure pour que le blanc soit orienté vers l'extérieur ou vers le bas
+5. **Insérer** la paire connectée dans l'emplacement
+
+**Principe clé :** Utilisez les mouvements R et U pour sortir le coin de l'emplacement avant-droit ou l'y insérer, et les mouvements U pour positionner l'arête. Ne perturbez jamais les emplacements déjà résolus.
+
+---
+
+Il y a **41 cas standard de F2L** au total. Ci-dessous nous couvrons les **15 cas les plus importants** qui forment la base. Une fois que vous les maîtrisez, vous pourrez gérer les cas restants de manière intuitive ou les rechercher au besoin.
+
+## Cas de base : les deux pièces dans la couche supérieure
+
+Ce sont les cas les plus simples et les plus courants. Le coin et l'arête sont tous deux dans la couche U et l'emplacement cible est vide.
+
+### Cas 1 : Insertion facile — Blanc du coin face à droite, arête prête
+
+Le coin a le blanc orienté vers la face R, et l'arête est déjà positionnée de sorte qu'un mouvement U les associe. C'est l'insertion F2L la plus basique.
+
+**Algorithme : R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R'"
+  alg="R U R'"
+/>
+
+### Cas 2 : Insertion facile — Blanc du coin face avant, arête prête
+
+Le coin a le blanc orienté vers la face F, et l'arête est positionnée pour être associée avec une insertion antihoraire.
+
+**Algorithme : F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F"
+  alg="F' U' F"
+/>
+
+### Cas 3 : Blanc du coin vers le haut, couleur correspondant au centre avant
+
+Le coin a le blanc vers le haut et sa couleur avant correspond au centre avant. L'arête est en face. Nous devons les connecter et insérer.
+
+**Algorithme : U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U'"
+  alg="U R U2' R' U R U' R'"
+/>
+
+### Cas 4 : Blanc du coin vers le haut, couleur correspondant au centre droit
+
+Le coin a le blanc vers le haut et sa couleur droite correspond au centre droit. L'arête doit être associée depuis le côté opposé.
+
+**Algorithme : U' F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F U"
+  alg="U' F' U2 F U' F' U F"
+/>
+
+### Cas 5 : Coin et arête éloignés, blanc face à droite
+
+Le coin a le blanc vers la droite et l'arête est du côté opposé de la couche supérieure. Nous rapprochons l'arête, puis associons et insérons.
+
+**Algorithme : U' R U R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U' R' U"
+  alg="U' R U R' U R U' R'"
+/>
+
+### Cas 6 : Coin et arête éloignés, blanc face avant
+
+Miroir du cas 5. Le coin a le blanc vers l'avant et l'arête est du côté éloigné.
+
+**Algorithme : U F' U' F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U F U'"
+  alg="U F' U' F U' F' U F"
+/>
+
+### Cas 7 : Coin et arête adjacents, blanc face à droite — Paire connectée mais mal orientée
+
+Le coin et l'arête sont côte à côte et connectés, mais une fois insérés ils seraient mal orientés. Nous les séparons, puis les réassemblons correctement.
+
+**Algorithme : R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R'"
+  alg="R U2' R' U R U' R'"
+/>
+
+### Cas 8 : Coin et arête adjacents, blanc face avant — Paire connectée mais mal orientée
+
+Miroir du cas 7 du côté de la face F.
+
+**Algorithme : F' U2 F U' F' U F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U' F U F' U2 F"
+  alg="F' U2 F U' F' U F"
+/>
+
+---
+
+## Cas intermédiaires : arête dans l'emplacement, coin dans la couche supérieure
+
+Parfois l'arête est déjà coincée dans un emplacement (correct ou incorrect), et le coin est dans la couche supérieure. Nous devons extraire l'arête sans perturber les autres paires résolues.
+
+### Cas 9 : Arête dans le bon emplacement mais coin en haut — Blanc face à droite
+
+L'arête est dans le bon emplacement, et le coin est dans la couche U avec le blanc vers la droite. Nous sortons l'arête et l'associons avec le coin.
+
+**Algorithme : U R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R' U'"
+  alg="U R U' R' U R U' R'"
+/>
+
+### Cas 10 : Arête dans le mauvais emplacement, coin en haut — Blanc vers le haut
+
+L'arête est dans le mauvais emplacement. Nous l'extrayons tout en préparant simultanément l'association avec le coin.
+
+**Algorithme : R U' R' U R U2' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U' R U R'"
+  alg="R U' R' U R U2' R' U R U' R'"
+/>
+
+---
+
+## Cas avancés : coin dans l'emplacement
+
+Ces cas surviennent lorsque le coin est déjà dans le bon emplacement mais mal orienté, ou dans le bon emplacement avec l'arête mal placée.
+
+### Cas 11 : Coin dans l'emplacement, tordu — Arête dans la couche supérieure
+
+Le coin est dans l'emplacement avant-droit mais avec le blanc vers l'avant (pas vers le bas). L'arête est dans la couche U. Nous extrayons le coin, l'associons avec l'arête et réinsérons.
+
+**Algorithme : R U' R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U R'"
+  alg="R U' R' U R U' R'"
+/>
+
+### Cas 12 : Coin dans l'emplacement, tordu — Arête dans le mauvais emplacement
+
+Les deux pièces sont dans les deux couches inférieures mais aucune n'est correcte. Nous éjectons le coin et extrayons simultanément l'arête.
+
+**Algorithme : R U R' U' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U' R' U R U' R' U R U' R'"
+  alg="R U R' U' R U R' U' R U R'"
+/>
+
+---
+
+## Cas spéciaux : les deux pièces dans l'emplacement
+
+### Cas 13 : Paire connectée dans l'emplacement mais tordue
+
+Le coin et l'arête sont associés et dans l'emplacement, mais le coin est tordu (blanc face avant, pas vers le bas). Extraire la paire, les séparer et réinsérer correctement.
+
+**Algorithme : R U R' U' R U2 R' U R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U' R U2 R' U R U' R'"
+  alg="R U R' U' R U2 R' U R U' R'"
+/>
+
+### Cas 14 : Coin correct dans l'emplacement, arête retournée dans l'emplacement
+
+Le coin est correctement placé mais l'arête au-dessus est retournée. C'est l'un des cas les plus délicats. Nous extrayons les deux, les associons correctement et réinsérons.
+
+**Algorithme : R U' R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 R U R' U2 R U' R' U R U R'"
+  alg="R U' R' U' R U R' U2 R U' R'"
+/>
+
+### Cas 15 : Les deux dans l'emplacement, les deux faux — Erreur croisée
+
+Le coin et l'arête sont tous deux dans l'emplacement mais aucun ne correspond. Extraction complète et reconstruction.
+
+**Algorithme : R U R' U' R U' R' U2 F' U' F**
+
+<TwistyPlayer
+  puzzle="3x3x3"
+  setupAlg="x2 F' U F U2 R U R' U R U' R'"
+  alg="R U R' U' R U' R' U2 F' U' F"
+/>
+
+---
+
+## Conseils pour un F2L plus rapide
+
+### 1. Apprenez intuitivement d'abord
+
+Ne vous précipitez pas pour mémoriser les 41 cas algorithmiques. Prenez le temps de comprendre **pourquoi** chaque mouvement fonctionne. Si vous savez que R U R' sort un coin et le remet en place, vous pouvez résoudre la plupart des cas vous-même. Les algorithmes viendront plus tard pour optimiser les mouvements que vous comprenez déjà.
+
+### 2. Développez le lookahead
+
+Le **lookahead** est la capacité à repérer votre prochaine paire tout en insérant la paire actuelle. C'est le facteur le plus important qui sépare les solveurs à 20 secondes de ceux à 15 secondes.
+
+Conseils de pratique :
+- Ralentissez votre rotation et forcez-vous à chercher la prochaine paire pendant les insertions
+- Entraînez-vous à résoudre le F2L les yeux fermés pendant l'insertion (vous connaissez les mouvements, alors regardez en avant)
+- Faites des résolutions non chronométrées en vous concentrant uniquement sur zéro pause entre les paires
+
+### 3. Réduisez les rotations
+
+Chaque fois que vous faites pivoter le cube entier, vous perdez du temps. Les meilleurs solveurs de F2L font rarement plus d'une ou deux rotations dans toute la phase F2L.
+
+- Apprenez à insérer dans les **emplacements arrière** en utilisant les mouvements R et U (par ex., R U' R' pour insérer en arrière-droite)
+- Entraînez-vous à utiliser les mouvements **L, F et B** pour les emplacements du côté opposé
+- Utilisez les mouvements larges (r, l) pour pivoter et insérer simultanément
+
+### 4. Reconnaissez les cas rapidement
+
+Entraînez-vous à reconnaître instantanément quel cas vous avez devant vous :
+- **Où est le blanc sur le coin ?** (Haut, Avant ou Droite)
+- **Où est l'arête par rapport au coin ?** (Adjacente, opposée ou dans un emplacement)
+- **Sont-elles déjà associées ?** (Connectées correctement, mal connectées ou séparées)
+
+### 5. Résolvez dans un ordre efficace
+
+Vous n'avez pas à résoudre les 4 paires dans un ordre fixe. Examinez les 4 paires et commencez par la plus **facile** — celle qui nécessite le moins de mouvements. Les solveurs expérimentés planifient leur première paire pendant l'inspection en même temps que la croix.
+
+### 6. Astuces avec les emplacements vides
+
+Quand un emplacement est vide, vous pouvez l'utiliser comme stockage temporaire. Par exemple, placez une arête dans un emplacement vide (R U R') pour la mettre de côté pendant que vous travaillez sur une autre paire. Les débutants négligent souvent cette technique puissante.
+
+---
+
+## Routine d'entraînement
+
+1. **Mélangez le cube et résolvez la croix**
+2. **Trouvez les 4 paires coin-arête** — identifiez où se trouvent chaque coin et son arête correspondante
+3. **Résolvez chaque paire une par une** — commencez par les cas faciles, laissez les difficiles pour la fin
+4. **Chronométrez uniquement la phase F2L** — utilisez un timer. Objectif : moins de 15 secondes pour les 4 paires
+5. **Analysez** — après chaque résolution, demandez-vous : aurais-je pu faire une paire en moins de mouvements ?
+
+Avec une pratique régulière, le F2L deviendra une seconde nature et vous verrez des améliorations spectaculaires dans vos temps de résolution globaux.
+
+---
+
+## Et ensuite ?
+
+Après avoir maîtrisé le F2L, continuez avec la dernière couche :
+
+- [**Vue d'ensemble de la méthode CFOP**](./cfop) — Voyez comment le F2L s'intègre dans la méthode CFOP complète
+- [**Algorithmes OLL**](./oll) — Rendez la face supérieure entièrement jaune (57 cas + OLL en 2 étapes)
+- [**Algorithmes PLL**](./pll) — Arrangez les dernières pièces pour terminer la résolution (21 cas)
+- [**Guide des finger tricks**](./finger-tricks) — Exécutez les triggers F2L plus rapidement et plus fluidement

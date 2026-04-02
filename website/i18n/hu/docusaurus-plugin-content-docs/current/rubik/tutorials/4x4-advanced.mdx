@@ -1,0 +1,249 @@
+---
+title: "4x4 Haladó: Yau módszer"
+sidebar_position: 12
+description: Learn the Yau method for the 4x4 Rubik's Cube. A faster alternative to the standard reduction method used by top speedcubers.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-4x4-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 4x4 Haladó: Yau módszer
+
+A **Yau módszer**, amelyet Robert Yau talált fel, a standard Reduction módszer gyorsabb alternatívája a 4x4-es Rubik-kockához. A fő különbség: a Yau **korán** megoldja a keresztéleket, ami jobb előretekintést és simább átmenetet biztosít a 3x3-as fázisba. A legtöbb top 4x4-es gyorsrakó a Yau-t vagy annak valamilyen változatát használja.
+
+## Yau vs standard Reduction
+
+| Szempont | Reduction | Yau |
+|--------|-----------|-----|
+| **Lépések sorrendje** | Minden közép, majd minden él | 2 közép, 3 keresztél, 4 közép, maradék élek |
+| **Kereszt** | A redukció után épül | Már részben kész a redukció során |
+| **Előretekintés** | A párosítás után kell megtalálni a keresztéleket | A kereszt szinte kész, az F2L-be való átmenet zökkenőmentes |
+| **Sebességi határ** | Jó | Magasabb — kevesebb szünet a fázisok között |
+
+## Jelölés emlékeztető
+
+**Standard mozdulatok** (csak a külső réteg):
+- **R** = Jobb &nbsp;&nbsp; **L** = Bal &nbsp;&nbsp; **U** = Felső &nbsp;&nbsp; **D** = Alsó &nbsp;&nbsp; **F** = Elülső &nbsp;&nbsp; **B** = Hátsó
+
+**Széles mozdulatok** (két külső réteg együtt):
+- **Rw** = Jobb széles &nbsp;&nbsp; **Lw** = Bal széles &nbsp;&nbsp; **Uw** = Felső széles &nbsp;&nbsp; **Dw** = Alsó széles &nbsp;&nbsp; **Fw** = Elülső széles &nbsp;&nbsp; **Bw** = Hátsó széles
+
+Egy betű egyedül **90°-os óramutató irányú** forgatást jelent. A **'** hozzáadása **óramutató járásával ellentétes** irányt jelent. A **2** hozzáadása **180°**-ot jelent.
+
+---
+
+## 1. lépés: Két szemben lévő közép megoldása
+
+Kezdd a **fehér** és **sárga** középblokkok (felső és alsó) megoldásával. Ez megegyezik a standard Reduction módszer első részével.
+
+Minden közép egy 2x2-es blokk. Használj széles mozdulatokat a középdarabok összegyűjtéséhez, miközben külső réteg forgatásokkal véded a már elhelyezett darabokat.
+
+**Alap középépítés** — hozz fel egy középdarabot széles mozdulattal, pozicionáld, majd fordítsd vissza:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw'"
+  alg="Rw U' Rw'"
+/>
+
+**Két középfél összekapcsolása** — amikor két 1x2-es középcsík van, amelyeket össze kell illeszteni:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw'"
+  alg="Rw U2' Rw'"
+/>
+
+**Tippek:**
+- Először a fehér közepet oldd meg (alul), majd a sárga közepet (felül).
+- Tartsd a fehéret végig alul — csak Rw, Lw, Fw, Bw mozdulatokat használj a közepek kezeléséhez anélkül, hogy megzavarnád az alsó részt.
+- Az oldalsó közepekkel még ne foglalkozz. Hagyd őket a 3. lépésre.
+
+---
+
+## 2. lépés: 3 a 4 keresztélből megoldva
+
+Itt tér el a Yau a Reductiontól. A maradék közepek megoldása előtt **párosítsd és helyezd el a 3 fehér keresztélt** az alsó rétegbe.
+
+Egy keresztél két darabból áll (pl. fehér-piros és fehér-piros), amelyeket párosítani kell és a D rétegbe kell helyezni. Hagyd egy keresztélt egyelőre megoldatlanul — ez szabadságot ad széles mozdulatok használatához a következő lépésben.
+
+**Keresztél párosítás freeslice-szal** — a freeslice technika a közepek megzavarása nélkül párosítja az éleket. Helyezd az él egyik felét az elülső jobb pozícióba, és hozd a párját egy másik helyről:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+**Párosított keresztél behelyezése alulra** — párosítás után helyezd az élt a helyes D-réteg pozícióba:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="D R2 D'"
+/>
+
+**Freeslice széles mozdulatokkal** — használd a Dw-t egy éldarab felemelésére párosításhoz anélkül, hogy megtörnéd a már helyükön lévő alsó keresztéleket:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw' R U R' Dw"
+  alg="Dw' R U' R' Dw"
+/>
+
+**Tippek:**
+- Most csak 3 megoldott keresztélre van szükséged. Szándékosan hagyj egy helyet üresen.
+- Szabadon használd az üres D-réteg helyet — a hiányzó keresztél több szabadságot ad a széles mozdulatokhoz.
+- Válaszd ki melyik keresztélt hagyd meg aszerint, melyiket a legnehezebb megtalálni vagy párosítani.
+
+---
+
+## 3. lépés: A maradék 4 közép megoldása
+
+Most oldd meg a **4 oldalsó közepet** (piros, narancs, kék, zöld). A fehér és sárga közép már kész az 1. lépésből.
+
+Mivel van egy megoldatlan keresztél-helyed, még mindig szabadon használhatsz néhány széles mozdulatot. Ez a Yau egyik fő előnye — a részben megoldott kereszt nem korlátozza a középépítést annyira, mint gondolnád.
+
+**Oldalsó közép építése** — használj széles mozdulatokat a középdarabok összegyűjtéséhez, majd helyezd el őket:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U Rw U2 Rw'"
+  alg="Rw U2' Rw' U' Rw U' Rw'"
+/>
+
+**Közép kommutátor** — amikor egy középdarabot kell cserélned mások megzavarása nélkül, használj kommutátor-stílusú szekvenciát:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U Rw' U' Rw U' Rw'"
+  alg="Rw U Rw' U Rw U' Rw'"
+/>
+
+**Tippek:**
+- Oldd meg a közepeket szemben lévő párokban, amikor lehetséges (pl. piros aztán narancs, kék aztán zöld).
+- Használd ki a megoldatlan keresztél-helyet — a széles mozdulatok azon a helyen keresztül nem törik meg a keresztéleket.
+- Figyelj a D rétegben lévő 3 keresztélre. Ellenőrizd széles mozdulatok előtt.
+
+---
+
+## 4. lépés: Utolsó keresztél + teljes élpárosítás
+
+Ennek a lépésnek két része van: fejezd be a 4. keresztélt, majd párosítsd az összes maradék élt.
+
+### A rész: Az utolsó keresztél megoldása
+
+Keresd meg a maradék keresztél-párt és hozd össze őket. Mivel most már minden közép megoldott, óvatosabban kell bánni a széles mozdulatokkal.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U R' Uw'"
+  alg="Uw R U' R' Uw'"
+/>
+
+Párosítás után helyezd be az utolsó D-réteg helyre a fehér kereszt befejezéséhez.
+
+### B rész: Maradék élek párosítása (3-2-3 technika)
+
+Most 8 párosítatlan éled van. A **3-2-3 technika** a leghatékonyabb módja a párosításuknak:
+
+1. **Első 3 él** — párosítsd őket standard slice-flip-slice mozdulatokkal. Helyezz egy párosítatlan élt az elülső jobbra, keresd meg a párját felül, használd az Uw-t az összehozásukhoz:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw R U' R' Uw'"
+  alg="Uw R U R' Uw'"
+/>
+
+2. **Következő 2 él** — kevesebb maradék éllel gyorsan párosíthatsz kettőt egymás után, egyiket hátul tárolva:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw' L' U L Uw"
+  alg="Uw' L' U' L Uw"
+/>
+
+3. **Utolsó 3 él** — az utolsó élek több óvatosságot igényelnek, hogy ne törd meg a már párosított éleket. Használj Dw-alapú mozdulatokat vagy átfordítási technikákat:
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Dw R U R' Dw'"
+  alg="Dw R U' R' Dw'"
+/>
+
+**Tippek:**
+- A 3-2-3 párosítás során mindig ellenőrizd, hogy a széles mozdulataid nem törik-e meg az alsó keresztéleket.
+- Ha egy él párosított de átfordított, ki kell venned és újra párosítanod.
+- Az élpárosításból a 3x3-ba való átmenetnek zökkenőmentesnek kell lennie — a kereszted már kész.
+
+---
+
+## 5. lépés: Megoldás mint 3x3 (CFOP)
+
+Minden középpel megoldva, minden éllel párosítva és a kereszttel már elkészülve a 4x4 most 3x3-ként viselkedik. Mivel a **fehér kereszt már kész** (a Yau egyik fő előnye), egyenesen az **F2L**-be (első két réteg) ugorhatsz.
+
+Innentől csak külső réteg mozdulatokat használj — széles mozdulatokat nem.
+
+**Folytasd standard CFOP-pal:**
+1. **F2L** — párosítsd és helyezd be a sarok-él párokat az első két rétegbe.
+2. **OLL** — orientáld az utolsó réteget.
+3. **PLL** — permutáld az utolsó réteget.
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  alg="R U R' U'"
+/>
+
+Ez a Yau módszer legnagyobb előnye: a kereszt-F2L átmenetben nulla szünet van, mert a kereszt a redukciós fázis során épült.
+
+---
+
+## Paritás algoritmusok
+
+A 4x4-nek két paritás esete van, amelyek nem fordulhatnak elő 3x3-on. Ezek egyenként körülbelül 50%-ban fordulnak elő, függetlenül attól, hogy Yau-t vagy Reductiont használsz.
+
+### OLL paritás (egyetlen él átfordulás)
+
+Egy él átfordultnak tűnik az utolsó rétegen — egy valódi 3x3-on lehetetlen.
+
+**Algoritmus: Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Rw U2 Rw U2 Rw' U2 Rw U2 Lw' U2 Rw U2 Rw' U2 Rw' x' U2 Rw'"
+  alg="Rw U2 x Rw U2 Rw U2 Rw' U2 Lw U2 Rw' U2 Rw U2 Rw' U2 Rw'"
+/>
+
+Alkalmazd ezt az algoritmust egyszer, majd folytasd a normál OLL/PLL-lel.
+
+### PLL paritás (két él csere)
+
+Két szemben lévő élt kell cserélni — ismét lehetetlen 3x3-on.
+
+**Algoritmus: r2 U2 r2 Uw2 r2 Uw2**
+
+<TwistyPlayer
+  puzzle="4x4x4"
+  setupAlg="Uw2 r2 Uw2 r2 U2 r2"
+  alg="r2 U2 r2 Uw2 r2 Uw2"
+/>
+
+---
+
+## Mikor tanuld meg a Yau-t
+
+- **Ha az átlagod 2 perc alatt van Reductionnal**, megvannak az alapjaid a Yau-ra váltáshoz.
+- **Ha ismered a CFOP-ot 3x3-ra**, a Yau természetes választás — a kereszt már kész amikor belépsz a 3x3 fázisba.
+- **Ha nehézségeid vannak a Reduction-3x3 átmenettel**, a Yau teljesen kiküszöböli azt a szünetet.
+
+## Gyakorlási prioritások
+
+1. **Sajátítsd el a freeslice élpárosítást** — ez az az alaptechnika, ami hatékonnyá teszi a Yau-t.
+2. **Gyakorold a 2 közép + 3 keresztél felismerést** — tanulj meg gyorsan azonosítani a keresztéleket az első két lépés során.
+3. **Drilld a 3-2-3 technikát** — a sima élpárosítás az, ahol a legtöbb idő megtakarítható.
+4. **Dolgozz a kereszt-F2L átmeneten** — mivel a kereszt kész, gyakorold az első F2L pár észrevételét az élpárosítás közben.
+
+---
+
+**A Yau módszer a versenyszerű 4x4 megoldás standardja.** A redukcióból a 3x3 megoldásba való zökkenőmentes átmenet, a jobb előretekintési lehetőségekkel kombinálva, a 40 másodperc alatti átlagot célzó gyorsrakók előnyben részesített választásává teszi. Kezdd el a Reduction megoldásaid Yau-ra alakítását egy lépéssel egyszerre.

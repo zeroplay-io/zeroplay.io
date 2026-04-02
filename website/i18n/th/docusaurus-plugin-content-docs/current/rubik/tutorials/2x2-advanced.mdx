@@ -1,0 +1,374 @@
+---
+title: "2x2 ขั้นสูง: วิธี CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# 2x2 ขั้นสูง: วิธี CLL
+
+ยกระดับการแก้รูบิค 2x2 ด้วยวิธี **CLL (มุมชั้นสุดท้าย)** ขณะที่วิธี Ortega แก้ชั้นสุดท้ายใน 2 ขั้นตอน (OLL แล้ว PBL) CLL แก้ทั้ง **การจัดทิศทางและการสลับตำแหน่ง** ของมุมชั้นสุดท้ายใน **อัลกอริทึมเดียว** หมายถึงมองน้อยลงและแก้เร็วขึ้น
+
+## ทำไมต้อง CLL?
+
+| วิธี | ขั้นตอนชั้นสุดท้าย | อัลกอริทึม | ความเร็วทั่วไป |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 วินาที |
+| **CLL** | 1 (มองครั้งเดียว) | ~40 | 2–4 วินาที |
+
+CLL เป็นวิธีมาตรฐานของนักเล่นรูบิค 2x2 ระดับท็อป เมื่อเรียนรู้ทั้ง 40 กรณี คุณจะตัดขั้นตอนหนึ่งออกทั้งหมด
+
+## CLL ทำงานอย่างไร
+
+1. **แก้หน้าแรก** — เหมือน Ortega สร้างหน้าขาวด้านล่าง (สีด้านข้างไม่ต้องตรง)
+2. **จำแนกกรณี CLL** — ดูหน้าบนและสีด้านข้างเพื่อระบุกรณี
+3. **ใช้อัลกอริทึมเดียว** — จัดทิศทางและสลับตำแหน่งมุมบนทั้งหมดพร้อมกัน
+4. **AUF + ปรับด้านล่าง** — อย่างมากหมุน U หนึ่งครั้งและ D หนึ่งครั้ง
+
+## เตือนความจำสัญลักษณ์
+
+- **R** = ขวา &nbsp;&nbsp; **L** = ซ้าย &nbsp;&nbsp; **U** = บน &nbsp;&nbsp; **D** = ล่าง &nbsp;&nbsp; **F** = หน้า &nbsp;&nbsp; **B** = หลัง
+- ตัวอักษรเดียว = **90° ตามเข็มนาฬิกา** เติม **'** = **ทวนเข็ม** เติม **2** = **180°**
+
+---
+
+## กลุ่มกรณี CLL
+
+40 กรณี CLL จัดเป็น 7 กลุ่มตามรูปแบบทิศทางหน้าบน ด้านล่างคือกรณีสำคัญที่สุดจากแต่ละกลุ่ม
+
+---
+
+## กรณี Sune (4 จาก 6)
+
+มุมหนึ่งจัดทิศทางแล้ว (เหลืองหงายขึ้น) อีกสามต้องหมุน กลุ่มที่พบบ่อยที่สุด
+
+### Sune 1 — สลับข้างเคียง
+
+ถือมุมที่แก้แล้วด้านหน้าซ้าย สามมุมที่ยังไม่แก้หมุนตามเข็มนาฬิกา
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — สลับทแยง
+
+รูปแบบทิศทางเดียวกัน แต่มุมต้องสลับทแยง
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — บริสุทธิ์ (ไม่สลับ)
+
+ทิศทางแก้แล้ว ไม่ต้องเปลี่ยนตำแหน่ง
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — สลับข้างเคียง (กระจก)
+
+ถือมุมที่แก้แล้วด้านหน้าขวา
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## กรณี Anti-Sune (3 จาก 6)
+
+กระจกของ Sune — มุมหนึ่งจัดทิศทาง อีกสามหมุนทวนเข็ม
+
+### Anti-Sune 1 — สลับข้างเคียง
+
+ถือมุมที่แก้แล้วด้านหน้าขวา สามมุมที่ยังไม่แก้หมุนทวนเข็มนาฬิกา
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — สลับทแยง
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — บริสุทธิ์ (ไม่สลับ)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## กรณี H (4 จาก 4)
+
+สองมุมตรงข้ามจัดทิศทาง (เหลืองหงายขึ้น) อีกสองมีเหลืองด้านข้าง
+
+### H 1 — สลับข้างเคียง
+
+สติ๊กเกอร์เหลืองสองชิ้นบนในตำแหน่งทแยง
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — สลับทแยง
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — ไม่สลับ
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — คอลัมน์
+
+ทั้งสองคู่มุมทแยงต้องสลับ
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## กรณี Pi (4 จาก 6)
+
+สองมุมข้างเคียงมีเหลืองด้านบน อีกสองมีเหลืองด้านข้าง หน้าบนดูเหมือนอักษรกรีก Pi
+
+### Pi 1 — สลับทแยง
+
+ถือสองมุมที่จัดทิศทางไว้ด้านหลัง
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — สลับข้างเคียง (ขวา)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — สลับข้างเคียง (ซ้าย)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — ไม่สลับ
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## กรณี T (3 จาก 6)
+
+หน้าบนแสดงรูปแบบ T — มุมหนึ่งจัดทิศทาง มุมข้างเคียงมีเหลืองด้านหน้า อีกสองมีเหลืองด้านข้าง
+
+### T 1 — สลับข้างเคียง
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — สลับทแยง
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — ไม่สลับ
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## กรณี U (3 จาก 6)
+
+มุมหนึ่งจัดทิศทางถูกต้อง อีกสามเรียงเป็นรูป U ด้านข้าง
+
+### U 1 — สลับข้างเคียง
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — สลับทแยง
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — ไม่สลับ
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## กรณี L (3 จาก 6)
+
+สองมุมข้างเคียงหมุนไปทิศทางเดียวกัน — หน้าบนแสดงรูปแบบ L
+
+### L 1 — สลับข้างเคียง
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — สลับทแยง
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — ไม่สลับ
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## หลัง CLL: จบการแก้
+
+หลังใช้อัลกอริทึม CLL หน้าบนแก้เสร็จสมบูรณ์ คุณอาจต้อง:
+
+1. **AUF (ปรับหน้า U)** — หมุน U หรือ U' หนึ่งครั้งเพื่อจัดแนวชั้นบน
+2. **ปรับชั้นล่าง** — ถ้าเลื่อน หมุน D หรือ D' หนึ่งครั้ง
+3. **สลับชั้นล่าง** — บางครั้ง อาจต้องสลับข้างเคียงหรือทแยง ใช้อัลกอริทึม PBL จาก Ortega:
+   - **สลับทแยง:** R2 F2 R2
+   - **สลับข้างเคียง:** R U' R F2 R' U R'
+
+---
+
+## กลยุทธ์การเรียนรู้
+
+เรียน 40 กรณีพร้อมกันยากเกินไป ลำดับแนะนำ:
+
+1. **เริ่มจาก Sune และ Anti-Sune** (12 กรณี) — พบบ่อยที่สุด อัลกอริทึมสั้นหลายตัว
+2. **เพิ่มกรณี T และ U** (12 กรณี) — จำแนกและทำได้ง่าย
+3. **เรียนกรณี Pi** (6 กรณี) — รูปแบบทิศทางเฉพาะตัว
+4. **เรียนกรณี L** (6 กรณี) — จำแนกคล้าย Pi ทิศทางหมุนต่างกัน
+5. **จบด้วยกรณี H** (4 กรณี) — กลุ่มที่หายากที่สุด
+
+## เคล็ดลับการจำแนก
+
+- **ดูหน้าบนก่อน** เพื่อระบุกลุ่มทิศทาง
+- **จากนั้นตรวจสีด้านข้าง** เพื่อระบุกรณีเฉพาะ
+- **ฝึกเป็นกลุ่ม** — กลุ่มละครั้งจนจำแนกได้ทันที
+- **ใช้ scramble ย้อนกลับ** — ตั้งกรณี แก้ แล้วทำนายย้อนกลับ
+
+---
+
+**เมื่อเชี่ยวชาญ CLL คุณสามารถทำค่าเฉลี่ยต่ำกว่า 3 วินาทีบน 2x2 ได้** วิธีมองครั้งเดียวตัดเวลาหยุดระหว่าง OLL และ PBL ฝึกจำแนกต่อไป — ความเร็วมาจากการระบุกรณีทันที

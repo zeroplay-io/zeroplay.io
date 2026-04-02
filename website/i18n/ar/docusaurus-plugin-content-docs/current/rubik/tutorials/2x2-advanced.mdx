@@ -1,0 +1,374 @@
+---
+title: "المكعب 2×2 المتقدم: طريقة CLL"
+sidebar_position: 11
+description: Master the CLL (Corners of Last Layer) method for the 2x2 Rubik's Cube. One-look last layer solution for faster solves.
+image: https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg
+---
+
+import TwistyPlayer from '@site/src/components/TwistyPlayer';
+
+<img src="https://dl.zeroplay.cc/game-assets/zp1000000/tutorials/banner-2x2-advanced.jpg" alt="" className="tutorial-banner" style={{width: '100%', borderRadius: '12px', marginBottom: '1.5rem'}} />
+
+# المكعب 2×2 المتقدم: طريقة CLL
+
+ارتقِ بمستوى حل مكعب 2×2 مع طريقة **CLL (زوايا الطبقة الأخيرة)**. بينما تحل طريقة Ortega الطبقة الأخيرة في خطوتين (OLL ثم PBL)، تحل CLL كلاً من **التوجيه والتبديل** لزوايا الطبقة الأخيرة في **خوارزمية واحدة**. هذا يعني نظرات أقل وحلول أسرع.
+
+## لماذا CLL؟
+
+| الطريقة | خطوات الطبقة الأخيرة | الخوارزميات | السرعة النموذجية |
+|--------|-----------------|------------|---------------|
+| **Ortega** | 2 (OLL + PBL) | ~12 | 3–5 ثوانٍ |
+| **CLL** | 1 (نظرة واحدة) | ~40 | 2–4 ثوانٍ |
+
+CLL هي الطريقة القياسية التي يستخدمها أفضل حلّالي مكعب 2×2 السريعين. بتعلم التعرف على جميع الحالات الأربعين وتنفيذها، يمكنك إلغاء خطوة كاملة من حلك.
+
+## كيف تعمل CLL
+
+1. **حل الوجه الأول** — مثل Ortega، ابنِ وجهاً أبيض في الأسفل (ألوان الجوانب لا تحتاج للتطابق).
+2. **التعرف على حالة CLL** — انظر إلى الوجه العلوي وألوان الجوانب لتحديد أي من الحالات الأربعين لديك.
+3. **تطبيق خوارزمية واحدة** — هذه توجّه وتبدّل جميع زوايا الطبقة العلوية في آن واحد.
+4. **AUF + تعديل الطبقة السفلية** — دورة واحدة على الأكثر للطبقة U ودورة واحدة للطبقة D للانتهاء.
+
+## تذكير بالرموز
+
+- **R** = يمين &nbsp;&nbsp; **L** = يسار &nbsp;&nbsp; **U** = أعلى &nbsp;&nbsp; **D** = أسفل &nbsp;&nbsp; **F** = أمام &nbsp;&nbsp; **B** = خلف
+- الحرف وحده يعني **90° باتجاه عقارب الساعة**. إضافة **'** تعني **عكس عقارب الساعة**. إضافة **2** تعني **180°**.
+
+---
+
+## مجموعات حالات CLL
+
+تُنظَّم حالات CLL الأربعون في 7 مجموعات بناءً على نمط توجيه الوجه العلوي. فيما يلي أهم الحالات من كل مجموعة مع خوارزمياتها.
+
+---
+
+## حالات Sune (4 من 6)
+
+زاوية واحدة موجّهة (الأصفر للأعلى)، والثلاث الأخرى تحتاج للالتواء. هذه أكثر المجموعات شيوعاً.
+
+### Sune 1 — تبديل متجاور
+
+ضع الزاوية المحلولة في الأمام الأيسر. الزوايا الثلاث غير المحلولة تلتوي باتجاه عقارب الساعة.
+
+**Algorithm: R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R'"
+/>
+
+### Sune 2 — تبديل قطري
+
+نفس نمط التوجيه، لكن الزوايا تحتاج تبديلاً قطرياً.
+
+**Algorithm: F R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' F'"
+/>
+
+### Sune 3 — نقي (بدون تبديل)
+
+التوجيه محلول ولا حاجة لتغيير المواقع.
+
+**Algorithm: R U2 R' U' R U' R' U2 R U R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U R' U R U2 R'"
+/>
+
+### Sune 4 — تبديل متجاور (معكوس)
+
+ضع الزاوية المحلولة في الأمام الأيمن.
+
+**Algorithm: R U R' U R U2 R' F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' R U2 R' U' R U' R'"
+  alg="R U R' U R U2 R' F R U R' U' F'"
+/>
+
+---
+
+## حالات Anti-Sune (3 من 6)
+
+معكوس Sune — زاوية واحدة موجّهة، والثلاث الأخرى تلتوي عكس عقارب الساعة.
+
+### Anti-Sune 1 — تبديل متجاور
+
+ضع الزاوية المحلولة في الأمام الأيمن. الزوايا الثلاث غير المحلولة تلتوي عكس عقارب الساعة.
+
+**Algorithm: R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R'"
+/>
+
+### Anti-Sune 2 — تبديل قطري
+
+**Algorithm: R' F R F' R U' R' U R U' R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U R' U' R U R' F R' F' R"
+  alg="R' F R F' R U' R' U R U' R' U2 R U' R'"
+/>
+
+### Anti-Sune 3 — نقي (بدون تبديل)
+
+**Algorithm: R U2 R' U' R U' R' U2 R U2 R' U' R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U R U2 R' U2 R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U2 R U2 R' U' R U' R'"
+/>
+
+---
+
+## حالات H (4 من 4)
+
+زاويتان متقابلتان موجّهتان (الأصفر للأعلى)، والأخريان لهما أصفر على الجوانب.
+
+### H 1 — تبديل متجاور
+
+ملصقان أصفران في الأعلى بمواضع قطرية.
+
+**Algorithm: F R U R' U' R U R' U' R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' U R U' R' U R U' R' F'"
+  alg="F R U R' U' R U R' U' R U R' U' F'"
+/>
+
+### H 2 — تبديل قطري
+
+**Algorithm: R U R' U R U' R' U R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U' R U R' U' R U' R'"
+  alg="R U R' U R U' R' U R U2 R'"
+/>
+
+### H 3 — بدون تبديل
+
+**Algorithm: R U2 R2' U' R2 U' R2' U2 R**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R' U2 R2 U R2 U R2 U2 R'"
+  alg="R U2 R2' U' R2 U' R2' U2 R"
+/>
+
+### H 4 — أعمدة
+
+كلا زوجي الزوايا القطرية يحتاجان للتبديل.
+
+**Algorithm: R2 U2 R U2 R2**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R2 U2 R' U2 R2"
+  alg="R2 U2 R U2 R2"
+/>
+
+---
+
+## حالات Pi (4 من 6)
+
+زاويتان متجاورتان لهما أصفر في الأعلى، والأخريان لهما أصفر على الجوانب. يبدو الوجه العلوي مثل الحرف اليوناني Pi.
+
+### Pi 1 — تبديل قطري
+
+ضع الزاويتين الموجّهتين في الخلف.
+
+**Algorithm: F R' F' R U2 R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' U2 R' F R F'"
+  alg="F R' F' R U2 R U2 R'"
+/>
+
+### Pi 2 — تبديل متجاور (يمين)
+
+**Algorithm: R U2 R' U' R U R' U2 R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U2 R U' R' U R U2 R'"
+  alg="R U2 R' U' R U R' U2 R U' R'"
+/>
+
+### Pi 3 — تبديل متجاور (يسار)
+
+**Algorithm: R U2 R' U2 R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U2 R U2 R'"
+  alg="R U2 R' U2 R' F R F'"
+/>
+
+### Pi 4 — بدون تبديل
+
+**Algorithm: R U2 R2' F R F' R U2 R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U2 R' F R' F' R2 U2 R'"
+  alg="R U2 R2' F R F' R U2 R'"
+/>
+
+---
+
+## حالات T (3 من 6)
+
+يظهر الوجه العلوي نمطاً على شكل T من الملصقات الصفراء — زاوية واحدة موجّهة، وزاوية متجاورة لها أصفر في الأمام، والأخريان لهما أصفر على الجوانب.
+
+### T 1 — تبديل متجاور
+
+**Algorithm: R U R' U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R U' R'"
+  alg="R U R' U' R' F R F'"
+/>
+
+### T 2 — تبديل قطري
+
+**Algorithm: F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F'"
+  alg="F R U R' U' F'"
+/>
+
+### T 3 — بدون تبديل
+
+**Algorithm: R U R' U' R' F R2 U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R2 F' R U R U' R'"
+  alg="R U R' U' R' F R2 U R' U' F'"
+/>
+
+---
+
+## حالات U (3 من 6)
+
+زاوية واحدة موجّهة بشكل صحيح والثلاث الأخرى مرتبة بنمط U على الجوانب.
+
+### U 1 — تبديل متجاور
+
+**Algorithm: R U2 R' U' R U' R' U F R U R' U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U R U' R' F' U' R U R' U R U2 R'"
+  alg="R U2 R' U' R U' R' U F R U R' U' F'"
+/>
+
+### U 2 — تبديل قطري
+
+**Algorithm: R2 U R2 U' R2 U' F U F' R2 F U' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F U F' R2 F U' F' U R2 U R2 U' R2"
+  alg="R2 U R2 U' R2 U' F U F' R2 F U' F'"
+/>
+
+### U 3 — بدون تبديل
+
+**Algorithm: F R U' R' U R U R' U R U' R' F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R U R' U' R U' R' U' R U R' F'"
+  alg="F R U' R' U R U R' U R U' R' F'"
+/>
+
+---
+
+## حالات L (3 من 6)
+
+زاويتان متجاورتان ملتويتان في نفس الاتجاه — يظهر الوجه العلوي نمطاً على شكل L.
+
+### L 1 — تبديل متجاور
+
+**Algorithm: R U R' F' R U R' U' R' F R U' R' F R F'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="F R' F' R U R' F' R U R U' R' F R U' R'"
+  alg="R U R' F' R U R' U' R' F R U' R' F R F'"
+/>
+
+### L 2 — تبديل قطري
+
+**Algorithm: R' F R F' R U R' U' R U R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U' R' U R U' R' F R' F' R"
+  alg="R' F R F' R U R' U' R U R'"
+/>
+
+### L 3 — بدون تبديل
+
+**Algorithm: R U' R' F R' F' R U R U' R'**
+
+<TwistyPlayer
+  puzzle="2x2x2"
+  setupAlg="R U R' U' R' F R F' R U R'"
+  alg="R U' R' F R' F' R U R U' R'"
+/>
+
+---
+
+## بعد CLL: إنهاء الحل
+
+بعد تطبيق خوارزمية CLL، يكون الوجه العلوي محلولاً بالكامل (التوجيه والتبديل). قد تحتاج إلى:
+
+1. **AUF (ضبط الوجه U)** — دورة U أو U' واحدة لمحاذاة الطبقة العلوية مع السفلية.
+2. **تعديل الطبقة السفلية** — إذا كانت الطبقة السفلية منزاحة، دورة D أو D' واحدة تصلحها.
+3. **تبديل الطبقة السفلية** — نادراً، قد تحتاج الطبقة السفلية تبديلاً متجاوراً أو قطرياً. استخدم نفس خوارزميات PBL من طريقة Ortega:
+   - **تبديل قطري:** R2 F2 R2
+   - **تبديل متجاور:** R U' R F2 R' U R'
+
+---
+
+## استراتيجية التعلم
+
+تعلم جميع حالات CLL الأربعين دفعة واحدة أمر مرهق. إليك ترتيب التعلم المُوصى به:
+
+1. **ابدأ بـ Sune و Anti-Sune** (12 حالة) — الأكثر شيوعاً والعديد من الخوارزميات قصيرة.
+2. **أضف حالات T و U** (12 حالة) — سهلة نسبياً في التعرف والتنفيذ.
+3. **تعلم حالات Pi** (6 حالات) — نمط توجيه مميز.
+4. **تعلم حالات L** (6 حالات) — تعرف مشابه لـ Pi لكن باتجاه التواء مختلف.
+5. **أنهِ بحالات H** (4 حالات) — المجموعة الأندر.
+
+## نصائح التعرف
+
+- **انظر إلى الوجه العلوي أولاً** لتحديد مجموعة التوجيه (كم ملصقاً أصفر يتجه للأعلى وأين).
+- **ثم تحقق من ألوان الجوانب** لتحديد الحالة المحددة ضمن المجموعة.
+- **تدرب بالمجموعات** — تدرب على مجموعة واحدة في كل مرة حتى يصبح التعرف فورياً.
+- **استخدم الخلطات العكسية** — أعدّ حالة، حلّها، ثم حاول التنبؤ بالعكس.
+
+---
+
+**مع إتقان CLL، يمكنك تحقيق متوسطات أقل من 3 ثوانٍ على مكعب 2×2.** نهج النظرة الواحدة يزيل وقت التوقف بين OLL و PBL، مما يجعل حلولك أسرع وأكثر سلاسة. استمر في التدرب على التعرف — السرعة تأتي من تحديد الحالات فوراً.
