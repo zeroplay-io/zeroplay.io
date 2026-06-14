@@ -2,7 +2,7 @@ google.com, pub-9801264591177947, DIRECT, f08c47fec0942fa0
 applovin.com, b958decb28e061f78c9e669812e5093d, DIRECT
 adyoulike.com, 2d578cf695c89ec2ba707280319d2020, RESELLER
 algorix.co, 60532, RESELLER, 5b394c12fea27a1d
-contextweb.com , 562615, RESELLER, 89ff185a4c4e857c
+contextweb.com, 562615, RESELLER, 89ff185a4c4e857c
 gamaigroup.com, 423056, RESELLER
 improvedigital.com, 2602, RESELLER
 indexexchange.com, 211341, RESELLER, 50b1c356f2c5c8fc
@@ -38,3 +38,5 @@ xandr.com, 14082, RESELLER
 yieldmo.com, 3591550211052216798, RESELLER, 6a92c77cfc3d2258
 zmaticoo.com, 5135655, RESELLER
 vungle.com, 695fdb862334b471dc1e0cc8, DIRECT, c107d686becd2d77
+bidease.com, bidease_seller_26, RESELLER
+taurusx.com, 70119, RESELLER
