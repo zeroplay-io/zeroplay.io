@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Misslyckades med att skicka feedback, försök igen senare."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Ange en giltig e-postadress"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-post (valfritt)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Lämna din e-postadress så att vi kan återkomma med ett svar."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Ogiltig åtkomst"
   },

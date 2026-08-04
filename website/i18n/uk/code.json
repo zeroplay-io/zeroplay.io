@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Не вдалося надіслати відгук, спробуйте пізніше."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Введіть дійсну адресу електронної пошти"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Електронна пошта (необов'язково)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Залиште свою електронну пошту, щоб ми могли вам відповісти."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Недійсний доступ"
   },

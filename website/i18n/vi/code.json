@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Gửi phản hồi thất bại, vui lòng thử lại sau."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Vui lòng nhập địa chỉ email hợp lệ"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Email (không bắt buộc)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Để lại email của bạn để chúng tôi có thể phản hồi cho bạn."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Truy cập không hợp lệ"
   },

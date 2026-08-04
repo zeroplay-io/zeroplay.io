@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Error al enviar comentarios, por favor intenta de nuevo más tarde."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Introduce una dirección de correo electrónico válida"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Correo electrónico (opcional)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Déjanos tu correo electrónico para que podamos responderte."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Acceso inválido"
   },

@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "提交回饋失敗，請稍後重試。"
   },
+  "feedback.error.invalidEmail": {
+    "message": "請輸入有效的電子郵件地址"
+  },
+  "feedback.form.emailLabel": {
+    "message": "電子郵件（選填）"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "留下您的電子郵件，方便我們回覆您。"
+  },
   "feedback.error.invalidAccess.title": {
     "message": "無效存取"
   },

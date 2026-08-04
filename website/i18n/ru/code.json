@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Не удалось отправить отзыв, попробуйте позже."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Введите действительный адрес электронной почты"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Эл. почта (необязательно)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Оставьте свой адрес электронной почты, чтобы мы могли вам ответить."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Недействительный доступ"
   },

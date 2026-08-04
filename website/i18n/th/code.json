@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "การส่งคำติชมล้มเหลว โปรดลองอีกครั้งในภายหลัง"
   },
+  "feedback.error.invalidEmail": {
+    "message": "โปรดกรอกที่อยู่อีเมลที่ถูกต้อง"
+  },
+  "feedback.form.emailLabel": {
+    "message": "อีเมล (ไม่บังคับ)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "ฝากอีเมลของคุณไว้เพื่อให้เราติดต่อกลับหาคุณได้"
+  },
   "feedback.error.invalidAccess.title": {
     "message": "การเข้าถึงไม่ถูกต้อง"
   },

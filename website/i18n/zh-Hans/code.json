@@ -165,6 +165,18 @@
   "feedback.error.submit": {
     "message": "提交反馈失败，请稍后重试。"
   },
+  "feedback.error.invalidEmail": {
+    "message": "请输入有效的邮箱地址"
+  },
+  "feedback.form.emailLabel": {
+    "message": "邮箱（选填）"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "留下您的邮箱，方便我们回复您。"
+  },
   "feedback.error.invalidAccess.title": {
     "message": "无效访问"
   },

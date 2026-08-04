@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Palautteen lähettäminen epäonnistui, yritä myöhemmin uudelleen."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Anna kelvollinen sähköpostiosoite"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Sähköposti (valinnainen)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Jätä sähköpostiosoitteesi, jotta voimme vastata sinulle."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Virheellinen pääsy"
   },

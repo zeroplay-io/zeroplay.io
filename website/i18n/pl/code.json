@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Nie udało się wysłać opinii, spróbuj ponownie później."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Wprowadź prawidłowy adres e-mail"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (opcjonalnie)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Zostaw swój adres e-mail, abyśmy mogli się z Tobą skontaktować."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Nieprawidłowy dostęp"
   },

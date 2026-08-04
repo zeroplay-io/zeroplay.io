@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "فشل إرسال الملاحظات، يرجى المحاولة مرة أخرى لاحقاً."
   },
+  "feedback.error.invalidEmail": {
+    "message": "يرجى إدخال عنوان بريد إلكتروني صالح"
+  },
+  "feedback.form.emailLabel": {
+    "message": "البريد الإلكتروني (اختياري)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "اترك بريدك الإلكتروني حتى نتمكن من الرد عليك."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "وصول غير صالح"
   },

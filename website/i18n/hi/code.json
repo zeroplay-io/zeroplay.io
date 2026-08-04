@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "प्रतिक्रिया जमा करना विफल रहा, कृपया बाद में पुनः प्रयास करें।"
   },
+  "feedback.error.invalidEmail": {
+    "message": "कृपया एक मान्य ईमेल पता दर्ज करें"
+  },
+  "feedback.form.emailLabel": {
+    "message": "ईमेल (वैकल्पिक)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "अपना ईमेल छोड़ें ताकि हम आपको जवाब दे सकें।"
+  },
   "feedback.error.invalidAccess.title": {
     "message": "अमान्य पहुंच"
   },

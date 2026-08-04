@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Invio del feedback non riuscito, riprova più tardi."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Inserisci un indirizzo email valido"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Email (facoltativo)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Lascia la tua email così possiamo risponderti."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Accesso non valido"
   },

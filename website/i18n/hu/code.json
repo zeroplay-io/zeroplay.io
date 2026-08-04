@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "A visszajelzés küldése sikertelen, kérjük próbáld újra később."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Adjon meg egy érvényes e-mail címet"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (nem kötelező)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Hagyja meg e-mail címét, hogy válaszolhassunk Önnek."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Érvénytelen hozzáférés"
   },

@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Trimiterea feedback-ului a eșuat, te rugăm să încerci din nou mai târziu."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Introdu o adresă de e-mail validă"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (opțional)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Lasă-ne adresa ta de e-mail ca să îți putem răspunde."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Acces invalid"
   },

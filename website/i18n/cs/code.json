@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Odeslání zpětné vazby se nezdařilo, zkuste to prosím později."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Zadejte platnou e-mailovou adresu"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (nepovinné)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Zanechte nám svůj e-mail, abychom vám mohli odpovědět."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Neplatný přístup"
   },

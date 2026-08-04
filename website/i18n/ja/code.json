@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "フィードバックの送信に失敗しました。後でもう一度お試しください。"
   },
+  "feedback.error.invalidEmail": {
+    "message": "有効なメールアドレスを入力してください"
+  },
+  "feedback.form.emailLabel": {
+    "message": "メールアドレス（任意）"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "返信できるようにメールアドレスをご記入ください。"
+  },
   "feedback.error.invalidAccess.title": {
     "message": "無効なアクセス"
   },

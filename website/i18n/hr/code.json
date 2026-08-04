@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Slanje povratnih informacija nije uspjelo, pokušajte ponovo kasnije."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Unesite valjanu adresu e-pošte"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-pošta (neobavezno)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Ostavite svoju e-poštu kako bismo vam mogli odgovoriti."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Neispravan pristup"
   },

@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Gagal menghantar maklum balas, sila cuba lagi kemudian."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Sila masukkan alamat e-mel yang sah"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mel (pilihan)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Tinggalkan e-mel anda supaya kami boleh membalas anda."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Akses tidak sah"
   },

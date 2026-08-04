@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Αποτυχία υποβολής σχολίων, παρακαλώ δοκιμάστε ξανά αργότερα."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Εισαγάγετε μια έγκυρη διεύθυνση email"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Email (προαιρετικό)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Αφήστε το email σας για να μπορέσουμε να σας απαντήσουμε."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Μη έγκυρη πρόσβαση"
   },

@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Kunne ikke sende tilbakemelding, vennligst prøv igjen senere."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Skriv inn en gyldig e-postadresse"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-post (valgfritt)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Legg igjen e-postadressen din så vi kan svare deg."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Ugyldig tilgang"
   },

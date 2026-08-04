@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Odoslanie spätnej väzby zlyhalo, skúste to prosím neskôr."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Zadajte platnú e-mailovú adresu"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (nepovinné)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Zanechajte nám svoj e-mail, aby sme vám mohli odpovedať."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Neplatný prístup"
   },

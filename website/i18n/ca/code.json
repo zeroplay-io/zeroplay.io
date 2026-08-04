@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Error en enviar els comentaris, si us plau, torneu-ho a provar més tard."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Introdueix una adreça de correu electrònic vàlida"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Correu electrònic (opcional)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Deixa'ns el teu correu electrònic perquè et puguem respondre."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Accés no vàlid"
   },

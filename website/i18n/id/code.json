@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Gagal mengirim umpan balik, silakan coba lagi nanti."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Masukkan alamat email yang valid"
+  },
+  "feedback.form.emailLabel": {
+    "message": "Email (opsional)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Tinggalkan email Anda agar kami dapat membalas Anda."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Akses tidak valid"
   },

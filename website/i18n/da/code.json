@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Kunne ikke indsende feedback, prøv venligst igen senere."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Indtast en gyldig e-mailadresse"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (valgfrit)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Efterlad din e-mail, så vi kan vende tilbage til dig med et svar."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Ugyldig adgang"
   },

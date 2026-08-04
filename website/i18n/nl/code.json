@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Verzenden van feedback mislukt, probeer het later opnieuw."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Voer een geldig e-mailadres in"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (optioneel)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Laat je e-mailadres achter zodat we je kunnen antwoorden."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Ongeldige toegang"
   },

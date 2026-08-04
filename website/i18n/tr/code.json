@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Geri bildirim gönderilemedi, lütfen daha sonra tekrar deneyin."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Lütfen geçerli bir e-posta adresi girin"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-posta (isteğe bağlı)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Size geri dönüş yapabilmemiz için e-posta adresinizi bırakın."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Geçersiz erişim"
   },

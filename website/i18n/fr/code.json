@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "Échec de l'envoi des commentaires, veuillez réessayer plus tard."
   },
+  "feedback.error.invalidEmail": {
+    "message": "Veuillez saisir une adresse e-mail valide"
+  },
+  "feedback.form.emailLabel": {
+    "message": "E-mail (facultatif)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "Laissez votre e-mail pour que nous puissions vous répondre."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "Accès invalide"
   },

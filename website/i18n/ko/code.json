@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "피드백 제출에 실패했습니다. 나중에 다시 시도해 주세요."
   },
+  "feedback.error.invalidEmail": {
+    "message": "유효한 이메일 주소를 입력하세요"
+  },
+  "feedback.form.emailLabel": {
+    "message": "이메일 (선택사항)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "답변을 드릴 수 있도록 이메일을 남겨 주세요."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "유효하지 않은 접근"
   },

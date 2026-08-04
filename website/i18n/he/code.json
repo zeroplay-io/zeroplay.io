@@ -129,6 +129,18 @@
   "feedback.error.submit": {
     "message": "שליחת המשוב נכשלה, אנא נסה שוב מאוחר יותר."
   },
+  "feedback.error.invalidEmail": {
+    "message": "אנא הזינו כתובת אימייל תקינה"
+  },
+  "feedback.form.emailLabel": {
+    "message": "אימייל (אופציונלי)"
+  },
+  "feedback.form.emailPlaceholder": {
+    "message": "you@example.com"
+  },
+  "feedback.form.emailHint": {
+    "message": "השאירו את כתובת האימייל שלכם כדי שנוכל לחזור אליכם עם תשובה."
+  },
   "feedback.error.invalidAccess.title": {
     "message": "גישה לא חוקית"
   },
